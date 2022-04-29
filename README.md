@@ -1,17 +1,18 @@
-## Updates
-![example workflow name](https://github.com/Dhghomon/easy_rust/workflows/github%20pages/badge.svg)
+## 更新
+![example workflow name](https://github.com/dieterplex/easy_rust_cht/workflows/github%20pages/badge.svg)
 
-23 May 2021: [Now available in Indonesian](https://github.com/ariandy/easy-rust-indonesia) thanks to [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/).
+2021年5月23日: 現在有 [印尼語](https://github.com/ariandy/easy-rust-indonesia) 翻譯可用，感謝 [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/)。
 
-2 April 2021: [Added BuyMeACoffee link](https://www.buymeacoffee.com/mithridates) for those who would like to buy me a coffee.
+2021年4月2日: 增加 [BuyMeACoffee 連結](https://www.buymeacoffee.com/mithridates) 給那些想請我喝杯咖啡的人。
 
-1 February 2021: [Now available on YouTube!](https://www.youtube.com/playlist?list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) Two months later: all done as of 1 April 2021 for 186 videos in total (slightly over 23 hours).
+2021年2月1日: [Youtube影片！](https://www.youtube.com/playlist?list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) 兩個月後： 到2021年4月1日為止，總共有186支影片全部完成（稍微超過23小時）。
 
-22 December 2020: mdBook can be found [here](https://dhghomon.github.io/easy_rust).
+2021年1月4日: mdBook [線上閱讀](https://dhghomon.github.io/easy_rust)。
 
-28 November 2020: [Now also available in simplified Chinese](https://github.com/kumakichi/easy_rust_chs) thanks to [kumakichi](https://github.com/kumakichi)!
+2020年11月28日: 現在也有[簡體中文](https://github.com/kumakichi/easy_rust_chs) 翻譯可用，感謝 [kumakichi](https://github.com/kumakichi)！
 
-27 November 2021: [Videos for Easy Rust are now being recorded in Korean!](https://www.youtube.com/watch?v=W9DO6m8JSSs&list=PLfllocyHVgsSJf1zO6k6o3SX2mbZjAqYE) 한국어판 비디오도 녹화 시작!
+2021年11月27日: [現在有韓語錄製的Easy Rust影片了！](https://www.youtube.com/watch?v=W9DO6m8JSSs&list=PLfllocyHVgsSJf1zO6k6o3SX2mbZjAqYE) 한국어판 비디오도 녹화 시작!
+
 
 ![](Easy_Rust_sample_image.png)
 
@@ -128,22 +129,22 @@ I am a Canadian who lives in Korea, and I wrote Easy Rust while thinking of how 
     - [Arrays](#arrays-1)
     - [char](#char)
     - [Integers](#integers)
-    - [Floats](#floats)
-    - [Bool](#bool)
+    - [Floats](#floats-1)
+    - [bool](#bool)
     - [Vec](#vec)
     - [String](#string)
     - [OsString and CString](#osstring-and-cstring)
-    - [Mem](#mem)
-    - [Prelude](#prelude)
-    - [Time](#time)
-    - [Other-macros](#other-macros)
+    - [mem](#mem)
+    - [prelude](#prelude)
+    - [time](#time)
+    - [Other macros](#other-macros)
   - [Writing macros](#writing-macros)
 - [Part 2 - Rust on your computer](#part-2---rust-on-your-computer)
-  - [Cargo](#cargo)
-  - [Taking_user_input](#taking-user-input)
+  - [cargo](#cargo)
+  - [Taking user input](#taking-user-input)
   - [Using files](#using-files)
-  - [Cargo doc](#cargo-doc)
-  - [The end?](#the-end?)
+  - [cargo doc](#cargo-doc)
+  - [The end?](#the-end)
 
 # Part 1 - Rust in your browser
 
