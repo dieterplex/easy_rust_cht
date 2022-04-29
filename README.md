@@ -35,7 +35,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
 - [第1部 - 瀏覽器中的 Rust](#第1部---瀏覽器中的-rust)
   - [Rust Playground](#rust-playground)
   - [🚧 和 ⚠️](#-和-️)
-  - [Comments](#comments)
+  - [註解](#註解)
   - [Types](#types)
     - [Primitive types](#primitive-types)
   - [Type inference](#type-inference)
@@ -170,22 +170,22 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
 
 有時書中的程式碼範例是不能用的。如果一個範例不能用，它將會有一個 🚧 (施工路障emoji)或 ⚠️ (警告標誌emoji)在裡面。🚧 就像"正在建設中"一樣: 它意味著程式碼不完整。Rust需要一個`fn main()`(一個主函式)來執行，但有時我們只是想看一些小的程式碼，所以它不會有`fn main()`。這些範例是正確的，但需要一個`fn main()`讓你執行。而有些程式碼範例是向你展示一個我們將解決的問題。那些可能有一個`fn main()`，但會產生錯誤，所以它們會有一個⚠️。
 
-## Comments
-**[See this chapter on YouTube](https://youtu.be/fJ7jBZG_Rpo)**
+## 註解
+**[YouTube 上觀看本章內容](https://youtu.be/fJ7jBZG_Rpo)**
 
-Comments are made for programmers to read, not the computer. It's good to write comments to help other people understand your code.  It's also good to help you understand your code later.  (Many people write good code but then forget why they wrote it.) To write comments in Rust you usually use `//`:
+註解是給程式設計師看的，而不是給電腦看的。寫註解是為了幫助別人理解你的程式碼。這也有利於幫助你以後理解你的程式碼。 (很多人寫了很好的程式碼，但後來卻忘記了他們為什麼要寫它。)在Rust中寫註解，你通常會使用 `//`:
 
 ```rust
 fn main() {
-    // Rust programs start with fn main()
-    // You put the code inside a block. It starts with { and ends with }
-    let some_number = 100; // We can write as much as we want here and the compiler won't look at it
+    // Rust 程式從 fn main() 開始
+    // 程式碼放在區塊中，用 { 開始和 } 結束
+    let some_number = 100; // 我們寫多少在這裡都可以，編譯器都不會看
 }
 ```
 
-When you do this, the compiler won't look at anything to the right of the `//`.
+當你這樣做時，編譯器不會看到出現在 `//` 右邊的任何東西。
 
-There is another kind of comment that you write with `/*` to start and `*/` to end. This one is useful to write in the middle of your code.
+還有一種註解是，你可以用 `/*` 開頭，以 `*/` 結尾。這種寫法在程式碼中間很有用。
 
 ```rust
 fn main() {
@@ -193,21 +193,21 @@ fn main() {
 }
 ```
 
-To the compiler, `let some_number/*: i16*/ = 100;` looks like `let some_number = 100;`.
+對編譯器來說，`let some_number/*: i16*/ = 100;`看起來就跟`let some_number = 100;`一樣。
 
-The `/* */` form is also useful for very long comments over more than one line. In this example you can see that you need to write `//` for every line. But if you type `/*`, it won't stop until you finish it with `*/`.
+`/* */`註解形式對於超過一行的非常長的註釋也很有用。在這個範例中，你可以看到你需要為每一行去寫`//`。但是如果你輸入 `/*`，它不會停止註解，直到你用 `*/` 結束這個註解。
 
 ```rust
 fn main() {
-    let some_number = 100; /* Let me tell you
-    a little about this number.
-    It's 100, which is my favourite number.
-    It's called some_number but actually I think that... */
+    let some_number = 100; /* 讓我來告訴你
+    有關這個數字的一些事情。
+    它是100，我最愛的數字。
+    他叫做 some_number 但實際上我思考的是… */
 
-    let some_number = 100; // Let me tell you
-    // a little about this number.
-    // It's 100, which is my favourite number.
-    // It's called some_number but actually I think that...
+    let some_number = 100; // 讓我來告訴你
+    // 有關這個數字的一些事情。
+    // 它是100，我最愛的數字。
+    // 他叫做 some_number 但實際上我思考的是…
 }
 ```
 
