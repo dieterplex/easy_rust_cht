@@ -16,11 +16,11 @@
 
 ![](Easy_Rust_sample_image.png)
 
-## Introduction
+## 介紹
 
-Rust is a new language that already has good textbooks. But sometimes its textbooks are difficult because they are for native English speakers. Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.
+Rust是一門已經有了很好教科書的新程式設計語言。但有時候它的教材很難，因為難在它是寫給以英語為母語的人看的。現在有許多公司及人們在學習Rust，如果能有一本使用簡單英語寫的書，他們可以學習得更快。這本書就是用簡單英語寫給這些公司和人們來學習Rust的。
 
-Rust is a language that is quite new, but already very popular. It's popular because it gives you the speed and control of C or C++ but also the memory safety of other newer languages like Python. It does this with some new ideas that are sometimes different from other languages. That means that there are some new things to learn, and you can't just "figure it out as you go along". Rust is a language that you have to think about for a while to understand. But it still looks pretty familiar if you know another language and it is made to help you write good code.
+Rust是一門相當新卻已經非常流行的程式設計語言。它之所以受歡迎，是因為它給了你C或C++的運作速度和控制能力，但也有在其他像Python等較新型語言上有的記憶體安全機制。它有時以不同於其他語言的新想法做到這一點。這也意味著需要學習一些新東西，不能只是 "邊走邊想辦法"。Rust更是一門你必須思考一段時間才能理解的語言。但它看起來還是蠻熟悉的如果你會其他程式設計語言的話，它是為了幫助你寫好程式碼而生的。
 
 ## Who am I?
 
