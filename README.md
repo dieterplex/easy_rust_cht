@@ -36,8 +36,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [Rust Playground](#rust-playground)
   - [🚧 和 ⚠️](#-和-️)
   - [註解](#註解)
-  - [Types](#types)
-    - [Primitive types](#primitive-types)
+  - [型別](#型別)
+    - [原始型別](#原始型別)
   - [Type inference](#type-inference)
     - [Floats](#floats)
   - [Printing 'hello, world!'](#printing-hello-world)
@@ -211,57 +211,57 @@ fn main() {
 }
 ```
 
-## Types
+## 型別
 
-Rust has many types that let you work with numbers, characters, and so on. Some are simple, others are more complicated, and you can even create your own.
+Rust有許多型別，讓你可以處理數字、字元等等。有些型別很簡單，有些型別比較複雜，你甚至可以建立自己的型別。
 
-### Primitive types
-**[See this chapter on YouTube](https://youtu.be/OxTPU5UGMhs)**
+### 原始型別
+**[YouTube 上觀看本章內容](https://youtu.be/OxTPU5UGMhs)**
 
-Rust has simple types that are called **primitive types** (primitive = very basic). We will start with integers and `char` (characters). Integers are whole numbers with no decimal point. There are two types of integers:
+Rust有簡單的型別，這些型別被稱為**原始型別**(原始=非常基本)。我們將從整數和`char`(字元)開始。沒有包含小數點的一整個數字就是整數。整數有兩種型別：
 
-- Signed integers,
-- Unsigned integers.
+- 有符號整數
+- 無符號整數
 
-Signed means `+` (plus sign) and `-` (minus sign), so signed integers can be positive or negative (e.g. +8, -8). But unsigned integers can only be positive, because they do not have a sign.
+符號是指 `+` (加號)與 `-` (減號)，所以有符號整數可以是正數，也可以是負數(如 +8，-8)。但無符號整數只能是正數，因為它們沒有符號。
 
-The signed integers are: `i8`, `i16`, `i32`, `i64`, `i128`, and `isize`.
-The unsigned integers are: `u8`, `u16`, `u32`, `u64`, `u128`, and `usize`.
+有符號整數是 `i8`、`i16`、`i32`、`i64`、`i128` 和 `isize`。
+無符號整數是 `u8`、`u16`、`u32`、`u64`、`u128` 和 `usize`。
 
-The number after the i or the u means the number of bits for the number, so numbers with more bits can be larger. 8 bits = one byte, so `i8` is one byte, `i64` is 8 bytes, and so on. Number types with larger sizes can hold larger numbers. For example, a `u8` can hold up to 255, but a `u16` can hold up to 65535. And a `u128` can hold up to 340282366920938463463374607431768211455.
+i 或 u 後面的數字表示該數字的位元數，所以位元數愈多的可以表示更大的數字。8 位元 = 一個位元組，所以 `i8` 是佔用一個位元組空間的型別，`i64` 是 8 個位元組，以此類推。尺寸較大的數字型別可以容納更大的數字。例如，`u8` 最多可以容納最大的數字是 255，但 `u16` 最多可以容納 65535。而 `u128` 最多可以容納 340282366920938463463374607431768211455。
 
-So what is `isize` and `usize`? This means the number of bits on your type of computer. (The number of bits on your computer is called the **architecture** of your computer.) So `isize` and `usize` on a 32-bit computer is like `i32` and `u32`, and `isize` and `usize` on a 64-bit computer is like `i64` and `u64`.
+那什麼是 `isize` 和 `usize` 呢？這表示你的電腦類型的位元數。(你的電腦裡中央處理器的位元數叫做電腦的**架構**)。所以在 32 位元電腦上的 `isize` 和 `usize` 就像是 `i32` 和 `u32`，64 位元電腦上的 `isize` 和 `usize` 就像是 `i64` 和 `u64`。
 
-There are many reasons for the different types of integers. One reason is computer performance: a smaller number of bytes is faster to process. For example, the number -10 as an `i8` is `11110110`, but as an `i128` it is `11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110`. But here are some other uses:
+需要不同整數型別的原因有很多。其中之一是電腦效能：位元組數量愈少處理速度愈快。例如，數字 -10 在 `i8` 是 `11110110`，但在 `i128` 會是`11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110`。不過這裡它還有一些其它用途：
 
-Characters in Rust are called `char`. Every `char` has a number: the letter `A` is number 65, while the character `友` ("friend" in Chinese) is number 21451. The list of numbers is called "Unicode". Unicode uses smaller numbers for characters that are used more, like A through Z, or digits 0 through 9, or space.
+Rust 中的字元稱做 `char`。每一個 `char` 都對應到一個數字：字母 `A` 對應到數字 65，而字元 `友` (中文的"朋友")對應數字 21451。這個數字列表被稱為 "Unicode"。Unicode 給愈常用的字元使用愈小的數字，如字母 A 到 Z，數字 0 到 9，或空格等等。
 
 ```rust
 fn main() {
     let first_letter = 'A';
-    let space = ' '; // A space inside ' ' is also a char
-    let other_language_char = 'Ꮔ'; // Thanks to Unicode, other languages like Cherokee display just fine too
-    let cat_face = '😺'; // Emojis are chars too
+    let space = ' '; // ' ' 裡的空白也算一個字元
+    let other_language_char = 'Ꮔ'; // 感謝 Unicode，其它語言像是切羅基語 (Cherokee) 也顯示的很好
+    let cat_face = '😺'; // Emojis 也算字元
 }
 ```
 
-The characters that are used most have numbers less than 256, and they can fit into a `u8`. Remember, a `u8` is 0 plus all the numbers up to 255, for 256 in total. This means that Rust can safely **cast** a `u8` into a `char`, using `as`. ("Cast `u8` as `char`" means "pretend `u8` is a `char`")
+最常用字元的對應數字少於 256，剛好可以放進 `u8` 裡。要記得，`u8` 是 0 加上到 255 的所有數字，總共 256 種。這意味著 Rust 能使用 `as` 關鍵字安全地將一個 `u8` **轉換型別(cast)** 為 `char`。("轉換 `u8` 為 `char`" 意味著 "假裝 `u8` 是`char`")
 
-Casting with `as` is useful because Rust is very strict. It always needs to know the type, and won't let you use two different types together even if they are both integers. For example, this will not work:
+透過 `as` 轉型很有用，因為 Rust 對型別非常嚴格。它總是必需知道是什麼型別，也不會讓你一起用不同的兩種型別，即使他們都是整數。舉例來說，不能這樣用：
 
 ```rust
-fn main() { // main() is where Rust programs start to run. Code goes inside {} (curly brackets)
+fn main() { // main() 是 Rust 程式開始執行的地方。程式碼會放在 {} (大括號)裡
 
-    let my_number = 100; // We didn't write a type of integer,
-                         // so Rust chooses i32. Rust always
-                         // chooses i32 for integers if you don't
-                         // tell it to use a different type
+    let my_number = 100; // 我們沒有寫出整數的型別，
+                         // 因此 Rust 選擇了 i32。
+                         // Rust 總是給整數選擇 i32，
+                         // 如果你不教它用不同型別的話。
 
     println!("{}", my_number as char); // ⚠️
 }
 ```
 
-Here is the reason:
+編譯器給的理由是：
 
 ```text
 error[E0604]: only `u8` can be cast as `char`, not `i32`
@@ -271,7 +271,7 @@ error[E0604]: only `u8` can be cast as `char`, not `i32`
   |                    ^^^^^^^^^^^^^^^^^
 ```
 
-Fortunately we can easily fix this with `as`. We can't cast `i32` as a `char`, but we can cast an `i32` as a `u8`. And then we can do the same from `u8` to `char`. So in one line we use `as` to make my_number a `u8`, and again to make it a `char`. Now it will compile:
+幸運的是，我們可以用 `as` 輕鬆修正這個錯誤。我們無法將 `i32` 轉型為 `char`，但我們可以將 `i32` 轉型為 `u8`。接著我們同樣可以將 `u8` 轉型為 `char`。所以在同一行中，我們先用 `as` 讓 `my_number` 變成 `u8`，再變成 `char`。現在它就能通過編譯了：
 
 ```rust
 fn main() {
@@ -280,49 +280,49 @@ fn main() {
 }
 ```
 
-It prints `d` because that is the `char` in place 100.
+它會印出 `d` 是因為它就是100對應的 `char`。
 
-The easier way, however, is just to tell Rust that `my_number` is a `u8`. Here's how you do it:
+然而，更簡單的方法是你只要告訴 Rust 說 `my_number` 的型別是 `u8`。你要像這樣做：
 
 ```rust
 fn main() {
-    let my_number: u8 = 100; //  change my_number to my_number: u8
+    let my_number: u8 = 100; //  更改 my_number 為 my_number: u8
     println!("{}", my_number as char);
 }
 ```
 
-So those are two reasons for all the different number types in Rust. Here is another reason: `usize` is the size that Rust uses for *indexing*. (Indexing means "which item is first", "which item is second", etc.) `usize` is the best size for indexing because:
+所以這些是 Rust 中會有不同整數型別的兩個原因。這裡還有一個原因：`usize` 是 Rust 用來 *索引* 的型別。(索引的意思是"哪項是第一"，"哪項是第二"等等) `usize` 是最佳的索引型別，因為：
 
-- An index can't be negative, so it needs to be a number with a u
-- It should be big, because sometimes you need to index many things, but
-- It can't be a u64 because 32-bit computers can't use u64.
+- 索引值不能是負數，所以它需要是一個帶 u 的數字(註：指無符號數)
+- 它要可以夠大，因為有時你需要索引很多東西，但是
+- 它不能是 `u64`，因為 32 位元電腦無法使用 `u64`。
 
-So Rust uses `usize` so that your computer can get the biggest number for indexing that it can read.
+所以Rust使用了 `usize`，這樣你的電腦就能以它能讀取到的最大整數值進行索引。
 
 
 
-Let's learn some more about `char`. You saw that a `char` is always one character, and uses `''` instead of `""`.
+我們再來了解一下 `char`。你會看到 `char` 總是一個字元，並且使用 `''` 而不是 `""`。
 
-All `chars` use 4 bytes of memory, since 4 bytes are enough to hold any kind of character:
-- Basic letters and symbols usually need 1 out of 4 bytes: `a b 1 2 + - = $ @`
-- Other letters like German Umlauts or accents need 2 out of 4 bytes: `ä ö ü ß è é à ñ`
-- Korean, Japanese or Chinese characters need 3 or 4 bytes: `国 안 녕`
+所有的 `chars` 都使用 4 個位元組的記憶體，因為4個位元組足以容納任何種類的字元：
+- 基本字母和符號通常只需要4個位元組中的1個：`a b 1 2 + - = $ @`
+- 其他字母，如德文元音變音 (Umlauts) 或重音，需要4個位元組中的2個：`ä ö ü ß è é à ñ`
+- 韓文、日文或中文字元需要3或4個位元組：`國 안 녕`
 
-When using characters as part of a string, the string is encoded to use the least amount of memory needed for each character.
+當使用字元作為字串的一部分時，字串是用每個字元所需的最少記憶體來編碼的。
 
-We can use `.len()` to see this for ourselves:
+我們可以自己用 `.len()` 來觀察這個情況。
 
 ```rust
 fn main() {
-    println!("Size of a char: {}", std::mem::size_of::<char>()); // 4 bytes
-    println!("Size of string containing 'a': {}", "a".len()); // .len() gives the size of the string in bytes
+    println!("Size of a char: {}", std::mem::size_of::<char>()); // 4 位元組
+    println!("Size of string containing 'a': {}", "a".len()); // .len() 給出以位元組為單位的字串大小
     println!("Size of string containing 'ß': {}", "ß".len());
     println!("Size of string containing '国': {}", "国".len());
     println!("Size of string containing '𓅱': {}", "𓅱".len());
 }
 ```
 
-This prints:
+這個程式會印出：
 
 ```text
 Size of a char: 4
@@ -332,27 +332,27 @@ Size of string containing '国': 3
 Size of string containing '𓅱': 4
 ```
 
-You can see that `a` is one byte, the German `ß` is two, the Japanese `国` is three, and the ancient Egyptian `𓅱` is 4 bytes.
+你可以看到 `a` 的大小是一個位元組，德文的 `ß` 是兩個位元組，日文的 `國` 是三個位元組，古埃及的 `𓅱` 是4個位元組。
 
 ```rust
 fn main() {
     let slice = "Hello!";
     println!("Slice is {} bytes.", slice.len());
-    let slice2 = "안녕!"; // Korean for "hi"
+    let slice2 = "안녕!"; // 韓文的 "hi"
     println!("Slice2 is {} bytes.", slice2.len());
 }
 ```
 
-This prints:
+這個程式會印出：
 
 ```text
 Slice is 6 bytes.
 Slice2 is 7 bytes.
 ```
 
-`slice` is 6 characters in length and 6 bytes, but `slice2` is 3 characters in length and 7 bytes.
+`slice` 長 6 個字元，佔 6 個位元組，但 `slice2` 長 3 個字元，佔 7 個位元組。
 
-If `.len()` gives the size in bytes, what about the size in characters? We will learn about these methods later, but you can just remember that `.chars().count()` will do it. `.chars().count()` turns what you wrote into characters and then counts how many there are.
+如果 `.len()` 給出的是以位元組為單位的大小，那麼以字元為單位的大小呢？我們在後面會學習這些方法，但這裡你只要記得 `.chars().count()` 做得到這件事就可以了。`.chars().count()` 會將你寫的東西變成字元，然後算出有多少個。
 
 
 ```rust
@@ -364,7 +364,7 @@ fn main() {
 }
 ```
 
-This prints:
+這個程式會印出：
 
 ```text
 Slice is 6 bytes and also 6 characters.
