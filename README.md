@@ -38,8 +38,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [註解](#註解)
   - [型別](#型別)
     - [原始型別](#原始型別)
-  - [Type inference](#type-inference)
-    - [Floats](#floats)
+  - [型別推導](#型別推導)
+    - [浮點數](#浮點數)
   - [Printing 'hello, world!'](#printing-hello-world)
     - [Declaring variables and code blocks](#declaring-variables-and-code-blocks)
   - [Display and debug](#display-and-debug)
@@ -129,7 +129,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [Arrays](#arrays-1)
     - [char](#char)
     - [Integers](#integers)
-    - [Floats](#floats-1)
+    - [Floats](#floats)
     - [bool](#bool)
     - [Vec](#vec)
     - [String](#string)
@@ -371,17 +371,17 @@ Slice is 6 bytes and also 6 characters.
 Slice2 is 7 bytes but only 3 characters.
 ```
 
-## Type inference
-**[See this chapter on YouTube](https://youtu.be/q1D2vpy3kEI)**
+## 型別推導
+**[YouTube 上觀看本章內容](https://youtu.be/q1D2vpy3kEI)**
 
-Type inference means that if you don't tell the compiler the type, but it can decide by itself, it will decide. The compiler always needs to know the type of the variables, but you don’t always need to tell it. Actually, usually you don't need to tell it. For example, for `let my_number = 8`, `my_number` will be an `i32`. That is because the compiler chooses i32 for integers if you don't tell it. But if you say `let my_number: u8 = 8`, it will make `my_number` a `u8`, because you told it `u8`.
+型別推導的意思是，如果你沒有告訴編譯器型別，但它可以自己判斷時它就會自己決定型別。編譯器總是必需知道變數的型別，但你不需要都告訴它。實際上，通常你不需要告訴它。例如，像 `let my_number = 8`，`my_number` 將會是 `i32`。這是因為如果你不告訴它，編譯器會給整數選擇 i32。但是如果你說 `let my_number: u8 = 8`，它就會把 `my_number` 視為 `u8`，因為你明確告訴它是 `u8`。
 
-So usually the compiler can guess. But sometimes you need to tell it, for two reasons:
+通常編譯器都能猜到。但有時你需要告訴它，原因有兩個：
 
-1) You are doing something very complex and the compiler doesn't know the type you want.
-2) You want a different type (for example, you want an `i128`, not an `i32`).
+1) 你正在做一些非常複雜的事情，而編譯器不知道你想要的型別。
+2) 你想要一個不同的型別 (例如，你想要一個 `i128`，而不是 `i32`)。
 
-To specify a type, add a colon after the variable name.
+這時可以指定一個型別，只要在變數名後新增一個冒號和型別。
 
 ```rust
 fn main() {
@@ -389,24 +389,24 @@ fn main() {
 }
 ```
 
-For numbers, you can say the type after the number. You don't need a space - just type it right after the number.
+對數字來說，你可以在數字後面加上型別。你不需要空格──只需要在數字後面直接輸入。
 
 ```rust
 fn main() {
-    let small_number = 10u8; // 10u8 = 10 of type u8
+    let small_number = 10u8; // 10u8 = 型別為 u8 的 10
 }
 ```
 
-You can also add `_` if you want to make the number easy to read.
+如果你想讓數字容易閱讀，也可以加上 `_`。
 
 ```rust
 fn main() {
-    let small_number = 10_u8; // This is easier to read
-    let big_number = 100_000_000_i32; // 100 million is easy to read with _
+    let small_number = 10_u8; // 好讀
+    let big_number = 100_000_000_i32; // 用 _ 時更容易讀出是 100 百萬
 }
 ```
 
-The `_` does not change the number. It is only to make it easy for you to read. And it doesn't matter how many `_` you use:
+`_`不會改變數字。它只是為了讓你方便閱讀。而且你用多少個`_`都沒有關係。
 
 ```rust
 fn main() {
@@ -416,32 +416,32 @@ fn main() {
 }
 ```
 
-This prints `0, 1624`.
+這個程式會印出 `0, 1624`.
 
-### Floats
+### 浮點數
 
-Floats are numbers with decimal points. 5.5 is a float, and 6 is an integer. 5.0 is also a float, and even 5. is a float.
+浮點數是帶有小數點的數字。5.5 是一個浮點數，6 是一個整數。5.0 也是一個浮點數，甚至 5. 也是一個浮點數。
 
 ```rust
 fn main() {
-    let my_float = 5.; // Rust sees . and knows that it is a float
+    let my_float = 5.; // Rust 看到 . 時，知道它是 float
 }
 ```
 
-But the types are not called `float`, they are called `f32` and `f64`. It is the same as integers: the number after `f` shows the number of bits. If you don't write the type, Rust will choose `f64`.
+但寫出型別時不叫 `float`，叫 `f32` 和 `f64`。這點和整數一樣：`f` 後面的數字顯示的是位元數。如果你不寫型別，Rust 會選擇 `f64`。
 
-Of course, only floats of the same type can be used together. So you can't add an `f32` to an `f64`.
+當然，只有同樣型別的浮點數可以一起使用。所以你不能把 `f32` 和 `f64` 加起來。
 
 ```rust
 fn main() {
-    let my_float: f64 = 5.0; // This is an f64
-    let my_other_float: f32 = 8.5; // This is an f32
+    let my_float: f64 = 5.0; // 這是 f64
+    let my_other_float: f32 = 8.5; // 這是 f32
 
     let third_float = my_float + my_other_float; // ⚠️
 }
 ```
 
-When you try to run this, Rust will say:
+當你嘗試執行這個程式時，Rust 會說：
 
 ```text
 error[E0308]: mismatched types
@@ -451,49 +451,49 @@ error[E0308]: mismatched types
   |                                  ^^^^^^^^^^^^^^ expected `f64`, found `f32`
 ```
 
-The compiler writes "expected (type), found (type)" when you use the wrong type. It reads your code like this:
+當你用錯型別時，編譯器會寫 "expected (type), found (type)"。它是像這樣讀你的程式碼：
 
 ```rust
 fn main() {
-    let my_float: f64 = 5.0; // The compiler sees an f64
-    let my_other_float: f32 = 8.5; // The compiler sees an f32. It is a different type.
-    let third_float = my_float + // You want to add my_float to something, so it must be an f64 plus another f64. Now it expects an f64...
-    let third_float = my_float + my_other_float;  // ⚠️ but it found an f32. It can't add them.
+    let my_float: f64 = 5.0; // 編譯器見到 f64
+    let my_other_float: f32 = 8.5; // 編譯器見到 f32 是個不同型別
+    let third_float = my_float + // 你想把 my_float 加上什麼，所以它一定要是 f64 加上另一個 f64。現在它預期有另一個 f64…
+    let third_float = my_float + my_other_float;  // ⚠️ 不過它發現是個 f32。它沒辨法把它們加起來。
 }
 ```
 
-So when you see "expected (type), found (type)", you must find why the compiler expected a different type.
+所以當你看到 "expected(type), found(type)" 時，你必須找到為什麼編譯器預期的是不同的型別。
 
-Of course, with simple numbers it is easy to fix. You can cast the `f32` to an `f64` with `as`:
+當然，單純的數字很容易修正。你可以用 `as` 把 `f32` 轉型成 `f64`：
 
 ```rust
 fn main() {
     let my_float: f64 = 5.0;
     let my_other_float: f32 = 8.5;
 
-    let third_float = my_float + my_other_float as f64; // my_other_float as f64 = use my_other_float like an f64
+    let third_float = my_float + my_other_float as f64; // my_other_float as f64 = 把 my_other_float 當 f64 來用
 }
 ```
 
-Or even more simply, remove the type declarations. ("to declare a type" = "to tell Rust to use the type") Rust will choose types that can add together.
+或者更簡單，去掉型別宣告。("宣告一個型別" = "告訴Rust使用該型別") Rust會選擇可以加在一起的型別。
 
 ```rust
 fn main() {
-    let my_float = 5.0; // Rust will choose f64
-    let my_other_float = 8.5; // Here again it will choose f64
+    let my_float = 5.0; // Rust 會選 f64
+    let my_other_float = 8.5; // 這裡還是會選 f64
 
     let third_float = my_float + my_other_float;
 }
 ```
 
-The Rust compiler is smart and will not choose f64 if you need f32:
+Rust 編譯器很聰明，如果你需要 f32，就不會選擇 f64：
 
 ```rust
 fn main() {
     let my_float: f32 = 5.0;
-    let my_other_float = 8.5; // Usually Rust would choose f64,
+    let my_other_float = 8.5; // 通常 Rust 是選 f64,
 
-    let third_float = my_float + my_other_float; // but now it knows that you need to add it to an f32. So it chooses f32 for my_other_float too
+    let third_float = my_float + my_other_float; // 但現在它知道你需要把它加上 f32。所以它也選了 f32 給 my_other_float
 }
 ```
 
