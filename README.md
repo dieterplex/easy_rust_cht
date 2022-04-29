@@ -34,7 +34,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
 
 - [第1部 - 瀏覽器中的 Rust](#第1部---瀏覽器中的-rust)
   - [Rust Playground](#rust-playground)
-  - [🚧 and ⚠️](#-and-️)
+  - [🚧 和 ⚠️](#-和-️)
   - [Comments](#comments)
   - [Types](#types)
     - [Primitive types](#primitive-types)
@@ -166,9 +166,9 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
 
 如果你想安裝Rust，請到官方網站[安裝頁面](https://www.rust-lang.org/tools/install)，然後按照說明操作。通常你會使用`rustup`來安裝和更新 Rust。
 
-## 🚧 and ⚠️
+## 🚧 和 ⚠️
 
-Sometimes the code examples in the book don't work. If an example doesn't work, it will have a 🚧 or a ⚠️ in it. 🚧 is like "under construction": it means that the code is not complete. Rust needs a `fn main()` (a main function) to run, but sometimes we just want to look at small pieces of code so it won't have a `fn main()`. Those examples are correct, but need a `fn main()` for you to run them. And some code examples show you a problem that we will fix. Those ones might have a `fn main()` but generate an error, and so they will have a ⚠️.
+有時書中的程式碼範例是不能用的。如果一個範例不能用，它將會有一個 🚧 (施工路障emoji)或 ⚠️ (警告標誌emoji)在裡面。🚧 就像"正在建設中"一樣: 它意味著程式碼不完整。Rust需要一個`fn main()`(一個主函式)來執行，但有時我們只是想看一些小的程式碼，所以它不會有`fn main()`。這些範例是正確的，但需要一個`fn main()`讓你執行。而有些程式碼範例是向你展示一個我們將解決的問題。那些可能有一個`fn main()`，但會產生錯誤，所以它們會有一個⚠️。
 
 ## Comments
 **[See this chapter on YouTube](https://youtu.be/fJ7jBZG_Rpo)**
