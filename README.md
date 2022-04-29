@@ -22,9 +22,9 @@ Rust是一門已經有了很好教科書的新程式設計語言。但有時候�
 
 Rust是一門相當新卻已經非常流行的程式設計語言。它之所以受歡迎，是因為它給了你C或C++的運作速度和控制能力，但也有在其他像Python等較新型語言上有的記憶體安全機制。它有時以不同於其他語言的新想法做到這一點。這也意味著需要學習一些新東西，不能只是 "邊走邊想辦法"。Rust更是一門你必須思考一段時間才能理解的語言。但它看起來還是蠻熟悉的如果你會其他程式設計語言的話，它是為了幫助你寫好程式碼而生的。
 
-## Who am I?
+## 我是誰？
 
-I am a Canadian who lives in Korea, and I wrote Easy Rust while thinking of how to make it easy for companies here to start using it. I hope that other countries that don't use English as a first language can use it too.
+我是一個生活在韓國的加拿大人，我在寫Easy Rust的同時，也在思考如何讓這裡的公司更容易開始使用它。我希望其他母語不是英語的國家也能使用它。
 
 ## Writing Rust in Easy English
 
