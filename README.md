@@ -32,7 +32,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
 
 
 
-- [Part 1 - Rust in your browser](#part-1---rust-in-your-browser)
+- [第1部 - 瀏覽器中的 Rust](#第1部---瀏覽器中的-rust)
   - [Rust Playground](#rust-playground)
   - [🚧 and ⚠️](#-and-️)
   - [Comments](#comments)
@@ -146,9 +146,9 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [cargo doc](#cargo-doc)
   - [The end?](#the-end)
 
-# Part 1 - Rust in your browser
+# 第1部 - 瀏覽器中的 Rust
 
-This book has two parts. In Part 1, you will learn as much Rust as you can just in your browser. You can actually learn almost everything you need to know without installing Rust, so Part 1 is very long. Then at the end is Part 2. It is much shorter, and is about Rust on your computer. That's where you will learn everything else you need to know that you can only do outside of a browser. Some examples are: working with files, taking user input, graphics, and personal settings. Hopefully, by the end of Part 1 you will like Rust enough that you will install it. And if you don't, no problem - Part 1 teaches you so much that you won't mind.
+本書有分兩部。第1部，你將在瀏覽器中就能學到儘可能多的Rust知識。實際上你幾乎可以在不安裝Rust的情況下學到所有你需要知道的東西，所以第1部非常長。最後是第二部。它要短得多，是關於電腦上的Rust。在這裡，你將學習到其他一切你需要知道的、只能在瀏覽器之外進行的事情。例如:處理檔案、接受使用者輸入、圖形和個人設定。希望在第一部結束時，你會喜歡Rust到想安裝它。如果你不喜歡，也沒問題--第一部教了你很多，你不會介意的。
 
 ## Rust Playground
 **[See this chapter on YouTube](https://youtu.be/-lYeJeQ11OI)**
