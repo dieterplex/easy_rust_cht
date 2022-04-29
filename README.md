@@ -151,20 +151,20 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
 本書有分兩部。第1部，你將在瀏覽器中就能學到儘可能多的Rust知識。實際上你幾乎可以在不安裝Rust的情況下學到所有你需要知道的東西，所以第1部非常長。最後是第二部。它要短得多，是關於電腦上的Rust。在這裡，你將學習到其他一切你需要知道的、只能在瀏覽器之外進行的事情。例如:處理檔案、接受使用者輸入、圖形和個人設定。希望在第一部結束時，你會喜歡Rust到想安裝它。如果你不喜歡，也沒問題--第一部教了你很多，你不會介意的。
 
 ## Rust Playground
-**[See this chapter on YouTube](https://youtu.be/-lYeJeQ11OI)**
+**[YouTube 上觀看本章內容](https://youtu.be/-lYeJeQ11OI)**
 
-Maybe you don't want to install Rust yet, and that's okay. You can go to [https://play.rust-lang.org/](https://play.rust-lang.org/) and start writing Rust without leaving your browser. You can write your code there and click Run to see the results. You can run most of the samples in this book inside the Playground in your browser. Only near the end you will see samples that go beyond what you can do in the Playground (like opening files).
+也許你還不想安裝Rust，這也沒關係。不用離開瀏覽器你可以去[https://play.rust-lang.org/](https://play.rust-lang.org/)，開始寫Rust。你可以在那裡寫下你的程式碼，然後點選 Run 來檢視結果。你可以在瀏覽器裡用Playground裡面執行本書中大多數的範例。只有在接近本書結尾的時候，才會看到無法在Playground操作的範例(比如開啟檔案)。
 
-Here are some tips when using the Rust Playground:
+以下是使用Rust Playground時的一些提示。
 
-- Run your code with Run
-- Change Debug to Release if you want your code to be faster. Debug: compiles faster, runs slower, contains debug information. Release: compiles slower, runs much faster, removes debug information.
-- Click on Share to get a url link. You can use that to share your code if you want help. After you click share, you can click on `Open a new thread in the Rust user forum` to ask people there for help right away.
-- Tools: Rustfmt will format your code nicely.
-- Tools: Clippy will give you extra information about how to make your code better.
-- Config: here you can change your theme to dark mode so you can work at night, and many other configurations.
+- 用 RUN 來執行你的程式碼
+- 如果你想讓你的程式碼更快，就把 DEBUG 改為 RELEASE 模式。 Debug: 編譯速度較快，執行速度較慢，包含除錯資訊。 Release: 編譯速度較慢，執行速度較快，移除除錯資訊。
+- 點選 SHARE ，得到當下程式碼的網址連結。如果你需要幫助，可以用它來分享你的程式碼。點選 SHARE 後，你可以點選 `Open a new thread in the Rust user forum` ，馬上向論壇那裡的人尋求幫助。
+- TOOLS: Rustfmt 會幫你的程式碼排版好。
+- TOOLS: Clippy 會給你如何讓程式碼更好的額外資訊。
+- CONFIG: 你可以在這裡把你的主題改成黑暗模式，方便在晚上工作，以及很多其他配置。
 
-If you want to install Rust, go here [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and follow the instructions. Usually you will use `rustup` to install and update Rust.
+如果你想安裝Rust，請到官方網站[安裝頁面](https://www.rust-lang.org/tools/install)，然後按照說明操作。通常你會使用`rustup`來安裝和更新 Rust。
 
 ## 🚧 and ⚠️
 
