@@ -26,9 +26,9 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
 
 我是一個生活在韓國的加拿大人，我在寫Easy Rust的同時，也在思考如何讓這裡的公司更容易開始使用它。我希望其他母語不是英語的國家也能使用它。
 
-## Writing Rust in Easy English
+## 簡單英語學 Rust
 
-*Rust in Easy English* was written from July to August 2020, and is over 400 pages long. You can contact me here or [on LinkedIn](https://www.linkedin.com/in/davemacleod) or [on Twitter](https://twitter.com/mithridates) if you have any questions. If you see anything wrong or have a pull request to make, go ahead. Over 20 people have already helped out by fixing typos and problems in the code, so you can too. I'm not the world's best Rust expert so I always like to hear new ideas or see where I can make the book better.
+*簡單英語學Rust* 寫於2020年7月至8月，長達400多頁。如果你有任何問題，可以在這裡或[在LinkedIn上](https://www.linkedin.com/in/davemacleod)或[在Twitter上](https://twitter.com/mithridates)聯絡我。如果你發現有什麼不對的地方，或者要提出pull request，去做吧。已經有超過20人幫助我們修復了程式碼中的錯別字和問題，所以你也可以。我不是世界上最好的Rust專家，所以我總是喜歡聽到新的想法，或者看看哪裡可以讓這本書變得更好。
 
 
 
