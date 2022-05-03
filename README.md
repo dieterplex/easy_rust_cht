@@ -40,8 +40,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [原始型別](#原始型別)
   - [型別推導](#型別推導)
     - [浮點數](#浮點數)
-  - [Printing 'hello, world!'](#printing-hello-world)
-    - [Declaring variables and code blocks](#declaring-variables-and-code-blocks)
+  - [列印 hello, world!](#列印-hello-world)
+    - [宣告變數和程式碼區塊](#宣告變數和程式碼區塊)
   - [Display and debug](#display-and-debug)
     - [Smallest and largest numbers](#smallest-and-largest-numbers)
   - [Mutability (changing)](#mutability-changing)
@@ -247,7 +247,7 @@ fn main() {
 
 最常用字元的對應數字少於 256，剛好可以放進 `u8` 裡。要記得，`u8` 是 0 加上到 255 的所有數字，總共 256 種。這意味著 Rust 能使用 `as` 關鍵字安全地將一個 `u8` **轉換型別(cast)** 為 `char`。("轉換 `u8` 為 `char`" 意味著 "假裝 `u8` 是`char`")
 
-透過 `as` 轉型很有用，因為 Rust 對型別非常嚴格。它總是必需知道是什麼型別，也不會讓你一起用不同的兩種型別，即使他們都是整數。舉例來說，不能這樣用：
+透過 `as` 轉型很有用，因為 Rust 對型別非常嚴格。它總是必需知道是什麼型別，也不會讓你一起用不同的兩種型別，即使它們都是整數。舉例來說，不能這樣用：
 
 ```rust
 fn main() { // main() 是 Rust 程式開始執行的地方。程式碼會放在 {} (大括號)裡
@@ -497,10 +497,10 @@ fn main() {
 }
 ```
 
-## Printing 'hello, world!'
-**See this chapter on YouTube: [Video 1](https://youtu.be/yYlPHRl2geQ), [Video 2](https://youtu.be/DTCSfBJJZb8)**
+## 列印 hello, world!
+**YouTube 上觀看本章內容: [影片 1](https://youtu.be/yYlPHRl2geQ), [影片 2](https://youtu.be/DTCSfBJJZb8)**
 
-When you start a new Rust program, it always has this code:
+當你啟動一個新的Rust程式時，它總是有這樣的程式碼。
 
 ```rust
 fn main() {
@@ -508,15 +508,15 @@ fn main() {
 }
 ```
 
-- `fn` means function,
-- `main` is the function that starts the program,
-- `()` means that we didn't give the function any variables to start.
+- `fn` 的意思是函式，
+- `main` 是啟動程式的函式。
+- `()` 表示我們沒有給函式任何變數來啟動。
 
-`{}` is called a **code block**. This is the space where code lives.
+`{}` 被稱為**程式碼區塊**。這是程式碼所在的空間。
 
-`println!` is a **macro** that prints to the console. A **macro** is like a function that writes code for you. Macros have a `!` after them. We will learn about making macros later. For now, remember that `!` means that it is a macro.
+`println!` 是一個列印訊息到控制台(console)的**巨集**，。一個**巨集**就像一個為你寫程式碼的函式。巨集名稱後面都有一個 `!`。我們以後會學習如何建立巨集。現在只要記住有 `!` 表示它是一個巨集。
 
-To learn about the `;`, we will create another function. First, in `main` we will print a number 8:
+為了學習 `;`，我們將建立另一個函式。首先，在 `main` 中，我們將印出數字 8。
 
 ```rust
 fn main() {
@@ -524,10 +524,10 @@ fn main() {
 }
 ```
 
-The `{}` in `println!` means "put the variable inside here". This prints `Hello, world number 8!`.
+`println!` 中的 `{}` 的意思是 "把變數放在這裡面"。這樣就會印出 `Hello, world number 8!`。
 
 
-We can put more in, just like we did before:
+我們可以像之前一樣，放更多的東西進去。
 
 ```rust
 fn main() {
@@ -535,9 +535,9 @@ fn main() {
 }
 ```
 
-This prints `Hello, worlds number 8 and 9!`.
+這將會印出 `Hello, worlds number 8 and 9!`。
 
-Now let's create the function.
+現在我們來建立函式。
 
 ```rust
 fn number() -> i32 {
@@ -549,12 +549,12 @@ fn main() {
 }
 ```
 
-This also prints `Hello, world number 8!`. When Rust looks at `number()` it sees a function. This function:
+這個程式也會印出 `Hello, world number 8!`。當 Rust 觀察到 `number()` 時，它看到一個函式。這個函式：
 
-- Does not take anything (because it has `()`)
-- Returns an `i32`. The `->` (called a "skinny arrow") shows what the function returns.
+- 沒有用到引數(因為它是 `()`)
+- 回傳一個 `i32`。`->`(稱為 "瘦箭")右邊顯示了函式回傳內容的型別
 
-Inside the function is just `8`. Because there is no `;`, this is the value it returns. If it had a `;`, it would not return anything (it would return a `()`). Rust will not compile this if it has a `;`, because the return is `i32` and `;` returns `()`, not `i32`:
+函式內部只有 `8`。因為行尾沒有 `;`，所以這就是它回傳的值。如果它有 `;`，它將不會回傳任何東西(意思是它會回傳 `()`)。如果它有 `;`，Rust 將無法編譯，因為回傳的是 `i32`，而 `;` 回傳 `()`，不是 `i32`：
 
 ```rust
 fn main() {
@@ -575,43 +575,43 @@ fn number() -> i32 {
   |      - help: consider removing this semicolon
 ```
 
-This means "you told me that `number()` returns an `i32`, but you added a `;` so it doesn't return anything". So the compiler suggests removing the semicolon.
+這意味著 "你告訴我 `number()` 回傳的是 `i32`，但你加了 `;`，它就沒回傳值了"。所以編譯器建議去掉分號。
 
-You can also write `return 8;` but in Rust it is normal to just remove the `;` to `return`.
+你也可以寫 `return 8;`，但在Rust中，正常情況下只需將`;`去掉即可`回傳`。
 
-When you want to give variables to a function, put them inside the `()`. You have to give them a name and write the type.
+當你想提供變數給函式時，把它們放在 `()` 裡。還必須給它們命名並寫上型別。
 
 ```rust
-fn multiply(number_one: i32, number_two: i32) { // Two i32s will enter the function. We will call them number_one and number_two.
+fn multiply(number_one: i32, number_two: i32) { // 兩個 i32 傳入函式。將它們取名為number_one和number_two。
     let result = number_one * number_two;
     println!("{} times {} is {}", number_one, number_two, result);
 }
 
 fn main() {
-    multiply(8, 9); // We can give the numbers directly
-    let some_number = 10; // Or we can declare two variables
+    multiply(8, 9); // 可以直接給數值
+    let some_number = 10; // 或者宣告兩個變數
     let some_other_number = 2;
-    multiply(some_number, some_other_number); // and put them in the function
+    multiply(some_number, some_other_number); // 把它們給函式當作引數
 }
 ```
 
-We can also return an `i32`. Just take out the semicolon at the end:
+我們也可以回傳 `i32`。只要把行尾的分號拿掉就可以了：
 
 ```rust
 fn multiply(number_one: i32, number_two: i32) -> i32 {
     let result = number_one * number_two;
     println!("{} times {} is {}", number_one, number_two, result);
-    result // this is the i32 that we return
+    result // 這是我們要回傳的 i32
 }
 
 fn main() {
-    let multiply_result = multiply(8, 9); // We used multiply() to print and to give the result to multiply_result
+    let multiply_result = multiply(8, 9); // 我們用multiply()印出結果並回傳給multiply_result
 }
 ```
 
-### Declaring variables and code blocks
+### 宣告變數和程式碼區塊
 
-Use `let` to declare a variable (declare a variable = tell Rust to make a variable).
+使用 `let` 宣告變數(宣告一個變數 = 告訴 Rust 建立一個變數)。
 
 ```rust
 fn main() {
@@ -620,50 +620,50 @@ fn main() {
 }
 ```
 
-Variables start and end inside a code block `{}`. In this example, `my_number` ends before we call `println!`, because it is inside its own code block.
+變數使用範圍的開始和結束都在程式碼區塊 `{}` 內。在這個例子中，`my_number` 在我們呼叫 `println!` 之前結束，因為它在自己的程式區碼塊裡面。
 
 ```rust
 fn main() {
     {
-        let my_number = 8; // my_number starts here
-                           // my_number ends here!
+        let my_number = 8; // my_number 在這裡開始
+                           // my_number 在這裡結束!
     }
 
-    println!("Hello, number {}", my_number); // ⚠️ there is no my_number and
-                                             // println!() can't find it
+    println!("Hello, number {}", my_number); // ⚠️ 沒有 my_number，而且
+                                             // println!() 也找不到它
 }
 ```
 
-You can use a code block to return a value:
+你可以用程式碼區塊來回傳一個值：
 
 ```rust
 fn main() {
     let my_number = {
     let second_number = 8;
-        second_number + 9 // No semicolon, so the code block returns 8 + 9.
-                          // It works just like a function
+        second_number + 9 // 沒分號，程式碼區塊回傳 returns 8 + 9。
+                          // 就像函式一樣運作
     };
 
     println!("My number is: {}", my_number);
 }
 ```
 
-If you add a semicolon inside the block, it will return `()` (nothing):
+如果在程式碼區塊內結束前加上分號，它將回傳 `()` (沒有值)：
 
 ```rust
 fn main() {
     let my_number = {
-    let second_number = 8; // declare second_number,
-        second_number + 9; // add 9 to second_number
-                           // but we didn't return it!
-                           // second_number dies now
+    let second_number = 8; // 宣告 second_number,
+        second_number + 9; // 加 9 到 second_number
+                           // 但沒回傳它!
+                           // second_number 現在就結束
     };
 
-    println!("My number is: {:?}", my_number); // my_number is ()
+    println!("My number is: {:?}", my_number); // my_number 會是 ()
 }
 ```
 
-So why did we write `{:?}` and not `{}`? We will talk about that now.
+那麼為什麼我們要寫 `{:?}` 而不是 `{}` 呢？我們現在就來談談這個問題。
 
 ## Display and debug
 **[See this chapter on YouTube](https://youtu.be/jd3pC248c0o)**
