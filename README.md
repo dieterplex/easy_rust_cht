@@ -42,8 +42,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [浮點數](#浮點數)
   - [列印 hello, world!](#列印-hello-world)
     - [宣告變數和程式碼區塊](#宣告變數和程式碼區塊)
-  - [Display and debug](#display-and-debug)
-    - [Smallest and largest numbers](#smallest-and-largest-numbers)
+  - [顯示和除錯](#顯示和除錯)
+    - [最小和最大的數](#最小和最大的數)
   - [Mutability (changing)](#mutability-changing)
     - [Shadowing](#shadowing)
   - [The stack, the heap, and pointers](#the-stack-the-heap-and-pointers)
@@ -665,12 +665,12 @@ fn main() {
 
 那麼為什麼我們要寫 `{:?}` 而不是 `{}` 呢？我們現在就來談談這個問題。
 
-## Display and debug
-**[See this chapter on YouTube](https://youtu.be/jd3pC248c0o)**
+## 顯示和除錯
+**[YouTube 上觀看本章內容](https://youtu.be/jd3pC248c0o)**
 
-Simple variables in Rust can be printed with `{}` inside `println!`. But some variables can't, and you need to **debug print**. Debug print is printing for the programmer, because it usually shows more information. Debug sometimes doesn't look pretty, because it has extra information to help you.
+Rust 中單純的變數可以在 `println!` 裡用 `{}`[^1] 來被印出。但是有些變數不能，你需要用 **除錯列印(debug print)**。除錯列印是給程式設計師用的列印方法，因為它通常會顯示更多的資訊。除錯(Debug)有時看起來並不漂亮，因為它有額外的資訊來幫助你。
 
-How do you know if you need `{:?}` and not `{}`? The compiler will tell you. For example:
+你怎麼知道你是否需要 `{:?}`[^2] 而不是 `{}`？編譯器會告訴你。比如說：
 
 ```rust
 fn main() {
@@ -679,7 +679,7 @@ fn main() {
 }
 ```
 
-When we run this, the compiler says:
+當我們執行這個程式時，編譯器會說：
 
 ```text
 error[E0277]: `()` doesn't implement `std::fmt::Display`
@@ -694,11 +694,7 @@ error[E0277]: `()` doesn't implement `std::fmt::Display`
   = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
 ```
 
-This is a lot of information. But the important part is: `you may be able to use {:?} (or {:#?} for pretty-print) instead`. This means that you can try `{:?}`, and also `{:#?}` `{:#?}` is called "pretty printing". It is like `{:?}` but prints with different formatting over more lines.
-
-So Display means printing with `{}`, and Debug means printing with `{:?}`.
-
-One more thing: you can also use `print!` without `ln` if you don't want a new line.
+這有相當多的資訊，但重要的部分是 `you may be able to use {:?} (or {:#?} for pretty-print) instead`。這意味著你可以試試 `{:?}`，也可以試試 `{:#?}`。`{:#?}` 叫做"漂亮列印"。它和 `{:?}` 一樣，但是用更多行和不同的格式印出內容。所以 Display 意思是用 `{}` 列印，Debug 則是用 `{:?}` 列印。還有一點：如果你不想要換行，你也可以使用 `print!` 而不需要有 `ln`。
 
 ```rust
 fn main() {
@@ -707,15 +703,19 @@ fn main() {
 }
 ```
 
-This prints `This will not print a new line so this will be on the same line`.
+這個將會印出 `This will not print a new line so this will be on the same line`。
 
-### Smallest and largest numbers
+[^1]: 譯註: 即顯示列印 (Display print)。
 
-If you want to see the smallest and biggest numbers, you can use MIN and MAX after the name of the type:
+[^2]: 譯註: 除錯列印的格式。
+
+### 最小和最大的數
+
+如果你想知道最小和最大的數字，你可以在型別名稱後使用 MIN 和 MAX：
 
 ```rust
 fn main() {
-    println!("The smallest i8 is {} and the biggest i8 is {}.", i8::MIN, i8::MAX); // hint: printing std::i8::MIN means "print MIN inside of the i8 section in the standard library"
+    println!("The smallest i8 is {} and the biggest i8 is {}.", i8::MIN, i8::MAX); // 提示: 印出 std::i8::MIN 表示 "列印在標準函式庫裡 i8 型別的 MIN 值"
     println!("The smallest u8 is {} and the biggest u8 is {}.", u8::MIN, u8::MAX);
     println!("The smallest i16 is {} and the biggest i16 is {}.", i16::MIN, i16::MAX);
     println!("The smallest u16 is {} and the biggest u16 is {}.", u16::MIN, u16::MAX);
@@ -729,7 +729,7 @@ fn main() {
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 The smallest i8 is -128 and the biggest i8 is 127.
