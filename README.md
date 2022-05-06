@@ -44,8 +44,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [宣告變數和程式碼區塊](#宣告變數和程式碼區塊)
   - [顯示和除錯](#顯示和除錯)
     - [最小和最大的數](#最小和最大的數)
-  - [Mutability (changing)](#mutability-changing)
-    - [Shadowing](#shadowing)
+  - [可變性](#可變性)
+    - [遮蔽](#遮蔽)
   - [The stack, the heap, and pointers](#the-stack-the-heap-and-pointers)
   - [More about printing](#more-about-printing)
   - [Strings](#strings)
@@ -744,12 +744,12 @@ The smallest i128 is -170141183460469231731687303715884105728 and the biggest i1
 The smallest u128 is 0 and the biggest u128 is 340282366920938463463374607431768211455.
 ```
 
-## Mutability (changing)
-**[See this chapter on YouTube](https://youtu.be/Nyyd6qn7dZY)**
+## 可變性
+**[YouTube 上觀看本章內容](https://youtu.be/Nyyd6qn7dZY)**
 
-When you declare a variable with `let`, it is immutable (cannot be changed).
+當你用 `let` 宣告變數時，它是不可變的(immutable，內容不可被變動)。
 
-This will not work:
+這個程式不能編譯：
 
 ```rust
 fn main() {
@@ -758,9 +758,9 @@ fn main() {
 }
 ```
 
-The compiler says: `error[E0384]: cannot assign twice to immutable variable my_number`. This is because variables are immutable if you only write `let`.
+編譯器說：`error[E0384]: cannot assign twice to immutable variable my_number`。這是因為如果你只寫 `let`，變數是不可變的。
 
-But sometimes you want to change your variable. To make a variable that you can change, add `mut` after `let`:
+但有時你想更改你的變數。要建立一個可以改變的變數，就要在 `let` 後面加上 `mut`。
 
 ```rust
 fn main() {
@@ -769,56 +769,56 @@ fn main() {
 }
 ```
 
-Now there is no problem.
+現在就沒問題了。
 
-However, you cannot change the type: even `mut` doesn't let you do that. This will not work:
+但是，你不能改變型別：即使加上 `mut` 也做不到。這樣將會無法編譯：
 
 ```rust
 fn main() {
-    let mut my_variable = 8; // it is now an i32. That can't be changed
+    let mut my_variable = 8; // 它現在是 i32. 型別不能被改變
     my_variable = "Hello, world!"; // ⚠️
 }
 ```
 
-You will see the same "expected" message from the compiler: `expected integer, found &str`. `&str` is a string type that we will learn soon.
+你會看到編譯器發出的同樣的"預期"訊息。`expected integer, found &str`。我們很快就會知道 `&str` 是一個字串型別。
 
-### Shadowing
-**[See this chapter on YouTube](https://youtu.be/InULHyRGw7g)**
+### 遮蔽
+**[YouTube 上觀看本章內容](https://youtu.be/InULHyRGw7g)**
 
-Shadowing means using `let` to declare a new variable with the same name as another variable. It looks like mutability, but it is completely different. Shadowing looks like this:
+遮蔽 (Shadowing) 是指使用 `let` 宣告與另一個變數同名的新變數。它看起來像可變性，但完全不同。遮蔽看起來像這樣：
 
 ```rust
 fn main() {
-    let my_number = 8; // This is an i32
-    println!("{}", my_number); // prints 8
-    let my_number = 9.2; // This is an f64 with the same name. But it's not the first my_number - it is completely different!
-    println!("{}", my_number) // Prints 9.2
+    let my_number = 8; // 這是 i32
+    println!("{}", my_number); // 印出 8
+    let my_number = 9.2; // 這是同名的 f64。 但它已經不是第一個 my_number──它完全不一樣!
+    println!("{}", my_number) // 印出 9.2
 }
 ```
 
-Here we say that we "shadowed" `my_number` with a new "let binding".
+這裡我們會說我們用一個新的 "let 繫結(binding)" 對 `my_number` 進行了"遮蔽"。
 
-So is the first `my_number` destroyed? No, but when we call `my_number` we now get `my_number` the `f64`. And because they are in the same scope block (the same `{}`), we can't see the first `my_number` anymore.
+那麼第一個 `my_number` 是否被銷毀了呢？沒有，但是當我們叫用 `my_number` 時，我們現在得到 `f64` 型別的 `my_number`。因為它們在同一個作用域區塊中(同一個 `{}`)，我們無法再看到第一個 `my_number` 了。
 
-But if they are in different blocks, we can see both. For example:
+但如果它們在不同的區塊中，我們可以同時看到兩者。例如：
 
 ```rust
 fn main() {
-    let my_number = 8; // This is an i32
-    println!("{}", my_number); // prints 8
+    let my_number = 8; // 這是 i32
+    println!("{}", my_number); // 印出 8
     {
-        let my_number = 9.2; // This is an f64. It is not my_number - it is completely different!
-        println!("{}", my_number) // Prints 9.2
-                                  // But the shadowed my_number only lives until here.
-                                  // The first my_number is still alive!
+        let my_number = 9.2; // 這是 f64。 它不是原先的 my_number──它完全不一樣!
+        println!("{}", my_number) // 印出 9.2
+                                  // 但是被遮蔽的 my_number 只活到這裡。
+                                  // 原來的 my_number 還活著！
     }
-    println!("{}", my_number); // prints 8
+    println!("{}", my_number); // 印出 8
 }
 ```
 
-So when you shadow a variable, you don't destroy it. You **block** it.
+因此，當你對一個變數遮蔽時，你不會銷毀它。你**阻擋**了它。
 
-So what is the advantage of shadowing? Shadowing is good when you need to change a variable a lot. Imagine that you want to do a lot of simple math with a variable:
+那麼遮蔽的好處是什麼呢？當你需要經常改變一個變數的時候，遮蔽很好用。想象你想用變數做很多簡單數學運算時：
 
 ```rust
 fn times_two(number: i32) -> i32 {
@@ -828,16 +828,16 @@ fn times_two(number: i32) -> i32 {
 fn main() {
     let final_number = {
         let y = 10;
-        let x = 9; // x starts at 9
-        let x = times_two(x); // shadow with new x: 18
-        let x = x + y; // shadow with new x: 28
-        x // return x: final_number is now the value of x
+        let x = 9; // x 從 9 開始
+        let x = times_two(x); // 遮蔽後新的 x: 18
+        let x = x + y; // 遮蔽後新的 x: 28
+        x // 回傳 x: final_number 現在是 x 的值
     };
     println!("The number is now: {}", final_number)
 }
 ```
 
-Without shadowing you would have to think of different names, even though you don't care about x:
+如果沒有遮蔽，你將要思考用什麼不同的名稱，即使你並不關心變數 x：
 
 ```rust
 fn times_two(number: i32) -> i32 {
@@ -845,19 +845,19 @@ fn times_two(number: i32) -> i32 {
 }
 
 fn main() {
-    // Pretending we are using Rust without shadowing
+    // Pretending we are using Rust without 遮蔽
     let final_number = {
         let y = 10;
-        let x = 9; // x starts at 9
-        let x_twice = times_two(x); // second name for x
-        let x_twice_and_y = x_twice + y; // third name for x!
-        x_twice_and_y // too bad we didn't have shadowing - we could have just used x
+        let x = 9; // x 從 9 開始
+        let x_twice = times_two(x); // x 的第二個名字
+        let x_twice_and_y = x_twice + y; // x 的第三個名字!
+        x_twice_and_y // 真糟糕沒有遮蔽可用──我們只要用 x 就好
     };
     println!("The number is now: {}", final_number)
 }
 ```
 
-In general, you see shadowing in Rust in this case. It happens where you want to quickly take variable, do something to it, and do something else again. And you usually use it for quick variables that you don't care too much about.
+一般來說，你在 Rust 中看到的遮蔽就是這種情況。它發生在你想快速得對變數做一些事情，然後再做其他事情的地方。而你通常將它用在那些你不太關心的臨時變數上。
 
 ## The stack, the heap, and pointers
 
