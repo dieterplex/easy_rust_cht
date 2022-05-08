@@ -46,7 +46,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [最小和最大的數](#最小和最大的數)
   - [可變性](#可變性)
     - [遮蔽](#遮蔽)
-  - [The stack, the heap, and pointers](#the-stack-the-heap-and-pointers)
+  - [堆疊、堆積和指標](#堆疊堆積和指標)
   - [More about printing](#more-about-printing)
   - [Strings](#strings)
   - [const and static](#const-and-static)
@@ -859,17 +859,17 @@ fn main() {
 
 一般來說，你在 Rust 中看到的遮蔽就是這種情況。它發生在你想快速得對變數做一些事情，然後再做其他事情的地方。而你通常將它用在那些你不太關心的臨時變數上。
 
-## The stack, the heap, and pointers
+## 堆疊、堆積和指標
 
-The stack, the heap, and pointers are very important in Rust.
+堆疊(stack)、堆積(heap)和指標(pointer)在 Rust 中非常重要。
 
-The stack and the heap are two places to keep memory in computers. The important differences are:
+堆疊和堆積是電腦中保存記憶體的兩個地方。主要的區別在:
 
-- The stack is very fast, but the heap is not so fast. It's not super slow either, but the stack is always faster. But you can't just use the stack all the time, because:
-- Rust needs to know the size of a variable at compile time. So simple variables like `i32` go on the stack, because we know their exact size. You always know that an `i32` is going to be 4 bytes, because 32 bits = 4 bytes. So `i32` can always go on the stack.
-- But some types don't know the size at compile time. But the stack needs to know the exact size. So what do you do? First you put the data in the heap, because the heap can have any size of data. And then to find it a pointer goes on the stack. This is fine because we always know the size of a pointer. So then the computer first goes to the stack, reads the pointer, and follows it to the heap where the data is.
+- 堆疊的速度非常快，但堆積就不那麼快了。它也不是超慢，但堆疊總是更快。但是你不能一直使用堆疊，因為：
+- Rust 在編譯時必需知道變數的大小。所以像 `i32` 的簡單變數就放在堆疊上，因為我們知道它們的確切大小。你總是知道 `i32` 要 4 位元組，因為 32 位元 = 4 位元組。所以 `i32` 總是可以放在堆疊上。
+- 但有些型別在編譯時不知道大小。但是堆疊需要知道確切的大小。那麼你該怎麼做呢？首先你把資料放在堆積中，因為堆積中可以有任何大小的資料。然後為了找到它，一個指標就會放上堆疊。這樣沒問題，因為我們總是知道指標的大小。所以，電腦就會先去堆疊讀取指標，然後跟著指標到資料所在的堆積。
 
-Pointers sound complicated, but they are easy. Pointers are like a table of contents in a book. Imagine this book:
+指標聽起來很複雜，但它們很容易。指標就像一本書的目錄。想象一下這本書：
 
 ```text
 MY BOOK
@@ -884,29 +884,29 @@ Chapter 4: My family            30
 Chapter 5: Future plans         43
 ```
 
-So this is like five pointers. You can read them and find the information they are talking about. Where is the chapter "My life"? It's on page 1 (it *points* to page 1). Where is the chapter "My job?" It's on page 23.
+所以這就像有五個指標。你可以閱讀它們，找到它們所說的資訊。"My life" 這一章在哪裡？它在第 1 頁(它 *指向* 第 1 頁)。"My job" 這一章在哪裡？它在第23頁。
 
-The pointer you usually see in Rust is called a **reference**. This is the important part to know: a reference points to the memory of another value. A reference means you *borrow* the value, but you don't own it. It's the same as our book: the table of contents doesn't own the information. It's the chapters that own the information. In Rust, references have a `&` in front of them. So:
+通常在 Rust 中看到的指標稱做 **參考**。重點在於知道：一個參考指向另一個值的記憶體位置。參考意味著你 *借* 了這個值，但你並不擁有它。這和我們的書一樣：目錄並不擁有資訊。章節裡才有資訊。在 Rust 中，參考的前面有一個 `&`。所以：
 
-- `let my_variable = 8` makes a regular variable, but
-- `let my_reference = &my_variable` makes a reference.
+- `let my_variable = 8` 是一個正規的變數，但是：
+- `let my_reference = &my_variable` 是一個變數參考。
 
-You read `my_reference = &my_variable` like this: "my_reference is a reference to my_variable". Or: "my_reference refers to my_variable".
+你把 `my_reference = &my_variable` 讀成這樣："my_reference 是對my_variable 的參考" 或者："my_reference 參照到 my_variable"。
 
-This means that `my_reference` is only looking at the data of `my_variable`. `my_variable` still owns its data.
+這意味著 `my_reference` 只看 `my_variable` 的資料。`my_variable` 仍然擁有它的資料。
 
-You can also have a reference to a reference, or any number of references.
+你也可以有一個參考的參考，或者任何數量的參考。
 
 ```rust
 fn main() {
-    let my_number = 15; // This is an i32
-    let single_reference = &my_number; //  This is a &i32
-    let double_reference = &single_reference; // This is a &&i32
-    let five_references = &&&&&my_number; // This is a &&&&&i32
+    let my_number = 15; // 這是 i32
+    let single_reference = &my_number; //  這是 &i32
+    let double_reference = &single_reference; // 這是 &&i32
+    let five_references = &&&&&my_number; // 這是 &&&&&i32
 }
 ```
 
-These are all different types, just in the same way that "a friend of a friend" is different from "a friend".
+這些都是不同的型別，就像 "朋友的朋友"和 "朋友"不同一樣。
 
 ## More about printing
 
