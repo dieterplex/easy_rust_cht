@@ -47,7 +47,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [可變性](#可變性)
     - [遮蔽](#遮蔽)
   - [堆疊、堆積和指標](#堆疊堆積和指標)
-  - [More about printing](#more-about-printing)
+  - [更多關於列印](#更多關於列印)
   - [Strings](#strings)
   - [const and static](#const-and-static)
   - [More on references](#more-on-references)
@@ -908,32 +908,32 @@ fn main() {
 
 這些都是不同的型別，就像 "朋友的朋友"和 "朋友"不同一樣。
 
-## More about printing
+## 更多關於列印
 
-In Rust you can print things in almost any way you want. Here are some more things to know about printing.
+在 Rust 中，你幾乎可以用任何你想要的方式列印東西。這裡可以知道更多關於列印的事情。
 
-Adding `\n` will make a new line, and `\t` will make a tab:
+加入 `\n` 將會產生一個新行(newline)，而 `\t` 將會產生定位字元(tab)：
 
 ```rust
 fn main() {
-    // Note: this is print!, not println!
+    // Note: 這是 print!, 不是 println!
     print!("\t Start with a tab\nand move to a new line");
 }
 ```
 
-This prints:
+印出:
 
 ```text
          Start with a tab
 and move to a new line
 ```
 
-Inside `""` you can write over many lines with no problem, but be careful with the spacing:
+`""` 裡面可以寫上許多行都沒有問題，但是要注意間距：
 
 ```rust
 fn main() {
-    // Note: After the first line you have to start on the far left.
-    // If you write directly under println!, it will add the spaces
+    // Note: 第一行後你要從最左邊開始。
+    // 如果你直接寫在 println! 下面，它會加入開頭的空白
     println!("Inside quotes
 you can write over
 many lines
@@ -945,7 +945,7 @@ and it will print just fine.");
 }
 ```
 
-This prints:
+印出:
 
 ```text
 Inside quotes
@@ -957,7 +957,7 @@ If you forget to write
     will be added when you print.
 ```
 
-If you want to print characters like `\n` (called "escape characters"), you can add an extra `\`:
+如果你想印出 `\n` 這樣的字元(稱為"跳脫字元")，你可以多加一個額外的 `\`。
 
 ```rust
 fn main() {
@@ -965,46 +965,46 @@ fn main() {
 }
 ```
 
-This prints:
+印出:
 
 ```text
 Here are two escape characters: \n and \t
 ```
 
-Sometimes you have too many `"` and escape characters, and want Rust to ignore everything. To do this, you can add `r#` to the beginning and `#` to the end.
+有時你有太多的 `"` 和跳脫字元，並希望 Rust 忽略所有要處理的東西。要做到這件事，你可以在開頭加上 `r#`，在結尾加上 `#`。
 
 ```rust
 fn main() {
-    println!("He said, \"You can find the file at c:\\files\\my_documents\\file.txt.\" Then I found the file."); // We used \ five times here
+    println!("He said, \"You can find the file at c:\\files\\my_documents\\file.txt.\" Then I found the file."); // 這裡用了 \ 五次
     println!(r#"He said, "You can find the file at c:\files\my_documents\file.txt." Then I found the file."#)
 }
 ```
 
-This prints the same thing, but using `r#` makes it easier for humans to read.
+這會印出一樣的東西，但是用 `r#` 使人更容易閱讀。
 
 ```text
 He said, "You can find the file at c:\files\my_documents\file.txt." Then I found the file.
 He said, "You can find the file at c:\files\my_documents\file.txt." Then I found the file.
 ```
 
-If you need to print with a `#` inside, then you can start with `r##` and end with `##`. And if you need more than one, you can add one more # on each side.
+如果你需要在內容裡面印出 `#`，那麼你可以用 `r##` 開頭，用 `##` 結尾。如果你要印超過一個 `#`，兩邊要再各多加一個 #。
 
-Here are four examples:
+這有四個範例：
 
 ```rust
 fn main() {
 
-    let my_string = "'Ice to see you,' he said."; // single quotes
-    let quote_string = r#""Ice to see you," he said."#; // double quotes
-    let hashtag_string = r##"The hashtag #IceToSeeYou had become very popular."##; // Has one # so we need at least ##
-    let many_hashtags = r####""You don't have to type ### to use a hashtag. You can just use #.""####; // Has three ### so we need at least ####
+    let my_string = "'Ice to see you,' he said."; // 單引號
+    let quote_string = r#""Ice to see you," he said."#; // 雙引號
+    let hashtag_string = r##"The hashtag #IceToSeeYou had become very popular."##; // 一個 # 所以我們至少要用 ##
+    let many_hashtags = r####""You don't have to type ### to use a hashtag. You can just use #.""####; // 有三個 ### 所以我們至少要用 ####
 
     println!("{}\n{}\n{}\n{}\n", my_string, quote_string, hashtag_string, many_hashtags);
 
 }
 ```
 
-This will print:
+會印出:
 
 ```text
 'Ice to see you,' he said.
@@ -1013,18 +1013,18 @@ The hashtag #IceToSeeYou had become very popular.
 "You don't have to type ### to use a hashtag. You can just use #."
 ```
 
-`r#` has another use: with it you can use a keyword (words like `let`, `fn`, etc.) as a variable name.
+`r#` 還有另一個用途：你能用它來把關鍵字(如 `let`、`fn` 等)當作變數名稱。
 
 ```rust
 fn main() {
-    let r#let = 6; // The variable's name is let
-    let mut r#mut = 10; // This variable's name is mut
+    let r#let = 6; // 變數名是 let
+    let mut r#mut = 10; // 變數名是 mut
 }
 ```
 
-`r#` has this function because older versions of Rust had fewer keywords than Rust now. So with `r#` you can avoid mistakes with variable names that were not keywords before.
+`r#` 之所以有這個功能，是因為舊版的 Rust 關鍵字比現在的少。所以有了 `r#` 以前不是關鍵字的變數名就能避免出錯。
 
-Or maybe for some reason you *really* need a function to have a name like `return`. Then you can write this:
+又或者因為某些原因，你 *確實* 需要一個名字像是 `return` 的函式。那麼你可以這樣寫：
 
 ```rust
 fn r#return() -> u8 {
@@ -1038,24 +1038,24 @@ fn main() {
 }
 ```
 
-This prints:
+印出:
 
 ```text
 Here is your number.
 8
 ```
 
-So you probably won't need it, but if you really need to use a keyword for a variable then you can use `r#`.
+所以你大概不會需要它，但是如果你真的需要用關鍵字當變數，那就用 `r#`。
 
 
 
-If you want to print the bytes of a `&str` or a `char`, you can just write `b` before the string. This works for all ASCII characters. These are all the ASCII characters:
+如果你想印出 `&str` 或 `char` 的位元組，你可以在字串前寫上 `b` 就可以了。這適用於所有 ASCII 字元。以下這些是所有的 ASCII 字元：
 
 ```text
 ☺☻♥♦♣♠♫☼►◄↕‼¶§▬↨↑↓→∟↔▲▼123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 ```
 
-So when you print this:
+所以，當你印出這個程式：
 
 ```rust
 fn main() {
@@ -1063,16 +1063,16 @@ fn main() {
 }
 ```
 
-Here is the result:
+結果是這樣：
 
 ```text
 [84, 104, 105, 115, 32, 119, 105, 108, 108, 32, 108, 111, 111, 107, 32, 108, 105, 107, 101, 32, 110, 117, 109, 98, 101, 114, 115]
 ```
 
-For a `char` this is called a *byte*, and for a `&str` it's called a *byte string*.
+對 `char` 來說，這叫做 *位元組*，對 `&str` 來說，這叫做 *位元組字串*。
 
 
-You can also put `b` and `r` together if you need to:
+如果有需要，你也可以把 `b` 和 `r` 放在一起：
 
 ```rust
 fn main() {
@@ -1080,28 +1080,28 @@ fn main() {
 }
 ```
 
-That will print `[73, 32, 108, 105, 107, 101, 32, 116, 111, 32, 119, 114, 105, 116, 101, 32, 34, 35, 34, 46]`.
+它會印出 `[73, 32, 108, 105, 107, 101, 32, 116, 111, 32, 119, 114, 105, 116, 101, 32, 34, 35, 34, 46]`。
 
 
 
-There is also a Unicode escape that lets you print any Unicode character inside a string: `\u{}`. A hexadecimal number goes inside the `{}` to print it. Here is a short example of how to get the Unicode number, and how to print it again.
+還有一個 Unicode 轉義(escape)，可以讓你在字串中印出任何 Unicode 字元：`\u{}`。`{}` 裡面要有一個可以列印的十六進位制數字。這個是說明如何獲得 Unicode 數字及如何再把它印出來的簡短例子。
 
 ```rust
 fn main() {
-    println!("{:X}", '행' as u32); // Cast char as u32 to get the hexadecimal value
+    println!("{:X}", '행' as u32); // char 轉型 u32 來取得十六進位值
     println!("{:X}", 'H' as u32);
     println!("{:X}", '居' as u32);
     println!("{:X}", 'い' as u32);
 
-    println!("\u{D589}, \u{48}, \u{5C45}, \u{3044}"); // Try printing them with unicode escape \u
+    println!("\u{D589}, \u{48}, \u{5C45}, \u{3044}"); // 試著以 unicode 轉義 \u 印出它們
 }
 ```
 
 
 
-We know that `println!` can print with `{}` (for Display) and `{:?}` (for Debug), plus `{:#?}` for pretty printing. But there are many other ways to print.
+我們知道 `println!` 可以用 `{}`(用於顯示) 或 `{:?}`(用於除錯) 來列印，再加上 `{:#?}` 可以進行漂亮列印。但是還有許多其他列印方式。
 
-For example, if you have a reference, you can use `{:p}` to print the *pointer address*. Pointer address means the location in your computer's memory.
+例如，如果你有一個變數參考，你可以用 `{:p}` 來印出 *指標地址*。指標地址指的是電腦記憶體中的位置。
 
 ```rust
 fn main() {
@@ -1111,9 +1111,9 @@ fn main() {
 }
 ```
 
-This prints `0xe2bc0ffcfc` or some other address. It might be different every time, depending on where your computer stores it.
+這會印出 `0xe2bc0ffcfc` 或者其它地址。它可能每次都不一樣，這取決於你的電腦在哪裡儲存它。
 
-Or you can print binary, hexadecimal and octal:
+或者你可以列印二進位、十六進位和八進位的值：
 
 ```rust
 fn main() {
@@ -1122,9 +1122,9 @@ fn main() {
 }
 ```
 
-This prints `Binary: 1000101011, hexadecimal: 22b, octal: 1053`.
+印出了 `Binary: 1000101011, hexadecimal: 22b, octal: 1053`。
 
-Or you can add numbers to change the order. The first variable will be in index 0, the next in index 1, and so on.
+或者你可以加上數字來改變順序。第一個變數將在索引0 中，下一個在索引1 中，以此類推。
 
 ```rust
 fn main() {
@@ -1135,10 +1135,10 @@ fn main() {
 }
 ```
 
-`father_name` is in position 0, `son_name` is in position 1, and `family_name` is in position 2. So it prints `This is Adrian Fahrenheit Țepeș, son of Vlad Țepeș`.
+`father_name` 在位置0，`son_name` 在位置1，`family_name` 在位置2。所以它印出的是 `This is Adrian Fahrenheit Țepeș, son of Vlad Țepeș`。
 
 
-Maybe you have a very complex string to print with too many variables inside the `{}` curly brackets. Or maybe you need to print a variable more than one time. Then it can help to add names to the `{}`:
+也許你有一個非常複雜的字串要列印，有太多的變數要放在 `{}` 括號內。或者你需要印同一個變數不止一次。那麼在 `{}` 裡加上變數名就幫得上忙：
 
 ```rust
 fn main() {
@@ -1153,7 +1153,7 @@ but {city3} is not in {country}.",
 }
 ```
 
-That will print:
+這樣會印出：
 
 ```text
 Seoul is in Korea and Busan is also in Korea,
@@ -1161,20 +1161,20 @@ but Tokyo is not in Korea.
 ```
 
 
-Very complex printing is also possible in Rust if you want to use it. Here is how to do it:
+在Rust中也可以進行非常複雜的列印，如果你想的話。這裡看到它是如何做到的：
 
 {variable:padding alignment minimum.maximum}
 
-To understand this, look at the
+要理解這個語法，看以下規則
 
-1) Do you want a variable name? Write that first, like when we wrote {country} above.
-(Then add a `:` after it if you want to do more things)
-2) Do you want a padding character? For example, 55 with three "padding zeros" looks like 00055.
-3) What alignment (left / middle / right) for the padding?
-4) Do you want a minimum length? (just write a number)
-5) Do you want a maximum length? (write a number with a `.` in front)
+1) 你想要有變數名嗎？先寫出來，就像我們上面寫 {country} 一樣。
+(如果你想做更多事，就在後面加一個 `:`)
+2) 你想要用填充字元嗎？例如，55 加上三個 "填充零" 就像 00055。
+3) 填充的對齊方式(左/中/右)？
+4) 你想要有最小長度嗎？(寫數字就行)
+5) 你想要有最大長度嗎？(寫數字，前面有個`.`)
 
-For example, if I want to write "a" with five ㅎ characters on the left and five ㅎ characters on the right:
+例如，我想寫 "a"，在它左邊有五個 ㅎ，在它右邊有五個 ㅎ：
 
 ```rust
 fn main() {
@@ -1183,28 +1183,28 @@ fn main() {
 }
 ```
 
-This prints `ㅎㅎㅎㅎㅎaㅎㅎㅎㅎㅎ`. Let's look at 1) to 5) for this to understand how the compiler reads it.
+這印出來是 `ㅎㅎㅎㅎㅎaㅎㅎㅎㅎㅎ`。我們看看 1) 到 5) 怎麼解釋這個情況，就能明白編譯器是怎麼解讀的：
 
-- Do you want a variable name? `{:ㅎ^11}` There is no variable name. There is nothing before `:`.
-- Do you want a padding character? `{:ㅎ^11}` Yes. ㅎ comes after the `:` and has a `^`. `<` means padding with the character on the left, `>` means on the right, and `^` means in the middle.
-- Do you want a minimum length? `{:ㅎ^11}` Yes: there is an 11 after.
-- Do you want a maximum length? `{:ㅎ^11}` No: there is no number with a `.` before.
+- 你要不要變數名？`{:ㅎ^11}` 沒有變數名。`:` 之前沒有任何內容。
+- 你需要填充字元嗎？ `{:ㅎ^11}` 是。ㅎ 在 `:` 後面，還有一個 `^`。`<` 表示變數在填充字元左邊，`>` 表示在填充字元右邊，`^` 表示在填充字元中間。
+- 要不要設定最小長度？`{:ㅎ^11}` 是：後面有一個 11。
+- 要不要設定最大長度？`{:ㅎ^11}` 不是：前面沒有`.`的數字。
 
-Here is an example of many types of formatting.
+下面是許多種型別格式化的例子:
 
 ```rust
 fn main() {
     let title = "TODAY'S NEWS";
-    println!("{:-^30}", title); // no variable name, pad with -, put in centre, 30 characters long
+    println!("{:-^30}", title); // 沒變數名, 用-填充, 放中間, 30個字元長
     let bar = "|";
-    println!("{: <15}{: >15}", bar, bar); // no variable name, pad with space, 15 characters each, one to the left, one to the right
+    println!("{: <15}{: >15}", bar, bar); // 沒變數名, 用空白填充, 各是15個字元長, 一左一右
     let a = "SEOUL";
     let b = "TOKYO";
-    println!("{city1:-<15}{city2:->15}", city1 = a, city2 = b); // variable names city1 and city2, pad with -, one to the left, one to the right
+    println!("{city1:-<15}{city2:->15}", city1 = a, city2 = b); // 變數city1和city2, 用-填充, 一左一右
 }
 ```
 
-It prints:
+印出：
 
 ```text
 ---------TODAY'S NEWS---------
