@@ -48,7 +48,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [遮蔽](#遮蔽)
   - [堆疊、堆積和指標](#堆疊堆積和指標)
   - [更多關於列印](#更多關於列印)
-  - [Strings](#strings)
+  - [字串](#字串)
   - [const and static](#const-and-static)
   - [More on references](#more-on-references)
   - [Mutable references](#mutable-references)
@@ -1212,28 +1212,28 @@ fn main() {
 SEOUL--------------------TOKYO
 ```
 
-## Strings
-**[See this chapter on YouTube](https://youtu.be/pSyaGzGg26o)**
+## 字串
+**[YouTube 上觀看本章內容](https://youtu.be/pSyaGzGg26o)**
 
-Rust has two main types of strings: `String` and `&str`. What is the difference?
+Rust 的字串主要型別有兩類：`String` 和 `&str`。有什麼差別呢？
 
-- `&str` is a simple string. When you write `let my_variable = "Hello, world!"`, you create a `&str`. A `&str` is very fast.
-- `String` is a more complicated string. It is a bit slower, but it has more functions. A `String` is a pointer, with data on the heap.
+- `&str` 是種簡單的字串。當你寫 `let my_variable = "Hello, world!"` 時，你建立的是一個 `&str`。`&str` 建立非常快。
+- `String` 是比較復雜的字串。它比較慢一點，但它有更多的功能。`String` 是一個指標，資料在堆積上。
 
-Also note that `&str` has the `&` in front of it because you need a reference to use a `str`. That's because of the reason we saw above: the stack needs to know the size. So we give it a `&` that it knows the size of, and then it is happy. Also, because you use a `&` to interact with a `str`, you don't own it. But a `String` is an *owned* type. We will soon learn why that is important to know.
+另外注意，`&str` 前面有 `&`，因為你需要一個參考來使用 `str`。這是因為我們先前看到的原因：堆疊需要知道資料大小。所以我們給它一個它知道大小的 `&`，然後它就滿意了。另外，因為你是用 `&` 去和 `str` 互動，你並不擁有它。但是 `String` 是一個 *擁有所有權* 的型別。我們很快就會知道為什麼這一點很重要。
 
-Both `&str` and `String` are UTF-8. For example, you can write:
+`&str` 和`String` 都是UTF-8。例如，你可以寫：
 
 ```rust
 fn main() {
-    let name = "서태지"; // This is a Korean name. No problem, because a &str is UTF-8.
-    let other_name = String::from("Adrian Fahrenheit Țepeș"); // Ț and ș are no problem in UTF-8.
+    let name = "서태지"; // 這是韓國名字。沒問題，因為 &str 是 UTF-8。
+    let other_name = String::from("Adrian Fahrenheit Țepeș"); // UTF-8 的 Ț 和 ș 沒問題。
 }
 ```
 
-You can see in `String::from("Adrian Fahrenheit Țepeș")` that it is easy to make a `String` from a `&str`. The two types are very closely linked together, even though they are different.
+你可以在 `String::from("Adrian Fahrenheit Țepeș")` 中看到，從 `&str` 中建立 `String` 很容易。這兩種型別雖然不同，但彼此聯繫非常緊密。
 
-You can even write emojis, thanks to UTF-8.
+你甚至可以寫表情符號，這要感謝 UTF-8。
 
 ```rust
 fn main() {
@@ -1242,24 +1242,24 @@ fn main() {
 }
 ```
 
-On your computer that will print `My name is actually 😂` unless your command line can't print it. Then it will show `My name is actually �`. But Rust has no problem with emojis or any other Unicode.
+在你的電腦上，會印出 `My name is actually 😂`，除非你的命令列印不出(Unicode字元)。那麼它會顯示 `My name is actually �`。但 Rust 對 emojis 或其他 Unicode (處理上)沒有問題。
 
-Let's look at the reason for using a `&` for `str`s again to make sure we understand.
+我們再來看看 `str` 使用 `&` 的原因，以確保我們有理解。
 
-- `str` is a dynamically sized type (dynamically sized = the size can be different). For example, the names "서태지" and "Adrian Fahrenheit Țepeș" are not the same size:
+- `str` 是一個動態大小(dynamically sized)的型別(動態大小 = 大小可以不同)。比如 "서태지" 和 "Adrian Fahrenheit Țepeș" 這兩個名字的大小是不一樣的：
 
 ```rust
 fn main() {
 
-    println!("A String is always {:?} bytes. It is Sized.", std::mem::size_of::<String>()); // std::mem::size_of::<Type>() gives you the size in bytes of a type
+    println!("A String is always {:?} bytes. It is Sized.", std::mem::size_of::<String>()); // std::mem::size_of::<Type>() 給你型別的位元組單位大小
     println!("And an i8 is always {:?} bytes. It is Sized.", std::mem::size_of::<i8>());
     println!("And an f64 is always {:?} bytes. It is Sized.", std::mem::size_of::<f64>());
-    println!("But a &str? It can be anything. '서태지' is {:?} bytes. It is not Sized.", std::mem::size_of_val("서태지")); // std::mem::size_of_val() gives you the size in bytes of a variable
+    println!("But a &str? It can be anything. '서태지' is {:?} bytes. It is not Sized.", std::mem::size_of_val("서태지")); // std::mem::size_of_val() 給你變數的位元組單位大小
     println!("And 'Adrian Fahrenheit Țepeș' is {:?} bytes. It is not Sized.", std::mem::size_of_val("Adrian Fahrenheit Țepeș"));
 }
 ```
 
-This prints:
+列出:
 
 ```text
 A String is always 24 bytes. It is Sized.
@@ -1269,15 +1269,15 @@ But a &str? It can be anything. '서태지' is 9 bytes. It is not Sized.
 And 'Adrian Fahrenheit Țepeș' is 25 bytes. It is not Sized.
 ```
 
-That is why we need a &, because `&` makes a pointer, and Rust knows the size of the pointer. So the pointer goes on the stack. If we wrote `str`, Rust wouldn't know what to do because it doesn't know the size.
+這就是為什麼我們需要一個 &，因為 `&` 建立一個指標，而 Rust 知道指標的大小。所以指標會放在堆疊中。如果我們寫的是 `str`，Rust 因為不知道大小就不曉得該怎麼做了。
 
 
 
-There are many ways to make a `String`. Here are some:
+有很多方法可以建立 `String`。這裡是其中一些：
 
-- `String::from("This is the string text");` This is a method for String that takes text and creates a String.
-- `"This is the string text".to_string()`. This is a method for &str that makes it a String.
-- The `format!` macro. This is like `println!` except it creates a String instead of printing. So you can do this:
+- `String::from("This is the string text");` 這是 String 型別用文字建立 String 的方法。
+- `"This is the string text".to_string()`。 這是 &str 型別用來做出 String 的方法。
+- `format!` 巨集。 像是 `println!`，只不過它是建立 String，而不是列印。所以你可以這樣做：
 
 ```rust
 fn main() {
@@ -1292,9 +1292,9 @@ fn main() {
 }
 ```
 
-Now we have a String named *together*, but did not print it yet.
+現在我們有了名為 *together* 的 String，但還沒有印出來。
 
-One other way to make a String is called `.into()` but it is a bit different because `.into()` isn't just for making a `String`. Some types can easily convert to and from another type using `From` and `.into()`. And if you have `From`, then you also have `.into()`. `From` is clearer because you already know the types: you know that `String::from("Some str")` is a `String` from a `&str`. But with `.into()`, sometimes the compiler doesn't know:
+還有一種建立 String 的方法叫做 `.into()`，但它有點不同，因為 `.into()` 並不只是用來建立 `String`。有些型別可以很容易地使用 `From` 和 `.into()` 來回轉換為另一種型別。而如果你有 `From`，那麼你也有 `.into()`。`From` 更加清晰，因為你已經知道了型別：你知道 `String::from("Some str")` 是來自 `&str` 的 `String`。但是對於 `.into()`，有時候編譯器並不知道：
 
 ```rust
 fn main() {
@@ -1302,7 +1302,7 @@ fn main() {
 }
 ```
 
-Rust doesn't know what type you want, because many types can be made from a `&str`. It says, "I can make a &str into a lot of things. Which one do you want?"
+Rust 不知道你要的是什麼型別，因為很多型別都可以由 `&str` 來組成。它說："我可以把 &str 變成很多東西。你想要哪一種？"
 
 ```text
 error[E0282]: type annotations needed
@@ -1312,7 +1312,7 @@ error[E0282]: type annotations needed
   |         ^^^^^^^^^ consider giving `my_string` a type
 ```
 
-So you can do this:
+所以你可以這樣做：
 
 ```rust
 fn main() {
@@ -1320,7 +1320,7 @@ fn main() {
 }
 ```
 
-And now you get a String.
+現在你得到 String 了。
 
 ## const and static
 **[See this chapter on YouTube](https://youtu.be/Ky3HqkWUcI0)**
