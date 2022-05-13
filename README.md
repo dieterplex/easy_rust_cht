@@ -49,7 +49,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [堆疊、堆積和指標](#堆疊堆積和指標)
   - [更多關於列印](#更多關於列印)
   - [字串](#字串)
-  - [const and static](#const-and-static)
+  - [const 和 static](#const-和-static)
   - [More on references](#more-on-references)
   - [Mutable references](#mutable-references)
     - [Shadowing again](#shadowing-again)
@@ -1322,19 +1322,19 @@ fn main() {
 
 現在你得到 String 了。
 
-## const and static
-**[See this chapter on YouTube](https://youtu.be/Ky3HqkWUcI0)**
+## const 和 static
+**[YouTube 上觀看本章內容](https://youtu.be/Ky3HqkWUcI0)**
 
-There are two other ways to declare values, not just with `let`. These are `const` and `static`. Also, Rust won't use type inference: you need to write the type for them. These are for values that don't change (`const` means constant). The difference is that:
+有兩種宣告值的方法，不僅僅是用 `let`。它們是 `const` 和 `static`。另外，Rust 不會使用型別推理：你需要為它們編寫型別。這些都是用於不改變的值（`const` 表示常數）。區別在於：
 
-- `const` is for values that don't change, the name is replaced with the value when it's used,
-- `static` is similar to `const`, but has a fixed memory location and can act as a global variable.
+- `const` 是用於不改變的值，當使用它時，名字會被替換成值。
+- `static` 與 `const` 類似，但有一個固定的記憶體位置，可以作為一個全域性變數使用。
 
-So they are almost the same. Rust programmers almost always use `const`.
+所以它們幾乎是一樣的。Rust 程式設計師幾乎總是使用 `const`。
 
-You write them with ALL CAPITAL LETTERS, and usually outside of `main` so that they can live for the whole program.
+你用全大寫字母命名，而且通常放在 `main` 之外，這樣它們就可以在整個程式中生存。
 
-Two examples are: `const NUMBER_OF_MONTHS: u32 = 12;` and `static SEASONS: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];`
+兩個範例是 `const NUMBER_OF_MONTHS: u32 = 12;` 和 `static SEASONS: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];`
 
 ## More on references
 **[See this chapter on YouTube](https://youtu.be/R13sQ8SNoEQ)**
