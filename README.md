@@ -50,7 +50,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [更多關於列印](#更多關於列印)
   - [字串](#字串)
   - [const 和 static](#const-和-static)
-  - [More on references](#more-on-references)
+  - [更多關於參考](#更多關於參考)
   - [Mutable references](#mutable-references)
     - [Shadowing again](#shadowing-again)
   - [Giving references to functions](#giving-references-to-functions)
@@ -1336,10 +1336,10 @@ fn main() {
 
 兩個範例是 `const NUMBER_OF_MONTHS: u32 = 12;` 和 `static SEASONS: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];`
 
-## More on references
-**[See this chapter on YouTube](https://youtu.be/R13sQ8SNoEQ)**
+## 更多關於參考
+**[YouTube 上觀看本章內容](https://youtu.be/R13sQ8SNoEQ)**
 
-References are very important in Rust. Rust uses references to make sure that all memory access is safe. We know that we use `&` to create a reference:
+參考在 Rust 中非常重要。Rust 使用參考來確保所有的記憶體訪問是安全的。我們知道，我們用 `&` 來建立參考：
 
 ```rust
 fn main() {
@@ -1351,11 +1351,11 @@ fn main() {
 }
 ```
 
-This prints `Austria`.
+這樣會印出 `Austria`。
 
-In the code, `country` is a `String`. We then created two references to `country`. They have the type `&String`, which you say is a "reference to a String". We could create three references or one hundred references to `country` and it would be no problem.
+在程式碼中，`country` 是 `String`。我們接著建立了兩個 `country` 的參考。它們的型別是 `&String`，你會講說這是 "String 的參考"。我們可以建立三個參考或者一百個對 `country` 的參考，這都沒有問題。
 
-But this is a problem:
+但這裡有問題：
 
 ```rust
 fn return_str() -> &str {
@@ -1369,9 +1369,9 @@ fn main() {
 }
 ```
 
-The function `return_str()` creates a String, then it creates a reference to the String. Then it tries to return the reference. But the String `country` only lives inside the function, and then it dies. Once a variable is gone, the computer will clean up the memory and use it for something else. So after the function is over, `country_ref` is referring to memory that is already gone, and that's not okay. Rust prevents us from making a mistake with memory here.
+`return_str()` 函式建立了 String，它接著建立了對這個 String 的參考。然後它試圖回傳參考。但是 `country` 這個 String 只活在函式里面，然後它就死了。一旦變數消失了，電腦就會清理記憶體，並將其用於其他用途。所以在函式結束後，`country_ref` 參考到的是已經消失的記憶體，這是不對的。Rust 防止我們在這裡犯記憶體的錯誤。
 
-This is the important part about the "owned" type that we talked about above. Because you own a `String`, you can pass it around. But a `&String` will die if its `String` dies, so you don't pass around "ownership" with it.
+這就是我們前面講到的 "擁有所有權" 型別的重要部分。因為你擁有 `String`，你可以把它傳給別人。但是如果 `&String` 的 `String` 死了，那麼 `&String` 就會死掉，所以你不能把它的 "所有權" 傳給別人。
 
 ## Mutable references
 **[See this chapter on YouTube](https://youtu.be/G48z6Rv76vc)**
