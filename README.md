@@ -51,8 +51,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [字串](#字串)
   - [const 和 static](#const-和-static)
   - [更多關於參考](#更多關於參考)
-  - [Mutable references](#mutable-references)
-    - [Shadowing again](#shadowing-again)
+  - [可變參考](#可變參考)
+    - [再談遮蔽](#再談遮蔽)
   - [Giving references to functions](#giving-references-to-functions)
   - [Copy types](#copy-types)
     - [Variables without values](#variables-without-values)
@@ -1373,27 +1373,27 @@ fn main() {
 
 這就是我們前面講到的 "擁有所有權" 型別的重要部分。因為你擁有 `String`，你可以把它傳給別人。但是如果 `&String` 的 `String` 死了，那麼 `&String` 就會死掉，所以你不能把它的 "所有權" 傳給別人。
 
-## Mutable references
-**[See this chapter on YouTube](https://youtu.be/G48z6Rv76vc)**
+## 可變參考
+**[YouTube 上觀看本章內容](https://youtu.be/G48z6Rv76vc)**
 
-If you want to use a reference to change data, you can use a mutable reference. For a mutable reference, you write `&mut` instead of `&`.
+如果你想使用參考來改變資料，你可以使用可變參考(mutable reference)。可變參考你要寫做 `&mut` 而不是 `&`。
 
 ```rust
 fn main() {
-    let mut my_number = 8; // don't forget to write mut here!
+    let mut my_number = 8; // 這裡不要忘記寫 mut!
     let num_ref = &mut my_number;
 }
 ```
 
-So what are the two types? `my_number` is an `i32`, and `num_ref` is `&mut i32` (we say a "mutable reference to an `i32`").
+那麼這兩種型別是什麼呢？`my_number` 是 `i32`，而 `num_ref` 是 `&mut i32`(我們讀作 "可變參考 `i32`")。
 
-So let's use it to add 10 to my_number. But you can't write `num_ref += 10`, because `num_ref` is not the `i32` value, it is a `&i32`. The value is actually inside the `i32`. To reach the place where the value is, we use `*`. `*` means "I don't want the reference, I want the value behind the reference". In other words, one `*` is the opposite of `&`. Also, one `*` erases one `&`.
+那麼讓我們用它來給 my_number 加上 10。但是你不能寫 `num_ref += 10`，因為 `num_ref` 不是 `i32` 的值，它是 `&i32`。其實這個值就在 `i32` 裡面。為了達到值所在的地方，我們用 `*`。`*` 的意思是"我不要參考，我想要參考所參照的值"。換句話說，`*` 與 `&` 是相反的動作。也就是一個 `*` 消去了一個 `&`。
 
 ```rust
 fn main() {
     let mut my_number = 8;
     let num_ref = &mut my_number;
-    *num_ref += 10; // Use * to change the i32 value.
+    *num_ref += 10; // 使用 * 來改變 i32 的值.
     println!("{}", my_number);
 
     let second_number = 800;
@@ -1402,38 +1402,38 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 18
 Second_number = triple_reference? true
 ```
 
-Because using `&` is called "referencing", using `*` is called "**de**referencing".
+因為使用 `&` 時叫做 "參考"，所以用 `*` 叫做 "**反**參考(dereferencing)"。
 
-Rust has two rules for mutable and immutable references. They are very important, but also easy to remember because they make sense.
+Rust在可變和不可變參考有兩個規則。它們非常重要卻也容易記住，因為它們很有道理。
 
-- **Rule 1**: If you have only immutable references, you can have as many as you want. 1 is fine, 3 is fine, 1000 is fine. No problem.
-- **Rule 2**: If you have a mutable reference, you can only have one. Also, you can't have an immutable reference **and** a mutable reference together.
+- **規則1**：如果你只有不可變參考，你可以同時有任意多的參考。1 個也好，3 個也好，1000 個也好，都沒問題。
+- **規則2**：如果是可變參考，你只能有一個。另外，你不能同時有一個不可變參考**和**一個可變參考。
 
-This is because mutable references can change the data. You could get problems if you change the data when other references are reading it.
+這是因為可變參考能變更資料。如果你在其他參考讀取資料時更改資料，你可能會遇到問題。
 
 
-A good way to understand is to think of a Powerpoint presentation.
+理解的好方法是設想一場 Powerpoint 簡報。
 
-Situation one is about **only one mutable reference**.
+情境一是關於**只有一個可變參考**。
 
-Situation one: An employee is writing a Powerpoint presentation. He wants his manager to help him. The employee gives his login information to his manager, and asks him to help by making edits. Now the manager has a "mutable reference" to the employee's presentation. The manager can make any changes he wants, and give the computer back later. This is fine, because nobody else is looking at the presentation.
+情境一： 一位員工正在編寫一個 Powerpoint 簡報，他希望他的經理能幫助他。該員工將自己的登入資訊提供給經理，並請他幫忙進行編輯。現在經理對該員工的簡報有了"可變參考"。經理可以做任何他想做的修改，然後把電腦還回去。這很好，因為沒有其他人看得到這個簡報。
 
-Situation two is about **only immutable references**.
+情境二是關於**只有不可變參考**。
 
-Situation two: The employee is giving the presentation to 100 people. All 100 people can now see the employee's data. They all have an "immutable reference" to the employee's presentation. This is fine, because they can see it but nobody can change the data.
+情境二： 該員工要給100個人做簡報。現在這100個人都可以看到該員工的資料。他們全都有對該員工簡報的"不可變參考"。這很好，因為他們可以看得到，但沒人可以改動資料。
 
-Situation three is **the problem situation**.
+情境三是**有問題的情形**
 
-Situation three: The Employee gives his manager his login information. His manager now has a "mutable reference". Then the employee went to give the presentation to 100 people, but the manager can still login. This is not fine, because the manager can log in and do anything. Maybe his manager will log into the computer and start typing an email to his mother! Now the 100 people have to watch the manager write an email to his mother instead of the presentation. That's not what they expected to see.
+情境三： 員工把他的登入資訊給了經理 他的經理現在有了一個 "可變參考"。然後該員工去給 100 個人做簡報，但是經理還是可以登入。這是不對的，因為經理可以登入，可以做任何事情。也許他的經理會登入電腦，然後開始給他的母親打一封信！現在這 100 人不得不看著經理給他母親寫信，而不是簡報。這不是他們期望看到的。
 
-Here is an example of a mutable borrow with an immutable borrow:
+這裡有一個可變借用借用自不可變借用的範例：
 
 ```rust
 fn main() {
@@ -1445,7 +1445,7 @@ fn main() {
 }
 ```
 
-The compiler prints a helpful message to show us the problem.
+編譯器印出了一則有用的資訊來告訴我們問題所在。
 
 ```text
 error[E0502]: cannot borrow `number` as mutable because it is also borrowed as immutable
@@ -1460,25 +1460,25 @@ error[E0502]: cannot borrow `number` as mutable because it is also borrowed as i
   |                    ---------- immutable borrow later used here
 ```
 
-However, this code will work. Why?
+然而，這段程式碼可以運作。為什麼？
 
 ```rust
 fn main() {
     let mut number = 10;
-    let number_change = &mut number; // create a mutable reference
-    *number_change += 10; // use mutable reference to add 10
-    let number_ref = &number; // create an immutable reference
-    println!("{}", number_ref); // print the immutable reference
+    let number_change = &mut number; // 建立可變借用
+    *number_change += 10; // 用可變借用來加上 10
+    let number_ref = &number; // 建立不可變借用
+    println!("{}", number_ref); // 印出不可變借用
 }
 ```
 
-It prints `20` with no problem. It works because the compiler is smart enough to understand our code. It knows that we used `number_change` to change `number`, but didn't use it again. So here there is no problem. We are not using immutable and mutable references together.
+它印出 `20` 沒有問題。它能運作是因為編譯器夠聰明，能理解我們的程式碼。它知道我們使用了 `number_change` 來改變 `number`，但沒有再使用它。所以這裡沒有問題。我們並沒有將不可變和可變參考一起使用。
 
-Earlier in Rust this kind of code actually generated an error, but the compiler is smarter now. It can understand not just what we type, but how we use everything.
+早期在 Rust 中，這種程式碼實際上會產生錯誤，但現在的編譯器更聰明了。它不僅能理解我們輸入的內容，還能理解我們如何使用所有的東西。
 
-### Shadowing again
+### 再談遮蔽
 
-Remember when we said that shadowing doesn't **destroy** a value but **blocks** it? Now we can use references to see this.
+還記得我們說過，遮蔽(shadowing)不會**銷毀**一個值，而是**阻擋**它嗎？現在我們可以用參考來看這個問題。
 
 ```rust
 fn main() {
@@ -1489,14 +1489,14 @@ fn main() {
 }
 ```
 
-Does this print `Austria, 8` or `8, 8`? It prints `Austria, 8`. First we declare a `String` called `country`. Then we create a reference `country_ref` to this string. Then we shadow country with 8, which is an `i32`. But the first `country` was not destroyed, so `country_ref` still says "Austria", not "8". Here is the same code with some comments to show how it works:
+這會印出 `Austria, 8` 還是 `8, 8`？它印出的是 `Austria, 8`。首先我們宣告一個 `String`，叫做 `country`。然後我們給這個字串建立一個參考 `country_ref`。然後我們用 8，這是 `i32`，來遮蔽 country。但是第一個 `country` 並沒有被銷毀，所以 `country_ref` 仍然參照著 "Austria"，而不是 "8"。這是同樣的程式碼附上了一些註解來說明它如何運作：
 
 ```rust
 fn main() {
-    let country = String::from("Austria"); // Now we have a String called country
-    let country_ref = &country; // country_ref is a reference to this data. It's not going to change
-    let country = 8; // Now we have a variable called country that is an i8. But it has no relation to the other one, or to country_ref
-    println!("{}, {}", country_ref, country); // country_ref still refers to the data of String::from("Austria") that we gave it.
+    let country = String::from("Austria"); // 現在我們有個 String 叫作 country
+    let country_ref = &country; // country_ref 是這筆資料的參考。它不會改動
+    let country = 8; // 現在我們有個變數叫作 country 型別是 i8。但它和另一個變數或 country_ref 沒有關聯
+    println!("{}, {}", country_ref, country); // country_ref 仍然參照自我們給的 String::from("Austria") 的資料.
 }
 ```
 
