@@ -53,7 +53,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [更多關於參考](#更多關於參考)
   - [可變參考](#可變參考)
     - [再談遮蔽](#再談遮蔽)
-  - [Giving references to functions](#giving-references-to-functions)
+  - [傳遞參考給函式](#傳遞參考給函式)
   - [Copy types](#copy-types)
     - [Variables without values](#variables-without-values)
   - [Collection types](#collection-types)
@@ -1500,12 +1500,12 @@ fn main() {
 }
 ```
 
-## Giving references to functions
-**See this chapter on YouTube: [immutable references](https://youtu.be/mKWXt9YTavc) and [mutable references](https://youtu.be/kJV1wIvAbyk)**
+## 傳遞參考給函式
+**YouTube 上觀看本章內容: [不可變參考](https://youtu.be/mKWXt9YTavc) 及 [可變參考](https://youtu.be/kJV1wIvAbyk)**
 
-References are very useful for functions. The rule in Rust on values is: a value can only have one owner.
+參考對函式非常有用。Rust 中關於值的規則是：一個值只能有一個所有者。
 
-This code will not work:
+這段程式碼將無法運作：
 
 ```rust
 fn print_country(country_name: String) {
@@ -1514,40 +1514,40 @@ fn print_country(country_name: String) {
 
 fn main() {
     let country = String::from("Austria");
-    print_country(country); // We print "Austria"
-    print_country(country); // ⚠️ That was fun, let's do it again!
+    print_country(country); // 我們印出 "Austria"
+    print_country(country); // ⚠️ 蠻有趣的，讓我們再做一次！
 }
 ```
 
-It does not work because `country` is destroyed. Here's how:
+它不能運作，因為 `country` 被銷毀了。它是這麼來的：
 
-- Step 1: We create the `String` called `country`. `country` is the owner.
-- Step 2: We give `country` to `print_country`. `print_country` doesn't have an `->`, so it doesn't return anything. After `print_country` finishes, our `String` is now dead.
-- Step 3: We try to give `country` to `print_country`, but we already did that. We don't have `country` to give anymore.
+- 第一步：我們建立稱為 `country` 的 `String`。`country` 是所有者。
+- 第二步：我們把 `country` 給了 `print_country`。`print_country` 沒有 `->`，所以它不回傳任何東西。在 `print_country` 完成後，我們的 `String` 現在已經死了。
+- 第三步：我們嘗試把 `country` 給 `print_country`，但我們已經這樣做過了。我們已經沒有 `country` 可以給了。
 
-We can make `print_country` give the `String` back, but it is a bit awkward.
+我們可以讓 `print_country` 給回 `String`，但是有點奇怪。
 
 ```rust
 fn print_country(country_name: String) -> String {
     println!("{}", country_name);
-    country_name // return it here
+    country_name // 這裡回傳它
 }
 
 fn main() {
     let country = String::from("Austria");
-    let country = print_country(country); // we have to use let here now to get the String back
+    let country = print_country(country); // 我們現在要在這裡用 let 拿回 String
     print_country(country);
 }
 ```
 
-Now it prints:
+現在印出了：
 
 ```text
 Austria
 Austria
 ```
 
-The much better way to fix this is by adding `&`.
+更好的解決方式是加上 `&`。
 
 ```rust
 fn print_country(country_name: &String) {
@@ -1556,52 +1556,52 @@ fn print_country(country_name: &String) {
 
 fn main() {
     let country = String::from("Austria");
-    print_country(&country); // We print "Austria"
-    print_country(&country); // That was fun, let's do it again!
+    print_country(&country); // 我們印出 "Austria"
+    print_country(&country); // 蠻有趣的，讓我們再做一次！
 }
 ```
 
-Now `print_country()` is a function that takes a reference to a `String`: a `&String`. Also, we give it a reference to country by writing `&country`. This says "you can look at it, but I will keep it".
+現在 `print_country()` 是一個函式，接受 `String` 的參考：即 `&String`。另外，我們寫 `&country` 來給 country 一個參考，。這表示 "你可以查看它，但我會保有它"。
 
-Now let's do something similar with a mutable reference. Here is an example of a function that uses a mutable variable.
+現在讓我們用一個可變參考來做類似的事情。這是個使用可變變數的函式範例：
 
 ```rust
-fn add_hungary(country_name: &mut String) { // first we say that the function takes a mutable reference
-    country_name.push_str("-Hungary"); // push_str() adds a &str to a String
+fn add_hungary(country_name: &mut String) { // 首先我們說函式接受一個可變參考
+    country_name.push_str("-Hungary"); // push_str() 加入 &str 到 String
     println!("Now it says: {}", country_name);
 }
 
 fn main() {
     let mut country = String::from("Austria");
-    add_hungary(&mut country); // we also need to give it a mutable reference.
+    add_hungary(&mut country); // 我們也要給它可變參考。
 }
 ```
 
-This prints `Now it says: Austria-Hungary`.
+這印出了 `Now it says: Austria-Hungary`。
 
-So to conclude:
+所以得出結論：
 
-- `fn function_name(variable: String)` takes a `String` and owns it. If it doesn't return anything, then the variable dies inside the function.
-- `fn function_name(variable: &String)` borrows a `String` and can look at it
-- `fn function_name(variable: &mut String)` borrows a `String` and can change it
+- `fn function_name(variable: String)` 接受 `String` 並擁有它。如果它不回傳任何東西，那麼這個變數就會死在函數裡面。
+- `fn function_name(variable: &String)` 借用 `String` 並可以查看它
+- `fn function_name(variable: &mut String)` 借用 `String` 並可以更改
 
-Here is an example that looks like a mutable reference, but it is different.
+這是個看起來像可變參考但不同的範例。
 
 ```rust
 fn main() {
-    let country = String::from("Austria"); // country is not mutable, but we are going to print Austria-Hungary. How?
+    let country = String::from("Austria"); // country 是不可變的，但我們想要印出 Austria-Hungary。怎麼做？
     adds_hungary(country);
 }
 
-fn adds_hungary(mut country: String) { // Here's how: adds_hungary takes the String and declares it mutable!
+fn adds_hungary(mut country: String) { // 它是這樣做的：adds_hungary 接受 String 並宣告它是可變的！
     country.push_str("-Hungary");
     println!("{}", country);
 }
 ```
 
-How is this possible? It is because `mut country` is not a reference: `adds_hungary` owns `country` now. (Remember, it takes `String` and not `&String`). The moment you call `adds_hungary`, it becomes the full owner. `country` has nothing to do with `String::from("Austria")` anymore. So `adds_hungary` can take `country` as mutable, and it is perfectly safe to do so.
+這怎麼可能呢？因為 `mut country` 不是參考。`adds_hungary` 現在擁有 `country`。(記得，它接受的是 `String` 而不是 `&String`)。當你呼叫 `adds_hungary` 的那一刻，它就完全成了 country 的所有者。`country` 與 `String::from("Austria")` 沒有關係了。所以，`adds_hungary` 可以把 `country` 當作可變的，這樣做是完全安全的。
 
-Remember our employee Powerpoint and manager situation above? In this situation it is like the employee just giving his whole computer to the manager. The employee won't ever touch it again, so the manager can do anything he wants to it.
+還記得前面我們的員工 Powerpoint 和經理的情況嗎？在這種情況下，就好比員工只是把自己的整臺電腦交給了經理。員工不會再碰它，所以經理可以對它做任何他想做的事情。
 
 ## Copy types
 
