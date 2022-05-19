@@ -54,8 +54,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [可變參考](#可變參考)
     - [再談遮蔽](#再談遮蔽)
   - [傳遞參考給函式](#傳遞參考給函式)
-  - [Copy types](#copy-types)
-    - [Variables without values](#variables-without-values)
+  - [複製型別](#複製型別)
+    - [無值變數](#無值變數)
   - [Collection types](#collection-types)
     - [Arrays](#arrays)
   - [Vectors](#vectors)
@@ -1603,44 +1603,44 @@ fn adds_hungary(mut country: String) { // 它是這樣做的：adds_hungary 接�
 
 還記得前面我們的員工 Powerpoint 和經理的情況嗎？在這種情況下，就好比員工只是把自己的整臺電腦交給了經理。員工不會再碰它，所以經理可以對它做任何他想做的事情。
 
-## Copy types
+## 複製型別
 
-Some types in Rust are very simple. They are called **copy types**. These simple types are all on the stack, and the compiler knows their size. That means that they are very easy to copy, so the compiler always copies when you send it to a function. It always copies because they are so small and easy that there is no reason not to copy. So you don't need to worry about ownership for these types.
+Rust 中的一些型別非常簡單。它們被稱為**複製型別**。這些簡單型別都在堆疊上，編譯器知道它們的大小。這意味著它們非常容易複製，所以當你把它傳送到函式時，編譯器永遠會用複製的方式。它永遠會複製，是因為它們如此的小而容易到沒有理由不複製。所以你不需要擔心這些型別的所有權問題。
 
-These simple types include: integers, floats, booleans (`true` and `false`), and `char`.
+這些簡單的型別包括：整數、浮點數、布林值(`true` 和 `false`)和 `char`。
 
-How do you know if a type **implements** copy? (implements = can use) You can check the documentation. For example, here is the documentation for char:
+如何知道一個型別是否**實作**複製？(實作 = 能夠使用)你可以檢查文件。例如，這是 char 的文件：
 
 [https://doc.rust-lang.org/std/primitive.char.html](https://doc.rust-lang.org/std/primitive.char.html)
 
-On the left you can see **Trait Implementations**. You can see for example **Copy**, **Debug**, and **Display**. So you know that a `char`:
+在左邊你可以看到 **Trait Implementations**。例如你可以看到 **Copy**, **Debug**, 和 **Display**。所以你知道 `char`型別：
 
-- is copied when you send it to a function (**Copy**)
-- can use `{}` to print (**Display**)
-- can use `{:?}` to print (**Debug**)
+- 當傳送到函式時就被複制了 (**Copy**)
+- 可以用 `{}` 列印 (**Display**)
+- 可以用 `{:?}` 列印 (**Debug**)
 
 ```rust
-fn prints_number(number: i32) { // There is no -> so it's not returning anything
-                             // If number was not copy type, it would take it
-                             // and we couldn't use it again
+fn prints_number(number: i32) { // 沒有 -> 所以不回傳任何東西
+                             // 如果數字不是複製型別，它會拿走資料
+                             // 我們也不能再拿來用
     println!("{}", number);
 }
 
 fn main() {
     let my_number = 8;
-    prints_number(my_number); // Prints 8. prints_number gets a copy of my_number
-    prints_number(my_number); // Prints 8 again.
-                              // No problem, because my_number is copy type!
+    prints_number(my_number); // 印出 8。prints_number 得到 my_number 的拷貝
+    prints_number(my_number); // 又印出 8。
+                              // 沒問題，因為 my_number 是複製型別！
 }
 ```
 
-But if you look at the documentation for String, it is not copy type.
+但是如果你有看到 String 的文件，它不是複製型別。
 
 [https://doc.rust-lang.org/std/string/struct.String.html](https://doc.rust-lang.org/std/string/struct.String.html)
 
-On the left in **Trait Implementations** you can look in alphabetical order. A, B, C... there is no **Copy** in C. But there is **Clone**. **Clone** is similar to **Copy**, but usually needs more memory. Also, you have to call it with `.clone()` - it won't clone just by itself.
+在左邊的 **Trait Implementations** 中，你可以按字母順序查詢。A、B、C......在 C 裡面沒有 **Copy**，但是有 **Clone**。**Clone** 和 **Copy** 類似，但通常需要更多的記憶體。另外，你必須用 `.clone()` 來呼叫它──它不會為自己克隆(clone)。
 
-In this example, `prints_country()` prints the country name, a `String`. We want to print it two times, but we can't:
+在這個範例中，`prints_country()` 印出國家名稱，是個 `String`。我們想印兩次，但沒辦法：
 
 ```rust
 fn prints_country(country_name: String) {
@@ -1654,7 +1654,7 @@ fn main() {
 }
 ```
 
-But now we understand the message.
+但現在我們懂這個訊息了。
 
 ```text
 error[E0382]: use of moved value: `country`
@@ -1668,7 +1668,7 @@ error[E0382]: use of moved value: `country`
   |                    ^^^^^^^ value used here after move
 ```
 
-The important part is `which does not implement the Copy trait`. But in the documentation we saw that String implements the `Clone` trait. So we can add `.clone()` to our code. This creates a clone, and we send the clone to the function. Now `country` is still alive, so we can use it.
+重點是 `which does not implement the Copy trait`。但在文件中我們看到 String 實現了 `Clone` 特徵。**所以我們可以把 `.clone()` 加到我們的程式碼中**。這樣就建立了一個克隆，然後我們將克隆傳送到函式中。現在 `country` 還活著，所以我們可以使用它。
 
 ```rust
 fn prints_country(country_name: String) {
@@ -1677,28 +1677,28 @@ fn prints_country(country_name: String) {
 
 fn main() {
     let country = String::from("Kiribati");
-    prints_country(country.clone()); // make a clone and give it to the function. Only the clone goes in, and country is still alive
+    prints_country(country.clone()); // 做一個克隆並傳遞給函式。只有克隆送進去，且 country 仍然還活著
     prints_country(country);
 }
 ```
 
-Of course, if the `String` is very large, `.clone()` can use a lot of memory. One `String` can be a whole book in length, and every time we call `.clone()` it will copy the book. So using `&` for a reference is faster, if you can. For example, this code pushes a `&str` onto a `String` and then makes a clone every time it gets used in a function:
+如果 `String` 非常大，當然 `.clone()` 就會佔用很多記憶體。一個 `String` 可以是一整本書的長度，每次我們呼叫 `.clone()` 都會複製這本書。所以這時如果可以用 `&` 來做參考的話會比較快。例如，這段程式碼將 `&str` 推送到 `String` 上，然後每次被使用在函式時都會做一個克隆：
 
 ```rust
-fn get_length(input: String) { // Takes ownership of a String
-    println!("It's {} words long.", input.split_whitespace().count()); // splits to count the number of words
+fn get_length(input: String) { // 接收String的所有權
+    println!("It's {} words long.", input.split_whitespace().count()); // 分開算字數
 }
 
 fn main() {
     let mut my_string = String::new();
     for _ in 0..50 {
-        my_string.push_str("Here are some more words "); // push the words on
-        get_length(my_string.clone()); // gives it a clone every time
+        my_string.push_str("Here are some more words "); // 推送字句
+        get_length(my_string.clone()); // 每次給它一份克隆
     }
 }
 ```
 
-It prints:
+印出：
 
 ```text
 It's 5 words long.
@@ -1707,7 +1707,7 @@ It's 10 words long.
 It's 250 words long.
 ```
 
-That's 50 clones. Here it is using a reference instead, which is better:
+這樣是 50 次克隆。這裡用參考代替更好：
 
 ```rust
 fn get_length(input: &String) {
@@ -1723,13 +1723,13 @@ fn main() {
 }
 ```
 
-Instead of 50 clones, it's zero.
+0 次克隆，而不是 50 次。
 
 
 
-### Variables without values
+### 無值變數
 
-A variable without a value is called an "uninitialized" variable. Uninitialized means "hasn't started yet". They are simple: just write `let` and the variable name:
+一個沒有值的變數叫做"未初始化"變數。未初始化的意思是"還沒有開始"。它們很簡單：只需要寫上 `let` 和變數名：
 
 ```rust
 fn main() {
@@ -1737,12 +1737,12 @@ fn main() {
 }
 ```
 
-But you can't use it yet, and Rust won't compile if anything is uninitialized.
+但是你還不能使用它，如果有任何東西沒有被初始化 Rust 不會開始編譯。
 
-But sometimes they can be useful. A good example is when:
+但有時它們會很有用。一個好範列是：
 
-- You have a code block and the value for your variable is inside it, and
-- The variable needs to live outside of the code block.
+- 當你有一個程式碼區塊，而你的變數值就在裡面，並且
+- 變數需要活在程式碼區塊之外。
 
 ```rust
 fn loop_then_return(mut counter: i32) -> i32 {
@@ -1759,10 +1759,10 @@ fn main() {
     let my_number;
 
     {
-        // Pretend we need to have this code block
+        // 假裝我們需要這個程式碼區塊
         let number = {
-            // Pretend there is code here to make a number
-            // Lots of code, and finally:
+            // 假裝這有程式碼產生數字
+            // 滿滿的程式，終於：
             57
         };
 
@@ -1773,11 +1773,11 @@ fn main() {
 }
 ```
 
-This prints `100`.
+印出 `100`。
 
-You can see that `my_number` was declared in the `main()` function, so it lives until the end. But it gets its value from inside a loop. However, that value lives as long as `my_number`, because `my_number` has the value. And if you wrote `let my_number = loop_then_return(number)` inside the block, it would just die right away.
+你可以看到 `my_number` 是在 `main()` 函式中宣告的，所以它一直活到最後。但是它的值是在迴圈裡面得到的。然而，這個值和 `my_number` 活得一樣長，因為 `my_number` 擁有這個值。而如果你在區塊裡面寫了 `let my_number = loop_then_return(number)`，它就會馬上死掉。
 
-It helps to imagine if you simplify the code. `loop_then_return(number)` gives the result 100, so let's delete it and write `100` instead. Also, now we don't need `number` so we will delete it too. Now it looks like this:
+如果你簡化程式碼，有助於想像這個概念。`loop_then_return(number)` 給出的結果是 100，所以我們刪除它，改寫 `100`。另外，現在我們不需要 `number`，所以我們也刪除它。現在它看起來像這樣：
 
 ```rust
 fn main() {
@@ -1790,9 +1790,9 @@ fn main() {
 }
 ```
 
-So it's almost like saying `let my_number = { 100 };`.
+所以和說 `let my_number = { 100 };` 差不多。
 
-Also note that `my_number` is not `mut`. We didn't give it a value until we gave it 50, so it never changed its value. In the end, the real code for `my_number` is just `let my_number = 100;`.
+另外注意，`my_number` 不是 `mut`。我們在給它 50 之前並沒有給它一個值，所以它的值不曾改變過。最後，`my_number` 的真正程式碼只是 `let my_number = 100;`。
 
 ## Collection types
 
