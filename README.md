@@ -56,8 +56,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [傳遞參考給函式](#傳遞參考給函式)
   - [複製型別](#複製型別)
     - [無值變數](#無值變數)
-  - [Collection types](#collection-types)
-    - [Arrays](#arrays)
+  - [集合型別](#集合型別)
+    - [陣列](#陣列)
   - [Vectors](#vectors)
   - [Tuples](#tuples)
   - [Control flow](#control-flow)
@@ -126,7 +126,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [regex](#regex)
     - [chrono](#chrono)
   - [A tour of the standard library](#a-tour-of-the-standard-library)
-    - [Arrays](#arrays-1)
+    - [Arrays](#arrays)
     - [char](#char)
     - [Integers](#integers)
     - [Floats](#floats)
@@ -1794,40 +1794,40 @@ fn main() {
 
 另外注意，`my_number` 不是 `mut`。我們在給它 50 之前並沒有給它一個值，所以它的值不曾改變過。最後，`my_number` 的真正程式碼只是 `let my_number = 100;`。
 
-## Collection types
+## 集合型別
 
-Rust has a lot of types for making a collection. Collections are for when you need more than one value in one spot. For example, you could have information on all the cities in your country inside one variable. We will start with arrays, which are fastest but also have the least functionality. They are kind of like `&str` in that way.
+Rust 有許多型別用來做出集合(collection)。集合是在某個地方你需要有超過一個值時用的。例如，你可以在一個變數中包含你所在國家的所有城市資訊。我們會先從陣列(array)開始，它的速度最快，但功能也最少。在這方面它們有點像 `&str`。
 
-### Arrays
+### 陣列
 
-An array is data inside square brackets: `[]`. Arrays:
+陣列是放在中括號裡的資料：`[]`。陣列特性：
 
-- must not change their size,
-- must only contain the same type.
+- 不能改變其大小，
+- 必須只包含相同型別資料。
 
-They are very fast, however.
+然而它們的速度卻非常快。
 
-The type of an array is: `[type; number]`. For example, the type of `["One", "Two"]` is `[&str; 2]`. This means that even these two arrays have different types:
+陣列的型別是：`[type; number]`。例如，`["One", "Two"]` 的型別是 `[&str; 2]`。這意味著，即使這兩個是陣列也有不同的型別：
 
 ```rust
 fn main() {
-    let array1 = ["One", "Two"]; // This one is type [&str; 2]
-    let array2 = ["One", "Two", "Five"]; // But this one is type [&str; 3]. Different type!
+    let array1 = ["One", "Two"]; // 這個型別是 [&str; 2]
+    let array2 = ["One", "Two", "Five"]; // 但這個型別是 [&str; 3]。不同型別！
 }
 ```
 
-Here is a good tip: to know the type of a variable, you can "ask" the compiler by giving it bad instructions. For example:
+這裡有個好提示：要想知道變數的型別，你可以藉由給編譯器不正確的程式碼來"詢問"它。比如說：
 
 ```rust
 fn main() {
     let seasons = ["Spring", "Summer", "Autumn", "Winter"];
     let seasons2 = ["Spring", "Summer", "Fall", "Autumn", "Winter"];
     seasons.ddd(); // ⚠️
-    seasons2.thd(); // ⚠️ as well
+    seasons2.thd(); // 還是⚠️
 }
 ```
 
-The compiler says, "What? There's no `.ddd()` method for seasons and no `.thd()` method for seasons 2 either!!" as you can see:
+編譯器說："什麼？seasons 沒有 `.ddd()` 的方法，seasons2 也沒有 `.thd()` 的方法！！" 你可以看到：
 
 ```text
 error[E0599]: no method named `ddd` found for array `[&str; 4]` in the current scope
@@ -1843,9 +1843,9 @@ error[E0599]: no method named `thd` found for array `[&str; 5]` in the current s
   |              ^^^ method not found in `[&str; 5]`
 ```
 
-So it tells you `` method not found in `[&str; 4]` ``, which is the type.
+所以它告訴你 `` method not found in `[&str; 4]` ``，這就是變數的型別。
 
-If you want an array with all the same value, you can declare it like this:
+如果你想要一個數值都一樣的陣列，你可以像這樣宣告：
 
 ```rust
 fn main() {
@@ -1854,22 +1854,22 @@ fn main() {
 }
 ```
 
-This prints `["a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]`.
+這裡印出 `["a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]`。
 
-This method is used a lot to create buffers. For example, `let mut buffer = [0; 640]` creates an array of 640 zeroes. Then we can change zero to other numbers in order to add data.
+這個方法經常用來建立緩衝區(buffer)。例如，`let mut buffer = [0; 640]` 建立一個 640 個零的陣列。然後我們可以將零改為其他數字，以便新增資料。
 
-You can index (get) entries in an array with []. The first entry is [0], the second is [1], and so on.
+你可以用 [] 來索引(獲取)陣列中的項目。第一個索引項目是 [0]，第二個是 [1]，以此類推。
 
 ```rust
 fn main() {
     let my_numbers = [0, 10, -20];
-    println!("{}", my_numbers[1]); // prints 10
+    println!("{}", my_numbers[1]); // 印出 10
 }
 ```
 
-You can get a slice (a piece) of an array. First you need a &, because the compiler doesn't know the size. Then you can use `..` to show the range.
+你可以得到陣列的一個切片(slice，一塊)。首先你需要 &，因為編譯器不知道大小。然後你可以使用 `..` 來表示範圍。
 
-For example, let's use this array: `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
+例如，讓我們使用這個陣列：`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`。
 
 ```rust
 fn main() {
@@ -1884,14 +1884,14 @@ fn main() {
 }
 ```
 
-Remember that:
+記住這些：
 
-- Index numbers start at 0 (not 1)
-- Index ranges are **exclusive** (they do not include the last number)
+- 索引號從 0 開始(不是 1)
+- 索引範圍是**排除的**(不包括最後一個數字)。
 
-So `[0..2]` means the first index and the second index (0 and 1). Or you can call it the "zeroth and first" index. It doesn't have the third item, which is index 2.
+所以 `[0..2]` 是指第一項索引和第二項索引(0 和 1)。或者你也可以稱它為"第零和第一項"索引。它沒有第三項，也就是索引 2。
 
-You can also have an **inclusive** range, which means it includes the last number too. To do this, add `=` to write `..=` instead of `..`. So instead of `[0..2]` you can write `[0..=2]` if you want the first, second, and third item.
+你也可以有一個 **包含的** 範圍，這意味著它也包括最後一個數字。要做到這一點。加上 `=`，寫成 `..=`，而不是 `..`。所以，如果你想要第一、第二和第三項，可以寫成 `[0..=2]`，而不是 `[0..2]`。
 
 ## Vectors
 **[See this chapter on YouTube](https://youtu.be/Eh-DsRnDKmw)**
