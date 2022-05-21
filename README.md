@@ -60,7 +60,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [陣列](#陣列)
   - [向量](#向量)
   - [元組](#元組)
-  - [Control flow](#control-flow)
+  - [控制流程](#控制流程)
   - [Structs](#structs)
   - [Enums](#enums)
     - [Enums to use multiple types](#enums-to-use-multiple-types)
@@ -2111,10 +2111,10 @@ fn main() {
 
 還有很多集合型別，及許許多多使用陣列、向量和元組的方式。我們也將學習更多關於它們的知識，但我們將先學習控制流程。
 
-## Control flow
-**See this chapter on YouTube: [Part 1](https://youtu.be/UAymDOpv_us) and [Part 2](https://youtu.be/eqysTfiiQZs)**
+## 控制流程
+**YouTube 上觀看本章內容: [Part 1](https://youtu.be/UAymDOpv_us) 及 [Part 2](https://youtu.be/eqysTfiiQZs)**
 
-Control flow means telling your code what to do in different situations. The simplest control flow is `if`.
+控制流程(control flow)的意思是告訴你的程式碼在不同的情況下該怎麼做。最簡單的控制流程是 `if`。
 
 ```rust
 fn main() {
@@ -2125,9 +2125,9 @@ fn main() {
 }
 ```
 
-Also note that you use `==` and not `=`. `==` is to compare, `=` is to *assign* (to give a value). Also note that we wrote `if my_number == 7` and not `if (my_number == 7)`. You don't need brackets with `if` in Rust.
+另外注意，你用的是 `==` 而不是 `=`。`==` 是用來比較的，`=` 是用來*賦值*的(給一個值)。另外注意，我們寫的是 `if my_number == 7` 而不是 `if (my_number == 7)`。在 Rust 中，你不需要在 `if` 條件用括號。
 
-`else if` and `else` give you more control:
+`else if` 和 `else` 給你更多的控制：
 
 ```rust
 fn main() {
@@ -2142,14 +2142,14 @@ fn main() {
 }
 ```
 
-This prints `It's a different number` because it's not equal to 7 or 6.
+印出 `It's a different number`，因為它不等於 7 或 6。
 
-You can add more conditions with `&&` (and) and `||` (or).
+您可以使用 `&&`(和)和 `||`(或)來新增更多條件。
 
 ```rust
 fn main() {
     let my_number = 5;
-    if my_number % 2 == 1 && my_number > 0 { // % 2 means the number that remains after diving by two
+    if my_number % 2 == 1 && my_number > 0 { // % 2 表示除以2之後的餘下的數
         println!("It's a positive odd number");
     } else if my_number == 6 {
         println!("It's six")
@@ -2159,10 +2159,10 @@ fn main() {
 }
 ```
 
-This prints `It's a positive odd number` because when you divide it by 2 you have a remainder of 1, and it's greater than 0.
+印出 `It's a positive odd number`，因為當你把它除以 2 時，你有餘數 1，且它大於0。
 
 
-You can see that too much `if`, `else`, and `else if` can be difficult to read. In this case you can use `match` instead, which looks much cleaner. But you must match for every possible result. For example, this will not work:
+你可以看到，過多的 `if`、`else` 和 `else if` 會很難讀。在這種情況下，你可以使用 `match` 來代替，它看起來更乾淨。但是您必須為每一個可能的結果進行匹配(match)。例如，這將無法運作：
 
 ```rust
 fn main() {
@@ -2176,7 +2176,7 @@ fn main() {
 }
 ```
 
-The compiler says:
+編譯器說：
 
 ```text
 error[E0004]: non-exhaustive patterns: `3u8..=std::u8::MAX` not covered
@@ -2186,7 +2186,7 @@ error[E0004]: non-exhaustive patterns: `3u8..=std::u8::MAX` not covered
   |           ^^^^^^^^^ pattern `3u8..=std::u8::MAX` not covered
 ```
 
-This means "you told me about 0 to 2, but `u8`s can go up to 255. What about 3? What about 4? What about 5?" And so on. So you can add `_` which means "anything else".
+這就意味著"你告訴我 0 到 2，但 `u8` 可以到 255。那 3 呢？4 呢？5 呢？"以此類推。所以你可以加上 `_`，意思是"其他任何東西"。
 
 ```rust
 fn main() {
@@ -2200,16 +2200,16 @@ fn main() {
 }
 ```
 
-That prints `It's some other number`.
+印出 `It's some other number`。
 
-Remember this for match:
+記住這些匹配的規則：
 
-- You write `match` and then make a `{}` code block.
-- Write the *pattern* on the left and use a `=>` fat arrow to say what to do when it matches.
-- Each line is called an "arm".
-- Put a comma between the arms (not a semicolon).
+- 你寫下 `match`，然後做一個 `{}` 程式碼區塊。
+- 在左邊寫上*模式*，用 `=>` 胖箭頭說明匹配時該怎麼做。
+- 每一行稱為一個"分支(arm)"。
+- 在分支之間放一個逗號(不是分號)。
 
-You can declare a value with a match:
+你可以用匹配結果來宣告一個值：
 
 ```rust
 fn main() {
@@ -2222,10 +2222,10 @@ fn main() {
 }
 ```
 
-`second_number` will be 10. Do you see the semicolon at the end? That is because, after the match is over, we actually told the compiler this: `let second_number = 10;`
+`second_number` 將是 10。你看到最後的分號了嗎？那是因為，在 match 結束後，我們實際上告訴了編譯器這個資訊：`let second_number = 10;`
 
 
-You can match on more complicated things too. You use a tuple to do it.
+你也可以在更復雜的事情上進行匹配。你要用元組來做到。
 
 ```rust
 fn main() {
@@ -2241,9 +2241,9 @@ fn main() {
 }
 ```
 
-This prints `It's dark but not bad` because it matches "cloudy" and "warm" for `sky` and `temperature`.
+印出 `It's dark but not bad`，因為它與 `sky` 和 `temperature` 的 "cloudy" 和 "warm" 相匹配。
 
-You can even put `if` inside of `match`. This is called a "match guard":
+你甚至可以把 `if` 放在 `match` 裡面。這稱為 "match guard"：
 
 ```rust
 fn main() {
@@ -2258,9 +2258,9 @@ fn main() {
 }
 ```
 
-This will print `Married? true. Number of children: 5.`
+這將印出 `Married? true. Number of children: 5.`
 
-You can use _ as many times as you want in a match. In this match on colours, we have three but only check one at a time.
+在匹配時，你可以隨意多次使用 _。在這個關於顏色的匹配中，我們有三個顏色，但一次只能選中一個。
 
 ```rust
 fn match_colours(rbg: (i32, i32, i32)) {
@@ -2284,7 +2284,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Not much blue
@@ -2292,11 +2292,11 @@ Each colour has at least 10
 Not much green
 ```
 
-This also shows how `match` statements work, because in the first example it only printed `Not much blue`. But `first` also has not much green. A `match` statement always stops when it finds a match, and doesn't check the rest. This is a good example of code that compiles well but is not the code you want.
+這也說明了 `match` 陳述式的作用，因為在第一個例子中，它只印了 `Not much blue`。但是 `first` 也沒有多少綠色。`match` 陳述式總是在找到一個匹配項時停止，而不檢查其他的。這就是程式碼編譯得很好，但不是你想要的程式碼的一個好例子。
 
-You can make a really big `match` statement to fix it, but it is probably better to use a `for` loop. We will talk about loops soon.
+你可以做一個非常大的 `match` 陳述式來解決這個問題，但是使用 `for` 迴圈(loop)可能更好。我們將很快會討論到迴圈。
 
-A match has to return the same type. So you can't do this:
+匹配必須回傳相同的型別。所以你不能這樣做：
 
 ```rust
 fn main() {
@@ -2308,7 +2308,7 @@ fn main() {
 }
 ```
 
-The compiler tells you that:
+編譯器告訴你：
 
 ```text
 error[E0308]: `match` arms have incompatible types
@@ -2324,7 +2324,7 @@ error[E0308]: `match` arms have incompatible types
    | |_____- `match` arms have incompatible types
 ```
 
-This will also not work, for the same reason:
+這樣也不行，原因同上。
 
 ```rust
 fn main() {
@@ -2332,7 +2332,7 @@ fn main() {
 }
 ```
 
-But this works, because it's not a `match` so you have a different `let` statement each time:
+但是這樣就可以了，因為不是 `match`，所以你每次都有不同的 `let` 陳述式：
 
 ```rust
 fn main() {
@@ -2346,7 +2346,7 @@ fn main() {
 }
 ```
 
-You can also use `@` to give a name to the value of a `match` expression, and then you can use it. In this example we match an `i32` input in a function. If it's 4 or 13 we want to use that number in a `println!` statement. Otherwise, we don't need to use it.
+你也可以使用 `@` 給 `match` 表示式的值命名，然後你就可以使用它。在這個範例中，我們在函式中匹配 `i32` 輸入。如果是 4 或 13，我們要在 `println!` 陳述式中使用這個數字。否則，我們不需要使用它。
 
 ```rust
 fn match_number(input: i32) {
@@ -2364,7 +2364,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Looks like a normal number
