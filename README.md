@@ -59,7 +59,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [集合型別](#集合型別)
     - [陣列](#陣列)
   - [向量](#向量)
-  - [Tuples](#tuples)
+  - [元組](#元組)
   - [Control flow](#control-flow)
   - [Structs](#structs)
   - [Enums](#enums)
@@ -2015,32 +2015,32 @@ fn main() {
 }
 ```
 
-## Tuples
-**[See this chapter on YouTube](https://youtu.be/U67Diy6SlTg)**
+## 元組
+**[YouTube 上觀看本章內容](https://youtu.be/U67Diy6SlTg)**
 
-Tuples in Rust use `()`. We have seen many empty tuples already, because *nothing* in a function actually means an empty tuple:
+Rust 中的元組(tuple)使用 `()` 表示。我們已經見過很多空元組了，因為函式中的 *nothing* 實際上意味著一個空元組：
 
 ```text
 fn do_something() {}
 ```
 
-is actually short for:
+其實是這個的簡寫：
 
 ```text
 fn do_something() -> () {}
 ```
 
-That function gets nothing (an empty tuple), and returns nothing (an empty tuple). So we have been using tuples a lot already. When you don't return anything in a function, you actually return an empty tuple.
+這個函式什麼也得不到(空元組)，也不回傳什麼(空元組)。所以我們已經經常使用元組了。當你在函式中不回傳任何東西時，你實際上回傳的是空元組。
 
 ```rust
 fn just_prints() {
-    println!("I am printing"); // Adding ; means we return an empty tuple
+    println!("I am printing"); // 加上 ; 表示我們回傳空元組
 }
 
 fn main() {}
 ```
 
-But tuples can hold many things, and can hold different types too. Items inside a tuple are also indexed with numbers 0, 1, 2, and so on. But to access them, you use a `.` instead of a `[]`. Let's put a whole bunch of types into a single tuple.
+但是元組可以容納很多東西，也可以容納不同的型別。元組裡面的元素也是用數字 0、1、2 等來被索引的。但要存取它們，你要用 `.` 而不是 `[]`。讓我們把一大群型別放進元組裡。
 
 ```rust
 fn main() {
@@ -2062,7 +2062,7 @@ Sixth item: {:?}",
 }
 ```
 
-This prints:
+印出:
 
 ```text
 Inside the tuple is: First item: "Here is a name"
@@ -2073,10 +2073,10 @@ Fifth item: [8, 9, 10]
 Sixth item: 7.7
 ```
 
-That tuple is of type `(&str, i32, Vec<char>, char, [i32; 3], f64)`.
+這個元組的型別是 `(&str, i32, Vec<char>, char, [i32; 3], f64)`。
 
 
-You can use a tuple to create multiple variables. Take a look at this code:
+你可以使用一個元組來建立多個變數。看看這段程式碼：
 
 ```rust
 fn main() {
@@ -2084,20 +2084,20 @@ fn main() {
 }
 ```
 
-`str_vec` has three items in it. What if we want to pull them out? That's where we can use a tuple.
+`str_vec` 裡面有三個元素。如果我們想把它們拉出來呢？這時我們可以使用元組。
 
 ```rust
 fn main() {
     let str_vec = vec!["one", "two", "three"];
 
-    let (a, b, c) = (str_vec[0], str_vec[1], str_vec[2]); // call them a, b, and c
+    let (a, b, c) = (str_vec[0], str_vec[1], str_vec[2]); // 叫它們 a, b, 和 c
     println!("{:?}", b);
 }
 ```
 
-That prints `"two"`, which is what `b` is. This is called *destructuring*. That is because first the variables are inside a structure, but then we made `a`, `b`, and `c` that are not inside a structure.
+它印出 `"two"`，也就是 `b`。這就是所謂的*解構*(destructuring)。這是因為變數一開始是在結構體裡面的，但接著我們又做了 `a`、`b`、`c` 這些不是在結構體裡面的變數。
 
-If you need to destructure but don't want all the variables, you can use `_`.
+如果你需要解構，但又不想要所有的變數，你可以使用 `_`。
 
 ```rust
 fn main() {
@@ -2107,9 +2107,9 @@ fn main() {
 }
 ```
 
-Now it only creates a variable called `variable` but doesn't make a variable for the others.
+現在它只建立了一個叫 `variable` 的變數，但沒有為其他值做變數。
 
-There are many more collection types, and many more ways to use arrays, vecs, and tuples. We will learn more about them too, but first we will learn control flow.
+還有很多集合型別，及許許多多使用陣列、向量和元組的方式。我們也將學習更多關於它們的知識，但我們將先學習控制流程。
 
 ## Control flow
 **See this chapter on YouTube: [Part 1](https://youtu.be/UAymDOpv_us) and [Part 2](https://youtu.be/eqysTfiiQZs)**
