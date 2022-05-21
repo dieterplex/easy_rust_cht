@@ -61,7 +61,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [向量](#向量)
   - [元組](#元組)
   - [控制流程](#控制流程)
-  - [Structs](#structs)
+  - [結構體](#結構體)
   - [Enums](#enums)
     - [Enums to use multiple types](#enums-to-use-multiple-types)
   - [Loops](#loops)
@@ -2372,39 +2372,39 @@ Looks like a normal number
 4 is an unlucky number in China (sounds close to 死)!
 ```
 
-## Structs
-**See this chapter on YouTube: [Part 1](https://youtu.be/W23uQghBOFk) and [Part 2](https://youtu.be/GSVhrjLCuNA)**
+## 結構體
+**YouTube 上觀看本章內容: [Part 1](https://youtu.be/W23uQghBOFk) 及 [Part 2](https://youtu.be/GSVhrjLCuNA)**
 
-With structs, you can create your own type. You will use structs all the time in Rust because they are so convenient. Structs are created with the keyword `struct`. The name of a struct should be in UpperCamelCase (capital letter for each word, no spaces). If you write a struct in all lowercase, the compiler will tell you.
+有了結構體(struct)，你可以建立自己的型別。在 Rust 中，你會無時無刻用著結構體，因為它們非常方便。結構體是用關鍵字 `struct` 建立的。結構體的名稱應該用大駝峰式命名法(UpperCamelCase，每個字首用大寫字母，不含空格)。如果你用全小寫的結構體，編譯器會告訴你。
 
-There are three types of structs. One is a "unit struct". Unit means "doesn't have anything". For a unit struct, you just write the name and a semicolon.
+結構體有三種類型。一種是"單元結構體"。單元的意思是"沒有任何東西"。對於一個單元結構體，你只需要寫名字和一個分號。
 
 ```rust
 struct FileDirectory;
 fn main() {}
 ```
 
-The next is a tuple struct, or an unnamed struct. It is "unnamed" because you only need to write the types, not the field names. Tuple structs are good when you need a simple struct and don't need to remember names.
+下一種是元組結構體(tuple struct)，或者說是未具名結構體。之所以是"未具名"，是因為你只需要寫型別，而不是欄位(field)名。元組結構體適合在你需要一個簡單的結構，並且不需要記住名字時。
 
 ```rust
 struct Colour(u8, u8, u8);
 
 fn main() {
-    let my_colour = Colour(50, 0, 50); // Make a colour out of RGB (red, green, blue)
+    let my_colour = Colour(50, 0, 50); // 從RGB (red, green, blue)做出顏色
     println!("The second part of the colour is: {}", my_colour.1);
 }
 ```
 
-This prints `The second part of the colour is: 0`.
+印出 `The second part of the colour is: 0`。
 
-The third type is the named struct. This is probably the most common struct. In this struct you declare field names and types inside a `{}` code block. Note that you don't write a semicolon after a named struct, because there is a whole code block after it.
+第三種類型是具名結構體。這可能是最常見的結構體。在這個結構體中，你在 `{}` 程式碼區塊中宣告欄位名和型別。請注意，在具名結構體後面不要寫分號，因為它後面是一整個程式碼區塊。
 
 ```rust
-struct Colour(u8, u8, u8); // Declare the same Colour tuple struct
+struct Colour(u8, u8, u8); // 宣告一樣的 Colour 元組結構體
 
 struct SizeAndColour {
     size: u32,
-    colour: Colour, // And we put it in our new named struct
+    colour: Colour, // 並且我們把它放在我們的新具名結構體裡
 }
 
 fn main() {
@@ -2417,47 +2417,47 @@ fn main() {
 }
 ```
 
-You separate fields by commas in a named struct too. For the last field you can add a comma or not - it's up to you. `SizeAndColour` had a comma after `colour`:
+在具名結構體中，你也可以用逗號來分隔欄位。對於最後一個欄位，你可以加或不加逗號──這取決於你。`SizeAndColour` 在 `colour` 後面有一個逗號：
 
 ```rust
-struct Colour(u8, u8, u8); // Declare the same Colour tuple struct
+struct Colour(u8, u8, u8); // 宣告一樣的 Colour 結構體
 
 struct SizeAndColour {
     size: u32,
-    colour: Colour, // And we put it in our new named struct
+    colour: Colour, // 並且我們把它放在我們的新具名結構體裡
 }
 
 fn main() {}
 ```
 
-but you don't need it. But it can be a good idea to always put a comma, because sometimes you will change the order of the fields:
+但你不需要它。但總是放一個逗號可能是個好主意，因為有時你會改變欄位的順序：
 
 ```rust
-struct Colour(u8, u8, u8); // Declare the same Colour tuple struct
+struct Colour(u8, u8, u8); // 宣告一樣的 Colour 結構體
 
 struct SizeAndColour {
     size: u32,
-    colour: Colour // No comma here
+    colour: Colour // 這裡沒有逗號
 }
 
 fn main() {}
 ```
 
-Then we decide to change the order...
+然後我們決定改變順序...
 
 ```rust
 struct SizeAndColour {
-    colour: Colour // ⚠️ Whoops! Now this doesn't have a comma.
+    colour: Colour // ⚠️ Whoops! 現在這裡沒有逗號。
     size: u32,
 }
 
 fn main() {}
 ```
 
-But it is not very important either way so you can choose whether to use a comma or not.
+但無論哪種方式都不是很重要，所以你可以選擇是否要使用逗號。
 
 
-Let's create a `Country` struct to give an example. The `Country` struct has the fields `population`, `capital`, and `leader_name`.
+我們建立一個 `Country` 結構體來舉例說明。`Country` 結構有 `population`、`capital` 和 `leader_name` 三個欄位。
 
 ```rust
 struct Country {
@@ -2479,7 +2479,7 @@ fn main() {
 }
 ```
 
-Did you notice that we wrote the same thing twice? We wrote `population: population`, `capital: capital`, and `leader_name: leader_name`. Actually, you don't need to do that. If the field name and variable name are the same, you don't have to write it twice.
+你有沒有注意到，我們把同樣的東西寫了兩次？我們寫了 `population: population`、`capital: capital` 和 `leader_name: leader_name`。實際上，你不需要這樣做。如果欄位名和變數名相同，你就不用寫兩次。
 
 ```rust
 struct Country {
