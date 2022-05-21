@@ -58,7 +58,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [無值變數](#無值變數)
   - [集合型別](#集合型別)
     - [陣列](#陣列)
-  - [Vectors](#vectors)
+  - [向量](#向量)
   - [Tuples](#tuples)
   - [Control flow](#control-flow)
   - [Structs](#structs)
@@ -1893,12 +1893,12 @@ fn main() {
 
 你也可以有一個 **包含的** 範圍，這意味著它也包括最後一個數字。要做到這一點。加上 `=`，寫成 `..=`，而不是 `..`。所以，如果你想要第一、第二和第三項，可以寫成 `[0..=2]`，而不是 `[0..2]`。
 
-## Vectors
-**[See this chapter on YouTube](https://youtu.be/Eh-DsRnDKmw)**
+## 向量
+**[YouTube 上觀看本章內容](https://youtu.be/Eh-DsRnDKmw)**
 
-In the same way that we have `&str` and `String`, we have arrays and vectors. Arrays are faster with less functionality, and vectors are slower with more functionality. (Of course, Rust is always very fast so vectors are not slow, just slow*er* than arrays.) The type is written `Vec`, and you can also just call it a "vec".
+就像我們有 `&str` 和 `String` 一樣的方式，我們有陣列和向量(vector)。陣列的功能少了就快，向量的功能多了就慢。(當然，Rust 的速度一直都是非常快的，所以向量並不慢，只是比陣列慢*一點*)。型別被寫作 `Vec`，你也可以直接叫它 "vec"。
 
-There are two main ways to declare a vector. One is like with `String` using `new`:
+向量的宣告主要有兩種方式。一種像 `String` 使用 `new`:
 
 ```rust
 fn main() {
@@ -1906,31 +1906,31 @@ fn main() {
     let name2 = String::from("Gomesy");
 
     let mut my_vec = Vec::new();
-    // If we run the program now, the compiler will give an error.
-    // It doesn't know the type of vec.
-
-    my_vec.push(name1); // Now it knows: it's Vec<String>
+    // 如果我們現在就跑程式，編譯器會給出錯誤。
+    // 它不知道vec的型別。
+    
+    my_vec.push(name1); // 現在它知道了：它是Vec<String>
     my_vec.push(name2);
 }
 ```
 
-You can see that a `Vec` always has something else inside it, and that's what the `<>` (angle brackets) are for. A `Vec<String>` is a vector with one or more `String`s. You can also have more types inside. For example:
+你可以看到 `Vec` 裡面總是有其他東西，這就是 `<>`(角括號)的作用。`Vec<String>`是有一或多個 `String` 的向量。你還可以在裡面有更多的型別。舉例來說：
 
-- `Vec<(i32, i32)>` this is a `Vec` where each item is a tuple: `(i32, i32)`.
-- `Vec<Vec<String>>` this is a `Vec` that has `Vec`s of `Strings`. Say for example you wanted to save your favourite book as a `Vec<String>`. Then you do it again with another book, and get another `Vec<String>`. To hold both books, you would put them into another `Vec` and that would be a `Vec<Vec<String>>`.
+- `Vec<(i32, i32)>` 這個 `Vec` 的每個元素是元組(tuple)：`(i32, i32)`。
+- `Vec<Vec<String>>` 這個 `Vec` 裡面有包含 `String` 的 `Vec`。假設說你想把你喜歡的書保存在 `Vec<String>`。然後你再拿另一本書重做一次，就會得到另一個 `Vec<String>`。為了保留這兩本書，你會把它們放入另一個 `Vec` 中，這就是 `Vec<Vec<String>>`。
 
-Instead of using `.push()` to make Rust decide the type, you can just declare the type.
+與其使用 `.push()` 讓 Rust 決定型別，不如直接宣告型別。
 
 ```rust
 fn main() {
-    let mut my_vec: Vec<String> = Vec::new(); // The compiler knows the type
-                                              // so there is no error.
+    let mut my_vec: Vec<String> = Vec::new(); // 編譯器知道型別
+                                              // 所以沒有錯誤。
 }
 ```
 
-You can see that items in vectors must have the same type.
+你可以看到，向量中的元素必須具有相同的型別。
 
-Another easy way to create a vector is with the `vec!` macro. It looks like an array declaration, but has `vec!` in front of it.
+建立向量的另一個簡單方法是使用 `vec!` 巨集。它看起來像一個陣列宣告，但前面有 `vec!`。
 
 ```rust
 fn main() {
@@ -1938,14 +1938,14 @@ fn main() {
 }
 ```
 
-The type is `Vec<i32>`. You call it a "Vec of i32s". And a `Vec<String>` is a "Vec of strings". And a `Vec<Vec<String>>` is a "Vec of a vec of strings".
+型別是 `Vec<i32>`。你稱它為 "i32 的 Vec"。而 `Vec<String>` 是 "String 的 Vec"。`Vec<Vec<String>>` 是 "String 的 Vec 的 Vec"。
 
-You can slice a vector too, just like in an array.
+你也可以對一個向量進行切片，就像用在陣列一樣。
 
 ```rust
 fn main() {
     let vec_of_ten = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    // Everything is the same as above except we added vec!.
+    // 所有東西都和前面的陣列一樣，除了我們加上vec!。
     let three_to_five = &vec_of_ten[2..5];
     let start_at_two = &vec_of_ten[1..];
     let end_at_five = &vec_of_ten[..5];
@@ -1958,26 +1958,26 @@ everything: {:?}", three_to_five, start_at_two, end_at_five, everything);
 }
 ```
 
-Because a vec is slower than an array, we can use some methods to make it faster. A vec has a **capacity**, which means the space given to the vector. When you push a new item on the vector, it gets closer and closer to the capacity. Then if you go past the capacity, it will make its capacity double and copy the items into the new space. This is called reallocation. We'll use a method called `.capacity()` to look at the capacity of a vector as we add items to it.
+因為向量比陣列慢，我們可以用一些方法讓它更快。向量都有**容量**(capacity)，也就是給予向量使用的空間。當你在向量上推送一個新元素時，它會越來越接近容量。然後，如果你超過了容量，它將使其容量翻倍，並將元素複製到新的空間。這就是所謂的再分配(reallocation)。我們將使用名為 `.capacity()` 的方法，在我們向它新增元素時來查看向量的容量。
 
-For example:
+例如：
 
 ```rust
 fn main() {
     let mut num_vec = Vec::new();
-    println!("{}", num_vec.capacity()); // 0 elements: prints 0
-    num_vec.push('a'); // add one character
-    println!("{}", num_vec.capacity()); // 1 element: prints 4. Vecs with 1 item always start with capacity 4
-    num_vec.push('a'); // add one more
-    num_vec.push('a'); // add one more
-    num_vec.push('a'); // add one more
-    println!("{}", num_vec.capacity()); // 4 elements: still prints 4.
-    num_vec.push('a'); // add one more
-    println!("{}", num_vec.capacity()); // prints 8. We have 5 elements, but it doubled 4 to 8 to make space
+    println!("{}", num_vec.capacity()); // 0 個元素: 印出 0
+    num_vec.push('a'); // 加人一個字元
+    println!("{}", num_vec.capacity()); // 1 個元素: 印出 4. 一筆資料的 Vec 容量永遠從 4 開始
+    num_vec.push('a'); // 多加一個
+    num_vec.push('a'); // 多加一個
+    num_vec.push('a'); // 多加一個
+    println!("{}", num_vec.capacity()); // 4 個元素: 仍印出 4.
+    num_vec.push('a'); // 多加一個
+    println!("{}", num_vec.capacity()); // 印出 8. 我們有 5 個元素, 但容量從 4 加倍到 8 騰出了空間
 }
 ```
 
-This prints:
+印出：
 
 ```text
 0
@@ -1986,32 +1986,32 @@ This prints:
 8
 ```
 
-So this vector has two reallocations: 0 to 4, and 4 to 8. We can make it faster:
+所以這個向量再分配兩次：0 到 4，4 到 8。我們可以讓它更快：
 
 ```rust
 fn main() {
-    let mut num_vec = Vec::with_capacity(8); // Give it capacity 8
-    num_vec.push('a'); // add one character
-    println!("{}", num_vec.capacity()); // prints 8
-    num_vec.push('a'); // add one more
-    println!("{}", num_vec.capacity()); // prints 8
-    num_vec.push('a'); // add one more
-    println!("{}", num_vec.capacity()); // prints 8.
-    num_vec.push('a'); // add one more
-    num_vec.push('a'); // add one more // Now we have 5 elements
-    println!("{}", num_vec.capacity()); // Still 8
+    let mut num_vec = Vec::with_capacity(8); // 給它容量 8
+    num_vec.push('a'); // 加一個字元
+    println!("{}", num_vec.capacity()); // 印出 8
+    num_vec.push('a'); // 再加一個
+    println!("{}", num_vec.capacity()); // 印出 8
+    num_vec.push('a'); // 再加一個
+    println!("{}", num_vec.capacity()); // 印出 8.
+    num_vec.push('a'); // 再加一個
+    num_vec.push('a'); // 再加一個 // 現在我們有 5 個元素
+    println!("{}", num_vec.capacity()); // 仍是 8
 }
 ```
 
-This vector has 0 reallocations, which is better. So if you think you know how many elements you need, you can use `Vec::with_capacity()` to make it faster.
+這個向量比較好再分配是 0 次。所以如果你認為你知道你需要多少元素，你可以使用 `Vec::with_capacity()` 來使它更快。
 
-You remember that you can use `.into()` to make a `&str` into a `String`. You can also use it to make an array into a `Vec`. You have to tell `.into()` that you want a `Vec`, but you don't have to choose the type of `Vec`. If you don't want to choose, you can write `Vec<_>`.
+你記得你可以用 `.into()` 把 `&str` 變成 `String`。你也可以用它把一個陣列變成 `Vec`。你必須告訴 `.into()` 你想要 `Vec`，但你可以不用選擇 `Vec` 的型別。如果你不想選擇，你可以寫 `Vec<_>`。
 
 ```rust
 fn main() {
     let my_vec: Vec<u8> = [1, 2, 3].into();
-    let my_vec2: Vec<_> = [9, 0, 10].into(); // Vec<_> means "choose the Vec type for me"
-                                             // Rust will choose Vec<i32>
+    let my_vec2: Vec<_> = [9, 0, 10].into(); // Vec<_> 表示 "幫我選 Vec 的型別"
+                                             // Rust 會選 Vec<i32>
 }
 ```
 
