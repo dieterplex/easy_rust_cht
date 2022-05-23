@@ -64,7 +64,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [結構體](#結構體)
   - [列舉](#列舉)
     - [使用多種型別的列舉](#使用多種型別的列舉)
-  - [Loops](#loops)
+  - [迴圈](#迴圈)
   - [Implementing structs and enums](#implementing-structs-and-enums)
   - [Destructuring](#destructuring)
   - [References and the dot operator](#references-and-the-dot-operator)
@@ -2763,34 +2763,34 @@ It's a u32 with the value 8
 ```
 
 
-## Loops
+## 迴圈
 
-With loops you can tell Rust to continue something until you want it to stop. You use `loop` to start a loop that does not stop, unless you tell it when to `break`.
+有了迴圈，你可以告訴 Rust 繼續做某件事，直到你想停止它。你也能使用 `loop` 來啟動一個不會停止的迴圈，除非你告訴它何時 `break`(中斷)。
 
 ```rust
-fn main() { // This program will never stop
+fn main() { // 這個程式永不停止
     loop {
 
     }
 }
 ```
 
-So let's tell the compiler when it can break.
+那讓我們告訴編譯器什麼時候能停止。
 
 ```rust
 fn main() {
-    let mut counter = 0; // set a counter to 0
+    let mut counter = 0; // 設定計數器為 0
     loop {
-        counter +=1; // increase the counter by 1
+        counter +=1; // 計數器遞增 1
         println!("The counter is now: {}", counter);
-        if counter == 5 { // stop when counter == 5
+        if counter == 5 { // 當計數器 == 5 時停止
             break;
         }
     }
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 The counter is now: 1
@@ -2800,7 +2800,7 @@ The counter is now: 4
 The counter is now: 5
 ```
 
-If you have a loop inside of a loop, you can give them names. With names, you can tell Rust which loop to `break` out of. Use `'` (called a "tick") and a `:` to give it a name:
+如果你的迴圈裡面還有迴圈，你可以給它們命名。有了名字，你可以告訴 Rust 要從哪個迴圈中 `break` 出來。使用 `'` (稱為 "tick") 和 `:` 來給它命名：
 
 ```rust
 fn main() {
@@ -2809,19 +2809,19 @@ fn main() {
     println!("Now entering the first loop.");
 
     'first_loop: loop {
-        // Give the first loop a name
+        // 給第一個迴圈名字
         counter += 1;
         println!("The counter is now: {}", counter);
         if counter > 9 {
-            // Starts a second loop inside this loop
+            // 在迴圈裡開始第二個迴圈
             println!("Now entering the second loop.");
 
             'second_loop: loop {
-                // now we are inside 'second_loop
+                // 現在我們在 'second_loop 裡面
                 println!("The second counter is now: {}", counter2);
                 counter2 += 1;
                 if counter2 == 3 {
-                    break 'first_loop; // Break out of 'first_loop so we can exit the program
+                    break 'first_loop; // 中斷到 'first_loop 標籤外我們才能離開程式
                 }
             }
         }
@@ -2829,7 +2829,7 @@ fn main() {
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 Now entering the first loop.
@@ -2849,7 +2849,7 @@ The second counter is now: 1
 The second counter is now: 2
 ```
 
-A `while` loop is a loop that continues while something is still `true`. Each loop, Rust will check if it is still `true`. If it becomes `false`, Rust will stop the loop.
+`while` 迴圈是指在某件事物還在 `true` 時繼續運作的迴圈。每一次迴圈，Rust 都會檢查它是否仍然是 `true`。如果變成 `false`，Rust 會停止迴圈。
 
 ```rust
 fn main() {
@@ -2862,10 +2862,10 @@ fn main() {
 }
 ```
 
-A `for` loop lets you tell Rust what to do each time. But in a `for` loop, the loop stops after a certain number of times. `for` loops use **ranges** very often. You use `..` and `..=` to create a range.
+`for` 迴圈讓你告訴 Rust 每次要做什麼。但是在 `for` 迴圈中，迴圈會在一定次數後停止。`for` 迴圈經常使用**範圍(range)**。你能用 `..` 和 `..=` 來建立範圍。
 
-- `..` creates an **exclusive** range: `0..3` creates `0, 1, 2`.
-- `..=` creates an **inclusive** range: `0..=3` = `0, 1, 2, 3`.
+- `..`  建立一個**排除的**範圍： `0..3`  建立 `0, 1, 2`。
+- `..=` 建立一個**包含的**範圍： `0..=3` 建立 `0, 1, 2, 3`。
 
 ```rust
 fn main() {
@@ -2879,7 +2879,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 The number is: 0
@@ -2891,9 +2891,9 @@ The next number is: 2
 The next number is: 3
 ```
 
-Also notice that `number` becomes the variable name for 0..3. We could have called it `n`, or `ntod_het___hno_f`, or anything. We can then use that name in `println!`.
+同時注意到，`number` 成為 0..3 的變數名。我們也能叫它做 `n`，或者 `ntod_het___hno_f`，或者任何名字。然後我們就可以在 `println!` 中使用這個名字。
 
-If you don't need a variable name, use `_`.
+如果你不需要變數名，就用 `_`。
 
 ```rust
 fn main() {
@@ -2903,7 +2903,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Printing the same thing three times
@@ -2911,9 +2911,9 @@ Printing the same thing three times
 Printing the same thing three times
 ```
 
-because we didn't give it any number to print each time.
+因為我們每次都沒有給它任何數字來列印。
 
-And actually, if you give a variable name and don't use it, Rust will tell you:
+而實際上，如果你給了變數名卻沒用，Rust 會告訴你：
 
 ```rust
 fn main() {
@@ -2923,7 +2923,7 @@ fn main() {
 }
 ```
 
-This prints the same thing as above. The program compiles fine, but Rust will remind you that you didn't use `number`:
+印出的內容和上面一樣。程式編譯正常，但 Rust 會提醒你沒有使用 `number`：
 
 ```text
 warning: unused variable: `number`
@@ -2933,9 +2933,9 @@ warning: unused variable: `number`
   |         ^^^^^^ help: if this is intentional, prefix it with an underscore: `_number`
 ```
 
-Rust suggests writing `_number` instead of `_`. Putting `_` in front of a variable name means "maybe I will use it later". But using just `_` means "I don't care about this variable at all". So you can put `_` in front of variable names if you will use them later and don't want the compiler to tell you about them.
+Rust 建議寫 `_number` 而不是 `_`。在變數名前加上 `_` 意味著 "也許我以後會用到它"。但是只用 `_` 意味著"我根本不關心這個變數"。所以，如果你以後會使用它們，並且不想讓編譯器告訴你，你可以在變數名前面加上`_`。
 
-You can also use `break` to return a value. You write the value right after `break` and use a `;`. Here is an example with a `loop` and a break that gives `my_number` its value.
+你也可以用 `break` 來回傳值。只要把值寫在 `break` 後面以及 `;`。這個有 `loop` 和 break 的範例賦值給 `my_number`。
 
 ```rust
 fn main() {
@@ -2950,25 +2950,25 @@ fn main() {
 }
 ```
 
-This prints `56`. `break counter;` means "break and return the value of counter". And because the whole block starts with `let`, `my_number` gets the value.
+印出 `56`。`break counter;` 的意思是"中斷並回傳計數器的值"。而且因為整個區塊以 `let` 開始，`my_number` 最後會得到回傳值。
 
-Now that we know how to use loops, here is a better solution to our `match` problem with colours from before. It is a better solution because we want to compare everything, and a `for` loop looks at every item.
+現在我們知道了如何使用迴圈，對於我們之前的顏色"匹配"問題這是更好的解決方案。這個解決方案更好是因為我們要比較所有的東西，而"for"迴圈會檢視每一項元素。
 
 ```rust
 fn match_colours(rbg: (i32, i32, i32)) {
     println!("Comparing a colour with {} red, {} blue, and {} green:", rbg.0, rbg.1, rbg.2);
-    let new_vec = vec![(rbg.0, "red"), (rbg.1, "blue"), (rbg.2, "green")]; // Put the colours in a vec. Inside are tuples with the colour names
-    let mut all_have_at_least_10 = true; // Start with true. We will set it to false if one colour is less than 10
+    let new_vec = vec![(rbg.0, "red"), (rbg.1, "blue"), (rbg.2, "green")]; // 將顏色放進向量。裡面是含顏色名的元組
+    let mut all_have_at_least_10 = true; // 從true開始。我們會設定為false如果其中一種顏色少於10
     for item in new_vec {
         if item.0 < 10 {
-            all_have_at_least_10 = false; // Now it's false
-            println!("Not much {}.", item.1) // And we print the colour name.
+            all_have_at_least_10 = false; // 現在是false
+            println!("Not much {}.", item.1) // 接著我們印出顏色。
         }
     }
-    if all_have_at_least_10 { // Check if it's still true, and print if true
+    if all_have_at_least_10 { // 檢查是否仍是true，是就印出
         println!("Each colour has at least 10.")
     }
-    println!(); // Add one more line
+    println!(); // 多加一行
 }
 
 fn main() {
@@ -2982,7 +2982,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Comparing a colour with 200 red, 0 blue, and 0 green:
