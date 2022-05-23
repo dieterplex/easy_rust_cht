@@ -62,8 +62,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [元組](#元組)
   - [控制流程](#控制流程)
   - [結構體](#結構體)
-  - [Enums](#enums)
-    - [Enums to use multiple types](#enums-to-use-multiple-types)
+  - [列舉](#列舉)
+    - [使用多種型別的列舉](#使用多種型別的列舉)
   - [Loops](#loops)
   - [Implementing structs and enums](#implementing-structs-and-enums)
   - [Destructuring](#destructuring)
@@ -2501,17 +2501,17 @@ fn main() {
 }
 ```
 
-## Enums
-**See this chapter on YouTube: [Part 1](https://youtu.be/SRnqNTJUgjs), [Part 2](https://youtu.be/F_EcbWM63lk), [Part 3](https://youtu.be/2uh64U9JesA) and [Part 4](https://youtu.be/LOHVUYTc5Us)**
+## 列舉
+**YouTube 上觀看本章內容: [Part 1](https://youtu.be/SRnqNTJUgjs), [Part 2](https://youtu.be/F_EcbWM63lk), [Part 3](https://youtu.be/2uh64U9JesA) 及 [Part 4](https://youtu.be/LOHVUYTc5Us)**
 
-An `enum` is short for enumerations. They look very similar to a struct, but are different. Here is the difference:
+`enum` 是列舉(enumeration)的簡稱。它們看起來與結構體非常相似，但又有所不同。區別有：
 
-- Use a `struct` when you want one thing **AND** another thing.
-- Use an `enum` when you want one thing **OR** another thing.
+- 當你想要一個東西**和**另一個東西時，使用`struct`。
+- 當你想要一個東西**或**另一個東西時，請使用 `enum`。
 
-So structs are for **many things** together, while enums are for **many choices** together.
+所以，結構體是用於**多個事物**在一起，而列舉則是用於**多個選擇**在一起。
 
-To declare an enum, write `enum` and use a code block with the options, separated by commas. Just like a `struct`, the last part can have a comma or not. We will create an enum called `ThingsInTheSky`:
+要宣告列舉時，寫下 `enum`，並用程式碼區塊將包含的選項用逗號分隔。就像 `struct` 一樣，最後一部分的逗號則可有可無。我們將建立一個名為 `ThingsInTheSky` 的列舉：
 
 ```rust
 enum ThingsInTheSky {
@@ -2522,24 +2522,24 @@ enum ThingsInTheSky {
 fn main() {}
 ```
 
-This is an enum because you can either see the sun, **or** the stars: you have to choose one. These are called **variants**.
+這是個列舉，因為你可以看到太陽**或**星星：你必須選擇一個。這些叫做**變體(variants)**。
 
 ```rust
-// create the enum with two choices
+// 建立兩個選擇的列舉
 enum ThingsInTheSky {
     Sun,
     Stars,
 }
 
-// With this function we can use an i32 to create ThingsInTheSky.
+// 有這個函式我們可以用i32來建立ThingsInTheSky。
 fn create_skystate(time: i32) -> ThingsInTheSky {
     match time {
-        6..=18 => ThingsInTheSky::Sun, // Between 6 and 18 hours we can see the sun
-        _ => ThingsInTheSky::Stars, // Otherwise, we can see stars
+        6..=18 => ThingsInTheSky::Sun, // 介於6到18小時之間我們可以見到太陽
+        _ => ThingsInTheSky::Stars, // 除此之外，我們可以見到星星
     }
 }
 
-// With this function we can match against the two choices in ThingsInTheSky.
+// 有這個函式我們可以匹配到ThingsInTheSky的兩個選擇。
 fn check_skystate(state: &ThingsInTheSky) {
     match state {
         ThingsInTheSky::Sun => println!("I can see the sun!"),
@@ -2548,46 +2548,46 @@ fn check_skystate(state: &ThingsInTheSky) {
 }
 
 fn main() {
-    let time = 8; // it's 8 o'clock
-    let skystate = create_skystate(time); // create_skystate returns a ThingsInTheSky
-    check_skystate(&skystate); // Give it a reference so it can read the variable skystate
+    let time = 8; // 這是 8 點鐘
+    let skystate = create_skystate(time); // create_skystate回傳ThingsInTheSky
+    check_skystate(&skystate); // 給它參考那麼它就能讀到變數skystate
 }
 ```
 
-This prints `I can see the sun!`.
+印出 `I can see the sun!`。
 
-You can add data to an enum too.
+你也可以將資料新增到列舉中。
 
 ```rust
 enum ThingsInTheSky {
-    Sun(String), // Now each variant has a string
+    Sun(String), // 現在每個變體都有字串
     Stars(String),
 }
 
 fn create_skystate(time: i32) -> ThingsInTheSky {
     match time {
-        6..=18 => ThingsInTheSky::Sun(String::from("I can see the sun!")), // Write the strings here
+        6..=18 => ThingsInTheSky::Sun(String::from("I can see the sun!")), // 這裡寫下字串
         _ => ThingsInTheSky::Stars(String::from("I can see the stars!")),
     }
 }
 
 fn check_skystate(state: &ThingsInTheSky) {
     match state {
-        ThingsInTheSky::Sun(description) => println!("{}", description), // Give the string the name description so we can use it
-        ThingsInTheSky::Stars(n) => println!("{}", n), // Or you can name it n. Or anything else - it doesn't matter
+        ThingsInTheSky::Sun(description) => println!("{}", description), // 給字串命名為description那麼我們就能使用它
+        ThingsInTheSky::Stars(n) => println!("{}", n), // 或你能命名成 n。或其它任何東西──它無關緊要
     }
 }
 
 fn main() {
-    let time = 8; // it's 8 o'clock
-    let skystate = create_skystate(time); // create_skystate returns a ThingsInTheSky
-    check_skystate(&skystate); // Give it a reference so it can read the variable skystate
+    let time = 8; // 這是 8 點鐘
+    let skystate = create_skystate(time); // create_skystate 回傳 ThingsInTheSky
+    check_skystate(&skystate); // 給它參考那麼它就能讀到變數skystate
 }
 ```
 
-This prints the same thing: `I can see the sun!`
+印出來的結果一樣：`I can see the sun!`。
 
-You can also "import" an enum so you don't have to type so much. Here's an example where we have to type `Mood::` every time we match on our mood:
+你也可以"匯入(import)"一個列舉，這樣你就不用打那麼多字了。下面這個例子裡，我們每次在匹配我們的 mood 時都要輸入 `Mood::`：
 
 ```rust
 enum Mood {
@@ -2599,7 +2599,7 @@ enum Mood {
 
 fn match_mood(mood: &Mood) -> i32 {
     let happiness_level = match mood {
-        Mood::Happy => 10, // Here we type Mood:: every time
+        Mood::Happy => 10, // 我們每次都要輸入 Mood::
         Mood::Sleepy => 6,
         Mood::NotBad => 7,
         Mood::Angry => 2,
@@ -2614,7 +2614,7 @@ fn main() {
 }
 ```
 
-It prints `Out of 1 to 10, my happiness is 7`. Let's import so we can type less. To import everything, write `*`. Note: it's the same key as `*` for dereferencing but is completely different.
+印出的是 `Out of 1 to 10, my happiness is 7`。讓我們匯入，這樣我們就可以少打點字了。要匯入所有的東西時寫做 `*`。注意：它和反參考關鍵字的 `*` 一樣，但完全不同。
 
 ```rust
 enum Mood {
@@ -2625,9 +2625,9 @@ enum Mood {
 }
 
 fn match_mood(mood: &Mood) -> i32 {
-    use Mood::*; // We imported everything in Mood. Now we can just write Happy, Sleepy, etc.
+    use Mood::*; // 我們匯入Mood裡的所有東西。現在我們可以只寫Happy、Sleepy等變體名。
     let happiness_level = match mood {
-        Happy => 10, // We don't have to write Mood:: anymore
+        Happy => 10, // 我們不用再寫 Mood:: 了
         Sleepy => 6,
         NotBad => 7,
         Angry => 2,
@@ -2643,11 +2643,11 @@ fn main() {
 ```
 
 
-Parts of an `enum` can also be turned into an integer. That's because Rust gives each arm of an `enum` a number that starts with 0 for its own use. You can do things with it if your enum doesn't have any other data in it.
+`enum` 的一部分也可以轉變成整數。這是因為 Rust 給 `enum` 提供了以 0 開頭的數字給每個分支各自使用。如果你的列舉中沒有任何其他資料的話，你可以拿它來做些事情。
 
 ```rust
 enum Season {
-    Spring, // If this was Spring(String) or something it wouldn't work
+    Spring, // 如果這是 Spring(String) 或其它東西，它就不能這樣用
     Summer,
     Autumn,
     Winter,
@@ -2662,7 +2662,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 0
@@ -2671,7 +2671,7 @@ This prints:
 3
 ```
 
-Though you can give it a different number, if you want - Rust doesn't care and can use it in the same way. Just add an `=` and your number to the variant that you want to have a number. You don't have to give all of them a number. But if you don't, Rust will just add 1 from the arm before to give it a number.
+不過如果你想的話，你也可以給它一個不同的數字──Rust 並不在意，可以用同樣的方式來使用它。只要在你想要有數值的變體加上 `=` 和數字。你不必給數字到所有變體。但如果你不這樣做，Rust 就會給變體從前一個分支數字加 1 的數字。
 
 ```rust
 enum Star {
@@ -2679,7 +2679,7 @@ enum Star {
     RedDwarf = 50,
     YellowStar = 100,
     RedGiant = 1000,
-    DeadStar, // Think about this one. What number will it have?
+    DeadStar, // 想想看這個數字會有多少？
 }
 
 fn main() {
@@ -2687,7 +2687,7 @@ fn main() {
     let starvec = vec![BrownDwarf, RedDwarf, YellowStar, RedGiant];
     for star in starvec {
         match star as u32 {
-            size if size <= 80 => println!("Not the biggest star."), // Remember: size doesn't mean anything. It's just a name we chose so we can print it
+            size if size <= 80 => println!("Not the biggest star."), // 記得: size 沒有任何意思。只不過是我們為了可以列印所選的名稱 
             size if size >= 80 => println!("This is a good-sized star."),
             _ => println!("That star is pretty big!"),
         }
@@ -2696,7 +2696,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 
 ```text
@@ -2707,11 +2707,11 @@ This is a good-sized star.
 What about DeadStar? It's the number 1001.
 ```
 
-`DeadStar` would have been number 4, but now it's 1001.
+`DeadStar` 本來是 4 號，但現在是 1001。
 
-### Enums to use multiple types
+### 使用多種型別的列舉
 
-You know that items in a `Vec`, array, etc. all need the same type (only tuples are different). But you can actually use an enum to put different types in. Imagine we want to have a `Vec` with `u32`s or `i32`s. Of course, you can make a `Vec<(u32, i32)>` (a vec with `(u32, i32)` tuples) but we only want one each time. So here you can use an enum. Here is a simple example:
+你知道向量、陣列等等之中的元素都需要相同的型別(只有 tuple 不同)。但其實你可以用列舉來放不同的型別。想象一下，我們想要有個向量，有 `u32` 或 `i32`。當然，你可以做出 `Vec<(u32, i32)>`(帶有 `(u32, i32)` 元組的向量)，但是我們想要每次只有一種。所以這裡可以使用列舉。這是簡單的範例：
 
 ```rust
 enum Number {
@@ -2722,11 +2722,11 @@ enum Number {
 fn main() {}
 ```
 
-So there are two variants: the `U32` variant with a `u32` inside, and the `I32` variant with `i32` inside. `U32` and `I32` are just names we made. They could have been `UThirtyTwo` or `IThirtyTwo` or anything else.
+所以這有兩個變體：`U32` 變體裡有 `u32`，`I32` 變體裡有 `i32`。`U32` 和 `I32` 只是我們取的名字。它們可以取名叫 `UThirtyTwo`、`IThirtyTwo` 或其他任何東西。
 
-Now, if we put them into a `Vec` we just have a `Vec<Number>`, and the compiler is happy because it's all the same type. The compiler doesn't care that we have either `u32` or `i32` because they are all inside a single type called `Number`. And because it's an enum, you have to pick one, which is what we want. We will use the `.is_positive()` method to pick. If it's `true` then we will choose `U32`, and if it's `false` then we will choose `I32`.
+現在，如果我們把它們放到向量中，我們就會有 `Vec<Number>`，因為都是同一個型別編譯器會很開心。編譯器並不在乎我們有的是 `u32` 或者是 `i32`，因為它們都在一個叫做 `Number` 的單一型別裡面。因為它是列舉，你必須選擇一種，這就是我們想要的。我們將使用 `.is_positive()` 方法來挑選。如果是 `true`，那麼我們將選擇 `U32`，如果是 `false`，那麼我們將選擇 `I32`。
 
-Now the code looks like this:
+現在程式碼像這樣：
 
 ```rust
 enum Number {
@@ -2736,8 +2736,8 @@ enum Number {
 
 fn get_number(input: i32) -> Number {
     let number = match input.is_positive() {
-        true => Number::U32(input as u32), // change it to u32 if it's positive
-        false => Number::I32(input), // otherwise just give the number because it's already i32
+        true => Number::U32(input as u32), // 如果是正數改成 u32
+        false => Number::I32(input), // 不然就給數字因為它已經是 i32
     };
     number
 }
@@ -2755,7 +2755,7 @@ fn main() {
 }
 ```
 
-This prints what we wanted to see:
+印出了我們想看到的結果：
 
 ```text
 It's an i32 with the value -800
