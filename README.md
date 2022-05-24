@@ -65,7 +65,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [列舉](#列舉)
     - [使用多種型別的列舉](#使用多種型別的列舉)
   - [迴圈](#迴圈)
-  - [Implementing structs and enums](#implementing-structs-and-enums)
+  - [實作結構體和列舉](#實作結構體和列舉)
   - [Destructuring](#destructuring)
   - [References and the dot operator](#references-and-the-dot-operator)
   - [Generics](#generics)
@@ -2996,16 +2996,16 @@ Comparing a colour with 200 red, 50 blue, and 0 green:
 Not much green.
 ```
 
-## Implementing structs and enums
+## 實作結構體和列舉
 
-This is where you can start to give your structs and enums some real power. To call functions on a `struct` or an `enum`, use an `impl` block. These functions are called **methods**. There are two kinds of methods in an `impl` block.
+從這裡開始你可以給予你的結構體和列舉一些真正的威力。要對 `struct` 或 `enum` 呼叫的函式，要寫在 `impl` 區塊。這些函式被稱為**方法(method)**。`impl` 區塊中的方法有兩類。
 
-- Methods: these take **self** (or **&self** or **&mut self**). Regular methods use a `.` (a period). `.clone()` is an example of a regular method.
-- Associated functions (known as "static" methods in some languages): these do not take self. Associated means "related to". They are written differently, using `::`. `String::from()` is an associated function, and so is `Vec::new()`. You see associated functions most often used to create new variables.
+- 方法：這些方法會取用 **self**(或是 **&self** 或 **&mut self**)。正規方法使用"."(英文句號)。`.clone()` 是一個正規方法的例子。
+- 關聯函式(associated function, 在某些語言中被稱為"靜態(static)"方法)：這些函式不使用 self。關聯的意思是"有相關的"。它們的書寫方式不同，用的是 `::`。`String::from()` 是一個關聯函式，`Vec::new()` 也是。你看到的關聯函式最常被用來建立新變數。
 
-In our example we are going to create animals and print them.
+我們將在我們的範例中建立 Animal 並印出它們。
 
-For a new `struct` or `enum`, you need to give it **Debug** if you want to use `{:?}` to print, so we will do that. If you write `#[derive(Debug)]` above the struct or enum then you can print it with `{:?}`. These messages with `#[]` are called **attributes**. You can sometimes use them to tell the compiler to give your struct an ability like `Debug`. There are many attributes and we will learn about them later. But `derive` is probably the most common and you see it a lot above structs and enums.
+對於新的 `struct` 或 `enum`，如果你想使用 `{:?}` 印出來，你需要給它**Debug**，我們也將會這樣做。如果你在結構體或列舉上面寫了 `#[derive(Debug)]`，那麼你就可以用 `{:?}` 印出來。這些帶有 `#[]` 的訊息被稱為**屬性(attributes)**。你有時可以用它們來告訴編譯器給你的結構體像是 `Debug` 的能力。屬性有很多種，我們以後會學到。但是 `derive` 可能是最常見的，你經常在結構體和列舉上面看到它。
 
 ```rust
 #[derive(Debug)]
@@ -3022,26 +3022,26 @@ enum AnimalType {
 
 impl Animal {
     fn new() -> Self {
-        // Self means Animal.
-        // You can also write Animal instead of Self
+        // Self 指的是 Animal。
+        // 你也可以寫 Animal 而非 Self
 
         Self {
-            // When we write Animal::new(), we always get a cat that is 10 years old
+            // 當我們寫 Animal::new() 我們永遠會得到10歲的貓
             age: 10,
             animal_type: AnimalType::Cat,
         }
     }
 
-    fn change_to_dog(&mut self) { // because we are inside Animal, &mut self means &mut Animal
-                                  // use .change_to_dog() to change the cat to a dog
-                                  // with &mut self we can change it
+    fn change_to_dog(&mut self) { // 因為我們在Animal裡, &mut self 指的是 &mut Animal
+                                  // 用 .change_to_dog() 把貓改成狗
+                                  // 有了 &mut self 我們就能更改
         println!("Changing animal to dog!");
         self.animal_type = AnimalType::Dog;
     }
 
     fn change_to_cat(&mut self) {
-        // use .change_to_cat() to change the dog to a cat
-        // with &mut self we can change it
+        // 用 .change_to_cat() 把狗改成貓
+        // 有了 &mut self 我們就能更改
         println!("Changing animal to cat!");
         self.animal_type = AnimalType::Cat;
     }
@@ -3058,8 +3058,8 @@ impl Animal {
 
 
 fn main() {
-    let mut new_animal = Animal::new(); // Associated function to create a new animal
-                                        // It is a cat, 10 years old
+    let mut new_animal = Animal::new(); // 用關聯函式建立新動物
+                                        // 它是一隻10歲的貓
     new_animal.check_type();
     new_animal.change_to_dog();
     new_animal.check_type();
@@ -3068,7 +3068,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 The animal is a cat
@@ -3079,11 +3079,11 @@ The animal is a cat
 ```
 
 
-Remember that Self (the type Self) and self (the variable self) are abbreviations. (abbreviation = short way to write)
+記住，Self(型別 Self)和 self(變數 self)是縮寫。(縮寫 = 簡寫方式)
 
-So in our code, Self = Animal. Also, `fn change_to_dog(&mut self)` means `fn change_to_dog(&mut Animal)`.
+所以在我們的程式碼中，Self = Animal。另外，`fn change_to_dog(&mut self)` 的意思是 `fn change_to_dog(&mut Animal)`。
 
-Here is one more small example. This time we will use `impl` on an `enum`:
+下面再舉一個小例子。這次我們將在 `enum` 上使用 `impl`：
 
 ```rust
 enum Mood {
@@ -3108,7 +3108,7 @@ fn main() {
 }
 ```
 
-This prints `Need sleep NOW`.
+印出 `Need sleep NOW`。
 
 ## Destructuring
 
