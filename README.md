@@ -68,7 +68,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [實作結構體和列舉](#實作結構體和列舉)
   - [解構](#解構)
   - [參考和點運算子](#參考和點運算子)
-  - [Generics](#generics)
+  - [泛型](#泛型)
   - [Option and Result](#option-and-result)
     - [Option](#option)
     - [Result](#result)
@@ -3288,9 +3288,9 @@ fn main() {
 
 
 
-## Generics
+## 泛型
 
-In functions, you write what type to take as input:
+在函式中，你要寫出拿什麼型別作為輸入：
 
 ```rust
 fn return_number(number: i32) -> i32 {
@@ -3303,11 +3303,11 @@ fn main() {
 }
 ```
 
-But what if you want to take more than just `i32`? You can use generics for this. Generics means "maybe one type, maybe another type".
+但是如果你想用的不僅僅是 `i32` 呢？你可以用泛型(Generics)來解決。泛型的意思是 "也許是某一種型別，也許是另一種型別"。
 
-For generics, you use angle brackets with the type inside, like this: `<T>` This means "any type you put into the function". Usually, generics uses types with one capital letter (T, U, V, etc.), though you don't have to just use one letter.
+泛型的寫法要用角括號裡面加上型別，像這樣：`<T>` 這個意思是"你放進函式的任意型別"。通常泛型會使用一個大寫字母的型別(T、U、V等)，儘管你不必只使用一個字母。
 
-This is how you change the function to make it generic:
+這個範例是你如何改變函式讓它用泛型：
 
 ```rust
 fn return_number<T>(number: T) -> T {
@@ -3320,9 +3320,9 @@ fn main() {
 }
 ```
 
-The important part is the `<T>` after the function name. Without this, Rust will think that T is a concrete (concrete = not generic) type, like `String` or `i8`.
+重點是函式名稱後的 `<T>`。如果沒有這個，Rust 會認為 T 是一個具體的(concrete，具體的 = 不是泛型的)型別，像是 `String` 或 `i8`。
 
-This is easier to understand if we write out a type name. See what happens when we change `T` to `MyType`:
+如果我們能寫出型別名，就更容易理解了。看看我們把 `T` 改成 `MyType` 會發生什麼：
 
 ```rust
 fn return_number(number: MyType) -> MyType { // ⚠️
@@ -3331,7 +3331,7 @@ fn return_number(number: MyType) -> MyType { // ⚠️
 }
 ```
 
-As you can see, `MyType` is concrete, not generic. So we need to write this and so now it works:
+大家可以看到，`MyType` 是具體的，不是泛型的。所以我們需要寫成這樣，它現在就可以執行了：
 
 ```rust
 fn return_number<MyType>(number: MyType) -> MyType {
@@ -3344,11 +3344,11 @@ fn main() {
 }
 ```
 
-So the single letter `T` is for human eyes, but the part after the function name is for the compiler's "eyes". Without it, it's not generic.
+所以單字母 `T` 是給人眼看的，但函式名稱後的部分是給編譯器的"眼睛"看的。沒有了它，就不是泛型了。
 
-Now we will go back to type `T`, because Rust code usually uses `T`.
+現在我們再回到型別 `T`，因為 Rust 程式碼通常使用 `T`。
 
-You will remember that some types in Rust are **Copy**, some are **Clone**, some are **Display**, some are **Debug**, and so on. With **Debug**, we can print with `{:?}`. So now you can see that we have a problem if we want to print `T`:
+你會記得 Rust 中有些型別是 **Copy**，有些是 **Clone**，有些是 **Display**，有些是 **Debug**，等等。有 **Debug**，我們可以用 `{:?}` 來列印。所以現在大家可以看到，我們如果要印出 `T` 就有問題了：
 
 ```rust
 fn print_number<T>(number: T) {
@@ -3360,7 +3360,7 @@ fn main() {
 }
 ```
 
-`print_number` needs **Debug** to print `number`, but is `T` a type with `Debug`? Maybe not. Maybe it doesn't have `#[derive(Debug)]`, who knows. The compiler doesn't know either, so it gives an error:
+`print_number` 需要 **Debug** 印出 `number`，但是 `T` 是一個有 `Debug` 的型別嗎？也許不是。也許它沒有 `#[derive(Debug)]`，誰知道呢？編譯器也不知道，所以它給了錯誤：
 
 ```text
 error[E0277]: `T` doesn't implement `std::fmt::Debug`
@@ -3370,12 +3370,12 @@ error[E0277]: `T` doesn't implement `std::fmt::Debug`
    |                                           ^^^^^^ `T` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
 ```
 
-T doesn't implement **Debug**. So do we implement Debug for T? No, because we don't know what T is. But we can tell the function: "Don't worry, because any type T for this function will have Debug".
+T 沒有實作 **Debug**。那麼我們是否要為 T 實現 Debug 呢？不，因為我們不知道(具體的) T 是什麼。但是我們可以告訴函式："別擔心，因為這個函式用的任何 T 型別都會有 Debug"
 
 ```rust
-use std::fmt::Debug; // Debug is located at std::fmt::Debug. So now we can just write 'Debug'.
+use std::fmt::Debug; // 聲明 Debug 是來自 std::fmt::Debug。所以後面我們可以只寫 'Debug'。
 
-fn print_number<T: Debug>(number: T) { // <T: Debug> is the important part
+fn print_number<T: Debug>(number: T) { // <T: Debug> 是重點
     println!("Here is your number: {:?}", number);
 }
 
@@ -3384,9 +3384,9 @@ fn main() {
 }
 ```
 
-So now the compiler knows: "Okay, this type T is going to have Debug". Now the code works, because `i32` has Debug. Now we can give it many types: `String`, `&str`, and so on, because they all have Debug.
+所以現在編譯器知道："好的，這個型別 T 會有 Debug"。現在程式碼執行了，因為 `i32` 有 Debug。現在我們可以給它很多型別。`String`、`&str` 等，因為它們都有 Debug.
 
-Now we can create a struct and give it Debug with #[derive(Debug)], so now we can print it too. Our function can take `i32`, the struct Animal, and more:
+現在我們可以建立結構，並用 `#[derive(Debug)]` 給它實作 Debug，所以現在我們也可以印出它。我們的函式能接受 `i32`、Animal 結構體及更多型別：
 
 ```rust
 use std::fmt::Debug;
@@ -3414,16 +3414,16 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Here is your item: Animal { name: "Charlie", age: 1 }
 Here is your item: 55
 ```
 
-Sometimes we need more than one type in a generic function. We have to write out each type name, and think about how we want to use it. In this example, we want two types. First we want to print a statement for type T. Printing with `{}` is nicer, so we will require `Display` for `T`.
+有時我們在泛型函式中需要不止一種型別。我們必須寫出每個型別的名稱，並思考我們想要如何使用它。在這個範例中，我們想要兩個型別。首先我們想印出型別為 T 的陳述式。用 `{}` 列印更好，所以我們會要求用 `Display` 來列印 `T`。
 
-Next is type U, and the two variables `num_1` and `num_2` have type U (U is some sort of number). We want to compare them, so we need `PartialOrd`. That trait lets us use things like `<`, `>`, `==`, and so on. We want to print them too, so we require `Display` for `U` as well.
+下個是型別 U 和 `num_1` 和 `num_2` 這兩個型別為 U(U 是某種數字)的變數。我們想要比較它們，所以我們需要 `PartialOrd`。這個特性讓我們可以使用 `<`、`>`、`==` 等。我們也想印出它們，所以我們也要求有 `Display` 來印出 `U`。
 
 ```rust
 use std::fmt::Display;
@@ -3438,17 +3438,17 @@ fn main() {
 }
 ```
 
-This prints `Listen up!! Is 9 greater than 8? true`.
+印出 `Listen up!! Is 9 greater than 8? true`。
 
-So `fn compare_and_display<T: Display, U: Display + PartialOrd>(statement: T, num_1: U, num_2: U)` says:
+所以 `fn compare_and_display<T: Display, U: Display + PartialOrd>(statement: T, num_1: U, num_2: U)` 說得是：
 
-- The function name is `compare_and_display`,
-- The first type is T, and it is generic. It must be a type that can print with {}.
-- The next type is U, and it is generic. It must be a type that can print with {}. Also, it must be a type that can compare (use `>`, `<`, and `==`).
+- 函式名稱是 `compare_and_display`，
+- 第一個型別是泛型的 T。它必須是一個可以用 {} 列印的型別。
+- 下一個型別是泛型的 U。它必須是一個可以用 {} 列印的型別。另外，它必須是一個可以比較的型別(使用 `>`、`<` 和 `==`)。
 
-Now we can give `compare_and_display` different types. `statement` can be a `String`, a `&str`, anything with Display.
+現在我們可以給 `compare_and_display` 不同的型別。`statement` 可以是 `String`、`&str`，或任何有 Display 的型別。
 
-To make generic functions easier to read, we can also write it like this with `where` right before the code block:
+為了讓泛型函式更容易讀懂，我們也可以這樣寫得像這個範例，在程式碼區塊之前用 `where`。
 
 ```rust
 use std::cmp::PartialOrd;
@@ -3467,30 +3467,30 @@ fn main() {
 }
 ```
 
-Using `where` is a good idea when you have many generic types.
+尤其當你有很多泛型型別時，使用 `where` 是一個好主意。
 
-Also note:
+還要注意：
 
-- If you have one type T and another type T, they must be the same.
-- If you have one type T and another type U, they can be different. But they can also be the same.
+- 如果你有一個型別 T 和另一個型別 T，它們必須是相同的。
+- 如果你有一個型別 T 和另一個型別 U，它們可以是不同的。但它們也可以是相同的。
 
-For example:
+比如說：
 
 ```rust
 use std::fmt::Display;
 
-fn say_two<T: Display, U: Display>(statement_1: T, statement_2: U) { // Type T needs Display, type U needs Display
+fn say_two<T: Display, U: Display>(statement_1: T, statement_2: U) { // T型別要有 Display，U型別要有 Display
     println!("I have two things to say: {} and {}", statement_1, statement_2);
 }
 
 fn main() {
 
-    say_two("Hello there!", String::from("I hate sand.")); // Type T is a &str, but type U is a String.
-    say_two(String::from("Where is Padme?"), String::from("Is she all right?")); // Both types are String.
+    say_two("Hello there!", String::from("I hate sand.")); // T型別是 &str，但U型別是 String。
+    say_two(String::from("Where is Padme?"), String::from("Is she all right?")); // 兩者型別皆是 String。
 }
 ```
 
-This prints:
+印出：
 
 ```text
 I have two things to say: Hello there! and I hate sand.
