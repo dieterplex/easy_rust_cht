@@ -67,7 +67,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [迴圈](#迴圈)
   - [實作結構體和列舉](#實作結構體和列舉)
   - [解構](#解構)
-  - [References and the dot operator](#references-and-the-dot-operator)
+  - [參考和點運算子](#參考和點運算子)
   - [Generics](#generics)
   - [Option and Result](#option-and-result)
     - [Option](#option)
@@ -3189,9 +3189,9 @@ fn main() {
 印出 `The city's two names are ["Tallinn", "Reval"]`。
 
 
-## References and the dot operator
+## 參考和點運算子
 
-We learned that when you have a reference, you need to use `*` to get to the value. A reference is a different type, so this won't work:
+我們學過當你有一個參考時，你要用 `*` 來取得值。參考是一種不同的型別，所以這是無法執行的：
 
 ```rust
 fn main() {
@@ -3202,7 +3202,7 @@ fn main() {
 }
 ```
 
-The compiler prints:
+編譯器印出：
 
 ```text
 error[E0277]: can't compare `{integer}` with `&{integer}`
@@ -3212,11 +3212,11 @@ error[E0277]: can't compare `{integer}` with `&{integer}`
   |                              ^^ no implementation for `{integer} == &{integer}`
 ```
 
-So we change line 5 to `println!("{}", my_number == *reference);` and now it prints `true` because it's now `i32` == `i32`, not `i32` == `&i32`. This is called dereferencing.
+所以我們把第 5 行改成 `println!("{}", my_number == *reference);`，現在印出的是 `true`，因為現在是比較 `i32` == `i32`，而不是比較 `i32` == `&i32`。這就是所謂的反參考。
 
-But when you use a method, Rust will dereference for you. The `.` in a method is called the dot operator, and it does dereferencing for free.
+但是當你使用方法時，Rust 會為你反參考。方法中的 `.` 被稱為點運算子(dot operator)，用來免費做反參考。
 
-First, let's make a struct with one `u8` field. Then we will make a reference to it and try to compare. It will not work:
+首先，讓我們寫一個有 `u8` 欄位的結構。然後，我們將對它做參考，並嘗試進行比較。它將無法執行：
 
 ```rust
 struct Item {
@@ -3228,15 +3228,15 @@ fn main() {
         number: 8,
     };
 
-    let reference_number = &item.number; // reference number type is &u8
+    let reference_number = &item.number; // 型別是 &u8
 
-    println!("{}", reference_number == 8); // ⚠️ &u8 and u8 cannot be compared
+    println!("{}", reference_number == 8); // ⚠️ &u8 和 u8 不能比較
 }
 ```
 
-To make it work, we need to dereference: `println!("{}", *reference_number == 8);`.
+為了讓它能執行，我們需要去反參考：`println!("{}", *reference_number == 8);`。
 
-But with the dot operator, we don't need `*`. For example:
+但用了點運算子，我們就不需要`*`。例如：
 
 ```rust
 struct Item {
@@ -3250,11 +3250,11 @@ fn main() {
 
     let reference_item = &item;
 
-    println!("{}", reference_item.number == 8); // we don't need to write *reference_item.number
+    println!("{}", reference_item.number == 8); // 我們不要需寫成 *reference_item.number
 }
 ```
 
-Now let's create a method for `Item` that compares `number` to another number. We don't need to use `*` anywhere:
+現在讓我們為 `Item` 建立方法來比較 `number` 與另一個數字。我們不需要在任何地方使用 `*`：
 
 ```rust
 struct Item {
@@ -3262,9 +3262,9 @@ struct Item {
 }
 
 impl Item {
-    fn compare_number(&self, other_number: u8) { // takes a reference to self
+    fn compare_number(&self, other_number: u8) { // 接受 self 的參考
         println!("Are {} and {} equal? {}", self.number, other_number, self.number == other_number);
-            // We don't need to write *self.number
+            // 我們不需要寫 *self.number
     }
 }
 
@@ -3273,17 +3273,17 @@ fn main() {
         number: 8,
     };
 
-    let reference_item = &item; // This is type &Item
-    let reference_item_two = &reference_item; // This is type &&Item
+    let reference_item = &item; // 型別 &Item
+    let reference_item_two = &reference_item; // 型別 &&Item
 
-    item.compare_number(8); // the method works
-    reference_item.compare_number(8); // it works here too
-    reference_item_two.compare_number(8); // and here
+    item.compare_number(8); // 方法可以執行
+    reference_item.compare_number(8); // 它在這裡也可以執行
+    reference_item_two.compare_number(8); // 還有這裡
 
 }
 ```
 
-So just remember: when you use the `.` operator, you don't need to worry about `*`.
+所以只要記住：當你使用 `.` 運算子時，你不需要擔心有沒有 `*`。
 
 
 
