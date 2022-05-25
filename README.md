@@ -66,7 +66,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [使用多種型別的列舉](#使用多種型別的列舉)
   - [迴圈](#迴圈)
   - [實作結構體和列舉](#實作結構體和列舉)
-  - [Destructuring](#destructuring)
+  - [解構](#解構)
   - [References and the dot operator](#references-and-the-dot-operator)
   - [Generics](#generics)
   - [Option and Result](#option-and-result)
@@ -3110,12 +3110,12 @@ fn main() {
 
 印出 `Need sleep NOW`。
 
-## Destructuring
+## 解構
 
-Let's look at some more destructuring. You can get the values from a struct or enum by using `let` backwards. We learned that this is  `destructuring`, because you get variables that are not part of a structure. Now you have the values separately. First a simple example:
+我們再來多看些解構(destructuring)。你可以反過來透過使用 `let` 從結構體或列舉中獲取值。我們瞭解到這是 `destructuring`，因為你得到的變數不是結構體的一部分。現在你分別得到了它們的值。首先是一個簡單的範例：
 
 ```rust
-struct Person { // make a simple struct for a person
+struct Person { // 為個人資料做一個簡單的結構體
     name: String,
     real_name: String,
     height: u8,
@@ -3123,14 +3123,14 @@ struct Person { // make a simple struct for a person
 }
 
 fn main() {
-    let papa_doc = Person { // create variable papa_doc
+    let papa_doc = Person { // 建立變數 papa_doc
         name: "Papa Doc".to_string(),
         real_name: "Clarence".to_string(),
         height: 170,
         happiness: false
     };
 
-    let Person { // destructure papa_doc
+    let Person { // 解構 papa_doc
         name: a,
         real_name: b,
         height: c,
@@ -3141,13 +3141,13 @@ fn main() {
 }
 ```
 
-This prints: `They call him Papa Doc but his real name is Clarence. He is 170 cm tall and is he happy? false`
+印出：`They call him Papa Doc but his real name is Clarence. He is 170 cm tall and is he happy? false`
 
-You can see that it's backwards. First we say `let papa_doc = Person { fields }` to create the struct. Then we say `let Person { fields } = papa_doc` to destructure it.
+你可以看到它是反過來的。首先我們說 `let papa_doc = Person { fields }` 來建立結構體。然後我們說 `let Person { fields } = papa_doc` 來解構它。
 
-You don't have to write `name: a` - you can just write `name`. But here we write `name: a` because we want to use a variable with the name `a`.
+你不必寫 `name: a`──你可以直接寫 `name`。但這裡我們寫 `name: a` 是因為我們想使用一個名字為 `a` 的變數。
 
-Now a bigger example. In this example we have a `City` struct. We give it a `new` function to make it. Then we have a `process_city_values` function to do things with the values. In the function we just create a `Vec`, but you can imagine that we can do much more after we destructure it.
+現在再舉一個更大的例子。在這個例子中，我們有一個 `City` 結構體。我們給它一個 `new` 函式來做出它。然後我們有一個 `process_city_values` 函式來處理這些值。在函式中，我們只是建立了一個 `Vec`，但你可以想象，我們可以在解構它之後做更多的事情。
 
 ```rust
 struct City {
@@ -3175,7 +3175,7 @@ fn process_city_values(city: &City) {
         population,
         date_founded,
     } = city;
-        // now we have the values to use separately
+        // 現在我們有可分別使用的值了
     let two_names = vec![name, name_before];
     println!("The city's two names are {:?}", two_names);
 }
@@ -3186,7 +3186,7 @@ fn main() {
 }
 ```
 
-This prints `The city's two names are ["Tallinn", "Reval"]`.
+印出 `The city's two names are ["Tallinn", "Reval"]`。
 
 
 ## References and the dot operator
