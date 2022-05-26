@@ -69,7 +69,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [解構](#解構)
   - [參考和點運算子](#參考和點運算子)
   - [泛型](#泛型)
-  - [Option and Result](#option-and-result)
+  - [Option 和 Result](#option-和-result)
     - [Option](#option)
     - [Result](#result)
   - [Other collections](#other-collections)
@@ -3497,15 +3497,15 @@ I have two things to say: Hello there! and I hate sand.
 I have two things to say: Where is Padme? and Is she all right?
 ```
 
-## Option and Result
+## Option 和 Result
 
-We understand enums and generics now, so we can understand `Option` and `Result`. Rust uses these two enums to make code safer.
+我們現在理解了列舉和泛型，所以我們也能理解 `Option` 和 `Result`。Rust 用這兩種列舉來使程式碼更安全。
 
-We will start with `Option`.
+我們將從 `Option` 開始。
 
 ### Option
 
-You use `Option` when you have a value that might exist, or might not exist. When a value exists it is `Some(value)` and when it doesn't it's just `None`, Here is an example of bad code that can be improved with `Option`.
+當你有一個值，它可能存在，也可能不存在時，你就該用 `Option`。當一個值存在時它就是 `Some(value)`，不存在時就是 `None`，下面是一個可以用`Option` 來改進的壞程式碼範例。
 
 ```rust
     // ⚠️
@@ -3519,20 +3519,20 @@ fn main() {
 }
 ```
 
-When we run the code, it panics. Here is the message:
+當我們執行這段程式碼時，它發生恐慌(panic)。這是訊息：
 
 ```text
 thread 'main' panicked at 'index out of bounds: the len is 2 but the index is 4', src\main.rs:34:5
 ```
 
-Panic means that the program stops before the problem happens. Rust sees that the function wants something impossible, and stops. It "unwinds the stack" (takes the values off the stack) and tells you "sorry, I can't do that".
+恐慌的意思是，程式在問題發生前就停止了。Rust 看到函式想要做些不可能的事情，就會停止。它"解開(unwind)堆疊"(從堆疊中取出值)，並告訴你"對不起，我不能那樣做"。
 
-So now we will change the return type from `i32` to `Option<i32>`. This means "give me a `Some(i32)` if it's there, and give me `None` if it's not". We say that the `i32` is "wrapped" in an `Option`, which means that it's inside an `Option`. You have to do something to get the value out.
+所以現在我們將回傳型別從 `i32` 改為 `Option<i32>`。這意味著"如果有的話給我 `Some(i32)`，如果沒有的話給我 `None`"。我們說 `i32` 是"包"在 `Option` 裡面，也就是說它放在 `Option` 裡面。你必須做些事情才能把這個值取出來。
 
 ```rust
 fn take_fifth(value: Vec<i32>) -> Option<i32> {
-    if value.len() < 5 { // .len() gives the length of the vec.
-                         // It must be at least 5.
+    if value.len() < 5 { // .len() 給出向量的長度。
+                         // 它必需是至少是 5。
         None
     } else {
         Some(value[4])
@@ -3546,9 +3546,9 @@ fn main() {
 }
 ```
 
-This prints `None, Some(5)`. This is good, because now we don't panic anymore. But how do we get the value 5?
+印出的是 `None, Some(5)`。這下好了，因為現在我們再也不恐慌了。但是我們要如何得到 5 這個值呢？
 
-We can get the value inside an option with `.unwrap()`, but be careful with `.unwrap()`. It's just like unwrapping a present: maybe there's something good inside, or maybe there's an angry snake inside. You only want to `.unwrap()` if you are sure. If you unwrap a value that is `None`, the program will panic.
+我們可以用 `.unwrap()` 從 Option 裡面得取值，但要小心使用 `.unwrap()`。這就像拆禮物一樣：也許裡面有好東西，也許裡面有條憤怒的蛇。只有在你確定的情況下，你才會想要用 `.unwrap()`。如果你拆開一個 `None` 的值，程式就會恐慌。
 
 ```rust
 // ⚠️
@@ -3564,19 +3564,19 @@ fn main() {
     let new_vec = vec![1, 2];
     let bigger_vec = vec![1, 2, 3, 4, 5];
     println!("{:?}, {:?}",
-        take_fifth(new_vec).unwrap(), // this one is None. .unwrap() will panic!
+        take_fifth(new_vec).unwrap(), // 這個是 None。 .unwrap() 會恐慌！
         take_fifth(bigger_vec).unwrap()
     );
 }
 ```
 
-The message is:
+訊息是：
 
 ```text
 thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:14:9
 ```
 
-But we don't have to use `.unwrap()`. We can use a `match`. Then we can print the value we have `Some`, and not touch it if we have `None`. For example:
+但我們可以不需要用 `.unwrap()`。我們能用 `match`。那麼我們就可以把我們有 `Some` 的值印出來，如果是 `None` 的值就不要碰。比如說：
 
 ```rust
 fn take_fifth(value: Vec<i32>) -> Option<i32> {
@@ -3599,25 +3599,25 @@ fn handle_option(my_option: Vec<Option<i32>>) {
 fn main() {
     let new_vec = vec![1, 2];
     let bigger_vec = vec![1, 2, 3, 4, 5];
-    let mut option_vec = Vec::new(); // Make a new vec to hold our options
-                                     // The vec is type: Vec<Option<i32>>. That means a vec of Option<i32>.
+    let mut option_vec = Vec::new(); // 用新的向量存放我們的 option
+                                     // 向量的型別: Vec<Option<i32>>。那是 Option<i32> 的向量。
 
-    option_vec.push(take_fifth(new_vec)); // This pushes "None" into the vec
-    option_vec.push(take_fifth(bigger_vec)); // This pushes "Some(5)" into the vec
+    option_vec.push(take_fifth(new_vec)); // 這會推送 "None" 進向量
+    option_vec.push(take_fifth(bigger_vec)); // 這會推送 "Some(5)" 進向量
 
-    handle_option(option_vec); // handle_option looks at every option in the vec.
-                               // It prints the value if it is Some. It doesn't touch it if it is None.
+    handle_option(option_vec); // handle_option 查看向量裡的每個 option。
+                               // 並印出值如果是 Some。如果是 None 就不碰。
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Found a None!
 Found a 5!
 ```
 
-Because we know generics, we are able to read the code for `Option`. It looks like this:
+因為我們知道泛型，所以我們能夠讀懂 `Option` 的程式碼。它看起來像這樣：
 
 ```rust
 enum Option<T> {
@@ -3628,9 +3628,9 @@ enum Option<T> {
 fn main() {}
 ```
 
-The important point to remember: with `Some`, you have a value of type `T` (any type). Also note that the angle brackets after the `enum` name around `T` is what tells the compiler that it's generic. It has no trait like `Display` or anything to limit it, so it can be anything. But with `None`, you don't have anything.
+要記得的重點是：有了 `Some`，你就有了型別為 `T` 的值(任何型別)。還要注意的是，`enum` 名字後面有圍繞著 `T` 的角括號是用來告訴編譯器它是泛型。且它沒有 `Display` 這樣的特徵(trait)或任何東西來限制它，所以它可以是任何東西。但 `None` 的話，你就什麼都沒有。
 
-So in a `match` statement for Option you can't say:
+所以在 Option 的 `match` 陳述式中，你不能說：
 
 ```rust
 // 🚧
@@ -3638,9 +3638,9 @@ Some(value) => println!("The value is {}", value),
 None(value) => println!("The value is {}", value),
 ```
 
-because `None` is just `None`.
+因為 `None` 就只是 `None`。
 
-Of course, there are easier ways to use Option. In this code, we will use a method called `.is_some()` to tell us if it is `Some`. (Yes, there is also a method called `.is_none()`.) In this easier way, we don't need `handle_option()` anymore. We also don't need a vec for the Options.
+當然，還有更簡單的方式來使用 Option。在這段程式碼中，我們將會使用一個叫做 `.is_some()` 的方法來告訴我們它是否是 `Some`。(對，還有個叫做 `.is_none()` 的方法。)在這個更簡單的方式中，我們不再需要 `handle_option()` 了。我們也不需要存放 Option 的向量了。
 
 ```rust
 fn take_fifth(value: Vec<i32>) -> Option<i32> {
@@ -3658,8 +3658,8 @@ fn main() {
     for vec in vec_of_vecs {
         let inside_number = take_fifth(vec);
         if inside_number.is_some() {
-            // .is_some() returns true if we get Some, false if we get None
-            println!("We got: {}", inside_number.unwrap()); // now it is safe to use .unwrap() because we already checked
+            // 如果我們得到 Some，.is_some() 就回傳 true，None 就回傳 false
+            println!("We got: {}", inside_number.unwrap()); // 因為我們已經檢查過了，現在它能安全的使用 .unwrap()
         } else {
             println!("We got nothing.");
         }
@@ -3667,7 +3667,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 We got nothing.
@@ -3676,14 +3676,14 @@ We got: 5
 
 ### Result
 
-Result is similar to Option, but here is the difference:
+Result 和 Option 類似，但區別是：
 
-- Option is about `Some` or `None` (value or no value),
-- Result is about `Ok` or `Err` (okay result, or error result).
+- Option 和 `Some` 或 `None` 有關 (有值或無值)，
+- Result 和 `Ok` 或 `Err` 有關 (成功的，或錯誤的結果)。
 
-So `Option` is if you are thinking: "Maybe there will be something, and maybe there won't." But `Result` is if you are thinking: "Maybe it will fail."
+所以 `Option` 是用在如果你思考的是："也許會有東西，也許不會有。"但 `Result` 則是用在如果你思考的是："也許會失敗。"
 
-To compare, here are the signatures for Option and Result.
+比較一下，這是 Option 和 Result 的簽名(signature)。
 
 ```rust
 enum Option<T> {
@@ -3699,9 +3699,9 @@ enum Result<T, E> {
 fn main() {}
 ```
 
-So Result has a value inside of `Ok`, and a value inside of `Err`. That is because errors usually contain information that describes the error.
+所以 Result 在 "Ok" 裡面有值，在 "Err" 裡面也有值。這是因為錯誤裡通常有包含描述錯誤的資訊。
 
-`Result<T, E>` means you need to think of what you want to return for `Ok`, and what you want to return for `Err`. Actually, you can decide anything. Even this is okay:
+`Result<T, E>` 的意思是你要想好 `Ok` 要回傳什麼，`Err` 要回傳什麼。其實，你可以決定任何事情。甚至這樣也可以：
 
 ```rust
 fn check_error() -> Result<(), ()> {
@@ -3713,9 +3713,9 @@ fn main() {
 }
 ```
 
-`check_error` says "return `()` if we get `Ok`, and return `()` if we get `Err`". Then we return `Ok` with a `()`.
+`check_error` 說"如果得到 `Ok` 就回傳 `()`，如果得到 `Err` 就回傳 `()`"。然後我們用 `()` 回傳 `Ok`。
 
-The compiler gives us an interesting warning:
+編譯器給了我們有趣的警告：
 
 ```text
 warning: unused `std::result::Result` that must be used
@@ -3728,7 +3728,7 @@ warning: unused `std::result::Result` that must be used
   = note: this `Result` may be an `Err` variant, which should be handled
 ```
 
-This is true: we only returned the `Result` but it could have been an `Err`. So let's handle the error a bit, even though we're still not really doing anything.
+這是真的：我們只回傳了 `Result`，但它可能是 `Err`。所以讓我們稍微處理一下這個錯誤，儘管我們仍然沒有真的做任何事情。
 
 ```rust
 fn give_result(input: i32) -> Result<(), ()> {
@@ -3748,86 +3748,86 @@ fn main() {
 }
 ```
 
-This prints `It's an error, guys`. So we just handled our first error.
+印出 `It's an error, guys`。所以我們只處理了第一個錯誤。
 
-Remember, the four methods to easily check are `.is_some()`, `is_none()`, `is_ok()`, and `is_err()`.
+記住，輕鬆檢查的四種方法是`.is_some()`、`is_none()`、`is_ok()` 和 `is_err()`。
 
 
-Sometimes a function with Result will use a `String` for the `Err` value. This is not the best method to use, but it is a little better than what we've done so far.
+有時一個帶有 Result 的函式會用 `String` 來表示 `Err` 的值。這不是最好的方法，但比我們目前所做的要好一些。
 
 ```rust
 fn check_if_five(number: i32) -> Result<i32, String> {
     match number {
         5 => Ok(number),
-        _ => Err("Sorry, the number wasn't five.".to_string()), // This is our error message
+        _ => Err("Sorry, the number wasn't five.".to_string()), // 這是我們的錯誤訊息
     }
 }
 
 fn main() {
-    let mut result_vec = Vec::new(); // Create a new vec for the results
+    let mut result_vec = Vec::new(); // 建立新的向量放結果
 
     for number in 2..7 {
-        result_vec.push(check_if_five(number)); // push each result into the vec
+        result_vec.push(check_if_five(number)); // 推送每個結果進向量
     }
 
     println!("{:?}", result_vec);
 }
 ```
 
-Our vec prints:
+我們的向量印出：
 
 ```text
 [Err("Sorry, the number wasn\'t five."), Err("Sorry, the number wasn\'t five."), Err("Sorry, the number wasn\'t five."), Ok(5),
 Err("Sorry, the number wasn\'t five.")]
 ```
 
-Just like Option, `.unwrap()` on `Err` will panic.
+就像 Option 一樣，在 `Err` 上用 `.unwrap()` 就會恐慌。
 
 ```rust
     // ⚠️
 fn main() {
-    let error_value: Result<i32, &str> = Err("There was an error"); // Create a Result that is already an Err
-    println!("{}", error_value.unwrap()); // Unwrap it
+    let error_value: Result<i32, &str> = Err("There was an error"); // 建立已經是Err的Result
+    println!("{}", error_value.unwrap()); // 拆開它
 }
 ```
 
-The program panics, and prints:
+程式恐慌並印出：
 
 ```text
 thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "There was an error"', src\main.rs:30:20
 ```
 
-This information helps you fix your code. `src\main.rs:30:20` means "inside main.rs in directory src, on line 30 and column 20". So you can go there to look at your code and fix the problem.
+這些資訊幫助你修正你的程式碼。`src\main.rs:30:20` 的意思是"在目錄 src 的 main.rs 內，第 30 行和第 20 列"。所以你可以去那裡檢視你的程式碼並修復問題。
 
-You can also create your own error types. Result functions in the standard library and other people's code usually do this. For example, this function from the standard library:
+你也可以建立自己的錯誤型別，標準函式庫中的 Result 函式和其他人的程式碼通常都會這樣做。例如，標準函式庫中的這個函式：
 
 ```rust
 // 🚧
 pub fn from_utf8(vec: Vec<u8>) -> Result<String, FromUtf8Error>
 ```
 
-This function takes a vector of bytes (`u8`) and tries to make a `String`. So the success case for the Result is a `String` and the error case is `FromUtf8Error`. You can give your error type any name you want.
+這個函式接受位元組向量(`u8`)，並嘗試做出 `String`，所以 Result 的成功情況是 `String`，錯誤情況是 `FromUtf8Error`。你可以給你的錯誤型別取任何你想要的名字。
 
-Using a `match` with `Option` and `Result` sometimes requires a lot of code. For example, the `.get()` method returns an `Option` on a `Vec`.
+和 `Option` 及 `Result` 一起使用的 `match` 有時需要很多程式碼。例如，在 `Vec` 的 `.get()` 方法回傳 `Option`。
 
 ```rust
 fn main() {
     let my_vec = vec![2, 3, 4];
-    let get_one = my_vec.get(0); // 0 to get the first number
-    let get_two = my_vec.get(10); // Returns None
+    let get_one = my_vec.get(0); // 用 0 來取得第一個數
+    let get_two = my_vec.get(10); // 回傳 None
     println!("{:?}", get_one);
     println!("{:?}", get_two);
 }
 ```
 
-This prints
+印出：
 
 ```text
 Some(2)
 None
 ```
 
-So now we can match to get the values. Let's use a range from 0 to 10 to see if it matches the numbers in `my_vec`.
+所以現在我們可以匹配得到值了。讓我們使用 0 到 10 的範圍，看看是否匹配 `my_vec` 中的數字。
 
 ```rust
 fn main() {
@@ -3842,7 +3842,7 @@ fn main() {
 }
 ```
 
-This is good, but we don't do anything for `None` because we don't care. Here we can make the code smaller by using `if let`. `if let` means "do something if it matches, and don't do anything if it doesn't". `if let` is when you don't care about matching for everything.
+這不錯，但是我們不對 `None` 做任何處理，因為我們不關心。這裡我們可以用 `if let` 讓程式碼變小。`if let` 的意思是"匹配就做，否則不做"。`if let` 是在你不要求對所有的東西都匹配的時候使用。
 
 ```rust
 fn main() {
@@ -3856,20 +3856,20 @@ fn main() {
 }
 ```
 
-**Important to remember**: `if let Some(number) = my_vec.get(index)` means "if you get `Some(number)` from `my_vec.get(index)`".
+**切記**：`if let Some(number) = my_vec.get(index)` 的意思是 "如果你從 `my_vec.get(index)` 得到 `Some(number)`"。
 
-Also note: it uses one `=`. It is not a boolean.
+另外注意：它使用的是 `=`。它不是布林值。
 
-`while let` is like a while loop for `if let`. Imagine that we have weather station data like this:
+`while let` 是像 `if let` 的 while 迴圈。想象一下，我們有這樣的氣象站資料：
 
 ```text
 ["Berlin", "cloudy", "5", "-7", "78"]
 ["Athens", "sunny", "not humid", "20", "10", "50"]
 ```
 
-We want to get the numbers, but not the words. For the numbers, we can use a method called `parse::<i32>()`. `parse()` is the method, and `::<i32>` is the type. It will try to turn the `&str` into an `i32`, and give it to us if it can. It returns a `Result`, because it might not work (like if you wanted it to parse "Billybrobby" - that's not a number).
+我們想拿到數字，而不是文字。對於數字，我們可以使用叫做 `parse::<i32>()` 的方法。`parse()` 是方法，`::<i32>` 是型別。它將嘗試把 `&str` 變成 `i32`，如果成功的話就把結果給我們。它回傳 `Result`，因為它可能無法執行(比如你想讓它解析"Billybrobby"──那不是一個數字)。
 
-We will also use `.pop()`. This takes the last item off of the vector.
+我們也會用 `.pop()`。這會從向量中取出最後一個元素。
 
 ```rust
 fn main() {
@@ -3878,22 +3878,22 @@ fn main() {
         vec!["Athens", "sunny", "not humid", "20", "10", "50"],
     ];
     for mut city in weather_vec {
-        println!("For the city of {}:", city[0]); // In our data, every first item is the city name
+        println!("For the city of {}:", city[0]); // 在我們的資料中，每一筆的第一個元素都是城市名
         while let Some(information) = city.pop() {
-            // This means: keep going until you can't pop anymore
-            // When the vector reaches 0 items, it will return None
-            // and it will stop.
+            // 這行意思是：直到你不能 pop 前繼續執迴圈
+            // 當向量沒有元素時，它會回傳 None
+            // 並且它會停正。
             if let Ok(number) = information.parse::<i32>() {
-                // Try to parse the variable we called information
-                // This returns a result. If it's Ok(number), it will print it
+                // 試著解析我們稱作information的變數
+                // 這裡的回傳結果如果是 Ok(number)，它會印出數值
                 println!("The number is: {}", number);
-            }  // We don't write anything here because we do nothing if we get an error. Throw them all away
+            }  // 這裡我們不寫任何東西，因為如果我們遇到錯誤我們不做處理。會把(錯誤)它們都拋出去
         }
     }
 }
 ```
 
-This will print:
+將印出：
 
 ```text
 For the city of Berlin:
