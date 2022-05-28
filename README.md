@@ -74,7 +74,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [Result](#result)
   - [其他集合型別](#其他集合型別)
     - [HashMap (和 BTreeMap)](#hashmap-和-btreemap)
-    - [HashSet and BTreeSet](#hashset-and-btreeset)
+    - [HashSet 和 BTreeSet](#hashset-和-btreeset)
     - [BinaryHeap](#binaryheap)
     - [VecDeque](#vecdeque)
   - [The ? operator](#the--operator)
@@ -4199,15 +4199,15 @@ fn main() {
 
 重點行是：`survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1);`，所以如果它看到 "female"，就會檢查 `HashMap` 中是否已經有 "female"。如果沒有，它就會插入 `Vec::new()`，然後把數字推入。如果它看到 "female" 已經在 `HashMap` 中，它將不會插入新的向量，而只是將數字推入其中。
 
-### HashSet and BTreeSet
+### HashSet 和 BTreeSet
 
-A `HashSet` is actually a `HashMap` that only has keys. On [the page for HashSet](https://doc.rust-lang.org/std/collections/struct.HashSet.html) it explains this on the top:
+`HashSet` 實際上是只有 key 的 `HashMap`。在 [HashSet 文件](https://doc.rust-lang.org/std/collections/struct.HashSet.html)的網頁上面有解釋：
 
-`A hash set implemented as a HashMap where the value is ().` So it's a `HashMap` with keys, no values.
+`A hash set implemented as a HashMap where the value is ().` 所以它是有鍵無值的 `HashMap`。
 
-You often use a `HashSet` if you just want to know if a key exists, or doesn't exist.
+如果你只是想知道某個鍵是不是存在，或者不存在，你經常會選擇用 `HashSet`。
 
-Imagine that you have 100 random numbers, and each number between 1 and 100. If you do this, some numbers will appear more than once, while some won't appear at all. If you put them into a `HashSet` then you will have a list of all the numbers that appeared.
+想像一下，你有 100 個隨機數，每個數字介於 1 和 100 之間。如果你這樣做，有些數字會出現不止一次，而有些數字根本不會出現。如果你把它們放到 `HashSet` 中，那麼你就會有一個所有已出現的數字列表。
 
 ```rust
 use std::collections::HashSet;
@@ -4226,13 +4226,13 @@ fn main() {
         number_hashset.insert(number);
     }
 
-    let hashset_length = number_hashset.len(); // The length tells us how many numbers are in it
+    let hashset_length = number_hashset.len(); // 長度會告訴我們有多少數字在裡面
     println!("There are {} unique numbers, so we are missing {}.", hashset_length, 100 - hashset_length);
 
-    // Let's see what numbers we are missing
+    // 讓我們看看漏了什麼數字
     let mut missing_vec = vec![];
     for number in 0..100 {
-        if number_hashset.get(&number).is_none() { // If .get() returns None,
+        if number_hashset.get(&number).is_none() { // 如果 .get() 回傳 None,
             missing_vec.push(number);
         }
     }
@@ -4244,14 +4244,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 There are 66 unique numbers, so we are missing 34.
 It does not contain: 1 2 4 6 7 9 12 21 23 27 30 31 39 40 45 47 48 50 52 53 62 65 69 70 72 75 77 78 83 85 88 97 98 99
 ```
 
-A `BTreeSet` is similar to a `HashSet` in the same way that a `BTreeMap` is similar to a `HashMap`. If we print each item in the `HashSet`, we don't know what the order will be:
+`BTreeSet` 與 `HashSet` 相似，就像 `BTreeMap` 與 `HashMap` 相似一樣。如果把 `HashSet` 中的每一項都印出來，我們就不知道順序會是什麼了：
 
 ```rust
 for entry in number_hashset { // 🚧
@@ -4259,12 +4259,12 @@ for entry in number_hashset { // 🚧
 }
 ```
 
-Maybe it will print this: `67 28 42 25 95 59 87 11 5 81 64 34 8 15 13 86 10 89 63 93 49 41 46 57 60 29 17 22 74 43 32 38 36 76 71 18 14 84 61 16 35 90 56 54 91 19 94 44 3 0 68 80 51 92 24 20 82 26 58 33 55 96 37 66 79 73`. But it will almost never print it in the same way again.
+也許它會印出這樣：`67 28 42 25 95 59 87 11 5 81 64 34 8 15 13 86 10 89 63 93 49 41 46 57 60 29 17 22 74 43 32 38 36 76 71 18 14 84 61 16 35 90 56 54 91 19 94 44 3 0 68 80 51 92 24 20 82 26 58 33 55 96 37 66 79 73`。但它幾乎不會再以同樣的方式印出。
 
-Here as well, it is easy to change your `HashSet` to a `BTreeSet` if you decide you need ordering. In our code, we only need to make two changes to switch from a `HashSet` to a `BTreeSet`.
+在這裡也一樣，如果你決定需要有序印出的話，把你的 `HashSet` 改成 `BTreeSet` 也很容易。在我們的程式碼中，我們只需要做兩處改動，就可以從 `HashSet` 切換到 `BTreeSet`。
 
 ```rust
-use std::collections::BTreeSet; // Change HashSet to BTreeSet
+use std::collections::BTreeSet; // 把 HashSet 改成 BTreeSet
 
 fn main() {
     let many_numbers = vec![
@@ -4274,7 +4274,7 @@ fn main() {
         96, 95, 55, 92, 28, 3, 17, 91, 36, 20, 24, 0, 86, 82, 58, 93, 68, 54, 80, 56, 22, 67, 82,
         58, 64, 80, 16, 61, 57, 14, 11];
 
-    let mut number_btreeset = BTreeSet::new(); // Change HashSet to BTreeSet
+    let mut number_btreeset = BTreeSet::new(); // 把 HashSet 改成 BTreeSet
 
     for number in many_numbers {
         number_btreeset.insert(number);
@@ -4285,19 +4285,19 @@ fn main() {
 }
 ```
 
-Now it will print in order: `0 3 5 8 10 11 13 14 15 16 17 18 19 20 22 24 25 26 28 29 32 33 34 35 36 37 38 41 42 43 44 46 49 51 54 55 56 57 58 59 60 61 63 64 66 67 68 71 73 74 76 79 80 81 82 84 86 87 89 90 91 92 93 94 95 96`.
+現在會依照順序印出： `0 3 5 8 10 11 13 14 15 16 17 18 19 20 22 24 25 26 28 29 32 33 34 35 36 37 38 41 42 43 44 46 49 51 54 55 56 57 58 59 60 61 63 64 66 67 68 71 73 74 76 79 80 81 82 84 86 87 89 90 91 92 93 94 95 96`。
 
 ### BinaryHeap
 
-A `BinaryHeap` is an interesting collection type, because it is mostly unordered but has a bit of order. It keeps the largest item in the front, but the other items are in any order.
+`BinaryHeap` 是種有趣的集合型別，因為它大部分是無序的，但也有一點有序性。它把最大的元素放前面，但其他元素是以任意順序排列的。
 
-We will use another list of items for an example, but this time smaller.
+我們將用另一個列表來舉例，但這次資料少一些。
 
 ```rust
 use std::collections::BinaryHeap;
 
-fn show_remainder(input: &BinaryHeap<i32>) -> Vec<i32> { // This function shows the remainder in the BinaryHeap. Actually an iterator would be
-                                                         // faster than a function - we will learn them later.
+fn show_remainder(input: &BinaryHeap<i32>) -> Vec<i32> { // 這個函式呈現BinaryHeap中剩餘部分。實際上
+                                                         // 疊代器會比函式快- 我們會在之後學到。
     let mut remainder_vec = vec![];
     for number in input {
         remainder_vec.push(*number)
@@ -4306,7 +4306,7 @@ fn show_remainder(input: &BinaryHeap<i32>) -> Vec<i32> { // This function shows 
 }
 
 fn main() {
-    let many_numbers = vec![0, 5, 10, 15, 20, 25, 30]; // These numbers are in order
+    let many_numbers = vec![0, 5, 10, 15, 20, 25, 30]; // 這些數字是有序的
 
     let mut my_heap = BinaryHeap::new();
 
@@ -4314,13 +4314,13 @@ fn main() {
         my_heap.push(number);
     }
 
-    while let Some(number) = my_heap.pop() { // .pop() returns Some(number) if a number is there, None if not. It pops from the front
+    while let Some(number) = my_heap.pop() { // 如果有數字 .pop() 回傳 Some(number)，否則 None。且從前面 pop
         println!("Popped off {}. Remaining numbers are: {:?}", number, show_remainder(&my_heap));
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Popped off 30. Remaining numbers are: [25, 15, 20, 0, 10, 5]
@@ -4332,9 +4332,9 @@ Popped off 5. Remaining numbers are: [0]
 Popped off 0. Remaining numbers are: []
 ```
 
-You can see that the number in the 0 index is always largest: 25, 20, 15, 10, 5, then 0. But the other ones are all different.
+你可以看到索引 0 的數字總是最大的25、20、15、10、5 然後是 0。但其它都不一樣。
 
-A good way to use a `BinaryHeap` is for a collection of things to do. Here we create a `BinaryHeap<(u8, &str)>` where the `u8` is a number for the importance of the task. The `&str` is a description of what to do.
+使用 `BinaryHeap<(u8, &str)>` 的好方法是用在待處理事物的集合。這裡我們建立 `BinaryHeap<(u8, &str)>`，其中 `u8` 是任務重要性的數字。`&str` 是對要處理什麼的描述。
 
 ```rust
 use std::collections::BinaryHeap;
@@ -4342,7 +4342,7 @@ use std::collections::BinaryHeap;
 fn main() {
     let mut jobs = BinaryHeap::new();
 
-    // Add jobs to do throughout the day
+    // 加入一整天要做的工作
     jobs.push((100, "Write back to email from the CEO"));
     jobs.push((80, "Finish the report today"));
     jobs.push((5, "Watch some YouTube"));
@@ -4355,7 +4355,7 @@ fn main() {
 }
 ```
 
-This will always print:
+總是會印出：
 
 ```text
 You need to: Write back to email from the CEO
@@ -4367,14 +4367,14 @@ You need to: Watch some YouTube
 
 ### VecDeque
 
-A `VecDeque` is a `Vec` that is good at popping items both off the front and the back. Rust has `VecDeque` because a `Vec` is great for popping off the back (the last item), but not so great off the front. When you use `.pop()` on a `Vec`, it just takes off the last item on the right and nothing else is moved. But if you take it off another part, all the items to the right are moved over one position to the left. You can see this in the description for `.remove()`:
+`VecDeque` 是一種既能從前面彈出元素，又能從後面彈出元素的 `Vec`。Rust 有 `VecDeque` 是因為 `Vec` 適合從後面(最後一個元素)彈出，但從前面彈出就不那麼好了。當你在 `Vec` 上使用 `.pop()` 的時候，它只是把右邊最後一個元素取出，其他的都不會動。但是如果你從其他地方取出元素，它右邊的所有元素都會被向左搬移一個位置。你可以在 `.remove()` 的文件描述中看到這一點：
 
 
 ```text
 Removes and returns the element at position index within the vector, shifting all elements after it to the left.
 ```
 
-So if you do this:
+所以如果你這樣做：
 
 ```rust
 fn main() {
@@ -4383,9 +4383,9 @@ fn main() {
 }
 ```
 
-it will remove `9`. `8` in index 1 will move to index 0, `7` in index 2 will move to index 1, and so on. Imagine a big parking lot where every time one car leaves all the cars on the right side have to move over.
+它將會刪除 `9`。索引 1 中的 `8` 將移到索引 0，索引 2 中的 `7` 將移到索引 1，以此類推。想像一個大停車場，每當有一輛車離開時，右邊所有的車都要移過來。
 
-This, for example, is a *lot* of work for the computer. In fact, if you run it on the Playground it will probably just give up because it's too much work.
+舉例來說這對電腦是*很大*的工作量。事實上，如果你在 Playground 上執行時，它很可能會因為工作量太大而直接放棄。
 
 ```rust
 fn main() {
@@ -4396,9 +4396,9 @@ fn main() {
 }
 ```
 
-This is a `Vec` of 600,000 zeros. Every time you use `remove(0)` on it, it moves each zero left one space to the left. And then it does it 600,000 times.
+這是有 60 萬個零的 `Vec`。每次你用 `remove(0)` 時，它就會把每個零向左搬移一個空間。並且它要做上 60 萬次。
 
-You don't have to worry about that with a `VecDeque`. It is usually a bit slower than a `Vec`, but if you have to do things on both ends then it is much faster. You can just use `VecDeque::from` with a `Vec` to make one. Our code above then looks like this:
+用 `VecDeque` 就不用擔心這個問題了。它通常比 `Vec` 慢一點，但如果你要在資料兩端都做事情，那麼它就快多了。你可以直接從 `Vec` 用 `VecDeque::from` 做出來。那麼上面我們的程式碼就會像這樣：
 
 ```rust
 use std::collections::VecDeque;
@@ -4406,21 +4406,21 @@ use std::collections::VecDeque;
 fn main() {
     let mut my_vec = VecDeque::from(vec![0; 600000]);
     for i in 0..600000 {
-        my_vec.pop_front(); // pop_front is like .pop but for the front
+        my_vec.pop_front(); // pop_front 就像 .pop 但是從前面處理
     }
 }
 ```
 
-It is now much faster, and on the Playground it finishes in under a second instead of giving up.
+現在速度快了很多，在 Playground 上它不到一秒就結束，而不是放棄。
 
-In this next example we have a `Vec` of things to do. Then we make a `VecDeque` and use `.push_front()` to put them at the front, so the first item we added will be on the right. But each item we push is a `(&str, bool)`: `&str` is the description and `false` means it's not done yet. We use our `done()` function to pop an item off the back, but we don't want to delete it. Instead, we change `false` to `true` and push it at the front so that we can keep it.
+在接下來的這個範例中，我們有個記錄待處理事物的 `Vec`。接著我們做出 `VecDeque`，用 `.push_front()` 把它們放到前面，使得我們新增的第一個元素會是在右邊。但是我們推送的每個元素型別是 `(&str, bool)`：`&str` 是描述，`false` 表示還沒完成。我們用 `done()` 函式從後面彈出一個元素，但是我們不想刪除它。我們反而是把 `false` 改成 `true`，然後把它推到前面，使得我們可以保留它。
 
-It looks like this:
+它看起來像這樣：
 
 ```rust
 use std::collections::VecDeque;
 
-fn check_remaining(input: &VecDeque<(&str, bool)>) { // Each item is a (&str, bool)
+fn check_remaining(input: &VecDeque<(&str, bool)>) { // 每個元素是 (&str, bool)
     for item in input {
         if item.1 == false {
             println!("You must: {}", item.0);
@@ -4429,9 +4429,9 @@ fn check_remaining(input: &VecDeque<(&str, bool)>) { // Each item is a (&str, bo
 }
 
 fn done(input: &mut VecDeque<(&str, bool)>) {
-    let mut task_done = input.pop_back().unwrap(); // pop off the back
-    task_done.1 = true;                            // now it's done - mark as true
-    input.push_front(task_done);                   // put it at the front now
+    let mut task_done = input.pop_back().unwrap(); // 後面彈出
+    task_done.1 = true;                            // 它完成了 - 標記為 true
+    input.push_front(task_done);                   // 現在把它放到前面
 }
 
 fn main() {
@@ -4453,7 +4453,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 You must: phone Loki back
