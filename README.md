@@ -72,8 +72,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [Option 和 Result](#option-和-result)
     - [Option](#option)
     - [Result](#result)
-  - [Other collections](#other-collections)
-    - [HashMap (and BTreeMap)](#hashmap-and-btreemap)
+  - [其他集合型別](#其他集合型別)
+    - [HashMap (和 BTreeMap)](#hashmap-和-btreemap)
     - [HashSet and BTreeSet](#hashset-and-btreeset)
     - [BinaryHeap](#binaryheap)
     - [VecDeque](#vecdeque)
@@ -3906,43 +3906,43 @@ The number is: 10
 The number is: 20
 ```
 
-## Other collections
+## 其他集合型別
 
-Rust has many more types of collections. You can see them at https://doc.rust-lang.org/beta/std/collections/ in the standard library. That page has good explanations for why to use one type, so go there if you don't know what type you want. These collections are all inside `std::collections` in the standard library. The best way to use them is with a `use` statement, like we did with our `enums`. We will start with `HashMap`, which is very common.
+Rust 還有很多集合型別。你可以在標準函式庫中的 https://doc.rust-lang.org/beta/std/collections/ 看到它們。那個頁面對為什麼要使用某種型別有很好的解釋，所以如果你不知道你想要什麼型別就去那裡。這些集合都在標準函式庫的 `std::collections` 裡面。使用它們最好的方法是使用 `use` 陳述式。就像我們對 `enums` 做的。我們將從非常常見的 `HashMap` 開始。
 
-### HashMap (and BTreeMap)
+### HashMap (和 BTreeMap)
 
-A HashMap is a collection made out of *keys* and *values*. You use the key to look up the value that matches the key. You can create a new `HashMap` with just `HashMap::new()` and use `.insert(key, value)` to insert items.
+HashMap 是由 *鍵(key)* 和 *值(value)* 組成的集合。你使用鍵來查詢與鍵匹配的值。你可以只用 `HashMap::new()` 建立一個新的`HashMap`，並使用`.insert(key, value)`來插入元素。
 
-A `HashMap` is not in order, so if you print every key in a `HashMap` together it will probably print differently. We can see this in an example:
+`HashMap` 是沒有順序的，所以如果你把 `HashMap` 中的每個鍵都一起印出來，可能每次會印出不同的結果。我們可以在範例中看到這一點：
 
 ```rust
-use std::collections::HashMap; // This is so we can just write HashMap instead of std::collections::HashMap every time
+use std::collections::HashMap; // 因此這是我們能只寫 HashMap 而不用每次都寫 std::collections::HashMap
 
 struct City {
     name: String,
-    population: HashMap<u32, u32>, // This will have the year and the population for the year
+    population: HashMap<u32, u32>, // 這會記錄年度和該年度的人口數
 }
 
 fn main() {
 
     let mut tallinn = City {
         name: "Tallinn".to_string(),
-        population: HashMap::new(), // So far the HashMap is empty
+        population: HashMap::new(), // 目前為止 HashMap 是空的
     };
 
-    tallinn.population.insert(1372, 3_250); // insert three dates
+    tallinn.population.insert(1372, 3_250); // 插入三筆年度資料
     tallinn.population.insert(1851, 24_000);
     tallinn.population.insert(2020, 437_619);
 
 
-    for (year, population) in tallinn.population { // The HashMap is HashMap<u32, u32> so it returns a two items each time
+    for (year, population) in tallinn.population { // HashMap 型別是 HashMap<u32, u32> 所以它每次回傳有兩個元素的元組
         println!("In the year {} the city of {} had a population of {}.", year, tallinn.name, population);
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 In the year 1372 the city of Tallinn had a population of 3250.
@@ -3950,7 +3950,7 @@ In the year 2020 the city of Tallinn had a population of 437619.
 In the year 1851 the city of Tallinn had a population of 24000.
 ```
 
-or it might print:
+或者可能印出：
 
 ```text
 In the year 1851 the city of Tallinn had a population of 24000.
@@ -3958,23 +3958,23 @@ In the year 2020 the city of Tallinn had a population of 437619.
 In the year 1372 the city of Tallinn had a population of 3250.
 ```
 
-You can see that it's not in order.
+你可以看到它沒有按順序排列。
 
-If you want a `HashMap` that you can sort, you can use a `BTreeMap`. Actually they are very similar to each other, so we can quickly change our `HashMap` to a `BTreeMap` to see. You can see that it is almost the same code.
+如果你想要一個可以排序的 `HashMap`，你可以用 `BTreeMap`。其實它們之間是非常相似的，所以我們可以快速的把我們的 `HashMap` 改成 `BTreeMap` 來看看。大家可以看到，這幾乎是一樣的程式碼。
 
 ```rust
-use std::collections::BTreeMap; // Just change HashMap to BTreeMap
+use std::collections::BTreeMap; // HashMap 只改成 BTreeMap
 
 struct City {
     name: String,
-    population: BTreeMap<u32, u32>, // Just change HashMap to BTreeMap
+    population: BTreeMap<u32, u32>, // HashMap 只改成 BTreeMap
 }
 
 fn main() {
 
     let mut tallinn = City {
         name: "Tallinn".to_string(),
-        population: BTreeMap::new(), // Just change HashMap to BTreeMap
+        population: BTreeMap::new(), // HashMap 只改成 BTreeMap
     };
 
     tallinn.population.insert(1372, 3_250);
@@ -3987,7 +3987,7 @@ fn main() {
 }
 ```
 
-Now it will always print:
+現在總是會印出：
 
 ```text
 In the year 1372 the city of Tallinn had a population of 3250.
@@ -3995,11 +3995,11 @@ In the year 1851 the city of Tallinn had a population of 24000.
 In the year 2020 the city of Tallinn had a population of 437619.
 ```
 
-Now we will go back to `HashMap`.
+現在我們再回來看看 `HashMap`。
 
-You can get a value in a `HashMap` by just putting the key in `[]` square brackets. In this next example we will bring up the value for the key `Bielefeld`, which is `Germany`. But be careful, because the program will crash if there is no key. If you write `println!("{:?}", city_hashmap["Bielefeldd"]);` for example then it will crash, because `Bielefeldd` doesn't exist.
+只要把鍵放在 `[]` 的方括號裡，就可以得到 `HashMap` 的值。在接下來的這個範例中，我們將帶出 `Bielefeld` 這個鍵的值，也就是 `Germany`。但是要注意，因為如果沒有鍵，程式會崩潰(crash)。比如你寫了 `println!("{:?}", city_hashmap["Bielefeldd"]);`，那麼就會崩潰，因為 `Bielefeldd` 不存在。
 
-If you are not sure that there will be a key, you can use `.get()` which returns an `Option`. If it exists it will be `Some(value)`, and if not you will get `None` instead of crashing the program. That's why `.get()` is the safer way to get a value from a `HashMap`.
+如果你不確定會有鍵，你可以使用 `.get()`，它會回傳 `Option`。如果它存在就會是 `Some(value)`，如果不存在你將得到 `None`，而不是使程式崩潰。這就是為什麼 `.get()` 是從 `HashMap` 中取值較安全的方法。
 
 ```rust
 use std::collections::HashMap;
@@ -4023,7 +4023,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 "Germany"
@@ -4031,9 +4031,9 @@ Some("Germany")
 None
 ```
 
-This is because *Bielefeld* exists, but *Bielefeldd* does not exist.
+這是因為 *Bielefeld* 存在，但 *Bielefeldd* 不存在。
 
-If a `HashMap` already has a key when you try to put it in, it will overwrite its value:
+如果 `HashMap` 已經有一個鍵，當你試圖把它放進去時，它的值將被覆蓋：
 
 ```rust
 use std::collections::HashMap;
@@ -4050,9 +4050,9 @@ fn main() {
 }
 ```
 
-This prints `Some("Eye of the World")`, because it was the last one you used `.insert()` for.
+印出 `Some("Eye of the World")`，因為它是你最後用 `.insert()` 的值。
 
-It is easy to check if an entry exists, because you can check with `.get()` which gives an `Option`:
+檢查項目存在很容易，因為你可以用會回傳 `Option` 的 `.get()` 檢查：
 
 ```rust
 use std::collections::HashMap;
@@ -4062,7 +4062,7 @@ fn main() {
 
     book_hashmap.insert(1, "L'Allemagne Moderne");
 
-    if book_hashmap.get(&1).is_none() { // is_none() returns a bool: true if it's None, false if it's Some
+    if book_hashmap.get(&1).is_none() { // is_none()回傳布林值: true如果是None, false如果是Some
         book_hashmap.insert(1, "Le Petit Prince");
     }
 
@@ -4070,17 +4070,17 @@ fn main() {
 }
 ```
 
-This prints `Some("L\'Allemagne Moderne")` because there was already a key for `1`, so we didn't insert `Le Petit Prince`.
+印出 `Some("L\'Allemagne Moderne")` 是因為已經有個 key 為 `1`，所以我們沒有插入 `Le Petit Prince`。
 
-`HashMap` has a very interesting method called `.entry()` that you definitely want to try out. With it you can try to make an entry and use another method like `.or_insert()` to insert the value if there is no key. The interesting part is that it also gives a mutable reference so you can change it if you want. First is an example where we just insert `true` every time we insert a book title into the `HashMap`.
+`HashMap` 有個非常有趣的方法叫做 `.entry()`，你肯定想試試。有了它，你可以在沒有鍵的情況下，加入一筆項目 (entry) 並用像是 `.or_insert()` 這類方法來插入值。有趣的是，它還傳回了可變參考，所以如果你想的話你可以改變它。首先的範例是我們每次插入書名到 `HashMap` 時，我們就在值插入 `true`。
 
-Let's pretend that we have a library and want to keep track of our books.
+讓我們假裝我們有個圖書館，並希望跟蹤我們的書籍。
 
 ```rust
 use std::collections::HashMap;
 
 fn main() {
-    let book_collection = vec!["L'Allemagne Moderne", "Le Petit Prince", "Eye of the World", "Eye of the World"]; // Eye of the World appears twice
+    let book_collection = vec!["L'Allemagne Moderne", "Le Petit Prince", "Eye of the World", "Eye of the World"]; // Eye of the World 出現兩次
 
     let mut book_hashmap = HashMap::new();
 
@@ -4093,7 +4093,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Do we have Eye of the World? true
@@ -4101,14 +4101,14 @@ Do we have Le Petit Prince? true
 Do we have L'Allemagne Moderne? true
 ```
 
-But that's not exactly what we want. Maybe it would be better to count the number of books so that we know that there are two copies of *Eye of the World*. First let's look at what `.entry()` does, and what `.or_insert()` does. `.entry()` actually returns an `enum` called `Entry`:
+但這並不是我們想要的。也許最好數一下書的數量，這樣我們就知道 *世界之眼* 有兩本。首先讓我們看看 `.entry()` 做了什麼，以及 `.or_insert()` 做了什麼。`.entry()` 其實是回傳了名為 `Entry` 的 `enum`：
 
 ```rust
 pub fn entry(&mut self, key: K) -> Entry<K, V> // 🚧
 ```
 
 
-[Here is the page for Entry](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html). Here is a simple version of its code. `K` means key and `V` means value.
+可以查看[Entry 文件](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html)的網頁。下面是它的原始程式碼的簡化版。`K` 表示 key，`V` 表示 value。
 
 ```rust
 // 🚧
@@ -4120,7 +4120,7 @@ enum Entry<K, V> {
 }
 ```
 
-Then when we call `.or_insert()`, it looks at the enum and decides what to do.
+然後當我們呼叫 `.or_insert()` 時，它就會檢視列舉，並決定該怎麼做。
 
 ```rust
 fn or_insert(self, default: V) -> &mut V { // 🚧
@@ -4131,7 +4131,7 @@ fn or_insert(self, default: V) -> &mut V { // 🚧
 }
 ```
 
-The interesting part is that it returns a `mut` reference: `&mut V`. That means you can use `let` to attach it to a variable, and change the variable to change the value in the `HashMap`. So for every book we will insert a 0 if there is no entry. And if there is one, we will use `+= 1` on the reference to increase the number. Now it looks like this:
+有趣的是，它回傳 `mut` 的引用：`&mut V`。這意味著你可以使用 `let` 將其附加到變數上，並藉由改變這個變數來改變 `HashMap` 中的值。所以對於每本書，如果沒有項目，我們就會插入 0。而如果有的話，我們將在參考上使用 `+= 1` 來增加數字。現在它看起來像這樣：
 
 ```rust
 use std::collections::HashMap;
@@ -4142,8 +4142,8 @@ fn main() {
     let mut book_hashmap = HashMap::new();
 
     for book in book_collection {
-        let return_value = book_hashmap.entry(book).or_insert(0); // return_value is a mutable reference. If nothing is there, it will be 0
-        *return_value +=1; // Now return_value is at least 1. And if there was another book, it will go up by 1
+        let return_value = book_hashmap.entry(book).or_insert(0); // return_value 是個可變參考。如果原先沒東西，它會是 0
+        *return_value +=1; // 現在 return_value 至少是 1。 且如果已經有另一本書，它會往上加 1
     }
 
     for (book, number) in book_hashmap {
@@ -4153,7 +4153,7 @@ fn main() {
 ```
 
 
-The important part is `let return_value = book_hashmap.entry(book).or_insert(0);`. If you take out the `let`, you get `book_hashmap.entry(book).or_insert(0)`. Without `let` it does nothing: it inserts 0, and nobody takes the mutable reference to 0. So we bind it to `return_value` so we can keep the 0. Then we increase the value by 1, which gives at least 1 for every book in the `HashMap`. Then when `.entry()` looks at *Eye of the World* again it doesn't insert anything, but it gives us a mutable 1. Then we increase it to 2, and that's why it prints this:
+重點在 `let return_value = book_hashmap.entry(book).or_insert(0);`。如果去掉 `let`，你會得到 `book_hashmap.entry(book).or_insert(0)`。沒有 `let` 時它什麼也不做：它只插入了 0，也沒有取得指向 0 的可變參考。所以我們把它連結到 `return_value` 上，這樣我們就可以保留 0。然後我們把值增加 1，這樣 `HashMap` 中的每本書都至少有 1。接著當 `.entry()` 再拿到 *世界之眼* 時，它就不會插入任何東西，但它給我們一個可變的 1。然後我們把它增加到 2，這也是為什麼它會印出這樣的結果：
 
 ```text
 L'Allemagne Moderne, 1
@@ -4162,14 +4162,14 @@ Eye of the World, 2
 ```
 
 
-You can also do things with `.or_insert()` like insert a vec and then push into the vec. Let's pretend that we asked men and women on the street what they think of a politician. They give a rating from 0 to 10. Then we want to put the numbers together to see if the politician is more popular with men or women. It can look like this:
+你也可以用 `.or_insert()` 做一些事情，比如插入向量，然後往向量裡推入資料。讓我們假設我們問街上的男女他們對一個政治家的看法。他們給出的評分從 0 到 10。然後我們要把這些數字放在一起，看看這個政治家是更受男性還是女性的歡迎。它可以像這樣：
 
 
 ```rust
 use std::collections::HashMap;
 
 fn main() {
-    let data = vec![ // This is the raw data
+    let data = vec![ // 原始資料
         ("male", 9),
         ("female", 5),
         ("male", 0),
@@ -4180,8 +4180,8 @@ fn main() {
 
     let mut survey_hash = HashMap::new();
 
-    for item in data { // This gives a tuple of (&str, i32)
-        survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1); // This pushes the number into the Vec inside
+    for item in data { // 給的型別是 (&str, i32) 的元組
+        survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1); // 推入數字到向量裡
     }
 
     for (male_or_female, numbers) in survey_hash {
@@ -4190,14 +4190,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 "female", [5, 6, 5]
 "male", [9, 0, 10]
 ```
 
-The important line is: `survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1);` So if it sees "female" it will check to see if there is "female" already in the `HashMap`. If not, it will insert a `Vec::new()`, then push the number in. If it sees "female" already in the `HashMap`, it will not insert a new Vec, and will just push the number into it.
+重點行是：`survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1);`，所以如果它看到 "female"，就會檢查 `HashMap` 中是否已經有 "female"。如果沒有，它就會插入 `Vec::new()`，然後把數字推入。如果它看到 "female" 已經在 `HashMap` 中，它將不會插入新的向量，而只是將數字推入其中。
 
 ### HashSet and BTreeSet
 
