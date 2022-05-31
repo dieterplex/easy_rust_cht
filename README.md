@@ -77,8 +77,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [HashSet 和 BTreeSet](#hashset-和-btreeset)
     - [BinaryHeap](#binaryheap)
     - [VecDeque](#vecdeque)
-  - [The ? operator](#the--operator)
-    - [When panic and unwrap are good](#when-panic-and-unwrap-are-good)
+  - [問號(?)運算子](#問號運算子)
+    - [何時善用 panic 和 unwrap](#何時善用-panic-和-unwrap)
   - [Traits](#traits)
     - [The From trait](#the-from-trait)
     - [Taking a String and a &str in a function](#taking-a-string-and-a-str-in-a-function)
@@ -4460,31 +4460,31 @@ You must: phone Loki back
 ("add new product to list", true) ("send email to customer", true) ("phone Loki back", false)
 ```
 
-## The ? operator
+## 問號(?)運算子
 
-There is an even shorter way to deal with `Result` (and `Option`), shorter than `match` and even shorter than `if let`. It is called the "question mark operator", and is just `?`. After a function that returns a result, you can add `?`. This will:
+有一種更短的方式來處理 `Result`(及 `Option`)，它比 `match` 和 `if let` 更短。它叫做"問號運算子"，就是 `?`。在回傳 Result 的函式後，可以加上 `?`。這會：
 
-- return what is inside the `Result` if it is `Ok`
-- pass the error back if it is `Err`
+- 如果是 `Ok`，回傳 `Result` 裡面的內容。
+- 如果是 `Err`，則將錯誤送回。
 
-In other words, it does almost everything for you.
+換句話說，它幾乎為你做了所有的事情。
 
-We can try this with `.parse()` again. We will write a function called `parse_str` that tries to turn a `&str` into a `i32`. It looks like this:
+我們可以用 `.parse()` 再試一次。我們將編寫名為 `parse_str` 的函式，試圖將 `&str` 變成 `i32`。它看起來像這樣：
 
 ```rust
 use std::num::ParseIntError;
 
 fn parse_str(input: &str) -> Result<i32, ParseIntError> {
-    let parsed_number = input.parse::<i32>()?; // Here is the question mark
+    let parsed_number = input.parse::<i32>()?; // 問號在這
     Ok(parsed_number)
 }
 
 fn main() {}
 ```
 
-This function takes a `&str`. If it is `Ok`, it gives an `i32` wrapped in `Ok`. If it is an `Err`, it returns a `ParseIntError`. Then we try to parse the number, and add `?`. That means "check if it is an error, and give what is inside the Result if it is okay". If it is not okay, it will return the error and end. But if it is okay, it will go to the next line. On the next line is the number inside of `Ok()`. We need to wrap it in `Ok` because the return is `Result<i32, ParseIntError>`, not `i32`.
+這個函式接受 `&str`。如果是 `Ok`，則它給出包在 `Ok` 中的 `i32`。如果是 `Err`，則回傳包起來的 `ParseIntError`。然後我們嘗試解析這個數字，並加上 `?`。也就是"檢查是否錯誤，如果沒問題就給出 Result 裡面的內容"。如果有問題，就會返回錯誤並結束。但如果沒問題，就會進入下一行。下一行是 `Ok()` 裡面的數字。我們需要用 `Ok` 來包裝，因為要回傳的是 `Result<i32, ParseIntError>`，而不是 `i32`。
 
-Now, we can try out our function. Let's see what it does with a vec of `&str`s.
+現在我們可以試試我們的函式。讓我們看看它對 `&str` 的向量有什麼作用。
 
 ```rust
 fn parse_str(input: &str) -> Result<i32, std::num::ParseIntError> {
@@ -4501,7 +4501,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Err(ParseIntError { kind: InvalidDigit })
@@ -4511,16 +4511,16 @@ Err(ParseIntError { kind: InvalidDigit })
 Ok(6060)
 ```
 
-How did we find `std::num::ParseIntError`? One easy way is to "ask" the compiler again.
+我們是怎麼找到 `std::num::ParseIntError` 的呢？一個簡單的方法就是再"問"一下編譯器。
 
 ```rust
 fn main() {
     let failure = "Not a number".parse::<i32>();
-    failure.rbrbrb(); // ⚠️ Compiler: "What is rbrbrb()???"
+    failure.rbrbrb(); // ⚠️ 編譯器: "rbrbrb()是什麼???"
 }
 ```
 
-The compiler doesn't understand, and says:
+編譯器無法了解，並說：
 
 ```text
 error[E0599]: no method named `rbrbrb` found for enum `std::result::Result<i32, std::num::ParseIntError>` in the current scope
@@ -4530,17 +4530,17 @@ error[E0599]: no method named `rbrbrb` found for enum `std::result::Result<i32, 
   |             ^^^^^^ method not found in `std::result::Result<i32, std::num::ParseIntError>`
 ```
 
-So `std::result::Result<i32, std::num::ParseIntError>` is the signature we need.
+所以 `std::result::Result<i32, std::num::ParseIntError>` 就是我們所需要的簽名。
 
-We don't need to write `std::result::Result` because `Result` is always "in scope" (in scope = ready to use). Rust does this for all the types we use a lot so we don't have to write `std::result::Result`, `std::collections::Vec`, etc.
+我們不需要寫 `std::result::Result`，因為 `Result` 總是"在範圍內"(in scope = 準備好使用)。Rust 對我們經常使用的所有型別都是這樣做的，所以我們不必寫 `std::result::Result`、`std::collections::Vec` 等。
 
-We aren't working with things like files yet, so the ? operator doesn't look too useful yet. But here is a useless but quick example that shows how you can use it on a single line. Instead of making an `i32` with `.parse()`, we'll do a lot more. We'll make an `u16`, then turn it to a `String`, then a `u32`, then to a `String` again, and finally to a `i32`.
+我們現在還沒有處理到像檔案這樣的東西，所以 ? 運算子看起來還不太有用。但這裡有個無用但快速的例子，說明你如何在單行上使用它。與其用 `.parse()` 建立 `i32`，不如做更多。我們將做個 `u16`，然後把它變成 `String`，再變成 `u32`，然後再變回 `String`，最後變成 `i32`。
 
 ```rust
 use std::num::ParseIntError;
 
 fn parse_str(input: &str) -> Result<i32, ParseIntError> {
-    let parsed_number = input.parse::<u16>()?.to_string().parse::<u32>()?.to_string().parse::<i32>()?; // Add a ? each time to check and pass it on
+    let parsed_number = input.parse::<u16>()?.to_string().parse::<u32>()?.to_string().parse::<i32>()?; // 每次檢查時加上 ? 並傳下去
     Ok(parsed_number)
 }
 
@@ -4553,13 +4553,13 @@ fn main() {
 }
 ```
 
-This prints the same thing, but this time we handled three `Result`s in a single line. Later on we will do this with files, because they always return `Result`s because many things can go wrong.
+印出同樣的東西，但這次我們在一行中處理了三個 `Result`。稍後我們將對檔案進行處理，因為很多事情都可能出錯，它們總是回傳 `Result`。
 
-Imagine the following: you want to open a file, write to it, and close it. First you need to successfully find the file (that's a `Result`). Then you need to successfully write to it (that's a `Result`). With `?` you can do that on one line.
+想像這件事：你想開啟檔案，向它寫入，然後關閉它。首先你需要成功找到這個檔案(這是 `Result`)。然後你需要成功地寫入它(也是 `Result`)。有了 `?` 你可以用一行做到那些事。
 
-### When panic and unwrap are good
+### 何時善用 panic 和 unwrap
 
-Rust has a `panic!` macro that you can use to make it panic. It is easy to use:
+Rust 有個 `panic!` 巨集讓你可以用來讓程式恐慌。它很容易使用：
 
 ```rust
 fn main() {
@@ -4567,11 +4567,11 @@ fn main() {
 }
 ```
 
-The message `"Time to panic!"` displays when you run the program: `thread 'main' panicked at 'Time to panic!', src\main.rs:2:3`
+`"Time to panic!"` 這個訊息在你執行程式時會顯示：`thread 'main' panicked at 'Time to panic!', src\main.rs:2:3`
 
-You will remember that `src\main.rs` is the directory and file name, and `2:3` is the line and column name. With this information, you can find the code and fix it.
+你會記得 `src\main.rs` 是目錄和檔名，`2:3` 是行號和列號。有了這些資訊，你就可以找到程式碼並修復它。
 
-`panic!` is a good macro to use to make sure that you know when something changes. For example, this function called `prints_three_things` always prints index [0], [1], and [2] from a vector. It is okay because we always give it a vector with three items:
+`panic!` 是個很好用的巨集，以確保你知道東西何時有變化。例如，這個叫做 `prints_three_things` 的函式總是從向量中印出索引 [0]、[1] 和 [2]。這沒關係，因為我們總是給它有三個元素的向量：
 
 ```rust
 fn prints_three_things(vector: Vec<i32>) {
@@ -4584,9 +4584,9 @@ fn main() {
 }
 ```
 
-It prints `8, 9, 10` and everything is fine.
+印出 `8, 9, 10`，一切正常。
 
-But imagine that later on we write more and more code, and forget that `my_vec` can only be three things. Now `my_vec` in this part has six things:
+但試想之後我們程式碼愈寫越多，忘記了 `my_vec` 只能有三個元素。現在 `my_vec` 在這部分有六個元素：
 
 ```rust
 fn prints_three_things(vector: Vec<i32>) {
@@ -4594,17 +4594,17 @@ fn prints_three_things(vector: Vec<i32>) {
 }
 
 fn main() {
-  let my_vec = vec![8, 9, 10, 10, 55, 99]; // Now my_vec has six things
+  let my_vec = vec![8, 9, 10, 10, 55, 99]; // 現在 my_vec 有六個東西
   prints_three_things(my_vec);
 }
 ```
 
-No error happens, because [0] and [1] and [2] are all inside this longer `Vec`. But what if it was really important to only have three things? We wouldn't know that there was a problem because the program doesn't panic. We should have done this instead:
+沒有發生錯誤，因為 [0]、[1] 和 [2] 都在這個較長的 `Vec` 裡面。但如果只能有三個元素真的很重要呢？因為程式不會恐慌，我們也就不會知道有問題了。我們反而應該這樣做:
 
 ```rust
 fn prints_three_things(vector: Vec<i32>) {
     if vector.len() != 3 {
-        panic!("my_vec must always have three items") // will panic if the length is not 3
+        panic!("my_vec must always have three items") // 如果長度不是 3 會恐慌
     }
     println!("{}, {}, {}", vector[0], vector[1], vector[2]);
 }
@@ -4615,7 +4615,7 @@ fn main() {
 }
 ```
 
-Now we will know if the vector has six items because it panics as it should:
+現在我們知道向量是否有三個元素，因為它如預期的發生恐慌：
 
 ```rust
     // ⚠️
@@ -4632,17 +4632,17 @@ fn main() {
 }
 ```
 
-This gives us `thread 'main' panicked at 'my_vec must always have three items', src\main.rs:8:9`. Thanks to `panic!`, we now remember that `my_vec` should only have three items. So `panic!` is a good macro to create reminders in your code.
+我們得到了 `thread 'main' panicked at 'my_vec must always have three items', src\main.rs:8:9`。多虧了 `panic!`，我們現在記得 `my_vec` 應該只能有三個元素。所以 `panic!` 是個可以在你的程式碼中建立提醒的好巨集。
 
-There are three other macros that are similar to `panic!` that you use a lot in testing. They are: `assert!`, `assert_eq!`, and `assert_ne!`.
+還有三個與 `panic!` 類似的巨集，你會在測試中經常使用。它們分別是 `assert!`、`assert_eq!` 和 `assert_ne!`。
 
-Here is what they mean:
+這是它們的涵義：
 
-- `assert!()`: if the part inside `()` is not true, the program will panic.
-- `assert_eq!()`: the two items inside `()` must be equal.
-- `assert_ne!()`: the two items inside `()` must not be equal. (*ne* means not equal)
+- `assert!()`: 如果 `()` 裡面的部分不是 true，程式就會恐慌。
+- `assert_eq!()`: `()` 裡面的兩個元素必須相同(equal)。
+- `assert_ne!()`: `()` 裡面的兩個元素必須不相同。(*ne* 表示不相同)
 
-Some examples:
+一些範例：
 
 ```rust
 fn main() {
@@ -4654,9 +4654,9 @@ fn main() {
 }
 ```
 
-This will do nothing, because all three assert macros are okay. (This is what we want)
+這沒做任何事，因為三個 assert 巨集都沒出錯。(也是我們想要的)
 
-You can also add a message if you want.
+如果你願意，還可以加個提示訊息。
 
 ```rust
 fn main() {
@@ -4680,7 +4680,7 @@ fn main() {
 }
 ```
 
-These messages will only display if the program panics. So if you run this:
+這些訊息只有在程式恐慌時才會顯示。所以如果你執行：
 
 ```rust
 fn main() {
@@ -4694,7 +4694,7 @@ fn main() {
 }
 ```
 
-It will display:
+會顯示：
 
 ```text
 thread 'main' panicked at 'assertion failed: `(left != right)`
@@ -4702,13 +4702,13 @@ thread 'main' panicked at 'assertion failed: `(left != right)`
  right: `"Mithridates"`: You entered Mithridates. Input must not equal Mithridates', src\main.rs:4:5
 ```
 
-So it is saying "you said that left != right, but left == right". And it displays our message that says `You entered Mithridates. Input must not equal Mithridates`.
+所以它說 "你說左邊 != 右邊，但是左邊 == 右邊"。而且它顯示我們寫的訊息為 `You entered Mithridates. Input must not equal Mithridates`。
 
-`unwrap` is also good when you are writing your program and you want it to crash when there is a problem. Later, when your code is finished it is good to change `unwrap` to something else that won't crash.
+`unwrap` 也適合用在你寫自己的程式，並想讓它在出現問題時崩潰。之後等你的程式碼寫完後，把 `unwrap` 改成其他不會崩潰的東西就好了。
 
-You can also use `expect`, which is like `unwrap` but a bit better because you give it your own message. Textbooks usually give this advice: "If you use `.unwrap()` a lot, at least use `.expect()` for better error messages."
+你也可以用 `expect`，它像是 `unwrap` 但更好一些，因為它讓你寫自己的訊息內容。教科書通常會給出這樣的建議："如果你經常使用 `.unwrap()`, 至少也要用 `.expect()` 來獲得更好的錯誤訊息。"
 
-This will crash:
+這樣會崩潰：
 
 ```rust
    // ⚠️
@@ -4723,9 +4723,9 @@ fn main() {
 }
 ```
 
-The error message is `thread 'main' panicked at 'called Option::unwrap() on a None value', src\main.rs:7:18`.
+錯誤訊息是 `thread 'main' panicked at 'called Option::unwrap() on a None value', src\main.rs:7:18`。
 
-Now we write our own message with `expect`:
+現在我們用 `expect` 來寫自己的訊息：
 
 ```rust
    // ⚠️
@@ -4740,7 +4740,7 @@ fn main() {
 }
 ```
 
-It crashes again, but the error is better: `thread 'main' panicked at 'Input vector needs at least 4 items', src\main.rs:7:18`. `.expect()` is a little better than `.unwrap()` because of this, but it will still panic on `None`. Now here is an example of a bad practice, a function that tries to unwrap two times. It takes a `Vec<Option<i32>>`, so maybe each part will have a `Some<i32>` or maybe a `None`.
+又崩潰了，但錯誤內容比較好：`thread 'main' panicked at 'Input vector needs at least 4 items', src\main.rs:7:18`。`.expect()` 因為這個原因比 `.unwrap()` 要好一點，但是在 `None` 上還是會恐慌。現在這裡有個不太好的案例，一個函式試圖 unwrap 兩次。它接受一個 `Vec<Option<i32>>`，所以可能每個部分會有 `Some<i32>`，也可能是 `None`。
 
 ```rust
 fn try_two_unwraps(input: Vec<Option<i32>>) {
@@ -4749,12 +4749,12 @@ fn try_two_unwraps(input: Vec<Option<i32>>) {
 }
 
 fn main() {
-    let vector = vec![None, Some(1000)]; // This vector has a None, so it will panic
+    let vector = vec![None, Some(1000)]; // 這個向量有None，所以會恐慌
     try_two_unwraps(vector);
 }
 ```
 
-The message is: ``thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:2:32``. We're not sure if it was the first `.unwrap()` or the second `.unwrap()` until we check the line. It would be better to check the length and also to not unwrap. But with `.expect()` at least it will be a *little* better. Here it is with `.expect()`:
+訊息是：``thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:2:32``。我們不確定是第一個 `.unwrap()` 還是第二個，直到我們去檢查行號。最好是檢查一下長度，也不要 unwrap。不過有了 `.expect()` 至少會好 *一點*。這裡用 `.expect()`：
 
 ```rust
 fn try_two_unwraps(input: Vec<Option<i32>>) {
@@ -4768,30 +4768,30 @@ fn main() {
 }
 ```
 
-So that is a bit better: `thread 'main' panicked at 'The first unwrap had a None!', src\main.rs:2:32`. We have the line number as well so we can find it.
+所以這有好一點：`thread 'main' panicked at 'The first unwrap had a None!', src\main.rs:2:32`。我們也有行號讓我們可以找到它。
 
 
-You can also use `unwrap_or` if you want to always have a value that you want to choose. If you do this it will never panic. That's:
+如果你要永遠有值且是你想選擇的，也可以用`unwrap_or`。如果你這樣做，它永遠不會恐慌。也就是：
 
-- 1) good because your program won't panic, but
-- 2) maybe not good if you want the program to panic if there's a problem.
+- 1) 很好，因為你的程式不會恐慌，但是
+- 2) 可能不太好，如果你想讓程式在出現問題時恐慌。
 
-But usually we don't want our program to panic, so `unwrap_or` is a good method to use.
+但通常我們都不希望自己的程式恐慌，所以 `unwrap_or` 是個適合拿來用的方法。
 
 ```rust
 fn main() {
     let my_vec = vec![8, 9, 10];
 
-    let fourth = my_vec.get(3).unwrap_or(&0); // If .get doesn't work, we will make the value &0.
-                                              // .get returns a reference, so we need &0 and not 0
-                                              // You can write "let *fourth" with a * if you want fourth to be
-                                              // a 0 and not a &0, but here we just print so it doesn't matter
+    let fourth = my_vec.get(3).unwrap_or(&0); // 如果 .get 沒成功，我們會傳回值 &0。
+                                              // .get 回傳的是參考，所以我們需要的是 &0 而非 0
+                                              // 如果你想要 fourth 是 0 而非 &0，你可以寫帶有 * 的
+                                              // "let *fourth"，但這裡我們只是要印出也就無關緊要
 
     println!("{}", fourth);
 }
 ```
 
-This prints `0` because `.unwrap_or(&0)` gives a 0 even if it is a `None`.
+印出 `0`，因為 `.unwrap_or(&0)` 即使在 `None` 時也會回傳 0。
 
 ## Traits
 
