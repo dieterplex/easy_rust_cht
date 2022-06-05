@@ -79,7 +79,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [VecDeque](#vecdeque)
   - [問號(?)運算子](#問號運算子)
     - [何時善用 panic 和 unwrap](#何時善用-panic-和-unwrap)
-  - [Traits](#traits)
+  - [特徵](#特徵)
     - [The From trait](#the-from-trait)
     - [Taking a String and a &str in a function](#taking-a-string-and-a-str-in-a-function)
   - [Chaining methods](#chaining-methods)
@@ -4793,9 +4793,9 @@ fn main() {
 
 印出 `0`，因為 `.unwrap_or(&0)` 即使在 `None` 時也會回傳 0。
 
-## Traits
+## 特徵
 
-We have seen traits before: `Debug`, `Copy`, `Clone` are all traits. To give a type a trait, you have to implement it. Because `Debug` and the others are so common, we have attributes that automatically do it. That's what happens when you write `#[derive(Debug)]`: you are automatically implementing `Debug`.
+我們以前見過特徵(Trait)：`Debug`、`Copy`、`Clone` 都是特徵。要賦予型別特徵，就必須實作它。因為 `Debug` 和其他的特徵都很常見，所以我們有可以自動實作的屬性(attribute)。那就是當你寫下 `#[derive(Debug)]` 時所發生的事情：你自動實作了 `Debug`。
 
 ```rust
 #[derive(Debug)]
@@ -4806,7 +4806,7 @@ struct MyStruct {
 fn main() {}
 ```
 
-But other traits are more difficult, so you need to implement them manually with `impl`. For example, `Add` (found at `std::ops::Add`) is used to add two things. But Rust doesn't know exactly how you want to add things, so you have to tell it.
+但是其他的特徵就比較困難了，所以需要用 `impl` 手動實作。例如，`Add` (在 `std::ops::Add` 找到) 是用來累加兩個東西的。但是 Rust 並不知道你到底要怎麼累加，所以你必須告訴它。
 
 ```rust
 struct ThingsToAdd {
@@ -4817,51 +4817,51 @@ struct ThingsToAdd {
 fn main() {}
 ```
 
-We can add `first_thing` and `second_thing`, but we need to give more information. Maybe we want an `f32`, so something like this:
+我們可以累加 `first_thing` 和 `second_thing`，但我們需要提供更多資訊。也許我們想要 `f32`，所以像這樣：
 
 ```rust
 // 🚧
 let result = self.second_thing + self.first_thing as f32
 ```
 
-But maybe we want an integer, so like this:
+但也許我們想要整數，所以像這樣：
 
 ```rust
 // 🚧
 let result = self.second_thing as u32 + self.first_thing
 ```
 
-Or maybe we want to just put `self.first_thing` next to `self.second_thing` and say that this is how we want to add. So if we add 55 to 33.4, we want to see 5533.4, not 88.4.
+或者我們只是想把 `self.first_thing` 放在 `self.second_thing` 旁邊這樣加起來。所以如果我們把 55 加到 33.4，我們想看到的是 5533.4，而不是 88.4。
 
-So first let's look at how to make a trait. The important thing to remember about `trait`s is that they are about behaviour. To make a trait, write `trait` and then create some functions.
+所以首先讓我們看一下如何做出特徵。`trait` 要記得的重點在於它們的行為 (behaviour)。要實作特徵時，寫下 `trait`，然後建立一些函式。
 
 ```rust
-struct Animal { // A simple struct - an Animal only has a name
+struct Animal { // 簡單結構體 - Animal只有名字
     name: String,
 }
 
-trait Dog { // The dog trait gives some functionality
-    fn bark(&self) { // It can bark
+trait Dog { // 狗的特徵給出一些功能性
+    fn bark(&self) { // 牠會吠叫
         println!("Woof woof!");
     }
-    fn run(&self) { // and it can run
+    fn run(&self) { // 並且牠會跑
         println!("The dog is running!");
     }
 }
 
-impl Dog for Animal {} // Now Animal has the trait Dog
+impl Dog for Animal {} // 現在Animal有了特徵Dog
 
 fn main() {
     let rover = Animal {
         name: "Rover".to_string(),
     };
 
-    rover.bark(); // Now Animal can use bark()
-    rover.run();  // and it can use run()
+    rover.bark(); // Animal能用 bark()
+    rover.run();  // 並且牠能用 run()
 }
 ```
 
-This is okay, but we don't want to print "The dog is running". You can change the methods that a `trait` gives you if you want, but you have to have the same signature. That means that it needs to take the same things, and return the same things. For example, we can change the method `.run()`, but we have to follow the signature. The signature says:
+這範例沒問題，但是我們不想印出 "The dog is running"。如果你想的話，你可以更改 `trait` 給你的方法，但你必須有相同的簽名。這意味著它需要接受同樣的東西，並回傳同樣的東西。例如，我們可以改變 `.run()` 方法，但我們必須遵循簽名。簽名是：
 
 ```rust
 // 🚧
@@ -4870,7 +4870,7 @@ fn run(&self) {
 }
 ```
 
-`fn run(&self)` means "fn `run()` takes `&self`, and returns nothing". So you can't do this:
+`fn run(&self)` 的意思是 "fn `run()` 接受 `&self` 引數，且不回傳任何內容"。所以你不能這樣做：
 
 ```rust
 fn run(&self) -> i32 { // ⚠️
@@ -4878,25 +4878,25 @@ fn run(&self) -> i32 { // ⚠️
 }
 ```
 
-Rust will say:
+Rust 會說：
 
 ```text
    = note: expected fn pointer `fn(&Animal)`
               found fn pointer `fn(&Animal) -> i32`
 ```
 
-But we can do this:
+但我們可以做這樣做：
 
 ```rust
-struct Animal { // A simple struct - an Animal only has a name
+struct Animal { // 簡單結構體 - Animal只有名字
     name: String,
 }
 
-trait Dog { // The dog trait gives some functionality
-    fn bark(&self) { // It can bark
+trait Dog { // 狗的特徵給出一些功能性
+    fn bark(&self) { // 牠會吠叫
         println!("Woof woof!");
     }
-    fn run(&self) { // and it can run
+    fn run(&self) { // 並且牠會跑
         println!("The dog is running!");
     }
 }
@@ -4912,15 +4912,15 @@ fn main() {
         name: "Rover".to_string(),
     };
 
-    rover.bark(); // Now Animal can use bark()
-    rover.run();  // and it can use run()
+    rover.bark(); // Animal能用 bark()
+    rover.run();  // 並且牠能用 run()
 }
 ```
 
-Now it prints `Rover is running!`. This is okay because we are returning `()`, or nothing, which is what the trait says.
+現在印出了 `Rover is running!`。這樣可以是因為我們回傳的是 `()`，也就是什麼都沒有，也是特徵簽名所說的。
 
 
-When you are writing a trait, you can just write the function signature. But if you do that, the user will have to write the function. Let's try that. Now we change `bark()` and `run()` to just say `fn bark(&self);` and `fn run(&self);`. This is not a full function, so the user must write it.
+當你在寫特徵時，你可以只寫函式簽名，但如果你這樣做，使用者將必須寫出函式的實作內容。讓我們來試試。現在我們把 `bark()` 和 `run()` 改成只有 `fn bark(&self);` 和 `fn run(&self);`。這不是完整的函式，所以必須由使用者來寫。
 
 ```rust
 struct Animal {
@@ -4928,9 +4928,9 @@ struct Animal {
 }
 
 trait Dog {
-    fn bark(&self); // bark() says it needs a &self and returns nothing
-    fn run(&self); // run() says it needs a &self and returns nothing.
-                   // So now we have to write them ourselves.
+    fn bark(&self); // bark() 說要有 &self 並且不回傳
+    fn run(&self); // run() 說要有 &self 並且不回傳。
+                   // 那麼現在我們必須要自己寫出它們。
 }
 
 impl Dog for Animal {
@@ -4952,9 +4952,9 @@ fn main() {
 }
 ```
 
-So when you create a trait, you must think: "Which functions should I write? And which functions should the user write?" If you think the user should use the function the same way every time, then write out the function. If you think the user will use it differently, then just write the function signature.
+所以當你建立特徵時，你必須思考："我應該寫哪些函式？而使用者又應該寫哪些函式？"如果你認為使用者每次使用某個函式的方式應該一致，那麼就該把它寫出來。如果你認為使用者會有不同的使用方式，那就只寫出函式簽名即可。
 
-So let's try implementing the Display trait for our struct. First we will make a simple struct:
+那讓我們嘗試為我們的結構體實作 Display 特徵。首先我們將做個簡單的結構體：
 
 ```rust
 struct Cat {
@@ -4970,7 +4970,7 @@ fn main() {
 }
 ```
 
-Now we want to print `mr_mantle`. Debug is easy to derive:
+現在我們想要印出 `mr_mantle`。Debug 很容易推導出：
 
 ```rust
 #[derive(Debug)]
@@ -4989,13 +4989,13 @@ fn main() {
 }
 ```
 
-but Debug print is not the prettiest way to print, because it looks like this.
+但 Debug 列印不是最漂亮的印出方式，因為它看起來像這樣。
 
 ```text
 Mr. Mantle is a Cat { name: "Reggie Mantle", age: 4 }
 ```
 
-So we need to implement `Display` for `Cat` if we want nicer printing. On [https://doc.rust-lang.org/std/fmt/trait.Display.html](https://doc.rust-lang.org/std/fmt/trait.Display.html) we can see the information for Display, and one example. It says:
+因此如果我們想要印出得更好看，就需要為 `Cat` 實作 `Display`。在 [https://doc.rust-lang.org/std/fmt/trait.Display.html](https://doc.rust-lang.org/std/fmt/trait.Display.html) 上我們可以看到 Display 的資訊，還有一個範例。它說：
 
 ```rust
 use std::fmt;
@@ -5014,7 +5014,7 @@ impl fmt::Display for Position {
 fn main() {}
 ```
 
-Some parts of this we don't understand yet, like `<'_>` and what `f` is doing. But we understand the `Position` struct: it is just two `f32`s. We also understand that `self.longitude` and `self.latitude` are the fields in the struct. So maybe we can just use this code for our struct, with `self.name` and `self.age`. Also, `write!` looks a lot like `println!` so it is pretty familiar. So we write this:
+有些部分我們還不明白，比如 `<'_>` 和 `f` 是做什麼的。但我們知道 `Position` 結構體：它只是兩個 `f32`。我們也懂 `self.longitude` 和 `self.latitude` 是結構體中的欄位。所以，也許我們可以拿這個程式碼來給我們的結構體用在 `self.name`和`self.age` 上。另外 `write!` 看起來很像 `println!`，所以會感到很熟悉。所以我們寫成這樣：
 
 ```rust
 use std::fmt;
@@ -5033,7 +5033,7 @@ impl fmt::Display for Cat {
 fn main() {}
 ```
 
-Let's add a `fn main()`. Now our code looks like this:
+讓我們新增 `fn main()`。現在我們的程式碼像這樣：
 
 ```rust
 use std::fmt;
@@ -5059,10 +5059,10 @@ fn main() {
 }
 ```
 
-Success! Now when we use `{}` to print, we get `Reggie Mantle is a cat who is 4 years old.`. This looks much better.
+成功了! 現在當我們使用 `{}` 列印時，我們得到 `Reggie Mantle is a cat who is 4 years old.`。這看起來好多了。
 
 
-By the way, if you implement `Display` then you get the `ToString` trait for free. That's because you use the `format!` macro for the `.fmt()` function, which lets you make a `String` with `.to_string()`. So we could do something like this where we pass `reggie_mantle` to a function that wants a `String`, or anything else.
+順帶一提，如果你實現了 `Display`，那麼你就可以免費得到 `ToString` 特徵。這是因為你使用 `format!` 巨集時間接使用了 `.fmt()` 函式，它讓你可以用 `.to_string()` 來做出 `String`。所以我們可以做類似這個範例做的事情，我們把 `reggie_mantle` 傳給想要 `String` 的函式，或者其他任何東西。
 
 ```rust
 use std::fmt;
@@ -5087,12 +5087,12 @@ fn main() {
         age: 4,
     };
 
-    print_cats(mr_mantle.to_string()); // Turn him into a String here
-    println!("Mr. Mantle's String is {} letters long.", mr_mantle.to_string().chars().count()); // Turn him into chars and count them
+    print_cats(mr_mantle.to_string()); // 這裡把牠轉換為 String
+    println!("Mr. Mantle's String is {} letters long.", mr_mantle.to_string().chars().count()); // 把牠轉換成字元計數
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Reggie Mantle is a cat who is 4 years old.
@@ -5102,9 +5102,9 @@ Mr. Mantle's String is 42 letters long.
 
 
 
-The thing to remember about traits is that they are about the behaviour of something. How does your `struct` act? What can it do? That's what traits are for. If you think of some of the traits we've seen so far, they are all about behaviour: `Copy` is something that a type can do. `Display` is also something that a type can do. `ToString` is another trait, and it's also something that a type can do: it can change into a `String`. In our `Dog` trait the word *dog* doesn't mean something you can do, but it gives some methods that let it do things. You could also implement it for a `struct Poodle` or `struct Beagle` and they would all get `Dog` methods.
+關於特徵要記得的是，它們與某些東西的行為有關。你的 `struct` 是如何動作的？它能做什麼？這就是特徵的作用。如果你想想我們到目前為止所看到的一些特徵，它們全都是關於行為的：`Copy` 是型別可以做的事情。`Display` 也是型別能做的事情。`ToString` 是另一個特徵，它也是型別可以做的事情：它可以改變型別成為 `String`。在我們的 `Dog` 特徵中，*Dog* 這個詞並不意味著你能做的事情，但它給出了一些讓它做某些事情的方法。你也可以為 `struct Poodle` 或 `struct Beagle` 實作它，它們都會得到 `Dog` 的方法。
 
-Let's look at another example that is even more connected to just behaviour. We'll imagine a fantasy game with some simple characters. One is a `Monster`, the other two are `Wizard` and `Ranger`. The `Monster` just has `health` so we can attack it, the other two don't have anything yet. But we made two traits. One is called `FightClose`, and lets you fight up close. The other is `FightFromDistance`, and lets you fight from far away. Only `Ranger` can use `FightFromDistance`. Here's what it looks like:
+讓我們再看另一個更純粹是行為的範例。我們將想像一個有一些簡單角色的幻想遊戲。一個是 `Monster`，另外兩個是`Wizard` 和 `Ranger`。`Monster` 只是有 `health`，所以我們可以攻擊它，其他兩個還沒有任何東西。但是我們做了兩個特徵。一個叫 `FightClose`，讓你近身作戰。另一個是 `FightFromDistance`，讓你在遠處戰鬥。只有 `Ranger` 可以使用 `FightFromDistance`。它會像是這裡看到的這樣：
 
 ```rust
 struct Monster {
@@ -5166,14 +5166,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 You attack with your sword. Your opponent now has 30 health left.
 You attack with your bow. Your opponent now has 20 health left.
 ```
 
-We pass `self` inside our trait all the time, but we can't do much with it right now. That's because Rust doesn't know what type is going to use it. It could be a `Wizard`, it could be a `Ranger`, it could be a new struct called `Toefocfgetobjtnode` or anything else. To give `self` some functionality, we can add necessary traits to the trait. If we want to print with `{:?}` for example then we need `Debug`. You can add it to the trait just by writing it after `:` (a colon). Now our code looks like this:
+我們總是在特徵裡傳入 `self`，但是我們現在還不能用它做什麼。那是因為 Rust 不知道什麼型別會使用它。它可能是一個 `Wizard`，也可能是一個 `Ranger`，也可能是一個叫做 `Toefocfgetobjtnode` 的新結構體，或者其他任何東西。為了讓 `self` 具有一定的功能，我們可以在特徵中加入必要的特徵。比如說，如果我們想用 `{:?}` 列印，那麼我們就需要 `Debug`。你只要把它寫在 `:`(冒號)後面，就可以把它加入到特徵中。現在我們的程式碼像這樣：
 
 
 ```rust
@@ -5181,20 +5181,20 @@ struct Monster {
     health: i32,
 }
 
-#[derive(Debug)] // Now Wizard has Debug
+#[derive(Debug)] // 現在 Wizard 有 Debug
 struct Wizard {
-    health: i32, // Now Wizard has health
+    health: i32, // 現在 Wizard 有 health
 }
-#[derive(Debug)] // So does Ranger
+#[derive(Debug)] // Ranger 也是
 struct Ranger {
-    health: i32, // So does Ranger
+    health: i32, // Ranger 也是
 }
 
-trait FightClose: std::fmt::Debug { // Now a type needs Debug to use FightClose
+trait FightClose: std::fmt::Debug { // 現在型別需要有 Debug 來使用 FightClose
     fn attack_with_sword(&self, opponent: &mut Monster) {
         opponent.health -= 10;
         println!(
-            "You attack with your sword. Your opponent now has {} health left. You are now at: {:?}", // We can now print self with {:?} because we have Debug
+            "You attack with your sword. Your opponent now has {} health left. You are now at: {:?}", // 我們現在可以用 {:?} 印出 self 因為我們有 Debug
             opponent.health, &self
         );
     }
@@ -5209,7 +5209,7 @@ trait FightClose: std::fmt::Debug { // Now a type needs Debug to use FightClose
 impl FightClose for Wizard {}
 impl FightClose for Ranger {}
 
-trait FightFromDistance: std::fmt::Debug { // We could also do trait FightFromDistance: FightClose because FightClose needs Debug
+trait FightFromDistance: std::fmt::Debug { // 我們也可以加上特徵 FightFromDistance : FightClose, 因為 FightClose 需要 Debug
     fn attack_with_bow(&self, opponent: &mut Monster, distance: u32) {
         if distance < 10 {
             opponent.health -= 10;
@@ -5242,21 +5242,21 @@ fn main() {
 }
 ```
 
-Now this prints:
+現在印出：
 
 ```text
 You attack with your sword. Your opponent now has 30 health left. You are now at: Wizard { health: 60 }
 You attack with your bow. Your opponent now has 20 health left.  You are now at: Ranger { health: 80 }
 ```
 
-In a real game it might be better to rewrite this for each type, because `You are now at: Wizard { health: 60 }` looks funny. That's also why methods inside traits are usually simple, because you don't know what type is going to use it. You can't write things like `self.0 += 10` for example. But this example shows that we can use other traits inside a trait we are writing. And when we do that, we get some methods that we can use.
+在真實的遊戲中，為每個型別重寫印出內容可能比較好，因為 `You are now at: Wizard { health: 60 }` 看起來有點可笑。這也是為什麼特徵裡面的方法通常很簡單，因為你不知道什麼型別會使用它。例如，你不能寫出 `self.0 += 10` 這樣的東西。但是這個範例表明，我們可以在我們正在撰寫的特徵裡面使用其他的特徵。當我們這樣做的時候，我們會得到一些我們可以使用的方法。
 
 
 
-One other way to use a trait is with what are called `trait bounds`. That means "limitations by a trait". Trait bounds are easy because a trait actually doesn't need any methods, or anything at all. Let's rewrite our code with something similar but different. This time our trait doesn't have any methods, but we have other functions that require traits to use.
+另外一種使用特徵的方式是使用所謂的 `特徵界限 (trait bound)`。意思是"透過特徵進行限制"。特徵限制很簡單，因為特徵實際上不需要任何方法，或者說根本不需要任何東西。讓我們用類似但不同的東西重寫我們的程式碼。這次我們的特徵沒有任何方法，但我們有限定要使用的特徵的其它函式。
 
 ```rust
-use std::fmt::Debug;  // So we don't have to write std::fmt::Debug every time now
+use std::fmt::Debug;  // 所以我們現在不用再每次寫 std::fmt::Debug
 
 struct Monster {
     health: i32,
@@ -5271,14 +5271,14 @@ struct Ranger {
     health: i32,
 }
 
-trait Magic{} // No methods for any of these traits. They are just trait bounds
+trait Magic{} // 這些特徵都沒有方法，它們只是特徵界限
 trait FightClose {}
 trait FightFromDistance {}
 
-impl FightClose for Ranger{} // Each type gets FightClose,
+impl FightClose for Ranger{} // 每個型別都得到 FightClose,
 impl FightClose for Wizard {}
-impl FightFromDistance for Ranger{} // but only Ranger gets FightFromDistance
-impl Magic for Wizard{}  // and only Wizard gets Magic
+impl FightFromDistance for Ranger{} // 但只有 Ranger 得到 FightFromDistance
+impl Magic for Wizard{}  // 且只有 Wizard 得到 Magic
 
 fn attack_with_bow<T: FightFromDistance + Debug>(character: &T, opponent: &mut Monster, distance: u32) {
     if distance < 10 {
@@ -5318,7 +5318,7 @@ fn main() {
 }
 ```
 
-This prints almost the same thing:
+印出來的東西幾乎一樣：
 
 ```text
 You attack with your sword. Your opponent now has 30 health left. You are now at: Wizard { health: 60 }
@@ -5326,9 +5326,9 @@ You attack with your bow. Your opponent now has 20 health left.  You are now at:
 You raise your hands and cast a fireball! Your opponent now has 0 health left. You are now at: Wizard { health: 60 }
 ```
 
-So you can see there are many ways to do the same thing when you use traits. It all depends on what makes the most sense for the program that you are writing.
+所以你可以看到，當你使用特徵時，有很多方式可以做到同樣的事情。這一切都取決於什麼對你正在編寫的程式最有意義。
 
-Now let's look at how to implement some of the main traits you will use in Rust.
+現在讓我們來看看如何實作一些你會在 Rust 中使用的主要特徵。
 
 ### The From trait
 
