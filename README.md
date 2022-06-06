@@ -82,7 +82,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [特徵](#特徵)
     - [From 特徵](#from-特徵)
     - [接受 String 和 &str 的函式](#接受-string-和-str-的函式)
-  - [Chaining methods](#chaining-methods)
+  - [鏈結方法](#鏈結方法)
   - [Iterators](#iterators)
     - [How an iterator works](#how-an-iterator-works)
   - [Closures](#closures)
@@ -5582,9 +5582,9 @@ fn main() {
 }
 ```
 
-## Chaining methods
+## 鏈結方法
 
-Rust is a systems programming language like C and C++, and its code can be written as separate commands in separate lines, but it also has a functional style. Both styles are okay, but functional style is usually shorter. Here is an example of the non-functional style (called "imperative style") to make a `Vec` from 1 to 10:
+Rust 是一種系統程式語言，就像 C 和 C++ 一樣，它的程式碼可以寫成獨立的命令，單獨成行，但它也有函數式風格(functional style)。兩種風格都可以，但函數式通常比較短。下面以非函數式(稱為"命令式(imperative style)")為例，做出從 1 到 10 的 `Vec`。
 
 ```rust
 fn main() {
@@ -5600,22 +5600,22 @@ fn main() {
 }
 ```
 
-This prints `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
+印出 `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`。
 
-And here is an example of functional style:
+而這裡是函式式風格的範例：
 
 ```rust
 fn main() {
     let new_vec = (1..=10).collect::<Vec<i32>>();
-    // Or you can write it like this:
+    // 或者你能寫成像這樣:
     // let new_vec: Vec<i32> = (1..=10).collect();
     println!("{:?}", new_vec);
 }
 ```
 
-`.collect()` can make collections of many types, so we have to tell it the type.
+`.collect()` 可以做出很多型別的集合，所以我們要告訴它型別。
 
-With functional style you can chain methods. "Chaining methods" means to put many methods together in a single statement. Here is an example of many methods chained together:
+你可以用函數式風格來鏈結方法。"鏈結方法"的意思是把很多方法放在一個陳述式中。這裡是一個有很多方法鏈結在一起的範例：
 
 ```rust
 fn main() {
@@ -5627,23 +5627,23 @@ fn main() {
 }
 ```
 
-This creates a Vec with `[3, 4, 5, 6]`. This is a lot of information for one line, so it can help to put each method on a new line. Let's do that to make it easier to read:
+這樣就建立了一個是 `[3, 4, 5, 6]` 的 Vec。這一行的資訊量很大，所以把每個方法放在新的一行上會有幫助。讓我們這樣做，讓它更容易閱讀：
 
 ```rust
 fn main() {
     let my_vec = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     let new_vec = my_vec
-        .into_iter() // "iterate" over the items (iterate = work with each item inside it). into_iter() gives us owned values, not references
-        .skip(3) // skip over three items: 0, 1, and 2
-        .take(4) // take the next four: 3, 4, 5, and 6
-        .collect::<Vec<i32>>(); // put them in a new Vec<i32>
+        .into_iter() // "迭代"過所有元素 (iterate = 處理它裡面的每個項目). into_iter() 給我們的是具所有權的數值, 而非參考
+        .skip(3) // 略過三個項目: 0, 1, 和 2
+        .take(4) // 拿取後面四個: 3, 4, 5, 和 6
+        .collect::<Vec<i32>>(); // 把它們放進新的 Vec<i32>
 
     println!("{:?}", new_vec);
 }
 ```
 
-You can use this functional style best when you understand closures and iterators. So we will learn them next.
+當你瞭解閉包(closure)和迭代器(iterator)時，你就可以用最佳的方式運用這種函數式風格。所以我們接下來將學會它們。
 
 ## Iterators
 
