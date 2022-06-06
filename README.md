@@ -80,8 +80,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [問號(?)運算子](#問號運算子)
     - [何時善用 panic 和 unwrap](#何時善用-panic-和-unwrap)
   - [特徵](#特徵)
-    - [The From trait](#the-from-trait)
-    - [Taking a String and a &str in a function](#taking-a-string-and-a-str-in-a-function)
+    - [From 特徵](#from-特徵)
+    - [接受 String 和 &str 的函式](#接受-string-和-str-的函式)
   - [Chaining methods](#chaining-methods)
   - [Iterators](#iterators)
     - [How an iterator works](#how-an-iterator-works)
@@ -5330,9 +5330,9 @@ You raise your hands and cast a fireball! Your opponent now has 0 health left. Y
 
 現在讓我們來看看如何實作一些你會在 Rust 中使用的主要特徵。
 
-### The From trait
+### From 特徵
 
-*From* is a very convenient trait to use, and you know this because you have seen it so much already. With *From* you can make a `String` from a `&str`, but you can make many types from many other types. For example, Vec uses *From* for the following:
+*From* 是個非常方便使用的特徵，你知道這一點是因為你已經看過很多遍。有了 *From* 你可以從 `&str` 做出 `String`，但你也可以用許多其他型別做出許多種型別。例如，Vec 能用 *From* 在以下型別：
 
 ```text
 From<&'_ [T]>
@@ -5350,12 +5350,12 @@ From<Vec<T>>
 From<VecDeque<T>>
 ```
 
-That is a lot of `Vec::from()` that we have not tried yet. Let's make a few and see what happens.
+那裡還有很多種 `Vec::from()` 我們還沒有嘗試用過。我們來用幾個看看會怎麼樣。
 
 ```rust
-use std::fmt::Display; // We will make a generic function to print them so we want Display
+use std::fmt::Display; // 我們會做個用來印出它們的泛型函式，所以我們想要 Display
 
-fn print_vec<T: Display>(input: &Vec<T>) { // Take any Vec<T> if type T has Display
+fn print_vec<T: Display>(input: &Vec<T>) { // 接受 Vec<T> 如果型別 T 有 Display
     for item in input {
         print!("{} ", item);
     }
@@ -5364,18 +5364,18 @@ fn print_vec<T: Display>(input: &Vec<T>) { // Take any Vec<T> if type T has Disp
 
 fn main() {
 
-    let array_vec = Vec::from([8, 9, 10]); // Try from an array
+    let array_vec = Vec::from([8, 9, 10]); // 試著對陣列 from
     print_vec(&array_vec);
 
-    let str_vec = Vec::from("What kind of vec will I be?"); // An array from a &str? This will be interesting
+    let str_vec = Vec::from("What kind of vec will I be?"); // 對 &str from 的陣列？ 這會蠻有趣的
     print_vec(&str_vec);
 
-    let string_vec = Vec::from("What kind of vec will a String be?".to_string()); // Also from a String
+    let string_vec = Vec::from("What kind of vec will a String be?".to_string()); // 也是對 String 去 from
     print_vec(&string_vec);
 }
 ```
 
-It prints the following:
+印出的內容如下：
 
 ```text
 8 9 10
@@ -5383,44 +5383,44 @@ It prints the following:
 87 104 97 116 32 107 105 110 100 32 111 102 32 118 101 99 32 119 105 108 108 32 97 32 83 116 114 105 110 103 32 98 101 63
 ```
 
-If you look at the type, the second and third vectors are `Vec<u8>`, which means the bytes of the `&str` and the `String`. So you can see that `From` is very flexible and used a lot. Let's try it with our own types.
+如果你觀察型別，第二個和第三個向量都是 `Vec<u8>`，也就是 `&str` 和 `String` 的位元組。所以你可以看到 `From` 是非常靈活的，且用得很多。讓我們用自己的型別來試試看。
 
-We'll make two structs and then implement `From` for one of them. One struct will be `City`, and the other will be `Country`. We want to be able to do this: `let country_name = Country::from(vector_of_cities)`.
+我們將做兩個結構體，然後為其中一個結構體實作 `From`。一個結構體會是 `City`，另一個結構體則會是 `Country`。我們希望能夠做到這件事：`let country_name = Country::from(vector_of_cities)`。
 
-It looks like this:
+它看起來像這樣：
 
 ```rust
-#[derive(Debug)] // So we can print City
+#[derive(Debug)] // 這樣我們可以印出 City
 struct City {
     name: String,
     population: u32,
 }
 
 impl City {
-    fn new(name: &str, population: u32) -> Self { // just a new function
+    fn new(name: &str, population: u32) -> Self { // 只是新的函式
         Self {
             name: name.to_string(),
             population,
         }
     }
 }
-#[derive(Debug)] // Country also needs to be printed
+#[derive(Debug)] // Country 也要可以被印出
 struct Country {
-    cities: Vec<City>, // Our cities go in here
+    cities: Vec<City>, // 我們的城市都在這裡
 }
 
-impl From<Vec<City>> for Country { // Note: we don't have to write From<City>, we can also do
-                                   // From<Vec<City>>. So we can also implement on a type that
-                                   // we didn't create
+impl From<Vec<City>> for Country { // 注意: 我們不用去寫 From<City>, 我們也可以改用
+                                   // From<Vec<City>>. 因此我們也能實作在我們
+                                   // 未曾建立的型別上
     fn from(cities: Vec<City>) -> Self {
         Self { cities }
     }
 }
 
 impl Country {
-    fn print_cities(&self) { // function to print the cities in Country
+    fn print_cities(&self) { // 函式印出 Country 內的城市
         for city in &self.cities {
-            // & because Vec<City> isn't Copy
+            // 用 & 因為 Vec<City> 不是 Copy
             println!("{:?} has a population of {:?}.", city.name, city.population);
         }
     }
@@ -5430,21 +5430,21 @@ fn main() {
     let helsinki = City::new("Helsinki", 631_695);
     let turku = City::new("Turku", 186_756);
 
-    let finland_cities = vec![helsinki, turku]; // This is the Vec<City>
-    let finland = Country::from(finland_cities); // So now we can use From
+    let finland_cities = vec![helsinki, turku]; // 這是 Vec<City>
+    let finland = Country::from(finland_cities); // 所以現在我們能用 From
 
     finland.print_cities();
 }
 ```
 
-This prints:
+印出：
 
 ```text
 "Helsinki" has a population of 631695.
 "Turku" has a population of 186756.
 ```
 
-You can see that `From` is easy to implement from types you didn't create like `Vec`, `i32`, and so on. Here is one more example where we create a vector that has two vectors. The first vector holds even numbers, and the second holds odd numbers. With `From` you can give it a vector of `i32`s and it will turn it into a `Vec<Vec<i32>>`: a vector that holds vectors of `i32`.
+你可以看到，很容易從你沒有建立的型別中實作出 `From`，比如 `Vec`、`i32` 等等。這裡還有一個例子是，我們建立有兩個向量的向量。第一個向量存放偶數，第二個向量存放奇數。你可以用 `From` 給它一個 `i32` 的向量，它會把它變成 `Vec<Vec<i32>>`：一個向量裡面有許多容納 `i32` 的向量。
 
 ```rust
 use std::convert::From;
@@ -5453,8 +5453,8 @@ struct EvenOddVec(Vec<Vec<i32>>);
 
 impl From<Vec<i32>> for EvenOddVec {
     fn from(input: Vec<i32>) -> Self {
-        let mut even_odd_vec: Vec<Vec<i32>> = vec![vec![], vec![]]; // A vec with two empty vecs inside
-                                                                    // This is the return value but first we must fill it
+        let mut even_odd_vec: Vec<Vec<i32>> = vec![vec![], vec![]]; // 向量的裡面有兩個空向量
+                                                                    // 這是回傳值但首先我們必須先將它填充
         for item in input {
             if item % 2 == 0 {
                 even_odd_vec[0].push(item);
@@ -5462,7 +5462,7 @@ impl From<Vec<i32>> for EvenOddVec {
                 even_odd_vec[1].push(item);
             }
         }
-        Self(even_odd_vec) // Now it is done so we return it as Self (Self = EvenOddVec)
+        Self(even_odd_vec) // 現在它完成了那我們把它回傳為 Self (Self = EvenOddVec)
     }
 }
 
@@ -5474,22 +5474,22 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Even numbers: [8, 222, 0, 8]
 Odd numbers: [7, -1, 3, 9787, -47, 77, 55, 7]
 ```
 
-A type like `EvenOddVec` is probably better as a generic `T` so we can use many number types. You can try to make the example generic if you want for practice.
+像 `EvenOddVec` 這樣的型別可能最好是用泛型的 `T`，這樣我們就可以用在許多數值型別。如果你想練習的話，你可以試著把這個範例做成泛型的。
 
-### Taking a String and a &str in a function
+### 接受 String 和 &str 的函式
 
-Sometimes you want a function that can take both a `String` and a `&str`. You can do this with generics and the `AsRef` trait. `AsRef` is used to give a reference from one type to another type. If you look at the documentation for `String`, you can see that it has `AsRef` for many types:
+有時你想讓函式能同時接受 `String` 和 `&str`。你可以透過泛型和 `AsRef` 特徵來做到這件事。`AsRef` 用於從某個型別向另一個型別提供參考。如果你查閱 `String` 文件，你可以看到它對許多型別都有提供 `AsRef`：
 
 [https://doc.rust-lang.org/std/string/struct.String.html](https://doc.rust-lang.org/std/string/struct.String.html)
 
-Here are some function signatures for them.
+這些是它們的一些函式簽名。
 
 `AsRef<str>`:
 
@@ -5518,9 +5518,9 @@ impl AsRef<OsStr> for String
 fn as_ref(&self) -> &OsStr
 ```
 
-You can see that it takes `&self` and gives a reference to the other type. This means that if you have a generic type T, you can say that it needs `AsRef<str>`. If you do that, it will be able to take a `&str` and a `String`.
+你可以看到，它接受 `&self`，並給出另一個型別的參考。這意味著，如果你有個泛型型別 T，你可以說它需要 `AsRef<str>`。如果你這樣做，它將會能夠接受 `&str` 和 `String`。
 
-Let's start with the generic function. This doesn't work yet:
+讓我們先從泛型函式說起。這個還不能執行：
 
 ```rust
 fn print_it<T>(input: T) {
@@ -5532,7 +5532,7 @@ fn main() {
 }
 ```
 
-Rust says `error[E0277]: T doesn't implement std::fmt::Display`. So we will require T to implement Display.
+Rust說 `error[E0277]: T doesn't implement std::fmt::Display`。所以我們會被要求給 T 實作 Display。
 
 ```rust
 use std::fmt::Display;
@@ -5546,7 +5546,7 @@ fn main() {
 }
 ```
 
-Now it works and prints `Please print me`. That is good, but T can still be too many things. It can be an `i8`, an `f32` and anything else with just `Display`. So we add `AsRef<str>`, and now T needs both `AsRef<str>` and `Display`.
+現在可以執行並印出 `Please print me`。這不錯，但 T 仍然可以是太多種類的型別。它可以是 `i8`、`f32` 及任何其它有 `Display` 的東西。所以我們加上 `AsRef<str>`，那麼現在 T 需要同時有實作 `AsRef<str>` 和 `Display`。
 
 ```rust
 use std::fmt::Display;
@@ -5558,20 +5558,20 @@ fn print_it<T: AsRef<str> + Display>(input: T) {
 fn main() {
     print_it("Please print me");
     print_it("Also, please print me".to_string());
-    // print_it(7); <- This will not print
+    // print_it(7); <- 這不會印出來
 }
 ```
 
-Now it won't take types like `i8`.
+現在它不會接受像 `i8` 這樣的型別。
 
-Don't forget that you can use `where` to write the function differently when it gets long. If we add Debug then it becomes `fn print_it<T: AsRef<str> + Display + Debug>(input: T)` which is long for one line. So we can write it like this:
+不要忘了，你可以在函式變長時用 `where` 以不一樣的方式寫出函式。如果我們加上 Debug，那麼它就會變成一整行長長的 `fn print_it<T: AsRef<str> + Display + Debug>(input: T)`。因此我們可以寫成這樣：
 
 ```rust
-use std::fmt::{Debug, Display}; // add Debug
+use std::fmt::{Debug, Display}; // 加上 Debug
 
-fn print_it<T>(input: T) // Now this line is easy to read
+fn print_it<T>(input: T) // 現在這行好讀多了
 where
-    T: AsRef<str> + Debug + Display, // and these traits are easy to read
+    T: AsRef<str> + Debug + Display, // 並且這些特徵也好讀
 {
     println!("{}", input)
 }
