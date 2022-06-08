@@ -83,8 +83,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [From 特徵](#from-特徵)
     - [接受 String 和 &str 的函式](#接受-string-和-str-的函式)
   - [鏈結方法](#鏈結方法)
-  - [Iterators](#iterators)
-    - [How an iterator works](#how-an-iterator-works)
+  - [疊代器](#疊代器)
+    - [疊代器如何運作](#疊代器如何運作)
   - [Closures](#closures)
     - [|_| in a closure](#_-in-a-closure)
     - [Helpful methods for closures and iterators](#helpful-methods-for-closures-and-iterators)
@@ -5643,27 +5643,27 @@ fn main() {
 }
 ```
 
-當你瞭解閉包(closure)和迭代器(iterator)時，你就可以用最佳的方式運用這種函數式風格。所以我們接下來將學會它們。
+當你瞭解閉包(closure)和疊代器(iterator)時，你就可以用最佳的方式運用這種函數式風格。所以我們接下來將學會它們。
 
-## Iterators
+## 疊代器
 
-An iterator is a construct that can give you the items in the collection, one at a time. Actually, we have already used iterators a lot: the `for` loop gives you an iterator. When you want to use an iterator other times, you have to choose what kind:
+疊代器是種可以一次拿給你集合中一個元素的構造。其實我們已經使用過疊代器很多次：`for` 迴圈就是給你疊代器使用。在其他時候當你想使用疊代器時，你必須選擇用那一種：
 
-- `.iter()` for an iterator of references
-- `.iter_mut()` for an iterator of mutable references
-- `.into_iter()` for an iterator of values (not references)
+- `.iter()` 給出參考的疊代器
+- `.iter_mut()` 給出可變參考的疊代器
+- `.into_iter()` 給出取值的疊代器(不是參考)
 
-A `for` loop is actually just an iterator that owns its values. That's why it can make it mutable and then you can change the values when you use it.
+`for` 迴圈其實只是一個擁有值的疊代器。這就是為什麼它可以是可變的，並在使用的時候改變值。
 
-We can use iterators like this:
+我們可以像這樣使用疊代器：
 
 ```rust
 fn main() {
-    let vector1 = vec![1, 2, 3]; // we will use .iter() and .into_iter() on this one
+    let vector1 = vec![1, 2, 3]; // 我們會對這個向量使用 .iter() 和 .into_iter()
     let vector1_a = vector1.iter().map(|x| x + 1).collect::<Vec<i32>>();
     let vector1_b = vector1.into_iter().map(|x| x * 10).collect::<Vec<i32>>();
 
-    let mut vector2 = vec![10, 20, 30]; // we will use .iter_mut() on this one
+    let mut vector2 = vec![10, 20, 30]; // 我們會對這個向量使用 .iter_mut()
     vector2.iter_mut().for_each(|x| *x +=100);
 
     println!("{:?}", vector1_a);
@@ -5672,7 +5672,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 [2, 3, 4]
@@ -5680,79 +5680,79 @@ This prints:
 [10, 20, 30]
 ```
 
-The first two we used a method called `.map()`. This method lets you do something to every item, then pass it on. The last one we used is one called `.for_each()`. This method just lets you do something to every item. `.iter_mut()` plus `for_each()` is basically just a `for` loop. Inside each method we can give a name to every item (we just called it `x`) and use that to change it. These are called closures and we will learn about them in the next section.
+在前兩個我們用了叫做 `.map()` 的方法。這個方法讓你對每個元素做些事情，然後把它傳遞下去。後面這個我們用的是叫做 `.for_each()` 的方法。這個方法也只是讓你對每個元素做些事情。`.iter_mut()` 加上 `for_each()` 基本上就是 `for` 迴圈。在每一個方法裡面，我們可以給每個元素取名(我們剛才叫它 `x`)，並用它的名字來改變它。這些被稱為閉包(closure)，我們將在下個章節學到。
 
-Let's go over them again, one at a time.
+讓我們再來一個個看過它們一遍。
 
-First we used `.iter()` on `vector1` to get references. We added 1 to each, and made it into a new Vec. `vector1` is still alive because we only used references: we didn't take by value. Now we have `vector1`, and a new Vec called `vector1_a`. Because `.map()` just passes it on, we needed to use `.collect()` to make it into a `Vec`.
+首先我們用 `.iter()` 對 `vector1` 取得元素的參考。我們給每一個元素都加上 1，並將結果變成新的 Vec。`vector1` 仍然還在，因為我們只用了參考：我們沒有拿走值。現在我們有 `vector1`，還有個新的 Vec 叫 `vector1_a`。因為 `.map()` 只是把它傳遞過去，所以我們還需要使用 `.collect()` 把它變成 `Vec`。
 
-Then we used `into_iter` to get an iterator by value from `vector1`. This destroys `vector1`, because that's what `into_iter()` does. So after we make `vector1_b` we can't use `vector1` again.
+然後我們用 `into_iter` 從 `vector1` 中得到取值疊代器。這樣就會銷毀 `vector1`，因為那就是 `into_iter()` 的作用。所以我們做出 `vector1_b` 之後，就不能再使用 `vector1` 了。
 
-Finally we used `.iter_mut()` for `vector2`. It is mutable, so we don't need to use `.collect()` to create a new Vec. Instead, we change the values in the same Vec with mutable references. So `vector2` is still there. Because we don't need a new Vec, we use `for_each`: it's just like a `for` loop.
+最後我們在 `vector2` 上使用了 `.iter_mut()`。它是可變的，因此我們不需要使用 `.collect()` 來建立新的 Vec。反而我們用可變參考改變同一個 Vec 中的值。所以 `vector2` 仍然存在。也因為我們不需要新的 Vec，可以直接使用 `for_each`：它就像 `for` 迴圈。
 
 
-### How an iterator works
+### 疊代器如何運作
 
-An iterator works by using a method called `.next()`, which gives an `Option`. When you use an iterator, Rust calls `next()` over and over again. If it gets `Some`, it keeps going. If it gets `None`, it stops.
+疊代器是藉由使用叫做 `.next()` 的方法來運作，這個方法會回傳 `Option`。當你使用疊代器時，Rust 會一遍又一遍地對它呼叫 `next()`。如果得到 `Some`，它就會繼續下去。如果得到 `None`，它就停止。
 
-Do you remember the `assert_eq!` macro? In documentation, you see it all the time. Here it is showing how an iterator works.
+你還記得 `assert_eq!` 巨集嗎？在文件中，你總是看得到它。這裡它展示了疊代器如何運作。
 
 ```rust
 fn main() {
-    let my_vec = vec!['a', 'b', '거', '柳']; // Just a regular Vec
+    let my_vec = vec!['a', 'b', '거', '柳']; // 只是正規的 Vec
 
-    let mut my_vec_iter = my_vec.iter(); // This is an Iterator type now, but we haven't called it yet
+    let mut my_vec_iter = my_vec.iter(); // 現在這是疊代器型別, 但我們還沒呼叫它
 
-    assert_eq!(my_vec_iter.next(), Some(&'a'));  // Call the first item with .next()
-    assert_eq!(my_vec_iter.next(), Some(&'b'));  // Call the next
-    assert_eq!(my_vec_iter.next(), Some(&'거')); // Again
-    assert_eq!(my_vec_iter.next(), Some(&'柳')); // Again
-    assert_eq!(my_vec_iter.next(), None);        // Nothing is left: just None
-    assert_eq!(my_vec_iter.next(), None);        // You can keep calling .next() but it will always be None
+    assert_eq!(my_vec_iter.next(), Some(&'a'));  // 用 .next() 呼叫第一個元素
+    assert_eq!(my_vec_iter.next(), Some(&'b'));  // 呼叫下一個
+    assert_eq!(my_vec_iter.next(), Some(&'거')); // 再一次
+    assert_eq!(my_vec_iter.next(), Some(&'柳')); // 再一次
+    assert_eq!(my_vec_iter.next(), None);        // 沒有東西留下: 只有 None
+    assert_eq!(my_vec_iter.next(), None);        // 你能持續呼叫 .next() 但它會永遠是 None
 }
 ```
 
-Implementing `Iterator` for your own struct or enum is not too hard. First let's make a book library and think about it.
+為自己的結構體或列舉實作 `Iterator` 並不太難。首先讓我們建立書庫，思考看看。
 
 ```rust
-#[derive(Debug)] // we want to print it with {:?}
+#[derive(Debug)] // 我們想用 {:?} 印出它
 struct Library {
-    library_type: LibraryType, // this is our enum
-    books: Vec<String>, // list of books
+    library_type: LibraryType, // 這是我們的列舉
+    books: Vec<String>, // 書本清單
 }
 
 #[derive(Debug)]
-enum LibraryType { // libraries can be city libraries or country libraries
+enum LibraryType { // 書庫可以是城市圖書館或國家圖書館
     City,
     Country,
 }
 
 impl Library {
-    fn add_book(&mut self, book: &str) { // we use add_book to add new books
-        self.books.push(book.to_string()); // we take a &str and turn it into a String, then add it to the Vec
+    fn add_book(&mut self, book: &str) { // 我們用 add_book 來加入新書
+        self.books.push(book.to_string()); // 我們接受 &str 並回傳為 String, 再加入 Vec 裡
     }
 
-    fn new() -> Self { // this creates a new Library
+    fn new() -> Self { // 這裡建立新的 Library
         Self {
-            library_type: LibraryType::City, // most are in the city so we'll choose City
-                                             // most of the time
+            library_type: LibraryType::City, // 多數是在城市裡所以
+                                             // 很多時候我們會選 City
             books: Vec::new(),
         }
     }
 }
 
 fn main() {
-    let mut my_library = Library::new(); // make a new library
-    my_library.add_book("The Doom of the Darksword"); // add some books
+    let mut my_library = Library::new(); // 做新的書庫
+    my_library.add_book("The Doom of the Darksword"); // 加入一些書
     my_library.add_book("Demian - die Geschichte einer Jugend");
     my_library.add_book("구운몽");
     my_library.add_book("吾輩は猫である");
 
-    println!("{:?}", my_library.books); // we can print our list of books
+    println!("{:?}", my_library.books); // 我們可以印出我們的書本清單
 }
 ```
 
-That works well. Now we want to implement `Iterator` for the library so we can use it in a `for` loop. Right now if we try a `for` loop, it doesn't work:
+這運作的很好。現在我們想為書庫實作 `Iterator`，這樣我們就可以在 `for` 迴圈中使用它。現在如果我們嘗試用 `for` 迴圈，它肯定不能用：
 
 ```rust
 for item in my_library {
@@ -5760,7 +5760,7 @@ for item in my_library {
 }
 ```
 
-It says:
+報出錯誤：
 
 ```text
 error[E0277]: `Library` is not an iterator
@@ -5773,14 +5773,14 @@ error[E0277]: `Library` is not an iterator
    = note: required by `std::iter::IntoIterator::into_iter`
 ```
 
-But we can make library into an iterator with `impl Iterator for Library`. Information on the `Iterator` trait is here in the standard library: [https://doc.rust-lang.org/std/iter/trait.Iterator.html](https://doc.rust-lang.org/std/iter/trait.Iterator.html)
+但是我們可以用 `impl Iterator for Library` 把書庫變成疊代器。`Iterator` 特徵的資訊能在標準函式庫中查看：[https://doc.rust-lang.org/std/iter/trait.Iterator.html](https://doc.rust-lang.org/std/iter/trait.Iterator.html)
 
-On the top left of the page it says: `Associated Types: Item` and `Required Methods: next`. An "associated type" means "a type that goes together". Our associated type will be `String`, because we want the iterator to give us Strings.
+在頁面的左上方寫著：`Associated Types: Item` 和 `Required Methods: next`。"關聯型別"的意思是"一起使用的型別"。我們的關聯型別將會是 `String`，因為我們希望疊代器回傳給我們 String。
 
-In the page it has an example that looks like this:
+在頁面中，它有個看起來像這樣的範例。
 
 ```rust
-// an iterator which alternates between Some and None
+// 交錯回傳 Some 和 None 的疊代器
 struct Alternate {
     state: i32,
 }
@@ -5792,7 +5792,7 @@ impl Iterator for Alternate {
         let val = self.state;
         self.state = self.state + 1;
 
-        // if it's even, Some(i32), else None
+        // 如果是偶數回傳 Some(i32), 不然就是 None
         if val % 2 == 0 {
             Some(val)
         } else {
@@ -5804,9 +5804,9 @@ impl Iterator for Alternate {
 fn main() {}
 ```
 
-You can see that under `impl Iterator for Alternate` it says `type Item = i32`. This is the associated type. Our iterator will be for our list of books, which is a `Vec<String>`. When we call next, it will give us a `String`. So we will write `type Item = String;`. That is the associated item.
+你可以看到 `impl Iterator for Alternate` 下面寫著 `type Item = i32`。這就是關聯型別。我們的疊代器將會用在型別是 `Vec<String>` 的書本清單上。當我們呼叫 next 的時候，它要回傳給我們 `String`。那麼我們就會要寫成 `type Item = String;`。那就是所謂的關聯型別。
 
-To implement `Iterator`, you need to write the `fn next()` function. This is where you decide what the iterator should do. For our `Library`, we want it to give us the last books first. So we will `match` with `.pop()` which takes the last item off if it is `Some`. We also want to print " is found!" for each item. Now it looks like this:
+為了實作 `Iterator`，你需要去寫 `fn next()` 函式。這是你決定疊代器應該要做什麼的地方。對於我們的 `Library`，我們希望它先給我們最後一本書。所以我們將會 `match` 從 `.pop()` 拿出來的最後一個元素，如果它是 `Some` 的話。我們還想為每個元素印出 " is found!"。現在它看起來像這樣：
 
 ```rust
 #[derive(Debug, Clone)]
@@ -5829,7 +5829,7 @@ impl Library {
     fn new() -> Self {
         Self {
             library_type: LibraryType::City,
-            // most of the time
+            // 很多時候
             books: Vec::new(),
         }
     }
@@ -5840,7 +5840,7 @@ impl Iterator for Library {
 
     fn next(&mut self) -> Option<String> {
         match self.books.pop() {
-            Some(book) => Some(book + " is found!"), // Rust allows String + &str
+            Some(book) => Some(book + " is found!"), // Rust 允許 String + &str
             None => None,
         }
     }
@@ -5853,13 +5853,13 @@ fn main() {
     my_library.add_book("구운몽");
     my_library.add_book("吾輩は猫である");
 
-    for item in my_library.clone() { // we can use a for loop now. Give it a clone so Library won't be destroyed
+    for item in my_library.clone() { // 我們現在能用for迴圈. 給它克隆這樣Library就不會被銷毀
         println!("{}", item);
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 吾輩は猫である is found!
