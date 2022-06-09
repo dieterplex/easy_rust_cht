@@ -85,8 +85,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [鏈結方法](#鏈結方法)
   - [疊代器](#疊代器)
     - [疊代器如何運作](#疊代器如何運作)
-  - [Closures](#closures)
-    - [|_| in a closure](#_-in-a-closure)
+  - [閉包](#閉包)
+    - [閉包裡的 |_|](#閉包裡的-_)
     - [Helpful methods for closures and iterators](#helpful-methods-for-closures-and-iterators)
   - [The dbg! macro and .inspect](#the-dbg-macro-and-inspect)
   - [Types of &str](#types-of-str)
@@ -5868,11 +5868,11 @@ Demian - die Geschichte einer Jugend is found!
 The Doom of the Darksword is found!
 ```
 
-## Closures
+## 閉包
 
-Closures are like quick functions that don't need a name. Sometimes they are called lambdas. Closures are easy to find because they use `||` instead of `()`. They are very common in Rust, and once you learn to use them you will wonder how you lived without them.
+閉包(Closure)就像不需要名字的快速函式。有時它們被稱為 lambda。閉包很容易辨識，因為它們使用 `||` 而不是 `()`。它們在 Rust 中非常常見，一旦你學會了使用它們，你就會愛不釋手。
 
-You can bind a closure to a variable, and then it looks exactly like a function when you use it:
+你可以將閉包連結到變數上，而當你使用它時，它看起來就像一個函式一樣：
 
 ```rust
 fn main() {
@@ -5881,9 +5881,9 @@ fn main() {
 }
 ```
 
-So this closure takes nothing: `||` and prints a message: `This is a closure`.
+所以這個閉包沒有接受東西：`||`，並印出訊息。`This is a closure`。
 
-In between the `||` we can add input variables and types, like inside `()` for a function:
+在 `||` 之間我們可以加上要輸入的變數和型別，就像在函式的 `()` 裡面一樣的用法：
 
 ```rust
 fn main() {
@@ -5894,14 +5894,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 5
 10
 ```
 
-When the closure becomes more complicated, you can add a code block. Then it can be as long as you want.
+當閉包變得更加復雜時，你可以加上程式碼區塊。那你就可以要寫多長就多長。
 
 ```rust
 fn main() {
@@ -5909,14 +5909,14 @@ fn main() {
         let number = 7;
         let other_number = 10;
         println!("The two numbers are {} and {}.", number, other_number);
-          // This closure can be as long as we want, just like a function.
+          // 這個閉包你想要寫多長就能有多長, 就像函式.
     };
 
     my_closure();
 }
 ```
 
-But closures are special because they can take variables that are outside the closure even if you only write `||`. So you can do this:
+但是閉包的特殊在於它可以接受閉包之外的變數，即使你只有寫 `||`。所以你可以這樣做：
 
 ```rust
 fn main() {
@@ -5928,19 +5928,19 @@ fn main() {
 }
 ```
 
-So this prints `16`. You didn't need to put anything in `||` because it can just take `number_one` and `number_two` and add them.
+就會印出 `16`。你不需要在 `||` 中放入任何東西，因為它可以直接拿到 `number_one` 和 `number_two` 並把它們加起來。
 
-By the way, that is where the name **closure** comes from, because they take variables and "enclose" them inside. And if you want to be very correct:
+順帶一提，這就是 **閉包(closure)** 這個名字的由來，因為它們會取得變數並將它們"封入(enclose)"在裡面。如果你想要很正確的說法：
 
-- a `||` that doesn't enclose a variable from outside is an "anonymous function". Anonymous means "doesn't have a name". It works more like a regular function.
-- a `||` that does enclose a variable from outside is a "closure". It "encloses" the variables around it to use them.
+- `||` 如果不把變數從外面封進來就是"匿名函式(anonymous function)"。匿名的意思是"沒有名字"。它用起來更像個正規函式。
+- `||` 有從外部封入變數的才是"閉包"。它把它周圍的變數"封起來"使用。
 
-But people will often call all `||` functions closures, so you don't have to worry about the name. We will just say "closure" for anything with a `||`, but remember that it can mean an "anonymous function".
+但是人們經常會把所有的 `||` 函式都叫做閉包，所以你不用擔心名字的問題。我們只會對帶有 `||` 的任何東西叫"閉包"，但請記住，它可能意味著一個"匿名函式"。
 
-Why is it good to know the difference? It's because an anonymous function actually makes the same machine code as a function with a name. They feel "high level", so sometimes people think that the machine code will be complicated. But the machine code that Rust makes from it is just as fast as a regular function.
+為什麼知道兩者的區別有益呢？因為匿名函式其實和具名函式產生一樣的機器碼(machine code)。它們給人的感覺是"高層抽象"，所以有時候大家會覺得機器碼會很複雜。但是 Rust 用它產生的機器碼其實和正規函式一樣快。
 
 
-So let's look at some more things that closures can do. You can also do this:
+所以讓我們再來看看更多一些閉包能做的事。你也可以這樣做：
 
 ```rust
 fn main() {
@@ -5952,21 +5952,21 @@ fn main() {
 }
 ```
 
-This closure takes `number_one` and `number_two`. We also gave it a new variable `x` and said that `x` is 5. Then it adds all three together to print `21`.
+這個閉包取用 `number_one` 和 `number_two`。我們還給了它新的變數 `x`，並且照範例來說 `x` 是 5。然後它把這三個都加在一起印出 `21`。
 
-Usually you see closures in Rust inside of a method, because it is very convenient to have a closure inside. We saw closures in the last section with `.map()` and `.for_each()`. In that section we wrote `|x|` to bring in the next item in an iterator, and that was a closure.
+通常在 Rust 中，你會在方法的引數裡面看到閉包，是因為用閉包作為引數是非常方便的事。我們在上個章節中有 `.map()` 和 `.for_each()` 的地方看到了閉包。在那個章節中，我們寫了 `|x|` 來代入疊代器的下一個元素，那就是一個閉包。
 
-Here is another example: the `unwrap_or` method that we know that you can use to give a value if `unwrap` doesn't work. Before, we wrote: `let fourth = my_vec.get(3).unwrap_or(&0);`. But there is also an `unwrap_or_else` method that has a closure inside. So you can do this:
+這裡是另一個範例：如果 `unwrap` 不起作用，可以用我們已知的 `unwrap_or` 方法給出一個值替代。之前我們寫的是：`let fourth = my_vec.get(3).unwrap_or(&0);`。但還有個引數是用閉包的 `unwrap_or_else` 方法。所以你可以這樣做：
 
 ```rust
 fn main() {
     let my_vec = vec![8, 9, 10];
 
-    let fourth = my_vec.get(3).unwrap_or_else(|| { // try to unwrap. If it doesn't work,
-        if my_vec.get(0).is_some() {               // see if my_vec has something at index [0]
-            &my_vec[0]                             // Give the number at index 0 if there is something
+    let fourth = my_vec.get(3).unwrap_or_else(|| { // 試著 unwrap. 如果它不能用,
+        if my_vec.get(0).is_some() {               // 就看 my_vec 是否有東西在索引 [0]
+            &my_vec[0]                             // 如果有東西就回傳在索引 [0] 的數值
         } else {
-            &0 // otherwise give a &0
+            &0 // 不然就給 &0
         }
     });
 
@@ -5974,36 +5974,36 @@ fn main() {
 }
 ```
 
-Of course, a closure can be very simple. You can just write `let fourth = my_vec.get(3).unwrap_or_else(|| &0);` for example. You don't always need to use a `{}` and write complicated code just because there is a closure. As long as you put the `||` in, the compiler knows that you have put in the closure that you need.
+當然，閉包也可以很簡單。例如你可以只寫 `let fourth = my_vec.get(3).unwrap_or_else(|| &0);`。你不必只因為有閉包，就總是需要用 `{}` 並寫出複雜的程式碼。只要你把 `||` 放進去，編譯器就知道你放了你需要的閉包。
 
-The most frequent closure method is maybe `.map()`. Let's take a look at it again. Here is one way to use it:
+最常用的閉包方法可能是 `.map()`。讓我們再來看看它。下面是一種使用方式：
 
 ```rust
 fn main() {
     let num_vec = vec![2, 4, 6];
 
-    let double_vec = num_vec        // take num_vec
-        .iter()                     // iterate over it
-        .map(|number| number * 2)   // for each item, multiply by two
-        .collect::<Vec<i32>>();     // then make a new Vec from this
+    let double_vec = num_vec        // 拿 num_vec
+        .iter()                     // 疊代它
+        .map(|number| number * 2)   // 對每個元素乘以二
+        .collect::<Vec<i32>>();     // 然後從結果做新的 Vec
     println!("{:?}", double_vec);
 }
 ```
 
-Another good example is with `.for_each()` after `.enumerate()`. The `.enumerate()` method gives an iterator with the index number and the item. For example: `[10, 9, 8]` becomes `(0, 10), (1, 9), (2, 8)`. The type for each item here is `(usize, i32)`. So you can do this:
+另一個好例子是在 `.enumerate()` 之後使用 `.for_each()`。`.enumerate()` 方法給的是帶有索引號碼和元素的疊代器。例如：`[10, 9, 8]` 變成 `(0, 10), (1, 9), (2, 8)`。這裡每個元素的型別是 `(usize, i32)`。所以你可以這樣做：
 
 ```rust
 fn main() {
     let num_vec = vec![10, 9, 8];
 
     num_vec
-        .iter()      // iterate over num_vec
-        .enumerate() // get (index, number)
-        .for_each(|(index, number)| println!("Index number {} has number {}", index, number)); // do something for each one
+        .iter()      // 疊代 num_vec
+        .enumerate() // 得到 (index, number)
+        .for_each(|(index, number)| println!("Index number {} has number {}", index, number)); // 對每一個做些事
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Index number 0 has number 10
@@ -6011,9 +6011,9 @@ Index number 1 has number 9
 Index number 2 has number 8
 ```
 
-In this case we use `for_each` instead of `map`. `map` is for **doing something to** each item and passing it on, and `for_each` is **doing something when you see each item**. Also, `map` doesn't do anything unless you use a method like `collect`.
+在這種情況下，我們用 `for_each` 代替 `map`。`map` 是用於對每個元素**做一些事情**，並將其傳遞出去，而 `for_each` 是**當你看到每個元素時做一些事情**。另外，`map` 不會做任何事情，除非你使用像 `collect` 這樣的方法。
 
-Actually, this is the interesting thing about iterators. If you try to `map` without a method like `collect`, the compiler will tell you that it doesn't do anything. It won't panic, but the compiler will tell you that you didn't do anything.
+其實，這就是疊代器有趣的地方。如果你試著用 `map` 之後卻沒用像 `collect` 這樣的方法，編譯器會告訴你它不會做任何事。它不會恐慌，但編譯器只會告訴你什麼事都沒做。
 
 ```rust
 fn main() {
@@ -6027,7 +6027,7 @@ fn main() {
 }
 ```
 
-It says:
+它說：
 
 ```text
 warning: unused `std::iter::Map` that must be used
@@ -6043,64 +6043,64 @@ warning: unused `std::iter::Map` that must be used
   = note: iterators are lazy and do nothing unless consumed
 ```
 
-This is a **warning**, so it's not an error: the program runs fine. But why doesn't num_vec do anything? We can look at the types to see.
+這是個**警告**，所以不是錯誤：程式有正常執行。但是為什麼 `num_vec` 沒做任何事呢？我們可以看看型別就知道了。
 
-- `let num_vec = vec![10, 9, 8];` Right now it is a `Vec<i32>`.
-- `.iter()` Now it is an `Iter<i32>`. So it is an iterator with items of `i32`.
-- `.enumerate()` Now it is an `Enumerate<Iter<i32>>`. So it is a type `Enumerate` of type `Iter` of `i32`s.
-- `.map()` Now it is a type `Map<Enumerate<Iter<i32>>>`. So it is a type `Map` of type `Enumerate` of type `Iter` of `i32`s.
+- `let num_vec = vec![10, 9, 8];` 現在是個 `Vec<i32>`。
+- `.iter()` 現在是個 `Iter<i32>`。所以它是個元素為 `i32` 的疊代器。
+- `.enumerate()` 現在是個 `Enumerate<Iter<i32>>`。所以它是 `i32` 的 `Iter` 型別的 `Enumerate` 型別。
+- `.map()` 現在是個 `Map<Enumerate<Iter<i32>>>` 的型別。所以它是 `i32` 的 `Iter` 型別的 `Enumerate` 型別的 `Map` 型別。
 
-All we did was make a more and more complicated structure. So this `Map<Enumerate<Iter<i32>>>` is a structure that is ready to go, but only when we tell it what to do. Rust does this because it needs to be fast. It doesn't want to do this:
+我們所做的只是個越來越複雜的結構體。所以這個 `Map<Enumerate<Iter<i32>>>` 結構體只是準備好，但只有在我們告訴它要做什麼事時才會處理好能用。Rust 這樣做是因為它需要保證足夠快。它不想這樣做：
 
-- iterate over all the `i32`s in the Vec
-- then enumerate over all the `i32`s from the iterator
-- then map over all the enumerated `i32`s
+- 迭代向量中所有的 `i32`
+- 然後列舉出疊代器中所有的 `i32`
+- 然後對映所有列舉出的 `i32`
 
-Rust only wants to do one calculation, so it creates the structure and waits. Then if we say `.collect::<Vec<i32>>()` it knows what to do, and starts moving. This is what `iterators are lazy and do nothing unless consumed` means. The iterators don't do anything until you "consume" them (use them up).
+Rust 只想做一次計算，所以它建立結構體並等待。之後如果我們講了 `.collect::<Vec<i32>>()`，它就會知道該怎麼做，並開始動作。這就是 `iterators are lazy and do nothing unless consumed` 的意思。疊代器在你"消耗(consume)"它們(用完它們)之前不會做任何事情。
 
 
-You can even create complicated things like `HashMap` using `.collect()`, so it is very powerful. Here is an example of how to put two vecs into a `HashMap`. First we make the two vectors, and then we will use `.into_iter()` on them to get an iterator of values. Then we use the `.zip()` method. This method takes two iterators and attaches them together, like a zipper. Finally, we use `.collect()` to make the `HashMap`.
+你甚至可以用 `.collect()` 建立像 `HashMap` 這樣複雜的東西，所以它非常強大。這裡是如何將兩個向量放進 `HashMap` 的範例。首先我們做兩個向量出來，然後我們會對它們使用 `.into_iter()` 來得到值的疊代器。接著我們使用 `.zip()` 方法。這個方法將兩個疊代器就像拉鍊一樣伴隨(attach)在一起，。最後我們使用 `.collect()` 來做出 `HashMap`。
 
-Here is the code:
+這裡是程式碼：
 
 ```rust
 use std::collections::HashMap;
 
 fn main() {
-    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // a Vec<i32>
-    let some_words = vec!["zero", "one", "two", "three", "four", "five"]; // a Vec<&str>
+    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // 是 Vec<i32>
+    let some_words = vec!["zero", "one", "two", "three", "four", "five"]; // 是 Vec<&str>
 
     let number_word_hashmap = some_numbers
-        .into_iter()                 // now it is an iter
-        .zip(some_words.into_iter()) // inside .zip() we put in the other iter. Now they are together.
+        .into_iter()                 // 現在是疊代器
+        .zip(some_words.into_iter()) // .zip() 裡面我們放入另一個疊代器. 現在它們在一起了.
         .collect::<HashMap<_, _>>();
 
     println!("For key {} we get {}.", 2, number_word_hashmap.get(&2).unwrap());
 }
 ```
 
-This prints:
+印出：
 
 ```text
 For key 2 we get two.
 ```
 
-You can see that we wrote `<HashMap<_, _>>` because that is enough information for Rust to decide on the type `HashMap<i32, &str>`. You can write `.collect::<HashMap<i32, &str>>();` if you want, or you can write it like this if you prefer:
+你可以看到我們寫得是 `<HashMap<_, _>>`，因為那有足夠資訊讓 Rust 判斷出型別是 `HashMap<i32, &str>`。如果你想要寫成 `.collect::<HashMap<i32, &str>>();` 也行，或者你偏好像這樣寫也可以：
 
 ```rust
 use std::collections::HashMap;
 
 fn main() {
-    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // a Vec<i32>
-    let some_words = vec!["zero", "one", "two", "three", "four", "five"]; // a Vec<&str>
-    let number_word_hashmap: HashMap<_, _> = some_numbers  // Because we tell it the type here...
+    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // 是 Vec<i32>
+    let some_words = vec!["zero", "one", "two", "three", "four", "five"]; // 是 Vec<&str>
+    let number_word_hashmap: HashMap<_, _> = some_numbers  // 因為我們在這裡告訴它型別...
         .into_iter()
         .zip(some_words.into_iter())
-        .collect(); // we don't have to tell it here
+        .collect(); // 我們就不用在這裡告訴它
 }
 ```
 
-There is another method that is like `.enumerate()` for `char`s: `char_indices()`. (Indices means "indexes"). You use it in the same way. Let's pretend we have a big string that made of 3-digit numbers.
+還有一種方法，就像 `char` 的 `.enumerate()`：`char_indices()`(Indices的意思是"索引")。你用它的方式是一樣的。讓我們假裝有個由許多3位數的數字組成的大字串。
 
 ```rust
 fn main() {
@@ -6108,21 +6108,21 @@ fn main() {
 
     for (index, number) in numbers_together.char_indices() {
         match (index % 3, number) {
-            (0..=1, number) => print!("{}", number), // just print the number if there is a remainder
-            _ => print!("{}\t", number), // otherwise print the number with a tab space
+            (0..=1, number) => print!("{}", number), // 在特定餘數時只印出數字
+            _ => print!("{}\t", number), // 不然就印出帶有定位空白的數字
         }
     }
 }
 ```
 
-This prints `140     399     923     481     800     622     623     218     009     598    281`.
+印出 `140     399     923     481     800     622     623     218     009     598    281`。
 
 
-### |_| in a closure
+### 閉包裡的 |_|
 
-Sometimes you see `|_|` in a closure. This means that the closure needs an argument (like `x`), but you don't want to use it. So `|_|` means "Okay, this closure takes an argument but I won't give it a name because I don't care about it".
+有時你會在閉包裡面看到 `|_|`。這意味著這個閉包需要一個引數(比如 `x`)，但你不想使用它。所以 `|_|` 意味著 "好吧，這個閉包接受一個引數，但我不會給它名字是因為我不在乎它"。
 
-Here is an example of an error when you don't do that:
+這裡的範例是當你不這樣做時會有的錯誤：
 
 ```rust
 fn main() {
@@ -6132,7 +6132,7 @@ fn main() {
 }
 ```
 
-Rust says that
+Rust 講說
 
 ```text
 error[E0593]: closure is expected to take 1 argument, but it takes 0 arguments
@@ -6144,7 +6144,7 @@ error[E0593]: closure is expected to take 1 argument, but it takes 0 arguments
    |                                    expected closure that takes 1 argument
 ```
 
-The compiler actually gives you some help:
+編譯器其實會給你一些幫助：
 
 ```text
 help: consider changing the closure to take and ignore the expected argument
@@ -6152,7 +6152,7 @@ help: consider changing the closure to take and ignore the expected argument
 28 |     println!("{:?}", my_vec.iter().for_each(|_| println!("We didn't use the variables at all")));
 ```
 
-This is good advice. If you change `||` to `|_|` then it will work.
+這是很好的建議。如果你把 `||` 改成 `|_|` 就可以運作了。
 
 ### Helpful methods for closures and iterators
 
