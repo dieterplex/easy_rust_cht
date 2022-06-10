@@ -87,7 +87,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [疊代器如何運作](#疊代器如何運作)
   - [閉包](#閉包)
     - [閉包裡的 |_|](#閉包裡的-_)
-    - [Helpful methods for closures and iterators](#helpful-methods-for-closures-and-iterators)
+    - [閉包和疊代器的有用方法](#閉包和疊代器的有用方法)
   - [The dbg! macro and .inspect](#the-dbg-macro-and-inspect)
   - [Types of &str](#types-of-str)
   - [Lifetimes](#lifetimes)
@@ -6154,34 +6154,34 @@ help: consider changing the closure to take and ignore the expected argument
 
 這是很好的建議。如果你把 `||` 改成 `|_|` 就可以運作了。
 
-### Helpful methods for closures and iterators
+### 閉包和疊代器的有用方法
 
-Rust becomes a very fun to language once you become comfortable with closures. With closures you can *chain* methods to each other and do a lot of things with very little code. Here are some closures and methods used with closures that we didn't see yet.
+一旦閉包讓你感到自在時，Rust 就會成為一種非常有趣的語言。有了閉包，你可以將方法互相 *連結* 起來，用很少的程式碼做很多事情。下面是一些我們還沒有見過的閉包和使用閉包的方法。
 
-`.filter()`: This lets you keep the items in an iterator that you want to keep. Let's filter the months of the year.
+`.filter()`：讓你保留疊代器中你想保留的元素。讓我們過濾一年之中的月份。
 
 ```rust
 fn main() {
     let months = vec!["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     let filtered_months = months
-        .into_iter()                         // make an iter
-        .filter(|month| month.len() < 5)     // We don't want months more than 5 bytes in length.
-                                             // We know that each letter is one byte so .len() is fine
-        .filter(|month| month.contains("u")) // Also we only like months with the letter u
+        .into_iter()                         // 做出疊代器
+        .filter(|month| month.len() < 5)     // 我們不想要月份名的長度超過 5 個位元組.
+                                             // 我們知道每個字母是一個位元組, 所以用 .len() 沒問題
+        .filter(|month| month.contains("u")) // 還有我們只喜歡字母有 u 的月份
         .collect::<Vec<&str>>();
 
     println!("{:?}", filtered_months);
 }
 ```
 
-This prints `["June", "July"]`.
+印出 `["June", "July"]`。
 
 
 
-`.filter_map()`. This is called `filter_map()` because it does `.filter()` and `.map()`. The closure must return an `Option<T>`, and then `filter_map()` takes the value out of each `Option` if it is `Some`. So for example if you were to `.filter_map()` a `vec![Some(2), None, Some(3)]`, it would return `[2, 3]`.
+`.filter_map()`：這叫做 `filter_map()` 是因為它做了 `.filter()` 和 `.map()`。傳入的閉包必須回傳 `Option<T>`, 接著 `filter_map()` 將會從每一個 `Option` 取出是 `Some` 的值。所以比如說你套用 `.filter_map()` 到 `vec![Some(2), None, Some(3)]`，它就會回傳 `[2, 3]`。
 
-We will write an example with a `Company` struct. Each company has a `name` so that field is `String`, but the CEO might have recently quit. So the `ceo` field is `Option<String>`. We will `.filter_map()` over some companies to just keep the CEO names.
+我們將寫一個用到 `Company` 結構體的範例。每個公司都有個 `name`，所以這個欄位是 `String`，但是 CEO 可能最近已經辭職了。所以 `ceo` 欄位是 `Option<String>`。我們會 `.filter_map()` 一些公司，只保留 CEO 的名字。
 
 ```rust
 struct Company {
@@ -6194,7 +6194,7 @@ impl Company {
         let ceo = match ceo {
             "" => None,
             ceo => Some(ceo.to_string()),
-        }; // ceo is decided, so now we return Self
+        }; // 確定 ceo 了, 那我們現在就回傳 Self
         Self {
             name: name.to_string(),
             ceo,
@@ -6202,7 +6202,7 @@ impl Company {
     }
 
     fn get_ceo(&self) -> Option<String> {
-        self.ceo.clone() // Just returns a clone of the CEO (struct is not Copy)
+        self.ceo.clone() // 只回傳 CEO 的克隆(結構體沒有 Copy 特徵)
     }
 }
 
@@ -6216,18 +6216,18 @@ fn main() {
 
     let all_the_ceos = company_vec
         .into_iter()
-        .filter_map(|company| company.get_ceo()) // filter_map needs Option<T>
+        .filter_map(|company| company.get_ceo()) // filter_map 需要 Option<T>
         .collect::<Vec<String>>();
 
     println!("{:?}", all_the_ceos);
 }
 ```
 
-This prints `["Unknown", "Doug Suttles"]`.
+印出 `["Unknown", "Doug Suttles"]`。
 
-Since `.filter_map()` needs an `Option`, what about `Result`? No problem: there is a method called `.ok()` that turns `Result` into `Option`. It is called `.ok()` because all it can send is the `Ok` result (the `Err` information is gone). You remember that `Option` is `Option<T>` while `Result` is `Result<T, E>` with information for both `Ok` and `Err`. So when you use `.ok()`, any `Err` information is lost and it becomes `None`.
+既然 `.filter_map()` 需要 `Option`，那麼 `Result` 呢？沒問題：有一個叫做 `.ok()` 的方法，可以把 `Result` 變成 `Option`。之所以叫 `.ok()`，是因為它能傳送的只是 `Ok` 的結果(`Err` 的資訊沒有了)。你記得`Option` 完整型別是 `Option<T>`，而 `Result` 是 `Result<T, E>`，同時有 `Ok` 和 `Err` 的資訊。所以當你使用 `.ok()` 時，任何 `Err` 的資訊都會丟棄，變成 `None`。
 
-Using `.parse()` is an easy example for this, where we try to parse some user input. `.parse()` here takes a `&str` and tries to turn it into an `f32`. It returns a `Result`, but we are using `filter_map()` so we just throw out the errors. Anything that is `Err` becomes `None` and is filtered out by `.filter_map()`.
+使用 `.parse()` 就是這種情況的簡單範例，我們嘗試解析一些使用者輸入。`.parse()` 在這裡接受 `&str`，並試著把它變成 `f32`。它回傳了 `Result`，但我們用的是 `filter_map()`，所以只要丟掉錯誤就可以。任何 `Err` 都會變成 `None`，並且被 `.filter_map()` 過濾掉。
 
 ```rust
 fn main() {
@@ -6242,14 +6242,14 @@ fn main() {
 }
 ```
 
-This prints `[8.9, 8.0, 7.6]`.
+印出 `[8.9, 8.0, 7.6]`。
 
-On the opposite side of `.ok()` is `.ok_or()` and `ok_or_else()`. This turns an `Option` into a `Result`. It is called `.ok_or()` because a `Result` gives an `Ok` **or** an `Err`, so you have to let it know what the `Err` value will be. That is because `None` in an `Option` doesn't have any information. Also, you can see now that the *else* part in the names of these methods means that it has a closure.
+與 `.ok()` 相對的是 `.ok_or()` 和 `ok_or_else()`。這樣就把 `Option` 變成了 `Result`。之所以叫 `.ok_or()`，是因為 `Result` 給你 `Ok` **或** `Err`，所以你必須讓它知道 `Err` 的值是多少。這是因為 `Option` 中的 `None` 沒有任何資訊。另外，你現在可以看到，這些方法的名稱中帶有 *else* 的部分意味著它接受閉包。
 
-We can take our `Option` from the `Company` struct and turn it into a `Result` this way. For long-term error handling it is good to create your own type of error. But for now we just give it an error message, so it becomes a `Result<String, &str>`.
+我們可以把我們的 `Option` 從 `Company` 結構體中取出來，然後用這個方式把它變成 `Result`。對於長期的錯誤處理方式，最好是建立自己的錯誤型別。但在現在我們只給了它錯誤訊息，所以它就變成了 `Result<String, &str>`。
 
 ```rust
-// Everything before main() is exactly the same
+// 在 main() 之前的一切都完全一樣
 struct Company {
     name: String,
     ceo: Option<String>,
@@ -6280,7 +6280,7 @@ fn main() {
         Company::new("Stark Enterprises", ""),
     ];
 
-    let mut results_vec = vec![]; // Pretend we need to gather error results too
+    let mut results_vec = vec![]; // 假裝我們也需要收集錯誤的結果
 
     company_vec
         .iter()
@@ -6292,16 +6292,16 @@ fn main() {
 }
 ```
 
-This line is the biggest change:
+最大的變化在這行：
 
 ```rust
 // 🚧
 .for_each(|company| results_vec.push(company.get_ceo().ok_or("No CEO found")));
 ```
 
-It means: "For each company, use `get_ceo()`. If you get it, then pass on the value inside `Ok`. And if you don't, pass on "No CEO found" inside `Err`. Then push this into the vec."
+它的意思是："每家公司都用 `get_ceo()`. 如果你拿得到，那就把 `Ok` 裡面的數值傳給你。如果沒有，就在 `Err` 裡面傳遞"No CEO found"。然後把它放到 vec 裡。"
 
-So when we print `results_vec` we get this:
+所以當我們印出 `results_vec` 時，會得到這樣的結果：
 
 ```text
 Ok("Unknown")
@@ -6310,10 +6310,10 @@ Err("No CEO found")
 Err("No CEO found")
 ```
 
-So now we have all four entries. Now let's use `.ok_or_else()` so we can use a closure and get a better error message. Now we have space to use `format!` to create a `String`, and put the company name in that. Then we return the `String`.
+所以現在我們有了所有四個元素。現在讓我們使用 `.ok_or_else()`，這樣我們就能使用閉包，並得到更好的錯誤訊息。現在我們有空間使用 `format!` 來建立 `String`，並將公司名稱放在其中。然後我們回傳這個 `String`。
 
 ```rust
-// Everything before main() is exactly the same
+// 在 main() 之前的一切都完全一樣
 struct Company {
     name: String,
     ceo: Option<String>,
@@ -6359,7 +6359,7 @@ fn main() {
 }
 ```
 
-This gives us:
+這樣我們就有了：
 
 ```text
 Ok("Unknown")
@@ -6369,16 +6369,16 @@ Err("No CEO found for Stark Enterprises")
 ```
 
 
-`.and_then()` is a helpful method that takes an `Option`, then lets you do something to its value and pass it on. So its input is an `Option`, and its output is also an `Option`. It is sort of like a safe "unwrap, then do something, then wrap again".
+`.and_then()` 是個很有用的方法，它接受 `Option`，然後讓你對它的值做一些事情，並把它傳遞出去。所以它的輸入是個 `Option`，輸出也是個 `Option`。這有點像一個安全的"解包(unwrap)，然後做一些事情，然後再包起來"。
 
-An easy example is a number that we get from a vec using `.get()`, because that returns an `Option`. Now we can pass it to `and_then()`, and do some math on it if it is `Some`. If it is `None`, then the `None` just gets passed through.
+一個簡單的例子是，我們使用 `.get()` 從向量中得到的數字，因為它回傳的是 `Option`。現在我們可以把它傳給 `and_then()`，如果它是 `Some`，我們還可以對它做一些數學運算。如果是 `None`，那麼 `None` 就會被傳遞過去。
 
 ```rust
 fn main() {
-    let new_vec = vec![8, 9, 0]; // just a vec with numbers
+    let new_vec = vec![8, 9, 0]; // 只是有數字的向量
 
-    let number_to_add = 5;       // use this in the math later
-    let mut empty_vec = vec![];  // results go in here
+    let number_to_add = 5;       // 後面用這個來運算
+    let mut empty_vec = vec![];  // 結果放進這裡
 
 
     for index in 0..5 {
@@ -6393,14 +6393,14 @@ fn main() {
 }
 ```
 
-This prints `[Some(14), Some(15), Some(6), None, None]`. You can see that `None` isn't filtered out, just passed on.
+印出了 `[Some(14), Some(15), Some(6), None, None]`。你可以看到 `None` 並沒有被過濾掉，只是傳遞過去了。
 
 
 
 
-`.and()` is sort of like a `bool` for `Option`. You can match many `Option`s to each other, and if they are all `Some` then it will give the last one. And if one of them is a `None`, then it will give `None`.
+`.and()` 有點像是 `bool` 的 `Option`。你可以匹配很多個 `Option`，如果它們都是 `Some`，那麼它會給出最後一個。而如果其中一個是 `None`，那麼就會給出 `None`。
 
-First here is a `bool` example to help imagine. You can see that if you are using `&&` (and), even one `false` makes everything `false`.
+首先這裡有個 `bool` 的範例來幫助想像。你可以看到，如果你用的是 `&&`(和)，哪怕是一個 `false`，也會讓一切 `false`。
 
 ```rust
 fn main() {
@@ -6409,12 +6409,12 @@ fn main() {
     let three = true;
     let four = true;
 
-    println!("{}", one && three); // prints true
-    println!("{}", one && two && three && four); // prints false
+    println!("{}", one && three); // 印出 true
+    println!("{}", one && two && three && four); // 印出 false
 }
 ```
 
-Now here is the same thing with `.and()`. Imagine we did five operations and put the results in a Vec<Option<&str>>. If we get a value, we push `Some("success!")` to the vec. Then we do this two more times. After that we use `.and()` to only show the indexes that got `Some` every time.
+現在這裡的 `.and()` 也是同樣的東西。想像一下，我們做了五次操作，並把結果放在 `Vec<Option<&str>>` 中。如果我們得到一個值，我們就把 `Some("success!")` 推到向量中。然後我們再多做兩次這樣的操作。之後我們只用 `.and()` 顯示每次是得到 `Some` 時的索引。
 
 ```rust
 fn main() {
@@ -6428,7 +6428,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 None
@@ -6438,15 +6438,15 @@ Some("success!")
 None
 ```
 
-The first one (index 0) is `None` because there is a `None` for index 0 in `second_try`. The second is `None` because there is a `None` in `first_try`. The next is `Some("success!")` because there is no `None` for `first_try`, `second try`, or `third_try`.
+第一個(索引 0)`None`，是因為在 `second_try` 中索引 0 有 `None`。第二個 `None`，是因為在 `first_try` 中有 `None`。下一個是 `Some("success!")`，是因為 `first_try`、`second try`、`third_try` 中都沒有 `None`。
 
 
 
-`.any()` and `.all()` are very easy to use in iterators. They return a `bool` depending on your input. In this example we make a very large vec (about 20,000 items) with all the characters from `'a'` to `'働'`. Then we make a function to check if a character is inside it.
+`.any()` 和 `.all()` 在疊代器中非常容易使用。它們根據你的輸入回傳 `bool` 值。在這個例子中，我們做了一個非常大的向量(大約 20000 個元素)，包含了從 `'a'` 到 `'働'` 的所有字元。然後我們建立函式來檢查是否有某個字元在其中。
 
-Next we make a smaller vec and ask it whether it is all alphabetic (with the `.is_alphabetic()` method). Then we ask it if all the characters are less than the Korean character `'행'`.
+接下來我們做一個比較小的向量，問它是否全部都是字母(用 `.is_alphabetic()` 方法)。然後我們問它是否所有的字元都小於韓文字 `'행'`。
 
-Also note that you put a reference in, because `.iter()` gives a reference and you need a `&` to compare with another `&`.
+還要注意的是你要傳一個參考進去，因為 `.iter()` 也會給出參考，你需要用傳進去的 `&` 和另一個 `&` 進行比較。
 
 ```rust
 fn in_char_vec(char_vec: &Vec<char>, check: char) {
@@ -6465,7 +6465,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Is i inside? true
@@ -6475,7 +6475,7 @@ All alphabetic? false
 All less than the character 행? true
 ```
 
-By the way, `.any()` only checks until it finds one matching item, and then it stops. It won't check them all if it has already found a match. If you are going to use `.any()` on a `Vec`, it might be a good idea to push the items that might match near the front. Or you can use `.rev()` after `.iter()` to reverse the iterator. Here's one vec like that:
+順便說，`.any()` 只檢查到它第一個匹配的元素，然後就停止了。如果它已經找到了匹配結果，它就不會檢查所有的元素。如果你要在向量上使用 `.any()`，最好把可能會匹配的元素放前面。或者你可以在 `.iter()` 之後使用 `.rev()` 來反向疊代。這是這樣的向量：
 
 ```rust
 fn main() {
@@ -6484,7 +6484,7 @@ fn main() {
 }
 ```
 
-So this `Vec` has 1000 `6` followed by one `5`. Let's pretend that we want to use `.any()` to see if it contains 5. First let's make sure that `.rev()` is working. Remember, an `Iterator` always has `.next()` that lets you check what it does every time.
+所以這個 `Vec` 有 1000 個 `6`，後面還有一個 `5`。讓我們假裝來用 `.any()` 看看它是否包含 5。首先讓我們確定 `.rev()` 有效。記住，`Iterator` 總是有 `.next()`，能讓你檢查它每次做了什麼。
 
 ```rust
 fn main() {
@@ -6497,14 +6497,14 @@ fn main() {
 }
 ```
 
-It prints:
+印出：
 
 ```text
 Some(5)
 Some(6)
 ```
 
-We were right: there is one `Some(5)` and then the 1000 `Some(6)` start. So we can write this:
+我們是對的：有一個 `Some(5)`，然後開始 1000 個 `Some(6)`。所以我們可以這樣寫：
 
 ```rust
 fn main() {
@@ -6515,19 +6515,19 @@ fn main() {
 }
 ```
 
-And because it's `.rev()`, it only calls `.next()` one time and stops. If we don't use `.rev()` then it will call `.next()` 1001 times before it stops. This code shows it:
+而且因為是 `.rev()`，所以它只呼叫 `.next()` 一次就停止。如果我們不用 `.rev()`，那麼它將呼叫 `.next()` 1001次才停止。這段程式碼秀出這件事：
 
 ```rust
 fn main() {
     let mut big_vec = vec![6; 1000];
     big_vec.push(5);
 
-    let mut counter = 0; // Start counting
-    let mut big_iter = big_vec.into_iter(); // Make it an Iterator
+    let mut counter = 0; // 開始計數
+    let mut big_iter = big_vec.into_iter(); // 做出 Iterator
 
     loop {
         counter +=1;
-        if big_iter.next() == Some(5) { // Keep calling .next() until we get Some(5)
+        if big_iter.next() == Some(5) { // 持續呼叫 .next() 直到我們得到 Some(5)
             break;
         }
     }
@@ -6535,23 +6535,23 @@ fn main() {
 }
 ```
 
-This prints `Final counter is: 1001` so we know that it had to call `.next()` 1001 times before it found 5.
+這裡印出 `Final counter is: 1001`，所以我們知道它必須呼叫 `.next()` 1001 次才能找到 5。
 
 
 
 
-`.find()` tells you if an iterator has something, and `.position()` tells you where it is. `.find()` is different from `.any()` because it returns an `Option` with the value inside (or `None`). Meanwhile, `.position()` is also an `Option` with the position number, or `None`. In other words:
+`.find()` 告訴你疊代器裡是否有某個東西，而 `.position()` 則告訴你它在哪裡。`.find()` 與 `.any()` 不同是因為它回傳裡面有值的 `Option`(或 `None`)。與此同時，`.position()` 也是帶有位置號碼的 `Option`，或著 `None`。換句話說：
 
-- `.find()`: "I'll try to get it for you"
-- `.position()`: "I'll try to find where it is for you"
+- `.find()`: "我會試著找給你"
+- `.position()`:"我會試著找看看在哪裡告訴你"
 
-Here is a simple example:
+這是簡單的範例：
 
 ```rust
 fn main() {
     let num_vec = vec![10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
-    println!("{:?}", num_vec.iter().find(|&number| number % 3 == 0)); // find takes a reference, so we give it &number
+    println!("{:?}", num_vec.iter().find(|&number| number % 3 == 0)); // find 接受參考, 所以我們給它 &number
     println!("{:?}", num_vec.iter().find(|&number| number * 2 == 30));
 
     println!("{:?}", num_vec.iter().position(|&number| number % 3 == 0));
@@ -6560,7 +6560,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Some(30) // This is the number itself
@@ -6571,7 +6571,7 @@ None
 
 
 
-With `.cycle()` you can create an iterator that loops forever. This type of iterator works well with `.zip()` to create something new, like this example which creates a `Vec<(i32, &str)>`:
+有了 `.cycle()` 你可以建立無窮迴圈的疊代器。這種型別的疊代器能和 `.zip()` 很好地結合在一起用來建立新東西，就像建立 `Vec<(i32, &str)>` 的這個例子：
 
 ```rust
 fn main() {
@@ -6584,13 +6584,13 @@ fn main() {
 }
 ```
 
-So even though `.cycle()` might never end, the other iterator only runs six times when zipping them together. That means that the iterator made by `.cycle()` doesn't get a `.next()` call again so it is done after six times. The output is:
+所以，即使 `.cycle()` 可能永遠不會結束，但當把它們 zip 在一起時，另一個疊代器只運作了六次。也就是說，`.cycle()` 所產生的疊代器不會再被 `.next()` 呼叫，所以六次之後就完成了。輸出：
 
 ```
 [(0, "even"), (1, "odd"), (2, "even"), (3, "odd"), (4, "even"), (5, "odd")]
 ```
 
-Something similar can be done with a range that doesn't have an ending. If you write `0..` then you create a range that never stops. You can use this very easily:
+類似的事情也可以用沒有結尾的範圍來做到。如果你寫 `0..`，那麼你就建立出永不停止的範圍。你可以很容易地使用這個方法：
 
 ```rust
 fn main() {
@@ -6602,7 +6602,7 @@ fn main() {
 }
 ```
 
-Both print ten characters, but the second one skipped 1300 places and prints ten letters in Armenian.
+兩者都是印出十個字元，但第二個跳過 1300 位置，印出亞美尼亞語的十個字母。
 
 ```
 ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
@@ -6610,7 +6610,7 @@ Both print ten characters, but the second one skipped 1300 places and prints ten
 ```
 
 
-Another popular method is called `.fold()`. This method is used a lot to add together the items in an iterator, but you can also do a lot more. It is somewhat similar to `.for_each()`. In `.fold()`, you first add a starting value (if you are adding items together, then 0), then a comma, then the closure. The closure gives you two items: the total so far, and the next item. First here is a simple example showing `.fold()` to add items together.
+另一種流行的方法叫做 `.fold()`。這個方法經常用於將疊代器中的元素加在一起，但你也可以做更多的事情。它和 `.for_each()` 有些類似。在 `.fold()` 中，你首先新增起始值 (如果你要把元素加在一起，那就是 0)，再逗號，然後是閉包。閉包給你兩個元素：到目前為止的總和和下一個元素。首先這個簡單的範例秀出 `.fold()` 怎麼將元素加在一起：
 
 ```rust
 fn main() {
@@ -6623,16 +6623,16 @@ fn main() {
 }
 ```
 
-So:
+過程是：
 
-- on step 1 it starts with 0 and adds the next number: 9.
-- Then it takes that 9 and adds the 6: 15.
-- Then it takes that 15, and adds the 9: 24.
-- Then it takes that 24, and adds the 10: 34.
-- Finally it takes that 34, and adds the 11: 45. So it prints `45`.
+- 第 1 步是從 0 開始，並加上下個數字：9。
+- 然後把 9 再加上 6：15。
+- 然後把 15 再加上 9: 24。
+- 然後把 24，再加上 10：34。
+- 最後把 34，再加上 11：45。所以它印出了 `45`。
 
 
-But you don't just need to add things with it. Here is an example where we add a '-' to every character to make a `String`.
+但是你不是只能用它來加上東西。在這裡的範例我們把每一個字元上加一個 '-'，來做出 `String`。
 
 ```rust
 fn main() {
@@ -6641,16 +6641,16 @@ fn main() {
     println!(
         "{}",
         a_string
-            .chars() // Now it's an iterator
-            .fold("-".to_string(), |mut string_so_far, next_char| { // Start with a String "-". Bring it in as mutable each time along with the next char
-                string_so_far.push(next_char); // Push the char on, then '-'
+            .chars() // 現在是個疊代器了
+            .fold("-".to_string(), |mut string_so_far, next_char| { // 從字串 "-" 開始. 每次把它代入成為可變的字串並跟著下個字元
+                string_so_far.push(next_char); // 把字完推進去, 再來是 '-'
                 string_so_far.push('-');
-                string_so_far} // Don't forget to pass it on to the next loop
+                string_so_far} // 別忘記傳到下一個迴圈
             ));
 }
 ```
 
-This prints:
+印出：
 
 ```text
 -I- -d-o-n-'-t- -h-a-v-e- -a-n-y- -d-a-s-h-e-s- -i-n- -m-e-.-
@@ -6658,23 +6658,23 @@ This prints:
 
 
 
-There are many other convenient methods like:
+還有許多其他方便的方法，比如：
 
-- `.take_while()` which takes into an iterator as long as it gets `true` (`take while x > 5` for example)
-- `.cloned()` which makes a clone inside the iterator. This turns a reference into a value.
-- `.by_ref()` which makes an iterator take a reference. This is good to make sure that you can use a `Vec` or something similar after you use it to make an iterator.
-- Many other `_while` methods: `.skip_while()`, `.map_while()`, and so on
-- `.sum()`: just adds everything together.
+- `.take_while()` 只要一直從閉包得到 `true`，就會帶元素到新的疊代器 (例如 `take while x > 5`)
+- `.cloned()` 會對疊代器內的元素做克隆。這將會把參考傳換成值。
+- `.by_ref()` 會讓疊代器取得參考。這很好的保證你在使用 `Vec` 或類似的東西來做疊代器後還可以使用它。
+- 許多其他名稱中有 `_while` 的方法：`.skip_while()`、`.map_while()` 等等。
+- `.sum()`：就是把所有的東西加在一起。
 
 
 
-`.chunks()` and `.windows()` are two ways of cutting up a vector into a size you want. You put the size you want into the brackets. Let's say you have a vector with 10 items, and you want a size of 3. It will work like this:
+`.chunks()` 和 `.windows()` 是將向量切割成你想要的尺寸的兩種方式。你把想要的尺寸放在括號裡。比如說你有個 10 個元素的向量，你想要 3 個的尺寸，它的工作原理是這樣：
 
-- `.chunks()` will give you four slices: [0, 1, 2], then [3, 4, 5], then [6, 7, 8], and finally [9]. So it will try to make a slice of three items, but if it doesn't have three then it won't panic. It will just give you what is left.
+- `.chunks()` 會給你 4 個切片(slice)： `[0, 1, 2]`, 然後是 `[3, 4, 5]`, 再來是 `[6, 7, 8]`, 最後是 `[9]`。所以它會嘗試用三個元素做一個切片，但如果它沒有三個元素，那麼它也不會恐慌。它只會給你剩下的東西。
 
-- `.windows()` will first give you a slice of [0, 1, 2]. Then it will move over one and give you [1, 2, 3]. It will do that until it finally reaches the last slice of three and stop.
+- `.windows()` 會先給你一個 `[0, 1, 2]` 的切片。然後它將會移過去下一個元素，給你 `[1, 2, 3]`。它會一直這樣做到終於到達最後三個元素的切片時才停止。
 
-So let's use them on a simple vector of numbers. It looks like this:
+所以讓我們在簡單的數字向量上使用它們。看起來像這樣：
 
 ```rust
 fn main() {
@@ -6690,7 +6690,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 [1, 2, 3]
@@ -6708,16 +6708,16 @@ This prints:
 [8, 9, 0]
 ```
 
-By the way, `.chunks()` will panic if you give it nothing. You can write `.chunks(1000)` for a vector with one item, but you can't write `.chunks()` with anything with a length of 0. You can see that right in the function if you click on [src] because it says `assert!(chunk_size != 0);`.
+順便說一下，如果你什麼都不給它，`.chunks()` 會恐慌。你可以寫 `.chunks(1000)` 給只有一個元素的向量，但你不能寫 `.chunks()` 給任何長度為 0 的東西。 如果你點選了[文件](https://doc.rust-lang.org/stable/std/primitive.slice.html#method.chunks)裡的 `[src]` 你可以看到它就在函式原始碼之中，因為它說 `assert!(chunk_size != 0);`。
 
 
 
-`.match_indices()` lets you pull out everything inside a `String` or `&str` that matches your input, and gives you the index too. It is similar to `.enumerate()` because it returns a tuple with two items.
+`.match_indices()` 讓你把 `String` 或 `&str` 裡面所有符合你的輸入的東西都拿出來，並給你索引。它與 `.enumerate()` 類似，因為它回傳包含兩個元素的元組。
 
 ```rust
 fn main() {
     let rules = "Rule number 1: No fighting. Rule number 2: Go to bed at 8 pm. Rule number 3: Wake up at 6 am.";
-    let rule_locations = rules.match_indices("Rule").collect::<Vec<(_, _)>>(); // This is Vec<usize, &str> but we just tell Rust to do it
+    let rule_locations = rules.match_indices("Rule").collect::<Vec<(_, _)>>(); // 這是 Vec<usize, &str> 但我們只告訴 Rust 去決定
     println!("{:?}", rule_locations);
 }
 ```
@@ -6730,12 +6730,12 @@ This prints:
 
 
 
-`.peekable()` lets you make an iterator where you can see (peek at) the next item. It's like calling `.next()` (it gives an `Option`) except that the iterator doesn't move, so you can use it as many times as you want. You can actually think of peekable as "stoppable", because you can stop for as long as you want. Here is an example of us using `.peek()` three times for every item. We can use `.peek()` forever until we use `.next()` to move to the next item.
+`.peekable()` 讓你建立可以偷看到 (peek at) 下一個元素的疊代器。除了疊代器不會移動外，它就像呼叫 `.next()` (它給你 `Option`)，所以你可以隨意使用它。實際上你可以把 peekable 想成是 "可停止"的，因為你可以想停多久就停多久。這裡的範例是我們對每個元素都使用 `.peek()` 三次。我們可以永遠使用 `.peek()`，直到我們使用 `.next()` 移動到下一個元素。
 
 ```rust
 fn main() {
     let just_numbers = vec![1, 5, 100];
-    let mut number_iter = just_numbers.iter().peekable(); // This actually creates a type of iterator called Peekable
+    let mut number_iter = just_numbers.iter().peekable(); // 這裡實際上建立了一種叫作 Peekable 的疊代器
 
     for _ in 0..3 {
         println!("I love the number {}", number_iter.peek().unwrap());
@@ -6746,7 +6746,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 I love the number 1
@@ -6760,7 +6760,7 @@ I really love the number 100
 100 is such a nice number
 ```
 
-Here is another example where we use `.peek()` to match on an item. After we are done using it, we call `.next()`.
+這是另一個範例，我們使用 `.peek()` 匹配一個元素。使用完後，我們呼叫 `.next()`。
 
 
 ```rust
@@ -6774,7 +6774,7 @@ fn main() {
     let mut location_iter = locations.iter().peekable();
     while location_iter.peek().is_some() {
         match location_iter.peek() {
-            Some((name, number)) if *number < 100 => { // .peek() gives us a reference so we need *
+            Some((name, number)) if *number < 100 => { // .peek() 給我們的是參考所以需要 *
                 println!("Found a hamlet: {} with {} people", name, number)
             }
             Some((name, number)) => println!("Found a town: {} with {} people", name, number),
@@ -6785,7 +6785,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Found a hamlet: Nevis with 25 people
@@ -6794,7 +6794,7 @@ Found a hamlet: Markerville with 45 people
 Found a town: Cardston with 3585 people
 ```
 
-Finally, here is an example where we also use `.match_indices()`. In this example we put names into a `struct` depending on the number of spaces in the `&str`.
+最後，這個範例我們也有用 `.match_indices()`。在這個例子中，我們根據 `&str` 中的空格數，將名字放入 `struct` 中。
 
 ```rust
 #[derive(Debug)]
@@ -6819,15 +6819,15 @@ fn main() {
 
     let mut iter_of_names = vec_of_names.iter().peekable();
 
-    let mut all_names = Names { // start an empty Names struct
+    let mut all_names = Names { // 開始空的 Names 結構體
         one_word: vec![],
         two_words: vec![],
         three_words: vec![],
     };
 
     while iter_of_names.peek().is_some() {
-        let next_item = iter_of_names.next().unwrap(); // We can use .unwrap() because we know it is Some
-        match next_item.match_indices(' ').collect::<Vec<_>>().len() { // Create a quick vec using .match_indices and check the length
+        let next_item = iter_of_names.next().unwrap(); // 我們可以用 .unwrap() 因為我們知道寫它是 Some
+        match next_item.match_indices(' ').collect::<Vec<_>>().len() { // 用 .match_indices 建立快速向量並檢查長度
             0 => all_names.one_word.push(next_item.to_string()),
             1 => all_names.two_words.push(next_item.to_string()),
             _ => all_names.three_words.push(next_item.to_string()),
@@ -6838,7 +6838,7 @@ fn main() {
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 Names { one_word: ["Caesar", "Data"], two_words: ["Frodo Baggins", "Bilbo Baggins", "Jean-Luc Picard", "Rand Al\'Thor", "Paul Atreides"], three_words:
