@@ -88,7 +88,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [閉包](#閉包)
     - [閉包裡的 |_|](#閉包裡的-_)
     - [閉包和疊代器的有用方法](#閉包和疊代器的有用方法)
-  - [The dbg! macro and .inspect](#the-dbg-macro-and-inspect)
+  - [dbg! 巨集和 .inspect](#dbg-巨集和-inspect)
   - [Types of &str](#types-of-str)
   - [Lifetimes](#lifetimes)
   - [Interior mutability](#interior-mutability)
@@ -6846,9 +6846,9 @@ Names { one_word: ["Caesar", "Data"], two_words: ["Frodo Baggins", "Bilbo Baggin
 ```
 
 
-## The dbg! macro and .inspect
+## dbg! 巨集和 .inspect
 
-`dbg!` is a very useful macro that prints quick information. It is a good alternative to `println!` because it is faster to type and gives more information:
+`dbg!` 是個非常有用的巨集，用來印出快速資訊。它是代替 `println!` 的好選擇，因為它輸入的速度更快，提供的資訊更多：
 
 ```rust
 fn main() {
@@ -6857,9 +6857,9 @@ fn main() {
 }
 ```
 
-This prints `[src\main.rs:4] my_number = 8`.
+印出 `[src\main.rs:4] my_number = 8`。
 
-But actually, you can put `dbg!` in many other places, and even wrap code in it. Look at this code for example:
+但實際上，你可以把 `dbg!` 放在其他許多地方，甚至可以把程式碼包在裡面。查看以此為例的程式碼：
 
 ```rust
 fn main() {
@@ -6872,7 +6872,7 @@ fn main() {
 }
 ```
 
-This code creates a new mutable number and changes it. Then it creates a vec, and uses `iter` and `map` and `collect` to create a new vec. We can put `dbg!` almost everywhere in this code. `dbg!` asks the compiler: "What are you doing at this moment?" and tells you.
+這段程式碼建立新的可變數字，並且改變了它。然後再建立向量，並使用 `iter`、`map` 和 `collect` 建立新的向量。我們可以把 `dbg!` 放在幾乎是這段程式碼的任何地方。`dbg!` 問編譯器："這個當下你在做什麼？"，並且告訴你：
 
 ```rust
 fn main() {
@@ -6887,19 +6887,19 @@ fn main() {
 }
 ```
 
-So this prints:
+所以會印出：
 
 ```text
 [src\main.rs:3] 9 = 9
 ```
 
-and:
+和：
 
 ```text
 [src\main.rs:4] my_number += 10 = ()
 ```
 
-and:
+和：
 
 ```text
 [src\main.rs:6] vec![8, 9, 10] = [
@@ -6909,7 +6909,7 @@ and:
 ]
 ```
 
-and this one, which even shows you the value of the expression:
+還有這個，甚至可以秀出表示式的值：
 
 ```text
 [src\main.rs:8] new_vec.iter().map(|x| x * 2).collect::<Vec<i32>>() = [
@@ -6919,7 +6919,7 @@ and this one, which even shows you the value of the expression:
 ]
 ```
 
-and:
+和：
 
 ```text
 [src\main.rs:10] double_vec = [
@@ -6929,7 +6929,7 @@ and:
 ]
 ```
 
-`.inspect` is a bit similar to `dbg!` but you use it like `map` in an iterator. It gives you the iterator item and you can print it or do whatever you want. For example, let's look at our `double_vec` again.
+`.inspect` 與 `dbg!` 有點類似，用起來就像在疊代器中用 `map` 一樣。它給你疊代的元素，你可以印出來或者做任何你想做的事情。例如，讓我們再來看看 `double_vec`。
 
 ```rust
 fn main() {
@@ -6942,7 +6942,7 @@ fn main() {
 }
 ```
 
-We want to know more information about what the code is doing. So we add `inspect()` in two places:
+我們想知道更多關於程式碼做了什麼的資訊。所以我們在兩個地方新增 `inspect()`：
 
 ```rust
 fn main() {
@@ -6957,7 +6957,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 The item is: 8
@@ -6968,7 +6968,7 @@ The item is: 10
 Then it is: 20
 ```
 
-And because `.inspect` takes a closure, we can write as much as we want:
+而且因為 `.inspect` 接受的是閉包，所以我們可以隨意寫：
 
 ```rust
 fn main() {
@@ -6978,7 +6978,7 @@ fn main() {
         .iter()
         .inspect(|first_item| {
             println!("The item is: {}", first_item);
-            match **first_item % 2 { // first item is a &&i32 so we use **
+            match **first_item % 2 { // 第一個元素是 &&i32 所以我們用 **
                 0 => println!("It is even."),
                 _ => println!("It is odd."),
             }
@@ -6989,7 +6989,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 The item is: 8
