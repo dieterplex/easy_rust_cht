@@ -89,7 +89,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [閉包裡的 |_|](#閉包裡的-_)
     - [閉包和疊代器的有用方法](#閉包和疊代器的有用方法)
   - [dbg! 巨集和 .inspect](#dbg-巨集和-inspect)
-  - [Types of &str](#types-of-str)
+  - [&str 的種類](#str-的種類)
   - [Lifetimes](#lifetimes)
   - [Interior mutability](#interior-mutability)
     - [Cell](#cell)
@@ -7003,25 +7003,25 @@ It is even.
 In binary it is 1010.
 ```
 
-## Types of &str
+## &str 的種類
 
-There is more than one type of `&str`. We have:
+`&str` 的種類不止一個。我們有：
 
-- String literals: you make these when you write `let my_str = "I am a &str"`. They last for the whole program, because they are written directly into the binary. They have the type `&'static str`. `'` means its lifetime, and string literal have a lifetime called `static`.
-- Borrowed str: This is the regular `&str` form without a `static` lifetime. If you create a `String` and get a reference to it, Rust will convert it to a `&str` when you need it. For example:
+- 字串字面常數 (String literal)：當你寫 `let my_str = "I am a &str"` 的時候，就會產生這種字串。它們在整個程式中持續存在，因為它們是直接寫進二進位檔案中的，它們的型別是 `&'static str`。`'` 是表示它的生命週期 (lifetime)，字串字面常數有著稱為 `static` 的生命週期。
+- 借用字串 (Borrowed str)：這是沒有 `static` 生命週期的 `&str` 的常規形式。如果你建立 `String` 並得到了它的參考，Rust 會在你需要它時把它轉換為 `&str`。例如：
 
 ```rust
-fn prints_str(my_str: &str) { // it can use &String like a &str
+fn prints_str(my_str: &str) { // 可以像 &str 般使用 &String
     println!("{}", my_str);
 }
 
 fn main() {
     let my_string = String::from("I am a string");
-    prints_str(&my_string); // we give prints_str a &String
+    prints_str(&my_string); // 我們傳給 prints_str 的型別是 &String
 }
 ```
 
-So what is a lifetime? We will learn that now.
+那什麼是生命週期呢？我們馬上會學到。
 
 ## Lifetimes
 
