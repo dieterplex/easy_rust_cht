@@ -90,7 +90,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [閉包和疊代器的有用方法](#閉包和疊代器的有用方法)
   - [dbg! 巨集和 .inspect](#dbg-巨集和-inspect)
   - [&str 的種類](#str-的種類)
-  - [Lifetimes](#lifetimes)
+  - [生命週期](#生命週期)
   - [Interior mutability](#interior-mutability)
     - [Cell](#cell)
     - [RefCell](#refcell)
@@ -7023,9 +7023,9 @@ fn main() {
 
 那什麼是生命週期呢？我們馬上會學到。
 
-## Lifetimes
+## 生命週期
 
-A lifetime means "how long the variable lives". You only need to think about lifetimes with references. This is because references can't live longer than the object they come from. For example, this function does not work:
+生命週期的意思是"變數存活得有多久"。你只需要思考參考的生命週期。這是因為參考不能存活得比它們所來自的物件更久。例如說這個函式就不能執行：
 
 ```rust
 fn returns_reference() -> &str {
@@ -7036,9 +7036,9 @@ fn returns_reference() -> &str {
 fn main() {}
 ```
 
-The problem is that `my_string` only lives inside `returns_reference`. We try to return `&my_string`, but `&my_string` can't exist without `my_string`. So the compiler says no.
+問題在於 `my_string` 只存活在 `returns_reference` 的範圍裡。我們試著回傳 `&my_string`，但是 `&my_string` 不能存在於沒有 `my_string` 的地方。所以編譯器會說不行。
 
-This code also doesn't work:
+這段程式碼也不能執行。
 
 ```rust
 fn returns_str() -> &str {
@@ -7052,7 +7052,7 @@ fn main() {
 }
 ```
 
-But it almost works. The compiler says:
+但是幾乎要成功了。編譯器卻說：
 
 ```text
 error[E0106]: missing lifetime specifier
@@ -7068,9 +7068,9 @@ help: consider using the `'static` lifetime
   |                     ^^^^^^^^
 ```
 
-`missing lifetime specifier` means that we need to add a `'` with the lifetime. Then it says that it `contains a borrowed value, but there is no value for it to be borrowed from`. That means that `I am a str` isn't borrowed from anything. It says `consider using the 'static lifetime` by writing `&'static str`. So it thinks we should try saying that this is a string literal.
+`missing lifetime specifier` 的意思是，我們需要加上表示生命週期的 `'`。然後它說 `contains a borrowed value, but there is no value for it to be borrowed from`。也就是說，`I am a str` 不是借來的。它說 `consider using the 'static lifetime` 要寫成 `&'static str`。因此它認為我們應該嘗試說這是個字串字面常數。
 
-Now it works:
+現在可以執行了：
 
 ```rust
 fn returns_str() -> &'static str {
@@ -7084,13 +7084,13 @@ fn main() {
 }
 ```
 
-That's because we returned a `&str` with a lifetime of `static`. Meanwhile, `my_string` can only be returned as a `String`: we can't return a reference to it because it is going to die in the next line.
+這是因為我們回傳了生命週期是 `static` 的 `&str`。同時，`my_string` 只能以 `String` 的型別回傳：我們不能回傳對它的參考，因為它將在下一行死亡。
 
-So now `fn returns_str() -> &'static str` tells Rust: "don't worry, we will only return a string literal". String literals live for the whole program, so Rust is happy. You'll notice that this is similar to generics. When we tell the compiler something like `<T: Display>`, we promise that we will only use inputs with `Display`. Lifetimes are similar: we are not changing any variable lifetimes. We are just telling the compiler what the lifetimes of the inputs will be.
+所以現在 `fn returns_str() -> &'static str` 告訴Rust，"別擔心，我們只會回傳字串字面常數"。字串字面常數存活在整個程式中，所以 Rust 很高興。你會注意到，這與泛型類似。當我們告訴編譯器像似 `<T: Display>` 的東西時，我們承諾的是我們將只會使用有 `Display` 特徵的輸入。生命週期也類似：我們並沒有改變任何變數的生命週期。我們只是告訴編譯器輸入的生命週期會是什麼。
 
-But `'static` is not the only lifetime. Actually, every variable has a lifetime, but usually we don't have to write it. The compiler is pretty smart and can usually figure out for itself. We only have to write the lifetime when the compiler doesn't know.
+但是 `'static` 並不是唯一的生命週期。實際上，每個變數都有一個生命週期，但通常我們不必寫出來。編譯器很聰明，通常都能自己想出來。只有在編譯器不知道的時候，我們才需要去寫出生命週期。
 
-Here is an example of another lifetime. Imagine we want to create a `City` struct and give it a `&str` for the name. We might want to do that because it gives faster performance than with `String`. So we write it like this, but it won't work yet:
+這是另一個生命週期的範例。想像一下，我們想建立 `City` 結構體，並給它 `&str` 的名字。我們可能想這樣做是因為效能比用 `String` 還快。所以我們寫成這樣，但還不能執行：
 
 ```rust
 #[derive(Debug)]
@@ -7107,7 +7107,7 @@ fn main() {
 }
 ```
 
-The compiler says:
+編譯器說：
 
 ```text
 error[E0106]: missing lifetime specifier
@@ -7123,14 +7123,14 @@ help: consider introducing a named lifetime parameter
   |
 ```
 
-Rust needs a lifetime for `&str` because `&str` is a reference. What happens when the value that `name` points to is dropped? That would be unsafe.
+Rust 需要 `&str` 的生命週期，因為 `&str` 是個參考。如果 `name` 指向的值被丟棄 (drop) 了會怎樣？那就不安全 (unsafe) 了。
 
-What about `'static`, will that work? We used it before. Let's try:
+那麼 `'static` 呢，能用嗎？我們以前用過。讓我們試試吧：
 
 ```rust
 #[derive(Debug)]
 struct City {
-    name: &'static str, // change &str to &'static str
+    name: &'static str, // 把 &str 改成 &'static str
     date_founded: u32,
 }
 
@@ -7144,20 +7144,20 @@ fn main() {
 }
 ```
 
-Okay, that works. And maybe this is what you wanted for the struct. However, note that we can only take "string literals", so not references to something else. So this will not work:
+好的，這就可以了。也許這就是你想要的結構體。不過，要注意我們只能接受"字串字面常數"，所以不能接受對其他東西的參考。所以這將無法執行：
 
 ```rust
 #[derive(Debug)]
 struct City {
-    name: &'static str, // must live for the whole program
+    name: &'static str, // 一定要在整個程式裡存活
     date_founded: u32,
 }
 
 fn main() {
-    let city_names = vec!["Ichinomiya".to_string(), "Kurume".to_string()]; // city_names does not live for the whole program
+    let city_names = vec!["Ichinomiya".to_string(), "Kurume".to_string()]; // city_names 沒有存活在整個程式
 
     let my_city = City {
-        name: &city_names[0], // ⚠️ This is a &str, but not a &'static str. It is a reference to a value inside city_names
+        name: &city_names[0], // ⚠️ 這是個 &str, 但不是 &'static str. 這是對 city_names 裡面的值的參考
         date_founded: 1921,
     };
 
@@ -7165,7 +7165,7 @@ fn main() {
 }
 ```
 
-The compiler says:
+編譯器說：
 
 ```text
 error[E0597]: `city_names` does not live long enough
@@ -7181,14 +7181,14 @@ error[E0597]: `city_names` does not live long enough
    | - `city_names` dropped here while still borrowed
 ```
 
-This is important to understand, because the reference we gave it actually lives long enough. But we promised that we would only give it a `&'static str`, and that is the problem.
+這一點很重要，因為我們給它的參考其實活得夠久了。但是我們承諾的只有給它 `&'static str`，這就是問題所在。
 
-So now we will try what the compiler suggested before. It said to try writing `struct City<'a>` and `name: &'a str`. This means that it will only take a reference for `name` if it lives as long as `City`.
+所以現在我們就試試之前編譯器的建議。它說嘗試寫成 `struct City<'a>` 和 `name: &'a str`。這就意味著，只有當 `name` 活得和 `City` 一樣久的情況下，它才會接受 `name` 的參考。
 
 ```rust
 #[derive(Debug)]
-struct City<'a> { // City has lifetime 'a
-    name: &'a str, // and name also has lifetime 'a.
+struct City<'a> { // City 的生命週期是 'a
+    name: &'a str, // 且 name 的生命週期也是 'a.
     date_founded: u32,
 }
 
@@ -7204,21 +7204,21 @@ fn main() {
 }
 ```
 
-Also remember that you can write anything instead of `'a` if you want. This is also similar to generics where we write `T` and `U` but can actually write anything.
+另外要記住，如果你願意你可以寫任何東西來代替 `'a`。這也和在泛型裡我們寫 `T` 和 `U` 時類似，但實際上可以寫任何東西。
 
 ```rust
 #[derive(Debug)]
-struct City<'city> { // The lifetime is now called 'city
-    name: &'city str, // and name has the 'city lifetime
+struct City<'city> { // 這裡的生命週期名稱叫做 'city
+    name: &'city str, // 並且 name 有著 'city 生命週期
     date_founded: u32,
 }
 
 fn main() {}
 ```
 
-So usually you will write `'a, 'b, 'c` etc. because it is quick and the usual way to write. But you can always change it if you want. One good tip is that changing the lifetime to a "human-readable" name can help you read code if it is very complicated.
+所以通常都會寫做 `'a, 'b, 'c` 等等，因為這是快速且常用的寫法。但如果你想的話，你永遠都可以更改。有個好建議是，把生命週期名稱改成 "人類可讀(human-readable)" 的名字有助於閱讀理解程式碼，尤其是程式碼非常複雜時。
 
-Let's look at the comparison to traits for generics again. For example:
+讓我們再來看看與用在泛型的特徵的比較。比如說：
 
 ```rust
 use std::fmt::Display;
@@ -7230,10 +7230,10 @@ fn prints<T: Display>(input: T) {
 fn main() {}
 ```
 
-When you write `T: Display`, it means "please only take T if it has Display".
-It does not mean: "I am giving Display to T".
+當你寫 `T: Display` 的時候，它的意思是"只有在 T 有 Display 時，才接受 T"。
+而不是說："我把 Display 給予 T"。
 
-The same is true for lifetimes. When you write 'a here:
+對於生命週期也是如此。當你在這裡寫 `'a`：
 
 ```rust
 #[derive(Debug)]
@@ -7245,10 +7245,10 @@ struct City<'a> {
 fn main() {}
 ```
 
-It means "please only take an input for `name` if it lives at least as long as `City`".
-It does not mean: "I will make the input for `name` live as long as `City`".
+意思是"如果 `name` 的生命週期至少與 `City` 一樣久，才接受 `name` 的輸入"。
+它的意思不是說："我會讓 `name` 的輸入與 `City` 活得一樣久"。
 
-Now we can learn about `<'_>` that we saw before. This is called the "anonymous lifetime" and is an indicator that references are being used. Rust will suggest it to you when you are implementing structs, for example. Here is one struct that almost works, but not yet:
+現在我們可以學到有關先前見過的 `<'_>`。這被稱為"匿名生命週期"，它是參考被使用時的指示器。例如，當你在實現結構時，Rust 會向你建議使用。這裡有個幾乎可以但還不能用的結構體：
 
 ```rust
     // ⚠️
@@ -7267,7 +7267,7 @@ impl Adventurer {
 fn main() {}
 ```
 
-So we did what we needed to do for the `struct`: first we said that `name` comes from a `&str`. That means we need a lifetime, so we gave it `<'a>`. Then we had to do the same for the `struct` to show that they are at least as long as this lifetime. But then Rust tells us to do this:
+所以我們對 `struct` 做了我們需要做的事情：首先我們說 `name` 來自於 `&str`。這就意味著我們需要生命週期，所以我們給了它 `<'a>`。然後我們必須對 `struct` 做同樣的處理，以證明它們至少和這個生命週期一樣久。但是 Rust 卻告訴我們要這樣做：
 
 ```text
 error[E0726]: implicit elided lifetime not allowed here
@@ -7277,7 +7277,7 @@ error[E0726]: implicit elided lifetime not allowed here
   |      ^^^^^^^^^^- help: indicate the anonymous lifetime: `<'_>`
 ```
 
-It wants us to add that anonymous lifetime to show that there is a reference being used. So if we write that, it will be happy:
+它想讓我們加上那個匿名生命週期，以表明有個參考被使用。所以如果我們這樣寫，它就會很高興：
 
 ```rust
 struct Adventurer<'a> {
@@ -7295,15 +7295,15 @@ impl Adventurer<'_> {
 fn main() {}
 ```
 
-This lifetime was made so that you don't always have to write things like `impl<'a> Adventurer<'a>`, because the struct already shows the lifetime.
+這個生命週期是為了讓你不必總是寫諸如 `impl<'a> Adventurer<'a>` 這樣的東西，因為結構體已經寫出了生命週期。
 
-Lifetimes can be difficult in Rust, but here are some tips to avoid getting too stressed about them:
+在 Rust 中，生命週期是可以很困難的，但這裡有一些技巧可以在面對它們時避免感到太大的壓力：
 
-- You can stay with owned types, use clones etc. if you want to avoid them for the time being.
-- Much of the time, when the compiler wants a lifetime you will just end up writing <'a> here and there and then it will work. It's just a way of saying "don't worry, I won't give you anything that doesn't live long enough".
-- You can explore lifetimes just a bit at a time. Write some code with owned values, then make one a reference. The compiler will start to complain, but also give some suggestions. And if it gets too complicated, you can undo it and try again next time.
+- 如果你想在當下避免它們，你可以繼續使用擁有所有權的型別，使用克隆等。
+- 很多時候，當編譯器想要生命週期的時候，到頭來你只要在這裡和那裡寫上 `<'a>` 就可以用了。這只是一種"別擔心，我不會給你任何活得不夠久的東西"的說法。
+- 你可以每次只探索生命週期一些些。寫一些擁有所有權的數值的程式碼，然後把其中一個變成參考。編譯器會開始抱怨，但也會給出一些建議。如果它變得太複雜，你可以撤銷它，下次再試。
 
-Let's do this with our code and see what the compiler says. First we'll go back and take the lifetimes out, and also implement `Display`. `Display` will just print the `Adventurer`'s name.
+讓我們用我們的程式碼來這麼做，看看編譯器會怎麼說。首先我們回去把生命週期去掉，同時也實作 `Display`。`Display` 就會印出 `Adventurer` 的名字。
 
 ```rust
 // ⚠️
@@ -7328,7 +7328,7 @@ impl std::fmt::Display for Adventurer {
 fn main() {}
 ```
 
-First complaint is this:
+第一個抱怨就是這個：
 
 ```text
 error[E0106]: missing lifetime specifier
@@ -7344,7 +7344,7 @@ help: consider introducing a named lifetime parameter
   |
 ```
 
-It suggests what to do: `<'a>` after Adventurer, and `&'a str`. So we do that:
+它建議這麼做：在 Adventurer 後面加上 `<'a>`，以及 `&'a str`。所以我們照著做：
 
 ```rust
 // ⚠️
@@ -7369,7 +7369,7 @@ impl std::fmt::Display for Adventurer {
 fn main() {}
 ```
 
-Now it's happy with those parts, but is wondering about the `impl` blocks. It wants us to mention that it's using references:
+現在它對那些部分很滿意了，但對 `impl` 區塊不太確定。它想要我們提示正在使用參考：
 
 ```text
 error[E0726]: implicit elided lifetime not allowed here
@@ -7385,7 +7385,7 @@ error[E0726]: implicit elided lifetime not allowed here
    |                            ^^^^^^^^^^- help: indicate the anonymous lifetime: `<'_>`
 ```
 
-Okay, so we will write those in...and now it works! Now we can make an `Adventurer` and do some things with it.
+好了，我們將這些寫進去......現在它通過編譯了！現在我們可以做出 `Adventurer`，然後用它做些事。
 
 ```rust
 struct Adventurer<'a> {
@@ -7417,14 +7417,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Billy has 100000 hit points.
 Billy has 99980 hit points left!
 ```
 
-So you can see that lifetimes are often just the compiler wanting to make sure. And it is usually smart enough to almost guess at what lifetimes you want, and just needs you to tell it so it can be certain.
+所以你可以看到，編譯器往往只是想要確定生命週期。而且它通常很聰明，幾乎可以猜到你想要的生命週期，只是需要你告訴它，它就可以確定了。
 
 ## Interior mutability
 
