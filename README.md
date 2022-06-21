@@ -97,8 +97,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [Mutex](#mutex)
     - [RwLock](#rwlock)
   - [Cow](#cow)
-  - [Type aliases](#type-aliases)
-    - [Importing and renaming inside a function](#importing-and-renaming-inside-a-function)
+  - [類型別名](#類型別名)
+    - [在函式中匯入和重新命名](#在函式中匯入和重新命名)
   - [The todo! macro](#the-todo-macro)
   - [Rc](#rc)
   - [Multiple threads](#multiple-threads)
@@ -7851,11 +7851,11 @@ fn main() {
 
 `Cow` 還有一些其他方法，像是 `into_owned` 或者 `into_borrowed`，如果你需要就可以改變它。
 
-## Type aliases
+## 類型別名
 
-A type alias means "giving a new name to another type". Type aliases are very easy. Usually you use them when you have a very long type and don't want to write it every time. It is also good when you want to give a type a better name that is easy to remember. Here are two examples of type aliases.
+類型別名 (Type alias) 的意思是"給某個型別新名字"。類型別名非常簡單。通常你會使用在有個很長的型別，而又不想每次都寫它時。或是當你想給型別取個更好的名字方便記憶時，也可以使用它。這裡有兩個類型別名的範例。
 
-Here is a type that is not difficult, but you want to make your code easier to understand for other people (or for you):
+這裡的型別不難，但是你想讓你的程式碼更容易被其他人(或者你自己)理解：
 
 ```rust
 type CharacterVec = Vec<char>;
@@ -7863,10 +7863,10 @@ type CharacterVec = Vec<char>;
 fn main() {}
 ```
 
-Here's a type that is very difficult to read:
+這裡是種非常難以閱讀的型別：
 
 ```rust
-// this return type is extremely long
+// 這個回傳型別超長
 fn returns<'a>(input: &'a Vec<char>) -> std::iter::Take<std::iter::Skip<std::slice::Iter<'a, char>>> {
     input.iter().skip(4).take(5)
 }
@@ -7874,7 +7874,7 @@ fn returns<'a>(input: &'a Vec<char>) -> std::iter::Take<std::iter::Skip<std::sli
 fn main() {}
 ```
 
-So you can change it to this:
+所以你可以改成這樣：
 
 ```rust
 type SkipFourTakeFive<'a> = std::iter::Take<std::iter::Skip<std::slice::Iter<'a, char>>>;
@@ -7886,7 +7886,7 @@ fn returns<'a>(input: &'a Vec<char>) -> SkipFourTakeFive {
 fn main() {}
 ```
 
-Of course, you can also import items to make the type shorter:
+當然你也可以匯入型別，讓它更短：
 
 ```rust
 use std::iter::{Take, Skip};
@@ -7899,9 +7899,9 @@ fn returns<'a>(input: &'a Vec<char>) -> Take<Skip<Iter<'a, char>>> {
 fn main() {}
 ```
 
-So you can decide what looks best in your code depending on what you like.
+所以你可以根據自己的喜好來決定呈現你的程式碼的最佳方式。
 
-Note that this doesn't create an actual new type. It's just a name to use instead of an existing type. So if you write `type File = String;`, the compiler just sees a `String`. So this will print `true`:
+請注意這並沒有建立實際的新型別。它只是替代現有型別的名稱。所以如果你寫了 `type File = String;`，編譯器只會看到 `String`。所以將會印出 `true`：
 
 ```rust
 type File = String;
@@ -7913,12 +7913,12 @@ fn main() {
 }
 ```
 
-So what if you want an actual new type?
+那麼如果你想要實際的新型別呢？
 
-If you want a new file type that the compiler sees as a `File`, you can put it in a struct. (This is actually called the `newtype` idiom)
+如果你想要編譯器看到的是 `File` 的新檔案型別，你可以把它放在結構體中。(這是所謂的 `newtype` 慣用寫法)
 
 ```rust
-struct File(String); // File is a wrapper around String
+struct File(String); // File 是個對 String 的封裝
 
 fn main() {
     let my_file = File(String::from("I am file contents"));
@@ -7926,19 +7926,19 @@ fn main() {
 }
 ```
 
-Now this will not work, because they are two different types:
+現在這樣就不能執行了，因為它們是兩種不同的型別：
 
 ```rust
-struct File(String); // File is a wrapper around String
+struct File(String); // File 是個對 String 的封裝
 
 fn main() {
     let my_file = File(String::from("I am file contents"));
     let my_string = String::from("I am file contents");
-    println!("{}", my_file == my_string);  // ⚠️ cannot compare File with String
+    println!("{}", my_file == my_string);  // ⚠️ 無法比較 File 和 String
 }
 ```
 
-If you want to compare the String inside, you can use my_file.0:
+如果你想比較裡面的 String，可以用 `my_file.0`：
 
 ```rust
 struct File(String);
@@ -7946,22 +7946,22 @@ struct File(String);
 fn main() {
     let my_file = File(String::from("I am file contents"));
     let my_string = String::from("I am file contents");
-    println!("{}", my_file.0 == my_string); // my_file.0 is a String, so this prints true
+    println!("{}", my_file.0 == my_string); // my_file.0 是個 String, 因此印出 true
 }
 ```
 
-And now this type doesn't have any traits, so you can implement them yourself. This is not too surprising:
+並且現在這個型別沒有任何特徵，所以你自己可以實作它們。這並不會太意外：
 
 ```rust
 #[derive(Clone, Debug)]
 struct File(String);
 ```
 
-So when you use the `File` type here you can clone it and Debug print it, but it doesn't have the traits of String unless you use `.0` to get to the String inside it. But in other people's code you can only use `.0` if it's marked `pub` for public. And that's why these sorts of types use the `Deref` trait a lot. We will learn about both `pub` and `Deref` later.
+那麼當你使用這裡的 `File` 型別時，你可以克隆它和用 Debug 印出它，但它不會有 String 的特徵，除非你用 `.0` 來取得它裡面的 String。但是在其他人的程式碼中，如果它被標記為 `pub` 公開使用時，你就只能用 `.0`。而且那也是為什麼這些不同種類的型別會用 `Deref` 特徵用得相當多。我們會在之後都學到 `pub` 和 `Deref`。
 
-### Importing and renaming inside a function
+### 在函式中匯入和重新命名
 
-Usually you write `use` at the top of the program, like this:
+通常你會在程式的頂端寫 `use`，像這樣：
 
 ```rust
 use std::cell::{Cell, RefCell};
@@ -7969,7 +7969,7 @@ use std::cell::{Cell, RefCell};
 fn main() {}
 ```
 
-But we saw that you can do this anywhere, especially in functions with enums that have long names. Here is an example.
+但我們會看到，你可以在任何地方這樣做，特別是在函式中使用名稱較長的例舉。像這裡的範例：
 
 ```rust
 enum MapDirection {
@@ -7989,13 +7989,13 @@ fn give_direction(direction: &MapDirection) {
     match direction {
         MapDirection::North => println!("You are heading north."),
         MapDirection::NorthEast => println!("You are heading northeast."),
-        // So much more left to type...
-        // ⚠️ because we didn't write every possible variant
+        // 還剩下相當多要打字...
+        // ⚠️ 因為我們沒寫出每個可能出現的變體
     }
 }
 ```
 
-So now we will import MapDirection inside the function. That means that inside the function you can just write `North` and so on.
+所以現在我們要在函數裡面匯入 MapDirection。也就是說，在函數里面你可以直接寫 `North` 等變體名稱。
 
 ```rust
 enum MapDirection {
@@ -8012,21 +8012,21 @@ enum MapDirection {
 fn main() {}
 
 fn give_direction(direction: &MapDirection) {
-    use MapDirection::*; // Import everything in MapDirection
+    use MapDirection::*; // 匯入 MapDirection 裡的所有東西
     let m = "You are heading";
 
     match direction {
         North => println!("{} north.", m),
         NorthEast => println!("{} northeast.", m),
-        // This is a bit better
+        // 這比較好一點
         // ⚠️
     }
 }
 ```
 
-We've seen that `::*` means "import everything after the ::". In our case, that means `North`, `NorthEast`...and all the way to `NorthWest`. When you import other people's code you can do that too, but if the code is very large you might have problems. What if it has some items that are the same as your code? So it's usually best to not use `::*` all the time unless you're sure. A lot of times you see  a section called `prelude` in other people's code with all the main items you probably need. So then you will usually use it like this: `name::prelude::*`. We will talk about this more in the sections for `modules` and `crates`.
+我們已經看到 `::*` 的意思是"匯入在 :: 之後的所有內容"。在我們的例子中，這意味著匯入 `North`、`NorthEast`、......一直到 `NorthWest`。你也可以在你匯入別人的程式碼時這樣做，但如果程式碼非常大，你可能會遇到問題。要是它有一些元素和你的程式碼是一樣的呢？所以一般情況下，除非你有把握最好是不要一直使用`::*`。很多時候你在別人的程式碼裡看到一個叫 `prelude` 的部分，裡面有你可能需要的所有主要元素。那麼你通常會這樣使用：`name::prelude::*`。我們將會在 `modules` 和 `crates` 的章節中講到更多。
 
-You can also use `as` to change the name. For example, maybe you are using someone else's code and you can't change the names in an enum:
+您也可以使用 `as` 來更改名稱。例如，也許你正在使用別人的程式碼，而你不能改變列舉中的名稱：
 
 ```rust
 enum FileState {
@@ -8039,7 +8039,7 @@ enum FileState {
 fn main() {}
 ```
 
-So then you can 1) import everything and 2) change the names:
+那麼你就能 1) 匯入所有東西 並且 2) 更改名稱：
 
 ```rust
 enum FileState {
@@ -8067,7 +8067,7 @@ fn give_filestate(input: &FileState) {
 fn main() {}
 ```
 
-So now you can write `OtherDirectory` instead of `FileState::SimilarFileNameInNextDirectory`.
+所以現在你可以寫成 `OtherDirectory` 而不是`FileState::SimilarFileNameInNextDirectory`。
 
 ## The todo! macro
 
