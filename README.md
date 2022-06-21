@@ -7789,9 +7789,9 @@ fn main() {
 
 ## Cow
 
-Cow is a very convenient enum. It means "clone on write" and lets you return a `&str` if you don't need a `String`, and a `String` if you need it. (It can also do the same with arrays vs. Vecs, etc.)
+Cow 是一種非常方便的列舉。它的意思是"寫時克隆"，如果你不需要 `String`，可以回傳 `&str`，如果你需要就回傳 `String`。(它也可以對陣列與向量等等做同樣的處理)。
 
-To understand it, let's look at the signature. It says:
+為了理解它，我們看一下簽名。它說：
 
 ```rust
 pub enum Cow<'a, B>
@@ -7805,17 +7805,17 @@ where
 fn main() {}
 ```
 
-You know right away that `'a` means it works with references. The `ToOwned` trait means that it is a type that can be turned into an owned type. For example, `str` is usually a reference (`&str`) and you can turn it into an owned `String`.
+你馬上就知道，`'a` 意味著它可以和參考一起用。`ToOwned` 特徵意味著它是個可以轉換成具有擁有權的型別。例如，`str` 通常是參考(`&str`)，你可以把它轉換成具有擁有權的 `String`。
 
-Next is `?Sized`. This means "maybe Sized, but maybe not". Almost every type in Rust is Sized, but types like `str` are not. That is why we need a `&` for a `str`, because the compiler doesn't know the size. So if you want a trait that can use something like a `str`, you add `?Sized.`
+接下來是 `?Sized`。這意味著"也許是 Sized，但也許不是"。Rust 中幾乎每個型別都是 Sized 的，但像 `str` 這樣的型別卻不是。這就是為什麼我們需要附帶 `&` 給 `str`，因為編譯器不知道大小。所以如果你想要可以用像是 `str` 的特徵，你可以加上 `?Sized`。
 
-Next are the `enum` variants. They are `Borrowed` and `Owned`.
+接下來是 `enum` 的變體。它們是 `Borrowed` 和 `Owned`。
 
-Imagine that you have a function that returns `Cow<'static, str>`. If you tell the function to return `"My message".into()`, it will look at the type: "My message" is a `str`. This is a `Borrowed` type, so it chooses `Borrowed(&'a B)`. So it becomes `Cow::Borrowed(&'static str)`.
+想像你有個回傳 `Cow<'static, str>` 的函式。如果你告訴函式回傳 `"My message".into()`，它就會檢視型別："My message"是 `str`。這是個 `Borrowed` 型別，所以它選擇 `Borrowed(&'a B)`。那它就變成了 `Cow::Borrowed(&'static str)`。
 
-And if you give it a `format!("{}", "My message").into()` then it will look at the type. This time it is a `String`, because `format!` makes a `String`. So this time it will select "Owned".
+而如果你給它 `format!("{}", "My message").into()`，那麼它就會檢視型別。這次是個 `String`，因為 `format!` 做出 `String`。那這次就會選擇 "Owned"。
 
-Here is an example to test `Cow`. We will put a number into a function that returns a `Cow<'static, str>`. Depending on the number, it will create a `&str` or a `String`. Then it uses `.into()` to turn it into a `Cow`. When you do that, it will choose either `Cow::Borrowed` or `Cow::Owned`. Then we will match to see which one it chose.
+這是個測試 `Cow` 的範例。我們將把數字放入會回傳 `Cow<'static, str>` 的函式中。根據這個數字，它會建立 `&str` 或 `String`。然後用 `.into()` 將其變成 `Cow`。這樣做的時候，它就會選擇 `Cow::Borrowed` 或者 `Cow::Owned` 其中之一。那我們就匹配看看它選的是哪一個。
 
 ```rust
 use std::borrow::Cow;
@@ -7838,7 +7838,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 1 went in. The Cow is borrowed with this message: Remainder is 1
@@ -7849,7 +7849,7 @@ This prints:
 6 went in. The Cow is borrowed with this message: Remainder is 0
 ```
 
-`Cow` has some other methods like `into_owned` or `into_borrowed` so you can change it if you need to.
+`Cow` 還有一些其他方法，像是 `into_owned` 或者 `into_borrowed`，如果你需要就可以改變它。
 
 ## Type aliases
 
