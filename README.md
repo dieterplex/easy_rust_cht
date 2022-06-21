@@ -91,7 +91,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [dbg! 巨集和 .inspect](#dbg-巨集和-inspect)
   - [&str 的種類](#str-的種類)
   - [生命週期](#生命週期)
-  - [Interior mutability](#interior-mutability)
+  - [內部可變性](#內部可變性)
     - [Cell](#cell)
     - [RefCell](#refcell)
     - [Mutex](#mutex)
@@ -7426,13 +7426,13 @@ Billy has 99980 hit points left!
 
 所以你可以看到，編譯器往往只是想要確定生命週期。而且它通常很聰明，幾乎可以猜到你想要的生命週期，只是需要你告訴它，它就可以確定了。
 
-## Interior mutability
+## 內部可變性
 
 ### Cell
 
-**Interior mutability** means having a little bit of mutability on the inside. Remember how in Rust you need to use `mut` to change a variable? There are also some ways to change them without the word `mut`. This is because Rust has some ways to let you safely change values inside of a struct that is immutable. Each one of them follows some rules that make sure that changing the values is still safe.
+**內部可變性(Interior mutability)** 的意思是在內部有一點可變性。還記得在 Rust 中，你需要用 `mut` 來改變變數嗎？也有一些方式能在不用 `mut` 這個詞時來改變它們。這是因為 Rust 有一些方式可以讓你安全地改變在不可變的結構體裡面的值。每一種方式都遵循一些規則，確保改變值時仍然是安全的。
 
-First, let's look at a simple example where we would want this. Imagine a `struct` called `PhoneModel` with many fields:
+首先，讓我們看看我們會想要這樣做的簡單範例。想像有個有很多欄位叫做 `PhoneModel` 的結構體：
 
 ```rust
 struct PhoneModel {
@@ -7457,15 +7457,15 @@ fn main() {
 }
 ```
 
-It is better for the fields in `PhoneModel` to be immutable, because we don't want the data to change. The `date_issued` and `screen_size` never change, for example.
+`PhoneModel` 中的欄位最好是不可變的，因為我們不希望資料改變。比如說 `date_issued` 和 `screen_size` 永遠不會變。
 
-But inside is one field called `on_sale`. A phone model will first be on sale (`true`), but later the company will stop selling it. Can we make just this one field mutable? Because we don't want to write `let mut super_phone_3000`. If we do, then every field will become mutable.
+但是裡面有個欄位叫 `on_sale`。一個手機型號會先是銷售中 (on sale, `true`)，但是後來公司會停賣它。我們能不能只讓這個欄位可變？因為我們不想寫 `let mut super_phone_3000`。如果我們這樣做，那麼每個欄位都會變得可變。
 
-Rust has many ways to allow some safe mutability inside of something that is immutable. The most simple way is called `Cell`. First we use `use std::cell::Cell` so that we can just write `Cell` instead of `std::cell::Cell` every time.
+Rust 有很多方式可以讓一些不可變的東西裡面允許有一些安全的可變性，最簡單的方式叫做 `Cell`。首先我們宣告 `use std::cell::Cell`，這樣我們就可以每次只寫 `Cell` 而不是 `std::cell::Cell`。
 
-Then we change `on_sale: bool` to `on_sale: Cell<bool>`. Now it isn't a bool: it's a `Cell` that holds a `bool`.
+然後我們把 `on_sale: bool` 改成 `on_sale: Cell<bool>`。現在它不是 bool：它是個容納了 `bool` 的 `Cell`。
 
-`Cell` has a method called `.set()` where you can change the value. We use `.set()` to change `on_sale: true` to `on_sale: Cell::new(true)`.
+`Cell` 有個叫做 `.set()` 的方法，可以用來改變值。我們用 `.set()` 把 `on_sale: true` 改為 `on_sale: Cell::new(true)`。
 
 ```rust
 use std::cell::Cell;
@@ -7489,20 +7489,20 @@ fn main() {
         on_sale: Cell::new(true),
     };
 
-    // 10 years later, super_phone_3000 is not on sale anymore
+    // 10 年後, super_phone_3000 不再銷售了
     super_phone_3000.on_sale.set(false);
 }
 ```
 
-`Cell` works for all types, but works best for simple Copy types because it gives values, not references. `Cell` has a method called `get()` for example that only works on Copy types.
+`Cell` 適用於所有型別，但對簡單的 Copy 型別效果最好，因為它給出的是值，而不是參考。`Cell` 有個叫做 `get()` 的方法，它只對 Copy 型別有效。
 
-Another type you can use is `RefCell`.
+另一個你可以使用的型別是 `RefCell`。
 
 ### RefCell
 
-A `RefCell` is another way to change values without needing to declare `mut`. It means "reference cell", and is like a `Cell` but uses references instead of copies.
+`RefCell` 是另一種無需宣告 `mut` 而改變值的方式。它的意思是 "reference cell"，就像 `Cell`，但使用的是參考而不是拷貝 (copy)。
 
-We will create a `User` struct. So far you can see that it is similar to `Cell`:
+我們將建立 `User` 結構。到目前為止，你可以看到它與 `Cell` 類似：
 
 ```rust
 use std::cell::RefCell;
@@ -7513,7 +7513,7 @@ struct User {
     year_registered: u32,
     username: String,
     active: RefCell<bool>,
-    // Many other fields
+    // 許多其它欄位
 }
 
 fn main() {
@@ -7528,15 +7528,15 @@ fn main() {
 }
 ```
 
-This prints `RefCell { value: true }`.
+印出 `RefCell { value: true }`。
 
-There are many methods for `RefCell`. Two of them are `.borrow()` and `.borrow_mut()`. With these methods, you can do the same thing you do with `&` and `&mut`. The rules are the same:
+`RefCell` 的方法有很多。其中兩種是 `.borrow()` 和 `.borrow_mut()`。使用這些方法，你可以做到與 `&` 和 `&mut` 相同的事情。規則都是一樣的：
 
-- Many borrows is fine,
-- one mutable borrow is fine,
-- but mutable and immutable together is not fine.
+- 可以有多個不可變借用，
+- 可以有一個可變的借用，
+- 但不行一起用可變和不可變借用。
 
-So changing the value in a `RefCell` is very easy:
+所以改變 `RefCell` 中的值是非常容易的：
 
 ```rust
 // 🚧
@@ -7544,7 +7544,7 @@ user_1.active.replace(false);
 println!("{:?}", user_1.active);
 ```
 
-And there are many other methods like `replace_with` that uses a closure:
+而且還有很多其他的方法，比如 `replace_with` 使用的是閉包：
 
 ```rust
 // 🚧
@@ -7556,7 +7556,7 @@ user_1
 println!("{:?}", user_1.active);
 ```
 
-But you have to be careful with a `RefCell`, because it checks borrows at runtime, not compilation time. Runtime means when the program is actually running (after compilation). So this will compile, even though it is wrong:
+但是你要小心使用 `RefCell`，因為它是在執行時期而不是編譯時檢查借用。執行時期是指程式實際執行的時候(在編譯之後)。所以這將會被編譯，即使它是錯誤的：
 
 ```rust
 use std::cell::RefCell;
@@ -7567,7 +7567,7 @@ struct User {
     year_registered: u32,
     username: String,
     active: RefCell<bool>,
-    // Many other fields
+    // 許多其它欄位
 }
 
 fn main() {
@@ -7578,12 +7578,12 @@ fn main() {
         active: RefCell::new(true),
     };
 
-    let borrow_one = user_1.active.borrow_mut(); // first mutable borrow - okay
-    let borrow_two = user_1.active.borrow_mut(); // second mutable borrow - not okay
+    let borrow_one = user_1.active.borrow_mut(); // 第一個可變借用 - okay
+    let borrow_two = user_1.active.borrow_mut(); // 第二個可變借用 - 不 okay
 }
 ```
 
-But if you run it, it will immediately panic.
+但如果你執行它，它就會立即恐慌。
 
 ```text
 thread 'main' panicked at 'already borrowed: BorrowMutError', C:\Users\mithr\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\src\libcore\cell.rs:877:9
@@ -7591,37 +7591,37 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 error: process didn't exit successfully: `target\debug\rust_book.exe` (exit code: 101)
 ```
 
-`already borrowed: BorrowMutError` is the important part. So when you use a `RefCell`, it is good to compile **and** run to check.
+`already borrowed: BorrowMutError` 是重點。所以當你使用 `RefCell` 時，最好去編譯**並**執行來檢查。
 
 ### Mutex
 
-`Mutex` is another way to change values without declaring `mut`. Mutex means `mutual exclusion`, which means "only one at a time". This is why a `Mutex` is safe, because it only lets one process change it at a time. To do this, it uses `.lock()`. `Lock` is like locking a door from the inside. You go into a room, lock the door, and now you can change things inside the room. Nobody else can come in and stop you, because you locked the door.
+`Mutex`(互斥鎖) 是另一種不需要宣告 `mut` 就能改變數值的方式。互斥鎖的意思是 `mutual exclusion`，也就是"一次只能改一個"。這就是為什麼 `Mutex` 是安全的，因為它每次只讓一個執行緒改變它。為了做到這一點，它使用了 `.lock()`。`Lock` 就像從裡面鎖上門。你進入房間，鎖上門，現在你可以在房間裡面改變東西。別人不能進來阻止你，因為你把門鎖上了。
 
-A `Mutex` is easier to understand through examples.
+透過範例更容易理解 `Mutex`：
 
 ```rust
 use std::sync::Mutex;
 
 fn main() {
-    let my_mutex = Mutex::new(5); // A new Mutex<i32>. We don't need to say mut
-    let mut mutex_changer = my_mutex.lock().unwrap(); // mutex_changer is a MutexGuard
-                                                     // It has to be mut because we will change it
-                                                     // Now it has access to the Mutex
-                                                     // Let's print my_mutex to see:
+    let my_mutex = Mutex::new(5); // 新的 Mutex<i32>. 我們不需要加 mut
+    let mut mutex_changer = my_mutex.lock().unwrap(); // mutex_changer 是個 MutexGuard
+                                                     // 它必須是 mut 因為我們將會改變它
+                                                     // 現在它能存取 Mutex 了
+                                                     // 讓我們印 my_mutex 來看:
 
-    println!("{:?}", my_mutex); // This prints "Mutex { data: <locked> }"
-                                // So we can't access the data with my_mutex now,
-                                // only with mutex_changer
+    println!("{:?}", my_mutex); // 印出 "Mutex { data: <locked> }"
+                                // 因此我們現在不能用 my_mutex 存取資料,
+                                // 只能用 mutex_changer
 
-    println!("{:?}", mutex_changer); // This prints 5. Let's change it to 6.
+    println!("{:?}", mutex_changer); // 印出 5. 讓我們改成 6.
 
-    *mutex_changer = 6; // mutex_changer is a MutexGuard<i32> so we use * to change the i32
+    *mutex_changer = 6; // mutex_changer 是個 MutexGuard<i32> 所以我們用 * 來改變 i32
 
-    println!("{:?}", mutex_changer); // Now it says 6
+    println!("{:?}", mutex_changer); // 現在它說是 6
 }
 ```
 
-But `mutex_changer` still has a lock after it is done. How do we stop it? A `Mutex` is unlocked when the `MutexGuard` goes out of scope. "Go out of scope" means the code block is finished. For example:
+但是 `mutex_changer` 做完後還是持有著鎖。我們該如何停止呢？`Mutex` 在 `MutexGuard` 超出範圍 (out of scope) 時就會被解鎖。"超出範圍"表示該程式碼區塊已經結束執行。比如說：
 
 ```rust
 use std::sync::Mutex;
@@ -7631,13 +7631,13 @@ fn main() {
     {
         let mut mutex_changer = my_mutex.lock().unwrap();
         *mutex_changer = 6;
-    } // mutex_changer goes out of scope - now it is gone. It is not locked anymore
+    } // mutex_changer 已經超出範圍 - 現在它不見了. 不再鎖著了
 
-    println!("{:?}", my_mutex); // Now it says: Mutex { data: 6 }
+    println!("{:?}", my_mutex); // 現在它會說: Mutex { data: 6 }
 }
 ```
 
-If you don't want to use a different `{}` code block, you can use `std::mem::drop(mutex_changer)`. `std::mem::drop` means "make this go out of scope".
+如果你不想用不同的 `{}` 程式碼區塊，你可以使用 `std::mem::drop(mutex_changer)`。`std::mem::drop` 的意思是"讓這個超出範圍"。
 
 ```rust
 use std::sync::Mutex;
@@ -7646,31 +7646,31 @@ fn main() {
     let my_mutex = Mutex::new(5);
     let mut mutex_changer = my_mutex.lock().unwrap();
     *mutex_changer = 6;
-    std::mem::drop(mutex_changer); // drop mutex_changer - it is gone now
-                                   // and my_mutex is unlocked
+    std::mem::drop(mutex_changer); // 丟棄 mutex_changer ── 現在不見了
+                                   // 而且 my_mutex 解鎖了
 
-    println!("{:?}", my_mutex); // Now it says: Mutex { data: 6 }
+    println!("{:?}", my_mutex); // 現在它會說: Mutex { data: 6 }
 }
 ```
 
-You have to be careful with a `Mutex` because if another variable tries to `lock` it, it will wait:
+你必須小心使用 `Mutex`，因為如果有另一個變數試圖 `lock` 它，它將會等待：
 
 ```rust
 use std::sync::Mutex;
 
 fn main() {
     let my_mutex = Mutex::new(5);
-    let mut mutex_changer = my_mutex.lock().unwrap(); // mutex_changer has the lock
-    let mut other_mutex_changer = my_mutex.lock().unwrap(); // other_mutex_changer wants the lock
-                                                            // the program is waiting
-                                                            // and waiting
-                                                            // and will wait forever.
+    let mut mutex_changer = my_mutex.lock().unwrap(); // mutex_changer 拿到鎖
+    let mut other_mutex_changer = my_mutex.lock().unwrap(); // other_mutex_changer 想拿鎖
+                                                            // 程式正在等
+                                                            // 還在等
+                                                            // 又會等到永遠.
 
     println!("This will never print...");
 }
 ```
 
-One other method is `try_lock()`. Then it will try once, and if it doesn't get the lock it will give up. Don't do `try_lock().unwrap()`, because it will panic if it doesn't work. `if let` or `match` is better:
+還有一種方法是 `try_lock()`。然後它會試一次，如果沒能鎖上就會放棄。`try_lock().unwrap()` 就不做了，因為如果不成功它就會恐慌。`if let` 或 `match` 比較好：
 
 ```rust
 use std::sync::Mutex;
@@ -7678,7 +7678,7 @@ use std::sync::Mutex;
 fn main() {
     let my_mutex = Mutex::new(5);
     let mut mutex_changer = my_mutex.lock().unwrap();
-    let mut other_mutex_changer = my_mutex.try_lock(); // try to get the lock
+    let mut other_mutex_changer = my_mutex.try_lock(); // 試著拿到鎖
 
     if let Ok(value) = other_mutex_changer {
         println!("The MutexGuard has: {}", value)
@@ -7688,7 +7688,7 @@ fn main() {
 }
 ```
 
-Also, you don't need to make a variable to change the `Mutex`. You can just do this:
+另外，你不需要做出變數來改變 `Mutex`。你可以直接這樣做：
 
 ```rust
 use std::sync::Mutex;
@@ -7702,7 +7702,7 @@ fn main() {
 }
 ```
 
-`*my_mutex.lock().unwrap() = 6;` means "unlock my_mutex and make it 6". There is no variable that holds it so you don't need to call `std::mem::drop`. You can do it 100 times if you want - it doesn't matter:
+`*my_mutex.lock().unwrap() = 6;` 的意思是"解鎖 my_mutex 並使其成為 6"。沒有任何變數來儲存它，所以你不需要呼叫 `std::mem::drop`。如果你願意，你可以做 100 次──這不要緊：
 
 ```rust
 use std::sync::Mutex;
@@ -7711,7 +7711,7 @@ fn main() {
     let my_mutex = Mutex::new(5);
 
     for _ in 0..100 {
-        *my_mutex.lock().unwrap() += 1; // locks and unlocks 100 times
+        *my_mutex.lock().unwrap() += 1; // 上鎖又解鎖 100 次
     }
 
     println!("{:?}", my_mutex);
@@ -7720,13 +7720,13 @@ fn main() {
 
 ### RwLock
 
-`RwLock` means "read write lock". It is like a `Mutex` but also like a `RefCell`. You use `.write().unwrap()` instead of `.lock().unwrap()` to change it. But you can also use `.read().unwrap()` to get read access. It is like `RefCell` because it follows the rules:
+`RwLock` 的意思是"讀寫鎖"。它像 `Mutex`，但也像 `RefCell`。你用 `.write().unwrap()` 代替 `.lock().unwrap()` 來改變它。但你也可以用 `.read().unwrap()` 來獲得讀取許可權。它像是 `RefCell` 一樣遵循這些規則：
 
-- many `.read()` variables is okay,
-- one `.write()` variable is okay,
-- but more than one `.write()` or `.read()` together with `.write()` is not okay.
+- 可以有很多 `.read()` 變數，
+- 可以有一個 `.write()` 變數，
+- 但不能有多個 `.write()` 或同時有 `.read()` 與 `.write()`。
 
-The program will run forever if you try to `.write()` when you can't get access:
+如果在無法存取的情況下嘗試 `.write()`時，程式將會永遠執行：
 
 ```rust
 use std::sync::RwLock;
@@ -7734,20 +7734,20 @@ use std::sync::RwLock;
 fn main() {
     let my_rwlock = RwLock::new(5);
 
-    let read1 = my_rwlock.read().unwrap(); // one .read() is fine
-    let read2 = my_rwlock.read().unwrap(); // two .read()s is also fine
+    let read1 = my_rwlock.read().unwrap(); // 一個 .read() 很好
+    let read2 = my_rwlock.read().unwrap(); // 二個 .read() 也很好
 
     println!("{:?}, {:?}", read1, read2);
 
-    let write1 = my_rwlock.write().unwrap(); // uh oh, now the program will wait forever
+    let write1 = my_rwlock.write().unwrap(); // 噢哦, 現在程式會永遠等待
 }
 ```
 
-So we use `std::mem::drop`, just like in a `Mutex`.
+所以我們用 `std::mem::drop`，就像用 `Mutex` 一樣。
 
 ```rust
 use std::sync::RwLock;
-use std::mem::drop; // We will use drop() many times
+use std::mem::drop; // 我們將會使用 drop() 許多次
 
 fn main() {
     let my_rwlock = RwLock::new(5);
@@ -7758,7 +7758,7 @@ fn main() {
     println!("{:?}, {:?}", read1, read2);
 
     drop(read1);
-    drop(read2); // we dropped both, so we can use .write() now
+    drop(read2); // 一起丟棄, 那現在我們才能使用 .write()
 
     let mut write1 = my_rwlock.write().unwrap();
     *write1 = 6;
@@ -7767,7 +7767,7 @@ fn main() {
 }
 ```
 
-And you can use `try_read()` and `try_write()` too.
+而且你也可以使用 `try_read()` 和 `try_write()`。
 
 ```rust
 use std::sync::RwLock;
