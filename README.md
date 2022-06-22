@@ -99,7 +99,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [Cow](#cow)
   - [類型別名](#類型別名)
     - [在函式中匯入和重新命名](#在函式中匯入和重新命名)
-  - [The todo! macro](#the-todo-macro)
+  - [todo! 巨集](#todo-巨集)
   - [Rc](#rc)
   - [Multiple threads](#multiple-threads)
   - [Closures in functions](#closures-in-functions)
@@ -8069,24 +8069,24 @@ fn main() {}
 
 所以現在你可以寫成 `OtherDirectory` 而不是`FileState::SimilarFileNameInNextDirectory`。
 
-## The todo! macro
+## todo! 巨集
 
-Sometimes you want to write code in general to help you imagine your project. For example, imagine a simple project to do something with books. Here's what you think as you write it:
+有時你通常想寫點程式碼幫助你想像你的專案。例如，想像一個簡單的專案，會用書籍來做一些事情。這裡是你思考寫下的想法：
 
 ```rust
-struct Book {} // Okay, first I need a book struct.
-               // Nothing in there yet - will add later
+struct Book {} // Okay, 首先我需要書籍的結構體.
+               // 還沒有東西在那 - 之後會加入
 
-enum BookType { // A book can be hardcover or softcover, so add an enum
+enum BookType { // 一本書可以是精裝或平裝, 所以加入這個例舉
     HardCover,
     SoftCover,
 }
 
-fn get_book(book: &Book) -> Option<String> {} // ⚠️ get_book should take a &Book and return an Option<String>
+fn get_book(book: &Book) -> Option<String> {} // ⚠️ get_book 應該要接受 &Book 並回傳 Option<String>
 
-fn delete_book(book: Book) -> Result<(), String> {} // delete_book should take a Book and return a Result...
-                                                    // TODO: impl block and make these functions methods...
-fn check_book_type(book_type: &BookType) { // Let's make sure the match statement works
+fn delete_book(book: Book) -> Result<(), String> {} // delete_book 應該要接受 Book 並回傳 Result...
+                                                    // TODO: impl 區塊和寫出這些函式方法...
+fn check_book_type(book_type: &BookType) { // 讓我們確定來匹配有成功
     match book_type {
         BookType::HardCover => println!("It's hardcover"),
         BookType::SoftCover => println!("It's softcover"),
@@ -8095,11 +8095,11 @@ fn check_book_type(book_type: &BookType) { // Let's make sure the match statemen
 
 fn main() {
     let book_type = BookType::HardCover;
-    check_book_type(&book_type); // Okay, let's check this function!
+    check_book_type(&book_type); // Okay, 讓我們來檢查這個函式!
 }
 ```
 
-But Rust is not happy with `get_book` and `delete_book`. It says:
+但 Rust 對 `get_book` 和 `delete_book` 不滿意。它說：
 
 ```text
 error[E0308]: mismatched types
@@ -8125,13 +8125,13 @@ error[E0308]: mismatched types
            found unit type `()`
 ```
 
-But you don't care about `get_book` and `delete_book` right now. This is where you can use `todo!()`. If you add that to the function, Rust will not complain, and will compile.
+但是你這時並不關心 `get_book` 和 `delete_book`。這就是你能使用 `todo!()` 的地方。如果你把它加到函式中，Rust 不會抱怨，而且會編譯好。
 
 ```rust
 struct Book {}
 
 fn get_book(book: &Book) -> Option<String> {
-    todo!() // todo means "I will do it later, please be quiet"
+    todo!() // todo 的意思是 "我之後會做, 請安靜"
 }
 
 fn delete_book(book: Book) -> Result<(), String> {
@@ -8141,11 +8141,11 @@ fn delete_book(book: Book) -> Result<(), String> {
 fn main() {}
 ```
 
-So now the code compiles and you can see the result of `check_book_type`: `It's hardcover`.
+所以現在程式碼能編譯，你可以看到 `check_book_type` 的結果：`It's hardcover`。
 
-But careful, because it only compiles - you can't use the function. If you call a function with `todo!()` inside it, it will panic.
+但是要小心，因為它只是能編譯--你不能使用函式。如果你呼叫裡面有 `todo!()` 的函式，它就會恐慌。
 
-Also, `todo!()` functions still need real input and output types. If you just write this, it will not compile:
+另外，`todo!()` 函式仍然需要真實的輸入和輸出型別。如果你只寫這樣，它將無法編譯：
 
 ```rust
 struct Book {}
@@ -8157,7 +8157,7 @@ fn get_book(book: &Book) -> WorldsBestType { // ⚠️
 fn main() {}
 ```
 
-It will say:
+它會說：
 
 ```text
 error[E0412]: cannot find type `WorldsBestType` in this scope
@@ -8167,7 +8167,7 @@ error[E0412]: cannot find type `WorldsBestType` in this scope
    |                             ^^^^^^^^^^^^^^ not found in this scope
 ```
 
-`todo!()` is actually the same as another macro: `unimplemented!()`. Programmers were using `unimplemented!()` a lot but it was long to type, so they created `todo!()` which is shorter.
+`todo!()` 其實和另一個巨集一樣：`unimplemented!()`。程式設計師們經常使用 `unimplemented!()`，但打字時太長了，所以他們建立了比較短的 `todo!()`。
 
 ## Rc
 
