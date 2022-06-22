@@ -101,7 +101,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [在函式中匯入和重新命名](#在函式中匯入和重新命名)
   - [todo! 巨集](#todo-巨集)
   - [Rc](#rc)
-  - [Multiple threads](#multiple-threads)
+  - [多執行緒](#多執行緒)
   - [Closures in functions](#closures-in-functions)
   - [impl Trait](#impl-trait)
   - [Arc](#arc)
@@ -8314,12 +8314,12 @@ fn main() {
 
 那麼，如果有強指標，是否有弱指標(weak references)呢？是的，有。弱指標蠻有用的，因為如果有兩個 `Rc` 互相指向對方，它們就不會死掉。這就是所謂的"循環參考(reference cycle)"。如果第 1 項有 Rc 指向第 2 項，而第 2 項有 Rc 指向第 1 項，計數就不會降到 0，在這種情況下，你會想要使用弱參考。那麼 `Rc` 就會對參考計數，但如果只有弱參考它就可以死掉。你要使用 `Rc::downgrade(&item)` 而不是 `Rc::clone(&item)` 來做出弱參考。另外，你需要用 `Rc::weak_count(&item)` 來檢視弱參考的數量。
 
-## Multiple threads
+## 多執行緒
 
-If you use multiple threads, you can do many things at the same time. Modern computers have more than one core so they can do more than one thing at the same time, and Rust lets you use them. Rust uses threads that are called "OS threads". OS thread means the operating system creates the thread on a different core. (Some other languages use "green threads", which are less powerful)
+如果你使用多個執行緒 (Thread)，你可以同時做很多事情。現代電腦有一個以上的核心 (Core)，所以它們可以同時做多件事情，Rust 讓你能運用它們。Rust 使用的執行緒被稱為"OS 執行緒"。OS 執行緒的意思是作業系統在不同的核心上建立執行緒。(其他一些語言使用功能沒那麼強大的"green threads")
 
 
-You create threads with `std::thread::spawn` and then a closure to tell it what to do. Threads are interesting because they run at the same time, and you can test it to see what happens. Here is a simple example:
+你要用 `std::thread::spawn` 建立執行緒，以及用閉包來告訴它該怎麼做。執行緒很有趣，因為它們同時執行，你可以測試它看看會發生什麼。這裡是個簡單的範例：
 
 ```rust
 fn main() {
@@ -8329,19 +8329,19 @@ fn main() {
 }
 ```
 
-If you run this, it will be different every time. Sometimes it will print, and sometimes it won't print (this depends on your computer speed too). That is because sometimes `main()` finishes before the thread finishes. And when `main()` finishes, the program is over. This is easier to see in a `for` loop:
+如果你執行它，每次結果都會不同。有時會印出來，有時不會(這也取決於你的電腦速度)。這是因為有時 `main()` 比執行緒還早結束。而當 `main()` 完成後，程式就終結了。這在 `for` 迴圈中更容易觀察到：
 
 ```rust
 fn main() {
-    for _ in 0..10 { // set up ten threads
+    for _ in 0..10 { // 設置十個執行緒
         std::thread::spawn(|| {
             println!("I am printing something");
         });
-    }   // Now the threads start.
-}       // How many can finish before main() ends here?
+    }   // 現在執行緒啟動了.
+}       // 有多少能在這裡的 main() 結束之前完成?
 ```
 
-Usually about four threads will print before `main` ends, but it is always different. If your computer is faster then it might not print any. Also, sometimes the threads will panic:
+在 `main` 結束之前，通常大約會有四條執行緒印出來，但總是不一樣。如果你的電腦速度比較快，那麼可能就印不出來了。另外，有時執行緒會恐慌：
 
 ```text
 thread 'thread 'I am printing something
@@ -8350,9 +8350,9 @@ thread '<unnamed><unnamed>thread '' panicked at '<unnamed>I am printing somethin
 shutdown
 ```
 
-This is the error when the thread tries to do something right when the program is shutting down.
+這是程式正在關閉時，執行緒試圖做一些事情時會出現的錯誤。
 
-You can give the computer something to do so it won't shut down right away:
+你可以給電腦做些事，這樣它就不會馬上關閉了：
 
 ```rust
 fn main() {
@@ -8361,14 +8361,14 @@ fn main() {
             println!("I am printing something");
         });
     }
-    for _ in 0..1_000_000 { // make the program declare "let x = 9" one million times
-                            // It has to finish this before it can exit the main function
+    for _ in 0..1_000_000 { // 讓電腦宣告 "let x = 9" 一百萬次
+                            // 它要在它可以離開 main 函式前完成這件事
         let _x = 9;
     }
 }
 ```
 
-But that is a silly way to give the threads time to finish. The better way is to bind the threads to a variable. If you add `let`, then you will create a `JoinHandle`. You can see this in the signature for `spawn`:
+但這是個讓執行緒有時間完成的蠢方法。更好的方式是將執行緒繫結到變數上。如果你加上 `let`，你就能建立 `JoinHandle`。你可以在 `spawn` 的簽名中看到這一點：
 
 ```text
 pub fn spawn<F, T>(f: F) -> JoinHandle<T>
@@ -8378,9 +8378,9 @@ where
     T: Send + 'static,
 ```
 
-(`f` is the closure - we will learn how to put closures into our functions later)
+> `f` 是閉包──我們將在後面學到如何將閉包放入我們的函式中
 
-So now we have a `JoinHandle` every time.
+所以現在我們每次都有 `JoinHandle`。
 
 ```rust
 fn main() {
@@ -8393,7 +8393,7 @@ fn main() {
 }
 ```
 
-`handle` is now a `JoinHandle`. What do we do with it? We use a method called `.join()`. This method means "wait until all the threads are done" (it waits for the threads to join it). So now just write `handle.join()` and it will wait for each of the threads to finish.
+`handle` 現在是個 `JoinHandle`。我們怎麼處理它呢？我們要使用叫做 `.join()` 的方法。這個方法的意思是"等待所有執行緒完成"(它等待執行緒加入它)。所以現在只要寫 `handle.join()`，它就會等待每個執行緒完成。
 
 ```rust
 fn main() {
@@ -8402,20 +8402,20 @@ fn main() {
             println!("I am printing something");
         });
 
-        handle.join(); // Wait for the threads to finish
+        handle.join(); // 等待執行緒完成
     }
 }
 ```
 
-Now we will learn about the three types of closures. The three types are:
+現在我們就來了解一下閉包的三種類型。這三種類型是
 
-- `FnOnce`: takes the whole value
-- `FnMut`: takes a mutable reference
-- `Fn`: takes a regular reference
+- `FnOnce`：接受整個值
+- `FnMut`：接受可變參考
+- `Fn`：接受常規參考
 
-A closure will try to use `Fn` if it can. But if it needs to change the value it will use `FnMut`, and if it needs to take the whole value, it will use `FnOnce`. `FnOnce` is a good name because it explains what it does: it takes the value once, and then it can't take it again.
+如果可以閉包會盡量試著使用 `Fn`。但如果它需要改變值，它將使用 `FnMut`，而如果它需要接受整個值，它將使用 `FnOnce`。`FnOnce` 是個好名字，因為這解釋了它做了什麼：它接受一次值，然後就不能再拿了。
 
-Here is an example:
+這裡是範例：
 
 ```rust
 fn main() {
@@ -8426,9 +8426,9 @@ fn main() {
 }
 ```
 
-`String` is not `Copy`, so `my_closure()` is `Fn`: it takes a reference.
+`String` 不能 `Copy`，所以 `my_closure()` 是個 `Fn`：它拿到參考。
 
-If we change `my_string`, it will be `FnMut`.
+如果我們改變 `my_string`，它會變成 `FnMut`。
 
 ```rust
 fn main() {
@@ -8442,14 +8442,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 I will go into the closure now
 I will go into the closure now now
 ```
 
-And if you take by value, then it will be `FnOnce`.
+而如果拿值來用，則會是 `FnOnce`。
 
 ```rust
 fn main() {
@@ -8466,9 +8466,9 @@ fn main() {
 }
 ```
 
-We took by value, so we can't run `my_closure()` more than once. That is where the name comes from.
+我們拿值來用，所以我們無法再執行一次 `my_closure()`。就是這個名字的由來。
 
-So now back to threads. Let's try to use a value from outside:
+那麼現在回到執行緒。讓我們試著使用外面的值：
 
 ```rust
 fn main() {
@@ -8482,7 +8482,7 @@ fn main() {
 }
 ```
 
-The compiler says that this won't work.
+編譯器說這樣不行。
 
 ```text
 error[E0373]: closure may outlive the current function, but it borrows `my_string`, which is owned by the current function
@@ -8507,25 +8507,25 @@ help: to force the closure to take ownership of `my_string` (and any other refer
    |                                     ^^^^^^^
 ```
 
-It is a long message, but helpful: it says to ``use the `move` keyword``. The problem is that we can do anything to `my_string` while the thread is using it, but it doesn't own it. That would be unsafe.
+這條訊息很長，但很有用：它說到 ``use the `move` keyword``。問題是我們雖然可以在執行緒裡使用 `my_string` 時對它做任何事情，但執行緒卻不擁有它。因為那樣會不安全。
 
-Let's try something else that doesn't work:
+讓我們試試其他行不通的方式：
 
 ```rust
 fn main() {
     let mut my_string = String::from("Can I go inside the thread?");
 
     let handle = std::thread::spawn(|| {
-        println!("{}", my_string); // now my_string is being used as a reference
+        println!("{}", my_string); // 現在 my_string 被拿來當參考使用
     });
 
-    std::mem::drop(my_string);  // ⚠️ We try to drop it here. But the thread still needs it.
+    std::mem::drop(my_string);  // ⚠️ 我們嘗試在這丟棄它. 但執行緒仍然需要它.
 
     handle.join();
 }
 ```
 
-So you have to take the value with `move`. Now it is safe:
+所以你要用 `move` 來拿走值。現在安全了：
 
 ```rust
 fn main() {
@@ -8535,13 +8535,13 @@ fn main() {
         println!("{}", my_string);
     });
 
-    std::mem::drop(my_string);  // ⚠️ we can't drop, because handle has it. So this won't work
+    std::mem::drop(my_string);  // ⚠️ 我們無法丟棄, 因為 handle 擁有它. 因此這將會無法執行
 
     handle.join();
 }
 ```
 
-So we delete the `std::mem::drop`, and now it is okay. `handle` takes `my_string` and our code is safe.
+所以當我們把 `std::mem::drop` 刪掉，現在就可以用了。在 `handle` 拿走 `my_string` 後，我們的程式碼就安全了。
 
 ```rust
 fn main() {
@@ -8555,7 +8555,7 @@ fn main() {
 }
 ```
 
-So just remember: if you need a value in a thread from outside the thread, you need to use `move`.
+所以只要記住：如果你需要從外面取得某個執行緒裡面的值，你需要使用 `move`。
 
 
 
