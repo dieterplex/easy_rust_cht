@@ -8171,7 +8171,7 @@ error[E0412]: cannot find type `WorldsBestType` in this scope
 
 ## Rc
 
-Rc means "reference counter". You know that in Rust, every variable can only have one owner. That is why this doesn't work:
+Rc 的意思是 "參考計數器(reference counter)"。你知道在 Rust 中，每個變數只能有一個所有者(owner)。這就是為什麼這個不能執行的原因：
 
 ```rust
 fn takes_a_string(input: String) {
@@ -8190,9 +8190,9 @@ fn main() {
 }
 ```
 
-After `takes_a_string` takes `user_name`, you can't use it anymore. Here that is no problem: you can just give it `user_name.clone()`. But sometimes a variable is part of a struct, and maybe you can't clone the struct. Or maybe the `String` is really long and you don't want to clone it. These are some reasons for `Rc`, which lets you have more than one owner. An `Rc` is like a good office worker: `Rc` writes down who has ownership, and how many. Then once the number of owners goes down to 0, the variable can disappear.
+`takes_a_string` 拿走 `user_name` 之後，你就不能再用它了。這樣也沒問題：你可以直接給它 `user_name.clone()`。但有時變數是某個結構體的一部分，也許你不能克隆這個結構。或者也許 `String` 真的很長，你不想克隆它。這些都是會有 `Rc` 的一些原因，它讓你可以有多個所有者。`Rc` 就像個優秀的辦公人員：`Rc` 寫下誰擁有所有權，以及有多少個。然後一旦所有者的數量下降到 0，這個變數就可以消失不要了。
 
-Here's how you use an `Rc`. First imagine two structs: one called `City`, and another called `CityData`. `City` has information for one city, and `CityData` puts all the cities together in `Vec`s.
+這裡告訴你如何使用 `Rc`。首先想像兩個結構體：一個叫 `City`，另一個叫 `CityData`。`City` 有關於一個城市的資訊，而 `CityData` 把所有的城市都一起放在 `Vec` 中。
 
 ```rust
 #[derive(Debug)]
@@ -8212,20 +8212,20 @@ fn main() {
     let calgary = City {
         name: "Calgary".to_string(),
         population: 1_200_000,
-           // Pretend that this string is very very long
+           // 假裝這個字串非常非常長
         city_history: "Calgary began as a fort called Fort Calgary that...".to_string(),
     };
 
     let canada_cities = CityData {
-        names: vec![calgary.name], // This is using calgary.name, which is short
-        histories: vec![calgary.city_history], // But this String is very long
+        names: vec![calgary.name], // 用 calgary.name 比較短
+        histories: vec![calgary.city_history], // 但這個字串非常長
     };
 
     println!("Calgary's history is: {}", calgary.city_history);  // ⚠️
 }
 ```
 
-Of course, it doesn't work because `canada_cities` now owns the data and `calgary` doesn't. It says:
+當然這是不可能執行的，因為現在 `canada_cities` 擁有了資料，而 `calgary` 沒有。它說：
 
 ```text
 error[E0382]: borrow of moved value: `calgary.city_history`
@@ -8240,9 +8240,9 @@ error[E0382]: borrow of moved value: `calgary.city_history`
    = note: move occurs because `calgary.city_history` has type `std::string::String`, which does not implement the `Copy` trait
 ```
 
-We can clone the name: `names: vec![calgary.name.clone()]` but we don't want to clone the `city_history`, which is long. So we can use an `Rc`.
+我們可以克隆名稱：`names: vec![calgary.name.clone()]`，但是我們不想克隆很長的 `city_history`。所以我們可以用 `Rc`。
 
-Add the `use` declaration:
+加上 `use` 的宣告：
 
 ```rust
 use std::rc::Rc;
@@ -8250,7 +8250,7 @@ use std::rc::Rc;
 fn main() {}
 ```
 
-Then put `Rc` around `String`.
+用 `Rc` 把 `String` 包起來：
 
 ```rust
 use std::rc::Rc;
@@ -8271,9 +8271,9 @@ struct CityData {
 fn main() {}
 ```
 
-To add a new reference, you have to `clone` the `Rc`. But hold on, didn't we want to avoid using `.clone()`? Not exactly: we didn't want to clone the whole String. But a clone of an `Rc` just clones the pointer - it's basically free. It's like putting a name sticker on a box of books to show that two people own it, instead of making a whole new box.
+要增加新的參考，你必須克隆 `Rc`。但是等一下，我們不是想避免使用 `.clone()` 嗎？不完全是：我們只是不想克隆整個 String。但是 `Rc` 的克隆只是克隆了指標(pointer)--它基本上是沒有開銷的。這就像在一盒書上貼上名字貼紙，證明有兩個人擁有它，而不是做一盒全新的書。
 
-You can clone an `Rc` called `item` with `item.clone()` or with `Rc::clone(&item)`. So calgary.city_history has 2 owners. We can check the number of owners with `Rc::strong_count(&item)`. Also let's add a new owner. Now our code looks like this:
+你可以用 `item.clone()` 或者用 `Rc::clone(&item)` 來克隆叫做 `item` 的 `Rc`。所以 calgary.city_history 有兩個所有者。我們可以用 `Rc::strong_count(&item)` 查詢所有者的數量。另外我們再增加一個新的所有者。現在我們的程式碼看起來像這樣：
 
 ```rust
 use std::rc::Rc;
@@ -8282,26 +8282,26 @@ use std::rc::Rc;
 struct City {
     name: String,
     population: u32,
-    city_history: Rc<String>, // String inside an Rc
+    city_history: Rc<String>, // 包在 Rc 裡的 String
 }
 
 #[derive(Debug)]
 struct CityData {
     names: Vec<String>,
-    histories: Vec<Rc<String>>, // A Vec of Strings inside Rcs
+    histories: Vec<Rc<String>>, // 有包在 Rc 裡的 String 的向量
 }
 
 fn main() {
     let calgary = City {
         name: "Calgary".to_string(),
         population: 1_200_000,
-           // Pretend that this string is very very long
-        city_history: Rc::new("Calgary began as a fort called Fort Calgary that...".to_string()), // Rc::new() to make the Rc
+           // 假裝這個字串非常非常長
+        city_history: Rc::new("Calgary began as a fort called Fort Calgary that...".to_string()), // 用 Rc::new() 做出 Rc
     };
 
     let canada_cities = CityData {
         names: vec![calgary.name],
-        histories: vec![calgary.city_history.clone()], // .clone() to increase the count
+        histories: vec![calgary.city_history.clone()], // 用 .clone() 來增加計數
     };
 
     println!("Calgary's history is: {}", calgary.city_history);
@@ -8310,9 +8310,9 @@ fn main() {
 }
 ```
 
-This prints `2`. And `new_owner` is now an `Rc<String>`. Now if we use `println!("{}", Rc::strong_count(&calgary.city_history));`, we get `3`.
+印出 `2`。而 `new_owner` 現在是 `Rc<String>`。現在如果我們用 `println!("{}", Rc::strong_count(&calgary.city_history));`，我們得到 `3`。
 
-So if there are strong pointers, are there weak pointers? Yes, there are. Weak pointers are useful because if two `Rc`s point at each other, they can't die. This is called a "reference cycle". If item 1 has an Rc to item 2, and item 2 has an Rc to item 1, they can't get to 0. In this case you want to use weak references. Then `Rc` will count the references, but if it only has weak references then it can die. You use `Rc::downgrade(&item)` instead of `Rc::clone(&item)` to make weak references. Also, you use `Rc::weak_count(&item)` to see the weak count.
+那麼，如果有強指標，是否有弱指標(weak references)呢？是的，有。弱指標蠻有用的，因為如果有兩個 `Rc` 互相指向對方，它們就不會死掉。這就是所謂的"循環參考(reference cycle)"。如果第 1 項有 Rc 指向第 2 項，而第 2 項有 Rc 指向第 1 項，計數就不會降到 0，在這種情況下，你會想要使用弱參考。那麼 `Rc` 就會對參考計數，但如果只有弱參考它就可以死掉。你要使用 `Rc::downgrade(&item)` 而不是 `Rc::clone(&item)` 來做出弱參考。另外，你需要用 `Rc::weak_count(&item)` 來檢視弱參考的數量。
 
 ## Multiple threads
 
