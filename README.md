@@ -8872,51 +8872,51 @@ Your fear is now 7
 
 ## Arc
 
-You remember that we used an `Rc` to give a variable more than one owner. If we are doing the same thing in a thread, we need an `Arc`. `Arc` means "atomic reference counter". Atomic means that it uses the computer's processor so that data only gets written once each time. This is important because if two threads write data at the same time, you will get the wrong result. For example, imagine if you could do this in Rust:
+你還記得我們用 `Rc` 來給予變數一個以上的所有者。如果我們執行緒中做一樣的事情，我們則需要 `Arc`。`Arc` 的意思是 "原子參考計數器(atomic reference counter)"。原子的意思是它使用計算機的處理器，所以資料每回只會被寫入一次。這點很重要，因為如果兩個執行緒同時寫入資料，你會得到錯誤的結果。例如，想像如果你能在 Rust 中做到這一點：
 
 ```rust
 // 🚧
 let mut x = 10;
 
-for i in 0..10 { // Thread 1
+for i in 0..10 { // 執行緒 1
     x += 1
 }
-for i in 0..10 { // Thread 2
+for i in 0..10 { // 執行緒 2
     x += 1
 }
 ```
 
-If Thread 1 and Thread 2 just start together, maybe this will happen:
+如果執行緒 1 和執行緒 2 一起啟動，也許就會出現這種情況：
 
-- Thread 1 sees 10, writes 11. Then Thread 2 sees 11, writes 12. No problem so far.
-- Thread 1 sees 12. At the same time, Thread 2 sees 12. Thread 1 writes 13. And Thread 2 writes 13. Now we have 13, but it should be 14. That's a big problem.
+- 執行緒 1 看到 10，寫入 11，接著執行緒 2 看到 11，寫入 12。到目前為止沒有問題。
+- 執行緒 1 看到 12。同時，執行緒 2 看到 12。執行緒 1，寫入 13。執行緒 2 也寫入 13。現在我們有 13，但應該要是 14。這是個大問題。
 
-An `Arc` uses the processor to make sure this doesn't happen, so it is the method you must use when you have threads. You don't want an `Arc` for just one thread though, because `Rc` is a bit faster.
+`Arc` 使用處理器來確保這種情況不會發生，所以當你有多個執行緒時這個方法你就必須使用。然而你不會想在單執行緒上用 `Arc`，因為 `Rc` 更快一些。
 
-You can't change data with just an `Arc` though. So you wrap the data in a `Mutex`, and then you wrap the `Mutex` in an `Arc`.
+不過你不能只用 `Arc` 來改變資料。所以你要用 `Mutex` 把資料包起來，然後再用 `Arc` 把 `Mutex` 包起來。
 
-So let's use a `Mutex` inside an `Arc` to change the value of a number. First let's set up one thread:
+所以讓我們用 `Mutex` 來在 `Arc` 裡面改變數字的值。首先讓我們設定一個執行緒：
 
 ```rust
 fn main() {
 
     let handle = std::thread::spawn(|| {
-        println!("The thread is working!") // Just testing the thread
+        println!("The thread is working!") // 只測試執行緒
     });
 
-    handle.join().unwrap(); // Make the thread wait here until it is done
+    handle.join().unwrap(); // 讓執行緒在這等待直到完成
     println!("Exiting the program");
 }
 ```
 
-So far this just prints:
+目前為止只印出：
 
 ```text
 The thread is working!
 Exiting the program
 ```
 
-Good. Now let's put it in a `for` loop for `0..5`:
+很好。現在讓我們把它放在 `for` 迴圈中，跑 `0..5`。
 
 ```rust
 fn main() {
@@ -8932,7 +8932,7 @@ fn main() {
 }
 ```
 
-This works too. We get the following:
+這也是可行的。我們得到以下結果：
 
 ```text
 The thread is working!
@@ -8943,7 +8943,7 @@ The thread is working!
 Exiting the program
 ```
 
-Now let's make one more thread. Each thread will do the same thing. You can see that the threads are working at the same time. Sometimes it will say `Thread 1 is working!` first, but other times `Thread 2 is working!` is first. This is called **concurrency**, which means "running together".
+現在讓我們再多加一個執行緒。每個執行緒都會做同樣的事情。你可以看到這些執行緒是同時工作的。有時會先印出 `Thread 1 is working!`，但其他時候是 `Thread 2 is working!` 先印出。這就是所謂的**並行(concurrency)**，也就是 "一起執行"的意思。
 
 ```rust
 fn main() {
@@ -8966,7 +8966,7 @@ fn main() {
 }
 ```
 
-This will print:
+會列印：
 
 ```text
 Thread 1 is working!
@@ -8982,24 +8982,24 @@ Thread 2 is working!
 Exiting the program
 ```
 
-Now we want to change the value of `my_number`. Right now it is an `i32`. We will change it to an `Arc<Mutex<i32>>`: an `i32` that can be changed, protected by an `Arc`.
+現在我們要改變 `my_number` 的數值。現在它是 `i32`。我們將把它改為 `Arc<Mutex<i32>>`：由 `Arc` 保護可以改變的 `i32`。
 
 ```rust
 // 🚧
 let my_number = Arc::new(Mutex::new(0));
 ```
 
-Now that we have this, we can clone it. Each clone can go into a different thread. We have two threads, so we will make two clones:
+現在我們有了這個，我們可以克隆它。每個克隆可以進入不同的執行緒。我們有兩個執行緒，所以我們將做兩個克隆：
 
 ```rust
 // 🚧
 let my_number = Arc::new(Mutex::new(0));
 
-let my_number1 = Arc::clone(&my_number); // This clone goes into Thread 1
-let my_number2 = Arc::clone(&my_number); // This clone goes into Thread 2
+let my_number1 = Arc::clone(&my_number); // 這個克隆去到執行緒 1
+let my_number2 = Arc::clone(&my_number); // 這個克隆去到執行緒 2
 ```
 
-Now that we have safe clones attached to `my_number`, we can `move` them into other threads with no problem.
+現在，我們已把安全的克隆附加到 `my_number`，我們可以將它們 `move` 到其它執行緒中沒問題。
 
 ```rust
 use std::sync::{Arc, Mutex};
@@ -9010,13 +9010,13 @@ fn main() {
     let my_number1 = Arc::clone(&my_number);
     let my_number2 = Arc::clone(&my_number);
 
-    let thread1 = std::thread::spawn(move || { // Only the clone goes into Thread 1
+    let thread1 = std::thread::spawn(move || { // 只有克隆去到執行緒 1
         for _ in 0..10 {
-            *my_number1.lock().unwrap() +=1; // Lock the Mutex, change the value
+            *my_number1.lock().unwrap() +=1; // 鎖住 Mutex, 改值
         }
     });
 
-    let thread2 = std::thread::spawn(move || { // Only the clone goes into Thread 2
+    let thread2 = std::thread::spawn(move || { // 只有克隆去到執行緒 2
         for _ in 0..10 {
             *my_number2.lock().unwrap() += 1;
         }
@@ -9029,61 +9029,61 @@ fn main() {
 }
 ```
 
-The program prints:
+程式印出：
 
 ```text
 Value is: Mutex { data: 20 }
 Exiting the program
 ```
 
-So it was a success.
+所以它成功了。
 
-Then we can join the two threads together in a single `for` loop, and make the code smaller.
+接著我們可以將兩個執行緒一起合併(join)到一個 `for` 迴圈裡，並使程式碼更短。
 
-We need to save the handles so we can call `.join()` on each one outside of the loop. If we do this inside the loop, it will wait for the first thread to finish before starting the new one.
+我們需要儲存控制碼(handle)，這樣我們就可以在迴圈外對每個執行緒呼叫 `.join()`。如果我們在迴圈內這樣做，它將等待第一個執行緒完成後再啟動新的執行緒。
 
 ```rust
 use std::sync::{Arc, Mutex};
 
 fn main() {
     let my_number = Arc::new(Mutex::new(0));
-    let mut handle_vec = vec![]; // JoinHandles will go in here
+    let mut handle_vec = vec![]; // JoinHandles 將會放在這
 
-    for _ in 0..2 { // do this twice
-        let my_number_clone = Arc::clone(&my_number); // Make the clone before starting the thread
-        let handle = std::thread::spawn(move || { // Put the clone in
+    for _ in 0..2 { // 做兩次
+        let my_number_clone = Arc::clone(&my_number); // 在啟動執行緒前做出克隆
+        let handle = std::thread::spawn(move || { // 移入克隆
             for _ in 0..10 {
                 *my_number_clone.lock().unwrap() += 1;
             }
         });
-        handle_vec.push(handle); // save the handle so we can call join on it outside of the loop
-                                 // If we don't push it in the vec, it will just die here
+        handle_vec.push(handle); // 儲存控制碼我們才能在迴圈外對它呼叫 join
+                                 // 如果我們不把它推入向量, 它將會直接死在這
     }
 
-    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // call join on all handles
+    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // 對所有控制碼呼叫 join
     println!("{:?}", my_number);
 }
 ```
 
-Finally this prints `Mutex { data: 20 }`.
+最後印出 `Mutex { data: 20 }`。
 
-This looks complicated but `Arc<Mutex<SomeType>>>` is used very often in Rust, so it becomes natural. Also, you can always write your code to make it cleaner. Here is the same code with one more `use` statement and two functions. The functions don't do anything new, but they move some code out of `main()`. You can try rewriting code like this if it is hard to read.
+這看起來很複雜，但 `Arc<Mutex<SomeType>>>` 在 Rust 中非常頻繁的被使用，所以它變得很自然。另外，你也可以隨時把你的程式碼寫得更乾淨。這裡是同樣的程式碼，多了一行 `use` 敘述和兩個函式。這些函式並沒有做任何新的事情，但是它們把一些程式碼從 `main()` 中移出。如果很難讀懂的話，你可以嘗試重寫這樣的程式碼。
 
 ```rust
 use std::sync::{Arc, Mutex};
-use std::thread::spawn; // Now we just write spawn
+use std::thread::spawn; // 現在我們只需要寫 spawn
 
-fn make_arc(number: i32) -> Arc<Mutex<i32>> { // Just a function to make a Mutex in an Arc
+fn make_arc(number: i32) -> Arc<Mutex<i32>> { // 只是用來做 Arc 裡有 Mutex 的函式
     Arc::new(Mutex::new(number))
 }
 
-fn new_clone(input: &Arc<Mutex<i32>>) -> Arc<Mutex<i32>> { // Just a function so we can write new_clone
+fn new_clone(input: &Arc<Mutex<i32>>) -> Arc<Mutex<i32>> { // 只是讓我們可以寫成 new_clone 的函式
     Arc::clone(&input)
 }
 
-// Now main() is easier to read
+// 現在 main() 更容易閱讀了
 fn main() {
-    let mut handle_vec = vec![]; // each handle will go in here
+    let mut handle_vec = vec![]; // 每個控制碼將會放到這裡
     let my_number = make_arc(0);
 
     for _ in 0..2 {
@@ -9094,10 +9094,10 @@ fn main() {
                 *value_inside += 1;
             }
         });
-        handle_vec.push(handle);    // the handle is done, so put it in the vector
+        handle_vec.push(handle);    // 拿到控制碼了, 所以放進向量裡
     }
 
-    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // Make each one wait
+    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // 讓每一個等待
 
     println!("{:?}", my_number);
 }
