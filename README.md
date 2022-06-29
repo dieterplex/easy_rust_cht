@@ -103,7 +103,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [Rc](#rc)
   - [多執行緒](#多執行緒)
   - [函式中的閉包](#函式中的閉包)
-  - [impl Trait](#impl-trait)
+  - [impl 特徵](#impl-特徵)
   - [Arc](#arc)
   - [Channels](#channels)
   - [Reading Rust documentation](#reading-rust-documentation)
@@ -8702,9 +8702,9 @@ Populations left are [3250, 24000, 45900, 58800, 119800, 283071, 478974, 400378,
 ```
 
 
-## impl Trait
+## impl 特徵
 
-`impl Trait` is similar to generics. You remember that generics use a type `T` (or any other name) which then gets decided when the program compiles. First let's look at a concrete type:
+`impl 特徵` 與泛型類似。你還記得，泛型使用型別 `T`(或任何其他名稱)，來表示在程式編譯時才決定的型別。首先讓我們來看個具體的型別：
 
 ```rust
 fn gives_higher_i32(one: i32, two: i32) {
@@ -8717,9 +8717,9 @@ fn main() {
 }
 ```
 
-This prints: `10 is higher.`.
+印出：`10 is higher.`。
 
-But this only takes `i32`, so now we will make it generic. We need to compare and we need to print with `{}`, so our type T needs `PartialOrd` and `Display`. Remember, this means "only take types that already have `PartialOrd` and `Display`".
+但是這個只接受 `i32`，所以現在我們要把它做成泛型的。我們需要比較，我們還需要用 `{}` 列印，所以我們的型別 T 需要具有 `PartialOrd` 和 `Display` 特徵。記住，這意味著"只接受已經具有 `PartialOrd` 和 `Display` 的型別"。
 
 ```rust
 use std::fmt::Display;
@@ -8734,10 +8734,10 @@ fn main() {
 }
 ```
 
-Now let's look at `impl Trait`, which is similar. Instead of a type `T`, we can bring in a type `impl Trait`. Then it will take in a type that implements that trait. It is almost the same:
+現在我們來看看類似的 `impl 特徵`。我們可以帶入 `impl 特徵` 型別，而不是 `T` 型別。然後它將接受實作該特徵的型別。這幾乎是一樣的：
 
 ```rust
-fn prints_it(input: impl Into<String> + std::fmt::Display) { // Takes anything that can turn into a String and has Display
+fn prints_it(input: impl Into<String> + std::fmt::Display) { // 接受能轉換成 String 且具有 Display 的任意型別
     println!("You can print many things, including {}", input);
 }
 
@@ -8749,7 +8749,7 @@ fn main() {
 }
 ```
 
-However, the more interesting part is that we can return `impl Trait`, and that lets us return closures because their function signatures are traits. You can see this in the signatures for methods that have them. For example, this is the signature for `.map()`:
+然而，更有趣的是我們可以回傳 `impl 特徵`，這讓我們可以回傳閉包，因為它們的函式簽名是特徵。你可以在有使用它們的方法的簽名中見到這點。例如，這是 `.map()` 的簽名：
 
 ```rust
 fn map<B, F>(self, f: F) -> Map<Self, F>     // 🚧
@@ -8761,9 +8761,9 @@ fn map<B, F>(self, f: F) -> Map<Self, F>     // 🚧
     }
 ```
 
-`fn map<B, F>(self, f: F)` mean that it takes two generic types. `F` is a function that takes one item from the container implementing `.map()` and `B` is the return type of that function. Then after the `where` we see the trait bounds. ("Trait bound" means "it must have this trait".) One is `Sized`, and the next is the closure signature. It must be an `FnMut`, and do the closure on `Self::Item`, which is the iterator that you give it. Then it returns `B`.
+`fn map<B, F>(self, f: F)` 的意思是，它接受兩個泛型型別。`F` 是個從實作 `.map()` 的容器中取一個元素的函式，`B` 是該函式的回傳型別。然後在`where` 之後，我們看到的是特徵界限 (trait bound)。("特徵界限"的意思是"它必須有這個特徵"。)一個是 `Sized`，接下來是個閉包簽名。它必須是個 `FnMut`，並在 `Self::Item` 上做閉包，也就是你給它的疊代器。然後它回傳 `B`。
 
-So we can do the same thing to return a closure. To return a closure, use `impl` and then the closure signature. Once you return it, you can use it just like a function. Here is a small example of a function that gives you a closure depending on the text you put in. If you put "double" or "triple" in then it multiplies it by 2 or 3, and otherwise it gives you the same number. Because it's a closure we can do anything we want, so we also print a message.
+所以我們可以做同樣的事來回傳閉包。要回傳閉包時，使用 `impl`，然後是閉包簽名。一旦你回傳它，你就可以像使用函式一樣使用它。這裡的小例子是會根據你輸入的文字給出閉包的函式。如果你輸入 "double" 或 "triple"，那麼它就會把它乘以 2 或 3，否則就會給你相同的數字。因為它是閉包，我們可以做任何我們想做的事情，所以我們也印出一段訊息。
 
 ```rust
 fn returns_a_closure(input: &str) -> impl FnMut(i32) -> i32 {
@@ -8788,7 +8788,7 @@ fn returns_a_closure(input: &str) -> impl FnMut(i32) -> i32 {
 fn main() {
     let my_number = 10;
 
-    // Make three closures
+    // 做出三個閉包
     let mut doubles = returns_a_closure("double");
     let mut triples = returns_a_closure("triple");
     let mut quadruples = returns_a_closure("quadruple");
@@ -8799,24 +8799,24 @@ fn main() {
 }
 ```
 
-Here is a bit longer example. Let's imagine a game where your character is facing monsters that are stronger at night. We can make an enum called `TimeOfDay` to keep track of the day. Your character is named Simon and has a number called `character_fear`, which is an `f64`. It goes up at night and down during the day. We will make a `change_fear` function that changes his fear, but also does other things like write messages. It could look like this:
+下面是個有點長的範例。讓我們想像在遊戲中，你的角色面對的是晚上比較強的怪物。我們可以做出叫 `TimeOfDay` 的列舉來記錄一天的情況。你的角色叫西蒙，有個叫 `character_fear` 是 `f64` 的數字。它晚上上升、白天下降。我們將寫個叫 `change_fear` 的函式來改變他的恐懼，但也會做其他事情，如寫訊息。它大概會是這樣：
 
 
 ```rust
-enum TimeOfDay { // just a simple enum
+enum TimeOfDay { // 只是單純的列舉
     Dawn,
     Day,
     Sunset,
     Night,
 }
 
-fn change_fear(input: TimeOfDay) -> impl FnMut(f64) -> f64 { // The function takes a TimeOfDay. It returns a closure.
-                                                             // We use impl FnMut(64) -> f64 to say that it needs to
-                                                             // change the value, and also gives the same type back.
-    use TimeOfDay::*; // So we only have to write Dawn, Day, Sunset, Night
-                      // Instead of TimeOfDay::Dawn, TimeOfDay::Day, etc.
+fn change_fear(input: TimeOfDay) -> impl FnMut(f64) -> f64 { // 這個函式接受 TimeOfDay. 回傳閉包.
+                                                             // 我們用 impl FnMut(64) -> f64 來說明它需要
+                                                             // 改變值, 並且也給回一樣的型別.
+    use TimeOfDay::*; // 所以我們只要寫 Dawn、Day、Sunset、Night
+                      // 而不是 TimeOfDay::Dawn、TimeOfDay::Day 等等.
     match input {
-        Dawn => |x| { // This is the variable character_fear that we give it later
+        Dawn => |x| { // 這就是我們之後會給予的變數 character_fear
             println!("The morning sun has vanquished the horrible night. You no longer feel afraid.");
             println!("Your fear is now {}", x * 0.5);
             x * 0.5
@@ -8841,23 +8841,23 @@ fn change_fear(input: TimeOfDay) -> impl FnMut(f64) -> f64 { // The function tak
 
 fn main() {
     use TimeOfDay::*;
-    let mut character_fear = 10.0; // Start Simon with 10
+    let mut character_fear = 10.0; // 西蒙從 10 開始
 
-    let mut daytime = change_fear(Day); // Make four closures here to call every time we want to change Simon's fear.
+    let mut daytime = change_fear(Day); // 這裡做四個閉包在每次我們想改變西蒙的恐懼時去呼叫.
     let mut sunset = change_fear(Sunset);
     let mut night = change_fear(Night);
     let mut morning = change_fear(Dawn);
 
-    character_fear = daytime(character_fear); // Call the closures on Simon's fear. They give a message and change the fear number.
-                                              // In real life we would have a Character struct and use it as a method instead,
-                                              // like this: character_fear.daytime()
+    character_fear = daytime(character_fear); // 對西蒙的恐懼呼叫閉包. 它們給出訊息並改變恐懼數值.
+                                              // 在現實生活我們會有 Character 結構體並把它當方法用,
+                                              // 像這樣: character_fear.daytime()
     character_fear = sunset(character_fear);
     character_fear = night(character_fear);
     character_fear = morning(character_fear);
 }
 ```
 
-This prints:
+印出：
 
 ```text
 What a nice day. Maybe put your feet up and rest a bit.
