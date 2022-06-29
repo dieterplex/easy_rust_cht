@@ -102,7 +102,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [todo! 巨集](#todo-巨集)
   - [Rc](#rc)
   - [多執行緒](#多執行緒)
-  - [Closures in functions](#closures-in-functions)
+  - [函式中的閉包](#函式中的閉包)
   - [impl Trait](#impl-trait)
   - [Arc](#arc)
   - [Channels](#channels)
@@ -8559,11 +8559,11 @@ fn main() {
 
 
 
-## Closures in functions
+## 函式中的閉包
 
-Closures are great. So how do we put them into our own functions?
+閉包超棒的。那麼我們要如何把它們放到我們擁有的函式中呢？
 
-You can make your own functions that take closures, but inside them it is less free and you have to decide the type. Outside a function a closure can decide by itself between `Fn`, `FnMut` and `FnOnce`, but inside you have to choose one. The best way to understand is to look at a few function signatures. Here is the one for `.all()`. We remember that it checks an iterator to see if everything is `true` (depending on what you decide is `true` or `false`). Part of its signature says this:
+你可以寫你自己的函式來接受閉包，但是在它裡面就沒那麼自由了，你必須決定型別。在函式外的閉包可以在 `Fn`、`FnMut` 和 `FnOnce` 之間自行決定，但在函式內部你必須選擇其中一種。最好的理解方式是多看幾個函式簽名。這裡是其中的 `.all()`。我們記得它會檢查疊代器，看看所有的東西是否是 `true`(取決於你怎麼決定是 `true` 還是 `false`)。它的部分簽名是這樣說的：
 
 
 ```rust
@@ -8572,13 +8572,13 @@ You can make your own functions that take closures, but inside them it is less f
         F: FnMut(Self::Item) -> bool,
 ```
 
-`fn all<F>`: this tells you that there is a generic type `F`. A closure is always generic because every time it is a different type.
+`fn all<F>`：這告訴你有個泛型 `F`。閉包永遠是泛型的，因為每次都是不同的型別。
 
-`(&mut self, f: F)`: `&mut self` tells you that it's a method. `f: F` is usually what you see for a closure: this is the variable name and the type.  Of course, there is nothing special about `f` and `F` and they could be different names. You could write `my_closure: Closure` if you wanted - it doesn't matter. But in signatures you almost always see `f: F`.
+`(&mut self, f: F)`：`&mut self` 告訴你這是方法。你通常看到 `f: F` 就是閉包：這是變數名和型別。當然，`f` 和 `F` 並沒有什麼特別之處，它們可以是不同的名字。如果想要你也可以寫成 `my_closure: Closure`──這並不要緊。但在簽名中，你幾乎總是會看到 `f: F`。
 
-Next is the part about the closure: `F: FnMut(Self::Item) -> bool`. Here it decides that the closure is `FnMut`, so it can change the values. It changes the values of `Self::Item`, which is the iterator that it takes. And it has to return `true` or `false`.
+接下來是關於閉包的部分：`F: FnMut(Self::Item) -> bool`。在這裡它決定閉包型別是 `FnMut`，所以它可以改變值。它改變了它所接受的疊代器 `Self::Item` 的值。而且它必須回傳 `true` 或 `false`。
 
-Here is a much simpler signature with a closure:
+這裡是個更簡單帶有閉包的簽名：
 
 ```rust
 fn do_something<F>(f: F)    // 🚧
@@ -8589,7 +8589,7 @@ where
 }
 ```
 
-This just says that it takes a closure, takes the value (`FnOnce` = takes the value), and doesn't return anything. So now we can call this closure that takes nothing and do whatever we like. We will create a `Vec` and then iterate over it just to show what we can do now.
+這只是說它接受閉包，取得值(`FnOnce` = 取值)，且不回傳任何東西。所以現在我們可以呼叫這個什麼都不拿的閉包，做我們想要做的事情。現在我們將會建立 `Vec`，然後對它進行疊代，只是展示我們可以做些什麼。
 
 ```rust
 fn do_something<F>(f: F)
@@ -8609,9 +8609,9 @@ fn main() {
 }
 ```
 
-For a more real example, we will create a `City` struct again. This time the `City` struct has more data about years and populations. It has a `Vec<u32>` for all the years, and another `Vec<u32>` for all the populations.
+看個更真實的例子，我們將再次建立 `City` 結構體。這次 `City` 結構體有更多關於年份和人口的資料。它有個 `Vec<u32>` 來表示所有的年份，還有另一個 `Vec<u32>` 來表示所有的人口。
 
-`City` has two functions: `new()` to create a new `City`, and `.city_data()` which has a closure. When we use `.city_data()`, it gives us the years and the populations and a closure, so we can do what we want with the data. The closure type is `FnMut` so we can change the data. It looks like this:
+`City` 有兩個函式：`new()` 用於建立新的 `City`, `.city_data()` 有個閉包引數。當我們使用 `.city_data()` 時，它給我們提供了年份和人口以及閉包，所以我們可以對資料做我們想做的事情。閉包型別是 `FnMut`，所以我們可以改變資料。它看起來像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -8631,15 +8631,15 @@ impl City {
         }
     }
 
-    fn city_data<F>(&mut self, mut f: F) // We bring in self, but only f is generic F. f is the closure
+    fn city_data<F>(&mut self, mut f: F) // 我們帶入 self, 但只有 f 是泛型的 F. f 是閉包
 
     where
-        F: FnMut(&mut Vec<u32>, &mut Vec<u32>), // The closure takes mutable vectors of u32
-                                                // which are the year and population data
+        F: FnMut(&mut Vec<u32>, &mut Vec<u32>), // 閉包接受 u32 的可變向量
+                                                // 那些是年份和人口資料
     {
-        f(&mut self.years, &mut self.populations) // Finally this is the actual function. It says
-                                                  // "use a closure on self.years and self.populations"
-                                                  // We can do whatever we want with the closure
+        f(&mut self.years, &mut self.populations) // 最後這是實際的函式. 它說
+                                                  // "把 self.years 和 self.populations 用在閉包上"
+                                                  // 我們可以用閉包做我們想要做的事
     }
 }
 
@@ -8651,35 +8651,35 @@ fn main() {
         3_250, 15_300, 24_000, 45_900, 58_800, 119_800, 283_071, 478_974, 400_378, 401_694,
         406_703, 437_619,
     ];
-    // Now we can create our city
+    // 現在我們可以建立我們的城市
     let mut tallinn = City::new("Tallinn", years, populations);
 
-    // Now we have a .city_data() method that has a closure. We can do anything we want.
+    // 現在我們有 .city_data() 方法能傳入閉包. 我們可以做我們想做的任何事.
 
-    // First let's put the data for 5 years together and print it.
-    tallinn.city_data(|city_years, city_populations| { // We can call the input anything we want
+    // 首先讓我們一起放入 5 年的資料並印出來.
+    tallinn.city_data(|city_years, city_populations| { // 我們可以任意稱呼輸入名稱
         let new_vec = city_years
             .into_iter()
-            .zip(city_populations.into_iter()) // Zip the two together
-            .take(5)                           // but only take the first 5
-            .collect::<Vec<(_, _)>>(); // Tell Rust to decide the type inside the tuple
+            .zip(city_populations.into_iter()) // 兩個 Zip 在一起
+            .take(5)                           // 但只有拿前 5 個
+            .collect::<Vec<(_, _)>>(); // 叫 Rust 決定元組內部的型別
         println!("{:?}", new_vec);
     });
 
-    // Now let's add some data for the year 2030
-    tallinn.city_data(|x, y| { // This time we just call the input x and y
+    // 現在讓我們給 2030 年份加上一些資料
+    tallinn.city_data(|x, y| { // 這次我們只稱呼輸入為 x 和 y
         x.push(2030);
         y.push(500_000);
     });
 
-    // We don't want the 1834 data anymore
+    // 我們不再想要 1834 的資料
     tallinn.city_data(|x, y| {
         let position_option = x.iter().position(|x| *x == 1834);
         if let Some(position) = position_option {
             println!(
                 "Going to delete {} at position {:?} now.",
                 x[position], position
-            ); // Confirm that we delete the right item
+            ); // 確認我們刪除了對的元素
             x.remove(position);
             y.remove(position);
         }
@@ -8692,7 +8692,7 @@ fn main() {
 }
 ```
 
-This will print the result of all the times we called `.city_data().` It is:
+印出一直以來我們呼叫 `.city_data()` 的結果。就是：
 
 ```text
 [(1372, 3250), (1834, 15300), (1851, 24000), (1881, 45900), (1897, 58800)]
