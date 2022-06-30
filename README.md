@@ -106,11 +106,11 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [impl 特徵](#impl-特徵)
   - [Arc](#arc)
   - [通道](#通道)
-  - [Reading Rust documentation](#reading-rust-documentation)
+  - [閱讀 Rust 文件](#閱讀-rust-文件)
     - [assert_eq!](#assert_eq)
-    - [Searching](#searching)
-    - [[src] button](#src-button)
-    - [Information on traits](#information-on-traits)
+    - [搜尋](#搜尋)
+    - [[src] 按鈕](#src-按鈕)
+    - [特徵資訊](#特徵資訊)
   - [Attributes](#attributes)
   - [Box](#box)
   - [Box around traits](#box-around-traits)
@@ -9305,13 +9305,13 @@ fn main() {
 }
 ```
 
-## Reading Rust documentation
+## 閱讀 Rust 文件
 
-It's important to know how to read documentation in Rust so you can understand what other people wrote. Here are some things to know in Rust documentation:
+知道如何閱讀 Rust 文件是很重要的，這樣你才能理解其他人寫的東西。這裡有一些 Rust 文件中需要知道的事情：
 
 ### assert_eq!
 
-You saw that `assert_eq!` is used when doing testing. You put two items inside the function and the program will panic if they are not equal. Here is a simple example where we need an even number.
+你會看到 `assert_eq!` 被用在做測試的時候。你把兩個元素放進函數裡面，如果它們不相等程式就會恐慌。這裡是我們需要偶數的簡單範例：
 
 ```rust
 fn main() {
@@ -9319,13 +9319,13 @@ fn main() {
 }
 
 fn prints_number(input: i32) {
-    assert_eq!(input % 2, 0); // number must be equal.
-                              // If number % 2 is not 0, it panics
+    assert_eq!(input % 2, 0); // 數字必須相等.
+                              // 如果數字 % 2 不是 0 就恐慌
     println!("The number is not odd. It is {}", input);
 }
 ```
 
-Maybe you don't have any plans to use `assert_eq!` in your code, but it is everywhere in Rust documentation. This is because in a document you would need a lot of room to `println!` everything. Also, you would require `Display` or `Debug` for the things you want to print. That's why documentation has `assert_eq!` everywhere. Here is an example from here [https://doc.rust-lang.org/std/vec/struct.Vec.html](https://doc.rust-lang.org/std/vec/struct.Vec.html) showing how to use a Vec:
+也許你沒有任何計劃要在你的程式碼中使用 `assert_eq!`，但它在 Rust 文件中隨處可見。這是因為在文件中，你需要非常大的空間來 `println!` 所有東西。另外，對於你想印的東西也要具備 `Display` 或 `Debug` 才行。這就是為什麼文件中到處都有 `assert_eq!` 的原因。這裡的範例來自[https://doc.rust-lang.org/std/vec/struct.Vec.html](https://doc.rust-lang.org/std/vec/struct.Vec.html)，展示如何使用向量：
 
 ```rust
 fn main() {
@@ -9351,7 +9351,7 @@ fn main() {
 }
 ```
 
-In these examples, you can just think of `assert_eq!(a, b)` as saying "a is b". Now look at the same example with comments on the right. The comments show what it actually means.
+在這些範例中，你可以只把 `assert_eq!(a, b)` 想成是在說 "a 是 b"。現在來看看右邊帶有註解的相同範例。註解顯示了它的實際含義。
 
 ```rust
 fn main() {
@@ -9359,38 +9359,38 @@ fn main() {
     vec.push(1);
     vec.push(2);
 
-    assert_eq!(vec.len(), 2); // "The vec length is 2"
-    assert_eq!(vec[0], 1); // "vec[0] is 1"
+    assert_eq!(vec.len(), 2); // "向量長度是 2"
+    assert_eq!(vec[0], 1); // "vec[0] 是 1"
 
-    assert_eq!(vec.pop(), Some(2)); // "When you use .pop(), you get Some()"
-    assert_eq!(vec.len(), 1); // "The vec length is now 1"
+    assert_eq!(vec.pop(), Some(2)); // "當你使用 .pop(), 你得到 Some()"
+    assert_eq!(vec.len(), 1); // "向量長度現在是 1"
 
     vec[0] = 7;
-    assert_eq!(vec[0], 7); // "Vec[0] is 7"
+    assert_eq!(vec[0], 7); // "Vec[0] 是 7"
 
     vec.extend([1, 2, 3].iter().copied());
 
     for x in &vec {
         println!("{}", x);
     }
-    assert_eq!(vec, [7, 1, 2, 3]); // "The vec now has [7, 1, 2, 3]"
+    assert_eq!(vec, [7, 1, 2, 3]); // "向量現在有 [7, 1, 2, 3]"
 }
 ```
 
-### Searching
+### 搜尋
 
-The top bar of a Rust document is the search bar. It shows you results as you type. When you go down a page you can't see the search bar anymore, but if you press the **s** key on the keyboard you can search again. So pressing **s** anywhere lets you search right away.
+Rust 文件的頂端是搜尋欄。它在你一邊輸入時一邊顯示結果。當你往下翻頁時，你沒辨法再看到搜尋欄，但如果你按鍵盤上的 **s** 鍵就可以再次搜尋。所以在任何地方按下 **s** 鍵可以讓你馬上搜索。
 
-### [src] button
+### [src] 按鈕
 
-Usually the code for a method, struct, etc. will not be complete. This is because you don't usually need to see the full source to know how it works, and the full code can be confusing. But if you want to know more, you can click on [src] and see everything. For example, on the page for `String` you can see this signature for `.with_capacity()`:
+通常方法、結構體等的程式碼不會是完整的。這是因為你通常不需要看到完整的原始碼就能知道它是如何工作的，而完整的程式碼可能會讓人困惑。但如果你想知道更多，你可以點選 [src] 就可以看到所有的內容。例如，在 `String` 的頁面上，你可以看到 `.with_capacity()` 的這個簽名：
 
 ```rust
 // 🚧
 pub fn with_capacity(capacity: usize) -> String
 ```
 
-Okay, so you put a number in and it gives you a `String`. That's easy, but maybe we are curious and want to see more. If you click on [src] you can see this:
+好了，你輸入數字，它給你 `String`。這很容易，但也許我們很好奇，想看更多。如果你點選 [src] 你可以看到這個：
 
 ```rust
 // 🚧
@@ -9399,11 +9399,11 @@ pub fn with_capacity(capacity: usize) -> String {
 }
 ```
 
-Interesting! Now you can see that a String is a kind of `Vec`. And actually a `String` is a vector of `u8` bytes, which is interesting to know. You didn't need to know that to use the `with_capacity` method so you only see it if you click [src]. So clicking on [src] is a good idea if the document doesn't have much detail and you want to know more.
+有趣吧！現在你可以看到，字串是一種 `Vec`。而實際上 `String` 是 `u8` 位元組的向量，這很有意思。你不需要知道就可以使用 `with_capacity` 的方法，你只有點選 [src] 才能看到。所以如果文件沒有太多細節，而你又想知道更多的話，點選 [src] 是個好主意。
 
-### Information on traits
+### 特徵資訊
 
-The important part of the documentation for a trait is "Required Methods" on the left. If you see Required Methods, it probably means that you have to write the method yourself. For example, for `Iterator` you need to write the `.next()` method. And for `From` you need to write the `.from()` method. But some traits can be implemented with just an **attribute**, like we see in `#[derive(Debug)]`. `Debug` needs the `.fmt()` method, but usually you just use `#[derive(Debug)]` unless you want to do it yourself. That's why the page on `std::fmt::Debug` says that "Generally speaking, you should just derive a Debug implementation."
+特徵的文件最重要部分在於左邊的 "Required Methods"。如果你有看到 "Required Methods"，可能意味著你必須自己寫出方法。例如，對於 `Iterator`，你需要實作 `.next()` 方法。而對於 `From`，你需要實作 `.from()` 方法。但是有些特徵只需要**屬性**就可以被實作出來，比如我們見過的 `#[derive(Debug)]`。`Debug` 需要 `.fmt()` 方法，但通常你只需要使用 `#[derive(Debug)]`，除非你想自己動手做。這就是為什麼在 `std::fmt::Debug` 的頁面上有說"一般來說，你應該只需要推導出 Debug 的實作"。
 
 ## Attributes
 
