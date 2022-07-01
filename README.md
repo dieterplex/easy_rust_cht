@@ -111,7 +111,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [搜尋](#搜尋)
     - [[src] 按鈕](#src-按鈕)
     - [特徵資訊](#特徵資訊)
-  - [Attributes](#attributes)
+  - [屬性](#屬性)
   - [Box](#box)
   - [Box around traits](#box-around-traits)
   - [Default and the builder pattern](#default-and-the-builder-pattern)
@@ -9405,13 +9405,13 @@ pub fn with_capacity(capacity: usize) -> String {
 
 特徵的文件最重要部分在於左邊的 "Required Methods"。如果你有看到 "Required Methods"，可能意味著你必須自己寫出方法。例如，對於 `Iterator`，你需要實作 `.next()` 方法。而對於 `From`，你需要實作 `.from()` 方法。但是有些特徵只需要**屬性**就可以被實作出來，比如我們見過的 `#[derive(Debug)]`。`Debug` 需要 `.fmt()` 方法，但通常你只需要使用 `#[derive(Debug)]`，除非你想自己動手做。這就是為什麼在 `std::fmt::Debug` 的頁面上有說"一般來說，你應該只需要推導出 Debug 的實作"。
 
-## Attributes
+## 屬性
 
-You have seen code like `#[derive(Debug)]` before: this type of code is called an *attribute*. These attributes are small pieces of code that give information to the compiler. They are not easy to create, but they are very easy to use. If you write an attribute with just `#` then it will affect the code on the next line. But if you write it with `#!` then it will affect everything in its own space.
+你之前有見過 `#[derive(Debug)]` 這樣的程式碼：這種類型的程式碼叫做 *屬性(Attribute)*。這些屬性是能提供資訊給編譯器的小塊程式碼。它們雖然不容易建立，但使用起來非常方便。如果你只用 `#` 來寫屬性，那麼它將影響下一行的程式碼。但如果你是用 `#!` 來寫，那麼將影響它自己空間裡的一切。
 
-Here are some attributes you will see a lot:
+這裡是一些你會經常見到的屬性：
 
-`#[allow(dead_code)]` and `#[allow(unused_variables)]`. If you write code that you don't use, Rust will still compile but it will let you know. For example, here is a struct with nothing in it and one variable. We don't use either of them.
+`#[allow(dead_code)]` 和 `#[allow(unused_variables)]`。如果你寫了用不到的程式碼，Rust 仍然會編譯，但會讓你知道。例如這裡是裡面什麼都沒有結構體和一個變數。它們任何一個我們都沒有用。
 
 ```rust
 struct JustAStruct {}
@@ -9421,7 +9421,7 @@ fn main() {
 }
 ```
 
-If you write this, Rust will remind you that you didn't use them:
+如果你這樣寫，Rust 會提醒你你沒有使用它們：
 
 ```text
 warning: unused variable: `some_char`
@@ -9441,7 +9441,7 @@ warning: struct is never constructed: `JustAStruct`
   = note: `#[warn(dead_code)]` on by default
 ```
 
-We know that you can write a `_` before the name to make the compiler be quiet:
+我們知道可以在名字前面寫 `_`，讓編譯器安靜下來：
 
 ```rust
 struct _JustAStruct {}
@@ -9451,29 +9451,29 @@ fn main() {
 }
 ```
 
-but you can also use attributes. You'll notice in the message that it uses `#[warn(unused_variables)]` and `#[warn(dead_code)]`. In our code, `JustAStruct` is dead code, and `some_char` is an unused variable. The opposite of `warn` is `allow`, so we can write this and it will not say anything:
+但你也可以使用屬性。你會注意到在訊息中，它使用了 `#[warn(unused_variables)]` 和 `#[warn(dead_code)]`。在我們的程式碼中，`JustAStruct` 是死程式碼(dead code)，而 `some_char` 是個未使用的變數。`warn` 的反面是 `allow`，所以我們可以這樣寫，它就不會再說什麼了：
 
 ```rust
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
-struct Struct1 {} // Create five structs
+struct Struct1 {} // 做五個結構體
 struct Struct2 {}
 struct Struct3 {}
 struct Struct4 {}
 struct Struct5 {}
 
 fn main() {
-    let char1 = 'ん'; // and four variables. We don't use any of them but the compiler is quiet
+    let char1 = 'ん'; // 還有四個變數. 我們不使用它們任何一個但編譯器安靜了
     let char2 = ';';
     let some_str = "I'm just a regular &str";
     let some_vec = vec!["I", "am", "just", "a", "vec"];
 }
 ```
 
-Of course, dealing with dead code and unused variables is important. But sometimes you want the compiler to be quiet for a while. Or you might need to show some code or teach people Rust and don't want to confuse them with compiler messages.
+當然，處理死程式碼和未使用的變數是很重要的。但有時你希望編譯器安靜一段時間。或者是你可能需要展示一些程式碼或教人們 Rust，但又不想讓編譯器訊息來迷惑他們的時候。
 
-`#[derive(TraitName)]` lets you derive some traits for structs and enums that you create. This works with many common traits that can be automatically derived. Some like `Display` can't be automatically derived, because for `Display` you have to choose how to display:
+`#[derive(TraitName)]` 讓你可以給你建立的結構和列舉推導出一些特徵。這適用於許多可以被自動推導的常見特徵。有些像 `Display` 這樣的特徵不能自動推導，因為對於 `Display`，你必須選擇如何去顯示：
 
 ```rust
 // ⚠️
@@ -9489,7 +9489,7 @@ fn main() {
 }
 ```
 
-The error message will tell you that.
+錯誤訊息會告訴你：
 
 ```text
 error: cannot find derive macro `Display` in this scope
@@ -9499,7 +9499,7 @@ error: cannot find derive macro `Display` in this scope
   |
 ```
 
-But for traits that you can automatically derive, you can put in as many as you like. Let's give `HoldsAString` seven traits in a single line, just for fun, even though it only needs one.
+但是對於可以自動推匯出的特徵，你可以隨心所欲的放進去。讓我們在一行裡加入七個特徵給 `HoldsAString`，當然只是為了好玩，儘管它只需要一個。
 
 ```rust
 #[derive(Debug, PartialEq, Eq, Ord, PartialOrd, Hash, Clone)]
@@ -9515,13 +9515,13 @@ fn main() {
 }
 ```
 
-Also, you can make a struct `Copy` if (and only if) its fields are all `Copy`. `HoldsAString` has `String` which is not `Copy` so you can't use `#[derive(Copy)]` for it. But for this struct you can:
+另外，如果(也只有在)結構體的所有欄位都實作了 `Copy` 的情況下，你才可以讓結構體是 `Copy` 的。`HoldsAString` 裡的 `String` 不是 `Copy`，所以你不能對它使用 `#[derive(Copy)]`。但是對下面這個結構是可以的：
 
 ```rust
-#[derive(Clone, Copy)] // You also need Clone to use Copy
+#[derive(Clone, Copy)] // 你也需要 Clone 來使用 Copy
 struct NumberAndBool {
-    number: i32, // i32 is Copy
-    true_or_false: bool // bool is also Copy. So no problem
+    number: i32, // i32 是 Copy
+    true_or_false: bool // bool 也是 Copy. 所以沒問題
 }
 
 fn does_nothing(input: NumberAndBool) {
@@ -9535,17 +9535,17 @@ fn main() {
     };
 
     does_nothing(number_and_bool);
-    does_nothing(number_and_bool); // If it didn't have copy, this would make an error
+    does_nothing(number_and_bool); // 如果它不能拷貝, 這裡會造成錯誤
 }
 ```
 
-`#[cfg()]` means configuration and tells the compiler whether to run code or not. You see it usually like this: `#[cfg(test)]`. You use that when writing test functions so that it knows not to run them unless you are testing. Then you can have tests next to your code but the compiler won't run them unless you tell it to.
+`#[cfg()]` 的意思是組態，告訴編譯器是否執行程式碼。它通常是像這樣的：`#[cfg(test)]`。你會在寫測試函式的時候用到，這樣它就知道不要執行它們除非你在跑測試。那麼你可以在你的程式碼附近寫測試，但編譯器不會執行它們，除非你告訴它這麼做。
 
-One other example using `cfg` is `#[cfg(target_os = "windows")]`. With that you can tell the compiler to only run the code on Windows, or Linux, or anything else.
+另一個會使用 `cfg` 的例子是 `#[cfg(target_os = "windows")]`。有了它，你可以告訴編譯器只能在 Windows 上執行程式碼，Linux 或其他平臺則不能。
 
-`#![no_std]` is an interesting attribute that tells Rust not to bring in the standard library. That means you don't have `Vec`, `String`, and anything else in the standard library. You will see this in code for small devices that don't have much memory or space.
+`#![no_std]` 是個有趣的屬性，它告訴 Rust 不要引入標準函式庫。這表示你沒有 `Vec`、`String` 以及標準函式庫中的其他任何東西可以用。你會在那些沒有多少記憶體或空間的小型裝置的程式碼中看到這個。
 
-You can see many more attributes [here](https://doc.rust-lang.org/reference/attributes.html).
+你可以在[這裡](https://doc.rust-lang.org/reference/attributes.html)看到更多的屬性。
 
 
 ## Box
