@@ -9550,36 +9550,36 @@ fn main() {
 
 ## Box
 
-`Box` is a very convenient type in Rust. When you use a `Box`, you can put a type on the heap instead of the stack. To make a new `Box`, just use `Box::new()` and put the item inside.
+`Box` 是 Rust 中非常方便的型別。當你使用 `Box` 時，你可以把型別放在堆積上而不是堆疊上。要做出新的 `Box`，只要用 `Box::new()` 並把元素放在裡面即可。
 
 ```rust
-fn just_takes_a_variable<T>(item: T) {} // Takes anything and drops it.
+fn just_takes_a_variable<T>(item: T) {} // 接受任何東西並丟棄.
 
 fn main() {
-    let my_number = 1; // This is an i32
+    let my_number = 1; // 這是 i32
     just_takes_a_variable(my_number);
-    just_takes_a_variable(my_number); // Using this function twice is no problem, because it's Copy
+    just_takes_a_variable(my_number); // 使用這個函式兩次也沒問題, 因為它是 Copy
 
-    let my_box = Box::new(1); // This is a Box<i32>
-    just_takes_a_variable(my_box.clone()); // Without .clone() the second function would make an error
-    just_takes_a_variable(my_box); // because Box is not Copy
+    let my_box = Box::new(1); // 這是 Box<i32>
+    just_takes_a_variable(my_box.clone()); // 沒有 .clone() 時第二個函式會造成錯誤
+    just_takes_a_variable(my_box); // 因為 Box 不是 Copy
 }
 ```
 
-At first it is hard to imagine where to use it, but you use it in Rust a lot. You remember that `&` is used for `str` because the compiler doesn't know the size of a `str`: it can be any length. But the `&` reference is always the same length, so the compiler can use it. `Box` is similar. Also, you can use `*` on a `Box` to get to the value, just like with `&`:
+一開始很難想像能在哪裡使用它，但你會在 Rust 中經常使用它。你記得 `&` 被用在 `str` 是因為編譯器不知道 `str` 的大小：它可以是任何長度。但是用 `&` 的參考永遠是相同的長度，所以編譯器可以使用它。`Box` 也類似。另外你也可以在 `Box` 上使用 `*` 來獲得值，就像使用 `&` 一樣：
 
 ```rust
 fn main() {
-    let my_box = Box::new(1); // This is a Box<i32>
-    let an_integer = *my_box; // This is an i32
+    let my_box = Box::new(1); // 這是 Box<i32>
+    let an_integer = *my_box; // 這是 i32
     println!("{:?}", my_box);
     println!("{:?}", an_integer);
 }
 ```
 
-This is why Box is called a "smart pointer", because it is like a `&` reference (a kind of pointer) but can do more things.
+這就是為什麼 Box 被稱為"智慧指標(smart pointer)"的原因，因為它就像 `&` 的參考(一種指標)，但可以做更多的事情。
 
-You can also use a Box to create structs with the same struct inside. These are called *recursive*, which means that inside Struct A is maybe another Struct A. Sometimes you can use Boxes to create linked lists, although these lists are not very popular in Rust. But if you want to create a recursive struct, you can use a `Box`. Here's what happens if you try without a `Box`:
+你也可以使用 Box 來建立裡面有相同結構的結構體。這些是被稱為 *遞迴* 的結構，這意味著在 Struct A 裡面也許是另一個 Struct A，有時你可以使用 Box 來建立連結串列，儘管這在 Rust 中並不十分流行。但如果你想建立遞迴結構體，你可以使用 `Box`。如果你試著不用 `Box` 會發生什麼：
 
 
 ```rust
@@ -9588,7 +9588,7 @@ struct List {
 }
 ```
 
-This simple `List` has one item, that may be `Some<List>` (another list), or `None`. Because you can choose `None`, it will not be recursive forever. But the compiler still doesn't know the size:
+這個簡單的 `List` 有一個元素，可能是個 `Some<List>` (另一個列表)，也可能是 `None`。因為你可以選擇 `None`，所以它不會永遠遞迴。但是編譯器還是不知道大小：
 
 ```text
 error[E0072]: recursive type `List` has infinite size
@@ -9602,7 +9602,7 @@ error[E0072]: recursive type `List` has infinite size
    = help: insert indirection (e.g., a `Box`, `Rc`, or `&`) at some point to make `List` representable
 ```
 
-You can see that it even suggests trying a `Box`. So let's put a `Box` around List:
+你可以看到它甚至建議嘗試 `Box`。所以讓我們用 `Box` 把 List 包起來：
 
 ```rust
 struct List {
@@ -9611,7 +9611,7 @@ struct List {
 fn main() {}
 ```
 
-Now the compiler is fine with the `List`, because everything is behind a `Box`, and it knows the size of a `Box`. Then a very simple list might look like this:
+現在編譯器就可以用 `List` 了，因為所有的東西都在 `Box` 後面，而且它知道 `Box` 的大小。那麼一個非常簡單的列表可能像這樣：
 
 ```rust
 struct List {
@@ -9631,9 +9631,9 @@ fn main() {
 }
 ```
 
-Even without data it is a bit complicated, and Rust does not use this type of pattern very much. This is because Rust has strict rules on borrowing and ownership, as you know. But if you want to start a list like this (a linked list), `Box` can help.
+即使沒有資料也有點複雜，Rust 並不怎麼常用這種類型的模式(pattern)。這是因為 Rust 如你所知的對借用(borrowing)和所有權(ownership)有嚴格的規定。但如果你想開始寫這樣的列表(連結串列)時，`Box` 能幫上忙。
 
-A `Box` also lets you use `std::mem::drop` on it, because it's on the heap. That can be convenient sometimes.
+`Box` 還可以讓你對它使用 `std::mem::drop`，因為它放在堆積上。這有時候會很方便。
 
 ## Box around traits
 
