@@ -113,7 +113,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [特徵資訊](#特徵資訊)
   - [屬性](#屬性)
   - [Box](#box)
-  - [Box around traits](#box-around-traits)
+  - [Box 包裹的特徵](#box-包裹的特徵)
   - [Default and the builder pattern](#default-and-the-builder-pattern)
   - [Deref and DerefMut](#deref-and-derefmut)
   - [Crates and modules](#crates-and-modules)
@@ -9635,9 +9635,9 @@ fn main() {
 
 `Box` 還可以讓你對它使用 `std::mem::drop`，因為它放在堆積上。這有時候會很方便。
 
-## Box around traits
+## Box 包裹的特徵
 
-`Box` is very useful for returning traits. You know that you can write traits in generic functions like in this example:
+`Box` 對於回傳特徵非常有用。你知道你可以把特徵用在泛型函式就像這個範例：
 
 ```rust
 use std::fmt::Display;
@@ -9651,15 +9651,15 @@ fn displays_it<T: Display>(input: T) {
 fn main() {}
 ```
 
-This only takes something with `Display`, so it can't accept our struct `DoesntImplementDisplay`. But it can take in a lot of others like `String`.
+這個函式只能接受是 `Display` 的東西，所以它不能接納我們的 `DoesntImplementDisplay` 結構體。但是它可以接受很多其他的東西，比如 `String`。
 
-You also saw that we can use `impl Trait` to return other traits, or closures. `Box` can be used in a similar way. You can use a `Box` because otherwise the compiler won't know the size of the value. This example shows that a trait can be used on something of any size:
+你也看到了，我們可以使用 `impl 特徵` 來回傳其他的特徵或閉包。`Box` 也可以用類似的方式來使用。你可以使用 `Box` 是因為不這樣編譯器將不會知道值的大小。這個範例證明特徵可以用在任何大小的東西上：
 
 ```rust
-#![allow(dead_code)] // Tell the compiler to be quiet
-use std::mem::size_of; // This gives the size of a type
+#![allow(dead_code)] // 告訴編譯器要安靜
+use std::mem::size_of; // 這會給出型別的大小
 
-trait JustATrait {} // We will implement this on everything
+trait JustATrait {} // 我們將會實作這個在所有東西上
 
 enum EnumOfNumbers {
     I8(i8),
@@ -9690,7 +9690,7 @@ struct StructOfOtherTypes {
 impl JustATrait for StructOfOtherTypes {}
 
 struct ArrayAndI8 {
-    array: [i8; 1000], // This one will be very large
+    array: [i8; 1000], // 這一個將會非常大
     an_i8: i8,
     in_u8: u8,
 }
@@ -9708,7 +9708,7 @@ fn main() {
 }
 ```
 
-When we print the size of these, we get `2, 3, 32, 32, 1002`. So if you were to do this, it would give an error:
+當我們列印這些東西大小的時候，我們得到 `2, 3, 32, 32, 1002`。所以如果你像下面這樣做的話會造成錯誤：
 
 ```rust
 // ⚠️
@@ -9718,7 +9718,7 @@ fn returns_just_a_trait() -> JustATrait {
 }
 ```
 
-It says:
+它說：
 
 ```text
 error[E0746]: return type cannot have an unboxed trait object
@@ -9728,9 +9728,9 @@ error[E0746]: return type cannot have an unboxed trait object
    |                              ^^^^^^^^^^ doesn't have a size known at compile-time
 ```
 
-And this is true, because the size could be 2, 3, 32, 1002, or anything else. So we put it in a `Box` instead. Here we also add the keyword `dyn`. `dyn` is a word that shows you that you are talking about a trait, not a struct or anything else.
+而這是真的，因為大小可以是 2、3、32、1002，或者其他任何東西。所以我們把它放在 `Box` 中。在這裡我們還加上了 `dyn` 這個關鍵詞。`dyn` 這個詞告訴你，你說的是個特徵，而不是結構體或其他任何東西。
 
-So you can change the function to this:
+所以你可以把函式改成這樣：
 
 ```rust
 // 🚧
@@ -9740,13 +9740,13 @@ fn returns_just_a_trait() -> Box<dyn JustATrait> {
 }
 ```
 
-And now it works, because on the stack is just a `Box` and we know the size of `Box`.
+現在它能執行了，因為在堆疊上只是個 `Box`，而我們也知道 `Box` 的大小。
 
-You see this a lot in the form `Box<dyn Error>`, because sometimes you can have more than one possible error.
+你會經常看到 `Box<dyn Error>` 這種形式，因為有時你可能會有多個可能的錯誤。
 
-We can quickly create two error types to show this. To make an official error type, you have to implement `std::error::Error` for it. That part is easy: just write `impl std::error::Error {}`. But errors also need `Debug` and `Display` so they can give information on the problem. `Debug` is easy with `#[derive(Debug)]` but `Display` needs the `.fmt()` method. We did this once before.
+我們可以快速建立兩個錯誤型別來顯示這一點。要建立正式的錯誤型別，你必須為它實作 `std::error::Error`。這部分很容易：只要寫出 `impl std::error::Error {}`。但錯誤型別還需要 `Debug` 和 `Display`，這樣才能給出問題的資訊。`Debug` 很容易，只要加上 `#[derive(Debug)]` 就行，但 `Display` 需要 `.fmt()` 方法。我們之前做過一次。
 
-The code looks like this:
+程式碼像這樣：
 
 ```rust
 use std::error::Error;
@@ -9755,16 +9755,16 @@ use std::fmt;
 #[derive(Debug)]
 struct ErrorOne;
 
-impl Error for ErrorOne {} // Now it is an error type with Debug. Time for Display:
+impl Error for ErrorOne {} // 現在錯誤型別有 Debug 了. 換 Display:
 
 impl fmt::Display for ErrorOne {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "You got the first error!") // All it does is write this message
+        write!(f, "You got the first error!") // 所有要做的就是寫這段訊息
     }
 }
 
 
-#[derive(Debug)] // Do the same thing with ErrorTwo
+#[derive(Debug)] // 對 ErrorTwo 做一樣的事
 struct ErrorTwo;
 
 impl Error for ErrorTwo {}
@@ -9775,20 +9775,20 @@ impl fmt::Display for ErrorTwo {
     }
 }
 
-// Make a function that just returns a String or an error
-fn returns_errors(input: u8) -> Result<String, Box<dyn Error>> { // With Box<dyn Error> you can return anything that has the Error trait
+// 做出只回傳 String 或錯誤的函式
+fn returns_errors(input: u8) -> Result<String, Box<dyn Error>> { // 有了 Box<dyn Error> 你就能回傳任何有 Error 特徵的東西
 
     match input {
-        0 => Err(Box::new(ErrorOne)), // Don't forget to put it in a box
+        0 => Err(Box::new(ErrorOne)), // 不要忘記放進 Box 裡
         1 => Err(Box::new(ErrorTwo)),
-        _ => Ok("Looks fine to me".to_string()), // This is the success type
+        _ => Ok("Looks fine to me".to_string()), // 這是成功的型別
     }
 
 }
 
 fn main() {
 
-    let vec_of_u8s = vec![0_u8, 1, 80]; // Three numbers to try out
+    let vec_of_u8s = vec![0_u8, 1, 80]; // 用來嘗試的三個數字
 
     for number in vec_of_u8s {
         match returns_errors(number) {
@@ -9799,7 +9799,7 @@ fn main() {
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 You got the first error!
@@ -9807,7 +9807,7 @@ You got the second error!
 Looks fine to me
 ```
 
-If we didn't have a `Box<dyn Error>` and wrote this, we would have a problem:
+如果我們在沒有 `Box<dyn Error>` 時寫成這樣，我們就會有問題了：
 
 ```rust
 // ⚠️
@@ -9820,14 +9820,14 @@ fn returns_errors(input: u8) -> Result<String, Error> {
 }
 ```
 
-It will tell you:
+它會告訴你：
 
 ```text
 21  | fn returns_errors(input: u8) -> Result<String, Error> {
     |                                 ^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
 ```
 
-This is not surprising, because we know that a trait can work on many things, and they each have different sizes.
+這並不是很意外，因為我們知道特徵可以用在很多東西上，而且它們各自有不同的大小。
 
 ## Default and the builder pattern
 
