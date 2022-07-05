@@ -114,7 +114,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [屬性](#屬性)
   - [Box](#box)
   - [Box 包裹的特徵](#box-包裹的特徵)
-  - [Default and the builder pattern](#default-and-the-builder-pattern)
+  - [Default 和生成器模式](#default-和生成器模式)
   - [Deref and DerefMut](#deref-and-derefmut)
   - [Crates and modules](#crates-and-modules)
   - [Testing](#testing)
@@ -9829,9 +9829,9 @@ fn returns_errors(input: u8) -> Result<String, Error> {
 
 這並不是很意外，因為我們知道特徵可以用在很多東西上，而且它們各自有不同的大小。
 
-## Default and the builder pattern
+## Default 和生成器模式
 
-You can implement the `Default` trait to give values to a `struct` or `enum` that you think will be most common. The builder pattern works nicely with this to let users easily make changes when they want. First let's look at `Default`. Actually, most general types in Rust already have `Default`. They are not surprising: 0, "" (empty strings), `false`, etc.
+你可以實作 `Default` 特徵在你認為最常見的 `struct` 或 `enum` 上用來賦值。生成器模式可以很好地和它配合，來讓使用者在需要時輕鬆地進行修改。首先我們來看看 `Default`。實際上，在 Rust 大多數的通用型別已經有 `Default`。它們並不另人意外：像是 0、""(空字串)、`false`, 等等。
 
 ```rust
 fn main() {
@@ -9843,9 +9843,9 @@ fn main() {
 }
 ```
 
-This prints `'0', '', 'false'`.
+印出 `'0', '', 'false'`。
 
-So `Default` is like the `new` function except you don't have to enter anything. First we will make a `struct` that doesn't implement `Default` yet. It has a `new` function which we use to make a character named Billy with some stats.
+所以 `Default` 就像 `new` 函式一樣，除了你不需要輸入任何東西。首先我們將要建立還沒有實現 `Default` 的 `struct`。它有個 `new` 函式是我們用來做出名為比利 (Billy) 的角色並附帶一些角色個人資訊。
 
 ```rust
 struct Character {
@@ -9880,7 +9880,7 @@ fn main() {
 }
 ```
 
-But maybe in our world we want most of the characters to be named Billy, age 15, height 170, weight 70, and alive. We can implement `Default` so that we can just write `Character::default()`. It looks like this:
+但也許在我們的世界裡，我們希望大部分角色都叫比利，年齡 15 歲、身高 170、體重 70，還活著。我們可以實作 `Default`，這樣我們就可以只寫 `Character::default()`。它看起來像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -9938,9 +9938,9 @@ fn main() {
 }
 ```
 
-It prints `The character "Billy" is 15 years old.` Much easier!
+印出 `The character "Billy" is 15 years old.` 簡單多了!
 
-Now comes the builder pattern. We will have many Billys, so we will keep the default. But a lot of other characters will be only a bit different. The builder pattern lets us chain very small methods to change one value each time. Here is one such method for `Character`:
+現在我們來看生成器模式。我們會有很多比利，所以我們會保留預設的。但是很多其他角色只會有一點點不同。生成器模式讓我們可以把小方法連結起來，每次改變一個值。在 `Character` 裡這就是一個這樣的方法：
 
 ```rust
 fn height(mut self, height: u32) -> Self {    // 🚧
@@ -9949,9 +9949,9 @@ fn height(mut self, height: u32) -> Self {    // 🚧
 }
 ```
 
-Make sure to notice that it takes a `mut self`. We saw this once before, and it is not a mutable reference (`&mut self`). It takes ownership of `Self` and with `mut` it will be mutable, even if it wasn't mutable before. That's because `.height()` has full ownership and nobody else can touch it, so it is safe to be mutable. Then it just changes `self.height` and returns `Self` (which is `Character`).
+一定要注意，它接受的是 `mut self`。我們之前看到過一次，它不是可變引用(`&mut self`)。它取得了 `Self` 的所有權，並且有了 `mut`，它將是可變的，即使它先前不是可變的。這是因為 `.height()` 擁有完整的所有權，沒人能接觸它，所以它能安全的作為可變變數來用。接著它只是改變 `self.height`，並回傳 `Self`(也就是 `Character`)。
 
-So let's have three of these builder methods. They are almost the same:
+所以我們有三個這樣的生成器方法。它們幾乎是一樣的：
 
 ```rust
 fn height(mut self, height: u32) -> Self {     // 🚧
@@ -9970,7 +9970,7 @@ fn name(mut self, name: &str) -> Self {
 }
 ```
 
-Each one of those changes one variable and gives `Self` back: this is what you see in the builder pattern. So now we can write something like this to make a character: `let character_1 = Character::default().height(180).weight(60).name("Bobby");`. If you are building a library for someone else to use, this can make it easy for them. It's easy for the end user because it almost looks like natural English: "Give me a default character but with height of 180, weight of 60, and name of Bobby." So far our code looks like this:
+這些每一個都會改變其中一個變數，並給出 `Self` 回傳：這就是你在生成器模式中會看到的。所以現在我們類似這樣寫些東西來做出角色：`let character_1 = Character::default().height(180).weight(60).name("Bobby");`。如果你正在建造函式庫給別人使用，這可以讓他們很容易使用。對終端使用者來說很容易，因為它看起來幾乎像是自然的英語："給我預設的角色，但身高為 180、體重為 60、名字是 Bobby。" 到目前為止，我們的程式碼看起來像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -10040,9 +10040,9 @@ fn main() {
 }
 ```
 
-One last method to add is usually called `.build()`. This method is a sort of final check. When you give a user a method like `.height()` you can make sure that they only put in a `u32()`, but what if they enter 5000 for height? That might not be okay in the game you are making. We will use a final method called `.build()` that returns a `Result`. Inside it we will check if the user input is okay, and if it is, we will return an `Ok(Self)`.
+最後一個要新增的方法通常叫 `.build()`。這個方法是某種最終檢查。當你給使用者提供像是 `.height()` 這樣的方法時，你可以確保他們只輸入 `u32()`，但是如果他們輸入身高為 5000 時怎麼辦？在你正在製作的遊戲中那可能就不對了。我們將使用名為 `.build()` 的最後方法去回傳 `Result`。在它裡面我們將檢查使用者輸入是否正常，如果正常的話我們將回傳 `Ok(Self)`。
 
-First though let's change the `.new()` method. We don't want users to be free to create any kind of character anymore. So we'll move the values from `impl Default` to `.new()`. And now `.new()` doesn't take any input.
+不過首先讓我們更改 `.new()` 方法。我們不希望使用者再自由建立任何一種角色。所以我們將把 `impl Default` 的值移到 `.new()`。而現在 `.new()` 不再接受任何輸入。
 
 ```rust
     fn new() -> Self {    // 🚧
@@ -10056,9 +10056,9 @@ First though let's change the `.new()` method. We don't want users to be free to
     }
 ```
 
-That means we don't need `impl Default` anymore, because `.new()` has all the default values. So we can delete `impl Default`.
+這意味著我們不再需要 `impl Default` 了，因為 `.new()` 有所有的預設值。所以我們可以刪除 `impl Default`。
 
-Now our code looks like this:
+現在我們的程式碼像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -10112,9 +10112,9 @@ fn main() {
 }
 ```
 
-This prints the same thing: `Character { name: "Bobby", age: 15, height: 180, weight: 60, lifestate: Alive }`.
+印出來的結果一樣：`Character { name: "Bobby", age: 15, height: 180, weight: 60, lifestate: Alive }`。
 
-We are almost ready to write the method `.build()`, but there is one problem: how do we make the user use it? Right now a user can write `let x = Character::new().height(76767);` and get a `Character`. There are many ways to do this, and maybe you can imagine your own. But we will add a `can_use: bool` value to `Character`.
+我們幾乎已經準備好寫 `.build()` 方法了，但是還有個問題：要如何讓使用者使用它？現在使用者可以寫 `let x = Character::new().height(76767);`，然後得到 `Character`。有很多方式可以做到這一點，也許你能想出自己的方法。但是我們會在 `Character` 中加上 `can_use: bool` 的值。
 
 ```rust
 #[derive(Debug)]       // 🚧
@@ -10124,10 +10124,10 @@ struct Character {
     height: u32,
     weight: u32,
     lifestate: LifeState,
-    can_use: bool, // Set whether the user can use the character
+    can_use: bool, // 設定使用者是否能使用角色
 }
 
-\\ Cut other code
+// Cut other code
 
     fn new() -> Self {
         Self {
@@ -10136,14 +10136,14 @@ struct Character {
             height: 170,
             weight: 70,
             lifestate: LifeState::Alive,
-            can_use: true, // .new() always gives a good character, so it's true
+            can_use: true, // .new() 永遠給出好的角色, 所以是 true
         }
     }
 ```
 
-And for the other methods like `.height()`, we will set `can_use` to `false`. Only `.build()` will set it to `true` again, so now the user has to do a final check with `.build()`. We will make sure that `height` is not above 200 and `weight` is not above 300. Also, in our game there is a bad word called `smurf` that we don't want characters to use.
+而對於其他的方法，比如 `.height()`，我們會將 `can_use` 設定為 `false`。只有 `.build()` 會再次設定為 `true`，所以現在使用者要用 `.build()` 做最後的檢查。我們要確保 `height` 不高於 200，`weight` 不寬於 300。另外，在我們的遊戲中，有個不好的字叫 `smurf`，我們不希望任何角色使用它。
 
-Our `.build()` method looks like this:
+我們的 `.build()` 方法像這樣：
 
 ```rust
 fn build(mut self) -> Result<Character, String> {      // 🚧
@@ -10160,11 +10160,11 @@ fn build(mut self) -> Result<Character, String> {      // 🚧
 }
 ```
 
-`!self.name.to_lowercase().contains("smurf")` makes sure that the user doesn't write something like "SMURF" or "IamSmurf" . It makes the whole `String` lowercase (small letters), and checks for `.contains()` instead of `==`. And the `!` in front means "not".
+`!self.name.to_lowercase().contains("smurf")` 確保使用者不會寫出類似 "SMURF" 或 "IamSmurf" 的字樣。它讓整個 `String` 都變成小寫字母，並檢查 `.contains()` 而不是 `==`。而前面的 `!` 表示"不是"(邏輯運算補數)。
 
-If everything is okay, we set `can_use` to `true`, and give the character to the user inside `Ok`.
+如果一切正常，我們就把 `can_use` 設定為 `true`，然後把角色包在 `Ok` 裡面回傳給使用者。
 
-Now that our code is done, we will create three characters that don't work, and one character that does work. The final code looks like this:
+現在我們的程式碼已經完成了，我們將建立三個不能使用的角色，及一個能使用的角色。最後的程式碼像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -10174,7 +10174,7 @@ struct Character {
     height: u32,
     weight: u32,
     lifestate: LifeState,
-    can_use: bool, // Here is the new value
+    can_use: bool, // 這裡是新的值
 }
 
 #[derive(Debug)]
@@ -10193,13 +10193,13 @@ impl Character {
             height: 170,
             weight: 70,
             lifestate: LifeState::Alive,
-            can_use: true,  // .new() makes a fine character, so it is true
+            can_use: true,  // .new() 做出可用的角色, 所以是 true
         }
     }
 
     fn height(mut self, height: u32) -> Self {
         self.height = height;
-        self.can_use = false; // Now the user can't use the character
+        self.can_use = false; // 現在使用者還不能使用角色
         self
     }
 
@@ -10217,8 +10217,8 @@ impl Character {
 
     fn build(mut self) -> Result<Character, String> {
         if self.height < 200 && self.weight < 300 && !self.name.to_lowercase().contains("smurf") {
-            self.can_use = true;   // Everything is okay, so set to true
-            Ok(self)               // and return the character
+            self.can_use = true;   // 一切都沒問題, 所以設定為 true
+            Ok(self)               // 並回傳角色
         } else {
             Err("Could not create character. Characters must have:
 1) Height below 200
@@ -10230,29 +10230,29 @@ impl Character {
 }
 
 fn main() {
-    let character_with_smurf = Character::new().name("Lol I am Smurf!!").build(); // This one contains "smurf" - not okay
-    let character_too_tall = Character::new().height(400).build(); // Too tall - not okay
-    let character_too_heavy = Character::new().weight(500).build(); // Too heavy - not okay
+    let character_with_smurf = Character::new().name("Lol I am Smurf!!").build(); // 這一個包含 "smurf" - 不行
+    let character_too_tall = Character::new().height(400).build(); // 太高 - 不行
+    let character_too_heavy = Character::new().weight(500).build(); // 太重 - 不行
     let okay_character = Character::new()
         .name("Billybrobby")
         .height(180)
         .weight(100)
-        .build();   // This character is okay. Name is fine, height and weight are fine
+        .build();   // 這個角色沒問題. 名字很好、身高體重也都很好
 
-    // Now they are not Character, they are Result<Character, String>. So let's put them in a Vec so we can see them:
+    // 現在它們還不是 Character, 它們是 Result<Character, String>. 所以讓我們把它們放進 Vec 裡，那樣我們就能一起處理它們：
     let character_vec = vec![character_with_smurf, character_too_tall, character_too_heavy, okay_character];
 
-    for character in character_vec { // Now we will print the character if it's Ok, and print the error if it's Err
+    for character in character_vec { // 現在我們會印出角色如果是 Ok, 以及印出錯誤如果是 Err
         match character {
             Ok(character_info) => println!("{:?}", character_info),
             Err(err_info) => println!("{}", err_info),
         }
-        println!(); // Then add one more line
+        println!(); // 再多加上一個換行
     }
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 Could not create character. Characters must have:
