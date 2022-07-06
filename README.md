@@ -115,7 +115,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [Box](#box)
   - [Box 包裹的特徵](#box-包裹的特徵)
   - [Default 和生成器模式](#default-和生成器模式)
-  - [Deref and DerefMut](#deref-and-derefmut)
+  - [Deref 和 DerefMut](#deref-和-derefmut)
   - [Crates and modules](#crates-and-modules)
   - [Testing](#testing)
     - [Test-driven development](#test-driven-development)
@@ -10275,22 +10275,22 @@ Character { name: "Billybrobby", age: 15, height: 180, weight: 100, lifestate: A
 
 
 
-## Deref and DerefMut
+## Deref 和 DerefMut
 
-`Deref` is the trait that lets you use `*` to dereference something. We saw the word `Deref` before when using a tuple struct to make a new type, and now it's time to learn it.
+`Deref` 是讓你用 `*` 來對某些東西取值(dereference)的特徵。我們之前在使用元組結構體來做出新的型別時見過 `Deref` 這個字，現在是時候學會它了。
 
-We know that a reference is not the same as a value:
+我們知道，參考和值是不一樣的：
 
 ```rust
 // ⚠️
 fn main() {
-    let value = 7; // This is an i32
-    let reference = &7; // This is a &i32
+    let value = 7; // 這是個 i32
+    let reference = &7; // 這是個 &i32
     println!("{}", value == reference);
 }
 ```
 
-And Rust won't even give a `false` because it won't even compare the two.
+而 Rust 連 `false` 都不給，因為它甚至不會比較兩者。
 
 ```text
 error[E0277]: can't compare `{integer}` with `&{integer}`
@@ -10300,7 +10300,7 @@ error[E0277]: can't compare `{integer}` with `&{integer}`
   |                          ^^ no implementation for `{integer} == &{integer}`
 ```
 
-Of course, the solution here is `*`. So this will print `true`:
+當然，這裡的解法是使用 `*`。所以這將會印出 `true`：
 
 ```rust
 fn main() {
@@ -10311,9 +10311,9 @@ fn main() {
 ```
 
 
-Now let's imagine a simple type that just holds a number. It will be like a `Box`, and we have some ideas for some extra functions for it. But if we just give it a number, it won't be able to do much with it.
+現在讓我們想像一下只容納一個數字的簡單型別。它就像 `Box`，我們有些想法為它提供一些額外的功能。但如果我們只是給它一個數字，它就不能做那麼多了。
 
-We can't use `*` like we can with `Box`:
+我們不能像使用 `Box` 那樣使用 `*`：
 
 ```rust
 // ⚠️
@@ -10325,7 +10325,7 @@ fn main() {
 }
 ```
 
-The error is:
+錯誤訊息是：
 
 ```text
 error[E0614]: type `HoldsANumber` cannot be dereferenced
@@ -10334,11 +10334,11 @@ error[E0614]: type `HoldsANumber` cannot be dereferenced
 24 |     println!("{:?}", *my_number + 20);
 ```
 
-We can of course do this: `println!("{:?}", my_number.0 + 20);`. But then we are just adding a separate `u8` to the 20. It would be nice if we could just add them together. The message `cannot be dereferenced` gives us a clue: we need to implement `Deref`. Something simple that implements `Deref` is sometimes called a "smart pointer". A smart pointer can point to its item, has information about it, and can use its methods. Because right now we can add `my_number.0`, which is a `u8`, but we can't do much else with a `HoldsANumber`: all it has so far is `Debug`.
+我們當然可以做到這一點：`println!("{:?}", my_number.0 + 20);`。但是這樣的話，我們就是在 20 的基礎上再單獨加 `u8`。如果我們能把它們直接加在一起就更好了。`cannot be dereferenced` 這個訊息給了我們線索：我們需要實作 `Deref`。實作 `Deref` 的簡單東西有時被稱為"智慧指標(smart pointer)"。一個智慧指標可以指向它的元素，有它的資訊，並且可以使用它的方法。因為現在我們可以新增 `u8` 的 `my_number.0`，但我們不能用 `HoldsANumber` 來做其他的事情：到目前為止，它只有 `Debug`。
 
-Interesting fact: `String` is actually a smart pointer to `&str` and `Vec` is a smart pointer to array (or other types). So we have actually been using smart pointers since the beginning.
+有趣的事實是：`String` 其實是 `&str` 的智慧指標，`Vec` 是陣列(或其他型別)的智慧指標。所以我們其實從一開始就在使用智慧指標。
 
-Implementing `Deref` is not too hard and the examples in the standard library are easy. [Here's the sample code from the standard library](https://doc.rust-lang.org/std/ops/trait.Deref.html):
+實現 `Deref` 並不難，標準函式庫中的範例也很簡單。[這裡是標準函式庫中的範例程式碼](https://doc.rust-lang.org/std/ops/trait.Deref.html)：
 
 ```rust
 use std::ops::Deref;
@@ -10362,21 +10362,21 @@ fn main() {
 ```
 
 
-So we follow that and now our `Deref` looks like this:
+所以我們按照這個來，現在我們的 `Deref` 像這樣：
 
 ```rust
 // 🚧
 impl Deref for HoldsANumber {
-    type Target = u8; // Remember, this is the "associated type": the type that goes together.
-                      // You have to use the right type Target = (the type you want to return)
+    type Target = u8; // 記得, 這是"關聯型別(associated type)": 型別會一起寫在這.
+                      // 你必須要使用正確的 type Target = (你想回傳的型別)
 
-    fn deref(&self) -> &Self::Target { // Rust calls .deref() when you use *. We just defined Target as a u8 so this is easy to understand
-        &self.0   // We chose &self.0 because it's a tuple struct. In a named struct it would be something like "&self.number"
+    fn deref(&self) -> &Self::Target { // 當你使用 * 時 Rust 會呼叫 .deref(). 我們只定義 Target 為 u8 所以這很容易理解
+        &self.0   // 我們選擇 &self.0 因為這是元組結構體. 在具名結構體中它就會是像 "&self.number" 之類的東西
     }
 }
 ```
 
-So now we can do this with `*`:
+所以現在我們可以用 `*` 來做：
 
 ```rust
 use std::ops::Deref;
@@ -10397,7 +10397,7 @@ fn main() {
 }
 ```
 
-So that will print `40` and we didn't need to write `my_number.0`. That means we get the methods of `u8` and we can write our own methods for `HoldsANumber`. We will add our own simple method and use another method we get from `u8` called `.checked_sub()`. The `.checked_sub()` method is a safe subtraction that returns an `Option`. If it can do the subtraction then it gives it to you inside `Some`, and if it can't do it then it gives a `None`. Remember, a `u8` can't be negative so it's safer to do `.checked_sub()` so we don't panic.
+所以會印出 `40`，我們也不需要寫 `my_number.0` 了。這意味著我們有 `u8` 型別的方法可以用，我們可以為 `HoldsANumber` 寫出我們自己的方法。我們將新增自己寫的簡單方法，並使用我們從 `u8` 中得到的另一個方法，稱為 `.checked_sub()`。`.checked_sub()` 方法是安全的減法，它能回傳 `Option`。如果它能做減法，那麼它就會在 `Some` 裡面給你結果，如果它不能做減法，那麼它就會給你 `None`。記住，`u8` 不能是負數，所以還是 `.checked_sub()` 比較安全，這樣就不會恐慌了。
 
 ```rust
 use std::ops::Deref;
@@ -10420,19 +10420,19 @@ impl Deref for HoldsANumber {
 
 fn main() {
     let my_number = HoldsANumber(20);
-    println!("{:?}", my_number.checked_sub(100)); // This method comes from u8
-    my_number.prints_the_number_times_two(); // This is our own method
+    println!("{:?}", my_number.checked_sub(100)); // 這是來自 u8 的方法
+    my_number.prints_the_number_times_two(); // 這是我們自己的方法
 }
 ```
 
-This prints:
+印出：
 
 ```text
 None
 40
 ```
 
-We can also implement `DerefMut` so we can change the values through `*`. It looks almost the same. You need `Deref` before you can implement `DerefMut`.
+我們也可以實作 `DerefMut`，這樣我們就能透過 `*` 來改變數值。它看起來幾乎一樣。在實作 `DerefMut` 之前，你需要先實作 `Deref`。
 
 ```rust
 use std::ops::{Deref, DerefMut};
@@ -10453,8 +10453,8 @@ impl Deref for HoldsANumber {
     }
 }
 
-impl DerefMut for HoldsANumber { // You don't need type Target = u8; here because it already knows thanks to Deref
-    fn deref_mut(&mut self) -> &mut Self::Target { // Everything else is the same except it says mut everywhere
+impl DerefMut for HoldsANumber { // 這裡你不需要 type Target = u8; 這要感謝 Deref 因為它已經知道了
+    fn deref_mut(&mut self) -> &mut Self::Target { // 除了到處用 mut 以外，其它一切都一樣
         &mut self.0
     }
 }
@@ -10467,9 +10467,9 @@ fn main() {
 }
 ```
 
-So you can see that `Deref` gives your type a lot of power.
+所以你可以看到，`Deref` 給你的型別提供了強大的力量。
 
-This is also why the standard library says: `Deref should only be implemented for smart pointers to avoid confusion`. That's because you can do some strange things with `Deref` for a complicated type. Let's imagine a really confusing example to understand what they mean. We'll start with `Character` struct for a game. A new `Character` needs some stats like intelligence and strength. So here is our first character:
+這也是為什麼標準函式庫說：`Deref should only be implemented for smart pointers to avoid confusion`。這是因為對於複雜的型別，你可以用 `Deref` 做一些奇怪的事情。讓我們想像一個非常混亂的範例來理解它們的含義。我們將從一個遊戲的 `Character` 結構體開始。新的 `Character` 需要一些資料，比如智力和力量。所以這裡是我們的第一個角色：
 
 ```rust
 struct Character {
@@ -10521,13 +10521,13 @@ fn main() {
 }
 ```
 
-Now let's imagine that we want to keep character hit points in a big vec. Maybe we'll put monster data in there too, and keep it all together. Since `hit_points` is an `i8`, we implement `Deref` so we can do all sorts of math on it. But look at how strange it looks in our `main()` function now:
+現在讓我們想像我們想存放人物的生命值(hit points)在一個大向量裡面。也許我們也會把怪物級資料也放進去，並存放在一起。由於 `hit_points` 是 `i8`，我們實作了 `Deref`，來讓我們可以對它進行各式各樣的數學計算。但是現在看看我們的 `main()` 函式有多麼奇怪：
 
 
 ```rust
 use std::ops::Deref;
 
-// All the other code is the same until after the enum Alignment
+// 直到例舉 Alignment 之後，以外的所有程式碼是一樣的
 struct Character {
     name: String,
     strength: u8,
@@ -10572,7 +10572,7 @@ enum Alignment {
     Evil,
 }
 
-impl Deref for Character { // impl Deref for Character. Now we can do any integer math we want!
+impl Deref for Character { // 給 Character 實作 Deref. 現在我們可以任意做整數計算!
     type Target = i8;
 
     fn deref(&self) -> &Self::Target {
@@ -10583,20 +10583,20 @@ impl Deref for Character { // impl Deref for Character. Now we can do any intege
 
 
 fn main() {
-    let billy = Character::new("Billy".to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good); // Create two characters, billy and brandy
+    let billy = Character::new("Billy".to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good); // 建立兩個角色, billy 和 brandy
     let brandy = Character::new("Brandy".to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good);
 
-    let mut hit_points_vec = vec![]; // Put our hit points data in here
-    hit_points_vec.push(*billy);     // Push *billy?
-    hit_points_vec.push(*brandy);    // Push *brandy?
+    let mut hit_points_vec = vec![]; // 把我們的生命值資料放在這裡
+    hit_points_vec.push(*billy);     // 推入 *billy?
+    hit_points_vec.push(*brandy);    // 推入 *brandy?
 
     println!("{:?}", hit_points_vec);
 }
 ```
 
-This just prints `[5, 5]`. Our code is now very strange for someone to read. We can read `Deref` just above `main()` and figure out that `*billy` means `i8`, but what if there was a lot of code? Maybe our code is 2000 lines long, and suddenly we have to figure out why we are `.push()`ing `*billy`. `Character` is certainly more than just a smart pointer for `i8`.
+印出 `[5, 5]`。我們的程式碼現在讓人讀起來感覺非常奇怪。我們可以讀懂在 `main()` 上面的 `Deref`，然後弄清楚 `*billy` 的意思是 `i8`，但是如果有很多程式碼呢？可能我們的程式碼長 2000 行，並且突然之間我們要弄清楚為什麼要 `.push()` `*billy`。`Character` 當然不僅僅是 `i8` 的智慧指標。
 
-Of course, it is not illegal to write `hit_points_vec.push(*billy)`, but it makes the code look very strange. Probably a simple `.get_hp()` method would be much better, or another struct that holds the characters. Then you could iterate through and push the `hit_points` for each one. `Deref` gives a lot of power but it's good to make sure that the code is logical.
+當然寫 `hit_points_vec.push(*billy)` 並不違法，但這讓程式碼看起來非常奇怪。也許簡單的 `.get_hp()` 方法會好得多，或者另一個存放角色的結構體。然後你可以疊代並推入每個角色的 `hit_points`。`Deref` 雖然提供了強大的力量，但最好確保程式碼的邏輯性。
 
 
 
