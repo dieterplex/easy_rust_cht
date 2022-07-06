@@ -116,7 +116,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [Box 包裹的特徵](#box-包裹的特徵)
   - [Default 和生成器模式](#default-和生成器模式)
   - [Deref 和 DerefMut](#deref-和-derefmut)
-  - [Crates and modules](#crates-and-modules)
+  - [Crates 和模組](#crates-和模組)
   - [Testing](#testing)
     - [Test-driven development](#test-driven-development)
   - [External crates](#external-crates)
@@ -10600,21 +10600,21 @@ fn main() {
 
 
 
-## Crates and modules
+## Crates 和模組
 
-Every time you write code in Rust, you are writing it in a `crate`. A `crate` is the file, or files, that go together for your code. Inside the file you write you can also make a `mod`. A `mod` is a space for functions, structs, etc. and is used for a few reasons:
+每次你用 Rust 寫程式碼時，你都是寫在 `crate` 裡面。`crate` 是一或多個檔案，把你的程式碼組織在一起。在你寫的檔案裡面，你也可以做出 `mod`。`mod`(module，模組)是存放函式、結構體等等的空間，因為這些原因而被使用：
 
-- Building your code: it helps you think about the general structure of your code. This can be important as your code gets larger and larger.
-- Reading your code: people can understand your code more easily. For example, the name `std::collections::HashMap` tells you that it's in `std` inside the module `collections`. This gives you a hint that maybe there are more collection types inside `collections` that you can try.
-- Privacy: everything starts out as private. That lets you keep users from using functions directly.
+- 構建你的程式碼：幫助你思考程式碼的一般結構。當你的程式碼愈來愈大時，這會愈重要。
+- 閱讀你的程式碼：人們可以更容易理解你的程式碼。例如，`std::collections::HashMap` 這個名字告訴你，它是在 `std` 的 `collections` 模組裡面。這給了你提示，也許 `collections` 裡面還有更多的集合型別可以讓你嘗試。
+- 隱私權：所有的東西一開始都是私有的(private)。這樣可以讓你避免使用者直接使用函式。
 
-To make a `mod`, just write `mod` and start a code block with `{}`. We will make a mod called `print_things` that has some printing-related functions.
+要做出 `mod`，只需要寫 `mod`，然後用 `{}` 開始程式碼塊。我們將做出名為 `print_things` 的模組，裡面有一些列印相關的功能。
 
 ```rust
 mod print_things {
     use std::fmt::Display;
 
-    fn prints_one_thing<T: Display>(input: T) { // Print anything that implements Display
+    fn prints_one_thing<T: Display>(input: T) { // 印出實作 Display 的任何東西
         println!("{}", input)
     }
 }
@@ -10622,7 +10622,7 @@ mod print_things {
 fn main() {}
 ```
 
-You can see that we wrote `use std::fmt::Display;` inside `print_things`, because it is a separate space. If you wrote `use std::fmt::Display;` inside `main()` it wouldn't help. Also, we can't call it from `main()` right now. Without the `pub` keyword in front of `fn` it will stay private. Let's try to call it without `pub`. Here's one way to write it:
+你可以看到，我們把 `use std::fmt::Display;` 寫在 `print_things` 裡面，因為它是獨立分開的空間。如果你把 `use std::fmt::Display;` 寫在 `main()` 裡面，就沒有用了。而且我們現在也不能從 `main()` 裡面呼叫。在 `fn` 前面沒有 `pub` 這個關鍵字時，它會保持為私有的。讓我們試著在沒有 `pub` 的情況下呼叫它。這裡是其中一種寫法：
 
 ```rust
 // 🚧
@@ -10631,7 +10631,7 @@ fn main() {
 }
 ```
 
-`crate` means "inside this project", but for our simple example it's the same as "inside this file". Inside that is the mod `print_things`, then finally the `prints_one_thing()` function. You can write that every time, or you can write `use` to import it. Now we can see the error that says that it's private:
+`crate` 的意思是"在這個專案(project)裡"，但對於我們的簡單範例來說，它和"在這個檔案裡面"是一樣的。在那裡面是 `print_things` 這個模組，最後是 `prints_one_thing()` 函式。你可以每次都這樣寫，也可以寫 `use` 來匯入。現在我們可以看到錯誤說它是私有的：
 
 ```rust
 // ⚠️
@@ -10651,7 +10651,7 @@ fn main() {
 }
 ```
 
-Here's the error:
+這裡是錯誤訊息：
 
 ```text
 error[E0603]: function `prints_one_thing` is private
@@ -10666,9 +10666,9 @@ note: the function `prints_one_thing` is defined here
 4  |     fn prints_one_thing<T: Display>(input: T) {
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
-It's easy to understand that function `prints_one_thing` is private. It also shows us with `src\main.rs:4:5` where to find the function. This is helpful because you can write `mod`s not just in one file, but over a lot of files as well.
+`print_one_thing` 是私有的函式很容易理解。它還用 `src\main.rs:4:5` 告訴我們在哪裡可以找到這個函式。這很有幫助，因為你不僅可以在一個檔案中寫 `mod`，還能在很多檔案中寫 `mod`。
 
-Now we just write `pub fn` instead of `fn` and everything works.
+現在我們只要寫 `pub fn` 而不是 `fn`，一切就可以執行了。
 
 ```rust
 mod print_things {
@@ -10687,40 +10687,40 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 6
 Trying to print a string...
 ```
 
-How about `pub` for a struct, enum, trait, or module? `pub` works like this for them:
+`pub` 對結構體、列舉、特徵或模組有什麼作用？`pub` 對它們來說用起來像這樣：
 
-- `pub` for a struct: it makes the struct public, but the items are not public. To make an item public, you have to write `pub` for each one too.
-- `pub` for an enum or trait: everything becomes public. This makes sense because traits are about giving the same behaviour to something. And enums are about choosing between items, and you need to see them all to choose them.
-- `pub` for a module: a top level module will be `pub` because if it isn't pub then nobody can touch anything in it at all. But modules inside modules need `pub` to be public.
+- `pub` 對於結構體：它使結構體公開，但裡面的成員不是公開的。要想讓成員公開，你也要為每個成員分別寫 `pub`。
+- `pub` 對於列舉或特徵：所有的東西都變成了公開的。這是合理的，因為特徵是關於賦予事物相同的行為。而列舉是關於值之間的選擇，而且你需要看到所有的列舉值才能做選擇。
+- `pub` 對於模組來說：頂層的模組會是 `pub` 的，因為如果它不是那就沒有人可以使用裡面的任何東西。但是模組裡面的模組需要使用 `pub` 才能成為公開的。
 
-So let's put a struct named `Billy` inside `print_things`. This struct will be almost all public, but not quite. The struct is public so it will say `pub struct Billy`. Inside it will have a `name` and `times_to_print`. `name` will not be public, because we only want the user to create structs named `"Billy".to_string()`. But the user can select the number of times to print, so that will be public. It looks like this:
+那讓我們在 `print_things` 裡面放個名為 `Billy` 的結構體。這個結構體幾乎全部會是公開的，但也不盡然。這個結構體是公開的，所以它寫做：`pub struct Billy`。裡面將會有 `name` 和 `times_to_print`。`name` 不會是公開的，因為我們只想讓使用者建立命名為 `"Billy".to_string()` 的結構體。但是使用者可以選擇印出的次數，所以那將會是公開的。它看起來像這樣：
 
 ```rust
 mod print_things {
     use std::fmt::{Display, Debug};
 
     #[derive(Debug)]
-    pub struct Billy { // Billy is public
-        name: String, // but name is private.
+    pub struct Billy { // Billy 是公開的
+        name: String, // 但 name 是私有的.
         pub times_to_print: u32,
     }
 
     impl Billy {
-        pub fn new(times_to_print: u32) -> Self { // That means the user needs to use new to create a Billy. The user can only change the number of times_to_print
+        pub fn new(times_to_print: u32) -> Self { // 這表示使用者需要去用 new 來建立 Billy. 使用者只能改變 times_to_print 的次數
             Self {
-                name: "Billy".to_string(), // We choose the name - the user can't
+                name: "Billy".to_string(), // 我們選擇的名字 - 使用者不能選
                 times_to_print,
             }
         }
 
-        pub fn print_billy(&self) { // This function prints a Billy
+        pub fn print_billy(&self) { // 這個函式印出 Billy
             for _ in 0..self.times_to_print {
                 println!("{:?}", self.name);
             }
@@ -10733,14 +10733,14 @@ mod print_things {
 }
 
 fn main() {
-    use crate::print_things::*; // Now we use *. This imports everything from print_things
+    use crate::print_things::*; // 現在我們使用 *. 這會匯入所有來自 print_things 的東西
 
     let my_billy = Billy::new(3);
     my_billy.print_billy();
 }
 ```
 
-This will print:
+印出：
 
 ```text
 "Billy"
@@ -10748,26 +10748,25 @@ This will print:
 "Billy"
 ```
 
-By the way, the `*` to import everything is called the "glob operator". Glob means "global", so it means everything.
+對了，匯入一切的 `*` 叫做"glob 運算子"。Glob 的意思是"全域性(global)"，所以它意味著一切事物。
 
-Inside a `mod` you can create other mods. A child mod (a mod inside of a mod) can always use anything inside a parent mod. You can see this in the next example where we have a `mod city` inside a `mod province` inside a `mod country`.
+在 `mod` 裡面你可以建立其他模組。一個子模組(模組裡的模組)總是可以使用上層模組內部的任何東西。你可以在下一個範例中看到這一點，在那裡我們會有個在 `mod country` 裡面的 `mod province` 裡面的 `mod city`。
 
-You can think of the structure like this: even if you are in a country, you might not be in a province. And even if you are in a province, you might not be in a city. But if you are in a city, you are in its province and you are in its country.
-
+你可以把這個結構想成這樣：即使你在一個國家，你可能不在一個省。而即使你在一個省，你也可能不在一個城市。但如果你在一個城市，你就肯定在這個城市的省份和國家裡。
 
 ```rust
-mod country { // The main mod doesn't need pub
-    fn print_country(country: &str) { // Note: this function isn't public
+mod country { // 頂層模組不需要寫 pub
+    fn print_country(country: &str) { // 注意: 這個函式不是公開的
         println!("We are in the country of {}", country);
     }
-    pub mod province { // Make this mod public
+    pub mod province { // 讓這個模組是公開的
 
-        fn print_province(province: &str) { // Note: this function isn't public
+        fn print_province(province: &str) { // 注意: 這個函式不是公開的
             println!("in the province of {}", province);
         }
 
-        pub mod city { // Make this mod public
-            pub fn print_city(country: &str, province: &str, city: &str) {  // This function is public though
+        pub mod city { // 讓這個模組是公開的
+            pub fn print_city(country: &str, province: &str, city: &str) {  // 然而這個函式是公開的
                 crate::country::print_country(country);
                 crate::country::province::print_province(province);
                 println!("in the city of {}", city);
@@ -10781,9 +10780,9 @@ fn main() {
 }
 ```
 
-The interesting part is that `print_city` can access `print_province` and `print_country`. That's because `mod city` is inside the other mods. It doesn't need `pub` in front of `print_province` to use it. And that makes sense: a city doesn't need to do anything to be inside a province and inside a country.
+有趣的是，`print_city` 可以存取 `print_province` 和 `print_country`。這是因為 `mod city` 在其他模組裡面。它不需要在 `print_province` 前面加上 `pub` 之後才能使用。這也合理：城市不需要做什麼，它本來就在一個省裡，在一個國家裡。
 
-You probably noticed that `crate::country::province::print_province(province);` is very long. When we are inside a module we can use `super` to bring in items from above. Actually the word super itself means "above", like in "superior". In our example we only used the function once, but if you use it more then it is a good idea to import. It can also be a good idea if it makes your code easier to read, even if you only use the function once. The code is almost the same now, but a bit easier to read:
+你可能有注意到，`crate::country::province::print_province(province);` 非常長。當我們在模組裡面的時候，我們可以用 `super` 從上層模組存取成員。其實 super 這個字本身就是"上面(above)"的意思，比如"上級(superior)"。在我們的簵例中，我們只用了函式一次，但是如果你用的比較多的話，那麼最好是匯入它。如果它能讓你的程式碼更容易閱讀，那也是個好主意，即使你只用了函式一次。程式碼現在幾乎是一樣的，但更容易閱讀一些：
 
 ```rust
 mod country {
@@ -10796,8 +10795,8 @@ mod country {
         }
 
         pub mod city {
-            use super::super::*; // use everything in "above above": that means mod country
-            use super::*;        // use everything in "above": that means mod province
+            use super::super::*; // 使用 "上面的上面" 的一切: 那表示 country 模組
+            use super::*;        // 使用 "上面" 的一切: 那表示 province 模組
 
             pub fn print_city(country: &str, province: &str, city: &str) {
                 print_country(country);
@@ -10809,10 +10808,10 @@ mod country {
 }
 
 fn main() {
-    use crate::country::province::city::print_city; // bring in the function
+    use crate::country::province::city::print_city; // 帶入函式使用
 
     print_city("Canada", "New Brunswick", "Moncton");
-    print_city("Korea", "Gyeonggi-do", "Gwangju"); // Now it's less work to use it again
+    print_city("Korea", "Gyeonggi-do", "Gwangju"); // 現在再用一次也沒負擔
 }
 ```
 
