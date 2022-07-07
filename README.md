@@ -117,8 +117,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [Default 和生成器模式](#default-和生成器模式)
   - [Deref 和 DerefMut](#deref-和-derefmut)
   - [Crates 和模組](#crates-和模組)
-  - [Testing](#testing)
-    - [Test-driven development](#test-driven-development)
+  - [測試](#測試)
+    - [測試驅動開發](#測試驅動開發)
   - [External crates](#external-crates)
     - [rand](#rand)
     - [rayon](#rayon)
@@ -10817,11 +10817,11 @@ fn main() {
 
 
 
-## Testing
+## 測試
 
-Testing is a good subject to learn now that we understand modules. Testing your code is very easy in Rust, because you can write tests right next to your code.
+在我們瞭解模組後，測試正是現在學習的好主題。在 Rust 中測試你的程式碼是非常容易的，因為你可以立刻在你的程式碼旁寫測試。
 
-The easiest way to start testing is to add `#[test]` above a function. Here is a simple one:
+開始測試最簡單的方法就是在函式上面加上 `#[test]`。這裡是個簡單的範例：
 
 ```rust
 #[test]
@@ -10830,9 +10830,9 @@ fn two_is_two() {
 }
 ```
 
-But if you try to run it in the Playground, it gives an error: ``error[E0601]: `main` function not found in crate `playground``. That's because you don't use _Run_ for tests, you use _Test_. Also, you don't use a `main()` function for tests - they go outside. To run this in the Playground, click on `···` next to _RUN_ and change it to _Test_. Now if you click on it, it will run the test. (If you have Rust installed already, you will type `cargo test` to do this)
+但如果你試圖在 Playground 中執行它，它會給出錯誤：``error[E0601]: `main` function not found in crate `playground``。這是因為你不使用 _Run_ 來進行測試，你要使用的是 _Test_。另外，你不使用 `main()` 函式進行測試 - 它們在外面執行。要在 Playground 中執行這個，點選 _RUN_ 旁邊的 `···`，然後把它改為 _Test_。現在如果你點選它，它將會跑測試。(如果你已經安裝了 Rust，你將輸入 `cargo test` 來做測試)
 
-Here is the output:
+這裡是輸出內容：
 
 ```text
 running 1 test
@@ -10841,7 +10841,7 @@ test two_is_two ... ok
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-Let's change `assert_eq!(2, 2)` to `assert_eq!(2, 3)` and see what we get. When a test fails you get a lot more information:
+讓我們把 `assert_eq!(2, 2)` 改成 `assert_eq!(2, 3)`，看看會有什麼結果。當測試失敗時，你會得到更多的資訊：
 
 ```text
 running 1 test
@@ -10862,9 +10862,9 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-`assert_eq!(left, right)` is the main way to test a function in Rust. If it doesn't work, it will show the different values: left has 2, but right has 3.
+`assert_eq!(left, right)` 是 Rust 中測試函式的主要方法。如果它不成功，它將會顯示值的不同：左邊有 2，但右邊有 3。
 
-What does `RUST_BACKTRACE=1` mean? This is a setting on your computer to give a lot more information about errors. Luckily the Playground has it too: click on `···` next to `STABLE` and set backtrace to `ENABLED`. If you do that, it will give you *a lot* of information:
+`RUST_BACKTRACE=1` 是什麼意思？這是電腦上的設定，可以提供更多關於錯誤的資訊。幸好 Playground 也有：點選 `STABLE` 旁邊的 `···`，然後設定 Backtrace 為 `ENABLED`。如果你這樣做，它會給你 *很多* 的資訊：
 
 ```text
 running 1 test
@@ -10930,7 +10930,7 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-You don't need to use a backtrace unless you really can't find where the problem is. But luckily you don't need to understand it all either.  If you keep reading, you will eventually see line 13 where it says `playground` - that's where it talks about your code. Everything else is about what Rust is doing in other libraries to run your program. But these two lines show you that it looked at line 2 and line 3 of playground, which is a hint to check there. Here's that part again:
+除非你真的找不到問題所在，否則你不需要使用回溯(Backtrace)。但幸運的是你也不需要全部理解。如果你繼續閱讀，你最終會看到第 13 行，那裡寫著 `playground`──那是它提到的你的程式碼的位置。其它的一切都是關於 Rust 為了執行你的程式,在其他函式庫中所做的事情。但是這兩行告訴你，它看的是 playground 的第 2 行和第 3 行，這是個要檢查那裡的提示。這裡重複那個部分：
 
 ```text
   13: playground::two_is_two
@@ -10939,7 +10939,7 @@ You don't need to use a backtrace unless you really can't find where the problem
              at src/lib.rs:2
 ```
 
-Edit: Rust improved its backtrace messages in early 2021 to only show the most meaningful information. Now it's much easier to read:
+編輯：Rust 在 2021 年初改進了它的回溯訊息，只顯示最有意義的資訊。現在更容易閱讀了：
 
 ```text
 failures:
@@ -10970,7 +10970,7 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
 ```
 
-Now let's turn backtrace off again and return to regular tests. Now we'll write some other functions, and use test functions to test them. Here are a few:
+現在讓我們再把回溯關閉，回到常規的測試。現在我們將會寫一些其他函式，並使用測試函式來測試它們。這裡有幾個範例：
 
 ```rust
 fn return_two() -> i8 {
@@ -10990,7 +10990,7 @@ fn it_returns_six() {
 }
 ```
 
-Now it runs both:
+現在都能執行成功：
 
 ```text
 running 2 tests
@@ -11000,9 +11000,9 @@ test it_returns_six ... ok
 test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-That's not too hard.
+這不是太難。
 
-Usually you will want to put your tests in their own module. To do this, use the same `mod` keyword and add `#[cfg(test)]` above it (remember: `cfg` means "configure). You also want to continue to write `#[test]` above each test. This is because later on when you install Rust, you can do more complicated testing. You will be able to run one test, or all of them, or run a few. Also don't forget to write `use super::*;` because the test module needs to use the functions above it. Now it will look like this:
+通常你會想把你的測試放在它們自己的模組中。要做到這一點，需要使用相同的 `mod` 關鍵字，並在它前面加上 `#[cfg(test)]`(記住：`cfg` 的意思是"組態")。你還想要繼續在每一個測試前面寫 `#[test]`。這是因為以後當你安裝 Rust 時，你可以做更復雜的測試。你將可以執行一個測試、全部測試、或者其中一些測試。另外別忘了要寫 `use super::*;`，因為測試模組需要使用它上層的函式。現在它看起來會像這樣：
 
 ```rust
 fn return_two() -> i8 {
@@ -11027,13 +11027,13 @@ mod tests {
 }
 ```
 
-### Test-driven development
+### 測試驅動開發
 
-You might see the words "test-driven development" when reading about Rust or another language. It's one way to write programs, and some people like it while others prefer something else. "Test-driven development" means "writing tests first, then writing the code". When you do this, you will have a lot of tests for everything you want your code to do. Then you start writing the code, and run the tests to see if you did it right. Then the tests are always there to show you if something goes wrong when you add to and rewrite your code. This is pretty easy in Rust because the compiler gives a lot of information about what to fix. Let's write a small example of test-driven development and see what it looks like.
+在閱讀 Rust 或其他語言時，你可能會看到"測試驅動開發(Test-driven development)"這個詞。這是編寫程式的一種方式，有些人喜歡它，而有些人則喜歡其他的方式。"測試驅動開發"的意思是"先寫測試，再寫程式碼"。當你這樣做的時候，你將會有很多測試程式碼給所有你想要你的程式碼去做的事情。然後你才開始寫程式碼，並執行測試來看你是否做對了。接著當你加入和重寫你的程式碼時，測試程式碼會一直在那裡告訴你是否有什麼東西出了問題。這在 Rust 中相當容易，因為編譯器給出了很多關於待修復內容的資訊。讓我們寫個測試驅動開發的小範例，來看看它像什麼樣子。
 
-Let's imagine a calculator that takes user input. It can add (+) and it can subtract (-). If the user writes "5 + 6" it should return 11, if the user writes "5 + 6 - 7" it should return 4, and so on. So we'll start with test functions. You can also see that function names in tests are usually quite long. That is because you might run a lot of tests, and you want to understand which tests have failed.
+讓我們想像可以接受使用者輸入的計算機。它可以加 (+)，也可以減 (-)。如果使用者寫 "5 + 6"，它應該回傳 11，如果使用者寫 "5 + 6 - 7"，它應該回傳 4，以此類推。所以我們將先從測試函式開始。你也可以看到，測試中的函式名通常都相當長。這是因為你可能會執行很多的測試，並且你想瞭解哪些測試失敗了。
 
-We'll imagine that a single function called `math()` will do everything. It will return an `i32` (we won't use floats). Because it needs to return something, we'll just return `6` every time. Then we will write three test functions. They will all fail, of course. Now the code looks like this:
+我們將想像有個名為 `math()` 的單獨函式會做完所有工作。它將回傳 `i32`(我們將不會使用浮點數)。因為它需要回傳一些東西，我們每次都將只會回傳 `6`。然後我們將寫三個測試函式。當然它們都會失敗。現在的程式碼像這樣：
 
 ```rust
 fn math(input: &str) -> i32 {
@@ -11059,7 +11059,7 @@ mod tests {
 }
 ```
 
-It gives us this information:
+它給我們這些資訊：
 
 ```text
 running 3 tests
@@ -11068,22 +11068,22 @@ test tests::one_minus_two_is_minus_one ... FAILED
 test tests::one_plus_one_is_two ... FAILED
 ```
 
-and all the information about ``thread 'tests::one_plus_one_is_two' panicked at 'assertion failed: `(left == right)` ``. We don't need to print it all here.
+以及關於 ``thread 'tests::one_plus_one_is_two' panicked at 'assertion failed: `(left == right)` `` 的所有資訊。我們不需要在這裡全部印出來。
 
-Now to think about how to make the calculator. We will accept any number, and the symbols `+-`. We will allow spaces, but nothing else. So let's start with a `const` that contains all the values. Then we will use `.chars()` to iterate by character, and `.all()` to make sure they are all inside.
+現在來思考如何做出計算機。我們將接受任何數字，以及 `+-` 符號。我們將允許空格，但不允許其他任何東西。所以讓我們從帶有 `const` 並包含以上所有字元的字串開始。然後我們將使用 `.chars()` 按字元進行疊代，並使用 `.all()` 確保它們都在裡面。
 
-Then we will add a test that should panic. To do that, add `#[should_panic]` attribute: now if it panics the test will succeed.
+然後，我們將新增一個會恐慌的測試。要做到這一點，要加上 `#[should_panic]` 屬性：現在如果它恐慌了測試就會成功。
 
-Now the code looks like this:
+現在程式碼看起來像這樣：
 
 ```rust
-const OKAY_CHARACTERS: &str = "1234567890+- "; // Don't forget the space at the end
+const OKAY_CHARACTERS: &str = "1234567890+- "; // 別忘記結尾的空白
 
 fn math(input: &str) -> i32 {
     if !input.chars().all(|character| OKAY_CHARACTERS.contains(character)) {
         panic!("Please only input numbers, +-, or spaces");
     }
-    6 // we still return a 6 for now
+    6 // 現在我們仍然還是回傳 6
 }
 
 #[cfg(test)]
@@ -11104,14 +11104,14 @@ mod tests {
     }
 
     #[test]
-    #[should_panic]  // Here is our new test - it should panic
+    #[should_panic]  // 這裡是我們的新測試 - 它應該要恐慌
     fn panics_when_characters_not_right() {
         math("7 + seven");
     }
 }
 ```
 
-Now when we run the tests we get this result:
+現在當我們執行測試時，我們得到這樣的結果：
 
 ```text
 running 4 tests
@@ -11121,19 +11121,19 @@ test tests::panics_when_characters_not_right ... ok
 test tests::one_plus_one_is_two ... FAILED
 ```
 
-One succeeded! Our `math()` function will only accept good input now.
+有一個成功了！我們的 `math()` 函式現在只能接受設定好的輸入了。
 
 
-The next step is to write the actual calculator. This is the interesting part about having tests first: the actual code starts much later. First we will put the logic together for the calculator. We want the following:
+下一步是編寫實際的計算機。這就是先有測試的有趣之處：實際的程式碼要晚很多才開始出現。首先我們將把計算機的邏輯放在一起。我們要做到以下幾點：
 
-- All empty spaces should be removed. This is easy with `.filter()`
-- The input should turn into a `Vec` with all the inputs. `+` doesn't need to be an input, but when the program sees `+` it should know that the number is done. For example, the input `11+1` should do something like this: 1) See `1`, push it into an empty string. 2) See another 1, push it into the string (it is now "11"). 3) See a `+`, know the number has ended. It will push the string into the vec, then clear the string.
-- The program must count the number of `-`. An odd number (1, 3, 5...) will mean subtract, an even number (2, 4, 6...) will mean add. So "1--9" should give 10, not -8.
-- The program should remove anything after the last number. `5+5+++++----` is made out of all the characters in `OKAY_CHARACTERS`, but it should turn to `5+5`. This is easy with `.trim_end_matches()`, where you remove anything that matches at the end of a `&str`.
+- 所有的空白都應該被移除。這很容易用 `.filter()` 實作。
+- 所有輸入容應該變成 `Vec` 中的元素。`+` 不需要成為輸入，但是當程式看到 `+` 時，應該知道數字已經完成處理了。例如，輸入 `11+1` 應該像這樣做：1) 看到 `1`，把它推到一個空字串中。1) 看到另一個 1，把它推到字串中(現在是 "11")。3) 看到 `+`，知道數字已經結束，把字串推到向量裡，然後清空字串。
+- 程式必須計算出 `-` 的數量。奇數(1、3、5...)表示減法，偶數(2、4、6...)表示加法。所以 "1--9" 應該是 10，而不是 -8。
+- 程式應該移除最後一個數字後面的任何東西。`5+5+++++----` 都是由出現在 `OKAY_CHARACTERS` 中的所有字元組成，但它應該清理變成 `5+5`。這很容易用 `.trim_end_matches()` 做到，它能讓你把符合 `&str` 結尾的東西都去掉。
 
-(By the way, `.trim_end_matches()` and `.trim_start_matches()` used to be `trim_right_matches()` and `trim_left_matches()`. But then people noticed that some languages go from right to left (Persian, Hebrew, etc.) so right and left were wrong. You might still see the older names in some code but they are the same thing.)
+> 順便說一下，`.trim_end_matches()` 和 `.trim_start_matches()` 曾經是 `trim_right_matches()` 和 `trim_left_matches()`。但後來人們注意到有些語言是從右到左(波斯語、希伯來語等)，所以左右都是錯的。你可能還能在一些程式碼中看到舊名字，但它們是一樣的。
 
-First we just want to pass all the tests. After we pass the tests, we can "refactor". Refactor means to make code better, usually through things like structs and enums and methods. Here is our code to make the tests pass:
+首先我們只想通過所有的測試。通過測試後，我們就可以"重構(Refactor)"了。重構的意思是讓程式碼變得更好，通常是透過像結構體、列舉和方法等方式。這裡是我們使測試通過的程式碼：
 
 ```rust
 const OKAY_CHARACTERS: &str = "1234567890+- ";
@@ -11145,64 +11145,64 @@ fn math(input: &str) -> i32 {
         panic!("Please only input numbers, +-, or spaces.");
     }
 
-    let input = input.trim_end_matches(|x| "+- ".contains(x)).chars().filter(|x| *x != ' ').collect::<String>(); // Remove + and - at the end, and all spaces
-    let mut result_vec = vec![]; // Results go in here
-    let mut push_string = String::new(); // This is the string we push in every time. We will keep reusing it in the loop.
+    let input = input.trim_end_matches(|x| "+- ".contains(x)).chars().filter(|x| *x != ' ').collect::<String>(); // 移除結尾的 + 和 -, 和全部空白
+    let mut result_vec = vec![]; // Results 放在這裡
+    let mut push_string = String::new(); // 這是我們每次推送資料的字串. 我們將會在迴圈裡持續重複使用它.
     for character in input.chars() {
         match character {
             '+' => {
-                if !push_string.is_empty() { // If the string is empty, we don't want to push "" into result_vec
-                    result_vec.push(push_string.clone()); // But if it's not empty, it will be a number. Push it into the vec
-                    push_string.clear(); // Then clear the string
+                if !push_string.is_empty() { // 如果字串是空的, 我們不想把 "" 推到 result_vec 裡
+                    result_vec.push(push_string.clone()); // 但如果不是空的, 它就會是數字. 把它推到向量裡
+                    push_string.clear(); // 接著清除字串
                 }
             },
-            '-' => { // If we get a -,
-                if push_string.contains('-') || push_string.is_empty() { // check to see if it's empty or has a -
-                    push_string.push(character) // if so, then push it in
-                } else { // otherwise, it will contain a number
-                result_vec.push(push_string.clone()); // so push the number into result_vec, clear it and then push -
+            '-' => { // 如果我們得到的是 -,
+                if push_string.contains('-') || push_string.is_empty() { // 檢查看看是否為空或有 -
+                    push_string.push(character) // 如果是如此, 那麼把它推到字串裡
+                } else { // 不然, 它將會包含數字
+                result_vec.push(push_string.clone()); // 那麼把數字推到 result_vec 裡, 清除字串後再把 - 推進去
                 push_string.clear();
                 push_string.push(character);
                 }
             },
-            number => { // number here means "anything else that matches". We selected the name here
-                if push_string.contains('-') { // We might have some - characters to push in first
+            number => { // number 在這裡的意思是 "其它任何匹配到的東西". 也是我們所選擇的名字
+                if push_string.contains('-') { // 我們可能有一些 - 字元要先推進去
                     result_vec.push(push_string.clone());
                     push_string.clear();
                     push_string.push(number);
-                } else { // But if we don't, that means we can push the number in
+                } else { // 但如果沒有, 那就表示我們可以把數字推進去
                     push_string.push(number);
                 }
             },
         }
     }
-    result_vec.push(push_string); // Push one last time after the loop is over. Don't need to .clone() because we don't use it anymore
+    result_vec.push(push_string); // 迴圈結束後把字串推進去. 沒有 .clone() 的必要因為我們不會再使用它了
 
-    let mut total = 0; // Now it's time to do math. Start with a total
-    let mut adds = true; // true = add, false = subtract
+    let mut total = 0; // 現在是時候算數學了. 從總合開始
+    let mut adds = true; // true = 加法, false = 減法
     let mut math_iter = result_vec.into_iter();
-    while let Some(entry) = math_iter.next() { // Iter through the items
-        if entry.contains('-') { // If it has a - character, check if it's even or odd
+    while let Some(entry) = math_iter.next() { // 疊代元素過去
+        if entry.contains('-') { // 如果有 - 字元, 檢查奇數或偶數
             if entry.chars().count() % 2 == 1 {
                 adds = match adds {
                     true => false,
                     false => true
                 };
-                continue; // Go to the next item
+                continue; // 繼續處理下一個元素
             } else {
                 continue;
             }
         }
         if adds == true {
-            total += entry.parse::<i32>().unwrap(); // If there is no '-', it must be a number. So we are safe to unwrap
+            total += entry.parse::<i32>().unwrap(); // 如果沒有 '-', 肯定是數字. 那我們解包很安全
         } else {
             total -= entry.parse::<i32>().unwrap();
-            adds = true;  // After subtracting, reset adds to true.
+            adds = true;  // 減完後, 重設 adds 為 true.
         }
     }
-    total // Finally, return the total
+    total // 終於要回傳總合
 }
-   /// We'll add a few more tests just to make sure
+   /// 我們將多加上一些測試來確認行為
 
 #[cfg(test)]
 mod tests {
@@ -11222,11 +11222,11 @@ mod tests {
     }
     #[test]
     fn nine_plus_nine_minus_nine_minus_nine_is_zero() {
-        assert_eq!(math("9+9-9-9"), 0); // This is a new test
+        assert_eq!(math("9+9-9-9"), 0); // 這是新測試
     }
     #[test]
     fn eight_minus_nine_plus_nine_is_eight_even_with_characters_on_the_end() {
-        assert_eq!(math("8  - 9     +9-----+++++"), 8); // This is a new test
+        assert_eq!(math("8  - 9     +9-----+++++"), 8); // 這是新測試
     }
     #[test]
     #[should_panic]
@@ -11236,7 +11236,7 @@ mod tests {
 }
 ```
 
-And now the tests pass!
+現在測試都通過了！
 
 ```text
 running 6 tests
@@ -11250,18 +11250,18 @@ test tests::panics_when_characters_not_right ... ok
 test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-You can see that there is a back and forth process in test-driven development. It's something like this:
+你可以看到，在測試驅動的開發中有來回的過程。它是像這樣的：
 
-- First you write all the tests you can think of.
-- Then you start writing the code.
-- As you write the code, you get ideas for other tests.
-- You add the tests, and your tests grow as you go. The more tests you have, the more times your code gets checked.
+- 首先你要寫出所有你能想得到的測試。
+- 然後你開始寫程式碼。
+- 當你寫程式碼的時候，你會得到其他測試的想法。
+- 你新增測試，你的測試隨著你的進展而成長。你有的測試越多，你的程式碼被檢查的次數就越多。
 
-Of course, tests don't check everything and it is wrong to think that "passing all tests = the code is perfect". But tests are great for when you change your code. If you change your code later on and run the tests, if one of them doesn't work you will know what to fix.
+當然測試並不能檢查所有的東西，認為"通過所有測試 = 完美的程式碼"是錯誤的。但是測試對於修改程式碼是很棒的。如果你以後修改了程式碼並執行測試，如果其中有一個測試不成功，你就會知道什麼該修復。
 
-Now we can rewrite (refactor) the code a bit. One good way to start is with clippy. If you installed Rust then you can type `cargo clippy`, and if you're using the Playground then click on `TOOLS` and select Clippy. Clippy will look at your code and give you tips to make it simpler. Our code doesn't have any mistakes, but it could be better.
+現在我們可以重寫（重構）一點程式碼。一個好方式是用 Clippy 開始。如果你安裝了 Rust，那麼你可以輸入 `cargo clippy`。如果你使用的是 Playground，那麼點選 `TOOLS`，選擇 Clippy。Clippy 會檢閱你的程式碼，並給出能讓你的程式碼更精簡的提示。我們的程式碼沒有任何錯誤，但它能更好。
 
-Clippy tells us two things:
+Clippy 告訴我們兩件事：
 
 ```text
 warning: this loop could be written as a `for` loop
@@ -11283,9 +11283,9 @@ warning: equality checks against true are unnecessary
    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#bool_comparison
 ```
 
-This is true: `for entry in math_iter` is much simpler than `while let Some(entry) = math_iter.next()`. And a `for` loop is actually an iterator so we don't have any reason to write `.iter()`. Thanks, clippy! And also we didn't need to make `math_iter`: we can just write `for entry in result_vec`.
+這是真的：`for entry in math_iter` 比 `while let Some(entry) = math_iter.next()` 簡單得多。而 `for` 迴圈實際上是個疊代器，所以我們沒有任何理由要寫 `.iter()`。謝謝 clippy！而且我們也不需要做 `math_iter`：我們可以只要寫 `for entry in result_vec`。
 
-Now we'll start some real refactoring. Instead of separate variables, we will create a `Calculator` struct. This will have all the variables we used together. We will change two names to make it more clear. `result_vec` will become `results`, and `push_string` will become `current_input` (current means "now"). And so far it only has one method: new.
+現在我們將開始做些真正的重構。我們將建立 `Calculator` 結構體，而不是單獨的變數。這將擁有我們使用的所有變數。我們將改變兩個名字來讓它更清楚。`result_vec` 將變成 `results`，`push_string` 將變成 `current_input`(currenㄙㄨ的意思是 "現在")。而到目前為止，它只有一種方法：new。
 
 ```rust
 // 🚧
@@ -11309,7 +11309,7 @@ impl Calculator {
 }
 ```
 
-Now our code is actually a bit longer, but easier to read. For example, `if adds` is now `if calculator.adds`, which is exactly like reading English. It looks like this:
+現在我們的程式碼實際上更長了一點，但也更容易讀懂。比如 `if adds` 現在是 `if calculator.adds`，這就跟讀英文完全一樣。看起來像這樣：
 
 ```rust
 #[derive(Clone)]
@@ -11426,7 +11426,7 @@ mod tests {
 }
 ```
 
-Finally we add two new methods. One is called `.clear()` and clears the `current_input()`. The other one is called `push_char()` and pushes the input onto `current_input()`. Here is our refactored code:
+最後我們增加兩個新方法。一個叫做 `.clear()`，清除 `current_input()`。另一個叫做 `push_char()`，把輸入推到 `current_input()` 上。這裡是我們重構後的程式碼：
 
 ```rust
 #[derive(Clone)]
@@ -11551,7 +11551,7 @@ mod tests {
 }
 ```
 
-This is probably good enough for now. We could write more methods but lines like `calculator.results.push(calculator.current_input.clone());` are already very clear. Refactoring is best when you can still easily read the code after you are done. You don't want to just refactor to make the code short: `clc.clr()` is much worse than `calculator.clear()`, for example.
+現在大概已經夠好了。我們可以寫更多的方法，但是很多行像是 `calculator.results.push(calculator.current_input.clone());` 已經很清楚了。重構的時機最好是在你的程式碼完成後還能輕鬆閱讀的時候。你不希望只是為了讓程式碼變短而重構：例如，`clc.clr()` 就比 `calculator.clear()` 差很多。
 
 
 
