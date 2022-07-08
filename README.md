@@ -119,7 +119,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [Crates 和模組](#crates-和模組)
   - [測試](#測試)
     - [測試驅動開發](#測試驅動開發)
-  - [External crates](#external-crates)
+  - [外部 crates](#外部-crates)
     - [rand](#rand)
     - [rayon](#rayon)
     - [serde](#serde)
@@ -11555,24 +11555,24 @@ mod tests {
 
 
 
-## External crates
+## 外部 crates
 
-An external crate means "someone else's crate".
+外部 crate 的意思是"別人的 crate"。
 
-For this section you *almost* need to install Rust, but we can still use just the Playground. Now we are going to learn how to import crates that other people have written. This is important in Rust because of two reasons:
+在本章節中，你 *幾乎* 需要去安裝 Rust，但我們仍然可以只使用 Playground。現在我們將要學習如何匯入別人所寫的 crate。這在 Rust 中很重要，原因有二：
 
-- It is very easy to import other crates, and
-- The Rust standard library is quite small.
+- 匯入其他的 crate 很容易，
+- Rust 標準函式庫也相當小。
 
-That means that it is normal in Rust to bring in an external crate for a lot of basic functions. The idea is that if it is easy to use external crates, then you can choose the best one. Maybe one person will make a crate for one function, and then someone else will make a better one.
+這意味著為了很多基本功能引進外部 crate 在 Rust 中很普遍。想法是這樣，如果使用外部 crate 很容易，那你就可以選擇最好的那一個。也許某個人會為某個功能做出 crate，當然之後也會有別的人去做出更好的。
 
-In this book we will only look at the most popular crates, the crates that everyone who uses Rust knows.
+在本書中，我們只看最流行的 crate，也就是每個使用 Rust 的人都知道的那些。
 
-To begin learning external crates, we will start with the most common one: `rand`.
+要開始學習外部 Crate，我們將從最常見的開始：`rand`。
 
 ### rand
 
-Did you notice that we didn't use any random numbers yet? That's because random numbers aren't in the standard library. But there are a lot of crates that are "almost standard library" because everybody uses them. In any case, it's very easy to bring in a crate. If you have Rust on your computer, there is a file called `Cargo.toml` that has this information. A `Cargo.toml` file looks like this when you start:
+你有沒有注意到，我們還沒有使用過任何隨機數？那是因為隨機數並不在標準函式庫裡。但是有很多 crate "幾乎是函式標準庫"，因為大家都在使用它們。在任何情況下，引進 crate 是非常容易的。如果你的電腦上有安裝 Rust，就會有個叫 `Cargo.toml` 的檔案，裡面有這些資訊。`Cargo.toml` 檔在你啟動時像這樣：
 
 ```text
 [package]
@@ -11586,7 +11586,7 @@ edition = "2018"
 [dependencies]
 ```
 
-Now if you want to add the `rand` crate, search for it on `crates.io`, which is where all the crates go. That takes you to `https://crates.io/crates/rand`. And when you click on that, you can see a screen that says `Cargo.toml   rand = "0.7.3"`. All you do is add that under [dependencies] like this:
+現在，如果你想加上 `rand` crate 可以在 `crates.io` 上搜尋它，這是所有 crate 的去處。那會將你帶到 `https://crates.io/crates/rand`。當你點選那個，你可以看到畫面上寫著 `Cargo.toml   rand = "0.7.3"`。你所要做的就是在 [dependencies] 下新增像這樣的內容:
 
 ```text
 [package]
@@ -11601,9 +11601,9 @@ edition = "2018"
 rand = "0.7.3"
 ```
 
-And then Cargo will do the rest for you. Then you can start writing code like [this example code](https://docs.rs/rand/0.7.3/rand/) on the `rand` document website. To get to the documents you can click on the `docs` button in [the page on crates.io](https://crates.io/crates/rand).
+然後 Cargo 會幫你完成剩下的工作。然後你就可以在 `rand` 的文件網站上開始編寫像[本例程式碼](https://docs.rs/rand/0.7.3/rand/)這樣的程式碼。要想進入文件，你可以點選在 [crates.io 的頁面](https://crates.io/crates/rand) 中的 `docs` 按鈕。
 
-So that's enough about Cargo: we are still using just the Playground. Luckily, the Playground already has the top 100 crates installed. So you don't need to write in `Cargo.toml` yet. On the Playground you can imagine that it has a long list like this with 100 crates:
+關於 Cargo 的介紹就到這裡了：我們現在使用的還只是 Playground。幸運的是，Playground 已經安裝了前 100 個 crate。所以你還不需要寫進 `Cargo.toml`。在 Playground 上，你可以想像，它有個像這樣的長長列表，有 100 個 crate：
 
 ```text
 [dependencies]
@@ -11612,12 +11612,12 @@ some_other_crate = "0.1.0"
 another_nice_crate = "1.7"
 ```
 
-That means that to use `rand`, you can just do this.
+也就是說，如果要使用 `rand`，你可以直接這樣做:
 
 ```rust
-use rand; // This means the whole crate rand
-          // On your computer you can't just write this;
-          // you need to write in the Cargo.toml file first
+use rand; // 這是表示整個 crate rand
+          // 在你的電腦上你無法只寫這樣;
+          // 你需要先寫在 Cargo.toml 檔案裡
 
 fn main() {
     for _ in 0..5 {
@@ -11627,15 +11627,15 @@ fn main() {
 }
 ```
 
-It will print a different `u16` number every time, like `42266 52873 56528 46927 6867`.
+每次都會列印不同的 `u16` 號碼，像是 `42266 52873 56528 46927 6867`。
 
 
-The main functions in `rand` are `random` and `thread_rng` (rng means "random number generator"). And actually if you look at `random` it says: "This is simply a shortcut for `thread_rng().gen()`". So it's actually just `thread_rng` that does almost everything.
+`rand` 中的主要功能是 `random` 和 `thread_rng`(rng 的意思是"隨機數產生器")。而實際上如果你看 `random`，它說："這只是 `thread_rng().gen()` 的快捷方式"。所以其實是 `thread_rng` 基本做完了一切。
 
-Here is a simple example of numbers from 1 to 10. To get those numbers, we use `.gen_range()` between 1 and 11.
+這裡是個簡單的範例，從 1 到 10 的數字。為了得到這些數字，我們在 1 到 11 之間使用 `.gen_range()`。
 
 ```rust
-use rand::{thread_rng, Rng}; // Or just use rand::*; if we are lazy
+use rand::{thread_rng, Rng}; // 或是只用 rand::*; 如果我們有些懶散
 
 fn main() {
     let mut number_maker = thread_rng();
@@ -11645,46 +11645,46 @@ fn main() {
 }
 ```
 
-This will print something like `7 2 4 8 6`.
+會印出像 `7 2 4 8 6` 的東西。
 
-With random numbers we can do fun things like make characters for a game. We will use `rand` and some other things we know to make them. In this game our characters have six stats, and you use a d6 for them. A d6 is a cube that gives 1, 2, 3, 4, 5, or 6 when you throw it. Each character rolls a d6 three times, so each stat is between 3 and 18.
+我們可以用隨機數做一些有趣的事情，比如為遊戲做角色。我們將使用 `rand` 和其它一些我們知道的東西來做出它們。在這個遊戲中，我們的角色有六種狀態，用 d6 來表示他們。d6 是個立方體，當你投擲它時，它能給出 1、2、3、4、5 或 6。每個角色都會擲三次 d6，所以每個狀態都在 3 到 18 之間。
 
-But sometimes it can be unfair if your character has something low like a 3 or 4. If your strength is 3 you can't carry anything, for example. So there is one more method that uses a d6 four times. You roll it four times, and throw away the lowest number. So if you roll 3, 3, 1, 6 then you keep 3, 3, 6 = 12. We will make this method too so the owner of the game can decide.
+但是有時候如果你的角色狀態值有一些低，比如 3 或 4，那就不公平了。比如說你的力量是 3，你就不能背東西。所以還有一種方法是用 d6 四次。你擲四次，然後扔掉最低的數字。所以如果你擲出 3、3、1、6，那麼你保留 3、3、6 = 12。我們也會把這個方法做出來，所以遊戲的主人可以決定要不要用。
 
-Here is our simple character creator. We created a `Character` struct for the stats, and even implemented `Display` to print it the way we want.
+這是我們的簡單角色建立器。我們為狀態建立了 `Character` 結構體，甚至還實作 `Display` 來按照我們想要的方式印出。
 
 ```rust
-use rand::{thread_rng, Rng}; // Or just use rand::*; if we are lazy
-use std::fmt; // Going to impl Display for our character
+use rand::{thread_rng, Rng}; // 或是只用 rand::*; 如果我們有些懶散
+use std::fmt; // 要給我們的角色實作 Display
 
 
 struct Character {
     strength: u8,
-    dexterity: u8,    // This means "body quickness"
-    constitution: u8, // This means "health"
+    dexterity: u8,    // 這表示 "身體反應速度"
+    constitution: u8, // 這表示 "健康程度"
     intelligence: u8,
     wisdom: u8,
-    charisma: u8, // This means "popularity with people"
+    charisma: u8, // 這表示 "受人歡迎的程度"
 }
 
-fn three_die_six() -> u8 { // A "die" is the thing you throw to get the number
-    let mut generator = thread_rng(); // Create our random number generator
-    let mut stat = 0; // This is the total
+fn three_die_six() -> u8 { // "die" 是讓 你擲出去得到數字的東西
+    let mut generator = thread_rng(); // 建立我們的隨機數產生器
+    let mut stat = 0; // 這是總合
     for _ in 0..3 {
-        stat += generator.gen_range(1..=6); // Add each time
+        stat += generator.gen_range(1..=6); // 加上每次結果
     }
-    stat // Return the total
+    stat // 回傳總合
 }
 
 fn four_die_six() -> u8 {
     let mut generator = thread_rng();
-    let mut results = vec![]; // First put the numbers in a vec
+    let mut results = vec![]; // 先把數字放在向量
     for _ in 0..4 {
         results.push(generator.gen_range(1..=6));
     }
-    results.sort(); // Now a result like [4, 3, 2, 6] becomes [2, 3, 4, 6]
-    results.remove(0); // Now it would be [3, 4, 6]
-    results.iter().sum() // Return this result
+    results.sort(); // 現在像是 [4, 3, 2, 6] 的結果會變成 [2, 3, 4, 6]
+    results.remove(0); // 現在就會是 [3, 4, 6]
+    results.iter().sum() // 回傳這個結果
 }
 
 enum Dice {
@@ -11693,7 +11693,7 @@ enum Dice {
 }
 
 impl Character {
-    fn new(dice: Dice) -> Self { // true for three dice, false for four
+    fn new(dice: Dice) -> Self { // true 是三個骰子, false 則是四個
         match dice {
             Dice::Three => Self {
                 strength: three_die_six(),
@@ -11713,13 +11713,13 @@ impl Character {
             },
         }
     }
-    fn display(&self) { // We can do this because we implemented Display below
+    fn display(&self) { // 我們可以這樣做是因為我們在後面有實作 Display
         println!("{}", self);
         println!();
     }
 }
 
-impl fmt::Display for Character { // Just follow the code for in https://doc.rust-lang.org/std/fmt/trait.Display.html and change it a bit
+impl fmt::Display for Character { // 只是沿用在 https://doc.rust-lang.org/std/fmt/trait.Display.html 的範例程式碼並稍作修改
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
@@ -11750,7 +11750,7 @@ fn main() {
 }
 ```
 
-It will print something like this:
+會印出像這樣的東西：
 
 ```rust
 Your character has these stats:
@@ -11770,19 +11770,19 @@ wisdom: 16
 charisma: 10
 ```
 
-The character with four dice is usually a bit better at most things.
+有四個骰子的角色通常在大多數事情上都會好一點。
 
 
 ### rayon
 
-`rayon` is a popular crate that lets you speed up your Rust code. It's popular because it creates threads without needing things like `thread::spawn`. In other words, it is popular because it is effective but easy to write. For example:
+`rayon` 是個流行的 crate，能讓你為 Rust 程式碼加速。它受歡迎是因為它不需要像 `thread::spawn` 這樣的東西就能建立執行緒。換句話說，它受歡迎的原因是它既有效又容易編寫。比如說：
 
-- `.iter()`, `.iter_mut()`, `into_iter()` in rayon is written like this:
-- `.par_iter()`, `.par_iter_mut()`, `par_into_iter()`. So you just add `par_` and your code becomes much faster. (par means "parallel")
+- `.iter()`、`.iter_mut()`、`into_iter()` 在 rayon 中寫起來像這樣：
+- `.par_iter()`、`.par_iter_mut()`、`par_into_iter()`。所以你只需要加上 `par_`，你的程式碼就會變快很多。(par 表示"並行")
 
-Other methods are the same: `.chars()` is `.par_chars()`, and so on.
+其他方法也一樣：`.chars()` 就是 `.par_chars()`，以此類推。
 
-Here is an example of a simple piece of code that is making the computer do a lot of work:
+這裡舉例的是一段簡單的程式碼，卻能讓電腦做很多工作：
 ```rust
 fn main() {
     let mut my_vec = vec![0; 200_000];
@@ -11791,23 +11791,23 @@ fn main() {
 }
 ```
 
-It creates a vector with 200,000 items: each one is 0. Then it calls `.enumerate()` to get the index for each number, and changes the 0 to the index number. It's too long to print so we only print items 5000 to 5004. This is still very fast in Rust, but if you want you can make it faster with Rayon. The code is almost the same:
+這建立有二十萬個元素的向量：每一個都是0，然後呼叫 `.enumerate()` 來取得每個數字的索引，並將 0 改為索引值。它列印時間太長，所以我們只印出第 5000 到 5004 個元素。這在 Rust 中還是非常快的，但如果你願意，你可以用 Rayon 讓它更快。但程式碼幾乎一樣：
 
 ```rust
-use rayon::prelude::*; // Import rayon
+use rayon::prelude::*; // 匯入 rayon
 
 fn main() {
     let mut my_vec = vec![0; 200_000];
-    my_vec.par_iter_mut().enumerate().for_each(|(index, number)| *number+=index+1); // add par_ to iter_mut
+    my_vec.par_iter_mut().enumerate().for_each(|(index, number)| *number+=index+1); // 加上 par_ 在 iter_mut 前面
     println!("{:?}", &my_vec[5000..5005]);
 }
 ```
 
-And that's it. `rayon` has many other methods to customize what you want to do, but at its most simple it is just "add `_par` to make your program faster".
+就這樣。`rayon` 還有很多其他的方法來訂做你想要的事，但最簡單的就是"加上 `_par` 來讓你的程式更快"。
 
 ### serde
 
-`serde` is a popular crate that lets you convert to and from formats like JSON, YAML, etc. The most common way to use it is by creating a `struct` with two attributes on top. [It looks like this](https://serde.rs/):
+`serde` 是相當流行的 crate，讓你可以在 JSON、YAML 等格式之間相互轉換。最常見的使用方式是透過建立具有兩個屬性在上面的 `struct`，。[看起來像這樣](https://serde.rs/)：
 
 ```rust
 #[derive(Serialize, Deserialize, Debug)]
@@ -11817,15 +11817,15 @@ struct Point {
 }
 ```
 
-The `Serialize` and `Deserialize` traits are what make the conversion easy. (That's also where the name `serde` comes from) If you have them on your struct, then you can just call a method to turn it into and from JSON or anything else.
+`Serialize` 和 `Deserialize` 特徵讓轉換變得容易。(這也是 `serde` 這個名字的由來)如果你的結構體上有它們，那麼你只需要呼叫一個方法就可以把它在 JSON 或任意格式間轉換。
 
 ### regex
 
-The [regex](https://crates.io/crates/regex) crate lets you search through text using [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). With that you can get matches for something like `colour`, `color`, `colours` and `colors` through a single search. Regular expressions are a whole other language have to learn that too if you want to use them.
+[regex](https://crates.io/crates/regex) crate 讓你可以使用 [正則表示式(Regular expression)](https://en.wikipedia.org/wiki/Regular_expression) 搜尋文字。有了它，你可以只透過一次搜尋便得到諸如 `colour`, `color`, `colours` 和 `colors` 的匹配資訊。正則表示式是一門全然不同也需要學習的語言，如果你想使用它們的話。
 
 ### chrono
 
-[chrono](https://crates.io/crates/chrono) is the main crate for people who need more functionality for time. We will look at the standard library now which has functions for time, but if you need more then this is a good crate to use.
+[chrono](https://crates.io/crates/chrono) 是為給那些需要更多時間功能的人準備的主要 crate。我們會看到標準函式庫現在有時間相關的功能，但是如果你需要更多的功能，那麼這個 crate 是個不錯的選擇。
 
 
 ## A tour of the standard library
