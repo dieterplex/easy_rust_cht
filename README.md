@@ -125,13 +125,13 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [serde](#serde)
     - [regex](#regex)
     - [chrono](#chrono)
-  - [A tour of the standard library](#a-tour-of-the-standard-library)
-    - [Arrays](#arrays)
-    - [char](#char)
-    - [Integers](#integers)
-    - [Floats](#floats)
-    - [bool](#bool)
-    - [Vec](#vec)
+  - [標準函式庫之旅](#標準函式庫之旅)
+    - [陣列](#陣列-1)
+    - [字元](#字元)
+    - [整數](#整數)
+    - [浮點數](#浮點數-1)
+    - [布林](#布林)
+    - [向量](#向量-1)
     - [String](#string)
     - [OsString and CString](#osstring-and-cstring)
     - [mem](#mem)
@@ -11828,13 +11828,13 @@ struct Point {
 [chrono](https://crates.io/crates/chrono) 是為給那些需要更多時間功能的人準備的主要 crate。我們會看到標準函式庫現在有時間相關的功能，但是如果你需要更多的功能，那麼這個 crate 是個不錯的選擇。
 
 
-## A tour of the standard library
+## 標準函式庫之旅
 
-Now that you know a lot of Rust, you will be able to understand most things inside the standard library. The code inside it isn't so scary anymore. Let's take a look at some of the parts in it that we haven't learned yet. This tour will go over most parts of the standard library that you don't need to install Rust for. We will revisit a lot of items we already know so we can learn them with greater understanding.
+現在你已經知道了很多 Rust 的知識，你將能夠理解標準函式庫裡面大多數的東西。它裡面的程式碼已經不再那麼可怕了。讓我們來看看它裡面一些我們還沒有學過的部分。這次旅程將介紹標準函式庫裡不需要安裝 Rust 的絕大多數部分。我們將重溫很多我們已經知道的內容，這樣我們就可以更深入地學習它們。
 
-### Arrays
+### 陣列
 
-In the past (before Rust 1.53), arrays didn't implement `Iterator` and you needed to use methods like `.iter()` on them in for `loops`. (People also used `&` to get a slice in `for` loops). So this didn't work in the past:
+在過去的版本 (Rust 1.53 以前) 裡陣列 (Array) 還沒有實作 `Iterator`，你要在 `for` 迴圈裡對它們使用像是 `.iter()` 的方法。（人們以前也常在 `for` 迴圈裡用 `&` 來得到切片。）因此這個範例在過去是不能執行的：
 
 ```rust
 fn main() {
@@ -11846,7 +11846,7 @@ fn main() {
 }
 ```
 
-The compiler used to give this message:
+編譯器常常給出這段訊息：
 
 ```text
 error[E0277]: `[&str; 3]` is not an iterator
@@ -11855,7 +11855,7 @@ error[E0277]: `[&str; 3]` is not an iterator
   |                 ^^^^^^^^^ borrow the array with `&` or call `.iter()` on it to iterate over it
 ```
 
-Luckily, that isn't a problem anymore! So all three of these work:
+幸運的是那不再是問題了！所以這三種用法全都能用：
 
 ```rust
 fn main() {
@@ -11873,7 +11873,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Beirut
@@ -11889,7 +11889,7 @@ Nicosia
 
 
 
-If you want to get variables from an array, you can put their names inside `[]` to destructure it. This is the same as using a tuple in `match` statements or to get variables from a struct.
+如果你想從陣列中得到變數，你可以把它們的變數名放在 `[]` 中來解構它。這和在 `match` 陳敘式中使用元組或從結構體中得到變數是一樣的。
 
 ```rust
 fn main() {
@@ -11899,11 +11899,11 @@ fn main() {
 }
 ```
 
-This prints `Beirut`.
+印出 `Beirut`。
 
-### char
+### 字元
 
-You can use the `.escape_unicode()` method to get the Unicode number for a `char`:
+你可以使用 `.escape_unicode()` 方法來得到字元 (char) 的 Unicode 號碼。
 
 ```rust
 fn main() {
@@ -11914,22 +11914,22 @@ fn main() {
 }
 ```
 
-This prints `\u{ccad} \u{cd98} \u{c608} \u{cc2c}`.
+印出 `\u{ccad} \u{cd98} \u{c608} \u{cc2c}`。
 
 
-You can get a char from `u8` using the `From` trait, but for a `u32` you use `TryFrom` because it might not work. There are many more numbers in `u32` than characters in Unicode. We can see this with a simple demonstration.
+你可以使用 `From` 特徵從 `u8` 中得到字元，但是從 `u32` 時，你要使用 `TryFrom`，因為它有可能不成功。`u32` 可容納的數字比 Unicode 中的字元多很多。我們可以透過簡單的示範來觀察到這件事。
 
 ```rust
-use std::convert::TryFrom; // You need to bring TryFrom in to use it
-use rand::prelude::*;      // We will use random numbers too
+use std::convert::TryFrom; // 你需要引進 TryFrom 來使用它
+use rand::prelude::*;      // 我們也將會用到隨機數
 
 fn main() {
-    let some_character = char::from(99); // This one is easy - no need for TryFrom
+    let some_character = char::from(99); // 這個容易 - 不需要 TryFrom
     println!("{}", some_character);
 
     let mut random_generator = rand::thread_rng();
-    // This will try 40,000 times to make a char from a u32.
-    // The range is 0 (std::u32::MIN) to u32's highest number (std::u32::MAX). If it doesn't work, we will give it '-'.
+    // 這將會嘗試 40,000 次來從 u32 做出字元.
+    // 範圍從 0 (std::u32::MIN) 到 u32 的最大數值 (std::u32::MAX). 如果它不成功, 我們會給它 '-'.
     for _ in 0..40_000 {
         let bigger_character = char::try_from(random_generator.gen_range(std::u32::MIN..std::u32::MAX)).unwrap_or('-');
         print!("{}", bigger_character)
@@ -11937,7 +11937,7 @@ fn main() {
 }
 ```
 
-Almost every time it will generate a `-`. This is part of the sort of output you will see:
+幾乎每次都會產生 `-`。這是你會看到的那種輸出的一部分：
 
 ```text
 ------------------------------------------------------------------------𤒰---------------------
@@ -11955,18 +11955,18 @@ Almost every time it will generate a `-`. This is part of the sort of output you
 ------------򇍜----------------------------------------------------
 ```
 
-So it's a good thing you need to use `TryFrom`.
+所以你需要使用 `TryFrom` 其實是件好事。
 
-Also, as of late August 2020 you can now get a `String` from a `char`. (`String` implements `From<char>`) Just write `String::from()` and put a `char` inside.
-
-
-### Integers
-
-There are a lot of math methods for these types, plus some others. Here are some of the most useful ones.
+另外，從 2020 年八月底開始，你現在可以從 `char` 中得到 `String`。(`String` 實作了 `From<char>`) 只要寫 `String::from()`，然後把 `char` 放在裡面。
 
 
+### 整數
 
-`.checked_add()`, `.checked_sub()`, `.checked_mul()`, `.checked_div()`. These are good methods if you think you might get a number that won't fit into a type. They return an `Option` so you can safely check that your math works without making the program panic.
+給這些整數型別用的數學方法有很多，再加上一些其他用途的方法。這裡是一些最有用的：
+
+
+
+`.checked_add()`、`.checked_sub()`、`.checked_mul()`、`.checked_div()`。如果你認為你可能會得到一個不適合型別的數字，這些都是不錯的方法。它們會回傳 `Option`，這樣你就可以安全地檢查你的數學運算是否正常，而不會讓程式恐慌。
 
 ```rust
 fn main() {
@@ -11978,7 +11978,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 None
@@ -11986,22 +11986,22 @@ Some(201)
 ```
 
 
-You'll notice that on the page for integers it says `rhs` a lot. This means "right hand side", which is the right hand side when you do some math. For example, in `5 + 6`, `5` is on the left and `6` is on the right, so it's the `rhs`. This is not a keyword, but you will see it a lot so it's good to know.
+你會注意到，在整數的頁面上經常說著 `rhs`。這意味著"右手邊(right hand side)"，也就是你做一些數學運算時右手邊的運算元。比如在 `5 + 6` 中，`5` 在左、`6` 在右，所以 `6` 就是 `rhs`。這個不是關鍵詞，但是你會經常看到，所以先知道比較好。
 
-While we are on the subject, let's learn how to implement `Add`. After you implement `Add`, you can use `+` on a type that you create. You need to implement `Add` yourself because add can mean a lot of things. Here's the example in the standard library page:
+說到這裡，我們來學習一下如何實作 `Add`。在你實作了 `Add` 之後，你可以在你建立的型別上使用 `+`。你需要自己實作 `Add`，因為 add 可以表達很多意思。這是標準函式庫頁面中的範例：
 
 ```rust
-use std::ops::Add; // first bring in Add
+use std::ops::Add; // 首先引進 Add
 
-#[derive(Debug, Copy, Clone, PartialEq)] // PartialEq is probably the most important part here. You want to be able to compare numbers
+#[derive(Debug, Copy, Clone, PartialEq)] // PartialEq 大概是這裡最重要的部份了. 你會想要讓數字能比較
 struct Point {
     x: i32,
     y: i32,
 }
 
 impl Add for Point {
-    type Output = Self; // Remember, this is called an "associated type": a "type that goes together".
-                        // In this case it's just another Point
+    type Output = Self; // 記得嗎, 這叫做"關聯型別": "一起出現的型別".
+                        // 這個情況下這不過是另一個 Point
 
     fn add(self, other: Self) -> Self {
         Self {
@@ -12012,7 +12012,7 @@ impl Add for Point {
 }
 ```
 
-Now let's implement `Add` for our own type. Let's imagine that we want to add two countries together so we can compare their economies. It looks like this:
+現在讓我們為自己的型別實作 `Add`。讓我們想像我們想把兩個國家加在一起，這樣我們就可以比較它們的經濟。那看起來像這樣：
 
 ```rust
 use std::fmt;
@@ -12022,7 +12022,7 @@ use std::ops::Add;
 struct Country {
     name: String,
     population: u32,
-    gdp: u32, // This is the size of the economy
+    gdp: u32, // 這是經濟大小
 }
 
 impl Country {
@@ -12040,9 +12040,9 @@ impl Add for Country {
 
     fn add(self, other: Self) -> Self {
         Self {
-            name: format!("{} and {}", self.name, other.name), // We will add the names together,
-            population: self.population + other.population, // and the population,
-            gdp: self.gdp + other.gdp,   // and the GDP
+            name: format!("{} and {}", self.name, other.name), // 我們會一起加上名稱,
+            population: self.population + other.population, // 以及人口數,
+            gdp: self.gdp + other.gdp,   // 和 GDP
         }
     }
 }
@@ -12051,7 +12051,7 @@ impl fmt::Display for Country {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "In {} are {} people and a GDP of ${}", // Then we can print them all with just {}
+            "In {} are {} people and a GDP of ${}", // 然後我們可以只用 {} 把它們全部印出來
             self.name, self.population, self.gdp
         )
     }
@@ -12062,15 +12062,15 @@ fn main() {
     let vanuatu = Country::new("Vanuatu", 307_815, 820_000_000);
     let micronesia = Country::new("Micronesia", 104_468, 367_000_000);
 
-    // We could have given Country a &str instead of a String for the name. But we would have to write lifetimes everywhere
-    // and that would be too much for a small example. Better to just clone them when we call println!.
+    // 我們可以給予 Country 的 name 是個 &str 而不是 String. 但是我們就需要到處寫上生命週期
+    // 並且那樣對小範例來說就太多東西了. 比較好的方式是只在我們呼叫 println! 時克隆它們.
     println!("{}", nauru.clone());
     println!("{}", nauru.clone() + vanuatu.clone());
     println!("{}", nauru + vanuatu + micronesia);
 }
 ```
 
-This prints:
+印出：
 
 ```text
 In Nauru are 10670 people and a GDP of $160000000
@@ -12078,21 +12078,21 @@ In Nauru and Vanuatu are 318485 people and a GDP of $980000000
 In Nauru and Vanuatu and Micronesia are 422953 people and a GDP of $1347000000
 ```
 
-Later on in this code we could change `.fmt()` to display a number that is easier to read.
+以後在這段程式碼中，我們可以把 `.fmt()` 改為顯示更容易閱讀的數字。
 
-The three others are called `Sub`, `Mul`, and `Div`, and they are basically the same to implement. For `+=`, `-=`, `*=` and `/=`, just add `Assign`: `AddAssign`, `SubAssign`, `MulAssign`, and `DivAssign`. You can see the full list [here](https://doc.rust-lang.org/std/ops/index.html#structs), because there are many more. `%` for example is called `Rem`, `-` is called `Neg`, and so on.
+另外三個叫 `Sub`、`Mul` 和 `Div`，實作起來基本一樣。`+=`、`-=`、`*=` 和 `/=`，只要加上 `Assign`：`AddAssign`、`SubAssign`、`MulAssign` 和 `DivAssign` 即可。你可以在[這裡](https://doc.rust-lang.org/std/ops/index.html#structs)看到完整的列表，因為還有很多。例如 `%` 被稱為 `Rem`，`-` 被稱為 `Neg`，等等。
 
 
-### Floats
+### 浮點數
 
-`f32` and `f64` have a very large number of methods that you use when doing math. We won't look at those, but here are some methods that you might use. They are: `.floor()`, `.ceil()`, `.round()`, and `.trunc()`. All of these return an `f32` or `f64` that is like an integer, with only `0` after the period. They do this:
+`f32` 和 `f64` 有非常大量的方法讓你在做數學運算時使用。我們不會去看這些東西，但這裡有一些你可能會用到的方法。它們分別是 `.floor()`、`.ceil()`、`.round()` 和 `.trunc()`。所有這些方法都會回傳像整數的 `f32` 或者 `f64`，但小數點後面是 `0`。它們是這樣做的：
 
-- `.floor()`: gives you the next lowest integer.
-- `.ceil()`: gives you the next highest integer.
-- `.round()`: gives you a higher number if 0.5 or more, or the same number if less than 0.5. This is called rounding because it gives you a "round" number (a number that has a short, simple form).
-- `.trunc()`: just cuts off the part after the period. Truncate means "to cut off".
+- `.floor()`：給你下一個最低的整數。
+- `.ceil()`：給你下一個最高的整數。
+- `.round()`：給你較大的整數，如果小數大於等於 0.5；或是相同的整數，如果小數小於 0.5。這就是所謂的四捨五入，因為它給你"捨去或進位(round)"的數字(數字的精簡形式)。
+- `.trunc()`：只是切除掉小數點號後的部分。截斷(Truncate)是"切除"的意思。
 
-Here is a simple function to print them.
+這裡是個簡單的函式來印出它們。
 
 ```rust
 fn four_operations(input: f64) {
@@ -12118,7 +12118,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 For the number 9.1:
@@ -12146,20 +12146,20 @@ rounded: -20
 truncated: -19
 ```
 
-`f32` and `f64` have a method called `.max()` and `.min()` that gives you the higher or the lower of two numbers. (For other types you can just use `std::cmp::max` and `std::cmp::min`.) Here is a way to use this with `.fold()` to get the highest or lowest number. You can see again that `.fold()` isn't just for adding numbers.
+`f32` 和 `f64` 有方法叫做 `.max()` 和 `.min()`，可以得到兩個數字中較大或較小的數字。(對於其他型別，你可以直接使用 `std::cmp::max` 和 `std::cmp::min`。)這裡的範例是用 `.fold()` 來得到最高或最低數字的方法。你可以再次看到 `.fold()` 不僅僅是用來加數字的。
 
 ```rust
 fn main() {
     let my_vec = vec![8.0_f64, 7.6, 9.4, 10.0, 22.0, 77.345, 10.22, 3.2, -7.77, -10.0];
-    let maximum = my_vec.iter().fold(f64::MIN, |current_number, next_number| current_number.max(*next_number)); // Note: start with the lowest possible number for an f64.
-    let minimum = my_vec.iter().fold(f64::MAX, |current_number, next_number| current_number.min(*next_number)); // And here start with the highest possible number
+    let maximum = my_vec.iter().fold(f64::MIN, |current_number, next_number| current_number.max(*next_number)); // 註: 從 f64 的最低可能的數字開始.
+    let minimum = my_vec.iter().fold(f64::MAX, |current_number, next_number| current_number.min(*next_number)); // 而這裡則從最高可能的數字開始
     println!("{}, {}", maximum, minimum);
 }
 ```
 
-### bool
+### 布林
 
-In Rust you can turn a `bool` into an integer if you want, because it's safe to do that. But you can't do it the other way around. As you can see, `true` turns to 1 and `false` turns to 0.
+在 Rust 中，如果你願意，你可以把 `bool` 變成整數，因為這樣做是安全的。但你不能反過來做。如你所見，`true` 變成了 1，`false` 變成了 0。
 
 ```rust
 fn main() {
@@ -12168,7 +12168,7 @@ fn main() {
 }
 ```
 
-This prints `1 0`. Or you can use `.into()` if you tell the compiler the type:
+印出 `1 0`。或者是如果你告訴編譯器型別，也可以使用 `.into()`：
 
 ```rust
 fn main() {
@@ -12177,9 +12177,9 @@ fn main() {
 }
 ```
 
-This prints the same thing.
+印出的是一樣的東西。
 
-As of Rust 1.50 (released in February 2021), there is now a method called `then()`, which turns a `bool` into an `Option`. With `then()` you write a closure, and the closure is called if the item is `true`. Also, whatever is returned from the closure goes inside the `Option`. Here's a small example:
+從 Rust 1.50 (2021 年 2 月釋出)開始，有個叫做 `then()` 的方法，它將 `bool` 變成 `Option`。使用 `then()` 時需要接受閉包，如果元素是`true`，閉包就會被呼叫。另外，無論從閉包中回傳什麼，都會放入 `Option` 裡。這裡是個小範例：
 
 ```rust
 fn main() {
@@ -12189,9 +12189,9 @@ fn main() {
 }
 ```
 
-This just prints `Some(8), None`.
+只是印出 `Some(8), None`。
 
-And now a bit larger example:
+而現在是個長一點的範例：
 
 ```rust
 fn main() {
@@ -12200,24 +12200,24 @@ fn main() {
     let option_vec = bool_vec
         .iter()
         .map(|item| {
-            item.then(|| { // Put this inside of map so we can pass it on
+            item.then(|| { // 把這個放在 map 裡面那我們才可以把它傳下去
                 println!("Got a {}!", item);
-                "It's true, you know" // This goes inside Some if it's true
-                                      // Otherwise it just passes on None
+                "It's true, you know" // 如果是 true 就把這個放進 Some 裡
+                                      // 不然就只傳 None 下去
             })
         })
         .collect::<Vec<_>>();
 
     println!("Now we have: {:?}", option_vec);
 
-    // That printed out the Nones too. Let's filter map them out in a new Vec.
+    // 那也會印出 Nones. 讓我們從 map 過濾它們到新的向量裡.
     let filtered_vec = option_vec.into_iter().filter_map(|c| c).collect::<Vec<_>>();
 
     println!("And without the Nones: {:?}", filtered_vec);
 }
 ```
 
-And here's what this prints:
+這裡是印出的內容：
 
 ```text
 Got a true!
@@ -12226,9 +12226,9 @@ Now we have: [Some("It\'s true, you know"), None, Some("It\'s true, you know"), 
 And without the Nones: ["It\'s true, you know", "It\'s true, you know"]
 ```
 
-### Vec
+### 向量
 
-Vec has a lot of methods that we haven't looked at yet. Let's start with `.sort()`. `.sort()` is not surprising at all. It uses a `&mut self` to sort a vector.
+Vec（向量）有很多方法我們還沒有看過。先來說說 `.sort()`。`.sort()` 一點都不意外，使用了 `&mut self` 來對向量進行排序。
 
 ```rust
 fn main() {
@@ -12238,10 +12238,10 @@ fn main() {
 }
 ```
 
-This prints `[0, 0, 0, 0, 0, 80, 90, 100]`. But there is one more interesting way to sort called `.sort_unstable()`, and it is usually faster. It can be faster because it doesn't care about the order of numbers if they are the same number. In regular `.sort()`, you know that the last `0, 0, 0, 0, 0` will be in the same order after `.sort()`. But `.sort_unstable()` might move the last zero to index 0, then the third last zero to index 2, etc.
+印出 `[0, 0, 0, 0, 0, 80, 90, 100]`。但還有一種更有趣的排序方式叫 `.sort_unstable()`，它通常更快。它之所以更快，是因為它不在乎排序前後相同數字的先後順序。在常規的 `.sort()` 中，你知道最後的 `0, 0, 0, 0, 0` 會在 `.sort()` 之後的順序相同。但是 `.sort_unstable()` 可能會把最後一個零移到索引 0，然後把倒數第三個零移到索引 2，等等。
 
 
-`.dedup()` means "de-duplicate". It will remove items that are the same in a vector, but only if they are next to each other. This next code will not just print `"sun", "moon"`:
+`.dedup()` 的意思是"去重複"(de-duplicate)。它將刪除向量中相同的元素，但只有當它們彼此相鄰時才會刪除。接下來這段程式碼不會只印出 `"sun", "moon"`。
 
 ```rust
 fn main() {
@@ -12251,9 +12251,9 @@ fn main() {
 }
 ```
 
-It only gets rid of "sun" next to the other "sun", then "moon" next to one "moon", and again with "moon" next to another "moon". The result is: `["sun", "moon", "sun", "moon"]`.
+它只是把 "sun" 旁邊的另一個 "sun" 去掉，然後把 "moon" 旁邊的下一個 "moon" 去掉，再把 "moon" 旁邊的另一個 "moon" 去掉。結果是 `["sun", "moon", "sun", "moon"]`。
 
-If you want to remove every duplicate, just `.sort()` first:
+如果你想把每個重複的都去掉，就先 `.sort()`：
 
 ```rust
 fn main() {
@@ -12264,7 +12264,7 @@ fn main() {
 }
 ```
 
-Result: `["moon", "sun"]`.
+結果：`["moon", "sun"]`。
 
 
 ### String
