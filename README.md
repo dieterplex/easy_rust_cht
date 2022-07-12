@@ -138,7 +138,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [prelude](#prelude)
     - [時間](#時間)
     - [其他巨集](#其他巨集)
-  - [Writing macros](#writing-macros)
+  - [撰寫巨集](#撰寫巨集)
 - [Part 2 - Rust on your computer](#part-2---rust-on-your-computer)
   - [cargo](#cargo)
   - [Taking user input](#taking-user-input)
@@ -13115,11 +13115,11 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 
 
-## Writing macros
+## 撰寫巨集
 
-Writing macros can be very complicated. You almost never need to write one, but sometimes you might want to because they are very convenient. Writing macros is interesting because they are almost a different language. To write one, you actually use another macro called `macro_rules!`. Then you add your macro name and open a `{}` block. Inside is sort of like a `match` statement.
+撰寫巨集可以到非常複雜。而你幾乎永遠都不需要寫巨集，但有時你可能會因為它們非常方便而想去寫。寫巨集很有趣，因為它們幾乎是不同的語言。寫巨集時你實際上會用到另一個叫 `macro_rules!` 的巨集。然後加入你的巨集名稱，並開啟 `{}` 區塊。裡面有點像 `match` 陳述式。
 
-Here's one that only takes `()`, then just returns 6:
+這裡有個巨集的範例只有接受 `()`，也只回傳 6：
 
 ```rust
 macro_rules! give_six {
@@ -13134,7 +13134,7 @@ fn main() {
 }
 ```
 
-But it's not the same as a `match` statement, because a macro actually doesn't compile anything. It just takes an input and gives an output. Then the compiler checks to see if it makes sense. That's why a macro is like "code that writes code". You will remember that a true `match` statement needs to give the same type, so this won't work:
+但它和 `match` 陳述式不太一樣，因為巨集實際上不會編譯任何東西。它只是接受一個輸入並給出一個輸出。然後編譯器會檢查它是否合理。這就是為什麼巨集就像是"寫程式碼的程式碼"。你會記得，真正的 `match` 陳述式需要給出相同的型別，所以這個就會不能編譯：
 
 ```rust
 fn main() {
@@ -13147,7 +13147,7 @@ fn main() {
 }
 ```
 
-It will complain that you want to return `()` in one case, and `i32` in the other.
+它會抱怨你在一種情況下要回傳 `()`，卻在另一種情況下要回傳 `i32`。
 
 ```text
 error[E0308]: `match` arms have incompatible types
@@ -13162,7 +13162,7 @@ error[E0308]: `match` arms have incompatible types
   | |_____- `match` arms have incompatible types
 ```
 
-But a macro doesn't care, because it's just giving an output. It's not a compiler - it's code before code. So you can do this:
+但巨集並不關心，因為它只是給予輸出。它不是編譯器——它是程式碼的程式碼。所以你可以這樣做：
 
 ```rust
 macro_rules! six_or_print {
@@ -13180,7 +13180,7 @@ fn main() {
 }
 ```
 
-This is just fine, and prints `You didn't give me 6.`. You can also see that it's not a match arm because there's no `_` case. We can only give it `(6)`, or `()`. Anything else will make an error. And the `6` we give it isn't even an `i32`, it's just an input 6. You can actually set anything as the input for a macro, because it's just looking at input to see what it gets. For example:
+這就好辦了，印出 `You didn't give me 6.`。你也可以看到，這不是匹配陳述式的分支，因為沒有 `_` 的情況。我們只能給它 `(6)`，或者 `()`，其他的都會出錯。而我們給它的 `6` 甚至不是 `i32`，只是輸入的 6。其實你可以設定任何東西作為巨集的輸入，因為它只查看輸入見到了什麼。比如說：
 
 ```rust
 macro_rules! might_print {
@@ -13198,14 +13198,14 @@ fn main() {
 }
 ```
 
-So this strange macro only responds to two things: `()` and `(THis is strange input 하하はは哈哈 but it still works)`. Nothing else. It prints:
+所以這個奇怪的巨集只回應兩件事。`()` 和 `(THis is strange input 하하はは哈哈 but it still works)`。沒有其他的東西。印出：
 
 ```text
 You guessed the secret message!
 You didn't guess it
 ```
 
-So a macro isn't exactly Rust syntax. But a macro can also understand different types of input that you give it. Take this example:
+所以巨集不完全是 Rust 語法。但是巨集也可以理解你給它的不同型別的輸入。拿這個例子來說：
 
 ```rust
 macro_rules! might_print {
@@ -13219,23 +13219,23 @@ fn main() {
 }
 ```
 
-This will print `You gave me: 6`. The `$input:expr` part is important. It means "for an expression, give it the variable name $input". In macros, variables start with a `$`. In this macro, if you give it one expression, it will print it. Let's try it out some more:
+會印出 `You gave me: 6`。`$input:expr` 的部分很重要。它的意思是"對於表達式，給它取變數名稱為 $input"。巨集中的變數是以 `$` 開頭。在這個巨集中，如果你給它表達式，表達式就會印出來。讓我們再來多試幾次：
 
 ```rust
 macro_rules! might_print {
     ($input:expr) => {
-        println!("You gave me: {:?}", $input); // Now we'll use {:?} because we will give it different kinds of expressions
+        println!("You gave me: {:?}", $input); // 現在我們將會使用 {:?} 因為我們將會給它不同的種類的表達式
     }
 }
 
 fn main() {
-    might_print!(()); // give it a ()
-    might_print!(6); // give it a 6
-    might_print!(vec![8, 9, 7, 10]); // give it a vec
+    might_print!(()); // 給它 ()
+    might_print!(6); // 給它 6
+    might_print!(vec![8, 9, 7, 10]); // 給它向量
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 You gave me: ()
@@ -13243,9 +13243,9 @@ You gave me: 6
 You gave me: [8, 9, 7, 10]
 ```
 
-Also note that we wrote `{:?}`, but it won't check to see if `&input` implements `Debug`. It'll just write the code and try to make it compile, and if it doesn't then it gives an error.
+另外注意，我們寫的是 `{:?}`，但它不會檢查 `&input` 是否實現了 `Debug`。它只會寫程式碼，並嘗試讓它編譯，如果不行，那它就會給出錯誤。
 
-So what can a macro see besides `expr`? They are: `block | expr | ident | item | lifetime | literal  | meta | pat | path | stmt | tt | ty | vis`. This is the complicated part. You can see what each of them means [here](https://doc.rust-lang.org/beta/reference/macros-by-example.html), where it says:
+那麼除了 `expr` fragment，巨集還能看到什麼呢？它們是 `block | expr | ident | item | lifetime | literal  | meta | pat | path | stmt | tt | ty | vis`。這就是複雜的部分。你可以在[這裡](https://doc.rust-lang.org/beta/reference/macros-by-example.html)看到它們各自的意思，這裡說：
 
 ```text
 item: an Item
@@ -13263,9 +13263,9 @@ vis: a possibly empty Visibility qualifier
 literal: matches -?LiteralExpression
 ```
 
-There is another good site called cheats.rs that explains them [here](https://cheats.rs/#macros-attributes) and gives examples for each.
+有個好網站叫 cheats.rs，在[這裡](https://cheats.rs/#macros-attributes)解釋了它們，並且為每一種 fragment 給出範例。
 
-However, for most macros you will use `expr`, `ident`, and `tt`. `ident` means identifier and is for variable or function names. `tt` means token tree and sort of means any type of input. Let's try a simple macro with both.
+然而對於大多數巨集，你只會用到 `expr`、`ident` 和 `tt`。`ident` 表示識別字，用於變數或函式名稱。`tt` 表示標記樹 (Token tree)，和任何型別的輸入。讓我們嘗試用前兩者寫個簡單的巨集。
 
 ```rust
 macro_rules! check {
@@ -13288,7 +13288,7 @@ fn main() {
 }
 ```
 
-So this will take one `ident` (like a variable name) and an expression and see if they are the same. It prints:
+所以這將接受一個 `ident` (像是變數名)和一個表達式，看看它們是否相同。印出：
 
 ```text
 Is 6 equal to 6? true
@@ -13296,7 +13296,7 @@ Is [7, 8, 9] equal to [7, 8, 9]? true
 Is 6 equal to 10? false
 ```
 
-And here's one macro that takes a `tt` and prints it. It uses a macro called `stringify!` to make a string first.
+而這裡有一個巨集，它接受輸入 `tt`，然後把它印出來。它會先使用叫做 `stringify!` 的巨集做出字串。
 
 ```rust
 macro_rules! print_anything {
@@ -13312,20 +13312,20 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 ththdoetd
 87575oehq75onth
 ```
 
-But it won't print if we give it something with spaces, commas, etc. It will think that we are giving it more than one item or extra information, so it will be confused.
+但如果我們給它一些帶有空格、逗號等的東西，它就不會印出來了。它會認為我們給它不止一個元素或額外的資訊，所以它會感到困惑。
 
-This is where macros start to get difficult.
+這就是巨集開始變得困難的地方。
 
-To give a macro more than one item at a time, we have to use a different syntax. Instead of `$input`, it will be `$($input1),*`. This means zero or more (this is what * means), separated by a comma. If you want one or more, use `+` instead of `*`.
+要一次提供給巨集多個元素，我們必須使用不同的語法。不是原先的 `$input`，而是要用 `$($input1),*`。這意味著用逗號分隔的零或更多(這就是 `*` 的意思)元素。如果你想要一個或多個，要改用 `+` 而不是 `*`。
 
-Now our macro looks like this:
+現在我們的巨集看起來像這樣：
 
 ```rust
 macro_rules! print_anything {
@@ -13343,7 +13343,7 @@ fn main() {
 }
 ```
 
-So it takes any token tree separated by commas, and uses `stringify!` to make it into a string. Then it prints it. It prints:
+所以它接受任何用逗號隔開的標記樹，並使用 `stringify!` 把它變成字串，再印出來。印出：
 
 ```text
 ththdoetd, rcofe
@@ -13351,15 +13351,15 @@ ththdoetd, rcofe
 87575oehq75onth, ntohe, 987987o, 097
 ```
 
-If we used `+` instead of `*` it would give an error, because one time we gave it no input. So `*` is a bit safer option.
+如果我們使用 `+` 而不是 `*`，它會給出錯誤，因為其中一次呼叫時我們沒有給它輸入。所以 `*` 是個比較安全一點的選擇。
 
-So now we can start to see the power of macros. In this next example we can actually make our own functions:
+所以現在我們可以開始見識到巨集的威力了。在接下來的範例中，我們實際上可以做出我們自己的函式：
 
 ```rust
 macro_rules! make_a_function {
-    ($name:ident, $($input:tt),*) => { // First you give it one name for the function, then it checks everything else
+    ($name:ident, $($input:tt),*) => { // 首先你給它函式一個名字, 然後它檢查其它所有東西
         fn $name() {
-            let output = stringify!($($input),*); // It makes everything else into a string
+            let output = stringify!($($input),*); // 它讓其它所有東西變成字串
             println!("{}", output);
         }
     };
@@ -13367,14 +13367,14 @@ macro_rules! make_a_function {
 
 
 fn main() {
-    make_a_function!(print_it, 5, 5, 6, I); // We want a function called print_it() that prints everything else we give it
+    make_a_function!(print_it, 5, 5, 6, I); // 我們想要函式呼叫 print_it() 來印出我們給的其它所有東西
     print_it();
-    make_a_function!(say_its_nice, this, is, really, nice); // Same here but we change the function name
+    make_a_function!(say_its_nice, this, is, really, nice); // 這裡一樣但是我們改了函式名
     say_its_nice();
 }
 ```
 
-This prints:
+印出：
 
 ```text
 5, 5, 6, I
@@ -13382,7 +13382,7 @@ this, is, really, nice
 ```
 
 
-So now we can start to understand other macros. You can see that some of the macros we've already been using are pretty simple. Here's the one for `write!` that we used to write to files:
+所以現在我們可以開始瞭解其他的巨集了。你可以見到，我們已經使用的一些巨集相當簡單。這裡是我們過去常用來寫入檔案的 `write!` 巨集：
 
 ```rust
 macro_rules! write {
@@ -13390,16 +13390,16 @@ macro_rules! write {
 }
 ```
 
-So to use it, you enter this:
+要使用它時，你要輸入這些：
 
-- an expression (`expr`) that gets the variable name `$dst`.
-- everything after that. If it wrote `$arg:tt` then it would only take one, but because it wrote `$($arg:tt)*` it takes zero, one, or any number.
+- 一個表達式 (`expr`) 用來得到變數名 `$dst`。
+- 之後的所有東西。如果它寫的是 `$arg:tt`，那麼它只會接受一個元素，但因為它寫的是 `$($arg:tt)*`，所以它可以接受零、一個或者任意多個。
 
-Then it takes `$dst` and uses a method called `write_fmt` on it. Inside that, it uses another macro called `format_args!` that takes all `$($arg)*`, or all the arguments we put in.
+然後它接受 `$dst`，並對它呼叫了叫做 `write_fmt` 的方法。在那裡面，它使用了另一個叫做 `format_args!` 的巨集來接受所有的 `$($arg)*`，或者說我們放進去的全部引數。
 
 
 
-Now let's take a look at the `todo!` macro. That's the one you use when you want the program to compile but haven't written your code yet. It looks like this:
+現在我們來看一下 `todo!` 這個巨集。當你想讓程式能編譯但你的程式碼還沒寫出來時，這就是你會用到的那個巨集。看起來像這樣：
 
 ```rust
 macro_rules! todo {
@@ -13408,12 +13408,12 @@ macro_rules! todo {
 }
 ```
 
-This one has two options: you can enter `()`, or a number of token trees (`tt`).
+這個有兩個選項：你可以輸入 `()`，也可以輸入一些標記樹 (`tt`)。
 
-- If you enter `()`, it just uses `panic!` with a message. So you could actually just write `panic!("not yet implemented")` instead of `todo!` and it would be the same.
-- If you enter some arguments, it will try to print them. You can see the same `format_args!` macro inside, which works like `println!`.
+- 如果你輸入的是 `()`，它只是使用加上訊息的 `panic!`。所以其實你可以直接寫 `panic!("not yet implemented")`，而不是 `todo!`，結果也一樣。
+- 如果你輸入一些引數，它會嘗試印出它們。你可以見到裡面有同樣的 `format_args!` 巨集，它的工作原理和 `println!` 一樣。
 
-So if you write this, it will work too:
+所以如果你寫成這樣，一樣也行得通：
 
 ```rust
 fn not_done() {
@@ -13427,14 +13427,14 @@ fn main() {
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 thread 'main' panicked at 'not yet implemented: Not done yet because of lack of time. Check back in 8 hours', src/main.rs:4:5
 ```
 
 
-Inside a macro you can even call the same macro. Here's one:
+在巨集裡面你甚至可以呼叫相同的巨集。這裡是這樣的範例：
 
 ```rust
 macro_rules! my_macro {
@@ -13457,18 +13457,18 @@ fn main() {
 }
 ```
 
-This one takes either `()`, or one expression, or many expressions. But it ignores all the expressions no matter what you put in, and just calls `my_macro!` on `()`. So the output is just `Let's print this`, four times.
+這個巨集接受 `()`、或一個表達式、或很多個表達式都可以。但是不論你放了什麼，它都會忽略所有的表達式，並且最後只呼叫 `my_macro!` 的 `()`。所以四次輸出都只是 `Let's print this`。
 
-You can see the same thing in the `dbg!` macro, which also calls itself.
+在 `dbg!` 巨集中也可以看到同樣的情況，也就是呼叫自己。
 
 ```rust
 macro_rules! dbg {
     () => {
-        $crate::eprintln!("[{}:{}]", $crate::file!(), $crate::line!()); //$crate means the crate that it's in.
+        $crate::eprintln!("[{}:{}]", $crate::file!(), $crate::line!()); // $crate 的意思是指本身所在的 crate.
     };
     ($val:expr) => {
-        // Use of `match` here is intentional because it affects the lifetimes
-        // of temporaries - https://stackoverflow.com/a/48732525/1063961
+        // 這裡 `match` 的使用是有意的因為它影響了暫存變數的
+        // 生命週期 - https://stackoverflow.com/a/48732525/1063961
         match $val {
             tmp => {
                 $crate::eprintln!("[{}:{}] {} = {:#?}",
@@ -13477,7 +13477,7 @@ macro_rules! dbg {
             }
         }
     };
-    // Trailing comma with single argument is ignored
+    // 單一引數的後緣逗號會被忽略
     ($val:expr,) => { $crate::dbg!($val) };
     ($($val:expr),+ $(,)?) => {
         ($($crate::dbg!($val)),+,)
@@ -13485,9 +13485,9 @@ macro_rules! dbg {
 }
 ```
 
-(`eprintln!` is the same as `println!` except it prints to `io::stderr` instead of `io::stdout`. There is also `eprint!` that doesn't add a new line)
+> `eprintln!` 與 `println!` 相同，除了它印出到 `io::stderr` 而不是 `io::stdout`。當然也有個 `eprint!` 印出時不會加上換行。
 
-So we can try this out ourself.
+所以我們可以自己去試一試。
 
 ```rust
 fn main() {
@@ -13495,9 +13495,9 @@ fn main() {
 }
 ```
 
-That matches the first arm, so it will print the file name and line name with the `file!` and `line!` macros. It prints `[src/main.rs:2]`.
+這與第一分支相匹配，所以它會用 `file!` 和 `line!` 巨集印出檔名和行數。印出 `[src/main.rs:2]`。
 
-Let's try it with this:
+讓我們用這個來試試：
 
 ```rust
 fn main() {
@@ -13505,7 +13505,7 @@ fn main() {
 }
 ```
 
-This will match the next arm, because it's one expression. It will then call the input `tmp` and use this code: ` $crate::eprintln!("[{}:{}] {} = {:#?}", $crate::file!(), $crate::line!(), $crate::stringify!($val), &tmp);`. So it will print with `file!` and `line!`, then `$val` made into a `String`, and pretty print with `{:#?}` for `tmp`. So for our input it will write this:
+這將會匹配到下一個分支，因為它是個表達式。然後它將把輸入叫做 `tmp` 並使用這段程式碼：`$crate::eprintln!("[{}:{}] {} = {:#?}", $crate::file!(), $crate::line!(), $crate::stringify!($val), &tmp);`。所以它會用 `file!` 和 `line!` 來印出，再把 `$val` 做成 `String`，並且用 `{:#?}` 來給 `tmp` 做漂亮列印。所以對於我們的輸入，它會寫成這樣：
 
 ```text
 [src/main.rs:2] vec![8, 9, 10] = [
@@ -13515,9 +13515,9 @@ This will match the next arm, because it's one expression. It will then call the
 ]
 ```
 
-And for the rest of it it just calls `dbg!` on itself even if you put in an extra comma.
+剩下的部分，即使你加了額外的逗號，它也只是對自己呼叫 `dbg!`。
 
-As you can see, macros are very complicated! Usually you only want a macro to automatically do something that a simple function can't do very well. The best way to learn about macros is to look at other macro examples. Not many people can quickly write macros without problems. So don't think that you need to know everything about macros to know how to write in Rust. But if you read other macros, and change them a little, you can easily borrow their power. Then you might start to get comfortable with writing your own.
+正如你所見，巨集是非常複雜的！通常你只想讓巨集自動做些簡單函式無法做得很好的事情。學習巨集的最佳方法就是看看其他巨集的例子。沒有多少人能夠快速寫出巨集而不出問題。所以在 Rust 中，不用認為你需要知道巨集的一切才能知道如何撰寫。但如果你讀了其他巨集，並稍加修改，你就可以很容易地借用它們的威力。之後你可能就會開始習慣寫出自己的巨集。
 
 
 # Part 2 - Rust on your computer
