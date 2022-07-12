@@ -136,8 +136,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [OsString 和 CString](#osstring-和-cstring)
     - [mem](#mem)
     - [prelude](#prelude)
-    - [time](#time)
-    - [Other macros](#other-macros)
+    - [時間](#時間)
+    - [其他巨集](#其他巨集)
   - [Writing macros](#writing-macros)
 - [Part 2 - Rust on your computer](#part-2---rust-on-your-computer)
   - [cargo](#cargo)
@@ -12779,9 +12779,9 @@ extern crate rand;
 
 
 
-### time
+### 時間
 
-`std::time` is where you can get functions for time. (If you want even more functions, a crate like `chrono` can work.) The simplest function is just getting the system time with `Instant::now()`.
+`std::time` 是你可以找到時間相關函式的地方。(如果你想要更多的功能，有 `chrono` 這樣的 crate 可以用。) 最簡單的功能就是用`Instant::now()` 取得系統時間。
 
 ```rust
 use std::time::Instant;
@@ -12792,9 +12792,9 @@ fn main() {
 }
 ```
 
-If you print it, you'll get something like this: `Instant { tv_sec: 2738771, tv_nsec: 685628140 }`. That's talking about seconds and nanoseconds, but it's not very useful. If you look at 2738771 seconds for example (written in August), it is 31.70 days. That doesn't have anything to do with the month or the day of the year. But the page on `Instant` tells us that it isn't supposed to be useful on its own. It says that it is "opaque and useful only with Duration." Opaque means "you can't figure it out", and duration means "how much time passed". So it's only useful when doing things like comparing times.
+如果你印出來，你會得到這樣的東西：`Instant { tv_sec: 2738771, tv_nsec: 685628140 }`。那裡講的是秒和奈秒，但用處不大。比如你看 2738771 秒(寫於 8 月)，就是31.70 天。這和月份、日數沒有任何關係。但是 `Instant` 的[頁面](https://doc.rust-lang.org/std/time/struct.Instant.html)告訴我們，它對本身不應該有用。它說它是 "不透明的(Opaque)，只有和 Duration 一起才有用"。這裡不透明的的意思是"你無法搞清楚"，而 Duration 的意思是"過去多少時間"。所以它只有在做比較時間這樣的事情時才有用。
 
-If you look at the traits on the left, one of them is `Sub<Instant>`. That means we can use `-` to subtract one from another. And when we click on [src] to see what it does, it says:
+如果你看頁面左側的特徵，其中一個是 `Sub<Instant>`。也就是說我們可以用 `-` 來減去另一個。而當我們點選 [src] 看它做了什麼時，它說：
 
 ```rust
 impl Sub<Instant> for Instant {
@@ -12806,19 +12806,19 @@ impl Sub<Instant> for Instant {
 }
 ```
 
-So it takes an `Instant` and uses `.duration_since()` to give a `Duration`. Let's try printing that. We'll make two `Instant::now()`s right next to each other, then we'll make the program busy for a while. Then we'll make one more `Instant::now()`. Finally, we'll see how long it took.
+因此，它需要 `Instant`，並使用 `.duration_since()` 給出 `Duration`。讓我們試著把它印出來。我們將做出兩個直接相鄰的 `Instant::now()`，然後再讓程式忙碌一下。然後我們再多做出一個 `Instant::now()`。 最後我們將看看花了多長時間。
 
 ```rust
 use std::time::Instant;
 
 fn main() {
     let time1 = Instant::now();
-    let time2 = Instant::now(); // These two are right next to each other
+    let time2 = Instant::now(); // 這兩個直接相鄰
 
     let mut new_string = String::new();
     loop {
-        new_string.push('წ'); // Make Rust push this Georgian letter onto the String
-        if new_string.len() > 100_000 { //  until it is 100,000 bytes long
+        new_string.push('წ'); // 讓 Rust 把喬治亞字母推到 String 上
+        if new_string.len() > 100_000 { // 直到它長達 100,000 位元組
             break;
         }
     }
@@ -12828,16 +12828,16 @@ fn main() {
 }
 ```
 
-This will print something like this:
+會印出類似這樣：
 
 ```text
 1.025µs
 683.378µs
 ```
 
-So that's just over 1 microsecond vs. 683 microseconds. We can see that Rust did take some time to do it.
+所以這只是 1 微秒多對上 683 毫秒。我們可以看到 Rust 確實花了一些時間來做。
 
-There is one fun thing we can do with just a single `Instant` though. We can turn it into a `String` with `format!("{:?}", Instant::now());`. It looks like this:
+然而我們可以只用一個 `Instant` 來做一件有趣的事情。我們可以用 `format!("{:?}", Instant::now());` 把它轉換成 `String`。看起來像這樣：
 
 ```rust
 use std::time::Instant;
@@ -12848,7 +12848,7 @@ fn main() {
 }
 ```
 
-That prints something like `Instant { tv_sec: 2740773, tv_nsec: 632821036 }`. That's not useful, but if we use `.iter()` and `.rev()` and `.skip(2)`, we can skip the `}` and ` ` at the end. We can use it to make a random number generator.
+那會印出類似 `Instant { tv_sec: 2740773, tv_nsec: 632821036 }` 的東西。那沒什麼用，但是如果我們使用 `.iter()` 和 `.rev()` 以及 `.skip(2)`，我們可以跳過尾端的 `}` 和 ` `。我們可以用它來做出隨機數產生器。
 
 ```rust
 use std::time::Instant;
@@ -12877,7 +12877,7 @@ fn main() {
 }
 ```
 
-This will print something like:
+會印出類似這樣：
 
 ```text
 6
@@ -12886,9 +12886,9 @@ This will print something like:
 180
 ```
 
-The function is called `bad_random_number` because it's not a very good random number generator. Rust has better crates that make random numbers with less code than `rand` like `fastrand`. But it's a good example of how you can use your imagination to do something with `Instant`.
+這個函式被稱為 `bad_random_number`，因為它不是個非常好的隨機數產生器。Rust 有更好的 crate，可以用比 `rand` 更少的程式碼做出隨機數，比如 `fastrand`。但這是個你如何可以利用你的想像力透過 `Instant` 來做一些事情的好範例。
 
-When you have a thread, you can use `std::thread::sleep` to make it stop for a while. When you do this, you have to give it a duration. You don't have to make more than one thread to do this because every program is on at least one thread. `sleep` needs a `Duration` though, so it can know how long to sleep. You can pick the unit like this: `Duration::from_millis()`, `Duration::from_secs`, etc. Here's one example:
+當你有個執行緒運作時，你可以使用 `std::thread::sleep` 使它停止一段時間。當你這樣做時，你必須給它 duration。你不必做出多個執行緒來做這件事，因為每個程式至少運作在一個執行緒上。然而 `sleep` 需要 `Duration`，所以它可以知道要睡多久。你可以像這樣選擇單位：`Duration::from_millis()`、`Duration::from_secs` 等等。這裡舉個例子：
 
 ```rust
 use std::time::Duration;
@@ -12902,32 +12902,32 @@ fn main() {
 }
 ```
 
-This will just print
+只會印出：
 
 ```text
 I must sleep now.
 Did I miss anything?
 ```
 
-but the thread will do nothing for three seconds. You usually use `.sleep()` when you have many threads that need to try something a lot, like connecting. You don't want the thread to use your processor to try 100,000 times in a second when you just want it to check sometimes. So then you can set a `Duration`, and it will try to do its task every time it wakes up.
+但執行緒在三秒鐘內什麼也不做。當你有很多執行緒需要經常嘗試一些事情時，比如連線，你通常會使用 `.sleep()`。你不希望執行緒使用你的處理器在一秒鐘內嘗試十萬次，而你只是想讓它有時檢查一下。所以你就可以設定 `Duration`，它就會在每次醒來的時候嘗試做它的任務。
 
 
-### Other macros
+### 其他巨集
 
 
-Let's take a look at some other macros.
+讓我們再來看看一些其他巨集。
 
-`unreachable!()`
+#### `unreachable!()`
 
-This macro is kind of like `todo!()` except it's for code that you will never do. Maybe you have a `match` in an enum that you know will never choose one of the arms, so the code can never be reached. If that's so, you can write `unreachable!()` so the compiler knows that it can ignore that part.
+這個巨集有點像 `todo!()`，除了它是針對你永遠不會用的程式碼。也許你在列舉中有個 `match`，你知道它永遠不會選擇其中的某個分支，所以程式碼永遠無法到達。如果是這樣，你可以寫 `unreachable!()`，這樣編譯器就知道可以忽略這部分。
 
-For example, let's say you have a program that writes something when you choose a place to live in. They are in Ukraine, and all of them are nice except Chernobyl. Your program doesn't let anyone choose Chernobyl, because it's not a good place to live right now. But the enum was made a long time ago in someone else's code, and you can't change it. So in the `match` arm you can use the macro here. It looks like this:
+例如，假設你有個程式，當你選擇一個地方居住時，它會寫一些東西。在烏克蘭除了車諾比外，其他地方都不錯。你的程式不讓任何人選擇車諾比，因為它現在不是個居住的好地方。但是這個列舉是很早以前在別人的程式碼裡做的，你無法更改。所以在 `match` 的分支中，你可以在這裡用這個巨集。看起來像這樣：
 
 ```rust
 enum UkrainePlaces {
     Kiev,
     Kharkiv,
-    Chernobyl, // Pretend we can't change the enum - Chernobyl will always be here
+    Chernobyl, // 假裝我們不能改變列舉 - 車諾比會永遠在這
     Odesa,
     Dnipro,
 }
@@ -12944,16 +12944,16 @@ fn choose_city(place: &UkrainePlaces) {
 }
 
 fn main() {
-    let user_input = UkrainePlaces::Kiev; // Pretend the user input is made from some other function. The user can't choose Chernobyl, no matter what
+    let user_input = UkrainePlaces::Kiev; // 假裝使用者輸入是來自一些其它函示. 無論如何使用者不能選擇車諾比
     choose_city(&user_input);
 }
 ```
 
-This will print `You will live in Kiev`.
+會印出 `You will live in Kiev`。
 
-`unreachable!()` is also nice for you to read because it reminds you that some part of the code is unreachable. You have to be sure that the code is actually unreachable though. If the compiler ever calls `unreachable!()`, the program will panic.
+`unreachable!()` 對你來說也很好讀，因為它提醒你程式碼的某些部分是不能到達的。不過你必須確定程式碼實際上是到達不了的。如果呼叫了 `unreachable!()`，程式就會恐慌。
 
-Also, if you ever have unreachable code that the compiler knows about, it will tell you. Here is a quick example:
+此外，如果你曾經有到達不了的程式碼，而編譯器知道，它就會告訴你。這裡是個便捷的範例：
 
 ```rust
 fn main() {
@@ -12962,12 +12962,12 @@ fn main() {
     match true_or_false {
         true => println!("It's true"),
         false => println!("It's false"),
-        true => println!("It's true"), // Whoops, we wrote true again
+        true => println!("It's true"), // 哎呀, 我們又寫了 true
     }
 }
 ```
 
-It will say:
+它會說：
 
 ```text
 warning: unreachable pattern
@@ -12978,20 +12978,20 @@ warning: unreachable pattern
   |
 ```
 
-But `unreachable!()` is for when the compiler can't know, like our other example.
+但是 `unreachable!()` 是用於編譯器無法知道的時候，就像我們的另一個範例。
 
 
 
-`column!`, `line!`, `file!`, `module_path!`
+#### `column!`、`line!`、`file!`、`module_path!`
 
-These four macros are kind of like `dbg!()` because you just put them in to give you debug information. But they don't take any variables - you just use them with the brackets and nothing else. They are easy to learn together:
+這四個巨集有點像 `dbg!()`，因為你只是把它們放進程式碼來給你除錯資訊。但是它們不需要接受任何變數——你只需要把它們和括號一起使用，而且沒有其他東西。它們放到一起很容易學：
 
-- `column!()` gives you the column where you wrote it,
-- `file!()` gives you the name of the file where you wrote it,
-- `line!()` gives you the line where you wrote it, and
-- `module_path!()` gives you the module where it is.
+- `column!()` 給你寫的那一列
+- `file!()` 給你寫的檔案名稱
+- `line!()` 給你寫的那一行，然後是
+- `module_path!()` 給你模組所在的位置。
 
-The next code shows all three in a simple example. We will pretend there is a lot more code (mods inside mods), because that is why we would want to use these macros. You can imagine a big Rust program over many mods and files.
+接下來的程式碼會在簡單的例子中秀出這三者。我們將假裝有更多的程式碼(模組裡面的模組)，因為那就是我們要使用這些巨集的原因。你可以想像 Rust 大程式，它有許多模組與檔案。
 
 ```rust
 pub mod something {
@@ -13010,17 +13010,17 @@ fn main() {
     use something::third_mod::*;
     let mut country_vec = vec!["Portugal", "Czechia", "Finland"];
     
-    // do some stuff
+    // 做一些事情
     println!("Hello from file {}", file!());
 
-    // do some stuff
+    // 做一些事情
     println!(
         "On line {} we got the country {}",
         line!(),
         country_vec.pop().unwrap()
     );
 
-    // do some more stuff
+    // 做多一些事情
 
     println!(
         "The next country is {} on line {} and column {}.",
@@ -13029,13 +13029,13 @@ fn main() {
         column!(),
     );
 
-    // lots more code
+    // 很多很多的程式碼
 
     print_a_country(&mut country_vec);
 }
 ```
 
-It prints this:
+印出這樣：
 
 ```text
 Hello from file src/main.rs
@@ -13046,9 +13046,9 @@ The last country is Portugal inside the module rust_book::something::third_mod
 
 
 
-`cfg!`
+#### `cfg!`
 
-We know that you can use attributes like `#[cfg(test)]` and `#[cfg(windows)]` to tell the compiler what to do in certain cases. When you have `test`, it will run the code when you run Rust under testing mode (if it's on your computer you type `cargo test`). And when you use `windows`, it will run the code if the user is using Windows. But maybe you just want to change one tiny bit of code depending on the operating system, etc. That's when this macro is useful. It returns a `bool`.
+我們知道你可以使用 `#[cfg(test)]` 和 `#[cfg(windows)]` 這樣的屬性來告訴編譯器在某些情況下該怎麼做。當你有 `test` 時，當你在測試模式下執行Rust 時，它會執行程式碼(如果是在電腦上，你輸入 `cargo test`)。而當你使用 `windows` 時，如果使用者使用的是 Windows，它就會執行程式碼。但也許你只是想根據不同作業系統對依賴系統的程式碼做很小的修改。這時候這個巨集就很有用了。它回傳 `bool`。
 
 ```rust
 fn main() {
@@ -13061,32 +13061,32 @@ fn main() {
 }
 ```
 
-This will print differently, depending on your system. The Rust Playground runs on Linux, so it will print:
+取決於你的系統這將以不同的方式列印。Rust Playground 在 Linux上執行，所以會印出：
 
 ```text
 ...then in your hard drive, type the directory name followed by a slash. Then you...
 ```
 
-`cfg!()` works for any kind of configuration. Here is an example of a function that runs differently when you use it inside a test.
+`cfg!()` 適用於任何一種配置。這裡的範例是當你在測試中使用函式時，它的執行方式會有所不同。
 
 ```rust
-#[cfg(test)] // cfg! will know to look for the word test
+#[cfg(test)] // cfg! 會知道要尋找 test 這個字
 mod testing {
     use super::*;
     #[test]
     fn check_if_five() {
-        assert_eq!(bring_number(true), 5); // This bring_number() function should return 5
+        assert_eq!(bring_number(true), 5); // bring_number() 函式應該回傳 5
     }
 }
 
-fn bring_number(should_run: bool) -> u32 { // This function takes a bool as to whether it should run
-    if cfg!(test) && should_run { // if it should run and has the configuration test, return 5
+fn bring_number(should_run: bool) -> u32 { // 這個函式接受 bool 作為是否他應該執行的條件
+    if cfg!(test) && should_run { // 如果它應該執行並且有組態測試就回傳 5
         5
-    } else if should_run { // if it's not a test but it should run, print something. When you run a test it ignores println! statements
+    } else if should_run { // 如果它不是 test 但它應該執行, 印出某些東西. 當你執行測試它會忽略 println! 陳述式
         println!("Returning 5. This is not a test");
         5
     } else {
-        println!("This shouldn't run, returning 0."); // otherwise return 0
+        println!("This shouldn't run, returning 0."); // 否則回傳 0
         0
     }
 }
@@ -13097,14 +13097,14 @@ fn main() {
 }
 ```
 
-Now it will run differently depending on the configuration. If you just run the program, it will give you this:
+現在根據組態的不同，它的執行方式也會不同。如果你只是執行程式，它會給你這樣的結果：
 
 ```text
 Returning 5. This is not a test
 This shouldn't run, returning 0.
 ```
 
-But if you run it in test mode (`cargo test` for Rust on your computer), it will actually run the test. And because the test always returns 5 in this case, it will pass.
+但如果你在測試模式下執行它 (`cargo test`，用你電腦上的 Rust 跑)，它實際上會執行測試。因為在這種情況下，測試總是回傳 5，所以它會通過。
 
 ```text
 running 1 test
