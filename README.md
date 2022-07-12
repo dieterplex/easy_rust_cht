@@ -132,8 +132,8 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [浮點數](#浮點數-1)
     - [布林](#布林)
     - [向量](#向量-1)
-    - [String](#string)
-    - [OsString and CString](#osstring-and-cstring)
+    - [字串](#字串-1)
+    - [OsString 和 CString](#osstring-和-cstring)
     - [mem](#mem)
     - [prelude](#prelude)
     - [time](#time)
@@ -12267,25 +12267,25 @@ fn main() {
 結果：`["moon", "sun"]`。
 
 
-### String
+### 字串
 
-You will remember that a `String` is kind of like a `Vec`. It is so like a `Vec` that you can do a lot of the same methods. For example, you can start one with `String::with_capacity()`. You want that if you are always going to be pushing a `char` with `.push()` or pushing a `&str` with `.push_str()`. Here's an example of a `String` that has too many allocations.
+你會記得 `String` 有點像是一種 `Vec`。它很像 `Vec` 讓你可以呼叫很多相同的方法。比如說，你可以用 `String::with_capacity()` 建立字串，尤其是如果你會需要一直用 `.push()` 推進 `char` 多次，或者用 `.push_str()` 推進 `&str`。這裡是個對 `String` 有太多次記憶體分配 (allocation) 的範例。
 
 ```rust
 fn main() {
     let mut push_string = String::new();
-    let mut capacity_counter = 0; // capacity starts at 0
-    for _ in 0..100_000 { // Do this 100,000 times
-        if push_string.capacity() != capacity_counter { // First check if capacity is different now
-            println!("{}", push_string.capacity()); // If it is, print it
-            capacity_counter = push_string.capacity(); // then update the counter
+    let mut capacity_counter = 0; // 容量從 0 開始
+    for _ in 0..100_000 { // 做 100,000 次
+        if push_string.capacity() != capacity_counter { // 首先檢查容量現在是否不同
+            println!("{}", push_string.capacity()); // 如果是就印出來
+            capacity_counter = push_string.capacity(); // 再來更新計數器
         }
-        push_string.push_str("I'm getting pushed into the string!"); // and push this in every time
+        push_string.push_str("I'm getting pushed into the string!"); // 並且每次推這個字串進去
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 35
@@ -12308,11 +12308,11 @@ This prints:
 4587520
 ```
 
-We had to reallocate (copy everything over) 18 times. But now we know the final capacity. So we'll give it the capacity right away, and we don't need to reallocate: just one `String` capacity is enough.
+我們不得不重分配(reallocate，把所有東西複製過來到另一處記憶體位置) 18次。但既然我們知道了最終的容量(capacity)，那麼我們將馬上給它容量，就不需要重分配：只要一個 `String` 容量值就夠了。
 
 ```rust
 fn main() {
-    let mut push_string = String::with_capacity(4587520); // We know the exact number. Some different big number could work too
+    let mut push_string = String::with_capacity(4587520); // 我們知道明確的數字. 一些不同的大數字也行得通
     let mut capacity_counter = 0;
     for _ in 0..100_000 {
         if push_string.capacity() != capacity_counter {
@@ -12324,9 +12324,9 @@ fn main() {
 }
 ```
 
-And this prints `4587520`. Perfect! We never had to allocate again.
+印出 `4587520`。完美！我們永遠不再需要分配了。
 
-Of course, the actual length is certainly smaller than this. If you try 100,001 times, 101,000 times, etc., it'll still say `4587520`. That's because each time the capacity is two times what it was before. We can shrink it though with `.shrink_to_fit()` (same as for a `Vec`). Our `String` is very large and we don't want to add anything more to it, so we can make it a bit smaller. But only do this if you are sure. Here is why:
+當然實際長度肯定比這個小。如果你試了 100001 次、101000 次等等，還是會說 `4587520`。這是因為每次的容量都是之前的兩倍。不過我們可以用 `.shrink_to_fit()` 來縮小它(和 `Vec` 一樣)。我們的 `String` 已經非常大了，我們不想再給它增加任何東西，所以我們可以把它縮小一點。但是只有在你有把握的情況下才可以這樣做。這裡是原因：
 
 ```rust
 fn main() {
@@ -12348,7 +12348,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 4587520
@@ -12357,9 +12357,9 @@ This prints:
 3500001
 ```
 
-So first we had a size of `4587520`, but we weren't using it all. We used `.shrink_to_fit()` and got the size down to `3500000`. But then we forget that we needed to push an `a` on. When we did that, Rust saw that we needed more space and gave us double: now it's `7000000`. Whoops! So we did `.shrink_to_fit()` again and now it's back down to `3500001`.
+所以首先我們的大小是 `4587520`，但我們沒有全部使用到。我們用了 `.shrink_to_fit()`，然後把大小降到了 `3500000`。但是我們忘記了需要推上 `a`。當我們這樣做的時候，Rust 看到我們需要更多的空間，並加倍給了我們：現在是 `7000000`。哎呀！所以我們又呼叫了 `.shrink_to_fit()` 一次，現在又回到了 `3500001`。
 
-`.pop()` works for a `String`, just like for a `Vec`.
+`.pop()` 能用在 `String`，就像用在 `Vec` 一樣。
 
 ```rust
 fn main() {
@@ -12374,45 +12374,45 @@ fn main() {
 }
 ```
 
-This prints `This string is a little bit hard to read.` because it starts from the last character.
+印出 `This string is a little bit hard to read.` 因為它從最後一個字元開始。
 
-`.retain()` is a method that uses a closure, which is rare for `String`. It's just like `.filter()` for an iterator.
+`.retain()` 是使用閉包的方法，這對 `String` 來說很少見。就像在疊代器上的 `.filter()` 一樣。
 
 ```rust
 fn main() {
     let mut my_string = String::from("Age: 20 Height: 194 Weight: 80");
-    my_string.retain(|character| character.is_alphabetic() || character == ' '); // Keep if a letter or a space
-    dbg!(my_string); // Let's use dbg!() for fun this time instead of println!
+    my_string.retain(|character| character.is_alphabetic() || character == ' '); // 如果是字母或空白就保留
+    dbg!(my_string); // 為了好玩這次讓我們用 dbg!() 而不是 println!
 }
 ```
 
-This prints:
+印出：
 
 ```text
 [src\main.rs:4] my_string = "Age  Height  Weight "
 ```
 
 
-### OsString and CString
+### OsString 和 CString
 
-`std::ffi` is the part of `std` that helps you use Rust with other languages or operating systems. It has types like `OsString` and `CString`, which are like `String` for the operating system or `String` for the language C. They each have their own `&str` type too: `OsStr` and `CStr`. `ffi` means "foreign function interface".
+`std::ffi` 是 `std` 的一部分，它幫助你將 Rust 與其他程式設計語言或作業系統一起使用。它有 `OsString` 和 `CString` 這樣的型別，它們就像給作業系統用的 `String` 或給 C 語言用的 `String` 一樣，它們各自也有自己的 `&str` 型別：`OsStr` 和 `CStr`。`ffi` 的意思是"外部函式介面"(foreign function interface)。
 
-You can use `OsString` when you have to work with an operating system that doesn't have Unicode. All Rust strings are unicode, but not every operating system has it. Here is the simple English explanation from the standard library on why we have `OsString`:
+當你必須與沒有 Unicode 的作業系統互動時，你可以使用 `OsString`。Rust 所有的字串都是 unicode，但不是每個作業系統支援。這些是標準函式庫中關於為什麼我們會有 `OsString` 的簡單解釋。
 
-- A string on Unix (Linux, etc.) might be lots of bytes together that don't have zeros. And sometimes you read them as Unicode UTF-8.
-- A string on Windows might be made of random 16-bit values that don't have zeros. And sometimes you read them as Unicode UTF-16.
-- In Rust, strings are always valid UTF-8, which may contain zeros.
+- Unix (Linux 等等)上的字串可能是很多沒有零的位元組組合在一起。而且有時你會把它們讀取為 Unicode UTF-8。
+- Windows 上的字串可能是由隨機的沒有零的 16 位元值組成。有時你會把它們讀取為 Unicode UTF-16。
+- 在 Rust 中，字串總是有效的 UTF-8，其中可能包含多個零。
 
-So an `OsString` is made to be read by all of them.
+所以 `OsString` 被設計為可以被它們全部讀取到。
 
-You can do all the regular things with an `OsString` like `OsString::from("Write something here")`. It also has an interesting method called `.into_string()` that tries to make it into a regular `String`. It returns a `Result`, but the `Err` part is just the original `OsString`:
+你可以用 `OsString` 來做所有常規的事情，比如 `OsString::from("Write something here")`。它還有個有趣的方法叫做 `.into_string()`，那會試圖把自己變成常規的 `String`。它會回傳 `Result`，但 `Err` 部分只是原來的 `OsString`：
 
 ```rust
 // 🚧
 pub fn into_string(self) -> Result<String, OsString>
 ```
 
-So if it doesn't work then you just get it back. You can't call `.unwrap()` because it will panic, but you can use `match` to get the `OsString` back. Let's test it out by calling methods that don't exist.
+所以如果不行用的話，那你就把它拿回來。你不能呼叫 `.unwrap()`，因為它會恐慌，但是你可以使用 `match` 來拿回 `OsString`。讓我們透過呼叫不存在的方法來測試一下：
 
 ```rust
 use std::ffi::OsString;
@@ -12421,13 +12421,13 @@ fn main() {
     // ⚠️
     let os_string = OsString::from("This string works for your OS too.");
     match os_string.into_string() {
-        Ok(valid) => valid.thth(),           // Compiler: "What's .thth()??"
-        Err(not_valid) => not_valid.occg(),  // Compiler: "What's .occg()??"
+        Ok(valid) => valid.thth(),           // 編譯器: "什麼是 .thth()??"
+        Err(not_valid) => not_valid.occg(),  // 編譯器: "什麼是 .occg()??"
     }
 }
 ```
 
-Then the compiler tells us exactly what we want to know:
+然後編譯器準確地告訴我們什麼是我們想知道的：
 
 ```text
 error[E0599]: no method named `thth` found for struct `std::string::String` in the current scope
@@ -12443,11 +12443,11 @@ error[E0599]: no method named `occg` found for struct `std::ffi::OsString` in th
   |                                     ^^^^ method not found in `std::ffi::OsString`
 ```
 
-We can see that the type of `valid` is `String` and the type of `not_valid` is `OsString`.
+我們可以看到 `valid` 的型別是 `String` 以及 `not_valid` 的型別是 `OsString`。
 
 ### mem
 
-`std::mem` has some pretty interesting methods. We saw some of them already, such as `.size_of()`, `.size_of_val()` and `.drop()`:
+`std::mem` 有一些非常有趣的方法。我們已經看到過一些了，比如 `.size_of()`、`.size_of_val()` 和 `.drop()`：
 
 
 ```rust
@@ -12459,30 +12459,30 @@ fn main() {
     println!("{}", mem::size_of_val(&my_array));
     let mut some_string = String::from("You can drop a String because it's on the heap");
     mem::drop(some_string);
-    // some_string.clear();   If we did this it would panic
+    // some_string.clear();   如果我們這樣做就會恐慌
 }
 ```
 
-This prints:
+印出：
 
 ```text
 4
 200
 ```
 
-Here are some other methods in `mem`:
+這裡是 `mem` 中的一些其他方法：
 
-`swap()`: with this you can change the values between two variables. You use a mutable reference for each to do it. This is helpful when you have two things you want to switch and Rust doesn't let you because of borrowing rules. Or just when you want to quickly switch two things.
+`swap()`：用這個方法你可以交換兩個變數之間的值。你為每個變數建立可變參考來做到這件事。在你有兩樣東西想交換，卻因為借用規則 Rust 不允許時很有用。或是當你只想快速切換兩樣東西的時候。
 
-Here's one example:
+這裡是一個範例：
 
 ```rust
 use std::{mem, fmt};
 
-struct Ring { // Create a ring from Lord of the Rings
+struct Ring { // 從 Lord of the Rings 建立戒指
     owner: String,
     former_owner: String,
-    seeker: String, // seeker means "person looking for it"
+    seeker: String, // 意思是 "尋求它的人"
 }
 
 impl Ring {
@@ -12495,7 +12495,7 @@ impl Ring {
     }
 }
 
-impl fmt::Display for Ring { // Display to show who has it and who wants it
+impl fmt::Display for Ring { // Display 用來秀出誰擁有它及誰想得到它
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
             write!(f, "{} has the ring, {} used to have it, and {} wants it", self.owner, self.former_owner, self.seeker)
         }
@@ -12504,19 +12504,19 @@ impl fmt::Display for Ring { // Display to show who has it and who wants it
 fn main() {
     let mut one_ring = Ring::new("Frodo", "Gollum", "Sauron");
     println!("{}", one_ring);
-    mem::swap(&mut one_ring.owner, &mut one_ring.former_owner); // Gollum got the ring back for a second
+    mem::swap(&mut one_ring.owner, &mut one_ring.former_owner); // Gollum 拿回了戒指一下子
     println!("{}", one_ring);
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 Frodo has the ring, Gollum used to have it, and Sauron wants it
 Gollum has the ring, Frodo used to have it, and Sauron wants it
 ```
 
-`replace()`: this is like swap, and actually uses swap inside it, as you can see:
+`replace()`：這像是 swap，其實裡面也用了 swap，如同你看到的：
 
 ```rust
 pub fn replace<T>(dest: &mut T, mut src: T) -> T {
@@ -12525,7 +12525,7 @@ pub fn replace<T>(dest: &mut T, mut src: T) -> T {
 }
 ```
 
-So it just does a swap and then returns the other item. With this you replace the value with something else you put in. And since it returns the old value, so you should use it with `let`. Here's a quick example.
+所以它只是做交換，然後回傳另外一個。有了這個，你就能用放進去的其他東西來替換值。因為它會回傳舊的值，所以你應該用 `let` 來取得它。這裡是個便捷的範例：
 
 ```rust
 use std::mem;
@@ -12552,9 +12552,9 @@ fn main() {
 }
 ```
 
-This prints `The city once called Constantinople is now called Istanbul.`.
+印出 `The city once called Constantinople is now called Istanbul.`。
 
-One function called `.take()` is like `.replace()` but it leaves the default value in the item. You will remember that default values are usually things like 0, "", and so on. Here is the signature:
+有個函式叫 `.take()`，和 `.replace()` 類似，但它在元素中留下了預設值。你會記得，預設值通常像是 0、"" 之類的東西。這裡是它的簽名：
 
 ```rust
 // 🚧
@@ -12563,7 +12563,7 @@ where
     T: Default,
 ```
 
-So you can do something like this:
+所以你可以做像這樣的事情：
 
 ```rust
 use std::mem;
@@ -12581,7 +12581,7 @@ fn main() {
 }
 ```
 
-And as you can see, it replaced all the numbers with 0: no index was deleted.
+如同你看到的，所有數字都被替換為 0：沒有任何索引的元素被刪除。
 
 ```text
 [0, 0, 0, 0, 0, 0]
@@ -12589,26 +12589,26 @@ And as you can see, it replaced all the numbers with 0: no index was deleted.
 ```
 
 
-Of course, for your own type you can implement `Default` to whatever you want. Let's look at an example where we have a `Bank` and a `Robber`. Every time he robs the `Bank`, he gets the money at the desk. But the desk can take money from the back any time, so it always has 50. We will make our own type for this so it will always have 50. Here is how it works:
+對於你自己的型別，你當然可以把 `Default` 實現成任何你想要的型別。讓我們來看看我們的 `Bank` 和 `Robber` 的範例。每次他搶了 `Bank`，他就會在桌子上拿到錢。但是辦公桌可以隨時從後面拿錢，所以它永遠會有 50。我們將會為這件事做我們自己的型別，所以它也永遠會有 50。這裡是它怎麼做到的：
 
 ```rust
 use std::mem;
-use std::ops::{Deref, DerefMut}; // We will use this to get the power of u32
+use std::ops::{Deref, DerefMut}; // 我們將會使用這個來得到 u32 的威力
 
 struct Bank {
     money_inside: u32,
-    money_at_desk: DeskMoney, // This is our "smart pointer" type. It has its own default, but it will use u32
+    money_at_desk: DeskMoney, // 這是我們的 "智慧指標" 型別. 它有自己的預設值, 但他會使用 u32
 }
 
 struct DeskMoney(u32);
 
 impl Default for DeskMoney {
     fn default() -> Self {
-        Self(50) // default is always 50, not 0
+        Self(50) // 預設值永遠是 50, 不是 0
     }
 }
 
-impl Deref for DeskMoney { // With this we can access the u32 using *
+impl Deref for DeskMoney { // 有的這個我們可以使用 * 存取 u32
     type Target = u32;
 
     fn deref(&self) -> &Self::Target {
@@ -12616,7 +12616,7 @@ impl Deref for DeskMoney { // With this we can access the u32 using *
     }
 }
 
-impl DerefMut for DeskMoney { // And with this we can add, subtract, etc.
+impl DerefMut for DeskMoney { // 並且有了這個我們就可以做加減法等等
     fn deref_mut(&mut self) -> &mut Self::Target {
         &mut self.0
     }
@@ -12626,7 +12626,7 @@ impl Bank {
     fn check_money(&self) {
         println!(
             "There is ${} in the back and ${} at the desk.\n",
-            self.money_inside, *self.money_at_desk // Use * so we can just print the u32
+            self.money_inside, *self.money_at_desk // 要用 * 這樣我們才能印出 u32
         );
     }
 }
@@ -12641,37 +12641,37 @@ impl Robber {
     }
 
     fn rob_bank(&mut self, bank: &mut Bank) {
-        let new_money = mem::take(&mut bank.money_at_desk); // Here it takes the money, and leaves 50 because that is the default
-        self.money_in_pocket += *new_money; // Use * because we can only add u32. DeskMoney can't add
-        bank.money_inside -= *new_money;    // Same here
+        let new_money = mem::take(&mut bank.money_at_desk); // 這裡拿走錢, 並留下 50 因為那是預設值
+        self.money_in_pocket += *new_money; // 用 * 因為我們可以只加上 u32. DeskMoney 不能加
+        bank.money_inside -= *new_money;    // 這裡一樣
         println!("She robbed the bank. She now has ${}!\n", self.money_in_pocket);
     }
 }
 
 fn main() {
-    let mut bank_of_klezkavania = Bank { // Set up our bank
+    let mut bank_of_klezkavania = Bank { // 安排我們的銀行
         money_inside: 5000,
         money_at_desk: DeskMoney(50),
     };
     bank_of_klezkavania.check_money();
 
-    let mut robber = Robber { // Set up our robber
+    let mut robber = Robber { // 安排我們的搶匪
         money_in_pocket: 50,
     };
     robber.check_money();
 
-    robber.rob_bank(&mut bank_of_klezkavania); // Rob, then check money
+    robber.rob_bank(&mut bank_of_klezkavania); // 搶劫, 再來檢查金額
     robber.check_money();
     bank_of_klezkavania.check_money();
 
-    robber.rob_bank(&mut bank_of_klezkavania); // Do it again
+    robber.rob_bank(&mut bank_of_klezkavania); // 再做一次
     robber.check_money();
     bank_of_klezkavania.check_money();
 
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 There is $5000 in the back and $50 at the desk.
@@ -12691,29 +12691,29 @@ The robber has $150 right now.
 There is $4900 in the back and $50 at the desk.
 ```
 
-You can see that there is always $50 at the desk.
+你可以看到桌子上總是有 50 美元。
 
 
 ### prelude
 
-The standard library has a prelude too, which is why you don't have to write things like `use std::vec::Vec` to create a `Vec`. You can see all the items [here](https://doc.rust-lang.org/std/prelude/index.html#prelude-contents), and will already know almost all of them:
+標準函式庫也有 prelude (預先載入的函式庫)，這就是為什麼你不用寫像是 `use std::vec::Vec` 的東西來建立 `Vec`。你可以在[這裡](https://doc.rust-lang.org/std/prelude/index.html#prelude-contents)看到所有這些元素，並且已經大致瞭解他們：
 
-- `std::marker::{Copy, Send, Sized, Sync, Unpin}`. You haven't seen `Unpin` before, because it is used for almost every type (like `Sized`, which is also very common). To "pin" means to not let something move. In this case a `Pin` means that it can't move in memory, but most items have `Unpin` so you can. That's why functions like `std::mem::replace` work, because they aren't pinned.
-- `std::ops::{Drop, Fn, FnMut, FnOnce}`.
-- `std::mem::drop`
-- `std::boxed::Box`.
-- `std::borrow::ToOwned`. You saw this before a bit with `Cow`, which can take borrowed content and make it owned. It uses `.to_owned()` to do this. You can also use `.to_owned()` on a `&str` to get a `String`, and the same for other borrowed values.
-- `std::clone::Clone`
-- `std::cmp::{PartialEq, PartialOrd, Eq, Ord}`.
-- `std::convert::{AsRef, AsMut, Into, From}`.
-- `std::default::Default`.
-- `std::iter::{Iterator, Extend, IntoIterator, DoubleEndedIterator, ExactSizeIterator}`. We used `.rev()` for an iterator before: this actually makes a `DoubleEndedIterator`. An `ExactSizeIterator` is just something like `0..10`: it already knows that it has a `.len()` of 10. Other iterators don't know their length for sure.
-- `std::option::Option::{self, Some, None}`.
-- `std::result::Result::{self, Ok, Err}`.
-- `std::string::{String, ToString}`.
-- `std::vec::Vec`.
+- `std::marker::{Copy, Send, Sized, Sync, Unpin}`。你以前沒有見過 `Unpin`，因為幾乎每一種型別都會用到它(比如 `Sized`，也很常見)。"Pin" 的意思是釘住不讓東西動。在這種情況下，`Pin` 意味著它不能在記憶體中移動，但大多數都有 `Unpin`，所以可以移動。這就是為什麼像 `std::mem::replace` 這樣的函式能用，因為它們沒有被釘住。
+- `std::ops::{Drop, Fn, FnMut, FnOnce}`。
+- `std::mem::drop`。
+- `std::boxed::Box`。
+- `std::borrow::ToOwned`。你之前在 `Cow` 有看到過一些，它可以把內容從借來的變成擁有所有權的。它使用 `.to_owned()` 來做到這件事。你也可以使用 `.to_owned()` 在 `&str` 上來得到 `String`，對於其它的借來值用法也一樣。
+- `std::clone::Clone`。
+- `std::cmp::{PartialEq, PartialOrd, Eq, Ord}`。
+- `std::convert::{AsRef, AsMut, Into, From}`。
+- `std::default::Default`。
+- `std::iter::{Iterator, Extend, IntoIterator, DoubleEndedIterator, ExactSizeIterator}`。我們之前在疊代器用過 `.rev()`：實際上是做出了`DoubleEndedIterator`。`ExactSizeIterator` 只是類似於 `0..10` 的東西：它已經知道自己的 `.len()` 是 10。其他疊代器肯定是不知道它們的長度。
+- `std::option::Option::{self, Some, None}`。
+- `std::result::Result::{self, Ok, Err}`。
+- `std::string::{String, ToString}`。
+- `std::vec::Vec`。
 
-What if you don't want the prelude for some reason? Just add the attribute `#![no_implicit_prelude]`. Let's give it a try and watch the compiler complain:
+如果你因為某些原因不想要有 prelude 怎麼辦？就加上屬性 `#![no_implicit_prelude]`。讓我們來試一試，看編譯器抱怨什麼：
 
 ```rust
 // ⚠️
@@ -12725,7 +12725,7 @@ fn main() {
 }
 ```
 
-Now Rust has no idea what you are trying to do:
+現在 Rust 根本不知道你在嘗試做什麼：
 
 ```text
 error: cannot find macro `println` in this scope
@@ -12749,16 +12749,16 @@ error[E0433]: failed to resolve: use of undeclared type or module `String`
 error: aborting due to 3 previous errors
 ```
 
-So for this simple code you need to tell Rust to use the `extern` (external) crate called `std`, and then the items you want. Here is everything we have to do just to create a Vec and a String and print it:
+因此對於這個簡單的程式碼，你需要告訴 Rust 去使用叫做 `std` 的 `extern` (外部) crate，以及你想要用的元素。這裡是一切我們所需要做的事，只是為了建立 Vec 和 String 並印出它：
 
 ```rust
 #![no_implicit_prelude]
 
-extern crate std; // Now you have to tell Rust that you want to use a crate called std
-use std::vec; // We need the vec macro
-use std::string::String; // and string
-use std::convert::From; // and this to convert from a &str to the String
-use std::println; // and this to print
+extern crate std; // 現在你需要告訴 Rust 你想要用叫做 std 的 crate
+use std::vec; // 我們需要 vec 巨集
+use std::string::String; // 還有 String
+use std::convert::From; // 和這個來轉換 &str 到 String
+use std::println; // 還有這個來列印
 
 fn main() {
     let my_vec = vec![8, 9, 10];
@@ -12767,15 +12767,15 @@ fn main() {
 }
 ```
 
-And now it finally works, printing `[8, 9, 10], This won't work`. So you can see why Rust uses the prelude. But if you want, you don't need to use it. And you can even use `#![no_std]` (we saw this once) for when you can't even use something like stack memory. But most of the time you don't have to think about not using the prelude or `std` at all.
+現在終於成功印出 `[8, 9, 10], This won't work`。所以你可以明白為什麼 Rust 要用 prelude 了。但如果你願意，你不需要使用它。而且你甚至可以使用 `#![no_std]` (我們曾經看過一次)，用在你連堆疊記憶體這種東西都無法使用的時候。但大多數時候，你根本不用考慮是否不用 prelude 或 `std`。
 
-So why didn't we see the `extern` keyword before? It's because you don't need it that much anymore. Before, when bringing in an external crate you had to use it. So to use `rand` in the past, you had to write:
+那為什麼之前我們沒有看過 `extern` 這個關鍵字呢？是因為你已經不再那麼需要它了。以前在引進外部 crate 時，你必須使用它。所以過去要用 `rand`，你必須要寫成：
 
 ```rust
 extern crate rand;
 ```
 
-and then `use` statements for the mods, traits, etc. that you wanted to use. But the Rust compiler now doesn't need this help anymore - you can just use `use` and it knows where to find it. So you almost never need `extern crate` anymore, but in other people's Rust code you might still see it on the top.
+然後用 `use` 陳述式來表示你想要使用的模組、特徵等等。但現在 Rust 編譯器已經不需要這些幫助了──你只需要使用 `use`，Rust 就知道在哪裡可以找到它。所以你幾乎再也不需要 `extern crate` 了，但在其他人的 Rust 程式碼中，你可能仍然會在頂部看得到它。
 
 
 
