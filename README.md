@@ -139,7 +139,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
     - [時間](#時間)
     - [其他巨集](#其他巨集)
   - [撰寫巨集](#撰寫巨集)
-- [Part 2 - Rust on your computer](#part-2---rust-on-your-computer)
+- [第二部 - 電腦上的 Rust](#第二部---電腦上的-rust)
   - [cargo](#cargo)
   - [Taking user input](#taking-user-input)
   - [Using files](#using-files)
@@ -13520,20 +13520,20 @@ fn main() {
 正如你所見，巨集是非常複雜的！通常你只想讓巨集自動做些簡單函式無法做得很好的事情。學習巨集的最佳方法就是看看其他巨集的例子。沒有多少人能夠快速寫出巨集而不出問題。所以在 Rust 中，不用認為你需要知道巨集的一切才能知道如何撰寫。但如果你讀了其他巨集，並稍加修改，你就可以很容易地借用它們的威力。之後你可能就會開始習慣寫出自己的巨集。
 
 
-# Part 2 - Rust on your computer
+# 第二部 - 電腦上的 Rust
 
-You saw that we can learn almost anything in Rust just using the Playground. But if you learned everything so far, you will probably want Rust on your computer now. There are always things that you can't do with the Playground like using files or code in more than just one file. Some other things you need Rust on your computer for are input and flags. But most important is that with Rust on your computer you can use crates. We already learned about crates, but in the Playground you could only use the most popular ones. But with Rust on your computer you can use any crate in your program.
+你見到了我們可以只使用 Playground 就學習到 Rust 裡的幾乎任何東西。但到目前為止如果你已經學了這麼多，現在你也許會想要在你的電腦上使用 Rust。總有一些事情是你沒辨法用 Playground 做到的，比如使用檔案或在多個檔案中的程式碼。也有一些其它東西需要在電腦上安裝 Rust 的是輸入功能和 flags。但最重要的事是在你的電腦上有了 Rust，你可以使用 Crate。我們已經學過 Crate ，但在 Playground 中你只能使用最流行的那一個。但在你的電腦上有了 Rust，你就可以在你的程式中使用任何 Crate。
 
 ## cargo
 
-`rustc` means Rust compiler, and it's what does the actual compiling. A rust file ends with an `.rs`. But most people don't write something like `rustc main.rs` to compile. They use something called `cargo`, which is the main package manager for Rust.
+`rustc` 的意思是 Rust 編譯器，實際的編譯工作由它完成。Rust 檔案是用 `.rs` 作結尾。但大多數人不會去寫類似 `rustc main.rs` 的東西來編譯。他們使用的是名為 `cargo` 的東西，它是 Rust 的主要套件管理器。
 
-One note about the name: it's called `cargo` because when you put crates together, you get cargo. A crate is a wooden box that you see on ships or trucks, but you remember that every Rust project is also called a crate. Then when you put them together you get the whole cargo.
+關於這個名字的說明：之所以叫 `cargo`，是因為當你把板條箱 (crate) 放在一起時，你會得到貨物 (cargo)。Crate 就是你在貨船或卡車上見到的木箱，但你會記得，每個 Rust 專案也叫 Crate。那麼當你把它們放在一起時，你就會得到一整個 Cargo。
 
-You can see this when you use cargo to run a project. Let's try something simple with `rand`: we'll just randomly choose between eight letters.
+當你使用 Cargo 來執行專案時，你可以見到這一點。讓我們用 `rand` 來試試簡單的東西：我們只會隨機在八個字母之間選擇。
 
 ```rust
-use rand::seq::SliceRandom; // Use this for .choose over slices
+use rand::seq::SliceRandom; // 讓 .choose 能使用在 slices 上
 
 fn main() {
 
@@ -13546,7 +13546,7 @@ fn main() {
 }
 ```
 
-This will print something like `b c g h e a`. But we want to see what `cargo` does first. To use `cargo` and run our program, usually we type `cargo run`. This will build our program and run it for us. But when it starts compiling, it does something like this:
+會印出 `b **c** g h e a` 這樣的東西。但我們想先看看 `cargo` 的作用。要使用 `cargo` 來執行我們的程式，通常我們按鍵輸入 `cargo run`。這樣就可以組建我們的程式，並為我們執行。當它開始編譯時，會做這樣的事情：
 
 ```text
    Compiling getrandom v0.1.14
@@ -13561,9 +13561,9 @@ This will print something like `b c g h e a`. But we want to see what `cargo` do
 g f c f h b
 ```
 
-So it looks like it didn't just bring in `rand`, but some others too. That's because we need `rand` for our crate, but `rand` also has some code that needs other crates too. So `cargo` will find all the crates we need and put them together. In our case we only had seven, but on very big projects you may have 200 or more crates to bring in.
+所以看起來不只引進了 `rand`，還有一些其它的也是。這是因為我們的 crate 需要 `rand`，而 `rand` 也有一些程式碼也需要其它 crate。所以 `cargo` 會找到我們需要的所有 crate，並把它們放在一起。在我們的案例中，我們只有七個，但在非常大的專案中，你可能會有 200 個或更多的 crate 要引進。
 
-This is where you can see the tradeoff for Rust. Rust is extremely fast, because it compiles ahead of time. It does this by looking through the code and looking to see what the code you write actually does. For example, you might write this generic code:
+這就是你可以看到 Rust 的權衡妥協的地方。Rust 的速度極快，因為它提前編譯。它透過檢視程式碼，看你寫的程式碼到底做了什麼。例如，你可能會寫這樣的泛型程式碼：
 
 ```rust
 use std::fmt::Display;
@@ -13579,23 +13579,23 @@ fn main() {
 }
 ```
 
-This function can take anything with `Display`, so we gave it a `&str` and next gave it a `f64` and that is no problem for us. But the compiler doesn't look at generics, because it doesn't want to do anything at runtime. It wants to put together a program that can run by itself as fast as possible. So when it looks at the first part with `"Windy"`, it doesn't see `fn print_and_return_thing<T: Display>(input: T) -> T`. It sees something like `fn print_and_return_thing(input: &str) -> &str`. And next it sees `fn print_and_return_thing(input: f64) -> f64`. All the checking about traits and so on is done during compile time. That's why generics take longer to compile, because it needs to figure them out, and make it concrete.
+這個函式可以接受實作 `Display` 的任何型別作為引數，所以我們給它 `&str`，接下來給它 `f64`，這對我們來說沒什麼問題。但是編譯器不看泛型，因為它不想在執行時期做任何事情。它想把能執行的程式儘可能快地組裝起來。所以當它看第一部分的 `"Windy"` 時，它不是看到 `fn print_and_return_thing<T: Display>(input: T) -> T`，它看到的是 `fn print_and_return_thing(input: &str) -> &str` 這樣的東西。而接下來它看到的是 `fn print_and_return_thing(input: f64) -> f64`。所有關於特徵的檢查等等都是在編譯時期完成的。這就是為什麼泛型需要更長的時間來編譯，因為它需要弄清楚它們，並使之具體化。
 
-One more thing: Rust in 2020 is working hard on compile time, because this part takes the longest. Every version of Rust is a little bit faster at compiling, and there are some other plans to speed it up. But in the meantime, here's what you should know:
+還有一件事：Rust 2020 正在努力處理編譯時間問題，因為這部分需要的時間最長。每個版本的 Rust 在編譯時都會快一點，而且還有一些其他的計劃來加快它的速度。但與此同時，這裡是你該知道的：
 
-- `cargo build` will build your program so you can run it
-- `cargo run` will build your program and run it
-- `cargo build --release` and `cargo run --release` will do the same but in release mode. What's that? Release mode is for when your code is finally done. Then Rust will take even longer to compile, but it does this because it uses everything it knows to make it faster. Release mode is actually a *lot* faster than the regular mode, which is called debug mode. That's because it compiles quicker and has more debug information. The regular `cargo build` is called a "debug build" and `cargo build --release` is called a "release build".
-- `cargo check` is a way to check your code. It's like compiling except that it won't actually make your program. This is a good way to check your code a lot because it doesn't take as long as `build` or `run`.
+- `cargo build` 會組建你的程式，這樣你就可以執行它了。
+- `cargo run` 將組建你的程式並且執行。
+- `cargo build --release` 和 `cargo run --release` 有同樣的效果，不過是在釋出模式 (Release mode) 下。那是什麼？釋出模式是用在當你的程式碼終於完成的時候。然後 Rust 會花更多的時間來編譯，但它這樣做是因為它使用了它所知道的一切，來使編譯出的程式執行得更快。釋出模式實際上比被稱為除錯模式 (Debug mode) 的常規模式執行時還 *快的多*。那是因為常規模式的編譯速度更快，而且有更多的除錯資訊。常規的 `cargo build` 叫做 "debug build"，`cargo build --release` 叫做 "release build"。
+- `cargo check` 是一種檢查程式碼的方式。它就像編譯一樣，除了它並不會真正地做出你的程式。這是經常檢查你的程式碼的好方式，因為它不像 `build` 或 `run` 那樣需要花很長時間。
 
-By the way, the `--release` part of the command is called a `flag`. That means extra information in a command.
+對了，命令中的 `--release` 這部分叫做 `flag`。這意味著命令裡帶有額外的資訊。
 
-Some other things you need to know are:
+一些其他你需要知道的事情：
 
-- `cargo new`. You do this to create a new Rust project. After `new`, write the name of the project and `cargo` will make the folder and all the files you need.
-- `cargo clean`. When you add crates to `Cargo.toml`, the computer will download all the files it needs and they can take a lot of space. If you don't want them on your computer anymore, type `cargo clean`.
+- `cargo new` 這麼做是為了建立新的 Rust 專案。在 `new` 之後寫上專案名稱，`cargo` 將會做出所有你需要的檔案和資料夾。
+- `cargo clean` 當你把 crate 新增到 `Cargo.toml` 時，電腦會下載所有需要的檔案，並且會佔用很多空間。如果你不想再讓它們留在你的電腦上，可以輸入 `cargo clean`。
 
-One more thing about the compiler: it only takes the most time when you use `cargo build` or `cargo run` the first time. After that it will remember, and it will compile fast again. But if you use `cargo clean` and then run `cargo build`, it will have to compile slowly one more time.
+關於編譯器還有一件事：只有當你第一次使用 `cargo build` 或 `cargo run` 時，它才會花費最多的時間。在那之後它就會記得一些資訊，又會快速的編譯了。但如果你使用 `cargo clean`，然後執行 `cargo build`，它將不得不再慢慢地編譯一次。
 
 
 ## Taking user input
