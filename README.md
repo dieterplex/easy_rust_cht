@@ -141,7 +141,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [撰寫巨集](#撰寫巨集)
 - [第二部 - 電腦上的 Rust](#第二部---電腦上的-rust)
   - [cargo](#cargo)
-  - [Taking user input](#taking-user-input)
+  - [接受使用者輸入](#接受使用者輸入)
   - [Using files](#using-files)
   - [cargo doc](#cargo-doc)
   - [The end?](#the-end)
@@ -13598,9 +13598,9 @@ fn main() {
 關於編譯器還有一件事：只有當你第一次使用 `cargo build` 或 `cargo run` 時，它才會花費最多的時間。在那之後它就會記得一些資訊，又會快速的編譯了。但如果你使用 `cargo clean`，然後執行 `cargo build`，它將不得不再慢慢地編譯一次。
 
 
-## Taking user input
+## 接受使用者輸入
 
-One easy way to take input from the user is with `std::io::stdin`. This means "standard in", which is the input from the keyboard. With `stdin()` you can get user input, but then you will want to put it in a `&mut String` with `.read_line()`. Here is a simple example of that, but it both works and doesn't work:
+接受使用者的輸入的一個簡單的方式是用 `std::io::stdin`。這意味著"標準輸入" (standard input)，也就是來自鍵盤的輸入。用 `stdin()` 可以獲得使用者的輸入內容，但是接下來你就會想用 `.read_line()` 把它放到 `&mut String` 中。這裡是那種情境的簡單範例，但它既能用、也不能用：
 
 ```rust
 use std::io;
@@ -13609,16 +13609,16 @@ fn main() {
     println!("Please type something, or x to escape:");
     let mut input_string = String::new();
 
-    while input_string != "x" { // This is the part that doesn't work right
-        input_string.clear(); // First clear the String. Otherwise it will keep adding to it
-        io::stdin().read_line(&mut input_string).unwrap(); // Get the stdin from the user, and put it in read_string
+    while input_string != "x" { // 這是不能用的部分
+        input_string.clear(); // 首先清除 String 內容. 不然會一直加入東西進去
+        io::stdin().read_line(&mut input_string).unwrap(); // 從使用者獲得的 stdin, 並把它放進去 read_string
         println!("You wrote {}", input_string);
     }
     println!("See you later!");
 }
 ```
 
-Here is what an output looks like:
+這裡是輸出看起來的樣子：
 
 ```text
 Please type something, or x to escape:
@@ -13638,7 +13638,7 @@ x
 You wrote x
 ```
 
-It takes our input and gives it back, and it even knows that we typed `x`. But it doesn't exit the program. The only way to get out is to close the window, or type ctrl and c. Let's change the `{}` to `{:?}` in `println!` to get more information (or you could use `dbg!(&input_string)` if you like that macro). Now it says:
+它接受我們的輸入，然後把它還給我們，它甚至知道我們輸入了 `x`。但它並沒有退出程式。唯一的辦法是關閉視窗，或者輸入 ctrl 和 c。讓我們把 `println!` 中的 `{}` 改為 `{:?}`，來得到更多資訊（如果你喜歡用巨集，也可以使用 `dbg!(&input_string)`）。現在它說：
 
 ```text
 Please type something, or x to escape:
@@ -13654,7 +13654,7 @@ You wrote "x\r\n"
 
 
 
-This is because the keyboard input is actually not just `something`, it is `something` and the `Enter` key. There is an easy method to fix this called `.trim()`, which removes all the whitespace. Whitespace, by the way, is all [these characters](https://doc.rust-lang.org/reference/whitespace.html):
+這是因為鍵盤輸入其實不只是 `something`，而是 `something` 和 `Enter` 鍵。有個簡單的方法可以修正這個問題，叫做 `.trim()`，它可以把所有的空白字元都去掉。順便說一下，[這些字元](https://doc.rust-lang.org/reference/whitespace.html)都是空白字元：
 
 ```text
 U+0009 (horizontal tab, '\t')
@@ -13670,7 +13670,7 @@ U+2028 (line separator)
 U+2029 (paragraph separator)
 ```
 
-So that will turn `x\r\n` into just `x`. Now it works:
+這樣就可以把 `x\r\n` 變成只剩 `x` 了。現在它可以用了：
 
 ```rust
 use std::io;
@@ -13688,7 +13688,7 @@ fn main() {
 }
 ```
 
-Now it will print:
+現在會印出：
 
 ```text
 Please type something, or x to escape:
@@ -13706,7 +13706,7 @@ See you later!
 
 
 
-There is another kind of user input called `std::env::Args` (env means environment). `Args` is what the user types when starting the program. There is actually always at least one `Arg` in a program. Let's write a program that only prints them using `std::env::args()` to see what they are.
+還有另一種使用者輸入叫 `std::env::Args`(env 的意思是環境 environment )。`Args` 是使用者啟動程式時打字輸入的內容。其實在程式執行時總是至少有一個 `Arg`。讓我們寫個程式，裡面只使用 `std::env::args()` 印出它們，來看看它們是什麼。
 
 ```rust
 fn main() {
@@ -13714,19 +13714,19 @@ fn main() {
 }
 ```
 
-If we write `cargo run` then it prints something like this:
+如果我們寫 `cargo run`，就會像這樣印出來：
 
 ```text
 Args { inner: ["target\\debug\\rust_book.exe"] }
 ```
 
-Let's give it more input and see what it does. We'll type `cargo run but with some extra words`. It gives us:
+讓我們給它更多輸入來看看它的作用。我們輸入 `cargo run but with some extra words` 來執行，會給我們：
 
 ```text
 Args { inner: ["target\\debug\\rust_book.exe", "but", "with", "some", "extra", "words"] }
 ```
 
-Interesting. And when we look at [the page for Args](https://doc.rust-lang.org/std/env/struct.Args.html), we see that it implements `IntoIterator`. That means we can do all the things we know about iterators to read and change it. Let's try this:
+真有趣。而當我們瀏覽 [Args 文件](https://doc.rust-lang.org/std/env/struct.Args.html)時，我們看到它實作了 `IntoIterator`。這意味著我們可以做全部疊代器我們所知的一切事情來讀取和改變它。讓我們試試這個：
 
 ```rust
 use std::env::args;
@@ -13740,7 +13740,7 @@ fn main() {
 }
 ```
 
-Now it says:
+現在它說：
 
 ```text
 You entered: target\debug\rust_book.exe
@@ -13751,7 +13751,7 @@ You entered: extra
 You entered: words
 ```
 
-You can see that the first argument is always the program name, so you will often want to skip it, like this:
+你可以看到第一個引數總是程式名，所以你經常會想跳過它，比如這樣：
 
 ```rust
 use std::env::args;
@@ -13765,7 +13765,7 @@ fn main() {
 }
 ```
 
-That will print:
+會印出：
 
 ```text
 You wrote but, which in capital letters is BUT
@@ -13775,7 +13775,7 @@ You wrote extra, which in capital letters is EXTRA
 You wrote words, which in capital letters is WORDS
 ```
 
-One common use for `Args` is for user settings. You can make sure that the user writes the input you need, and only run the program if it's right. Here's a small program that either makes letters big (capital) or small (lowercase):
+`Args` 的一個常見用途是用於使用者設定。你可以確保使用者寫出你需要的輸入，只有在正確的情況下才執行程式。這裡有個小程式能讓字母變大（大寫）或變小（小寫）：
 
 ```rust
 use std::env::args;
@@ -13809,21 +13809,21 @@ fn main() {
 }
 ```
 
-Here are some examples of what it gives:
+這裡的一些範例是它給的輸出：
 
-Input: `cargo run please make capitals`:
+輸入：`cargo run please make capitals`：
 
 ```text
 make capitals
 ```
 
-Input: `cargo run capital`:
+輸入：`cargo run capital`：
 
 ```text
-// Nothing here...
+// 這裡沒東西輸出...
 ```
 
-Input: `cargo run capital I think I understand now`:
+輸入：`cargo run capital I think I understand now`：
 
 ```text
 I
@@ -13833,7 +13833,7 @@ UNDERSTAND
 NOW
 ```
 
-Input: `cargo run lowercase Does this work too?`
+輸入：`cargo run lowercase Does this work too?`：
 
 ```text
 does
@@ -13844,7 +13844,7 @@ too?
 
 
 
-Besides `Args` given by the user, available in `std::env::args()`, there are also `Vars` which are the system variables. Those are the basic settings for the program that the user didn't type in. You can use `std::env::vars()` to see them all as a `(String, String)`. There are very many. For example:
+除了使用者給予的 `Args`，在 `std::env::args()` 中找得到的那些，還有系統變數 `Vars`。這些都是非使用者輸入的程式基本設定。你可以用 `std::env::vars()` 把它們全部輸出成格式 `(String, String)`，會有非常多筆資料。舉例來說：
 
 ```rust
 fn main() {
@@ -13854,7 +13854,7 @@ fn main() {
 }
 ```
 
-Just doing this shows you all the information about your user session. It will show information like this:
+只要這樣做就能秀出你目前使用者會話 (user session) 的所有資訊。它將會顯示像這樣的資訊：
 
 ```text
 ("CARGO", "/playground/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo")
@@ -13888,9 +13888,9 @@ Just doing this shows you all the information about your user session. It will s
 ("_", "/usr/bin/timeout")
 ```
 
-So if you need this information, `Vars` is what you want.
+所以如果你需要這些資訊，`Vars` 就是你想要的。
 
-The easiest way to get a single `Var` is by using the `env!` macro. You just give it the name of the variable, and it will give you a `&str` with the value. It won't work if the variable is spelled wrong or does not exist, so if you aren't sure then use `option_env!` instead. If we write this on the Playground:
+要獲得單獨的 `Var` 最簡單的方法是使用 `env!` 巨集。你只要給它變數名，它就會給你 `&str` 的值。如果變數拼寫錯誤或不存在就沒作用了，所以如果你不確定那就用 `option_env!`。如果我們在 Playground 上寫這樣：
 
 ```rust
 fn main() {
@@ -13900,7 +13900,7 @@ fn main() {
 }
 ```
 
-then we get the output:
+那我們會得到輸出：
 
 ```text
 playground
@@ -13908,7 +13908,7 @@ Can't find ROOT
 /playground/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo
 ```
 
-So `option_env!` is always going to be the safer macro. `env!` is better if you actually want the program to crash when you can't find the environment variable.
+所以 `option_env!` 永遠會是比較安全的巨集。如果你實際上是想讓程式在找不到環境變數 (environment variable) 時崩潰，那麼 `env!` 會更好。
 
 
 
