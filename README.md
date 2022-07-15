@@ -143,7 +143,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [cargo](#cargo)
   - [接受使用者輸入](#接受使用者輸入)
   - [使用檔案](#使用檔案)
-  - [cargo doc](#cargo-doc)
+  - [cargo doc 命令](#cargo-doc-命令)
   - [The end?](#the-end)
 
 # 第1部 - 瀏覽器中的 Rust
@@ -14218,11 +14218,11 @@ That's really weird.
 Well, truth is stranger than fiction.
 ```
 
-## cargo doc
+## cargo doc 命令
 
-You might have noticed that Rust documentation always looks almost the same. On the left side you can see `struct`s and `trait`s, code examples are on the right, etc. This is because you can automatically make documentation just by typing `cargo doc`.
+你可能已經注意到，Rust 文件看起來總是幾乎一樣。在左邊你可以見到 `struct` 和 `trait`，程式碼範例在右邊等等。這是因為你只要輸入 `cargo doc` 就可以自動產生文件。
 
-Even making a project with nothing can help you learn about traits in Rust. For example, here are two structs that do almost nothing, and a `fn main()` that also does nothing.
+即使是建立一個什麼都不做的專案，也可以幫助你瞭解 Rust 中的特徵。例如，這裡有兩個幾乎什麼都不做的結構體，以及一個也什麼都不做的 `fn main()`。
 
 ```rust
 struct DoesNothing {}
@@ -14238,7 +14238,7 @@ fn main() {}
 ```
 
 
-But if you type `cargo doc --open`, you can see a lot more information than you expected. First it shows you this:
+但如果你輸入 `cargo doc --open`，你可以見到比你預期更多的資訊。首先它秀出這些給你：
 
 ```text
 Crate rust_book
@@ -14251,7 +14251,7 @@ Functions
 main
 ```
 
-But if you click on one of the structs, it will show you a lot of traits that you didn't think were there:
+但是如果你點選其中的一個結構體，會讓你看到很多你想都沒想到過的特徵：
 
 ```text
 Struct rust_book::DoesNothing
@@ -14296,9 +14296,9 @@ where
     U: TryFrom<T>,
 ```
 
-This is because of all the traits that Rust automatically makes for every type.
+這是因為 Rust 自動為每個型別所實作的所有特徵。
 
-Then if we add some documentation comments you can see them when you type `cargo doc`.
+那麼如果我們新增一些文件註解，當你輸入 `cargo doc` 的時候就可以看到。
 
 ```rust
 /// This is a struct that does nothing
@@ -14316,7 +14316,7 @@ fn main() {}
 ```
 
 
-Now it will print:
+現在會印出：
 
 ```text
 Crate rust_book
@@ -14327,7 +14327,7 @@ Functions
 main
 ```
 
-`cargo doc` is very nice when you use a lot of other people's crates. Because these crates are all on different websites, it can take some time to search them all. But if you use `cargo doc`, you will have them all in the same place on your hard drive.
+當你使用很多別人的 crate 時，`cargo doc` 就非常友善。因為這些 crate 全部都在不同的網站上，可能需要花些時間來搜尋所有的 crate。但如果你使用 `cargo doc`，你就會擁有它們全部，而且被放在你硬碟裡的同個地方。
 
 ## The end?
 
