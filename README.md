@@ -142,7 +142,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
 - [第二部 - 電腦上的 Rust](#第二部---電腦上的-rust)
   - [cargo](#cargo)
   - [接受使用者輸入](#接受使用者輸入)
-  - [Using files](#using-files)
+  - [使用檔案](#使用檔案)
   - [cargo doc](#cargo-doc)
   - [The end?](#the-end)
 
@@ -13912,11 +13912,11 @@ Can't find ROOT
 
 
 
-## Using files
+## 使用檔案
 
-Now that we are using Rust on the computer, we can start working with files. You will notice that now we will start to see more and more `Result`s in our code. That is because once you start working with files and similar things, many things can go wrong. A file might not be there, or maybe the computer can't read it.
+現在我們正在電腦上使用 Rust，我們可以開始處理檔案了。你會注意到，現在我們會開始在程式碼中看到愈來愈多的 `Result`。這是因為一旦你開始處理檔案和類似的東西，很多事情都會出錯。檔案可能不在那裡，或者也許計算機無法讀取它。
 
-You might remember that if you want to use the `?` operator, it has to return a `Result` in the function it is in. If you can't remember the error type, you can just give it nothing and let the compiler tell you. Let's try that with a function that tries to make a number with `.parse()`.
+你可能還記得，如果你想使用 `?` 運算子，它所在的函式也必須回傳 `Result`。如果你不記得錯誤型別，你可以什麼都不給它，讓編譯器告訴你。讓我們寫個試圖用 `.parse()` 建立數字的函式來試試。
 
 ```rust
 // ⚠️
@@ -13930,7 +13930,7 @@ fn main() {
 }
 ```
 
-The compiler tells us exactly what to do:
+編譯器明確告訴我們到底該怎麼做：
 
 ```text
 error[E0308]: mismatched types
@@ -13945,7 +13945,7 @@ error[E0308]: mismatched types
              found enum `std::result::Result<_, std::num::ParseIntError>`
 ```
 
-Great! So we just change the return to what the compiler says:
+很好！所以我們只要把回傳值改成編譯器說的就可以了：
 
 ```rust
 use std::num::ParseIntError;
@@ -13960,14 +13960,14 @@ fn main() {
 }
 ```
 
-Now the program works!
+現在程式可以執行了！
 
 ```text
 Ok(88)
 Ok(5)
 ```
 
-So now we want to use `?` to just give us the value if it works, and the error if it doesn't. But how to do this in `fn main()`? If we try to use `?` in main, it won't work.
+所以現在我們想用 `?` 直接給我們數值，如果這樣可以的話，如果不能就給錯誤。但是如何在 `fn main()` 中做到呢？如果我們嘗試在 main 中使用 `?`，那就行不通了。
 
 ```rust
 // ⚠️
@@ -13983,7 +13983,7 @@ fn main() {
 }
 ```
 
-It says:
+它說：
 
 ```text
 error[E0277]: the `?` operator can only be used in a function that returns `Result` or `Option` (or another type that implements `std::ops::Try`)
@@ -13997,7 +13997,7 @@ error[E0277]: the `?` operator can only be used in a function that returns `Resu
    | |_- this function should return `Result` or `Option` to accept `?`
 ```
 
-But actually `main()` can return a `Result`, just like any other function. If our function works, we don't want to return anything (main() isn't giving anything to anything else). And if it doesn't work, we will return the same error. So we can write it like this:
+但實際上 `main()` 可以回傳 `Result`，就像其它函式一樣。如果我們的函式能用，我們不想回傳任何東西（main() 不會回傳任何東西以外的東西）。而如果它不能用，我們將回傳同樣的錯誤。所以我們可以寫成這樣：
 
 ```rust
 use std::num::ParseIntError;
@@ -14013,7 +14013,7 @@ fn main() -> Result<(), ParseIntError> {
 }
 ```
 
-Don't forget the `Ok(())` at the end: this is very common in Rust. It means `Ok`, inside of which is `()`, which is our return value. Now it prints:
+不要忘了最後的 `Ok(())`：這在 Rust 中非常常見，它的意思是 `Ok`，裡面是 `()`，也就是我們的回傳值。現在印出：
 
 ```text
 88
@@ -14021,38 +14021,38 @@ Don't forget the `Ok(())` at the end: this is very common in Rust. It means `Ok`
 ```
 
 
-This wasn't very useful when just using `.parse()`, but it will be with files. That's because `?` also changes error types for us. Here's what [the page for the ? operator](https://doc.rust-lang.org/std/macro.try.html) says in simple English:
+只有用 `.parse()` 的時候不是很有用處，但是用在檔案就不同了。這是因為 `?` 也為我們改變了錯誤型別。這裡是用簡單英語改寫來自 [? 運算子文件](https://doc.rust-lang.org/std/macro.try.html)所說的內容：
 
-```text
-If you get an `Err`, it will get the inner error. Then `?` does a conversion using `From`. With that it can change specialized errors to more general ones. The error it gets is then returned.
-```
+> If you get an `Err`, it will get the inner error. Then `?` does a conversion using `From`. With that it can change specialized errors to more general ones. The error it gets is then returned.
 
-Also, Rust has a convenient `Result` type when using `File`s and similar things. It's called `std::io::Result`, and this is what you usually see in `main()` when you are using `?` to open and do things to files. It's actually a type alias. It looks like this:
 
-```text
+
+另外，在使用 `File` 和類似的東西時，Rust 有個方便的 `Result` 型別叫做 `std::io::Result`。在 `main()` 中當你使用 `?` 在開啟和操作檔案時，通常看到的就是這個。這其實是類型別名 (type alias)。像這樣：
+
+```rust
 type Result<T> = Result<T, Error>;
 ```
 
-So it is a `Result<T, Error>`, but we only need to write the `Result<T>` part.
+所以這是 `Result<T, Error>`，但我們只需要寫 `Result<T>` 的部分。
 
-Now let's try working with files for the first time. `std::fs` is where the methods are for working with files, and with `std::io::Write` you can write in them. With that we can use `.write_all()` to write into the file.
+現在讓我們第一次嘗試操作檔案。`std::fs` 是處理檔案的方法所在的模組，並且用 `std::io::Write` 特徵你就可以寫入資料。有了那些，我們就可以用 `.write_all()` 來寫資料進檔案。
 
 ```rust
 use std::fs;
 use std::io::Write;
 
 fn main() -> std::io::Result<()> {
-    let mut file = fs::File::create("myfilename.txt")?; // Create a file with this name.
-                                                        // CAREFUL! If you have a file with this name already,
-                                                        // it will delete everything in it.
-    file.write_all(b"Let's put this in the file")?;     // Don't forget the b in front of ". That's because files take bytes.
+    let mut file = fs::File::create("myfilename.txt")?; // 用這個名稱建立檔案.
+                                                        // 小心! 如果你有已經有個同名的檔案,
+                                                        // 它會刪除檔案裡面所有內容.
+    file.write_all(b"Let's put this in the file")?;     // 別忘記在 " 前面的 b. 那是因為檔案接受位元組資料.
     Ok(())
 }
 ```
 
-Then if you click on the new file `myfilename.txt`, it will say `Let's put this in the file`.
+然後如果你開啟新檔案 `myfilename.txt`，會看到內容說 `Let's put this in the file`。
 
-We don't need to do this on two lines though, because we have the `?` operator. It will pass on the result we want if it works, kind of like when you use lots of methods on an iterator. This is when `?` becomes very convenient.
+然而我們不需要寫成兩行，因為我們有 `?` 運算子。如果能用，它就會傳遞我們想要的結果下去，有點像在疊代器上串連很多方法一樣。這時候 `?` 就變得非常方便了。
 
 ```rust
 use std::fs;
@@ -14064,17 +14064,17 @@ fn main() -> std::io::Result<()> {
 }
 ```
 
-So this is saying "Please try to create a file and check if it worked. If it did, then use `.write_all()` and then check if that worked."
+所以這是說"請嘗試建立檔案，然後檢查是否成功。如果成功了，那就使用 `.write_all()`，然後檢查是否成功。"
 
-And in fact, there is also a function that does both of these things together. It's called `std::fs::write`. Inside it you give it the file name you want, and the content you want to put inside. Again, careful! It will delete everything in that file if it already exists. Also, it lets you write a `&str` without `b` in front, because of this:
+而事實上，也有個函式可以同時做這兩件事。它叫做 `std::fs::write`。在它裡面，你給它你想要的檔名，以及你想放在裡面的內容。再次強調，要小心！如果該檔案已經存在，它將刪除其中的所有內容。另外，它允許你寫入 `&str`，而前面不用寫 `b`，因為這個：
 
 ```rust
 pub fn write<P: AsRef<Path>, C: AsRef<[u8]>>(path: P, contents: C) -> Result<()>
 ```
 
-`AsRef<[u8]>` is why you can give it either one.
+`AsRef<[u8]>` 就是為什麼你給它兩者皆可。
 
-It's very simple:
+用起來非常簡單：
 
 ```rust
 use std::fs;
@@ -14090,16 +14090,16 @@ Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 }
 ```
 
-So that's the file we will use. It's a conversation with a comic book character named Calvin and his dad, who is not serious about his question. With this we can create a file to use every time.
+所以這就是我們要用的檔案。這是名叫 Calvin 的漫畫人物和他爸爸的對話，他爸爸對他的問題並不認真。有了這個，每次我們都可以建立檔案來使用。
 
 
 
-Opening a file is just as easy as creating one. You just use `open()` instead of `create()`. After that (if it finds your file), you can do things like `read_to_string()`. To do that you can create a mutable `String` and read the file into there. It looks like this:
+開啟檔案如同建立檔案一樣簡單。你只要用 `open()` 代替 `create()` 就可以了。之後(如果它找到了你的檔案)，你就可以做像 `read_to_string()` 這樣的事情。你可以建立可變的 `String` 來做到，然後把檔案讀取到那裡面。像這樣：
 
 ```rust
 use std::fs;
 use std::fs::File;
-use std::io::Read; // this is to use the function .read_to_string()
+use std::io::Read; // 這是為了要使用 .read_to_string() 函式
 
 fn main() -> std::io::Result<()> {
      fs::write("calvin_with_dad.txt", 
@@ -14109,24 +14109,24 @@ Calvin: Really?
 Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 
 
-    let mut calvin_file = File::open("calvin_with_dad.txt")?; // Open the file we just made
-    let mut calvin_string = String::new(); // This String will hold it
-    calvin_file.read_to_string(&mut calvin_string)?; // Read the file into it
+    let mut calvin_file = File::open("calvin_with_dad.txt")?; // 開啟我們做的檔案
+    let mut calvin_string = String::new(); // 這個 String 會保留讀取內容
+    calvin_file.read_to_string(&mut calvin_string)?; // 讀取檔案到 String 裡
 
-    calvin_string.split_whitespace().for_each(|word| print!("{} ", word.to_uppercase())); // Do things with the String now
+    calvin_string.split_whitespace().for_each(|word| print!("{} ", word.to_uppercase())); // 現在用 String 做些事
 
     Ok(())
 }
 ```
 
-That will print:
+會印出：
 
-```rust
+```text
 CALVIN: DAD, HOW COME OLD PHOTOGRAPHS ARE ALWAYS BLACK AND WHITE? DIDN'T THEY HAVE COLOR FILM BACK THEN? DAD: SURE THEY DID. IN 
 FACT, THOSE PHOTOGRAPHS *ARE* IN COLOR. IT'S JUST THE *WORLD* WAS BLACK AND WHITE THEN. CALVIN: REALLY? DAD: YEP. THE WORLD DIDN'T TURN COLOR UNTIL SOMETIMES IN THE 1930S...
 ```
 
-Okay, what if we want to create a file but not do it if there is already another file with the same name? Maybe you don't want to delete the other file if it's already there just to make a new one. To do this, there is a struct called `OpenOptions`. Actually, we've been using `OpenOptions` all this time and didn't know it. Take a look at the source for `File::open`:
+好吧，要是我們想建立檔案，但如果已經有同名的檔案就不要這樣做該怎麼辦？也許你不想為了建立新的檔案而刪除已經存在的其他檔案。要做到這一點，有個結構叫 `OpenOptions` 可以用。其實我們一直有在用 `OpenOptions` 卻不知道。看看 `File::open` 的原始碼吧：
 
 ```rust
 pub fn open<P: AsRef<Path>>(path: P) -> io::Result<File> {
@@ -14134,7 +14134,7 @@ pub fn open<P: AsRef<Path>>(path: P) -> io::Result<File> {
     }
 ```
 
-Interesting, that looks like the builder pattern that we learned. It's the same for `File::create`:
+真有趣，這好像是我們學過的生成器模式。`File::create` 也是如此：
 
 ```rust
 pub fn create<P: AsRef<Path>>(path: P) -> io::Result<File> {
@@ -14142,16 +14142,16 @@ pub fn create<P: AsRef<Path>>(path: P) -> io::Result<File> {
     }
 ```
 
-If you go to [the page for OpenOptions](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html), you can see all the methods that you can choose from. Most take a `bool`:
+如果你去看 [OpenOptions 文件](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html)，你可以見到所有你能選擇使用的方法。大多數都接受 `bool`：
 
-- `append()`: This means "add to the content that's already there instead of deleting".
-- `create()`: This lets `OpenOptions` create a file.
-- `create_new()`: This means it will only create a file if it's not there already.
-- `read()`: Set this to `true` if you want it to be able to read a file.
-- `truncate()`: Set this to true if you want to cut the file content to 0 (delete the contents) when you open it.
-- `write()`: This lets it write to a file.
+- `append()`：意思是"加入資料到已經存在的內容後面，而不是刪除"。
+- `create()`：這讓 `OpenOptions` 建立檔案。
+- `create_new()`：意思是檔案還沒有在那裡的情況下才會建立檔案。
+- `read()`：如果你想讓它讀取檔案，就把這個設定為 `true`。
+- `truncate()`：如果你想在開啟檔案時把檔案內容清空為 0 (刪除內容)，就把這個設定為 `true`。
+- `write()`：這讓它寫入檔案。
 
-Then at the end you use `.open()` with the file name, and that will give you a `Result`. Let's look at one example:
+然後在結尾你用 `.open()` 加上檔名，你就會得到 `Result`。讓我們來看這樣的範例：
 
 ```rust
 // ⚠️
@@ -14171,15 +14171,15 @@ Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 }
 ```
 
-First we made an `OpenOptions` with `new` (always start with `new`). Then we gave it the ability to `write`. After that we set `create_new()` to `true`, and tried to open the file we made. It won't work, which is what we want:
+首先我們用 `new` 做了一個 `OpenOptions` (總是以 `new` 開頭)。然後我們給它 `write` 的能力。之後我們把 `create_new()` 設定為 `true`，然後試著開啟我們做出的檔案。會打不開，是我們想要的結果：
 
 ```text
 Error: Os { code: 80, kind: AlreadyExists, message: "The file exists." }
 ```
 
-Let's try using `.append()` so we can write to a file. To write to the file we can use `.write_all()`, which is a method that tries to write in everything you give it.
+讓我們嘗試使用 `.append()`，這樣我們就可以寫入到檔案。為了寫入檔案，我們可以使用 `.write_all()`，這是個會嘗試寫入你給它的一切內容的方法。
 
-Also, we will use the `write!` macro to do the same thing. You will remember this macro from when we did `impl Display` for our structs. This time we are using it on a file though instead of a buffer.
+另外，我們將使用 `write!` 巨集來做同樣的事情。你會記得這個巨集是來自我們在為結構體做 `impl Display` 的時候。而這次我們是在檔案上使用它，不是在緩衝區 (buffer) 上。
 
 ```rust
 use std::fs;
@@ -14194,7 +14194,7 @@ Calvin: Really?
 Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 
     let mut calvin_file = OpenOptions::new()
-        .append(true) // Now we can write without deleting it
+        .append(true) // 現在我們可以繼續寫入而不用刪除檔案
         .read(true)
         .open("calvin_with_dad.txt")?;
     calvin_file.write_all(b"And it was a pretty grainy color for a while too.\n")?;
@@ -14207,7 +14207,7 @@ Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
