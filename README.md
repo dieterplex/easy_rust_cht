@@ -1,190 +1,191 @@
-## Updates
-![example workflow name](https://github.com/Dhghomon/easy_rust/workflows/github%20pages/badge.svg)
+## 更新
+![example workflow name](https://github.com/dieterplex/easy_rust_cht/workflows/github%20pages/badge.svg)
 
-23 May 2021: [Now available in Indonesian](https://github.com/ariandy/easy-rust-indonesia) thanks to [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/).
+2021年5月23日: 現在有 [印尼語](https://github.com/ariandy/easy-rust-indonesia) 翻譯可用，感謝 [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/)。
 
-2 April 2021: [Added BuyMeACoffee link](https://www.buymeacoffee.com/mithridates) for those who would like to buy me a coffee.
+2021年4月2日: 增加 [BuyMeACoffee 連結](https://www.buymeacoffee.com/mithridates) 給那些想請我喝杯咖啡的人。
 
-1 February 2021: [Now available on YouTube!](https://www.youtube.com/playlist?list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) Two months later: all done as of 1 April 2021 for 186 videos in total (slightly over 23 hours).
+2021年2月1日: [Youtube影片！](https://www.youtube.com/playlist?list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) 兩個月後： 到2021年4月1日為止，總共有186支影片全部完成（稍微超過23小時）。
 
-22 December 2020: mdBook can be found [here](https://dhghomon.github.io/easy_rust).
+2021年1月4日: mdBook [線上閱讀](https://dhghomon.github.io/easy_rust)。
 
-28 November 2020: [Now also available in simplified Chinese](https://github.com/kumakichi/easy_rust_chs) thanks to [kumakichi](https://github.com/kumakichi)!
+2020年11月28日: 現在也有[簡體中文](https://github.com/kumakichi/easy_rust_chs) 翻譯可用，感謝 [kumakichi](https://github.com/kumakichi)！
 
-27 November 2021: [Videos for Easy Rust are now being recorded in Korean!](https://www.youtube.com/watch?v=W9DO6m8JSSs&list=PLfllocyHVgsSJf1zO6k6o3SX2mbZjAqYE) 한국어판 비디오도 녹화 시작!
+2021年11月27日: [現在有韓語錄製的Easy Rust影片了！](https://www.youtube.com/watch?v=W9DO6m8JSSs&list=PLfllocyHVgsSJf1zO6k6o3SX2mbZjAqYE) 한국어판 비디오도 녹화 시작!
+
 
 ![](Easy_Rust_sample_image.png)
 
-## Introduction
+## 介紹
 
-Rust is a new language that already has good textbooks. But sometimes its textbooks are difficult because they are for native English speakers. Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.
+Rust 是一門已經有了很好教科書的新程式設計語言。但有時候它的教材很難，因為難在它是寫給以英語為母語的人看的。現在有許多公司及人們在學習 Rust，如果能有一本使用簡單英語寫的書，他們可以學習得更快。這本書就是用簡單英語寫給這些公司和人們來學習 Rust 的。
 
-Rust is a language that is quite new, but already very popular. It's popular because it gives you the speed and control of C or C++ but also the memory safety of other newer languages like Python. It does this with some new ideas that are sometimes different from other languages. That means that there are some new things to learn, and you can't just "figure it out as you go along". Rust is a language that you have to think about for a while to understand. But it still looks pretty familiar if you know another language and it is made to help you write good code.
+Rust 是一門相當新卻已經非常流行的程式設計語言。它之所以受歡迎，是因為它給了你 C 或 C++ 的運作速度和控制能力，但也有在其他像 Python 等較新型語言上有的記憶體安全機制。它有時以不同於其他語言的新想法做到這一點。這也意味著需要學習一些新東西，不能只是"邊走邊想辦法"。Rust 更是一門你必須思考一段時間才能理解的語言。但它看起來還是蠻熟悉的如果你會其他程式設計語言的話，它是為了幫助你寫好程式碼而生的。
 
-## Who am I?
+## 我是誰？
 
-I am a Canadian who lives in Korea, and I wrote Easy Rust while thinking of how to make it easy for companies here to start using it. I hope that other countries that don't use English as a first language can use it too.
+我是一個生活在韓國的加拿大人，我在寫 Easy Rust 的同時，也在思考如何讓這裡的公司更容易開始使用它。我希望其他母語不是英語的國家也能使用它。
 
-## Writing Rust in Easy English
+## 簡單英語學 Rust
 
-*Rust in Easy English* was written from July to August 2020, and is over 400 pages long. You can contact me here or [on LinkedIn](https://www.linkedin.com/in/davemacleod) or [on Twitter](https://twitter.com/mithridates) if you have any questions. If you see anything wrong or have a pull request to make, go ahead. Over 20 people have already helped out by fixing typos and problems in the code, so you can too. I'm not the world's best Rust expert so I always like to hear new ideas or see where I can make the book better.
+*簡單英語學Rust* 寫於 2020 年 7 月至 8 月，長達400多頁。如果你有任何問題，可以在這裡或[在 LinkedIn 上](https://www.linkedin.com/in/davemacleod)或[在 Twitter 上](https://twitter.com/mithridates)聯絡我。如果你發現有什麼不對的地方，或者要提出 pull request，去做吧。已經有超過 20 人幫助我們修復了程式碼中的錯別字和問題，所以你也可以。我不是世界上最好的 Rust 專家，所以我總是喜歡聽到新的想法，或者看看哪裡可以讓這本書變得更好。
 
 
 
-- [Part 1 - Rust in your browser](#part-1---rust-in-your-browser)
+- [第一部 - 瀏覽器中的 Rust](#第一部---瀏覽器中的-rust)
   - [Rust Playground](#rust-playground)
-  - [🚧 and ⚠️](#-and-️)
-  - [Comments](#comments)
-  - [Types](#types)
-    - [Primitive types](#primitive-types)
-  - [Type inference](#type-inference)
-    - [Floats](#floats)
-  - [Printing 'hello, world!'](#printing-hello-world)
-    - [Declaring variables and code blocks](#declaring-variables-and-code-blocks)
-  - [Display and debug](#display-and-debug)
-    - [Smallest and largest numbers](#smallest-and-largest-numbers)
-  - [Mutability (changing)](#mutability-changing)
-    - [Shadowing](#shadowing)
-  - [The stack, the heap, and pointers](#the-stack-the-heap-and-pointers)
-  - [More about printing](#more-about-printing)
-  - [Strings](#strings)
-  - [const and static](#const-and-static)
-  - [More on references](#more-on-references)
-  - [Mutable references](#mutable-references)
-    - [Shadowing again](#shadowing-again)
-  - [Giving references to functions](#giving-references-to-functions)
-  - [Copy types](#copy-types)
-    - [Variables without values](#variables-without-values)
-  - [Collection types](#collection-types)
-    - [Arrays](#arrays)
-  - [Vectors](#vectors)
-  - [Tuples](#tuples)
-  - [Control flow](#control-flow)
-  - [Structs](#structs)
-  - [Enums](#enums)
-    - [Enums to use multiple types](#enums-to-use-multiple-types)
-  - [Loops](#loops)
-  - [Implementing structs and enums](#implementing-structs-and-enums)
-  - [Destructuring](#destructuring)
-  - [References and the dot operator](#references-and-the-dot-operator)
-  - [Generics](#generics)
-  - [Option and Result](#option-and-result)
+  - [🚧 和 ⚠️](#-和-️)
+  - [註解](#註解)
+  - [型別](#型別)
+    - [原始型別](#原始型別)
+  - [型別推導](#型別推導)
+    - [浮點數](#浮點數)
+  - [列印 hello, world!](#列印-hello-world)
+    - [宣告變數和程式碼區塊](#宣告變數和程式碼區塊)
+  - [顯示和除錯](#顯示和除錯)
+    - [最小和最大的數](#最小和最大的數)
+  - [可變性](#可變性)
+    - [遮蔽](#遮蔽)
+  - [堆疊、堆積和指標](#堆疊堆積和指標)
+  - [更多關於列印](#更多關於列印)
+  - [字串](#字串)
+  - [const 和 static](#const-和-static)
+  - [更多關於參考](#更多關於參考)
+  - [可變參考](#可變參考)
+    - [再談遮蔽](#再談遮蔽)
+  - [傳遞參考給函式](#傳遞參考給函式)
+  - [複製型別](#複製型別)
+    - [無值變數](#無值變數)
+  - [集合型別](#集合型別)
+    - [陣列](#陣列)
+  - [向量](#向量)
+  - [元組](#元組)
+  - [控制流程](#控制流程)
+  - [結構體](#結構體)
+  - [列舉](#列舉)
+    - [使用多種型別的列舉](#使用多種型別的列舉)
+  - [迴圈](#迴圈)
+  - [實作結構體和列舉](#實作結構體和列舉)
+  - [解構](#解構)
+  - [參考和點運算子](#參考和點運算子)
+  - [泛型](#泛型)
+  - [Option 和 Result](#option-和-result)
     - [Option](#option)
     - [Result](#result)
-  - [Other collections](#other-collections)
-    - [HashMap (and BTreeMap)](#hashmap-and-btreemap)
-    - [HashSet and BTreeSet](#hashset-and-btreeset)
+  - [其他集合型別](#其他集合型別)
+    - [HashMap (和 BTreeMap)](#hashmap-和-btreemap)
+    - [HashSet 和 BTreeSet](#hashset-和-btreeset)
     - [BinaryHeap](#binaryheap)
     - [VecDeque](#vecdeque)
-  - [The ? operator](#the--operator)
-    - [When panic and unwrap are good](#when-panic-and-unwrap-are-good)
-  - [Traits](#traits)
-    - [The From trait](#the-from-trait)
-    - [Taking a String and a &str in a function](#taking-a-string-and-a-str-in-a-function)
-  - [Chaining methods](#chaining-methods)
-  - [Iterators](#iterators)
-    - [How an iterator works](#how-an-iterator-works)
-  - [Closures](#closures)
-    - [|_| in a closure](#_-in-a-closure)
-    - [Helpful methods for closures and iterators](#helpful-methods-for-closures-and-iterators)
-  - [The dbg! macro and .inspect](#the-dbg-macro-and-inspect)
-  - [Types of &str](#types-of-str)
-  - [Lifetimes](#lifetimes)
-  - [Interior mutability](#interior-mutability)
+  - [問號(?)運算子](#問號運算子)
+    - [何時善用 panic 和 unwrap](#何時善用-panic-和-unwrap)
+  - [特徵](#特徵)
+    - [From 特徵](#from-特徵)
+    - [接受 String 和 &str 的函式](#接受-string-和-str-的函式)
+  - [鏈結方法](#鏈結方法)
+  - [疊代器](#疊代器)
+    - [疊代器如何運作](#疊代器如何運作)
+  - [閉包](#閉包)
+    - [閉包裡的 |_|](#閉包裡的-_)
+    - [閉包和疊代器的有用方法](#閉包和疊代器的有用方法)
+  - [dbg! 巨集和 .inspect](#dbg-巨集和-inspect)
+  - [&str 的種類](#str-的種類)
+  - [生命週期](#生命週期)
+  - [內部可變性](#內部可變性)
     - [Cell](#cell)
     - [RefCell](#refcell)
     - [Mutex](#mutex)
     - [RwLock](#rwlock)
   - [Cow](#cow)
-  - [Type aliases](#type-aliases)
-    - [Importing and renaming inside a function](#importing-and-renaming-inside-a-function)
-  - [The todo! macro](#the-todo-macro)
+  - [類型別名](#類型別名)
+    - [在函式中匯入和重新命名](#在函式中匯入和重新命名)
+  - [todo! 巨集](#todo-巨集)
   - [Rc](#rc)
-  - [Multiple threads](#multiple-threads)
-  - [Closures in functions](#closures-in-functions)
-  - [impl Trait](#impl-trait)
+  - [多執行緒](#多執行緒)
+  - [函式中的閉包](#函式中的閉包)
+  - [impl 特徵](#impl-特徵)
   - [Arc](#arc)
-  - [Channels](#channels)
-  - [Reading Rust documentation](#reading-rust-documentation)
+  - [通道](#通道)
+  - [閱讀 Rust 文件](#閱讀-rust-文件)
     - [assert_eq!](#assert_eq)
-    - [Searching](#searching)
-    - [[src] button](#src-button)
-    - [Information on traits](#information-on-traits)
-  - [Attributes](#attributes)
+    - [搜尋](#搜尋)
+    - [[src] 按鈕](#src-按鈕)
+    - [特徵資訊](#特徵資訊)
+  - [屬性](#屬性)
   - [Box](#box)
-  - [Box around traits](#box-around-traits)
-  - [Default and the builder pattern](#default-and-the-builder-pattern)
-  - [Deref and DerefMut](#deref-and-derefmut)
-  - [Crates and modules](#crates-and-modules)
-  - [Testing](#testing)
-    - [Test-driven development](#test-driven-development)
-  - [External crates](#external-crates)
+  - [Box 包裹的特徵](#box-包裹的特徵)
+  - [Default 和生成器模式](#default-和生成器模式)
+  - [Deref 和 DerefMut](#deref-和-derefmut)
+  - [Crates 和模組](#crates-和模組)
+  - [測試](#測試)
+    - [測試驅動開發](#測試驅動開發)
+  - [外部 crates](#外部-crates)
     - [rand](#rand)
     - [rayon](#rayon)
     - [serde](#serde)
     - [regex](#regex)
     - [chrono](#chrono)
-  - [A tour of the standard library](#a-tour-of-the-standard-library)
-    - [Arrays](#arrays-1)
-    - [char](#char)
-    - [Integers](#integers)
-    - [Floats](#floats)
-    - [Bool](#bool)
-    - [Vec](#vec)
-    - [String](#string)
-    - [OsString and CString](#osstring-and-cstring)
-    - [Mem](#mem)
-    - [Prelude](#prelude)
-    - [Time](#time)
-    - [Other-macros](#other-macros)
-  - [Writing macros](#writing-macros)
-- [Part 2 - Rust on your computer](#part-2---rust-on-your-computer)
-  - [Cargo](#cargo)
-  - [Taking_user_input](#taking-user-input)
-  - [Using files](#using-files)
-  - [Cargo doc](#cargo-doc)
-  - [The end?](#the-end?)
+  - [標準函式庫之旅](#標準函式庫之旅)
+    - [陣列](#陣列-1)
+    - [字元](#字元)
+    - [整數](#整數)
+    - [浮點數](#浮點數-1)
+    - [布林](#布林)
+    - [向量](#向量-1)
+    - [字串](#字串-1)
+    - [OsString 和 CString](#osstring-和-cstring)
+    - [mem](#mem)
+    - [prelude](#prelude)
+    - [時間](#時間)
+    - [其他巨集](#其他巨集)
+  - [撰寫巨集](#撰寫巨集)
+- [第二部 - 電腦上的 Rust](#第二部---電腦上的-rust)
+  - [cargo](#cargo)
+  - [接受使用者輸入](#接受使用者輸入)
+  - [使用檔案](#使用檔案)
+  - [cargo doc 命令](#cargo-doc-命令)
+  - [結束了嗎？](#結束了嗎)
 
-# Part 1 - Rust in your browser
+# 第一部 - 瀏覽器中的 Rust
 
-This book has two parts. In Part 1, you will learn as much Rust as you can just in your browser. You can actually learn almost everything you need to know without installing Rust, so Part 1 is very long. Then at the end is Part 2. It is much shorter, and is about Rust on your computer. That's where you will learn everything else you need to know that you can only do outside of a browser. Some examples are: working with files, taking user input, graphics, and personal settings. Hopefully, by the end of Part 1 you will like Rust enough that you will install it. And if you don't, no problem - Part 1 teaches you so much that you won't mind.
+本書有分兩部。第一部，你將在瀏覽器中就能學到儘可能多的 Rust 知識。實際上你幾乎可以在不安裝 Rust 的情況下學到所有你需要知道的東西，所以第一部非常長。最後是第二部。它要短得多，是關於電腦上的 Rust。在這裡，你將學習到其他一切你需要知道的、只能在瀏覽器之外進行的事情。例如：處理檔案、接受使用者輸入、圖形和個人設定。希望在第一部結束時，你會喜歡 Rust 到想安裝它。如果你不喜歡，也沒問題──第一部教了你很多，你不會介意的。
 
 ## Rust Playground
-**[See this chapter on YouTube](https://youtu.be/-lYeJeQ11OI)**
+**[YouTube 上觀看本章內容](https://youtu.be/-lYeJeQ11OI)**
 
-Maybe you don't want to install Rust yet, and that's okay. You can go to [https://play.rust-lang.org/](https://play.rust-lang.org/) and start writing Rust without leaving your browser. You can write your code there and click Run to see the results. You can run most of the samples in this book inside the Playground in your browser. Only near the end you will see samples that go beyond what you can do in the Playground (like opening files).
+也許你還不想安裝 Rust，這也沒關係。不用離開瀏覽器你可以去[https://play.rust-lang.org/](https://play.rust-lang.org/)，開始寫 Rust。你可以在那裡寫下你的程式碼，然後點選 Run 來檢視結果。你可以在瀏覽器裡用 Playground 裡面執行本書中大多數的範例。只有在接近本書結尾的時候，才會看到無法在 Playground 操作的範例(比如開啟檔案)。
 
-Here are some tips when using the Rust Playground:
+以下是使用 Rust Playground 時的一些提示。
 
-- Run your code with Run
-- Change Debug to Release if you want your code to be faster. Debug: compiles faster, runs slower, contains debug information. Release: compiles slower, runs much faster, removes debug information.
-- Click on Share to get a url link. You can use that to share your code if you want help. After you click share, you can click on `Open a new thread in the Rust user forum` to ask people there for help right away.
-- Tools: Rustfmt will format your code nicely.
-- Tools: Clippy will give you extra information about how to make your code better.
-- Config: here you can change your theme to dark mode so you can work at night, and many other configurations.
+- 用 RUN 來執行你的程式碼
+- 如果你想讓你的程式碼更快，就把 DEBUG 改為 RELEASE 模式。 Debug：編譯速度較快，執行速度較慢，包含除錯資訊。Release：編譯速度較慢，執行速度較快，移除除錯資訊。
+- 點選 SHARE ，得到當下程式碼的網址連結。如果你需要幫助，可以用它來分享你的程式碼。點選 SHARE 後，你可以點選 `Open a new thread in the Rust user forum`，馬上向論壇那裡的人尋求幫助。
+- TOOLS: Rustfmt 會幫你的程式碼排版好。
+- TOOLS: Clippy 會給你如何讓程式碼更好的額外資訊。
+- CONFIG: 你可以在這裡把你的主題改成黑暗模式，方便在晚上工作，以及很多其他配置。
 
-If you want to install Rust, go here [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and follow the instructions. Usually you will use `rustup` to install and update Rust.
+如果你想安裝 Rust，請到官方網站[安裝頁面](https://www.rust-lang.org/tools/install)，然後按照說明操作。通常你會使用 `rustup` 來安裝和更新 Rust。
 
-## 🚧 and ⚠️
+## 🚧 和 ⚠️
 
-Sometimes the code examples in the book don't work. If an example doesn't work, it will have a 🚧 or a ⚠️ in it. 🚧 is like "under construction": it means that the code is not complete. Rust needs a `fn main()` (a main function) to run, but sometimes we just want to look at small pieces of code so it won't have a `fn main()`. Those examples are correct, but need a `fn main()` for you to run them. And some code examples show you a problem that we will fix. Those ones might have a `fn main()` but generate an error, and so they will have a ⚠️.
+有時書中的程式碼範例是不能用的。如果一個範例不能用，它將會有一個 🚧 (施工路障 emoji)或 ⚠️ (警告標誌 emoji)在裡面。🚧 就像"正在建設中"一樣：它意味著程式碼不完整。Rust 需要一個 `fn main()`(一個主函式)來執行，但有時我們只是想看一些小的程式碼，所以它不會有 `fn main()`。這些範例是正確的，但需要一個 `fn main()` 讓你執行。而有些程式碼範例是向你展示一個我們將解決的問題。那些可能有一個 `fn main()`，但會產生錯誤，所以它們會有一個⚠️。
 
-## Comments
-**[See this chapter on YouTube](https://youtu.be/fJ7jBZG_Rpo)**
+## 註解
+**[YouTube 上觀看本章內容](https://youtu.be/fJ7jBZG_Rpo)**
 
-Comments are made for programmers to read, not the computer. It's good to write comments to help other people understand your code.  It's also good to help you understand your code later.  (Many people write good code but then forget why they wrote it.) To write comments in Rust you usually use `//`:
+註解是給程式設計師看的，而不是給電腦看的。寫註解是為了幫助別人理解你的程式碼。這也有利於幫助你以後理解你的程式碼。 (很多人寫了很好的程式碼，但後來卻忘記了他們為什麼要寫它。)在 Rust 中寫註解，你通常會使用 `//`:
 
 ```rust
 fn main() {
-    // Rust programs start with fn main()
-    // You put the code inside a block. It starts with { and ends with }
-    let some_number = 100; // We can write as much as we want here and the compiler won't look at it
+    // Rust 程式從 fn main() 開始
+    // 程式碼放在區塊中，用 { 開始和 } 結束
+    let some_number = 100; // 我們寫多少在這裡都可以，編譯器都不會看
 }
 ```
 
-When you do this, the compiler won't look at anything to the right of the `//`.
+當你這樣做時，編譯器不會看到出現在 `//` 右邊的任何東西。
 
-There is another kind of comment that you write with `/*` to start and `*/` to end. This one is useful to write in the middle of your code.
+還有一種註解是，你可以用 `/*` 開頭，以 `*/` 結尾。這種寫法在程式碼中間很有用。
 
 ```rust
 fn main() {
@@ -192,75 +193,75 @@ fn main() {
 }
 ```
 
-To the compiler, `let some_number/*: i16*/ = 100;` looks like `let some_number = 100;`.
+對編譯器來說，`let some_number/*: i16*/ = 100;` 看起來就跟 `let some_number = 100;` 一樣。
 
-The `/* */` form is also useful for very long comments over more than one line. In this example you can see that you need to write `//` for every line. But if you type `/*`, it won't stop until you finish it with `*/`.
+`/* */` 註解形式對於超過一行的非常長的註釋也很有用。在這個範例中，你可以看到你需要為每一行去寫 `//`。但是如果你輸入 `/*`，它不會停止註解，直到你用 `*/` 結束這個註解。
 
 ```rust
 fn main() {
-    let some_number = 100; /* Let me tell you
-    a little about this number.
-    It's 100, which is my favourite number.
-    It's called some_number but actually I think that... */
+    let some_number = 100; /* 讓我來告訴你
+    有關這個數字的一些事情。
+    它是100，我最愛的數字。
+    他叫做 some_number 但實際上我思考的是… */
 
-    let some_number = 100; // Let me tell you
-    // a little about this number.
-    // It's 100, which is my favourite number.
-    // It's called some_number but actually I think that...
+    let some_number = 100; // 讓我來告訴你
+    // 有關這個數字的一些事情。
+    // 它是100，我最愛的數字。
+    // 他叫做 some_number 但實際上我思考的是…
 }
 ```
 
-## Types
+## 型別
 
-Rust has many types that let you work with numbers, characters, and so on. Some are simple, others are more complicated, and you can even create your own.
+Rust 有許多型別，讓你可以處理數字、字元等等。有些型別很簡單，有些型別比較複雜，你甚至可以建立自己的型別。
 
-### Primitive types
-**[See this chapter on YouTube](https://youtu.be/OxTPU5UGMhs)**
+### 原始型別
+**[YouTube 上觀看本章內容](https://youtu.be/OxTPU5UGMhs)**
 
-Rust has simple types that are called **primitive types** (primitive = very basic). We will start with integers and `char` (characters). Integers are whole numbers with no decimal point. There are two types of integers:
+Rust 有簡單的型別，這些型別被稱為**原始型別**(原始 = 非常基本)。我們將從整數和 `char`(字元)開始。沒有包含小數點的一整個數字就是整數。整數有兩種型別：
 
-- Signed integers,
-- Unsigned integers.
+- 有符號整數
+- 無符號整數
 
-Signed means `+` (plus sign) and `-` (minus sign), so signed integers can be positive or negative (e.g. +8, -8). But unsigned integers can only be positive, because they do not have a sign.
+符號是指 `+` (加號)與 `-` (減號)，所以有符號整數可以是正數，也可以是負數(如 +8，-8)。但無符號整數只能是正數，因為它們沒有符號。
 
-The signed integers are: `i8`, `i16`, `i32`, `i64`, `i128`, and `isize`.
-The unsigned integers are: `u8`, `u16`, `u32`, `u64`, `u128`, and `usize`.
+有符號整數是 `i8`、`i16`、`i32`、`i64`、`i128` 和 `isize`。
+無符號整數是 `u8`、`u16`、`u32`、`u64`、`u128` 和 `usize`。
 
-The number after the i or the u means the number of bits for the number, so numbers with more bits can be larger. 8 bits = one byte, so `i8` is one byte, `i64` is 8 bytes, and so on. Number types with larger sizes can hold larger numbers. For example, a `u8` can hold up to 255, but a `u16` can hold up to 65535. And a `u128` can hold up to 340282366920938463463374607431768211455.
+i 或 u 後面的數字表示該數字的位元數，所以位元數愈多的可以表示更大的數字。8 位元 = 一個位元組，所以 `i8` 是佔用一個位元組空間的型別，`i64` 是 8 個位元組，以此類推。尺寸較大的數字型別可以容納更大的數字。例如，`u8` 最多可以容納最大的數字是 255，但 `u16` 最多可以容納 65535。而 `u128` 最多可以容納 340282366920938463463374607431768211455。
 
-So what is `isize` and `usize`? This means the number of bits on your type of computer. (The number of bits on your computer is called the **architecture** of your computer.) So `isize` and `usize` on a 32-bit computer is like `i32` and `u32`, and `isize` and `usize` on a 64-bit computer is like `i64` and `u64`.
+那什麼是 `isize` 和 `usize` 呢？這表示你的電腦類型的位元數。(你的電腦裡中央處理器的位元數叫做電腦的**架構**)。所以在 32 位元電腦上的 `isize` 和 `usize` 就像是 `i32` 和 `u32`，64 位元電腦上的 `isize` 和 `usize` 就像是 `i64` 和 `u64`。
 
-There are many reasons for the different types of integers. One reason is computer performance: a smaller number of bytes is faster to process. For example, the number -10 as an `i8` is `11110110`, but as an `i128` it is `11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110`. But here are some other uses:
+需要不同整數型別的原因有很多。其中之一是電腦效能：位元組數量愈少處理速度愈快。例如，數字 -10 在 `i8` 是 `11110110`，但在 `i128` 會是`11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110`。不過這裡它還有一些其它用途：
 
-Characters in Rust are called `char`. Every `char` has a number: the letter `A` is number 65, while the character `友` ("friend" in Chinese) is number 21451. The list of numbers is called "Unicode". Unicode uses smaller numbers for characters that are used more, like A through Z, or digits 0 through 9, or space.
+Rust 中的字元稱做 `char`。每一個 `char` 都對應到一個數字：字母 `A` 對應到數字 65，而字元 `友` (中文的"朋友")對應數字 21451。這個數字列表被稱為 "Unicode"。Unicode 給愈常用的字元使用愈小的數字，如字母 A 到 Z，數字 0 到 9，或空格等等。
 
 ```rust
 fn main() {
     let first_letter = 'A';
-    let space = ' '; // A space inside ' ' is also a char
-    let other_language_char = 'Ꮔ'; // Thanks to Unicode, other languages like Cherokee display just fine too
-    let cat_face = '😺'; // Emojis are chars too
+    let space = ' '; // ' ' 裡的空白也算一個字元
+    let other_language_char = 'Ꮔ'; // 感謝 Unicode，其它語言像是切羅基語 (Cherokee) 也顯示的很好
+    let cat_face = '😺'; // Emojis 也算字元
 }
 ```
 
-The characters that are used most have numbers less than 256, and they can fit into a `u8`. Remember, a `u8` is 0 plus all the numbers up to 255, for 256 in total. This means that Rust can safely **cast** a `u8` into a `char`, using `as`. ("Cast `u8` as `char`" means "pretend `u8` is a `char`")
+最常用字元的對應數字少於 256，剛好可以放進 `u8` 裡。要記得，`u8` 是 0 加上到 255 的所有數字，總共 256 種。這意味著 Rust 能使用 `as` 關鍵字安全地將一個 `u8` **轉換型別(cast)** 為 `char`。("轉換 `u8` 為 `char`" 意味著 "假裝 `u8` 是`char`")
 
-Casting with `as` is useful because Rust is very strict. It always needs to know the type, and won't let you use two different types together even if they are both integers. For example, this will not work:
+透過 `as` 轉型很有用，因為 Rust 對型別非常嚴格。它總是必需知道是什麼型別，也不會讓你一起用不同的兩種型別，即使它們都是整數。舉例來說，不能這樣用：
 
 ```rust
-fn main() { // main() is where Rust programs start to run. Code goes inside {} (curly brackets)
+fn main() { // main() 是 Rust 程式開始執行的地方。程式碼會放在 {} (大括號)裡
 
-    let my_number = 100; // We didn't write a type of integer,
-                         // so Rust chooses i32. Rust always
-                         // chooses i32 for integers if you don't
-                         // tell it to use a different type
+    let my_number = 100; // 我們沒有寫出整數的型別，
+                         // 因此 Rust 選擇了 i32。
+                         // Rust 總是給整數選擇 i32，
+                         // 如果你不教它用不同型別的話。
 
     println!("{}", my_number as char); // ⚠️
 }
 ```
 
-Here is the reason:
+編譯器給的理由是：
 
 ```text
 error[E0604]: only `u8` can be cast as `char`, not `i32`
@@ -270,7 +271,7 @@ error[E0604]: only `u8` can be cast as `char`, not `i32`
   |                    ^^^^^^^^^^^^^^^^^
 ```
 
-Fortunately we can easily fix this with `as`. We can't cast `i32` as a `char`, but we can cast an `i32` as a `u8`. And then we can do the same from `u8` to `char`. So in one line we use `as` to make my_number a `u8`, and again to make it a `char`. Now it will compile:
+幸運的是，我們可以用 `as` 輕鬆修正這個錯誤。我們無法將 `i32` 轉型為 `char`，但我們可以將 `i32` 轉型為 `u8`。接著我們同樣可以將 `u8` 轉型為 `char`。所以在同一行中，我們先用 `as` 讓 `my_number` 變成 `u8`，再變成 `char`。現在它就能通過編譯了：
 
 ```rust
 fn main() {
@@ -279,49 +280,49 @@ fn main() {
 }
 ```
 
-It prints `d` because that is the `char` in place 100.
+它會印出 `d` 是因為它就是100對應的 `char`。
 
-The easier way, however, is just to tell Rust that `my_number` is a `u8`. Here's how you do it:
+然而，更簡單的方法是你只要告訴 Rust 說 `my_number` 的型別是 `u8`。你要像這樣做：
 
 ```rust
 fn main() {
-    let my_number: u8 = 100; //  change my_number to my_number: u8
+    let my_number: u8 = 100; //  更改 my_number 為 my_number: u8
     println!("{}", my_number as char);
 }
 ```
 
-So those are two reasons for all the different number types in Rust. Here is another reason: `usize` is the size that Rust uses for *indexing*. (Indexing means "which item is first", "which item is second", etc.) `usize` is the best size for indexing because:
+所以這些是 Rust 中會有不同整數型別的兩個原因。這裡還有一個原因：`usize` 是 Rust 用來 *索引* 的型別。(索引的意思是"哪項是第一"，"哪項是第二"等等) `usize` 是最佳的索引型別，因為：
 
-- An index can't be negative, so it needs to be a number with a u
-- It should be big, because sometimes you need to index many things, but
-- It can't be a u64 because 32-bit computers can't use u64.
+- 索引值不能是負數，所以它需要是一個帶 u 的數字(註：指無符號數)
+- 它要可以夠大，因為有時你需要索引很多東西，但是
+- 它不能是 `u64`，因為 32 位元電腦無法使用 `u64`。
 
-So Rust uses `usize` so that your computer can get the biggest number for indexing that it can read.
+所以Rust使用了 `usize`，這樣你的電腦就能以它能讀取到的最大整數值進行索引。
 
 
 
-Let's learn some more about `char`. You saw that a `char` is always one character, and uses `''` instead of `""`.
+我們再來了解一下 `char`。你會看到 `char` 總是一個字元，並且使用 `''` 而不是 `""`。
 
-All `chars` use 4 bytes of memory, since 4 bytes are enough to hold any kind of character:
-- Basic letters and symbols usually need 1 out of 4 bytes: `a b 1 2 + - = $ @`
-- Other letters like German Umlauts or accents need 2 out of 4 bytes: `ä ö ü ß è é à ñ`
-- Korean, Japanese or Chinese characters need 3 or 4 bytes: `国 안 녕`
+所有的 `chars` 都使用 4 個位元組的記憶體，因為 4 個位元組足以容納任何種類的字元：
+- 基本字母和符號通常只需要 4 個位元組中的1個：`a b 1 2 + - = $ @`
+- 其他字母，如德文元音變音 (Umlauts) 或重音，需要 4 個位元組中的 2 個：`ä ö ü ß è é à ñ`
+- 韓文、日文或中文字元需要 3 或 4 個位元組：`國 안 녕`
 
-When using characters as part of a string, the string is encoded to use the least amount of memory needed for each character.
+當使用字元作為字串的一部分時，字串是用每個字元所需的最少記憶體來編碼的。
 
-We can use `.len()` to see this for ourselves:
+我們可以自己用 `.len()` 來觀察這個情況。
 
 ```rust
 fn main() {
-    println!("Size of a char: {}", std::mem::size_of::<char>()); // 4 bytes
-    println!("Size of string containing 'a': {}", "a".len()); // .len() gives the size of the string in bytes
+    println!("Size of a char: {}", std::mem::size_of::<char>()); // 4 位元組
+    println!("Size of string containing 'a': {}", "a".len()); // .len() 給出以位元組為單位的字串大小
     println!("Size of string containing 'ß': {}", "ß".len());
     println!("Size of string containing '国': {}", "国".len());
     println!("Size of string containing '𓅱': {}", "𓅱".len());
 }
 ```
 
-This prints:
+這個程式會印出：
 
 ```text
 Size of a char: 4
@@ -331,27 +332,27 @@ Size of string containing '国': 3
 Size of string containing '𓅱': 4
 ```
 
-You can see that `a` is one byte, the German `ß` is two, the Japanese `国` is three, and the ancient Egyptian `𓅱` is 4 bytes.
+你可以看到 `a` 的大小是一個位元組，德文的 `ß` 是兩個位元組，日文的 `國` 是三個位元組，古埃及的 `𓅱` 是四個位元組。
 
 ```rust
 fn main() {
     let slice = "Hello!";
     println!("Slice is {} bytes.", slice.len());
-    let slice2 = "안녕!"; // Korean for "hi"
+    let slice2 = "안녕!"; // 韓文的 "hi"
     println!("Slice2 is {} bytes.", slice2.len());
 }
 ```
 
-This prints:
+這個程式會印出：
 
 ```text
 Slice is 6 bytes.
 Slice2 is 7 bytes.
 ```
 
-`slice` is 6 characters in length and 6 bytes, but `slice2` is 3 characters in length and 7 bytes.
+`slice` 長 6 個字元，佔 6 個位元組，但 `slice2` 長 3 個字元，佔 7 個位元組。
 
-If `.len()` gives the size in bytes, what about the size in characters? We will learn about these methods later, but you can just remember that `.chars().count()` will do it. `.chars().count()` turns what you wrote into characters and then counts how many there are.
+如果 `.len()` 給出的是以位元組為單位的大小，那麼以字元為單位的大小呢？我們在後面會學習這些方法，但這裡你只要記得 `.chars().count()` 做得到這件事就可以了。`.chars().count()` 會將你寫的東西變成字元，然後算出有多少個。
 
 
 ```rust
@@ -363,24 +364,24 @@ fn main() {
 }
 ```
 
-This prints:
+這個程式會印出：
 
 ```text
 Slice is 6 bytes and also 6 characters.
 Slice2 is 7 bytes but only 3 characters.
 ```
 
-## Type inference
-**[See this chapter on YouTube](https://youtu.be/q1D2vpy3kEI)**
+## 型別推導
+**[YouTube 上觀看本章內容](https://youtu.be/q1D2vpy3kEI)**
 
-Type inference means that if you don't tell the compiler the type, but it can decide by itself, it will decide. The compiler always needs to know the type of the variables, but you don’t always need to tell it. Actually, usually you don't need to tell it. For example, for `let my_number = 8`, `my_number` will be an `i32`. That is because the compiler chooses i32 for integers if you don't tell it. But if you say `let my_number: u8 = 8`, it will make `my_number` a `u8`, because you told it `u8`.
+型別推導的意思是，如果你沒有告訴編譯器型別，但它可以自己判斷時它就會自己決定型別。編譯器總是必需知道變數的型別，但你不需要都告訴它。實際上，通常你不需要告訴它。例如，像 `let my_number = 8`，`my_number` 將會是 `i32`。這是因為如果你不告訴它，編譯器會給整數選擇 i32。但是如果你說 `let my_number: u8 = 8`，它就會把 `my_number` 視為 `u8`，因為你明確告訴它是 `u8`。
 
-So usually the compiler can guess. But sometimes you need to tell it, for two reasons:
+通常編譯器都能猜到。但有時你需要告訴它，原因有兩個：
 
-1) You are doing something very complex and the compiler doesn't know the type you want.
-2) You want a different type (for example, you want an `i128`, not an `i32`).
+1) 你正在做一些非常複雜的事情，而編譯器不知道你想要的型別。
+2) 你想要一個不同的型別 (例如，你想要一個 `i128`，而不是 `i32`)。
 
-To specify a type, add a colon after the variable name.
+這時可以指定一個型別，只要在變數名後新增一個冒號和型別。
 
 ```rust
 fn main() {
@@ -388,24 +389,24 @@ fn main() {
 }
 ```
 
-For numbers, you can say the type after the number. You don't need a space - just type it right after the number.
+對數字來說，你可以在數字後面加上型別。你不需要空格──只需要在數字後面直接輸入。
 
 ```rust
 fn main() {
-    let small_number = 10u8; // 10u8 = 10 of type u8
+    let small_number = 10u8; // 10u8 = 型別為 u8 的 10
 }
 ```
 
-You can also add `_` if you want to make the number easy to read.
+如果你想讓數字容易閱讀，也可以加上 `_`。
 
 ```rust
 fn main() {
-    let small_number = 10_u8; // This is easier to read
-    let big_number = 100_000_000_i32; // 100 million is easy to read with _
+    let small_number = 10_u8; // 好讀
+    let big_number = 100_000_000_i32; // 用 _ 時更容易讀出是 100 百萬
 }
 ```
 
-The `_` does not change the number. It is only to make it easy for you to read. And it doesn't matter how many `_` you use:
+`_`不會改變數字。它只是為了讓你方便閱讀。而且你用多少個`_`都沒有關係。
 
 ```rust
 fn main() {
@@ -415,32 +416,32 @@ fn main() {
 }
 ```
 
-This prints `0, 1624`.
+這個程式會印出 `0, 1624`.
 
-### Floats
+### 浮點數
 
-Floats are numbers with decimal points. 5.5 is a float, and 6 is an integer. 5.0 is also a float, and even 5. is a float.
+浮點數是帶有小數點的數字。5.5 是一個浮點數，6 是一個整數。5.0 也是一個浮點數，甚至 5. 也是一個浮點數。
 
 ```rust
 fn main() {
-    let my_float = 5.; // Rust sees . and knows that it is a float
+    let my_float = 5.; // Rust 看到 . 時，知道它是 float
 }
 ```
 
-But the types are not called `float`, they are called `f32` and `f64`. It is the same as integers: the number after `f` shows the number of bits. If you don't write the type, Rust will choose `f64`.
+但寫出型別時不叫 `float`，叫 `f32` 和 `f64`。這點和整數一樣：`f` 後面的數字顯示的是位元數。如果你不寫型別，Rust 會選擇 `f64`。
 
-Of course, only floats of the same type can be used together. So you can't add an `f32` to an `f64`.
+當然，只有同樣型別的浮點數可以一起使用。所以你不能把 `f32` 和 `f64` 加起來。
 
 ```rust
 fn main() {
-    let my_float: f64 = 5.0; // This is an f64
-    let my_other_float: f32 = 8.5; // This is an f32
+    let my_float: f64 = 5.0; // 這是 f64
+    let my_other_float: f32 = 8.5; // 這是 f32
 
     let third_float = my_float + my_other_float; // ⚠️
 }
 ```
 
-When you try to run this, Rust will say:
+當你嘗試執行這個程式時，Rust 會說：
 
 ```text
 error[E0308]: mismatched types
@@ -450,56 +451,56 @@ error[E0308]: mismatched types
   |                                  ^^^^^^^^^^^^^^ expected `f64`, found `f32`
 ```
 
-The compiler writes "expected (type), found (type)" when you use the wrong type. It reads your code like this:
+當你用錯型別時，編譯器會寫 "expected (type), found (type)"。它是像這樣讀你的程式碼：
 
 ```rust
 fn main() {
-    let my_float: f64 = 5.0; // The compiler sees an f64
-    let my_other_float: f32 = 8.5; // The compiler sees an f32. It is a different type.
-    let third_float = my_float + // You want to add my_float to something, so it must be an f64 plus another f64. Now it expects an f64...
-    let third_float = my_float + my_other_float;  // ⚠️ but it found an f32. It can't add them.
+    let my_float: f64 = 5.0; // 編譯器見到 f64
+    let my_other_float: f32 = 8.5; // 編譯器見到 f32 是個不同型別
+    let third_float = my_float + // 你想把 my_float 加上什麼，所以它一定要是 f64 加上另一個 f64。現在它預期有另一個 f64…
+    let third_float = my_float + my_other_float;  // ⚠️ 不過它發現是個 f32。它沒辨法把它們加起來。
 }
 ```
 
-So when you see "expected (type), found (type)", you must find why the compiler expected a different type.
+所以當你看到 "expected(type), found(type)" 時，你必須找到為什麼編譯器預期的是不同的型別。
 
-Of course, with simple numbers it is easy to fix. You can cast the `f32` to an `f64` with `as`:
+當然，單純的數字很容易修正。你可以用 `as` 把 `f32` 轉型成 `f64`：
 
 ```rust
 fn main() {
     let my_float: f64 = 5.0;
     let my_other_float: f32 = 8.5;
 
-    let third_float = my_float + my_other_float as f64; // my_other_float as f64 = use my_other_float like an f64
+    let third_float = my_float + my_other_float as f64; // my_other_float as f64 = 把 my_other_float 當 f64 來用
 }
 ```
 
-Or even more simply, remove the type declarations. ("to declare a type" = "to tell Rust to use the type") Rust will choose types that can add together.
+或者更簡單，去掉型別宣告。("宣告一個型別" = "告訴Rust使用該型別") Rust會選擇可以加在一起的型別。
 
 ```rust
 fn main() {
-    let my_float = 5.0; // Rust will choose f64
-    let my_other_float = 8.5; // Here again it will choose f64
+    let my_float = 5.0; // Rust 會選 f64
+    let my_other_float = 8.5; // 這裡還是會選 f64
 
     let third_float = my_float + my_other_float;
 }
 ```
 
-The Rust compiler is smart and will not choose f64 if you need f32:
+Rust 編譯器很聰明，如果你需要 f32，就不會選擇 f64：
 
 ```rust
 fn main() {
     let my_float: f32 = 5.0;
-    let my_other_float = 8.5; // Usually Rust would choose f64,
+    let my_other_float = 8.5; // 通常 Rust 是選 f64,
 
-    let third_float = my_float + my_other_float; // but now it knows that you need to add it to an f32. So it chooses f32 for my_other_float too
+    let third_float = my_float + my_other_float; // 但現在它知道你需要把它加上 f32。所以它也選了 f32 給 my_other_float
 }
 ```
 
-## Printing 'hello, world!'
-**See this chapter on YouTube: [Video 1](https://youtu.be/yYlPHRl2geQ), [Video 2](https://youtu.be/DTCSfBJJZb8)**
+## 列印 hello, world!
+**YouTube 上觀看本章內容: [影片 1](https://youtu.be/yYlPHRl2geQ), [影片 2](https://youtu.be/DTCSfBJJZb8)**
 
-When you start a new Rust program, it always has this code:
+當你啟動一個新的Rust程式時，它總是有這樣的程式碼。
 
 ```rust
 fn main() {
@@ -507,15 +508,15 @@ fn main() {
 }
 ```
 
-- `fn` means function,
-- `main` is the function that starts the program,
-- `()` means that we didn't give the function any variables to start.
+- `fn` 的意思是函式，
+- `main` 是啟動程式的函式。
+- `()` 表示我們沒有給函式任何變數來啟動。
 
-`{}` is called a **code block**. This is the space where code lives.
+`{}` 被稱為**程式碼區塊**。這是程式碼所在的空間。
 
-`println!` is a **macro** that prints to the console. A **macro** is like a function that writes code for you. Macros have a `!` after them. We will learn about making macros later. For now, remember that `!` means that it is a macro.
+`println!` 是一個列印訊息到控制台(console)的**巨集**，。一個**巨集**就像一個為你寫程式碼的函式。巨集名稱後面都有一個 `!`。我們以後會學習如何建立巨集。現在只要記住有 `!` 表示它是一個巨集。
 
-To learn about the `;`, we will create another function. First, in `main` we will print a number 8:
+為了學習 `;`，我們將建立另一個函式。首先，在 `main` 中，我們將印出數字 8。
 
 ```rust
 fn main() {
@@ -523,10 +524,10 @@ fn main() {
 }
 ```
 
-The `{}` in `println!` means "put the variable inside here". This prints `Hello, world number 8!`.
+`println!` 中的 `{}` 的意思是 "把變數放在這裡面"。這樣就會印出 `Hello, world number 8!`。
 
 
-We can put more in, just like we did before:
+我們可以像之前一樣，放更多的東西進去。
 
 ```rust
 fn main() {
@@ -534,9 +535,9 @@ fn main() {
 }
 ```
 
-This prints `Hello, worlds number 8 and 9!`.
+這將會印出 `Hello, worlds number 8 and 9!`。
 
-Now let's create the function.
+現在我們來建立函式。
 
 ```rust
 fn number() -> i32 {
@@ -548,12 +549,12 @@ fn main() {
 }
 ```
 
-This also prints `Hello, world number 8!`. When Rust looks at `number()` it sees a function. This function:
+這個程式也會印出 `Hello, world number 8!`。當 Rust 觀察到 `number()` 時，它看到一個函式。這個函式：
 
-- Does not take anything (because it has `()`)
-- Returns an `i32`. The `->` (called a "skinny arrow") shows what the function returns.
+- 沒有用到引數(因為它是 `()`)
+- 回傳一個 `i32`。`->`(稱為 "瘦箭")右邊顯示了函式回傳內容的型別
 
-Inside the function is just `8`. Because there is no `;`, this is the value it returns. If it had a `;`, it would not return anything (it would return a `()`). Rust will not compile this if it has a `;`, because the return is `i32` and `;` returns `()`, not `i32`:
+函式內部只有 `8`。因為行尾沒有 `;`，所以這就是它回傳的值。如果它有 `;`，它將不會回傳任何東西(意思是它會回傳 `()`)。如果它有 `;`，Rust 將無法編譯，因為回傳的是 `i32`，而 `;` 回傳 `()`，不是 `i32`：
 
 ```rust
 fn main() {
@@ -574,43 +575,43 @@ fn number() -> i32 {
   |      - help: consider removing this semicolon
 ```
 
-This means "you told me that `number()` returns an `i32`, but you added a `;` so it doesn't return anything". So the compiler suggests removing the semicolon.
+這意味著 "你告訴我 `number()` 回傳的是 `i32`，但你加了 `;`，它就沒回傳值了"。所以編譯器建議去掉分號。
 
-You can also write `return 8;` but in Rust it is normal to just remove the `;` to `return`.
+你也可以寫 `return 8;`，但在Rust中，正常情況下只需將`;`去掉即可`回傳`。
 
-When you want to give variables to a function, put them inside the `()`. You have to give them a name and write the type.
+當你想提供變數給函式時，把它們放在 `()` 裡。還必須給它們命名並寫上型別。
 
 ```rust
-fn multiply(number_one: i32, number_two: i32) { // Two i32s will enter the function. We will call them number_one and number_two.
+fn multiply(number_one: i32, number_two: i32) { // 兩個 i32 傳入函式。將它們取名為number_one和number_two。
     let result = number_one * number_two;
     println!("{} times {} is {}", number_one, number_two, result);
 }
 
 fn main() {
-    multiply(8, 9); // We can give the numbers directly
-    let some_number = 10; // Or we can declare two variables
+    multiply(8, 9); // 可以直接給數值
+    let some_number = 10; // 或者宣告兩個變數
     let some_other_number = 2;
-    multiply(some_number, some_other_number); // and put them in the function
+    multiply(some_number, some_other_number); // 把它們給函式當作引數
 }
 ```
 
-We can also return an `i32`. Just take out the semicolon at the end:
+我們也可以回傳 `i32`。只要把行尾的分號拿掉就可以了：
 
 ```rust
 fn multiply(number_one: i32, number_two: i32) -> i32 {
     let result = number_one * number_two;
     println!("{} times {} is {}", number_one, number_two, result);
-    result // this is the i32 that we return
+    result // 這是我們要回傳的 i32
 }
 
 fn main() {
-    let multiply_result = multiply(8, 9); // We used multiply() to print and to give the result to multiply_result
+    let multiply_result = multiply(8, 9); // 我們用multiply()印出結果並回傳給multiply_result
 }
 ```
 
-### Declaring variables and code blocks
+### 宣告變數和程式碼區塊
 
-Use `let` to declare a variable (declare a variable = tell Rust to make a variable).
+使用 `let` 宣告變數(宣告一個變數 = 告訴 Rust 建立一個變數)。
 
 ```rust
 fn main() {
@@ -619,57 +620,57 @@ fn main() {
 }
 ```
 
-Variables start and end inside a code block `{}`. In this example, `my_number` ends before we call `println!`, because it is inside its own code block.
+變數使用範圍的開始和結束都在程式碼區塊 `{}` 內。在這個例子中，`my_number` 在我們呼叫 `println!` 之前結束，因為它在自己的程式區碼塊裡面。
 
 ```rust
 fn main() {
     {
-        let my_number = 8; // my_number starts here
-                           // my_number ends here!
+        let my_number = 8; // my_number 在這裡開始
+                           // my_number 在這裡結束!
     }
 
-    println!("Hello, number {}", my_number); // ⚠️ there is no my_number and
-                                             // println!() can't find it
+    println!("Hello, number {}", my_number); // ⚠️ 沒有 my_number，而且
+                                             // println!() 也找不到它
 }
 ```
 
-You can use a code block to return a value:
+你可以用程式碼區塊來回傳一個值：
 
 ```rust
 fn main() {
     let my_number = {
     let second_number = 8;
-        second_number + 9 // No semicolon, so the code block returns 8 + 9.
-                          // It works just like a function
+        second_number + 9 // 沒分號，程式碼區塊回傳 returns 8 + 9。
+                          // 就像函式一樣運作
     };
 
     println!("My number is: {}", my_number);
 }
 ```
 
-If you add a semicolon inside the block, it will return `()` (nothing):
+如果在程式碼區塊內結束前加上分號，它將回傳 `()` (沒有值)：
 
 ```rust
 fn main() {
     let my_number = {
-    let second_number = 8; // declare second_number,
-        second_number + 9; // add 9 to second_number
-                           // but we didn't return it!
-                           // second_number dies now
+    let second_number = 8; // 宣告 second_number,
+        second_number + 9; // 加 9 到 second_number
+                           // 但沒回傳它!
+                           // second_number 現在就結束
     };
 
-    println!("My number is: {:?}", my_number); // my_number is ()
+    println!("My number is: {:?}", my_number); // my_number 會是 ()
 }
 ```
 
-So why did we write `{:?}` and not `{}`? We will talk about that now.
+那麼為什麼我們要寫 `{:?}` 而不是 `{}` 呢？我們現在就來談談這個問題。
 
-## Display and debug
-**[See this chapter on YouTube](https://youtu.be/jd3pC248c0o)**
+## 顯示和除錯
+**[YouTube 上觀看本章內容](https://youtu.be/jd3pC248c0o)**
 
-Simple variables in Rust can be printed with `{}` inside `println!`. But some variables can't, and you need to **debug print**. Debug print is printing for the programmer, because it usually shows more information. Debug sometimes doesn't look pretty, because it has extra information to help you.
+Rust 中單純的變數可以在 `println!` 裡用 `{}`[^1] 來被印出。但是有些變數不能，你需要用 **除錯列印(debug print)**。除錯列印是給程式設計師用的列印方法，因為它通常會顯示更多的資訊。除錯(Debug)有時看起來並不漂亮，因為它有額外的資訊來幫助你。
 
-How do you know if you need `{:?}` and not `{}`? The compiler will tell you. For example:
+你怎麼知道你是否需要 `{:?}`[^2] 而不是 `{}`？編譯器會告訴你。比如說：
 
 ```rust
 fn main() {
@@ -678,7 +679,7 @@ fn main() {
 }
 ```
 
-When we run this, the compiler says:
+當我們執行這個程式時，編譯器會說：
 
 ```text
 error[E0277]: `()` doesn't implement `std::fmt::Display`
@@ -693,11 +694,7 @@ error[E0277]: `()` doesn't implement `std::fmt::Display`
   = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
 ```
 
-This is a lot of information. But the important part is: `you may be able to use {:?} (or {:#?} for pretty-print) instead`. This means that you can try `{:?}`, and also `{:#?}` `{:#?}` is called "pretty printing". It is like `{:?}` but prints with different formatting over more lines.
-
-So Display means printing with `{}`, and Debug means printing with `{:?}`.
-
-One more thing: you can also use `print!` without `ln` if you don't want a new line.
+這有相當多的資訊，但重要的部分是 `you may be able to use {:?} (or {:#?} for pretty-print) instead`。這意味著你可以試試 `{:?}`，也可以試試 `{:#?}`。`{:#?}` 叫做"漂亮列印"。它和 `{:?}` 一樣，但是用更多行和不同的格式印出內容。所以 Display 意思是用 `{}` 列印，Debug 則是用 `{:?}` 列印。還有一點：如果你不想要換行，你也可以使用 `print!` 而不需要有 `ln`。
 
 ```rust
 fn main() {
@@ -706,15 +703,19 @@ fn main() {
 }
 ```
 
-This prints `This will not print a new line so this will be on the same line`.
+這個將會印出 `This will not print a new line so this will be on the same line`。
 
-### Smallest and largest numbers
+[^1]: 譯註: 即顯示列印 (Display print)。
 
-If you want to see the smallest and biggest numbers, you can use MIN and MAX after the name of the type:
+[^2]: 譯註: 除錯列印的格式。
+
+### 最小和最大的數
+
+如果你想知道最小和最大的數字，你可以在型別名稱後使用 MIN 和 MAX：
 
 ```rust
 fn main() {
-    println!("The smallest i8 is {} and the biggest i8 is {}.", i8::MIN, i8::MAX); // hint: printing std::i8::MIN means "print MIN inside of the i8 section in the standard library"
+    println!("The smallest i8 is {} and the biggest i8 is {}.", i8::MIN, i8::MAX); // 提示: 印出 std::i8::MIN 表示 "列印在標準函式庫裡 i8 型別的 MIN 值"
     println!("The smallest u8 is {} and the biggest u8 is {}.", u8::MIN, u8::MAX);
     println!("The smallest i16 is {} and the biggest i16 is {}.", i16::MIN, i16::MAX);
     println!("The smallest u16 is {} and the biggest u16 is {}.", u16::MIN, u16::MAX);
@@ -728,7 +729,7 @@ fn main() {
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 The smallest i8 is -128 and the biggest i8 is 127.
@@ -743,12 +744,12 @@ The smallest i128 is -170141183460469231731687303715884105728 and the biggest i1
 The smallest u128 is 0 and the biggest u128 is 340282366920938463463374607431768211455.
 ```
 
-## Mutability (changing)
-**[See this chapter on YouTube](https://youtu.be/Nyyd6qn7dZY)**
+## 可變性
+**[YouTube 上觀看本章內容](https://youtu.be/Nyyd6qn7dZY)**
 
-When you declare a variable with `let`, it is immutable (cannot be changed).
+當你用 `let` 宣告變數時，它是不可變的(immutable，內容不可被變動)。
 
-This will not work:
+這個程式不能編譯：
 
 ```rust
 fn main() {
@@ -757,9 +758,9 @@ fn main() {
 }
 ```
 
-The compiler says: `error[E0384]: cannot assign twice to immutable variable my_number`. This is because variables are immutable if you only write `let`.
+編譯器說：`error[E0384]: cannot assign twice to immutable variable my_number`。這是因為如果你只寫 `let`，變數是不可變的。
 
-But sometimes you want to change your variable. To make a variable that you can change, add `mut` after `let`:
+但有時你想更改你的變數。要建立一個可以改變的變數，就要在 `let` 後面加上 `mut`。
 
 ```rust
 fn main() {
@@ -768,56 +769,56 @@ fn main() {
 }
 ```
 
-Now there is no problem.
+現在就沒問題了。
 
-However, you cannot change the type: even `mut` doesn't let you do that. This will not work:
+但是，你不能改變型別：即使加上 `mut` 也做不到。這樣將會無法編譯：
 
 ```rust
 fn main() {
-    let mut my_variable = 8; // it is now an i32. That can't be changed
+    let mut my_variable = 8; // 它現在是 i32. 型別不能被改變
     my_variable = "Hello, world!"; // ⚠️
 }
 ```
 
-You will see the same "expected" message from the compiler: `expected integer, found &str`. `&str` is a string type that we will learn soon.
+你會看到編譯器發出的同樣的"預期"訊息。`expected integer, found &str`。我們很快就會知道 `&str` 是一個字串型別。
 
-### Shadowing
-**[See this chapter on YouTube](https://youtu.be/InULHyRGw7g)**
+### 遮蔽
+**[YouTube 上觀看本章內容](https://youtu.be/InULHyRGw7g)**
 
-Shadowing means using `let` to declare a new variable with the same name as another variable. It looks like mutability, but it is completely different. Shadowing looks like this:
+遮蔽 (Shadowing) 是指使用 `let` 宣告與另一個變數同名的新變數。它看起來像可變性，但完全不同。遮蔽看起來像這樣：
 
 ```rust
 fn main() {
-    let my_number = 8; // This is an i32
-    println!("{}", my_number); // prints 8
-    let my_number = 9.2; // This is an f64 with the same name. But it's not the first my_number - it is completely different!
-    println!("{}", my_number) // Prints 9.2
+    let my_number = 8; // 這是 i32
+    println!("{}", my_number); // 印出 8
+    let my_number = 9.2; // 這是同名的 f64。 但它已經不是第一個 my_number──它完全不一樣!
+    println!("{}", my_number) // 印出 9.2
 }
 ```
 
-Here we say that we "shadowed" `my_number` with a new "let binding".
+這裡我們會說我們用一個新的 "let 繫結(binding)" 對 `my_number` 進行了"遮蔽"。
 
-So is the first `my_number` destroyed? No, but when we call `my_number` we now get `my_number` the `f64`. And because they are in the same scope block (the same `{}`), we can't see the first `my_number` anymore.
+那麼第一個 `my_number` 是否被銷毀了呢？沒有，但是當我們叫用 `my_number` 時，我們現在得到 `f64` 型別的 `my_number`。因為它們在同一個作用域區塊中(同一個 `{}`)，我們無法再看到第一個 `my_number` 了。
 
-But if they are in different blocks, we can see both. For example:
+但如果它們在不同的區塊中，我們可以同時看到兩者。例如：
 
 ```rust
 fn main() {
-    let my_number = 8; // This is an i32
-    println!("{}", my_number); // prints 8
+    let my_number = 8; // 這是 i32
+    println!("{}", my_number); // 印出 8
     {
-        let my_number = 9.2; // This is an f64. It is not my_number - it is completely different!
-        println!("{}", my_number) // Prints 9.2
-                                  // But the shadowed my_number only lives until here.
-                                  // The first my_number is still alive!
+        let my_number = 9.2; // 這是 f64。 它不是原先的 my_number──它完全不一樣!
+        println!("{}", my_number) // 印出 9.2
+                                  // 但是被遮蔽的 my_number 只活到這裡。
+                                  // 原來的 my_number 還活著！
     }
-    println!("{}", my_number); // prints 8
+    println!("{}", my_number); // 印出 8
 }
 ```
 
-So when you shadow a variable, you don't destroy it. You **block** it.
+因此，當你對一個變數遮蔽時，你不會銷毀它。你**阻擋**了它。
 
-So what is the advantage of shadowing? Shadowing is good when you need to change a variable a lot. Imagine that you want to do a lot of simple math with a variable:
+那麼遮蔽的好處是什麼呢？當你需要經常改變一個變數的時候，遮蔽很好用。想象你想用變數做很多簡單數學運算時：
 
 ```rust
 fn times_two(number: i32) -> i32 {
@@ -827,16 +828,16 @@ fn times_two(number: i32) -> i32 {
 fn main() {
     let final_number = {
         let y = 10;
-        let x = 9; // x starts at 9
-        let x = times_two(x); // shadow with new x: 18
-        let x = x + y; // shadow with new x: 28
-        x // return x: final_number is now the value of x
+        let x = 9; // x 從 9 開始
+        let x = times_two(x); // 遮蔽後新的 x: 18
+        let x = x + y; // 遮蔽後新的 x: 28
+        x // 回傳 x: final_number 現在是 x 的值
     };
     println!("The number is now: {}", final_number)
 }
 ```
 
-Without shadowing you would have to think of different names, even though you don't care about x:
+如果沒有遮蔽，你將要思考用什麼不同的名稱，即使你並不關心變數 x：
 
 ```rust
 fn times_two(number: i32) -> i32 {
@@ -844,31 +845,31 @@ fn times_two(number: i32) -> i32 {
 }
 
 fn main() {
-    // Pretending we are using Rust without shadowing
+    // Pretending we are using Rust without 遮蔽
     let final_number = {
         let y = 10;
-        let x = 9; // x starts at 9
-        let x_twice = times_two(x); // second name for x
-        let x_twice_and_y = x_twice + y; // third name for x!
-        x_twice_and_y // too bad we didn't have shadowing - we could have just used x
+        let x = 9; // x 從 9 開始
+        let x_twice = times_two(x); // x 的第二個名字
+        let x_twice_and_y = x_twice + y; // x 的第三個名字!
+        x_twice_and_y // 真糟糕沒有遮蔽可用──我們只要用 x 就好
     };
     println!("The number is now: {}", final_number)
 }
 ```
 
-In general, you see shadowing in Rust in this case. It happens where you want to quickly take variable, do something to it, and do something else again. And you usually use it for quick variables that you don't care too much about.
+一般來說，你在 Rust 中看到的遮蔽就是這種情況。它發生在你想快速得對變數做一些事情，然後再做其他事情的地方。而你通常將它用在那些你不太關心的臨時變數上。
 
-## The stack, the heap, and pointers
+## 堆疊、堆積和指標
 
-The stack, the heap, and pointers are very important in Rust.
+堆疊(stack)、堆積(heap)和指標(pointer)在 Rust 中非常重要。
 
-The stack and the heap are two places to keep memory in computers. The important differences are:
+堆疊和堆積是電腦中保存記憶體的兩個地方。主要的區別在:
 
-- The stack is very fast, but the heap is not so fast. It's not super slow either, but the stack is always faster. But you can't just use the stack all the time, because:
-- Rust needs to know the size of a variable at compile time. So simple variables like `i32` go on the stack, because we know their exact size. You always know that an `i32` is going to be 4 bytes, because 32 bits = 4 bytes. So `i32` can always go on the stack.
-- But some types don't know the size at compile time. But the stack needs to know the exact size. So what do you do? First you put the data in the heap, because the heap can have any size of data. And then to find it a pointer goes on the stack. This is fine because we always know the size of a pointer. So then the computer first goes to the stack, reads the pointer, and follows it to the heap where the data is.
+- 堆疊的速度非常快，但堆積就不那麼快了。它也不是超慢，但堆疊總是更快。但是你不能一直使用堆疊，因為：
+- Rust 在編譯時必需知道變數的大小。所以像 `i32` 的簡單變數就放在堆疊上，因為我們知道它們的確切大小。你總是知道 `i32` 要 4 位元組，因為 32 位元 = 4 位元組。所以 `i32` 總是可以放在堆疊上。
+- 但有些型別在編譯時不知道大小。但是堆疊需要知道確切的大小。那麼你該怎麼做呢？首先你把資料放在堆積中，因為堆積中可以有任何大小的資料。然後為了找到它，一個指標就會放上堆疊。這樣沒問題，因為我們總是知道指標的大小。所以，電腦就會先去堆疊讀取指標，然後跟著指標到資料所在的堆積。
 
-Pointers sound complicated, but they are easy. Pointers are like a table of contents in a book. Imagine this book:
+指標聽起來很複雜，但它們很容易。指標就像一本書的目錄。想象一下這本書：
 
 ```text
 MY BOOK
@@ -883,56 +884,56 @@ Chapter 4: My family            30
 Chapter 5: Future plans         43
 ```
 
-So this is like five pointers. You can read them and find the information they are talking about. Where is the chapter "My life"? It's on page 1 (it *points* to page 1). Where is the chapter "My job?" It's on page 23.
+所以這就像有五個指標。你可以閱讀它們，找到它們所說的資訊。"My life" 這一章在哪裡？它在第 1 頁(它 *指向* 第 1 頁)。"My job" 這一章在哪裡？它在第23頁。
 
-The pointer you usually see in Rust is called a **reference**. This is the important part to know: a reference points to the memory of another value. A reference means you *borrow* the value, but you don't own it. It's the same as our book: the table of contents doesn't own the information. It's the chapters that own the information. In Rust, references have a `&` in front of them. So:
+通常在 Rust 中看到的指標稱做 **參考**。重點在於知道：一個參考指向另一個值的記憶體位置。參考意味著你 *借* 了這個值，但你並不擁有它。這和我們的書一樣：目錄並不擁有資訊。章節裡才有資訊。在 Rust 中，參考的前面有一個 `&`。所以：
 
-- `let my_variable = 8` makes a regular variable, but
-- `let my_reference = &my_variable` makes a reference.
+- `let my_variable = 8` 是一個正規的變數，但是：
+- `let my_reference = &my_variable` 是一個變數參考。
 
-You read `my_reference = &my_variable` like this: "my_reference is a reference to my_variable". Or: "my_reference refers to my_variable".
+你把 `my_reference = &my_variable` 讀成這樣："my_reference 是對my_variable 的參考" 或者："my_reference 參照到 my_variable"。
 
-This means that `my_reference` is only looking at the data of `my_variable`. `my_variable` still owns its data.
+這意味著 `my_reference` 只看 `my_variable` 的資料。`my_variable` 仍然擁有它的資料。
 
-You can also have a reference to a reference, or any number of references.
+你也可以有一個參考的參考，或者任何數量的參考。
 
 ```rust
 fn main() {
-    let my_number = 15; // This is an i32
-    let single_reference = &my_number; //  This is a &i32
-    let double_reference = &single_reference; // This is a &&i32
-    let five_references = &&&&&my_number; // This is a &&&&&i32
+    let my_number = 15; // 這是 i32
+    let single_reference = &my_number; //  這是 &i32
+    let double_reference = &single_reference; // 這是 &&i32
+    let five_references = &&&&&my_number; // 這是 &&&&&i32
 }
 ```
 
-These are all different types, just in the same way that "a friend of a friend" is different from "a friend".
+這些都是不同的型別，就像 "朋友的朋友"和 "朋友"不同一樣。
 
-## More about printing
+## 更多關於列印
 
-In Rust you can print things in almost any way you want. Here are some more things to know about printing.
+在 Rust 中，你幾乎可以用任何你想要的方式列印東西。這裡可以知道更多關於列印的事情。
 
-Adding `\n` will make a new line, and `\t` will make a tab:
+加入 `\n` 將會產生一個新行(newline)，而 `\t` 將會產生定位字元(tab)：
 
 ```rust
 fn main() {
-    // Note: this is print!, not println!
+    // Note: 這是 print!, 不是 println!
     print!("\t Start with a tab\nand move to a new line");
 }
 ```
 
-This prints:
+印出:
 
 ```text
          Start with a tab
 and move to a new line
 ```
 
-Inside `""` you can write over many lines with no problem, but be careful with the spacing:
+`""` 裡面可以寫上許多行都沒有問題，但是要注意間距：
 
 ```rust
 fn main() {
-    // Note: After the first line you have to start on the far left.
-    // If you write directly under println!, it will add the spaces
+    // Note: 第一行後你要從最左邊開始。
+    // 如果你直接寫在 println! 下面，它會加入開頭的空白
     println!("Inside quotes
 you can write over
 many lines
@@ -944,7 +945,7 @@ and it will print just fine.");
 }
 ```
 
-This prints:
+印出:
 
 ```text
 Inside quotes
@@ -956,7 +957,7 @@ If you forget to write
     will be added when you print.
 ```
 
-If you want to print characters like `\n` (called "escape characters"), you can add an extra `\`:
+如果你想印出 `\n` 這樣的字元(稱為"跳脫字元")，你可以多加一個額外的 `\`。
 
 ```rust
 fn main() {
@@ -964,46 +965,46 @@ fn main() {
 }
 ```
 
-This prints:
+印出:
 
 ```text
 Here are two escape characters: \n and \t
 ```
 
-Sometimes you have too many `"` and escape characters, and want Rust to ignore everything. To do this, you can add `r#` to the beginning and `#` to the end.
+有時你有太多的 `"` 和跳脫字元，並希望 Rust 忽略所有要處理的東西。要做到這件事，你可以在開頭加上 `r#`，在結尾加上 `#`。
 
 ```rust
 fn main() {
-    println!("He said, \"You can find the file at c:\\files\\my_documents\\file.txt.\" Then I found the file."); // We used \ five times here
+    println!("He said, \"You can find the file at c:\\files\\my_documents\\file.txt.\" Then I found the file."); // 這裡用了 \ 五次
     println!(r#"He said, "You can find the file at c:\files\my_documents\file.txt." Then I found the file."#)
 }
 ```
 
-This prints the same thing, but using `r#` makes it easier for humans to read.
+這會印出一樣的東西，但是用 `r#` 使人更容易閱讀。
 
 ```text
 He said, "You can find the file at c:\files\my_documents\file.txt." Then I found the file.
 He said, "You can find the file at c:\files\my_documents\file.txt." Then I found the file.
 ```
 
-If you need to print with a `#` inside, then you can start with `r##` and end with `##`. And if you need more than one, you can add one more # on each side.
+如果你需要在內容裡面印出 `#`，那麼你可以用 `r##` 開頭，用 `##` 結尾。如果你要印超過一個 `#`，兩邊要再各多加一個 #。
 
-Here are four examples:
+這有四個範例：
 
 ```rust
 fn main() {
 
-    let my_string = "'Ice to see you,' he said."; // single quotes
-    let quote_string = r#""Ice to see you," he said."#; // double quotes
-    let hashtag_string = r##"The hashtag #IceToSeeYou had become very popular."##; // Has one # so we need at least ##
-    let many_hashtags = r####""You don't have to type ### to use a hashtag. You can just use #.""####; // Has three ### so we need at least ####
+    let my_string = "'Ice to see you,' he said."; // 單引號
+    let quote_string = r#""Ice to see you," he said."#; // 雙引號
+    let hashtag_string = r##"The hashtag #IceToSeeYou had become very popular."##; // 一個 # 所以我們至少要用 ##
+    let many_hashtags = r####""You don't have to type ### to use a hashtag. You can just use #.""####; // 有三個 ### 所以我們至少要用 ####
 
     println!("{}\n{}\n{}\n{}\n", my_string, quote_string, hashtag_string, many_hashtags);
 
 }
 ```
 
-This will print:
+會印出:
 
 ```text
 'Ice to see you,' he said.
@@ -1012,18 +1013,18 @@ The hashtag #IceToSeeYou had become very popular.
 "You don't have to type ### to use a hashtag. You can just use #."
 ```
 
-`r#` has another use: with it you can use a keyword (words like `let`, `fn`, etc.) as a variable name.
+`r#` 還有另一個用途：你能用它來把關鍵字(如 `let`、`fn` 等)當作變數名稱。
 
 ```rust
 fn main() {
-    let r#let = 6; // The variable's name is let
-    let mut r#mut = 10; // This variable's name is mut
+    let r#let = 6; // 變數名是 let
+    let mut r#mut = 10; // 變數名是 mut
 }
 ```
 
-`r#` has this function because older versions of Rust had fewer keywords than Rust now. So with `r#` you can avoid mistakes with variable names that were not keywords before.
+`r#` 之所以有這個功能，是因為舊版的 Rust 關鍵字比現在的少。所以有了 `r#` 以前不是關鍵字的變數名就能避免出錯。
 
-Or maybe for some reason you *really* need a function to have a name like `return`. Then you can write this:
+又或者因為某些原因，你 *確實* 需要一個名字像是 `return` 的函式。那麼你可以這樣寫：
 
 ```rust
 fn r#return() -> u8 {
@@ -1037,24 +1038,24 @@ fn main() {
 }
 ```
 
-This prints:
+印出:
 
 ```text
 Here is your number.
 8
 ```
 
-So you probably won't need it, but if you really need to use a keyword for a variable then you can use `r#`.
+所以你大概不會需要它，但是如果你真的需要用關鍵字當變數，那就用 `r#`。
 
 
 
-If you want to print the bytes of a `&str` or a `char`, you can just write `b` before the string. This works for all ASCII characters. These are all the ASCII characters:
+如果你想印出 `&str` 或 `char` 的位元組，你可以在字串前寫上 `b` 就可以了。這適用於所有 ASCII 字元。以下這些是所有的 ASCII 字元：
 
 ```text
 ☺☻♥♦♣♠♫☼►◄↕‼¶§▬↨↑↓→∟↔▲▼123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 ```
 
-So when you print this:
+所以，當你印出這個程式：
 
 ```rust
 fn main() {
@@ -1062,16 +1063,16 @@ fn main() {
 }
 ```
 
-Here is the result:
+結果是這樣：
 
 ```text
 [84, 104, 105, 115, 32, 119, 105, 108, 108, 32, 108, 111, 111, 107, 32, 108, 105, 107, 101, 32, 110, 117, 109, 98, 101, 114, 115]
 ```
 
-For a `char` this is called a *byte*, and for a `&str` it's called a *byte string*.
+對 `char` 來說，這叫做 *位元組*，對 `&str` 來說，這叫做 *位元組字串*。
 
 
-You can also put `b` and `r` together if you need to:
+如果有需要，你也可以把 `b` 和 `r` 放在一起：
 
 ```rust
 fn main() {
@@ -1079,28 +1080,28 @@ fn main() {
 }
 ```
 
-That will print `[73, 32, 108, 105, 107, 101, 32, 116, 111, 32, 119, 114, 105, 116, 101, 32, 34, 35, 34, 46]`.
+它會印出 `[73, 32, 108, 105, 107, 101, 32, 116, 111, 32, 119, 114, 105, 116, 101, 32, 34, 35, 34, 46]`。
 
 
 
-There is also a Unicode escape that lets you print any Unicode character inside a string: `\u{}`. A hexadecimal number goes inside the `{}` to print it. Here is a short example of how to get the Unicode number, and how to print it again.
+還有一個 Unicode 轉義(escape)，可以讓你在字串中印出任何 Unicode 字元：`\u{}`。`{}` 裡面要有一個可以列印的十六進位制數字。這個是說明如何獲得 Unicode 數字及如何再把它印出來的簡短例子。
 
 ```rust
 fn main() {
-    println!("{:X}", '행' as u32); // Cast char as u32 to get the hexadecimal value
+    println!("{:X}", '행' as u32); // char 轉型 u32 來取得十六進位值
     println!("{:X}", 'H' as u32);
     println!("{:X}", '居' as u32);
     println!("{:X}", 'い' as u32);
 
-    println!("\u{D589}, \u{48}, \u{5C45}, \u{3044}"); // Try printing them with unicode escape \u
+    println!("\u{D589}, \u{48}, \u{5C45}, \u{3044}"); // 試著以 unicode 轉義 \u 印出它們
 }
 ```
 
 
 
-We know that `println!` can print with `{}` (for Display) and `{:?}` (for Debug), plus `{:#?}` for pretty printing. But there are many other ways to print.
+我們知道 `println!` 可以用 `{}`(用於顯示) 或 `{:?}`(用於除錯) 來列印，再加上 `{:#?}` 可以進行漂亮列印。但是還有許多其他列印方式。
 
-For example, if you have a reference, you can use `{:p}` to print the *pointer address*. Pointer address means the location in your computer's memory.
+例如，如果你有一個變數參考，你可以用 `{:p}` 來印出 *指標地址*。指標地址指的是電腦記憶體中的位置。
 
 ```rust
 fn main() {
@@ -1110,9 +1111,9 @@ fn main() {
 }
 ```
 
-This prints `0xe2bc0ffcfc` or some other address. It might be different every time, depending on where your computer stores it.
+這會印出 `0xe2bc0ffcfc` 或者其它地址。它可能每次都不一樣，這取決於你的電腦在哪裡儲存它。
 
-Or you can print binary, hexadecimal and octal:
+或者你可以列印二進位、十六進位和八進位的值：
 
 ```rust
 fn main() {
@@ -1121,9 +1122,9 @@ fn main() {
 }
 ```
 
-This prints `Binary: 1000101011, hexadecimal: 22b, octal: 1053`.
+印出了 `Binary: 1000101011, hexadecimal: 22b, octal: 1053`。
 
-Or you can add numbers to change the order. The first variable will be in index 0, the next in index 1, and so on.
+或者你可以加上數字來改變順序。第一個變數將在索引0 中，下一個在索引1 中，以此類推。
 
 ```rust
 fn main() {
@@ -1134,10 +1135,10 @@ fn main() {
 }
 ```
 
-`father_name` is in position 0, `son_name` is in position 1, and `family_name` is in position 2. So it prints `This is Adrian Fahrenheit Țepeș, son of Vlad Țepeș`.
+`father_name` 在位置0，`son_name` 在位置1，`family_name` 在位置2。所以它印出的是 `This is Adrian Fahrenheit Țepeș, son of Vlad Țepeș`。
 
 
-Maybe you have a very complex string to print with too many variables inside the `{}` curly brackets. Or maybe you need to print a variable more than one time. Then it can help to add names to the `{}`:
+也許你有一個非常複雜的字串要列印，有太多的變數要放在 `{}` 括號內。或者你需要印同一個變數不止一次。那麼在 `{}` 裡加上變數名就幫得上忙：
 
 ```rust
 fn main() {
@@ -1152,7 +1153,7 @@ but {city3} is not in {country}.",
 }
 ```
 
-That will print:
+這樣會印出：
 
 ```text
 Seoul is in Korea and Busan is also in Korea,
@@ -1160,20 +1161,20 @@ but Tokyo is not in Korea.
 ```
 
 
-Very complex printing is also possible in Rust if you want to use it. Here is how to do it:
+在Rust中也可以進行非常複雜的列印，如果你想的話。這裡看到它是如何做到的：
 
 {variable:padding alignment minimum.maximum}
 
-To understand this, look at the
+要理解這個語法，看以下規則
 
-1) Do you want a variable name? Write that first, like when we wrote {country} above.
-(Then add a `:` after it if you want to do more things)
-2) Do you want a padding character? For example, 55 with three "padding zeros" looks like 00055.
-3) What alignment (left / middle / right) for the padding?
-4) Do you want a minimum length? (just write a number)
-5) Do you want a maximum length? (write a number with a `.` in front)
+1) 你想要有變數名嗎？先寫出來，就像我們上面寫 {country} 一樣。
+(如果你想做更多事，就在後面加一個 `:`)
+2) 你想要用填充字元嗎？例如，55 加上三個 "填充零" 就像 00055。
+3) 填充的對齊方式(左/中/右)？
+4) 你想要有最小長度嗎？(寫數字就行)
+5) 你想要有最大長度嗎？(寫數字，前面有個`.`)
 
-For example, if I want to write "a" with five ㅎ characters on the left and five ㅎ characters on the right:
+例如，我想寫 "a"，在它左邊有五個 ㅎ，在它右邊有五個 ㅎ：
 
 ```rust
 fn main() {
@@ -1182,28 +1183,28 @@ fn main() {
 }
 ```
 
-This prints `ㅎㅎㅎㅎㅎaㅎㅎㅎㅎㅎ`. Let's look at 1) to 5) for this to understand how the compiler reads it.
+這印出來是 `ㅎㅎㅎㅎㅎaㅎㅎㅎㅎㅎ`。我們看看 1) 到 5) 怎麼解釋這個情況，就能明白編譯器是怎麼解讀的：
 
-- Do you want a variable name? `{:ㅎ^11}` There is no variable name. There is nothing before `:`.
-- Do you want a padding character? `{:ㅎ^11}` Yes. ㅎ comes after the `:` and has a `^`. `<` means padding with the character on the left, `>` means on the right, and `^` means in the middle.
-- Do you want a minimum length? `{:ㅎ^11}` Yes: there is an 11 after.
-- Do you want a maximum length? `{:ㅎ^11}` No: there is no number with a `.` before.
+- 你要不要變數名？`{:ㅎ^11}` 沒有變數名。`:` 之前沒有任何內容。
+- 你需要填充字元嗎？ `{:ㅎ^11}` 是。ㅎ 在 `:` 後面，還有一個 `^`。`<` 表示變數在填充字元左邊，`>` 表示在填充字元右邊，`^` 表示在填充字元中間。
+- 要不要設定最小長度？`{:ㅎ^11}` 是：後面有一個 11。
+- 要不要設定最大長度？`{:ㅎ^11}` 不是：前面沒有`.`的數字。
 
-Here is an example of many types of formatting.
+下面是許多種型別格式化的例子:
 
 ```rust
 fn main() {
     let title = "TODAY'S NEWS";
-    println!("{:-^30}", title); // no variable name, pad with -, put in centre, 30 characters long
+    println!("{:-^30}", title); // 沒變數名, 用-填充, 放中間, 30個字元長
     let bar = "|";
-    println!("{: <15}{: >15}", bar, bar); // no variable name, pad with space, 15 characters each, one to the left, one to the right
+    println!("{: <15}{: >15}", bar, bar); // 沒變數名, 用空白填充, 各是15個字元長, 一左一右
     let a = "SEOUL";
     let b = "TOKYO";
-    println!("{city1:-<15}{city2:->15}", city1 = a, city2 = b); // variable names city1 and city2, pad with -, one to the left, one to the right
+    println!("{city1:-<15}{city2:->15}", city1 = a, city2 = b); // 變數city1和city2, 用-填充, 一左一右
 }
 ```
 
-It prints:
+印出：
 
 ```text
 ---------TODAY'S NEWS---------
@@ -1211,28 +1212,28 @@ It prints:
 SEOUL--------------------TOKYO
 ```
 
-## Strings
-**[See this chapter on YouTube](https://youtu.be/pSyaGzGg26o)**
+## 字串
+**[YouTube 上觀看本章內容](https://youtu.be/pSyaGzGg26o)**
 
-Rust has two main types of strings: `String` and `&str`. What is the difference?
+Rust 的字串主要型別有兩類：`String` 和 `&str`。有什麼差別呢？
 
-- `&str` is a simple string. When you write `let my_variable = "Hello, world!"`, you create a `&str`. A `&str` is very fast.
-- `String` is a more complicated string. It is a bit slower, but it has more functions. A `String` is a pointer, with data on the heap.
+- `&str` 是種簡單的字串。當你寫 `let my_variable = "Hello, world!"` 時，你建立的是一個 `&str`。`&str` 建立非常快。
+- `String` 是比較復雜的字串。它比較慢一點，但它有更多的功能。`String` 是一個指標，資料在堆積上。
 
-Also note that `&str` has the `&` in front of it because you need a reference to use a `str`. That's because of the reason we saw above: the stack needs to know the size. So we give it a `&` that it knows the size of, and then it is happy. Also, because you use a `&` to interact with a `str`, you don't own it. But a `String` is an *owned* type. We will soon learn why that is important to know.
+另外注意，`&str` 前面有 `&`，因為你需要一個參考來使用 `str`。這是因為我們先前看到的原因：堆疊需要知道資料大小。所以我們給它一個它知道大小的 `&`，然後它就滿意了。另外，因為你是用 `&` 去和 `str` 互動，你並不擁有它。但是 `String` 是一個 *擁有所有權* 的型別。我們很快就會知道為什麼這一點很重要。
 
-Both `&str` and `String` are UTF-8. For example, you can write:
+`&str` 和`String` 都是UTF-8。例如，你可以寫：
 
 ```rust
 fn main() {
-    let name = "서태지"; // This is a Korean name. No problem, because a &str is UTF-8.
-    let other_name = String::from("Adrian Fahrenheit Țepeș"); // Ț and ș are no problem in UTF-8.
+    let name = "서태지"; // 這是韓國名字。沒問題，因為 &str 是 UTF-8。
+    let other_name = String::from("Adrian Fahrenheit Țepeș"); // UTF-8 的 Ț 和 ș 沒問題。
 }
 ```
 
-You can see in `String::from("Adrian Fahrenheit Țepeș")` that it is easy to make a `String` from a `&str`. The two types are very closely linked together, even though they are different.
+你可以在 `String::from("Adrian Fahrenheit Țepeș")` 中看到，從 `&str` 中建立 `String` 很容易。這兩種型別雖然不同，但彼此聯繫非常緊密。
 
-You can even write emojis, thanks to UTF-8.
+你甚至可以寫表情符號，這要感謝 UTF-8。
 
 ```rust
 fn main() {
@@ -1241,24 +1242,24 @@ fn main() {
 }
 ```
 
-On your computer that will print `My name is actually 😂` unless your command line can't print it. Then it will show `My name is actually �`. But Rust has no problem with emojis or any other Unicode.
+在你的電腦上，會印出 `My name is actually 😂`，除非你的命令列印不出(Unicode字元)。那麼它會顯示 `My name is actually �`。但 Rust 對 emojis 或其他 Unicode (處理上)沒有問題。
 
-Let's look at the reason for using a `&` for `str`s again to make sure we understand.
+我們再來看看 `str` 使用 `&` 的原因，以確保我們有理解。
 
-- `str` is a dynamically sized type (dynamically sized = the size can be different). For example, the names "서태지" and "Adrian Fahrenheit Țepeș" are not the same size:
+- `str` 是一個動態大小(dynamically sized)的型別(動態大小 = 大小可以不同)。比如 "서태지" 和 "Adrian Fahrenheit Țepeș" 這兩個名字的大小是不一樣的：
 
 ```rust
 fn main() {
 
-    println!("A String is always {:?} bytes. It is Sized.", std::mem::size_of::<String>()); // std::mem::size_of::<Type>() gives you the size in bytes of a type
+    println!("A String is always {:?} bytes. It is Sized.", std::mem::size_of::<String>()); // std::mem::size_of::<Type>() 給你型別的位元組單位大小
     println!("And an i8 is always {:?} bytes. It is Sized.", std::mem::size_of::<i8>());
     println!("And an f64 is always {:?} bytes. It is Sized.", std::mem::size_of::<f64>());
-    println!("But a &str? It can be anything. '서태지' is {:?} bytes. It is not Sized.", std::mem::size_of_val("서태지")); // std::mem::size_of_val() gives you the size in bytes of a variable
+    println!("But a &str? It can be anything. '서태지' is {:?} bytes. It is not Sized.", std::mem::size_of_val("서태지")); // std::mem::size_of_val() 給你變數的位元組單位大小
     println!("And 'Adrian Fahrenheit Țepeș' is {:?} bytes. It is not Sized.", std::mem::size_of_val("Adrian Fahrenheit Țepeș"));
 }
 ```
 
-This prints:
+列出:
 
 ```text
 A String is always 24 bytes. It is Sized.
@@ -1268,15 +1269,15 @@ But a &str? It can be anything. '서태지' is 9 bytes. It is not Sized.
 And 'Adrian Fahrenheit Țepeș' is 25 bytes. It is not Sized.
 ```
 
-That is why we need a &, because `&` makes a pointer, and Rust knows the size of the pointer. So the pointer goes on the stack. If we wrote `str`, Rust wouldn't know what to do because it doesn't know the size.
+這就是為什麼我們需要一個 &，因為 `&` 建立一個指標，而 Rust 知道指標的大小。所以指標會放在堆疊中。如果我們寫的是 `str`，Rust 因為不知道大小就不曉得該怎麼做了。
 
 
 
-There are many ways to make a `String`. Here are some:
+有很多方法可以建立 `String`。這裡是其中一些：
 
-- `String::from("This is the string text");` This is a method for String that takes text and creates a String.
-- `"This is the string text".to_string()`. This is a method for &str that makes it a String.
-- The `format!` macro. This is like `println!` except it creates a String instead of printing. So you can do this:
+- `String::from("This is the string text");` 這是 String 型別用文字建立 String 的方法。
+- `"This is the string text".to_string()`。 這是 &str 型別用來做出 String 的方法。
+- `format!` 巨集。 像是 `println!`，只不過它是建立 String，而不是列印。所以你可以這樣做：
 
 ```rust
 fn main() {
@@ -1291,9 +1292,9 @@ fn main() {
 }
 ```
 
-Now we have a String named *together*, but did not print it yet.
+現在我們有了名為 *together* 的 String，但還沒有印出來。
 
-One other way to make a String is called `.into()` but it is a bit different because `.into()` isn't just for making a `String`. Some types can easily convert to and from another type using `From` and `.into()`. And if you have `From`, then you also have `.into()`. `From` is clearer because you already know the types: you know that `String::from("Some str")` is a `String` from a `&str`. But with `.into()`, sometimes the compiler doesn't know:
+還有一種建立 String 的方法叫做 `.into()`，但它有點不同，因為 `.into()` 並不只是用來建立 `String`。有些型別可以很容易地使用 `From` 和 `.into()` 來回轉換為另一種型別。而如果你有 `From`，那麼你也有 `.into()`。`From` 更加清晰，因為你已經知道了型別：你知道 `String::from("Some str")` 是來自 `&str` 的 `String`。但是對於 `.into()`，有時候編譯器並不知道：
 
 ```rust
 fn main() {
@@ -1301,7 +1302,7 @@ fn main() {
 }
 ```
 
-Rust doesn't know what type you want, because many types can be made from a `&str`. It says, "I can make a &str into a lot of things. Which one do you want?"
+Rust 不知道你要的是什麼型別，因為很多型別都可以由 `&str` 來組成。它說："我可以把 &str 變成很多東西。你想要哪一種？"
 
 ```text
 error[E0282]: type annotations needed
@@ -1311,7 +1312,7 @@ error[E0282]: type annotations needed
   |         ^^^^^^^^^ consider giving `my_string` a type
 ```
 
-So you can do this:
+所以你可以這樣做：
 
 ```rust
 fn main() {
@@ -1319,26 +1320,26 @@ fn main() {
 }
 ```
 
-And now you get a String.
+現在你得到 String 了。
 
-## const and static
-**[See this chapter on YouTube](https://youtu.be/Ky3HqkWUcI0)**
+## const 和 static
+**[YouTube 上觀看本章內容](https://youtu.be/Ky3HqkWUcI0)**
 
-There are two other ways to declare values, not just with `let`. These are `const` and `static`. Also, Rust won't use type inference: you need to write the type for them. These are for values that don't change (`const` means constant). The difference is that:
+有兩種宣告值的方法，不僅僅是用 `let`。它們是 `const` 和 `static`。另外，Rust 不會使用型別推理：你需要為它們編寫型別。這些都是用於不改變的值（`const` 表示常數）。區別在於：
 
-- `const` is for values that don't change, the name is replaced with the value when it's used,
-- `static` is similar to `const`, but has a fixed memory location and can act as a global variable.
+- `const` 是用於不改變的值，當使用它時，名字會被替換成值。
+- `static` 與 `const` 類似，但有一個固定的記憶體位置，可以作為一個全域性變數使用。
 
-So they are almost the same. Rust programmers almost always use `const`.
+所以它們幾乎是一樣的。Rust 程式設計師幾乎總是使用 `const`。
 
-You write them with ALL CAPITAL LETTERS, and usually outside of `main` so that they can live for the whole program.
+你用全大寫字母命名，而且通常放在 `main` 之外，這樣它們就可以在整個程式中生存。
 
-Two examples are: `const NUMBER_OF_MONTHS: u32 = 12;` and `static SEASONS: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];`
+兩個範例是 `const NUMBER_OF_MONTHS: u32 = 12;` 和 `static SEASONS: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];`
 
-## More on references
-**[See this chapter on YouTube](https://youtu.be/R13sQ8SNoEQ)**
+## 更多關於參考
+**[YouTube 上觀看本章內容](https://youtu.be/R13sQ8SNoEQ)**
 
-References are very important in Rust. Rust uses references to make sure that all memory access is safe. We know that we use `&` to create a reference:
+參考在 Rust 中非常重要。Rust 使用參考來確保所有的記憶體訪問是安全的。我們知道，我們用 `&` 來建立參考：
 
 ```rust
 fn main() {
@@ -1350,11 +1351,11 @@ fn main() {
 }
 ```
 
-This prints `Austria`.
+這樣會印出 `Austria`。
 
-In the code, `country` is a `String`. We then created two references to `country`. They have the type `&String`, which you say is a "reference to a String". We could create three references or one hundred references to `country` and it would be no problem.
+在程式碼中，`country` 是 `String`。我們接著建立了兩個 `country` 的參考。它們的型別是 `&String`，你會講說這是 "String 的參考"。我們可以建立三個參考或者一百個對 `country` 的參考，這都沒有問題。
 
-But this is a problem:
+但這裡有問題：
 
 ```rust
 fn return_str() -> &str {
@@ -1368,31 +1369,31 @@ fn main() {
 }
 ```
 
-The function `return_str()` creates a String, then it creates a reference to the String. Then it tries to return the reference. But the String `country` only lives inside the function, and then it dies. Once a variable is gone, the computer will clean up the memory and use it for something else. So after the function is over, `country_ref` is referring to memory that is already gone, and that's not okay. Rust prevents us from making a mistake with memory here.
+`return_str()` 函式建立了 String，它接著建立了對這個 String 的參考。然後它試圖回傳參考。但是 `country` 這個 String 只活在函式里面，然後它就死了。一旦變數消失了，電腦就會清理記憶體，並將其用於其他用途。所以在函式結束後，`country_ref` 參考到的是已經消失的記憶體，這是不對的。Rust 防止我們在這裡犯記憶體的錯誤。
 
-This is the important part about the "owned" type that we talked about above. Because you own a `String`, you can pass it around. But a `&String` will die if its `String` dies, so you don't pass around "ownership" with it.
+這就是我們前面講到的 "擁有所有權" 型別的重要部分。因為你擁有 `String`，你可以把它傳給別人。但是如果 `&String` 的 `String` 死了，那麼 `&String` 就會死掉，所以你不能把它的 "所有權" 傳給別人。
 
-## Mutable references
-**[See this chapter on YouTube](https://youtu.be/G48z6Rv76vc)**
+## 可變參考
+**[YouTube 上觀看本章內容](https://youtu.be/G48z6Rv76vc)**
 
-If you want to use a reference to change data, you can use a mutable reference. For a mutable reference, you write `&mut` instead of `&`.
+如果你想使用參考來改變資料，你可以使用可變參考(mutable reference)。可變參考你要寫做 `&mut` 而不是 `&`。
 
 ```rust
 fn main() {
-    let mut my_number = 8; // don't forget to write mut here!
+    let mut my_number = 8; // 這裡不要忘記寫 mut!
     let num_ref = &mut my_number;
 }
 ```
 
-So what are the two types? `my_number` is an `i32`, and `num_ref` is `&mut i32` (we say a "mutable reference to an `i32`").
+那麼這兩種型別是什麼呢？`my_number` 是 `i32`，而 `num_ref` 是 `&mut i32`(我們讀作 "可變參考 `i32`")。
 
-So let's use it to add 10 to my_number. But you can't write `num_ref += 10`, because `num_ref` is not the `i32` value, it is a `&i32`. The value is actually inside the `i32`. To reach the place where the value is, we use `*`. `*` means "I don't want the reference, I want the value behind the reference". In other words, one `*` is the opposite of `&`. Also, one `*` erases one `&`.
+那麼讓我們用它來給 my_number 加上 10。但是你不能寫 `num_ref += 10`，因為 `num_ref` 不是 `i32` 的值，它是 `&i32`。其實這個值就在 `i32` 裡面。為了達到值所在的地方，我們用 `*`。`*` 的意思是"我不要參考，我想要參考所參照的值"。換句話說，`*` 與 `&` 是相反的動作。也就是一個 `*` 消去了一個 `&`。
 
 ```rust
 fn main() {
     let mut my_number = 8;
     let num_ref = &mut my_number;
-    *num_ref += 10; // Use * to change the i32 value.
+    *num_ref += 10; // 使用 * 來改變 i32 的值.
     println!("{}", my_number);
 
     let second_number = 800;
@@ -1401,38 +1402,38 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 18
 Second_number = triple_reference? true
 ```
 
-Because using `&` is called "referencing", using `*` is called "**de**referencing".
+因為使用 `&` 時叫做 "參考"，所以用 `*` 叫做 "**反**參考(dereferencing)"。
 
-Rust has two rules for mutable and immutable references. They are very important, but also easy to remember because they make sense.
+Rust在可變和不可變參考有兩個規則。它們非常重要卻也容易記住，因為它們很有道理。
 
-- **Rule 1**: If you have only immutable references, you can have as many as you want. 1 is fine, 3 is fine, 1000 is fine. No problem.
-- **Rule 2**: If you have a mutable reference, you can only have one. Also, you can't have an immutable reference **and** a mutable reference together.
+- **規則1**：如果你只有不可變參考，你可以同時有任意多的參考。1 個也好，3 個也好，1000 個也好，都沒問題。
+- **規則2**：如果是可變參考，你只能有一個。另外，你不能同時有一個不可變參考**和**一個可變參考。
 
-This is because mutable references can change the data. You could get problems if you change the data when other references are reading it.
+這是因為可變參考能變更資料。如果你在其他參考讀取資料時更改資料，你可能會遇到問題。
 
 
-A good way to understand is to think of a Powerpoint presentation.
+理解的好方法是設想一場 Powerpoint 簡報。
 
-Situation one is about **only one mutable reference**.
+情境一是關於**只有一個可變參考**。
 
-Situation one: An employee is writing a Powerpoint presentation. He wants his manager to help him. The employee gives his login information to his manager, and asks him to help by making edits. Now the manager has a "mutable reference" to the employee's presentation. The manager can make any changes he wants, and give the computer back later. This is fine, because nobody else is looking at the presentation.
+情境一： 一位員工正在編寫一個 Powerpoint 簡報，他希望他的經理能幫助他。該員工將自己的登入資訊提供給經理，並請他幫忙進行編輯。現在經理對該員工的簡報有了"可變參考"。經理可以做任何他想做的修改，然後把電腦還回去。這很好，因為沒有其他人看得到這個簡報。
 
-Situation two is about **only immutable references**.
+情境二是關於**只有不可變參考**。
 
-Situation two: The employee is giving the presentation to 100 people. All 100 people can now see the employee's data. They all have an "immutable reference" to the employee's presentation. This is fine, because they can see it but nobody can change the data.
+情境二： 該員工要給100個人做簡報。現在這100個人都可以看到該員工的資料。他們全都有對該員工簡報的"不可變參考"。這很好，因為他們可以看得到，但沒人可以改動資料。
 
-Situation three is **the problem situation**.
+情境三是**有問題的情形**
 
-Situation three: The Employee gives his manager his login information. His manager now has a "mutable reference". Then the employee went to give the presentation to 100 people, but the manager can still login. This is not fine, because the manager can log in and do anything. Maybe his manager will log into the computer and start typing an email to his mother! Now the 100 people have to watch the manager write an email to his mother instead of the presentation. That's not what they expected to see.
+情境三： 員工把他的登入資訊給了經理 他的經理現在有了一個 "可變參考"。然後該員工去給 100 個人做簡報，但是經理還是可以登入。這是不對的，因為經理可以登入，可以做任何事情。也許他的經理會登入電腦，然後開始給他的母親打一封信！現在這 100 人不得不看著經理給他母親寫信，而不是簡報。這不是他們期望看到的。
 
-Here is an example of a mutable borrow with an immutable borrow:
+這裡有一個可變借用借用自不可變借用的範例：
 
 ```rust
 fn main() {
@@ -1444,7 +1445,7 @@ fn main() {
 }
 ```
 
-The compiler prints a helpful message to show us the problem.
+編譯器印出了一則有用的資訊來告訴我們問題所在。
 
 ```text
 error[E0502]: cannot borrow `number` as mutable because it is also borrowed as immutable
@@ -1459,25 +1460,25 @@ error[E0502]: cannot borrow `number` as mutable because it is also borrowed as i
   |                    ---------- immutable borrow later used here
 ```
 
-However, this code will work. Why?
+然而，這段程式碼可以運作。為什麼？
 
 ```rust
 fn main() {
     let mut number = 10;
-    let number_change = &mut number; // create a mutable reference
-    *number_change += 10; // use mutable reference to add 10
-    let number_ref = &number; // create an immutable reference
-    println!("{}", number_ref); // print the immutable reference
+    let number_change = &mut number; // 建立可變借用
+    *number_change += 10; // 用可變借用來加上 10
+    let number_ref = &number; // 建立不可變借用
+    println!("{}", number_ref); // 印出不可變借用
 }
 ```
 
-It prints `20` with no problem. It works because the compiler is smart enough to understand our code. It knows that we used `number_change` to change `number`, but didn't use it again. So here there is no problem. We are not using immutable and mutable references together.
+它印出 `20` 沒有問題。它能運作是因為編譯器夠聰明，能理解我們的程式碼。它知道我們使用了 `number_change` 來改變 `number`，但沒有再使用它。所以這裡沒有問題。我們並沒有將不可變和可變參考一起使用。
 
-Earlier in Rust this kind of code actually generated an error, but the compiler is smarter now. It can understand not just what we type, but how we use everything.
+早期在 Rust 中，這種程式碼實際上會產生錯誤，但現在的編譯器更聰明了。它不僅能理解我們輸入的內容，還能理解我們如何使用所有的東西。
 
-### Shadowing again
+### 再談遮蔽
 
-Remember when we said that shadowing doesn't **destroy** a value but **blocks** it? Now we can use references to see this.
+還記得我們說過，遮蔽(shadowing)不會**銷毀**一個值，而是**阻擋**它嗎？現在我們可以用參考來看這個問題。
 
 ```rust
 fn main() {
@@ -1488,23 +1489,23 @@ fn main() {
 }
 ```
 
-Does this print `Austria, 8` or `8, 8`? It prints `Austria, 8`. First we declare a `String` called `country`. Then we create a reference `country_ref` to this string. Then we shadow country with 8, which is an `i32`. But the first `country` was not destroyed, so `country_ref` still says "Austria", not "8". Here is the same code with some comments to show how it works:
+這會印出 `Austria, 8` 還是 `8, 8`？它印出的是 `Austria, 8`。首先我們宣告一個 `String`，叫做 `country`。然後我們給這個字串建立一個參考 `country_ref`。然後我們用 8，這是 `i32`，來遮蔽 country。但是第一個 `country` 並沒有被銷毀，所以 `country_ref` 仍然參照著 "Austria"，而不是 "8"。這是同樣的程式碼附上了一些註解來說明它如何運作：
 
 ```rust
 fn main() {
-    let country = String::from("Austria"); // Now we have a String called country
-    let country_ref = &country; // country_ref is a reference to this data. It's not going to change
-    let country = 8; // Now we have a variable called country that is an i8. But it has no relation to the other one, or to country_ref
-    println!("{}, {}", country_ref, country); // country_ref still refers to the data of String::from("Austria") that we gave it.
+    let country = String::from("Austria"); // 現在我們有個 String 叫作 country
+    let country_ref = &country; // country_ref 是這筆資料的參考。它不會改動
+    let country = 8; // 現在我們有個變數叫作 country 型別是 i8。但它和另一個變數或 country_ref 沒有關聯
+    println!("{}, {}", country_ref, country); // country_ref 仍然參照自我們給的 String::from("Austria") 的資料.
 }
 ```
 
-## Giving references to functions
-**See this chapter on YouTube: [immutable references](https://youtu.be/mKWXt9YTavc) and [mutable references](https://youtu.be/kJV1wIvAbyk)**
+## 傳遞參考給函式
+**YouTube 上觀看本章內容: [不可變參考](https://youtu.be/mKWXt9YTavc) 及 [可變參考](https://youtu.be/kJV1wIvAbyk)**
 
-References are very useful for functions. The rule in Rust on values is: a value can only have one owner.
+參考對函式非常有用。Rust 中關於值的規則是：一個值只能有一個所有者。
 
-This code will not work:
+這段程式碼將無法運作：
 
 ```rust
 fn print_country(country_name: String) {
@@ -1513,40 +1514,40 @@ fn print_country(country_name: String) {
 
 fn main() {
     let country = String::from("Austria");
-    print_country(country); // We print "Austria"
-    print_country(country); // ⚠️ That was fun, let's do it again!
+    print_country(country); // 我們印出 "Austria"
+    print_country(country); // ⚠️ 蠻有趣的，讓我們再做一次！
 }
 ```
 
-It does not work because `country` is destroyed. Here's how:
+它不能運作，因為 `country` 被銷毀了。它是這麼來的：
 
-- Step 1: We create the `String` called `country`. `country` is the owner.
-- Step 2: We give `country` to `print_country`. `print_country` doesn't have an `->`, so it doesn't return anything. After `print_country` finishes, our `String` is now dead.
-- Step 3: We try to give `country` to `print_country`, but we already did that. We don't have `country` to give anymore.
+- 第一步：我們建立稱為 `country` 的 `String`。`country` 是所有者。
+- 第二步：我們把 `country` 給了 `print_country`。`print_country` 沒有 `->`，所以它不回傳任何東西。在 `print_country` 完成後，我們的 `String` 現在已經死了。
+- 第三步：我們嘗試把 `country` 給 `print_country`，但我們已經這樣做過了。我們已經沒有 `country` 可以給了。
 
-We can make `print_country` give the `String` back, but it is a bit awkward.
+我們可以讓 `print_country` 給回 `String`，但是有點奇怪。
 
 ```rust
 fn print_country(country_name: String) -> String {
     println!("{}", country_name);
-    country_name // return it here
+    country_name // 這裡回傳它
 }
 
 fn main() {
     let country = String::from("Austria");
-    let country = print_country(country); // we have to use let here now to get the String back
+    let country = print_country(country); // 我們現在要在這裡用 let 拿回 String
     print_country(country);
 }
 ```
 
-Now it prints:
+現在印出了：
 
 ```text
 Austria
 Austria
 ```
 
-The much better way to fix this is by adding `&`.
+更好的解決方式是加上 `&`。
 
 ```rust
 fn print_country(country_name: &String) {
@@ -1555,91 +1556,91 @@ fn print_country(country_name: &String) {
 
 fn main() {
     let country = String::from("Austria");
-    print_country(&country); // We print "Austria"
-    print_country(&country); // That was fun, let's do it again!
+    print_country(&country); // 我們印出 "Austria"
+    print_country(&country); // 蠻有趣的，讓我們再做一次！
 }
 ```
 
-Now `print_country()` is a function that takes a reference to a `String`: a `&String`. Also, we give it a reference to country by writing `&country`. This says "you can look at it, but I will keep it".
+現在 `print_country()` 是一個函式，接受 `String` 的參考：即 `&String`。另外，我們寫 `&country` 來給 country 一個參考，。這表示 "你可以查看它，但我會保有它"。
 
-Now let's do something similar with a mutable reference. Here is an example of a function that uses a mutable variable.
+現在讓我們用一個可變參考來做類似的事情。這是個使用可變變數的函式範例：
 
 ```rust
-fn add_hungary(country_name: &mut String) { // first we say that the function takes a mutable reference
-    country_name.push_str("-Hungary"); // push_str() adds a &str to a String
+fn add_hungary(country_name: &mut String) { // 首先我們說函式接受一個可變參考
+    country_name.push_str("-Hungary"); // push_str() 加入 &str 到 String
     println!("Now it says: {}", country_name);
 }
 
 fn main() {
     let mut country = String::from("Austria");
-    add_hungary(&mut country); // we also need to give it a mutable reference.
+    add_hungary(&mut country); // 我們也要給它可變參考。
 }
 ```
 
-This prints `Now it says: Austria-Hungary`.
+這印出了 `Now it says: Austria-Hungary`。
 
-So to conclude:
+所以得出結論：
 
-- `fn function_name(variable: String)` takes a `String` and owns it. If it doesn't return anything, then the variable dies inside the function.
-- `fn function_name(variable: &String)` borrows a `String` and can look at it
-- `fn function_name(variable: &mut String)` borrows a `String` and can change it
+- `fn function_name(variable: String)` 接受 `String` 並擁有它。如果它不回傳任何東西，那麼這個變數就會死在函數裡面。
+- `fn function_name(variable: &String)` 借用 `String` 並可以查看它
+- `fn function_name(variable: &mut String)` 借用 `String` 並可以更改
 
-Here is an example that looks like a mutable reference, but it is different.
+這是個看起來像可變參考但不同的範例。
 
 ```rust
 fn main() {
-    let country = String::from("Austria"); // country is not mutable, but we are going to print Austria-Hungary. How?
+    let country = String::from("Austria"); // country 是不可變的，但我們想要印出 Austria-Hungary。怎麼做？
     adds_hungary(country);
 }
 
-fn adds_hungary(mut country: String) { // Here's how: adds_hungary takes the String and declares it mutable!
+fn adds_hungary(mut country: String) { // 它是這樣做的：adds_hungary 接受 String 並宣告它是可變的！
     country.push_str("-Hungary");
     println!("{}", country);
 }
 ```
 
-How is this possible? It is because `mut country` is not a reference: `adds_hungary` owns `country` now. (Remember, it takes `String` and not `&String`). The moment you call `adds_hungary`, it becomes the full owner. `country` has nothing to do with `String::from("Austria")` anymore. So `adds_hungary` can take `country` as mutable, and it is perfectly safe to do so.
+這怎麼可能呢？因為 `mut country` 不是參考。`adds_hungary` 現在擁有 `country`。(記得，它接受的是 `String` 而不是 `&String`)。當你呼叫 `adds_hungary` 的那一刻，它就完全成了 country 的所有者。`country` 與 `String::from("Austria")` 沒有關係了。所以，`adds_hungary` 可以把 `country` 當作可變的，這樣做是完全安全的。
 
-Remember our employee Powerpoint and manager situation above? In this situation it is like the employee just giving his whole computer to the manager. The employee won't ever touch it again, so the manager can do anything he wants to it.
+還記得前面我們的員工 Powerpoint 和經理的情況嗎？在這種情況下，就好比員工只是把自己的整臺電腦交給了經理。員工不會再碰它，所以經理可以對它做任何他想做的事情。
 
-## Copy types
+## 複製型別
 
-Some types in Rust are very simple. They are called **copy types**. These simple types are all on the stack, and the compiler knows their size. That means that they are very easy to copy, so the compiler always copies when you send it to a function. It always copies because they are so small and easy that there is no reason not to copy. So you don't need to worry about ownership for these types.
+Rust 中的一些型別非常簡單。它們被稱為**複製型別**。這些簡單型別都在堆疊上，編譯器知道它們的大小。這意味著它們非常容易複製，所以當你把它傳送到函式時，編譯器永遠會用複製的方式。它永遠會複製，是因為它們如此的小而容易到沒有理由不複製。所以你不需要擔心這些型別的所有權問題。
 
-These simple types include: integers, floats, booleans (`true` and `false`), and `char`.
+這些簡單的型別包括：整數、浮點數、布林值(`true` 和 `false`)和 `char`。
 
-How do you know if a type **implements** copy? (implements = can use) You can check the documentation. For example, here is the documentation for char:
+如何知道一個型別是否**實作**複製？(實作 = 能夠使用)你可以檢查文件。例如，這是 char 的文件：
 
 [https://doc.rust-lang.org/std/primitive.char.html](https://doc.rust-lang.org/std/primitive.char.html)
 
-On the left you can see **Trait Implementations**. You can see for example **Copy**, **Debug**, and **Display**. So you know that a `char`:
+在左邊你可以看到 **Trait Implementations**。例如你可以看到 **Copy**, **Debug**, 和 **Display**。所以你知道 `char`型別：
 
-- is copied when you send it to a function (**Copy**)
-- can use `{}` to print (**Display**)
-- can use `{:?}` to print (**Debug**)
+- 當傳送到函式時就被複制了 (**Copy**)
+- 可以用 `{}` 列印 (**Display**)
+- 可以用 `{:?}` 列印 (**Debug**)
 
 ```rust
-fn prints_number(number: i32) { // There is no -> so it's not returning anything
-                             // If number was not copy type, it would take it
-                             // and we couldn't use it again
+fn prints_number(number: i32) { // 沒有 -> 所以不回傳任何東西
+                             // 如果數字不是複製型別，它會拿走資料
+                             // 我們也不能再拿來用
     println!("{}", number);
 }
 
 fn main() {
     let my_number = 8;
-    prints_number(my_number); // Prints 8. prints_number gets a copy of my_number
-    prints_number(my_number); // Prints 8 again.
-                              // No problem, because my_number is copy type!
+    prints_number(my_number); // 印出 8。prints_number 得到 my_number 的拷貝
+    prints_number(my_number); // 又印出 8。
+                              // 沒問題，因為 my_number 是複製型別！
 }
 ```
 
-But if you look at the documentation for String, it is not copy type.
+但是如果你有看到 String 的文件，它不是複製型別。
 
 [https://doc.rust-lang.org/std/string/struct.String.html](https://doc.rust-lang.org/std/string/struct.String.html)
 
-On the left in **Trait Implementations** you can look in alphabetical order. A, B, C... there is no **Copy** in C. But there is **Clone**. **Clone** is similar to **Copy**, but usually needs more memory. Also, you have to call it with `.clone()` - it won't clone just by itself.
+在左邊的 **Trait Implementations** 中，你可以按字母順序查詢。A、B、C......在 C 裡面沒有 **Copy**，但是有 **Clone**。**Clone** 和 **Copy** 類似，但通常需要更多的記憶體。另外，你必須用 `.clone()` 來呼叫它──它不會為自己克隆(clone)。
 
-In this example, `prints_country()` prints the country name, a `String`. We want to print it two times, but we can't:
+在這個範例中，`prints_country()` 印出國家名稱，是個 `String`。我們想印兩次，但沒辦法：
 
 ```rust
 fn prints_country(country_name: String) {
@@ -1653,7 +1654,7 @@ fn main() {
 }
 ```
 
-But now we understand the message.
+但現在我們懂這個訊息了。
 
 ```text
 error[E0382]: use of moved value: `country`
@@ -1667,7 +1668,7 @@ error[E0382]: use of moved value: `country`
   |                    ^^^^^^^ value used here after move
 ```
 
-The important part is `which does not implement the Copy trait`. But in the documentation we saw that String implements the `Clone` trait. So we can add `.clone()` to our code. This creates a clone, and we send the clone to the function. Now `country` is still alive, so we can use it.
+重點是 `which does not implement the Copy trait`。但在文件中我們看到 String 實現了 `Clone` 特徵。**所以我們可以把 `.clone()` 加到我們的程式碼中**。這樣就建立了一個克隆，然後我們將克隆傳送到函式中。現在 `country` 還活著，所以我們可以使用它。
 
 ```rust
 fn prints_country(country_name: String) {
@@ -1676,28 +1677,28 @@ fn prints_country(country_name: String) {
 
 fn main() {
     let country = String::from("Kiribati");
-    prints_country(country.clone()); // make a clone and give it to the function. Only the clone goes in, and country is still alive
+    prints_country(country.clone()); // 做一個克隆並傳遞給函式。只有克隆送進去，且 country 仍然還活著
     prints_country(country);
 }
 ```
 
-Of course, if the `String` is very large, `.clone()` can use a lot of memory. One `String` can be a whole book in length, and every time we call `.clone()` it will copy the book. So using `&` for a reference is faster, if you can. For example, this code pushes a `&str` onto a `String` and then makes a clone every time it gets used in a function:
+如果 `String` 非常大，當然 `.clone()` 就會佔用很多記憶體。一個 `String` 可以是一整本書的長度，每次我們呼叫 `.clone()` 都會複製這本書。所以這時如果可以用 `&` 來做參考的話會比較快。例如，這段程式碼將 `&str` 推送到 `String` 上，然後每次被使用在函式時都會做一個克隆：
 
 ```rust
-fn get_length(input: String) { // Takes ownership of a String
-    println!("It's {} words long.", input.split_whitespace().count()); // splits to count the number of words
+fn get_length(input: String) { // 接收String的所有權
+    println!("It's {} words long.", input.split_whitespace().count()); // 分開算字數
 }
 
 fn main() {
     let mut my_string = String::new();
     for _ in 0..50 {
-        my_string.push_str("Here are some more words "); // push the words on
-        get_length(my_string.clone()); // gives it a clone every time
+        my_string.push_str("Here are some more words "); // 推送字句
+        get_length(my_string.clone()); // 每次給它一份克隆
     }
 }
 ```
 
-It prints:
+印出：
 
 ```text
 It's 5 words long.
@@ -1706,7 +1707,7 @@ It's 10 words long.
 It's 250 words long.
 ```
 
-That's 50 clones. Here it is using a reference instead, which is better:
+這樣是 50 次克隆。這裡用參考代替更好：
 
 ```rust
 fn get_length(input: &String) {
@@ -1722,13 +1723,13 @@ fn main() {
 }
 ```
 
-Instead of 50 clones, it's zero.
+0 次克隆，而不是 50 次。
 
 
 
-### Variables without values
+### 無值變數
 
-A variable without a value is called an "uninitialized" variable. Uninitialized means "hasn't started yet". They are simple: just write `let` and the variable name:
+一個沒有值的變數叫做"未初始化"變數。未初始化的意思是"還沒有開始"。它們很簡單：只需要寫上 `let` 和變數名：
 
 ```rust
 fn main() {
@@ -1736,12 +1737,12 @@ fn main() {
 }
 ```
 
-But you can't use it yet, and Rust won't compile if anything is uninitialized.
+但是你還不能使用它，如果有任何東西沒有被初始化 Rust 不會開始編譯。
 
-But sometimes they can be useful. A good example is when:
+但有時它們會很有用。一個好範列是：
 
-- You have a code block and the value for your variable is inside it, and
-- The variable needs to live outside of the code block.
+- 當你有一個程式碼區塊，而你的變數值就在裡面，並且
+- 變數需要活在程式碼區塊之外。
 
 ```rust
 fn loop_then_return(mut counter: i32) -> i32 {
@@ -1758,10 +1759,10 @@ fn main() {
     let my_number;
 
     {
-        // Pretend we need to have this code block
+        // 假裝我們需要這個程式碼區塊
         let number = {
-            // Pretend there is code here to make a number
-            // Lots of code, and finally:
+            // 假裝這有程式碼產生數字
+            // 滿滿的程式，終於：
             57
         };
 
@@ -1772,11 +1773,11 @@ fn main() {
 }
 ```
 
-This prints `100`.
+印出 `100`。
 
-You can see that `my_number` was declared in the `main()` function, so it lives until the end. But it gets its value from inside a loop. However, that value lives as long as `my_number`, because `my_number` has the value. And if you wrote `let my_number = loop_then_return(number)` inside the block, it would just die right away.
+你可以看到 `my_number` 是在 `main()` 函式中宣告的，所以它一直活到最後。但是它的值是在迴圈裡面得到的。然而，這個值和 `my_number` 活得一樣長，因為 `my_number` 擁有這個值。而如果你在區塊裡面寫了 `let my_number = loop_then_return(number)`，它就會馬上死掉。
 
-It helps to imagine if you simplify the code. `loop_then_return(number)` gives the result 100, so let's delete it and write `100` instead. Also, now we don't need `number` so we will delete it too. Now it looks like this:
+如果你簡化程式碼，有助於想像這個概念。`loop_then_return(number)` 給出的結果是 100，所以我們刪除它，改寫 `100`。另外，現在我們不需要 `number`，所以我們也刪除它。現在它看起來像這樣：
 
 ```rust
 fn main() {
@@ -1789,44 +1790,44 @@ fn main() {
 }
 ```
 
-So it's almost like saying `let my_number = { 100 };`.
+所以和說 `let my_number = { 100 };` 差不多。
 
-Also note that `my_number` is not `mut`. We didn't give it a value until we gave it 50, so it never changed its value. In the end, the real code for `my_number` is just `let my_number = 100;`.
+另外注意，`my_number` 不是 `mut`。我們在給它 50 之前並沒有給它一個值，所以它的值不曾改變過。最後，`my_number` 的真正程式碼只是 `let my_number = 100;`。
 
-## Collection types
+## 集合型別
 
-Rust has a lot of types for making a collection. Collections are for when you need more than one value in one spot. For example, you could have information on all the cities in your country inside one variable. We will start with arrays, which are fastest but also have the least functionality. They are kind of like `&str` in that way.
+Rust 有許多型別用來做出集合(collection)。集合是在某個地方你需要有超過一個值時用的。例如，你可以在一個變數中包含你所在國家的所有城市資訊。我們會先從陣列(array)開始，它的速度最快，但功能也最少。在這方面它們有點像 `&str`。
 
-### Arrays
+### 陣列
 
-An array is data inside square brackets: `[]`. Arrays:
+陣列是放在中括號裡的資料：`[]`。陣列特性：
 
-- must not change their size,
-- must only contain the same type.
+- 不能改變其大小，
+- 必須只包含相同型別資料。
 
-They are very fast, however.
+然而它們的速度卻非常快。
 
-The type of an array is: `[type; number]`. For example, the type of `["One", "Two"]` is `[&str; 2]`. This means that even these two arrays have different types:
+陣列的型別是：`[type; number]`。例如，`["One", "Two"]` 的型別是 `[&str; 2]`。這意味著，即使這兩個是陣列也有不同的型別：
 
 ```rust
 fn main() {
-    let array1 = ["One", "Two"]; // This one is type [&str; 2]
-    let array2 = ["One", "Two", "Five"]; // But this one is type [&str; 3]. Different type!
+    let array1 = ["One", "Two"]; // 這個型別是 [&str; 2]
+    let array2 = ["One", "Two", "Five"]; // 但這個型別是 [&str; 3]。不同型別！
 }
 ```
 
-Here is a good tip: to know the type of a variable, you can "ask" the compiler by giving it bad instructions. For example:
+這裡有個好提示：要想知道變數的型別，你可以藉由給編譯器不正確的程式碼來"詢問"它。比如說：
 
 ```rust
 fn main() {
     let seasons = ["Spring", "Summer", "Autumn", "Winter"];
     let seasons2 = ["Spring", "Summer", "Fall", "Autumn", "Winter"];
     seasons.ddd(); // ⚠️
-    seasons2.thd(); // ⚠️ as well
+    seasons2.thd(); // 還是⚠️
 }
 ```
 
-The compiler says, "What? There's no `.ddd()` method for seasons and no `.thd()` method for seasons 2 either!!" as you can see:
+編譯器說："什麼？seasons 沒有 `.ddd()` 的方法，seasons2 也沒有 `.thd()` 的方法！！" 你可以看到：
 
 ```text
 error[E0599]: no method named `ddd` found for array `[&str; 4]` in the current scope
@@ -1842,9 +1843,9 @@ error[E0599]: no method named `thd` found for array `[&str; 5]` in the current s
   |              ^^^ method not found in `[&str; 5]`
 ```
 
-So it tells you `` method not found in `[&str; 4]` ``, which is the type.
+所以它告訴你 `` method not found in `[&str; 4]` ``，這就是變數的型別。
 
-If you want an array with all the same value, you can declare it like this:
+如果你想要一個數值都一樣的陣列，你可以像這樣宣告：
 
 ```rust
 fn main() {
@@ -1853,22 +1854,22 @@ fn main() {
 }
 ```
 
-This prints `["a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]`.
+這裡印出 `["a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]`。
 
-This method is used a lot to create buffers. For example, `let mut buffer = [0; 640]` creates an array of 640 zeroes. Then we can change zero to other numbers in order to add data.
+這個方法經常用來建立緩衝區(buffer)。例如，`let mut buffer = [0; 640]` 建立一個 640 個零的陣列。然後我們可以將零改為其他數字，以便新增資料。
 
-You can index (get) entries in an array with []. The first entry is [0], the second is [1], and so on.
+你可以用 [] 來索引(獲取)陣列中的項目。第一個索引項目是 [0]，第二個是 [1]，以此類推。
 
 ```rust
 fn main() {
     let my_numbers = [0, 10, -20];
-    println!("{}", my_numbers[1]); // prints 10
+    println!("{}", my_numbers[1]); // 印出 10
 }
 ```
 
-You can get a slice (a piece) of an array. First you need a &, because the compiler doesn't know the size. Then you can use `..` to show the range.
+你可以得到陣列的一個切片(slice，一塊)。首先你需要 &，因為編譯器不知道大小。然後你可以使用 `..` 來表示範圍。
 
-For example, let's use this array: `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
+例如，讓我們使用這個陣列：`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`。
 
 ```rust
 fn main() {
@@ -1883,21 +1884,21 @@ fn main() {
 }
 ```
 
-Remember that:
+記住這些：
 
-- Index numbers start at 0 (not 1)
-- Index ranges are **exclusive** (they do not include the last number)
+- 索引號從 0 開始(不是 1)
+- 索引範圍是**排除的**(不包括最後一個數字)。
 
-So `[0..2]` means the first index and the second index (0 and 1). Or you can call it the "zeroth and first" index. It doesn't have the third item, which is index 2.
+所以 `[0..2]` 是指第一項索引和第二項索引(0 和 1)。或者你也可以稱它為"第零和第一項"索引。它沒有第三項，也就是索引 2。
 
-You can also have an **inclusive** range, which means it includes the last number too. To do this, add `=` to write `..=` instead of `..`. So instead of `[0..2]` you can write `[0..=2]` if you want the first, second, and third item.
+你也可以有一個 **包含的** 範圍，這意味著它也包括最後一個數字。要做到這一點。加上 `=`，寫成 `..=`，而不是 `..`。所以，如果你想要第一、第二和第三項，可以寫成 `[0..=2]`，而不是 `[0..2]`。
 
-## Vectors
-**[See this chapter on YouTube](https://youtu.be/Eh-DsRnDKmw)**
+## 向量
+**[YouTube 上觀看本章內容](https://youtu.be/Eh-DsRnDKmw)**
 
-In the same way that we have `&str` and `String`, we have arrays and vectors. Arrays are faster with less functionality, and vectors are slower with more functionality. (Of course, Rust is always very fast so vectors are not slow, just slow*er* than arrays.) The type is written `Vec`, and you can also just call it a "vec".
+就像我們有 `&str` 和 `String` 一樣的方式，我們有陣列和向量(vector)。陣列的功能少了就快，向量的功能多了就慢。(當然，Rust 的速度一直都是非常快的，所以向量並不慢，只是比陣列慢*一點*)。型別被寫作 `Vec`，你也可以直接叫它 "vec"。
 
-There are two main ways to declare a vector. One is like with `String` using `new`:
+向量的宣告主要有兩種方式。一種像 `String` 使用 `new`:
 
 ```rust
 fn main() {
@@ -1905,31 +1906,31 @@ fn main() {
     let name2 = String::from("Gomesy");
 
     let mut my_vec = Vec::new();
-    // If we run the program now, the compiler will give an error.
-    // It doesn't know the type of vec.
-
-    my_vec.push(name1); // Now it knows: it's Vec<String>
+    // 如果我們現在就跑程式，編譯器會給出錯誤。
+    // 它不知道vec的型別。
+    
+    my_vec.push(name1); // 現在它知道了：它是Vec<String>
     my_vec.push(name2);
 }
 ```
 
-You can see that a `Vec` always has something else inside it, and that's what the `<>` (angle brackets) are for. A `Vec<String>` is a vector with one or more `String`s. You can also have more types inside. For example:
+你可以看到 `Vec` 裡面總是有其他東西，這就是 `<>`(角括號)的作用。`Vec<String>`是有一或多個 `String` 的向量。你還可以在裡面有更多的型別。舉例來說：
 
-- `Vec<(i32, i32)>` this is a `Vec` where each item is a tuple: `(i32, i32)`.
-- `Vec<Vec<String>>` this is a `Vec` that has `Vec`s of `Strings`. Say for example you wanted to save your favourite book as a `Vec<String>`. Then you do it again with another book, and get another `Vec<String>`. To hold both books, you would put them into another `Vec` and that would be a `Vec<Vec<String>>`.
+- `Vec<(i32, i32)>` 這個 `Vec` 的每個元素是元組(tuple)：`(i32, i32)`。
+- `Vec<Vec<String>>` 這個 `Vec` 裡面有包含 `String` 的 `Vec`。假設說你想把你喜歡的書保存在 `Vec<String>`。然後你再拿另一本書重做一次，就會得到另一個 `Vec<String>`。為了保留這兩本書，你會把它們放入另一個 `Vec` 中，這就是 `Vec<Vec<String>>`。
 
-Instead of using `.push()` to make Rust decide the type, you can just declare the type.
+與其使用 `.push()` 讓 Rust 決定型別，不如直接宣告型別。
 
 ```rust
 fn main() {
-    let mut my_vec: Vec<String> = Vec::new(); // The compiler knows the type
-                                              // so there is no error.
+    let mut my_vec: Vec<String> = Vec::new(); // 編譯器知道型別
+                                              // 所以沒有錯誤。
 }
 ```
 
-You can see that items in vectors must have the same type.
+你可以看到，向量中的元素必須具有相同的型別。
 
-Another easy way to create a vector is with the `vec!` macro. It looks like an array declaration, but has `vec!` in front of it.
+建立向量的另一個簡單方法是使用 `vec!` 巨集。它看起來像一個陣列宣告，但前面有 `vec!`。
 
 ```rust
 fn main() {
@@ -1937,14 +1938,14 @@ fn main() {
 }
 ```
 
-The type is `Vec<i32>`. You call it a "Vec of i32s". And a `Vec<String>` is a "Vec of strings". And a `Vec<Vec<String>>` is a "Vec of a vec of strings".
+型別是 `Vec<i32>`。你稱它為 "i32 的 Vec"。而 `Vec<String>` 是 "String 的 Vec"。`Vec<Vec<String>>` 是 "String 的 Vec 的 Vec"。
 
-You can slice a vector too, just like in an array.
+你也可以對一個向量進行切片，就像用在陣列一樣。
 
 ```rust
 fn main() {
     let vec_of_ten = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    // Everything is the same as above except we added vec!.
+    // 所有東西都和前面的陣列一樣，除了我們加上vec!。
     let three_to_five = &vec_of_ten[2..5];
     let start_at_two = &vec_of_ten[1..];
     let end_at_five = &vec_of_ten[..5];
@@ -1957,26 +1958,26 @@ everything: {:?}", three_to_five, start_at_two, end_at_five, everything);
 }
 ```
 
-Because a vec is slower than an array, we can use some methods to make it faster. A vec has a **capacity**, which means the space given to the vector. When you push a new item on the vector, it gets closer and closer to the capacity. Then if you go past the capacity, it will make its capacity double and copy the items into the new space. This is called reallocation. We'll use a method called `.capacity()` to look at the capacity of a vector as we add items to it.
+因為向量比陣列慢，我們可以用一些方法讓它更快。向量都有**容量**(capacity)，也就是給予向量使用的空間。當你在向量上推送一個新元素時，它會越來越接近容量。然後，如果你超過了容量，它將使其容量翻倍，並將元素複製到新的空間。這就是所謂的再分配(reallocation)。我們將使用名為 `.capacity()` 的方法，在我們向它新增元素時來查看向量的容量。
 
-For example:
+例如：
 
 ```rust
 fn main() {
     let mut num_vec = Vec::new();
-    println!("{}", num_vec.capacity()); // 0 elements: prints 0
-    num_vec.push('a'); // add one character
-    println!("{}", num_vec.capacity()); // 1 element: prints 4. Vecs with 1 item always start with capacity 4
-    num_vec.push('a'); // add one more
-    num_vec.push('a'); // add one more
-    num_vec.push('a'); // add one more
-    println!("{}", num_vec.capacity()); // 4 elements: still prints 4.
-    num_vec.push('a'); // add one more
-    println!("{}", num_vec.capacity()); // prints 8. We have 5 elements, but it doubled 4 to 8 to make space
+    println!("{}", num_vec.capacity()); // 0 個元素: 印出 0
+    num_vec.push('a'); // 加人一個字元
+    println!("{}", num_vec.capacity()); // 1 個元素: 印出 4. 一筆資料的 Vec 容量永遠從 4 開始
+    num_vec.push('a'); // 多加一個
+    num_vec.push('a'); // 多加一個
+    num_vec.push('a'); // 多加一個
+    println!("{}", num_vec.capacity()); // 4 個元素: 仍印出 4.
+    num_vec.push('a'); // 多加一個
+    println!("{}", num_vec.capacity()); // 印出 8. 我們有 5 個元素, 但容量從 4 加倍到 8 騰出了空間
 }
 ```
 
-This prints:
+印出：
 
 ```text
 0
@@ -1985,61 +1986,61 @@ This prints:
 8
 ```
 
-So this vector has two reallocations: 0 to 4, and 4 to 8. We can make it faster:
+所以這個向量再分配兩次：0 到 4，4 到 8。我們可以讓它更快：
 
 ```rust
 fn main() {
-    let mut num_vec = Vec::with_capacity(8); // Give it capacity 8
-    num_vec.push('a'); // add one character
-    println!("{}", num_vec.capacity()); // prints 8
-    num_vec.push('a'); // add one more
-    println!("{}", num_vec.capacity()); // prints 8
-    num_vec.push('a'); // add one more
-    println!("{}", num_vec.capacity()); // prints 8.
-    num_vec.push('a'); // add one more
-    num_vec.push('a'); // add one more // Now we have 5 elements
-    println!("{}", num_vec.capacity()); // Still 8
+    let mut num_vec = Vec::with_capacity(8); // 給它容量 8
+    num_vec.push('a'); // 加一個字元
+    println!("{}", num_vec.capacity()); // 印出 8
+    num_vec.push('a'); // 再加一個
+    println!("{}", num_vec.capacity()); // 印出 8
+    num_vec.push('a'); // 再加一個
+    println!("{}", num_vec.capacity()); // 印出 8.
+    num_vec.push('a'); // 再加一個
+    num_vec.push('a'); // 再加一個 // 現在我們有 5 個元素
+    println!("{}", num_vec.capacity()); // 仍是 8
 }
 ```
 
-This vector has 0 reallocations, which is better. So if you think you know how many elements you need, you can use `Vec::with_capacity()` to make it faster.
+這個向量比較好再分配是 0 次。所以如果你認為你知道你需要多少元素，你可以使用 `Vec::with_capacity()` 來使它更快。
 
-You remember that you can use `.into()` to make a `&str` into a `String`. You can also use it to make an array into a `Vec`. You have to tell `.into()` that you want a `Vec`, but you don't have to choose the type of `Vec`. If you don't want to choose, you can write `Vec<_>`.
+你記得你可以用 `.into()` 把 `&str` 變成 `String`。你也可以用它把一個陣列變成 `Vec`。你必須告訴 `.into()` 你想要 `Vec`，但你可以不用選擇 `Vec` 的型別。如果你不想選擇，你可以寫 `Vec<_>`。
 
 ```rust
 fn main() {
     let my_vec: Vec<u8> = [1, 2, 3].into();
-    let my_vec2: Vec<_> = [9, 0, 10].into(); // Vec<_> means "choose the Vec type for me"
-                                             // Rust will choose Vec<i32>
+    let my_vec2: Vec<_> = [9, 0, 10].into(); // Vec<_> 表示 "幫我選 Vec 的型別"
+                                             // Rust 會選 Vec<i32>
 }
 ```
 
-## Tuples
-**[See this chapter on YouTube](https://youtu.be/U67Diy6SlTg)**
+## 元組
+**[YouTube 上觀看本章內容](https://youtu.be/U67Diy6SlTg)**
 
-Tuples in Rust use `()`. We have seen many empty tuples already, because *nothing* in a function actually means an empty tuple:
+Rust 中的元組(tuple)使用 `()` 表示。我們已經見過很多空元組了，因為函式中的 *nothing* 實際上意味著一個空元組：
 
 ```text
 fn do_something() {}
 ```
 
-is actually short for:
+其實是這個的簡寫：
 
 ```text
 fn do_something() -> () {}
 ```
 
-That function gets nothing (an empty tuple), and returns nothing (an empty tuple). So we have been using tuples a lot already. When you don't return anything in a function, you actually return an empty tuple.
+這個函式什麼也得不到(空元組)，也不回傳什麼(空元組)。所以我們已經經常使用元組了。當你在函式中不回傳任何東西時，你實際上回傳的是空元組。
 
 ```rust
 fn just_prints() {
-    println!("I am printing"); // Adding ; means we return an empty tuple
+    println!("I am printing"); // 加上 ; 表示我們回傳空元組
 }
 
 fn main() {}
 ```
 
-But tuples can hold many things, and can hold different types too. Items inside a tuple are also indexed with numbers 0, 1, 2, and so on. But to access them, you use a `.` instead of a `[]`. Let's put a whole bunch of types into a single tuple.
+但是元組可以容納很多東西，也可以容納不同的型別。元組裡面的元素也是用數字 0、1、2 等來被索引的。但要存取它們，你要用 `.` 而不是 `[]`。讓我們把一大群型別放進元組裡。
 
 ```rust
 fn main() {
@@ -2061,7 +2062,7 @@ Sixth item: {:?}",
 }
 ```
 
-This prints:
+印出:
 
 ```text
 Inside the tuple is: First item: "Here is a name"
@@ -2072,10 +2073,10 @@ Fifth item: [8, 9, 10]
 Sixth item: 7.7
 ```
 
-That tuple is of type `(&str, i32, Vec<char>, char, [i32; 3], f64)`.
+這個元組的型別是 `(&str, i32, Vec<char>, char, [i32; 3], f64)`。
 
 
-You can use a tuple to create multiple variables. Take a look at this code:
+你可以使用一個元組來建立多個變數。看看這段程式碼：
 
 ```rust
 fn main() {
@@ -2083,20 +2084,20 @@ fn main() {
 }
 ```
 
-`str_vec` has three items in it. What if we want to pull them out? That's where we can use a tuple.
+`str_vec` 裡面有三個元素。如果我們想把它們拉出來呢？這時我們可以使用元組。
 
 ```rust
 fn main() {
     let str_vec = vec!["one", "two", "three"];
 
-    let (a, b, c) = (str_vec[0], str_vec[1], str_vec[2]); // call them a, b, and c
+    let (a, b, c) = (str_vec[0], str_vec[1], str_vec[2]); // 叫它們 a, b, 和 c
     println!("{:?}", b);
 }
 ```
 
-That prints `"two"`, which is what `b` is. This is called *destructuring*. That is because first the variables are inside a structure, but then we made `a`, `b`, and `c` that are not inside a structure.
+它印出 `"two"`，也就是 `b`。這就是所謂的*解構*(destructuring)。這是因為變數一開始是在結構體裡面的，但接著我們又做了 `a`、`b`、`c` 這些不是在結構體裡面的變數。
 
-If you need to destructure but don't want all the variables, you can use `_`.
+如果你需要解構，但又不想要所有的變數，你可以使用 `_`。
 
 ```rust
 fn main() {
@@ -2106,14 +2107,14 @@ fn main() {
 }
 ```
 
-Now it only creates a variable called `variable` but doesn't make a variable for the others.
+現在它只建立了一個叫 `variable` 的變數，但沒有為其他值做變數。
 
-There are many more collection types, and many more ways to use arrays, vecs, and tuples. We will learn more about them too, but first we will learn control flow.
+還有很多集合型別，及許許多多使用陣列、向量和元組的方式。我們也將學習更多關於它們的知識，但我們將先學習控制流程。
 
-## Control flow
-**See this chapter on YouTube: [Part 1](https://youtu.be/UAymDOpv_us) and [Part 2](https://youtu.be/eqysTfiiQZs)**
+## 控制流程
+**YouTube 上觀看本章內容: [Part 1](https://youtu.be/UAymDOpv_us) 及 [Part 2](https://youtu.be/eqysTfiiQZs)**
 
-Control flow means telling your code what to do in different situations. The simplest control flow is `if`.
+控制流程(control flow)的意思是告訴你的程式碼在不同的情況下該怎麼做。最簡單的控制流程是 `if`。
 
 ```rust
 fn main() {
@@ -2124,9 +2125,9 @@ fn main() {
 }
 ```
 
-Also note that you use `==` and not `=`. `==` is to compare, `=` is to *assign* (to give a value). Also note that we wrote `if my_number == 7` and not `if (my_number == 7)`. You don't need brackets with `if` in Rust.
+另外注意，你用的是 `==` 而不是 `=`。`==` 是用來比較的，`=` 是用來*賦值*的(給一個值)。另外注意，我們寫的是 `if my_number == 7` 而不是 `if (my_number == 7)`。在 Rust 中，你不需要在 `if` 條件用括號。
 
-`else if` and `else` give you more control:
+`else if` 和 `else` 給你更多的控制：
 
 ```rust
 fn main() {
@@ -2141,14 +2142,14 @@ fn main() {
 }
 ```
 
-This prints `It's a different number` because it's not equal to 7 or 6.
+印出 `It's a different number`，因為它不等於 7 或 6。
 
-You can add more conditions with `&&` (and) and `||` (or).
+您可以使用 `&&`(和)和 `||`(或)來新增更多條件。
 
 ```rust
 fn main() {
     let my_number = 5;
-    if my_number % 2 == 1 && my_number > 0 { // % 2 means the number that remains after diving by two
+    if my_number % 2 == 1 && my_number > 0 { // % 2 表示除以2之後的餘下的數
         println!("It's a positive odd number");
     } else if my_number == 6 {
         println!("It's six")
@@ -2158,10 +2159,10 @@ fn main() {
 }
 ```
 
-This prints `It's a positive odd number` because when you divide it by 2 you have a remainder of 1, and it's greater than 0.
+印出 `It's a positive odd number`，因為當你把它除以 2 時，你有餘數 1，且它大於0。
 
 
-You can see that too much `if`, `else`, and `else if` can be difficult to read. In this case you can use `match` instead, which looks much cleaner. But you must match for every possible result. For example, this will not work:
+你可以看到，過多的 `if`、`else` 和 `else if` 會很難讀。在這種情況下，你可以使用 `match` 來代替，它看起來更乾淨。但是您必須為每一個可能的結果進行匹配(match)。例如，這將無法運作：
 
 ```rust
 fn main() {
@@ -2175,7 +2176,7 @@ fn main() {
 }
 ```
 
-The compiler says:
+編譯器說：
 
 ```text
 error[E0004]: non-exhaustive patterns: `3u8..=std::u8::MAX` not covered
@@ -2185,7 +2186,7 @@ error[E0004]: non-exhaustive patterns: `3u8..=std::u8::MAX` not covered
   |           ^^^^^^^^^ pattern `3u8..=std::u8::MAX` not covered
 ```
 
-This means "you told me about 0 to 2, but `u8`s can go up to 255. What about 3? What about 4? What about 5?" And so on. So you can add `_` which means "anything else".
+這就意味著"你告訴我 0 到 2，但 `u8` 可以到 255。那 3 呢？4 呢？5 呢？"以此類推。所以你可以加上 `_`，意思是"其他任何東西"。
 
 ```rust
 fn main() {
@@ -2199,16 +2200,16 @@ fn main() {
 }
 ```
 
-That prints `It's some other number`.
+印出 `It's some other number`。
 
-Remember this for match:
+記住這些匹配的規則：
 
-- You write `match` and then make a `{}` code block.
-- Write the *pattern* on the left and use a `=>` fat arrow to say what to do when it matches.
-- Each line is called an "arm".
-- Put a comma between the arms (not a semicolon).
+- 你寫下 `match`，然後做一個 `{}` 程式碼區塊。
+- 在左邊寫上*模式*，用 `=>` 胖箭頭說明匹配時該怎麼做。
+- 每一行稱為一個"分支(arm)"。
+- 在分支之間放一個逗號(不是分號)。
 
-You can declare a value with a match:
+你可以用匹配結果來宣告一個值：
 
 ```rust
 fn main() {
@@ -2221,10 +2222,10 @@ fn main() {
 }
 ```
 
-`second_number` will be 10. Do you see the semicolon at the end? That is because, after the match is over, we actually told the compiler this: `let second_number = 10;`
+`second_number` 將是 10。你看到最後的分號了嗎？那是因為，在 match 結束後，我們實際上告訴了編譯器這個資訊：`let second_number = 10;`
 
 
-You can match on more complicated things too. You use a tuple to do it.
+你也可以在更復雜的事情上進行匹配。你要用元組來做到。
 
 ```rust
 fn main() {
@@ -2240,9 +2241,9 @@ fn main() {
 }
 ```
 
-This prints `It's dark but not bad` because it matches "cloudy" and "warm" for `sky` and `temperature`.
+印出 `It's dark but not bad`，因為它與 `sky` 和 `temperature` 的 "cloudy" 和 "warm" 相匹配。
 
-You can even put `if` inside of `match`. This is called a "match guard":
+你甚至可以把 `if` 放在 `match` 裡面。這稱為 "match guard"：
 
 ```rust
 fn main() {
@@ -2257,9 +2258,9 @@ fn main() {
 }
 ```
 
-This will print `Married? true. Number of children: 5.`
+這將印出 `Married? true. Number of children: 5.`
 
-You can use _ as many times as you want in a match. In this match on colours, we have three but only check one at a time.
+在匹配時，你可以隨意多次使用 _。在這個關於顏色的匹配中，我們有三個顏色，但一次只能選中一個。
 
 ```rust
 fn match_colours(rbg: (i32, i32, i32)) {
@@ -2283,7 +2284,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Not much blue
@@ -2291,11 +2292,11 @@ Each colour has at least 10
 Not much green
 ```
 
-This also shows how `match` statements work, because in the first example it only printed `Not much blue`. But `first` also has not much green. A `match` statement always stops when it finds a match, and doesn't check the rest. This is a good example of code that compiles well but is not the code you want.
+這也說明了 `match` 陳述式的作用，因為在第一個例子中，它只印了 `Not much blue`。但是 `first` 也沒有多少綠色。`match` 陳述式總是在找到一個匹配項時停止，而不檢查其他的。這就是程式碼編譯得很好，但不是你想要的程式碼的一個好例子。
 
-You can make a really big `match` statement to fix it, but it is probably better to use a `for` loop. We will talk about loops soon.
+你可以做一個非常大的 `match` 陳述式來解決這個問題，但是使用 `for` 迴圈(loop)可能更好。我們將很快會討論到迴圈。
 
-A match has to return the same type. So you can't do this:
+匹配必須回傳相同的型別。所以你不能這樣做：
 
 ```rust
 fn main() {
@@ -2307,7 +2308,7 @@ fn main() {
 }
 ```
 
-The compiler tells you that:
+編譯器告訴你：
 
 ```text
 error[E0308]: `match` arms have incompatible types
@@ -2323,7 +2324,7 @@ error[E0308]: `match` arms have incompatible types
    | |_____- `match` arms have incompatible types
 ```
 
-This will also not work, for the same reason:
+這樣也不行，原因同上。
 
 ```rust
 fn main() {
@@ -2331,7 +2332,7 @@ fn main() {
 }
 ```
 
-But this works, because it's not a `match` so you have a different `let` statement each time:
+但是這樣就可以了，因為不是 `match`，所以你每次都有不同的 `let` 陳述式：
 
 ```rust
 fn main() {
@@ -2345,7 +2346,7 @@ fn main() {
 }
 ```
 
-You can also use `@` to give a name to the value of a `match` expression, and then you can use it. In this example we match an `i32` input in a function. If it's 4 or 13 we want to use that number in a `println!` statement. Otherwise, we don't need to use it.
+你也可以使用 `@` 給 `match` 表示式的值命名，然後你就可以使用它。在這個範例中，我們在函式中匹配 `i32` 輸入。如果是 4 或 13，我們要在 `println!` 陳述式中使用這個數字。否則，我們不需要使用它。
 
 ```rust
 fn match_number(input: i32) {
@@ -2363,7 +2364,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Looks like a normal number
@@ -2371,39 +2372,39 @@ Looks like a normal number
 4 is an unlucky number in China (sounds close to 死)!
 ```
 
-## Structs
-**See this chapter on YouTube: [Part 1](https://youtu.be/W23uQghBOFk) and [Part 2](https://youtu.be/GSVhrjLCuNA)**
+## 結構體
+**YouTube 上觀看本章內容: [Part 1](https://youtu.be/W23uQghBOFk) 及 [Part 2](https://youtu.be/GSVhrjLCuNA)**
 
-With structs, you can create your own type. You will use structs all the time in Rust because they are so convenient. Structs are created with the keyword `struct`. The name of a struct should be in UpperCamelCase (capital letter for each word, no spaces). If you write a struct in all lowercase, the compiler will tell you.
+有了結構體(struct)，你可以建立自己的型別。在 Rust 中，你會無時無刻用著結構體，因為它們非常方便。結構體是用關鍵字 `struct` 建立的。結構體的名稱應該用大駝峰式命名法(UpperCamelCase，每個字首用大寫字母，不含空格)。如果你用全小寫的結構體，編譯器會告訴你。
 
-There are three types of structs. One is a "unit struct". Unit means "doesn't have anything". For a unit struct, you just write the name and a semicolon.
+結構體有三種類型。一種是"單元結構體"。單元的意思是"沒有任何東西"。對於一個單元結構體，你只需要寫名字和一個分號。
 
 ```rust
 struct FileDirectory;
 fn main() {}
 ```
 
-The next is a tuple struct, or an unnamed struct. It is "unnamed" because you only need to write the types, not the field names. Tuple structs are good when you need a simple struct and don't need to remember names.
+下一種是元組結構體(tuple struct)，或者說是未具名結構體。之所以是"未具名"，是因為你只需要寫型別，而不是欄位(field)名。元組結構體適合在你需要一個簡單的結構，並且不需要記住名字時。
 
 ```rust
 struct Colour(u8, u8, u8);
 
 fn main() {
-    let my_colour = Colour(50, 0, 50); // Make a colour out of RGB (red, green, blue)
+    let my_colour = Colour(50, 0, 50); // 從RGB (red, green, blue)做出顏色
     println!("The second part of the colour is: {}", my_colour.1);
 }
 ```
 
-This prints `The second part of the colour is: 0`.
+印出 `The second part of the colour is: 0`。
 
-The third type is the named struct. This is probably the most common struct. In this struct you declare field names and types inside a `{}` code block. Note that you don't write a semicolon after a named struct, because there is a whole code block after it.
+第三種類型是具名結構體。這可能是最常見的結構體。在這個結構體中，你在 `{}` 程式碼區塊中宣告欄位名和型別。請注意，在具名結構體後面不要寫分號，因為它後面是一整個程式碼區塊。
 
 ```rust
-struct Colour(u8, u8, u8); // Declare the same Colour tuple struct
+struct Colour(u8, u8, u8); // 宣告一樣的 Colour 元組結構體
 
 struct SizeAndColour {
     size: u32,
-    colour: Colour, // And we put it in our new named struct
+    colour: Colour, // 並且我們把它放在我們的新具名結構體裡
 }
 
 fn main() {
@@ -2416,47 +2417,47 @@ fn main() {
 }
 ```
 
-You separate fields by commas in a named struct too. For the last field you can add a comma or not - it's up to you. `SizeAndColour` had a comma after `colour`:
+在具名結構體中，你也可以用逗號來分隔欄位。對於最後一個欄位，你可以加或不加逗號──這取決於你。`SizeAndColour` 在 `colour` 後面有一個逗號：
 
 ```rust
-struct Colour(u8, u8, u8); // Declare the same Colour tuple struct
+struct Colour(u8, u8, u8); // 宣告一樣的 Colour 結構體
 
 struct SizeAndColour {
     size: u32,
-    colour: Colour, // And we put it in our new named struct
+    colour: Colour, // 並且我們把它放在我們的新具名結構體裡
 }
 
 fn main() {}
 ```
 
-but you don't need it. But it can be a good idea to always put a comma, because sometimes you will change the order of the fields:
+但你不需要它。但總是放一個逗號可能是個好主意，因為有時你會改變欄位的順序：
 
 ```rust
-struct Colour(u8, u8, u8); // Declare the same Colour tuple struct
+struct Colour(u8, u8, u8); // 宣告一樣的 Colour 結構體
 
 struct SizeAndColour {
     size: u32,
-    colour: Colour // No comma here
+    colour: Colour // 這裡沒有逗號
 }
 
 fn main() {}
 ```
 
-Then we decide to change the order...
+然後我們決定改變順序...
 
 ```rust
 struct SizeAndColour {
-    colour: Colour // ⚠️ Whoops! Now this doesn't have a comma.
+    colour: Colour // ⚠️ Whoops! 現在這裡沒有逗號。
     size: u32,
 }
 
 fn main() {}
 ```
 
-But it is not very important either way so you can choose whether to use a comma or not.
+但無論哪種方式都不是很重要，所以你可以選擇是否要使用逗號。
 
 
-Let's create a `Country` struct to give an example. The `Country` struct has the fields `population`, `capital`, and `leader_name`.
+我們建立一個 `Country` 結構體來舉例說明。`Country` 結構有 `population`、`capital` 和 `leader_name` 三個欄位。
 
 ```rust
 struct Country {
@@ -2478,7 +2479,7 @@ fn main() {
 }
 ```
 
-Did you notice that we wrote the same thing twice? We wrote `population: population`, `capital: capital`, and `leader_name: leader_name`. Actually, you don't need to do that. If the field name and variable name are the same, you don't have to write it twice.
+你有沒有注意到，我們把同樣的東西寫了兩次？我們寫了 `population: population`、`capital: capital` 和 `leader_name: leader_name`。實際上，你不需要這樣做。如果欄位名和變數名相同，你就不用寫兩次。
 
 ```rust
 struct Country {
@@ -2500,17 +2501,17 @@ fn main() {
 }
 ```
 
-## Enums
-**See this chapter on YouTube: [Part 1](https://youtu.be/SRnqNTJUgjs), [Part 2](https://youtu.be/F_EcbWM63lk), [Part 3](https://youtu.be/2uh64U9JesA) and [Part 4](https://youtu.be/LOHVUYTc5Us)**
+## 列舉
+**YouTube 上觀看本章內容: [Part 1](https://youtu.be/SRnqNTJUgjs), [Part 2](https://youtu.be/F_EcbWM63lk), [Part 3](https://youtu.be/2uh64U9JesA) 及 [Part 4](https://youtu.be/LOHVUYTc5Us)**
 
-An `enum` is short for enumerations. They look very similar to a struct, but are different. Here is the difference:
+`enum` 是列舉(enumeration)的簡稱。它們看起來與結構體非常相似，但又有所不同。區別有：
 
-- Use a `struct` when you want one thing **AND** another thing.
-- Use an `enum` when you want one thing **OR** another thing.
+- 當你想要一個東西**和**另一個東西時，使用`struct`。
+- 當你想要一個東西**或**另一個東西時，請使用 `enum`。
 
-So structs are for **many things** together, while enums are for **many choices** together.
+所以，結構體是用於**多個事物**在一起，而列舉則是用於**多個選擇**在一起。
 
-To declare an enum, write `enum` and use a code block with the options, separated by commas. Just like a `struct`, the last part can have a comma or not. We will create an enum called `ThingsInTheSky`:
+要宣告列舉時，寫下 `enum`，並用程式碼區塊將包含的選項用逗號分隔。就像 `struct` 一樣，最後一部分的逗號則可有可無。我們將建立一個名為 `ThingsInTheSky` 的列舉：
 
 ```rust
 enum ThingsInTheSky {
@@ -2521,24 +2522,24 @@ enum ThingsInTheSky {
 fn main() {}
 ```
 
-This is an enum because you can either see the sun, **or** the stars: you have to choose one. These are called **variants**.
+這是個列舉，因為你可以看到太陽**或**星星：你必須選擇一個。這些叫做**變體(variants)**。
 
 ```rust
-// create the enum with two choices
+// 建立兩個選擇的列舉
 enum ThingsInTheSky {
     Sun,
     Stars,
 }
 
-// With this function we can use an i32 to create ThingsInTheSky.
+// 有這個函式我們可以用i32來建立ThingsInTheSky。
 fn create_skystate(time: i32) -> ThingsInTheSky {
     match time {
-        6..=18 => ThingsInTheSky::Sun, // Between 6 and 18 hours we can see the sun
-        _ => ThingsInTheSky::Stars, // Otherwise, we can see stars
+        6..=18 => ThingsInTheSky::Sun, // 介於6到18小時之間我們可以見到太陽
+        _ => ThingsInTheSky::Stars, // 除此之外，我們可以見到星星
     }
 }
 
-// With this function we can match against the two choices in ThingsInTheSky.
+// 有這個函式我們可以匹配到ThingsInTheSky的兩個選擇。
 fn check_skystate(state: &ThingsInTheSky) {
     match state {
         ThingsInTheSky::Sun => println!("I can see the sun!"),
@@ -2547,46 +2548,46 @@ fn check_skystate(state: &ThingsInTheSky) {
 }
 
 fn main() {
-    let time = 8; // it's 8 o'clock
-    let skystate = create_skystate(time); // create_skystate returns a ThingsInTheSky
-    check_skystate(&skystate); // Give it a reference so it can read the variable skystate
+    let time = 8; // 這是 8 點鐘
+    let skystate = create_skystate(time); // create_skystate回傳ThingsInTheSky
+    check_skystate(&skystate); // 給它參考那麼它就能讀到變數skystate
 }
 ```
 
-This prints `I can see the sun!`.
+印出 `I can see the sun!`。
 
-You can add data to an enum too.
+你也可以將資料新增到列舉中。
 
 ```rust
 enum ThingsInTheSky {
-    Sun(String), // Now each variant has a string
+    Sun(String), // 現在每個變體都有字串
     Stars(String),
 }
 
 fn create_skystate(time: i32) -> ThingsInTheSky {
     match time {
-        6..=18 => ThingsInTheSky::Sun(String::from("I can see the sun!")), // Write the strings here
+        6..=18 => ThingsInTheSky::Sun(String::from("I can see the sun!")), // 這裡寫下字串
         _ => ThingsInTheSky::Stars(String::from("I can see the stars!")),
     }
 }
 
 fn check_skystate(state: &ThingsInTheSky) {
     match state {
-        ThingsInTheSky::Sun(description) => println!("{}", description), // Give the string the name description so we can use it
-        ThingsInTheSky::Stars(n) => println!("{}", n), // Or you can name it n. Or anything else - it doesn't matter
+        ThingsInTheSky::Sun(description) => println!("{}", description), // 給字串命名為description那麼我們就能使用它
+        ThingsInTheSky::Stars(n) => println!("{}", n), // 或你能命名成 n。或其它任何東西──它無關緊要
     }
 }
 
 fn main() {
-    let time = 8; // it's 8 o'clock
-    let skystate = create_skystate(time); // create_skystate returns a ThingsInTheSky
-    check_skystate(&skystate); // Give it a reference so it can read the variable skystate
+    let time = 8; // 這是 8 點鐘
+    let skystate = create_skystate(time); // create_skystate 回傳 ThingsInTheSky
+    check_skystate(&skystate); // 給它參考那麼它就能讀到變數skystate
 }
 ```
 
-This prints the same thing: `I can see the sun!`
+印出來的結果一樣：`I can see the sun!`。
 
-You can also "import" an enum so you don't have to type so much. Here's an example where we have to type `Mood::` every time we match on our mood:
+你也可以"匯入(import)"一個列舉，這樣你就不用打那麼多字了。下面這個例子裡，我們每次在匹配我們的 mood 時都要輸入 `Mood::`：
 
 ```rust
 enum Mood {
@@ -2598,7 +2599,7 @@ enum Mood {
 
 fn match_mood(mood: &Mood) -> i32 {
     let happiness_level = match mood {
-        Mood::Happy => 10, // Here we type Mood:: every time
+        Mood::Happy => 10, // 我們每次都要輸入 Mood::
         Mood::Sleepy => 6,
         Mood::NotBad => 7,
         Mood::Angry => 2,
@@ -2613,7 +2614,7 @@ fn main() {
 }
 ```
 
-It prints `Out of 1 to 10, my happiness is 7`. Let's import so we can type less. To import everything, write `*`. Note: it's the same key as `*` for dereferencing but is completely different.
+印出的是 `Out of 1 to 10, my happiness is 7`。讓我們匯入，這樣我們就可以少打點字了。要匯入所有的東西時寫做 `*`。注意：它和反參考關鍵字的 `*` 一樣，但完全不同。
 
 ```rust
 enum Mood {
@@ -2624,9 +2625,9 @@ enum Mood {
 }
 
 fn match_mood(mood: &Mood) -> i32 {
-    use Mood::*; // We imported everything in Mood. Now we can just write Happy, Sleepy, etc.
+    use Mood::*; // 我們匯入Mood裡的所有東西。現在我們可以只寫Happy、Sleepy等變體名。
     let happiness_level = match mood {
-        Happy => 10, // We don't have to write Mood:: anymore
+        Happy => 10, // 我們不用再寫 Mood:: 了
         Sleepy => 6,
         NotBad => 7,
         Angry => 2,
@@ -2642,11 +2643,11 @@ fn main() {
 ```
 
 
-Parts of an `enum` can also be turned into an integer. That's because Rust gives each arm of an `enum` a number that starts with 0 for its own use. You can do things with it if your enum doesn't have any other data in it.
+`enum` 的一部分也可以轉變成整數。這是因為 Rust 給 `enum` 提供了以 0 開頭的數字給每個分支各自使用。如果你的列舉中沒有任何其他資料的話，你可以拿它來做些事情。
 
 ```rust
 enum Season {
-    Spring, // If this was Spring(String) or something it wouldn't work
+    Spring, // 如果這是 Spring(String) 或其它東西，它就不能這樣用
     Summer,
     Autumn,
     Winter,
@@ -2661,7 +2662,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 0
@@ -2670,7 +2671,7 @@ This prints:
 3
 ```
 
-Though you can give it a different number, if you want - Rust doesn't care and can use it in the same way. Just add an `=` and your number to the variant that you want to have a number. You don't have to give all of them a number. But if you don't, Rust will just add 1 from the arm before to give it a number.
+不過如果你想的話，你也可以給它一個不同的數字──Rust 並不在意，可以用同樣的方式來使用它。只要在你想要有數值的變體加上 `=` 和數字。你不必給數字到所有變體。但如果你不這樣做，Rust 就會給變體從前一個分支數字加 1 的數字。
 
 ```rust
 enum Star {
@@ -2678,7 +2679,7 @@ enum Star {
     RedDwarf = 50,
     YellowStar = 100,
     RedGiant = 1000,
-    DeadStar, // Think about this one. What number will it have?
+    DeadStar, // 想想看這個數字會有多少？
 }
 
 fn main() {
@@ -2686,7 +2687,7 @@ fn main() {
     let starvec = vec![BrownDwarf, RedDwarf, YellowStar, RedGiant];
     for star in starvec {
         match star as u32 {
-            size if size <= 80 => println!("Not the biggest star."), // Remember: size doesn't mean anything. It's just a name we chose so we can print it
+            size if size <= 80 => println!("Not the biggest star."), // 記得: size 沒有任何意思。只不過是我們為了可以列印所選的名稱 
             size if size >= 80 => println!("This is a good-sized star."),
             _ => println!("That star is pretty big!"),
         }
@@ -2695,7 +2696,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 
 ```text
@@ -2706,11 +2707,11 @@ This is a good-sized star.
 What about DeadStar? It's the number 1001.
 ```
 
-`DeadStar` would have been number 4, but now it's 1001.
+`DeadStar` 本來是 4 號，但現在是 1001。
 
-### Enums to use multiple types
+### 使用多種型別的列舉
 
-You know that items in a `Vec`, array, etc. all need the same type (only tuples are different). But you can actually use an enum to put different types in. Imagine we want to have a `Vec` with `u32`s or `i32`s. Of course, you can make a `Vec<(u32, i32)>` (a vec with `(u32, i32)` tuples) but we only want one each time. So here you can use an enum. Here is a simple example:
+你知道向量、陣列等等之中的元素都需要相同的型別(只有 tuple 不同)。但其實你可以用列舉來放不同的型別。想象一下，我們想要有個向量，有 `u32` 或 `i32`。當然，你可以做出 `Vec<(u32, i32)>`(帶有 `(u32, i32)` 元組的向量)，但是我們想要每次只有一種。所以這裡可以使用列舉。這是簡單的範例：
 
 ```rust
 enum Number {
@@ -2721,11 +2722,11 @@ enum Number {
 fn main() {}
 ```
 
-So there are two variants: the `U32` variant with a `u32` inside, and the `I32` variant with `i32` inside. `U32` and `I32` are just names we made. They could have been `UThirtyTwo` or `IThirtyTwo` or anything else.
+所以這有兩個變體：`U32` 變體裡有 `u32`，`I32` 變體裡有 `i32`。`U32` 和 `I32` 只是我們取的名字。它們可以取名叫 `UThirtyTwo`、`IThirtyTwo` 或其他任何東西。
 
-Now, if we put them into a `Vec` we just have a `Vec<Number>`, and the compiler is happy because it's all the same type. The compiler doesn't care that we have either `u32` or `i32` because they are all inside a single type called `Number`. And because it's an enum, you have to pick one, which is what we want. We will use the `.is_positive()` method to pick. If it's `true` then we will choose `U32`, and if it's `false` then we will choose `I32`.
+現在，如果我們把它們放到向量中，我們就會有 `Vec<Number>`，因為都是同一個型別編譯器會很開心。編譯器並不在乎我們有的是 `u32` 或者是 `i32`，因為它們都在一個叫做 `Number` 的單一型別裡面。因為它是列舉，你必須選擇一種，這就是我們想要的。我們將使用 `.is_positive()` 方法來挑選。如果是 `true`，那麼我們將選擇 `U32`，如果是 `false`，那麼我們將選擇 `I32`。
 
-Now the code looks like this:
+現在程式碼像這樣：
 
 ```rust
 enum Number {
@@ -2735,8 +2736,8 @@ enum Number {
 
 fn get_number(input: i32) -> Number {
     let number = match input.is_positive() {
-        true => Number::U32(input as u32), // change it to u32 if it's positive
-        false => Number::I32(input), // otherwise just give the number because it's already i32
+        true => Number::U32(input as u32), // 如果是正數改成 u32
+        false => Number::I32(input), // 不然就給數字因為它已經是 i32
     };
     number
 }
@@ -2754,7 +2755,7 @@ fn main() {
 }
 ```
 
-This prints what we wanted to see:
+印出了我們想看到的結果：
 
 ```text
 It's an i32 with the value -800
@@ -2762,34 +2763,34 @@ It's a u32 with the value 8
 ```
 
 
-## Loops
+## 迴圈
 
-With loops you can tell Rust to continue something until you want it to stop. You use `loop` to start a loop that does not stop, unless you tell it when to `break`.
+有了迴圈，你可以告訴 Rust 繼續做某件事，直到你想停止它。你也能使用 `loop` 來啟動一個不會停止的迴圈，除非你告訴它何時 `break`(中斷)。
 
 ```rust
-fn main() { // This program will never stop
+fn main() { // 這個程式永不停止
     loop {
 
     }
 }
 ```
 
-So let's tell the compiler when it can break.
+那讓我們告訴編譯器什麼時候能停止。
 
 ```rust
 fn main() {
-    let mut counter = 0; // set a counter to 0
+    let mut counter = 0; // 設定計數器為 0
     loop {
-        counter +=1; // increase the counter by 1
+        counter +=1; // 計數器遞增 1
         println!("The counter is now: {}", counter);
-        if counter == 5 { // stop when counter == 5
+        if counter == 5 { // 當計數器 == 5 時停止
             break;
         }
     }
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 The counter is now: 1
@@ -2799,7 +2800,7 @@ The counter is now: 4
 The counter is now: 5
 ```
 
-If you have a loop inside of a loop, you can give them names. With names, you can tell Rust which loop to `break` out of. Use `'` (called a "tick") and a `:` to give it a name:
+如果你的迴圈裡面還有迴圈，你可以給它們命名。有了名字，你可以告訴 Rust 要從哪個迴圈中 `break` 出來。使用 `'` (稱為 "tick") 和 `:` 來給它命名：
 
 ```rust
 fn main() {
@@ -2808,19 +2809,19 @@ fn main() {
     println!("Now entering the first loop.");
 
     'first_loop: loop {
-        // Give the first loop a name
+        // 給第一個迴圈名字
         counter += 1;
         println!("The counter is now: {}", counter);
         if counter > 9 {
-            // Starts a second loop inside this loop
+            // 在迴圈裡開始第二個迴圈
             println!("Now entering the second loop.");
 
             'second_loop: loop {
-                // now we are inside 'second_loop
+                // 現在我們在 'second_loop 裡面
                 println!("The second counter is now: {}", counter2);
                 counter2 += 1;
                 if counter2 == 3 {
-                    break 'first_loop; // Break out of 'first_loop so we can exit the program
+                    break 'first_loop; // 中斷到 'first_loop 標籤外我們才能離開程式
                 }
             }
         }
@@ -2828,7 +2829,7 @@ fn main() {
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 Now entering the first loop.
@@ -2848,7 +2849,7 @@ The second counter is now: 1
 The second counter is now: 2
 ```
 
-A `while` loop is a loop that continues while something is still `true`. Each loop, Rust will check if it is still `true`. If it becomes `false`, Rust will stop the loop.
+`while` 迴圈是指在某件事物還在 `true` 時繼續運作的迴圈。每一次迴圈，Rust 都會檢查它是否仍然是 `true`。如果變成 `false`，Rust 會停止迴圈。
 
 ```rust
 fn main() {
@@ -2861,10 +2862,10 @@ fn main() {
 }
 ```
 
-A `for` loop lets you tell Rust what to do each time. But in a `for` loop, the loop stops after a certain number of times. `for` loops use **ranges** very often. You use `..` and `..=` to create a range.
+`for` 迴圈讓你告訴 Rust 每次要做什麼。但是在 `for` 迴圈中，迴圈會在一定次數後停止。`for` 迴圈經常使用**範圍(range)**。你能用 `..` 和 `..=` 來建立範圍。
 
-- `..` creates an **exclusive** range: `0..3` creates `0, 1, 2`.
-- `..=` creates an **inclusive** range: `0..=3` = `0, 1, 2, 3`.
+- `..`  建立一個**排除的**範圍： `0..3`  建立 `0, 1, 2`。
+- `..=` 建立一個**包含的**範圍： `0..=3` 建立 `0, 1, 2, 3`。
 
 ```rust
 fn main() {
@@ -2878,7 +2879,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 The number is: 0
@@ -2890,9 +2891,9 @@ The next number is: 2
 The next number is: 3
 ```
 
-Also notice that `number` becomes the variable name for 0..3. We could have called it `n`, or `ntod_het___hno_f`, or anything. We can then use that name in `println!`.
+同時注意到，`number` 成為 0..3 的變數名。我們也能叫它做 `n`，或者 `ntod_het___hno_f`，或者任何名字。然後我們就可以在 `println!` 中使用這個名字。
 
-If you don't need a variable name, use `_`.
+如果你不需要變數名，就用 `_`。
 
 ```rust
 fn main() {
@@ -2902,7 +2903,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Printing the same thing three times
@@ -2910,9 +2911,9 @@ Printing the same thing three times
 Printing the same thing three times
 ```
 
-because we didn't give it any number to print each time.
+因為我們每次都沒有給它任何數字來列印。
 
-And actually, if you give a variable name and don't use it, Rust will tell you:
+而實際上，如果你給了變數名卻沒用，Rust 會告訴你：
 
 ```rust
 fn main() {
@@ -2922,7 +2923,7 @@ fn main() {
 }
 ```
 
-This prints the same thing as above. The program compiles fine, but Rust will remind you that you didn't use `number`:
+印出的內容和上面一樣。程式編譯正常，但 Rust 會提醒你沒有使用 `number`：
 
 ```text
 warning: unused variable: `number`
@@ -2932,9 +2933,9 @@ warning: unused variable: `number`
   |         ^^^^^^ help: if this is intentional, prefix it with an underscore: `_number`
 ```
 
-Rust suggests writing `_number` instead of `_`. Putting `_` in front of a variable name means "maybe I will use it later". But using just `_` means "I don't care about this variable at all". So you can put `_` in front of variable names if you will use them later and don't want the compiler to tell you about them.
+Rust 建議寫 `_number` 而不是 `_`。在變數名前加上 `_` 意味著 "也許我以後會用到它"。但是只用 `_` 意味著"我根本不關心這個變數"。所以，如果你以後會使用它們，並且不想讓編譯器告訴你，你可以在變數名前面加上`_`。
 
-You can also use `break` to return a value. You write the value right after `break` and use a `;`. Here is an example with a `loop` and a break that gives `my_number` its value.
+你也可以用 `break` 來回傳值。只要把值寫在 `break` 後面以及 `;`。這個有 `loop` 和 break 的範例賦值給 `my_number`。
 
 ```rust
 fn main() {
@@ -2949,25 +2950,25 @@ fn main() {
 }
 ```
 
-This prints `56`. `break counter;` means "break and return the value of counter". And because the whole block starts with `let`, `my_number` gets the value.
+印出 `56`。`break counter;` 的意思是"中斷並回傳計數器的值"。而且因為整個區塊以 `let` 開始，`my_number` 最後會得到回傳值。
 
-Now that we know how to use loops, here is a better solution to our `match` problem with colours from before. It is a better solution because we want to compare everything, and a `for` loop looks at every item.
+現在我們知道了如何使用迴圈，對於我們之前的顏色"匹配"問題這是更好的解決方案。這個解決方案更好是因為我們要比較所有的東西，而"for"迴圈會檢視每一項元素。
 
 ```rust
 fn match_colours(rbg: (i32, i32, i32)) {
     println!("Comparing a colour with {} red, {} blue, and {} green:", rbg.0, rbg.1, rbg.2);
-    let new_vec = vec![(rbg.0, "red"), (rbg.1, "blue"), (rbg.2, "green")]; // Put the colours in a vec. Inside are tuples with the colour names
-    let mut all_have_at_least_10 = true; // Start with true. We will set it to false if one colour is less than 10
+    let new_vec = vec![(rbg.0, "red"), (rbg.1, "blue"), (rbg.2, "green")]; // 將顏色放進向量。裡面是含顏色名的元組
+    let mut all_have_at_least_10 = true; // 從true開始。我們會設定為false如果其中一種顏色少於10
     for item in new_vec {
         if item.0 < 10 {
-            all_have_at_least_10 = false; // Now it's false
-            println!("Not much {}.", item.1) // And we print the colour name.
+            all_have_at_least_10 = false; // 現在是false
+            println!("Not much {}.", item.1) // 接著我們印出顏色。
         }
     }
-    if all_have_at_least_10 { // Check if it's still true, and print if true
+    if all_have_at_least_10 { // 檢查是否仍是true，是就印出
         println!("Each colour has at least 10.")
     }
-    println!(); // Add one more line
+    println!(); // 多加一行
 }
 
 fn main() {
@@ -2981,7 +2982,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Comparing a colour with 200 red, 0 blue, and 0 green:
@@ -2995,16 +2996,16 @@ Comparing a colour with 200 red, 50 blue, and 0 green:
 Not much green.
 ```
 
-## Implementing structs and enums
+## 實作結構體和列舉
 
-This is where you can start to give your structs and enums some real power. To call functions on a `struct` or an `enum`, use an `impl` block. These functions are called **methods**. There are two kinds of methods in an `impl` block.
+從這裡開始你可以給予你的結構體和列舉一些真正的威力。要對 `struct` 或 `enum` 呼叫的函式，要寫在 `impl` 區塊。這些函式被稱為**方法(method)**。`impl` 區塊中的方法有兩類。
 
-- Methods: these take **self** (or **&self** or **&mut self**). Regular methods use a `.` (a period). `.clone()` is an example of a regular method.
-- Associated functions (known as "static" methods in some languages): these do not take self. Associated means "related to". They are written differently, using `::`. `String::from()` is an associated function, and so is `Vec::new()`. You see associated functions most often used to create new variables.
+- 方法：這些方法會取用 **self**(或是 **&self** 或 **&mut self**)。正規方法使用"."(英文句號)。`.clone()` 是一個正規方法的例子。
+- 關聯函式(associated function, 在某些語言中被稱為"靜態(static)"方法)：這些函式不使用 self。關聯的意思是"有相關的"。它們的書寫方式不同，用的是 `::`。`String::from()` 是一個關聯函式，`Vec::new()` 也是。你看到的關聯函式最常被用來建立新變數。
 
-In our example we are going to create animals and print them.
+我們將在我們的範例中建立 Animal 並印出它們。
 
-For a new `struct` or `enum`, you need to give it **Debug** if you want to use `{:?}` to print, so we will do that. If you write `#[derive(Debug)]` above the struct or enum then you can print it with `{:?}`. These messages with `#[]` are called **attributes**. You can sometimes use them to tell the compiler to give your struct an ability like `Debug`. There are many attributes and we will learn about them later. But `derive` is probably the most common and you see it a lot above structs and enums.
+對於新的 `struct` 或 `enum`，如果你想使用 `{:?}` 印出來，你需要給它**Debug**，我們也將會這樣做。如果你在結構體或列舉上面寫了 `#[derive(Debug)]`，那麼你就可以用 `{:?}` 印出來。這些帶有 `#[]` 的訊息被稱為**屬性(attributes)**。你有時可以用它們來告訴編譯器給你的結構體像是 `Debug` 的能力。屬性有很多種，我們以後會學到。但是 `derive` 可能是最常見的，你經常在結構體和列舉上面看到它。
 
 ```rust
 #[derive(Debug)]
@@ -3021,26 +3022,26 @@ enum AnimalType {
 
 impl Animal {
     fn new() -> Self {
-        // Self means Animal.
-        // You can also write Animal instead of Self
+        // Self 指的是 Animal。
+        // 你也可以寫 Animal 而非 Self
 
         Self {
-            // When we write Animal::new(), we always get a cat that is 10 years old
+            // 當我們寫 Animal::new() 我們永遠會得到10歲的貓
             age: 10,
             animal_type: AnimalType::Cat,
         }
     }
 
-    fn change_to_dog(&mut self) { // because we are inside Animal, &mut self means &mut Animal
-                                  // use .change_to_dog() to change the cat to a dog
-                                  // with &mut self we can change it
+    fn change_to_dog(&mut self) { // 因為我們在Animal裡, &mut self 指的是 &mut Animal
+                                  // 用 .change_to_dog() 把貓改成狗
+                                  // 有了 &mut self 我們就能更改
         println!("Changing animal to dog!");
         self.animal_type = AnimalType::Dog;
     }
 
     fn change_to_cat(&mut self) {
-        // use .change_to_cat() to change the dog to a cat
-        // with &mut self we can change it
+        // 用 .change_to_cat() 把狗改成貓
+        // 有了 &mut self 我們就能更改
         println!("Changing animal to cat!");
         self.animal_type = AnimalType::Cat;
     }
@@ -3057,8 +3058,8 @@ impl Animal {
 
 
 fn main() {
-    let mut new_animal = Animal::new(); // Associated function to create a new animal
-                                        // It is a cat, 10 years old
+    let mut new_animal = Animal::new(); // 用關聯函式建立新動物
+                                        // 它是一隻10歲的貓
     new_animal.check_type();
     new_animal.change_to_dog();
     new_animal.check_type();
@@ -3067,7 +3068,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 The animal is a cat
@@ -3078,11 +3079,11 @@ The animal is a cat
 ```
 
 
-Remember that Self (the type Self) and self (the variable self) are abbreviations. (abbreviation = short way to write)
+記住，Self(型別 Self)和 self(變數 self)是縮寫。(縮寫 = 簡寫方式)
 
-So in our code, Self = Animal. Also, `fn change_to_dog(&mut self)` means `fn change_to_dog(&mut Animal)`.
+所以在我們的程式碼中，Self = Animal。另外，`fn change_to_dog(&mut self)` 的意思是 `fn change_to_dog(&mut Animal)`。
 
-Here is one more small example. This time we will use `impl` on an `enum`:
+下面再舉一個小例子。這次我們將在 `enum` 上使用 `impl`：
 
 ```rust
 enum Mood {
@@ -3107,14 +3108,14 @@ fn main() {
 }
 ```
 
-This prints `Need sleep NOW`.
+印出 `Need sleep NOW`。
 
-## Destructuring
+## 解構
 
-Let's look at some more destructuring. You can get the values from a struct or enum by using `let` backwards. We learned that this is  `destructuring`, because you get variables that are not part of a structure. Now you have the values separately. First a simple example:
+我們再來多看些解構(destructuring)。你可以反過來透過使用 `let` 從結構體或列舉中獲取值。我們瞭解到這是 `destructuring`，因為你得到的變數不是結構體的一部分。現在你分別得到了它們的值。首先是一個簡單的範例：
 
 ```rust
-struct Person { // make a simple struct for a person
+struct Person { // 為個人資料做一個簡單的結構體
     name: String,
     real_name: String,
     height: u8,
@@ -3122,14 +3123,14 @@ struct Person { // make a simple struct for a person
 }
 
 fn main() {
-    let papa_doc = Person { // create variable papa_doc
+    let papa_doc = Person { // 建立變數 papa_doc
         name: "Papa Doc".to_string(),
         real_name: "Clarence".to_string(),
         height: 170,
         happiness: false
     };
 
-    let Person { // destructure papa_doc
+    let Person { // 解構 papa_doc
         name: a,
         real_name: b,
         height: c,
@@ -3140,13 +3141,13 @@ fn main() {
 }
 ```
 
-This prints: `They call him Papa Doc but his real name is Clarence. He is 170 cm tall and is he happy? false`
+印出：`They call him Papa Doc but his real name is Clarence. He is 170 cm tall and is he happy? false`
 
-You can see that it's backwards. First we say `let papa_doc = Person { fields }` to create the struct. Then we say `let Person { fields } = papa_doc` to destructure it.
+你可以看到它是反過來的。首先我們說 `let papa_doc = Person { fields }` 來建立結構體。然後我們說 `let Person { fields } = papa_doc` 來解構它。
 
-You don't have to write `name: a` - you can just write `name`. But here we write `name: a` because we want to use a variable with the name `a`.
+你不必寫 `name: a`──你可以直接寫 `name`。但這裡我們寫 `name: a` 是因為我們想使用一個名字為 `a` 的變數。
 
-Now a bigger example. In this example we have a `City` struct. We give it a `new` function to make it. Then we have a `process_city_values` function to do things with the values. In the function we just create a `Vec`, but you can imagine that we can do much more after we destructure it.
+現在再舉一個更大的例子。在這個例子中，我們有一個 `City` 結構體。我們給它一個 `new` 函式來做出它。然後我們有一個 `process_city_values` 函式來處理這些值。在函式中，我們只是建立了一個 `Vec`，但你可以想象，我們可以在解構它之後做更多的事情。
 
 ```rust
 struct City {
@@ -3174,7 +3175,7 @@ fn process_city_values(city: &City) {
         population,
         date_founded,
     } = city;
-        // now we have the values to use separately
+        // 現在我們有可分別使用的值了
     let two_names = vec![name, name_before];
     println!("The city's two names are {:?}", two_names);
 }
@@ -3185,12 +3186,12 @@ fn main() {
 }
 ```
 
-This prints `The city's two names are ["Tallinn", "Reval"]`.
+印出 `The city's two names are ["Tallinn", "Reval"]`。
 
 
-## References and the dot operator
+## 參考和點運算子
 
-We learned that when you have a reference, you need to use `*` to get to the value. A reference is a different type, so this won't work:
+我們學過當你有一個參考時，你要用 `*` 來取得值。參考是一種不同的型別，所以這是無法執行的：
 
 ```rust
 fn main() {
@@ -3201,7 +3202,7 @@ fn main() {
 }
 ```
 
-The compiler prints:
+編譯器印出：
 
 ```text
 error[E0277]: can't compare `{integer}` with `&{integer}`
@@ -3211,11 +3212,11 @@ error[E0277]: can't compare `{integer}` with `&{integer}`
   |                              ^^ no implementation for `{integer} == &{integer}`
 ```
 
-So we change line 5 to `println!("{}", my_number == *reference);` and now it prints `true` because it's now `i32` == `i32`, not `i32` == `&i32`. This is called dereferencing.
+所以我們把第 5 行改成 `println!("{}", my_number == *reference);`，現在印出的是 `true`，因為現在是比較 `i32` == `i32`，而不是比較 `i32` == `&i32`。這就是所謂的反參考。
 
-But when you use a method, Rust will dereference for you. The `.` in a method is called the dot operator, and it does dereferencing for free.
+但是當你使用方法時，Rust 會為你反參考。方法中的 `.` 被稱為點運算子(dot operator)，用來免費做反參考。
 
-First, let's make a struct with one `u8` field. Then we will make a reference to it and try to compare. It will not work:
+首先，讓我們寫一個有 `u8` 欄位的結構。然後，我們將對它做參考，並嘗試進行比較。它將無法執行：
 
 ```rust
 struct Item {
@@ -3227,15 +3228,15 @@ fn main() {
         number: 8,
     };
 
-    let reference_number = &item.number; // reference number type is &u8
+    let reference_number = &item.number; // 型別是 &u8
 
-    println!("{}", reference_number == 8); // ⚠️ &u8 and u8 cannot be compared
+    println!("{}", reference_number == 8); // ⚠️ &u8 和 u8 不能比較
 }
 ```
 
-To make it work, we need to dereference: `println!("{}", *reference_number == 8);`.
+為了讓它能執行，我們需要去反參考：`println!("{}", *reference_number == 8);`。
 
-But with the dot operator, we don't need `*`. For example:
+但用了點運算子，我們就不需要`*`。例如：
 
 ```rust
 struct Item {
@@ -3249,11 +3250,11 @@ fn main() {
 
     let reference_item = &item;
 
-    println!("{}", reference_item.number == 8); // we don't need to write *reference_item.number
+    println!("{}", reference_item.number == 8); // 我們不要需寫成 *reference_item.number
 }
 ```
 
-Now let's create a method for `Item` that compares `number` to another number. We don't need to use `*` anywhere:
+現在讓我們為 `Item` 建立方法來比較 `number` 與另一個數字。我們不需要在任何地方使用 `*`：
 
 ```rust
 struct Item {
@@ -3261,9 +3262,9 @@ struct Item {
 }
 
 impl Item {
-    fn compare_number(&self, other_number: u8) { // takes a reference to self
+    fn compare_number(&self, other_number: u8) { // 接受 self 的參考
         println!("Are {} and {} equal? {}", self.number, other_number, self.number == other_number);
-            // We don't need to write *self.number
+            // 我們不需要寫 *self.number
     }
 }
 
@@ -3272,24 +3273,24 @@ fn main() {
         number: 8,
     };
 
-    let reference_item = &item; // This is type &Item
-    let reference_item_two = &reference_item; // This is type &&Item
+    let reference_item = &item; // 型別 &Item
+    let reference_item_two = &reference_item; // 型別 &&Item
 
-    item.compare_number(8); // the method works
-    reference_item.compare_number(8); // it works here too
-    reference_item_two.compare_number(8); // and here
+    item.compare_number(8); // 方法可以執行
+    reference_item.compare_number(8); // 它在這裡也可以執行
+    reference_item_two.compare_number(8); // 還有這裡
 
 }
 ```
 
-So just remember: when you use the `.` operator, you don't need to worry about `*`.
+所以只要記住：當你使用 `.` 運算子時，你不需要擔心有沒有 `*`。
 
 
 
 
-## Generics
+## 泛型
 
-In functions, you write what type to take as input:
+在函式中，你要寫出拿什麼型別作為輸入：
 
 ```rust
 fn return_number(number: i32) -> i32 {
@@ -3302,11 +3303,11 @@ fn main() {
 }
 ```
 
-But what if you want to take more than just `i32`? You can use generics for this. Generics means "maybe one type, maybe another type".
+但是如果你想用的不僅僅是 `i32` 呢？你可以用泛型(Generics)來解決。泛型的意思是 "也許是某一種型別，也許是另一種型別"。
 
-For generics, you use angle brackets with the type inside, like this: `<T>` This means "any type you put into the function". Usually, generics uses types with one capital letter (T, U, V, etc.), though you don't have to just use one letter.
+泛型的寫法要用角括號裡面加上型別，像這樣：`<T>` 這個意思是"你放進函式的任意型別"。通常泛型會使用一個大寫字母的型別(T、U、V等)，儘管你不必只使用一個字母。
 
-This is how you change the function to make it generic:
+這個範例是你如何改變函式讓它用泛型：
 
 ```rust
 fn return_number<T>(number: T) -> T {
@@ -3319,9 +3320,9 @@ fn main() {
 }
 ```
 
-The important part is the `<T>` after the function name. Without this, Rust will think that T is a concrete (concrete = not generic) type, like `String` or `i8`.
+重點是函式名稱後的 `<T>`。如果沒有這個，Rust 會認為 T 是一個具體的(concrete，具體的 = 不是泛型的)型別，像是 `String` 或 `i8`。
 
-This is easier to understand if we write out a type name. See what happens when we change `T` to `MyType`:
+如果我們能寫出型別名，就更容易理解了。看看我們把 `T` 改成 `MyType` 會發生什麼：
 
 ```rust
 fn return_number(number: MyType) -> MyType { // ⚠️
@@ -3330,7 +3331,7 @@ fn return_number(number: MyType) -> MyType { // ⚠️
 }
 ```
 
-As you can see, `MyType` is concrete, not generic. So we need to write this and so now it works:
+大家可以看到，`MyType` 是具體的，不是泛型的。所以我們需要寫成這樣，它現在就可以執行了：
 
 ```rust
 fn return_number<MyType>(number: MyType) -> MyType {
@@ -3343,11 +3344,11 @@ fn main() {
 }
 ```
 
-So the single letter `T` is for human eyes, but the part after the function name is for the compiler's "eyes". Without it, it's not generic.
+所以單字母 `T` 是給人眼看的，但函式名稱後的部分是給編譯器的"眼睛"看的。沒有了它，就不是泛型了。
 
-Now we will go back to type `T`, because Rust code usually uses `T`.
+現在我們再回到型別 `T`，因為 Rust 程式碼通常使用 `T`。
 
-You will remember that some types in Rust are **Copy**, some are **Clone**, some are **Display**, some are **Debug**, and so on. With **Debug**, we can print with `{:?}`. So now you can see that we have a problem if we want to print `T`:
+你會記得 Rust 中有些型別是 **Copy**，有些是 **Clone**，有些是 **Display**，有些是 **Debug**，等等。有 **Debug**，我們可以用 `{:?}` 來列印。所以現在大家可以看到，我們如果要印出 `T` 就有問題了：
 
 ```rust
 fn print_number<T>(number: T) {
@@ -3359,7 +3360,7 @@ fn main() {
 }
 ```
 
-`print_number` needs **Debug** to print `number`, but is `T` a type with `Debug`? Maybe not. Maybe it doesn't have `#[derive(Debug)]`, who knows. The compiler doesn't know either, so it gives an error:
+`print_number` 需要 **Debug** 印出 `number`，但是 `T` 是一個有 `Debug` 的型別嗎？也許不是。也許它沒有 `#[derive(Debug)]`，誰知道呢？編譯器也不知道，所以它給了錯誤：
 
 ```text
 error[E0277]: `T` doesn't implement `std::fmt::Debug`
@@ -3369,12 +3370,12 @@ error[E0277]: `T` doesn't implement `std::fmt::Debug`
    |                                           ^^^^^^ `T` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
 ```
 
-T doesn't implement **Debug**. So do we implement Debug for T? No, because we don't know what T is. But we can tell the function: "Don't worry, because any type T for this function will have Debug".
+T 沒有實作 **Debug**。那麼我們是否要為 T 實現 Debug 呢？不，因為我們不知道(具體的) T 是什麼。但是我們可以告訴函式："別擔心，因為這個函式用的任何 T 型別都會有 Debug"
 
 ```rust
-use std::fmt::Debug; // Debug is located at std::fmt::Debug. So now we can just write 'Debug'.
+use std::fmt::Debug; // 聲明 Debug 是來自 std::fmt::Debug。所以後面我們可以只寫 'Debug'。
 
-fn print_number<T: Debug>(number: T) { // <T: Debug> is the important part
+fn print_number<T: Debug>(number: T) { // <T: Debug> 是重點
     println!("Here is your number: {:?}", number);
 }
 
@@ -3383,9 +3384,9 @@ fn main() {
 }
 ```
 
-So now the compiler knows: "Okay, this type T is going to have Debug". Now the code works, because `i32` has Debug. Now we can give it many types: `String`, `&str`, and so on, because they all have Debug.
+所以現在編譯器知道："好的，這個型別 T 會有 Debug"。現在程式碼執行了，因為 `i32` 有 Debug。現在我們可以給它很多型別。`String`、`&str` 等，因為它們都有 Debug.
 
-Now we can create a struct and give it Debug with #[derive(Debug)], so now we can print it too. Our function can take `i32`, the struct Animal, and more:
+現在我們可以建立結構，並用 `#[derive(Debug)]` 給它實作 Debug，所以現在我們也可以印出它。我們的函式能接受 `i32`、Animal 結構體及更多型別：
 
 ```rust
 use std::fmt::Debug;
@@ -3413,16 +3414,16 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Here is your item: Animal { name: "Charlie", age: 1 }
 Here is your item: 55
 ```
 
-Sometimes we need more than one type in a generic function. We have to write out each type name, and think about how we want to use it. In this example, we want two types. First we want to print a statement for type T. Printing with `{}` is nicer, so we will require `Display` for `T`.
+有時我們在泛型函式中需要不止一種型別。我們必須寫出每個型別的名稱，並思考我們想要如何使用它。在這個範例中，我們想要兩個型別。首先我們想印出型別為 T 的陳述式。用 `{}` 列印更好，所以我們會要求用 `Display` 來列印 `T`。
 
-Next is type U, and the two variables `num_1` and `num_2` have type U (U is some sort of number). We want to compare them, so we need `PartialOrd`. That trait lets us use things like `<`, `>`, `==`, and so on. We want to print them too, so we require `Display` for `U` as well.
+下個是型別 U 和 `num_1` 和 `num_2` 這兩個型別為 U(U 是某種數字)的變數。我們想要比較它們，所以我們需要 `PartialOrd`。這個特性讓我們可以使用 `<`、`>`、`==` 等。我們也想印出它們，所以我們也要求有 `Display` 來印出 `U`。
 
 ```rust
 use std::fmt::Display;
@@ -3437,17 +3438,17 @@ fn main() {
 }
 ```
 
-This prints `Listen up!! Is 9 greater than 8? true`.
+印出 `Listen up!! Is 9 greater than 8? true`。
 
-So `fn compare_and_display<T: Display, U: Display + PartialOrd>(statement: T, num_1: U, num_2: U)` says:
+所以 `fn compare_and_display<T: Display, U: Display + PartialOrd>(statement: T, num_1: U, num_2: U)` 說得是：
 
-- The function name is `compare_and_display`,
-- The first type is T, and it is generic. It must be a type that can print with {}.
-- The next type is U, and it is generic. It must be a type that can print with {}. Also, it must be a type that can compare (use `>`, `<`, and `==`).
+- 函式名稱是 `compare_and_display`，
+- 第一個型別是泛型的 T。它必須是一個可以用 {} 列印的型別。
+- 下一個型別是泛型的 U。它必須是一個可以用 {} 列印的型別。另外，它必須是一個可以比較的型別(使用 `>`、`<` 和 `==`)。
 
-Now we can give `compare_and_display` different types. `statement` can be a `String`, a `&str`, anything with Display.
+現在我們可以給 `compare_and_display` 不同的型別。`statement` 可以是 `String`、`&str`，或任何有 Display 的型別。
 
-To make generic functions easier to read, we can also write it like this with `where` right before the code block:
+為了讓泛型函式更容易讀懂，我們也可以這樣寫得像這個範例，在程式碼區塊之前用 `where`。
 
 ```rust
 use std::cmp::PartialOrd;
@@ -3466,45 +3467,45 @@ fn main() {
 }
 ```
 
-Using `where` is a good idea when you have many generic types.
+尤其當你有很多泛型型別時，使用 `where` 是一個好主意。
 
-Also note:
+還要注意：
 
-- If you have one type T and another type T, they must be the same.
-- If you have one type T and another type U, they can be different. But they can also be the same.
+- 如果你有一個型別 T 和另一個型別 T，它們必須是相同的。
+- 如果你有一個型別 T 和另一個型別 U，它們可以是不同的。但它們也可以是相同的。
 
-For example:
+比如說：
 
 ```rust
 use std::fmt::Display;
 
-fn say_two<T: Display, U: Display>(statement_1: T, statement_2: U) { // Type T needs Display, type U needs Display
+fn say_two<T: Display, U: Display>(statement_1: T, statement_2: U) { // T型別要有 Display，U型別要有 Display
     println!("I have two things to say: {} and {}", statement_1, statement_2);
 }
 
 fn main() {
 
-    say_two("Hello there!", String::from("I hate sand.")); // Type T is a &str, but type U is a String.
-    say_two(String::from("Where is Padme?"), String::from("Is she all right?")); // Both types are String.
+    say_two("Hello there!", String::from("I hate sand.")); // T型別是 &str，但U型別是 String。
+    say_two(String::from("Where is Padme?"), String::from("Is she all right?")); // 兩者型別皆是 String。
 }
 ```
 
-This prints:
+印出：
 
 ```text
 I have two things to say: Hello there! and I hate sand.
 I have two things to say: Where is Padme? and Is she all right?
 ```
 
-## Option and Result
+## Option 和 Result
 
-We understand enums and generics now, so we can understand `Option` and `Result`. Rust uses these two enums to make code safer.
+我們現在理解了列舉和泛型，所以我們也能理解 `Option` 和 `Result`。Rust 用這兩種列舉來使程式碼更安全。
 
-We will start with `Option`.
+我們將從 `Option` 開始。
 
 ### Option
 
-You use `Option` when you have a value that might exist, or might not exist. When a value exists it is `Some(value)` and when it doesn't it's just `None`, Here is an example of bad code that can be improved with `Option`.
+當你有一個值，它可能存在，也可能不存在時，你就該用 `Option`。當一個值存在時它就是 `Some(value)`，不存在時就是 `None`，下面是一個可以用`Option` 來改進的壞程式碼範例。
 
 ```rust
     // ⚠️
@@ -3518,20 +3519,20 @@ fn main() {
 }
 ```
 
-When we run the code, it panics. Here is the message:
+當我們執行這段程式碼時，它發生恐慌(panic)。這是訊息：
 
 ```text
 thread 'main' panicked at 'index out of bounds: the len is 2 but the index is 4', src\main.rs:34:5
 ```
 
-Panic means that the program stops before the problem happens. Rust sees that the function wants something impossible, and stops. It "unwinds the stack" (takes the values off the stack) and tells you "sorry, I can't do that".
+恐慌的意思是，程式在問題發生前就停止了。Rust 看到函式想要做些不可能的事情，就會停止。它"解開(unwind)堆疊"(從堆疊中取出值)，並告訴你"對不起，我不能那樣做"。
 
-So now we will change the return type from `i32` to `Option<i32>`. This means "give me a `Some(i32)` if it's there, and give me `None` if it's not". We say that the `i32` is "wrapped" in an `Option`, which means that it's inside an `Option`. You have to do something to get the value out.
+所以現在我們將回傳型別從 `i32` 改為 `Option<i32>`。這意味著"如果有的話給我 `Some(i32)`，如果沒有的話給我 `None`"。我們說 `i32` 是"包"在 `Option` 裡面，也就是說它放在 `Option` 裡面。你必須做些事情才能把這個值取出來。
 
 ```rust
 fn take_fifth(value: Vec<i32>) -> Option<i32> {
-    if value.len() < 5 { // .len() gives the length of the vec.
-                         // It must be at least 5.
+    if value.len() < 5 { // .len() 給出向量的長度。
+                         // 它必需是至少是 5。
         None
     } else {
         Some(value[4])
@@ -3545,9 +3546,9 @@ fn main() {
 }
 ```
 
-This prints `None, Some(5)`. This is good, because now we don't panic anymore. But how do we get the value 5?
+印出的是 `None, Some(5)`。這下好了，因為現在我們再也不恐慌了。但是我們要如何得到 5 這個值呢？
 
-We can get the value inside an option with `.unwrap()`, but be careful with `.unwrap()`. It's just like unwrapping a present: maybe there's something good inside, or maybe there's an angry snake inside. You only want to `.unwrap()` if you are sure. If you unwrap a value that is `None`, the program will panic.
+我們可以用 `.unwrap()` 從 Option 裡面得取值，但要小心使用 `.unwrap()`。這就像拆禮物一樣：也許裡面有好東西，也許裡面有條憤怒的蛇。只有在你確定的情況下，你才會想要用 `.unwrap()`。如果你拆開一個 `None` 的值，程式就會恐慌。
 
 ```rust
 // ⚠️
@@ -3563,19 +3564,19 @@ fn main() {
     let new_vec = vec![1, 2];
     let bigger_vec = vec![1, 2, 3, 4, 5];
     println!("{:?}, {:?}",
-        take_fifth(new_vec).unwrap(), // this one is None. .unwrap() will panic!
+        take_fifth(new_vec).unwrap(), // 這個是 None。 .unwrap() 會恐慌！
         take_fifth(bigger_vec).unwrap()
     );
 }
 ```
 
-The message is:
+訊息是：
 
 ```text
 thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:14:9
 ```
 
-But we don't have to use `.unwrap()`. We can use a `match`. Then we can print the value we have `Some`, and not touch it if we have `None`. For example:
+但我們可以不需要用 `.unwrap()`。我們能用 `match`。那麼我們就可以把我們有 `Some` 的值印出來，如果是 `None` 的值就不要碰。比如說：
 
 ```rust
 fn take_fifth(value: Vec<i32>) -> Option<i32> {
@@ -3598,25 +3599,25 @@ fn handle_option(my_option: Vec<Option<i32>>) {
 fn main() {
     let new_vec = vec![1, 2];
     let bigger_vec = vec![1, 2, 3, 4, 5];
-    let mut option_vec = Vec::new(); // Make a new vec to hold our options
-                                     // The vec is type: Vec<Option<i32>>. That means a vec of Option<i32>.
+    let mut option_vec = Vec::new(); // 用新的向量存放我們的 option
+                                     // 向量的型別: Vec<Option<i32>>。那是 Option<i32> 的向量。
 
-    option_vec.push(take_fifth(new_vec)); // This pushes "None" into the vec
-    option_vec.push(take_fifth(bigger_vec)); // This pushes "Some(5)" into the vec
+    option_vec.push(take_fifth(new_vec)); // 這會推送 "None" 進向量
+    option_vec.push(take_fifth(bigger_vec)); // 這會推送 "Some(5)" 進向量
 
-    handle_option(option_vec); // handle_option looks at every option in the vec.
-                               // It prints the value if it is Some. It doesn't touch it if it is None.
+    handle_option(option_vec); // handle_option 查看向量裡的每個 option。
+                               // 並印出值如果是 Some。如果是 None 就不碰。
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Found a None!
 Found a 5!
 ```
 
-Because we know generics, we are able to read the code for `Option`. It looks like this:
+因為我們知道泛型，所以我們能夠讀懂 `Option` 的程式碼。它看起來像這樣：
 
 ```rust
 enum Option<T> {
@@ -3627,9 +3628,9 @@ enum Option<T> {
 fn main() {}
 ```
 
-The important point to remember: with `Some`, you have a value of type `T` (any type). Also note that the angle brackets after the `enum` name around `T` is what tells the compiler that it's generic. It has no trait like `Display` or anything to limit it, so it can be anything. But with `None`, you don't have anything.
+要記得的重點是：有了 `Some`，你就有了型別為 `T` 的值(任何型別)。還要注意的是，`enum` 名字後面有圍繞著 `T` 的角括號是用來告訴編譯器它是泛型。且它沒有 `Display` 這樣的特徵(trait)或任何東西來限制它，所以它可以是任何東西。但 `None` 的話，你就什麼都沒有。
 
-So in a `match` statement for Option you can't say:
+所以在 Option 的 `match` 陳述式中，你不能說：
 
 ```rust
 // 🚧
@@ -3637,9 +3638,9 @@ Some(value) => println!("The value is {}", value),
 None(value) => println!("The value is {}", value),
 ```
 
-because `None` is just `None`.
+因為 `None` 就只是 `None`。
 
-Of course, there are easier ways to use Option. In this code, we will use a method called `.is_some()` to tell us if it is `Some`. (Yes, there is also a method called `.is_none()`.) In this easier way, we don't need `handle_option()` anymore. We also don't need a vec for the Options.
+當然，還有更簡單的方式來使用 Option。在這段程式碼中，我們將會使用一個叫做 `.is_some()` 的方法來告訴我們它是否是 `Some`。(對，還有個叫做 `.is_none()` 的方法。)在這個更簡單的方式中，我們不再需要 `handle_option()` 了。我們也不需要存放 Option 的向量了。
 
 ```rust
 fn take_fifth(value: Vec<i32>) -> Option<i32> {
@@ -3657,8 +3658,8 @@ fn main() {
     for vec in vec_of_vecs {
         let inside_number = take_fifth(vec);
         if inside_number.is_some() {
-            // .is_some() returns true if we get Some, false if we get None
-            println!("We got: {}", inside_number.unwrap()); // now it is safe to use .unwrap() because we already checked
+            // 如果我們得到 Some，.is_some() 就回傳 true，None 就回傳 false
+            println!("We got: {}", inside_number.unwrap()); // 因為我們已經檢查過了，現在它能安全的使用 .unwrap()
         } else {
             println!("We got nothing.");
         }
@@ -3666,7 +3667,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 We got nothing.
@@ -3675,14 +3676,14 @@ We got: 5
 
 ### Result
 
-Result is similar to Option, but here is the difference:
+Result 和 Option 類似，但區別是：
 
-- Option is about `Some` or `None` (value or no value),
-- Result is about `Ok` or `Err` (okay result, or error result).
+- Option 和 `Some` 或 `None` 有關 (有值或無值)，
+- Result 和 `Ok` 或 `Err` 有關 (成功的，或錯誤的結果)。
 
-So `Option` is if you are thinking: "Maybe there will be something, and maybe there won't." But `Result` is if you are thinking: "Maybe it will fail."
+所以 `Option` 是用在如果你思考的是："也許會有東西，也許不會有。"但 `Result` 則是用在如果你思考的是："也許會失敗。"
 
-To compare, here are the signatures for Option and Result.
+比較一下，這是 Option 和 Result 的簽名(signature)。
 
 ```rust
 enum Option<T> {
@@ -3698,9 +3699,9 @@ enum Result<T, E> {
 fn main() {}
 ```
 
-So Result has a value inside of `Ok`, and a value inside of `Err`. That is because errors usually contain information that describes the error.
+所以 Result 在 "Ok" 裡面有值，在 "Err" 裡面也有值。這是因為錯誤裡通常有包含描述錯誤的資訊。
 
-`Result<T, E>` means you need to think of what you want to return for `Ok`, and what you want to return for `Err`. Actually, you can decide anything. Even this is okay:
+`Result<T, E>` 的意思是你要想好 `Ok` 要回傳什麼，`Err` 要回傳什麼。其實，你可以決定任何事情。甚至這樣也可以：
 
 ```rust
 fn check_error() -> Result<(), ()> {
@@ -3712,9 +3713,9 @@ fn main() {
 }
 ```
 
-`check_error` says "return `()` if we get `Ok`, and return `()` if we get `Err`". Then we return `Ok` with a `()`.
+`check_error` 說"如果得到 `Ok` 就回傳 `()`，如果得到 `Err` 就回傳 `()`"。然後我們用 `()` 回傳 `Ok`。
 
-The compiler gives us an interesting warning:
+編譯器給了我們有趣的警告：
 
 ```text
 warning: unused `std::result::Result` that must be used
@@ -3727,7 +3728,7 @@ warning: unused `std::result::Result` that must be used
   = note: this `Result` may be an `Err` variant, which should be handled
 ```
 
-This is true: we only returned the `Result` but it could have been an `Err`. So let's handle the error a bit, even though we're still not really doing anything.
+這是真的：我們只回傳了 `Result`，但它可能是 `Err`。所以讓我們稍微處理一下這個錯誤，儘管我們仍然沒有真的做任何事情。
 
 ```rust
 fn give_result(input: i32) -> Result<(), ()> {
@@ -3747,86 +3748,86 @@ fn main() {
 }
 ```
 
-This prints `It's an error, guys`. So we just handled our first error.
+印出 `It's an error, guys`。所以我們只處理了第一個錯誤。
 
-Remember, the four methods to easily check are `.is_some()`, `is_none()`, `is_ok()`, and `is_err()`.
+記住，輕鬆檢查的四種方法是`.is_some()`、`is_none()`、`is_ok()` 和 `is_err()`。
 
 
-Sometimes a function with Result will use a `String` for the `Err` value. This is not the best method to use, but it is a little better than what we've done so far.
+有時一個帶有 Result 的函式會用 `String` 來表示 `Err` 的值。這不是最好的方法，但比我們目前所做的要好一些。
 
 ```rust
 fn check_if_five(number: i32) -> Result<i32, String> {
     match number {
         5 => Ok(number),
-        _ => Err("Sorry, the number wasn't five.".to_string()), // This is our error message
+        _ => Err("Sorry, the number wasn't five.".to_string()), // 這是我們的錯誤訊息
     }
 }
 
 fn main() {
-    let mut result_vec = Vec::new(); // Create a new vec for the results
+    let mut result_vec = Vec::new(); // 建立新的向量放結果
 
     for number in 2..7 {
-        result_vec.push(check_if_five(number)); // push each result into the vec
+        result_vec.push(check_if_five(number)); // 推送每個結果進向量
     }
 
     println!("{:?}", result_vec);
 }
 ```
 
-Our vec prints:
+我們的向量印出：
 
 ```text
 [Err("Sorry, the number wasn\'t five."), Err("Sorry, the number wasn\'t five."), Err("Sorry, the number wasn\'t five."), Ok(5),
 Err("Sorry, the number wasn\'t five.")]
 ```
 
-Just like Option, `.unwrap()` on `Err` will panic.
+就像 Option 一樣，在 `Err` 上用 `.unwrap()` 就會恐慌。
 
 ```rust
     // ⚠️
 fn main() {
-    let error_value: Result<i32, &str> = Err("There was an error"); // Create a Result that is already an Err
-    println!("{}", error_value.unwrap()); // Unwrap it
+    let error_value: Result<i32, &str> = Err("There was an error"); // 建立已經是Err的Result
+    println!("{}", error_value.unwrap()); // 拆開它
 }
 ```
 
-The program panics, and prints:
+程式恐慌並印出：
 
 ```text
 thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "There was an error"', src\main.rs:30:20
 ```
 
-This information helps you fix your code. `src\main.rs:30:20` means "inside main.rs in directory src, on line 30 and column 20". So you can go there to look at your code and fix the problem.
+這些資訊幫助你修正你的程式碼。`src\main.rs:30:20` 的意思是"在目錄 src 的 main.rs 內，第 30 行和第 20 列"。所以你可以去那裡檢視你的程式碼並修復問題。
 
-You can also create your own error types. Result functions in the standard library and other people's code usually do this. For example, this function from the standard library:
+你也可以建立自己的錯誤型別，標準函式庫中的 Result 函式和其他人的程式碼通常都會這樣做。例如，標準函式庫中的這個函式：
 
 ```rust
 // 🚧
 pub fn from_utf8(vec: Vec<u8>) -> Result<String, FromUtf8Error>
 ```
 
-This function takes a vector of bytes (`u8`) and tries to make a `String`. So the success case for the Result is a `String` and the error case is `FromUtf8Error`. You can give your error type any name you want.
+這個函式接受位元組向量(`u8`)，並嘗試做出 `String`，所以 Result 的成功情況是 `String`，錯誤情況是 `FromUtf8Error`。你可以給你的錯誤型別取任何你想要的名字。
 
-Using a `match` with `Option` and `Result` sometimes requires a lot of code. For example, the `.get()` method returns an `Option` on a `Vec`.
+和 `Option` 及 `Result` 一起使用的 `match` 有時需要很多程式碼。例如，在 `Vec` 的 `.get()` 方法回傳 `Option`。
 
 ```rust
 fn main() {
     let my_vec = vec![2, 3, 4];
-    let get_one = my_vec.get(0); // 0 to get the first number
-    let get_two = my_vec.get(10); // Returns None
+    let get_one = my_vec.get(0); // 用 0 來取得第一個數
+    let get_two = my_vec.get(10); // 回傳 None
     println!("{:?}", get_one);
     println!("{:?}", get_two);
 }
 ```
 
-This prints
+印出：
 
 ```text
 Some(2)
 None
 ```
 
-So now we can match to get the values. Let's use a range from 0 to 10 to see if it matches the numbers in `my_vec`.
+所以現在我們可以匹配得到值了。讓我們使用 0 到 10 的範圍，看看是否匹配 `my_vec` 中的數字。
 
 ```rust
 fn main() {
@@ -3841,7 +3842,7 @@ fn main() {
 }
 ```
 
-This is good, but we don't do anything for `None` because we don't care. Here we can make the code smaller by using `if let`. `if let` means "do something if it matches, and don't do anything if it doesn't". `if let` is when you don't care about matching for everything.
+這不錯，但是我們不對 `None` 做任何處理，因為我們不關心。這裡我們可以用 `if let` 讓程式碼變小。`if let` 的意思是"匹配就做，否則不做"。`if let` 是在你不要求對所有的東西都匹配的時候使用。
 
 ```rust
 fn main() {
@@ -3855,20 +3856,20 @@ fn main() {
 }
 ```
 
-**Important to remember**: `if let Some(number) = my_vec.get(index)` means "if you get `Some(number)` from `my_vec.get(index)`".
+**切記**：`if let Some(number) = my_vec.get(index)` 的意思是 "如果你從 `my_vec.get(index)` 得到 `Some(number)`"。
 
-Also note: it uses one `=`. It is not a boolean.
+另外注意：它使用的是 `=`。它不是布林值。
 
-`while let` is like a while loop for `if let`. Imagine that we have weather station data like this:
+`while let` 是像 `if let` 的 while 迴圈。想象一下，我們有這樣的氣象站資料：
 
 ```text
 ["Berlin", "cloudy", "5", "-7", "78"]
 ["Athens", "sunny", "not humid", "20", "10", "50"]
 ```
 
-We want to get the numbers, but not the words. For the numbers, we can use a method called `parse::<i32>()`. `parse()` is the method, and `::<i32>` is the type. It will try to turn the `&str` into an `i32`, and give it to us if it can. It returns a `Result`, because it might not work (like if you wanted it to parse "Billybrobby" - that's not a number).
+我們想拿到數字，而不是文字。對於數字，我們可以使用叫做 `parse::<i32>()` 的方法。`parse()` 是方法，`::<i32>` 是型別。它將嘗試把 `&str` 變成 `i32`，如果成功的話就把結果給我們。它回傳 `Result`，因為它可能無法執行(比如你想讓它解析"Billybrobby"──那不是一個數字)。
 
-We will also use `.pop()`. This takes the last item off of the vector.
+我們也會用 `.pop()`。這會從向量中取出最後一個元素。
 
 ```rust
 fn main() {
@@ -3877,22 +3878,22 @@ fn main() {
         vec!["Athens", "sunny", "not humid", "20", "10", "50"],
     ];
     for mut city in weather_vec {
-        println!("For the city of {}:", city[0]); // In our data, every first item is the city name
+        println!("For the city of {}:", city[0]); // 在我們的資料中，每一筆的第一個元素都是城市名
         while let Some(information) = city.pop() {
-            // This means: keep going until you can't pop anymore
-            // When the vector reaches 0 items, it will return None
-            // and it will stop.
+            // 這行意思是：直到你不能 pop 前繼續執迴圈
+            // 當向量沒有元素時，它會回傳 None
+            // 並且它會停正。
             if let Ok(number) = information.parse::<i32>() {
-                // Try to parse the variable we called information
-                // This returns a result. If it's Ok(number), it will print it
+                // 試著解析我們稱作information的變數
+                // 這裡的回傳結果如果是 Ok(number)，它會印出數值
                 println!("The number is: {}", number);
-            }  // We don't write anything here because we do nothing if we get an error. Throw them all away
+            }  // 這裡我們不寫任何東西，因為如果我們遇到錯誤我們不做處理。會把(錯誤)它們都拋出去
         }
     }
 }
 ```
 
-This will print:
+將印出：
 
 ```text
 For the city of Berlin:
@@ -3905,43 +3906,43 @@ The number is: 10
 The number is: 20
 ```
 
-## Other collections
+## 其他集合型別
 
-Rust has many more types of collections. You can see them at https://doc.rust-lang.org/beta/std/collections/ in the standard library. That page has good explanations for why to use one type, so go there if you don't know what type you want. These collections are all inside `std::collections` in the standard library. The best way to use them is with a `use` statement, like we did with our `enums`. We will start with `HashMap`, which is very common.
+Rust 還有很多集合型別。你可以在標準函式庫中的 https://doc.rust-lang.org/beta/std/collections/ 看到它們。那個頁面對為什麼要使用某種型別有很好的解釋，所以如果你不知道你想要什麼型別就去那裡。這些集合都在標準函式庫的 `std::collections` 裡面。使用它們最好的方法是使用 `use` 陳述式。就像我們對 `enums` 做的。我們將從非常常見的 `HashMap` 開始。
 
-### HashMap (and BTreeMap)
+### HashMap (和 BTreeMap)
 
-A HashMap is a collection made out of *keys* and *values*. You use the key to look up the value that matches the key. You can create a new `HashMap` with just `HashMap::new()` and use `.insert(key, value)` to insert items.
+HashMap 是由 *鍵(key)* 和 *值(value)* 組成的集合。你使用鍵來查詢與鍵匹配的值。你可以只用 `HashMap::new()` 建立一個新的`HashMap`，並使用`.insert(key, value)`來插入元素。
 
-A `HashMap` is not in order, so if you print every key in a `HashMap` together it will probably print differently. We can see this in an example:
+`HashMap` 是沒有順序的，所以如果你把 `HashMap` 中的每個鍵都一起印出來，可能每次會印出不同的結果。我們可以在範例中看到這一點：
 
 ```rust
-use std::collections::HashMap; // This is so we can just write HashMap instead of std::collections::HashMap every time
+use std::collections::HashMap; // 因此這是我們能只寫 HashMap 而不用每次都寫 std::collections::HashMap
 
 struct City {
     name: String,
-    population: HashMap<u32, u32>, // This will have the year and the population for the year
+    population: HashMap<u32, u32>, // 這會記錄年度和該年度的人口數
 }
 
 fn main() {
 
     let mut tallinn = City {
         name: "Tallinn".to_string(),
-        population: HashMap::new(), // So far the HashMap is empty
+        population: HashMap::new(), // 目前為止 HashMap 是空的
     };
 
-    tallinn.population.insert(1372, 3_250); // insert three dates
+    tallinn.population.insert(1372, 3_250); // 插入三筆年度資料
     tallinn.population.insert(1851, 24_000);
     tallinn.population.insert(2020, 437_619);
 
 
-    for (year, population) in tallinn.population { // The HashMap is HashMap<u32, u32> so it returns a two items each time
+    for (year, population) in tallinn.population { // HashMap 型別是 HashMap<u32, u32> 所以它每次回傳有兩個元素的元組
         println!("In the year {} the city of {} had a population of {}.", year, tallinn.name, population);
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 In the year 1372 the city of Tallinn had a population of 3250.
@@ -3949,7 +3950,7 @@ In the year 2020 the city of Tallinn had a population of 437619.
 In the year 1851 the city of Tallinn had a population of 24000.
 ```
 
-or it might print:
+或者可能印出：
 
 ```text
 In the year 1851 the city of Tallinn had a population of 24000.
@@ -3957,23 +3958,23 @@ In the year 2020 the city of Tallinn had a population of 437619.
 In the year 1372 the city of Tallinn had a population of 3250.
 ```
 
-You can see that it's not in order.
+你可以看到它沒有按順序排列。
 
-If you want a `HashMap` that you can sort, you can use a `BTreeMap`. Actually they are very similar to each other, so we can quickly change our `HashMap` to a `BTreeMap` to see. You can see that it is almost the same code.
+如果你想要一個可以排序的 `HashMap`，你可以用 `BTreeMap`。其實它們之間是非常相似的，所以我們可以快速的把我們的 `HashMap` 改成 `BTreeMap` 來看看。大家可以看到，這幾乎是一樣的程式碼。
 
 ```rust
-use std::collections::BTreeMap; // Just change HashMap to BTreeMap
+use std::collections::BTreeMap; // HashMap 只改成 BTreeMap
 
 struct City {
     name: String,
-    population: BTreeMap<u32, u32>, // Just change HashMap to BTreeMap
+    population: BTreeMap<u32, u32>, // HashMap 只改成 BTreeMap
 }
 
 fn main() {
 
     let mut tallinn = City {
         name: "Tallinn".to_string(),
-        population: BTreeMap::new(), // Just change HashMap to BTreeMap
+        population: BTreeMap::new(), // HashMap 只改成 BTreeMap
     };
 
     tallinn.population.insert(1372, 3_250);
@@ -3986,7 +3987,7 @@ fn main() {
 }
 ```
 
-Now it will always print:
+現在總是會印出：
 
 ```text
 In the year 1372 the city of Tallinn had a population of 3250.
@@ -3994,11 +3995,11 @@ In the year 1851 the city of Tallinn had a population of 24000.
 In the year 2020 the city of Tallinn had a population of 437619.
 ```
 
-Now we will go back to `HashMap`.
+現在我們再回來看看 `HashMap`。
 
-You can get a value in a `HashMap` by just putting the key in `[]` square brackets. In this next example we will bring up the value for the key `Bielefeld`, which is `Germany`. But be careful, because the program will crash if there is no key. If you write `println!("{:?}", city_hashmap["Bielefeldd"]);` for example then it will crash, because `Bielefeldd` doesn't exist.
+只要把鍵放在 `[]` 的方括號裡，就可以得到 `HashMap` 的值。在接下來的這個範例中，我們將帶出 `Bielefeld` 這個鍵的值，也就是 `Germany`。但是要注意，因為如果沒有鍵，程式會崩潰(crash)。比如你寫了 `println!("{:?}", city_hashmap["Bielefeldd"]);`，那麼就會崩潰，因為 `Bielefeldd` 不存在。
 
-If you are not sure that there will be a key, you can use `.get()` which returns an `Option`. If it exists it will be `Some(value)`, and if not you will get `None` instead of crashing the program. That's why `.get()` is the safer way to get a value from a `HashMap`.
+如果你不確定會有鍵，你可以使用 `.get()`，它會回傳 `Option`。如果它存在就會是 `Some(value)`，如果不存在你將得到 `None`，而不是使程式崩潰。這就是為什麼 `.get()` 是從 `HashMap` 中取值較安全的方法。
 
 ```rust
 use std::collections::HashMap;
@@ -4022,7 +4023,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 "Germany"
@@ -4030,9 +4031,9 @@ Some("Germany")
 None
 ```
 
-This is because *Bielefeld* exists, but *Bielefeldd* does not exist.
+這是因為 *Bielefeld* 存在，但 *Bielefeldd* 不存在。
 
-If a `HashMap` already has a key when you try to put it in, it will overwrite its value:
+如果 `HashMap` 已經有一個鍵，當你試圖把它放進去時，它的值將被覆蓋：
 
 ```rust
 use std::collections::HashMap;
@@ -4049,9 +4050,9 @@ fn main() {
 }
 ```
 
-This prints `Some("Eye of the World")`, because it was the last one you used `.insert()` for.
+印出 `Some("Eye of the World")`，因為它是你最後用 `.insert()` 的值。
 
-It is easy to check if an entry exists, because you can check with `.get()` which gives an `Option`:
+檢查項目存在很容易，因為你可以用會回傳 `Option` 的 `.get()` 檢查：
 
 ```rust
 use std::collections::HashMap;
@@ -4061,7 +4062,7 @@ fn main() {
 
     book_hashmap.insert(1, "L'Allemagne Moderne");
 
-    if book_hashmap.get(&1).is_none() { // is_none() returns a bool: true if it's None, false if it's Some
+    if book_hashmap.get(&1).is_none() { // is_none()回傳布林值: true如果是None, false如果是Some
         book_hashmap.insert(1, "Le Petit Prince");
     }
 
@@ -4069,17 +4070,17 @@ fn main() {
 }
 ```
 
-This prints `Some("L\'Allemagne Moderne")` because there was already a key for `1`, so we didn't insert `Le Petit Prince`.
+印出 `Some("L\'Allemagne Moderne")` 是因為已經有個 key 為 `1`，所以我們沒有插入 `Le Petit Prince`。
 
-`HashMap` has a very interesting method called `.entry()` that you definitely want to try out. With it you can try to make an entry and use another method like `.or_insert()` to insert the value if there is no key. The interesting part is that it also gives a mutable reference so you can change it if you want. First is an example where we just insert `true` every time we insert a book title into the `HashMap`.
+`HashMap` 有個非常有趣的方法叫做 `.entry()`，你肯定想試試。有了它，你可以在沒有鍵的情況下，加入一筆項目 (entry) 並用像是 `.or_insert()` 這類方法來插入值。有趣的是，它還傳回了可變參考，所以如果你想的話你可以改變它。首先的範例是我們每次插入書名到 `HashMap` 時，我們就在值插入 `true`。
 
-Let's pretend that we have a library and want to keep track of our books.
+讓我們假裝我們有個圖書館，並希望跟蹤我們的書籍。
 
 ```rust
 use std::collections::HashMap;
 
 fn main() {
-    let book_collection = vec!["L'Allemagne Moderne", "Le Petit Prince", "Eye of the World", "Eye of the World"]; // Eye of the World appears twice
+    let book_collection = vec!["L'Allemagne Moderne", "Le Petit Prince", "Eye of the World", "Eye of the World"]; // Eye of the World 出現兩次
 
     let mut book_hashmap = HashMap::new();
 
@@ -4092,7 +4093,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Do we have Eye of the World? true
@@ -4100,14 +4101,14 @@ Do we have Le Petit Prince? true
 Do we have L'Allemagne Moderne? true
 ```
 
-But that's not exactly what we want. Maybe it would be better to count the number of books so that we know that there are two copies of *Eye of the World*. First let's look at what `.entry()` does, and what `.or_insert()` does. `.entry()` actually returns an `enum` called `Entry`:
+但這並不是我們想要的。也許最好數一下書的數量，這樣我們就知道 *世界之眼* 有兩本。首先讓我們看看 `.entry()` 做了什麼，以及 `.or_insert()` 做了什麼。`.entry()` 其實是回傳了名為 `Entry` 的 `enum`：
 
 ```rust
 pub fn entry(&mut self, key: K) -> Entry<K, V> // 🚧
 ```
 
 
-[Here is the page for Entry](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html). Here is a simple version of its code. `K` means key and `V` means value.
+可以查看[Entry 文件](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html)的網頁。下面是它的原始程式碼的簡化版。`K` 表示 key，`V` 表示 value。
 
 ```rust
 // 🚧
@@ -4119,7 +4120,7 @@ enum Entry<K, V> {
 }
 ```
 
-Then when we call `.or_insert()`, it looks at the enum and decides what to do.
+然後當我們呼叫 `.or_insert()` 時，它就會檢視列舉，並決定該怎麼做。
 
 ```rust
 fn or_insert(self, default: V) -> &mut V { // 🚧
@@ -4130,7 +4131,7 @@ fn or_insert(self, default: V) -> &mut V { // 🚧
 }
 ```
 
-The interesting part is that it returns a `mut` reference: `&mut V`. That means you can use `let` to attach it to a variable, and change the variable to change the value in the `HashMap`. So for every book we will insert a 0 if there is no entry. And if there is one, we will use `+= 1` on the reference to increase the number. Now it looks like this:
+有趣的是，它回傳 `mut` 的引用：`&mut V`。這意味著你可以使用 `let` 將其附加到變數上，並藉由改變這個變數來改變 `HashMap` 中的值。所以對於每本書，如果沒有項目，我們就會插入 0。而如果有的話，我們將在參考上使用 `+= 1` 來增加數字。現在它看起來像這樣：
 
 ```rust
 use std::collections::HashMap;
@@ -4141,8 +4142,8 @@ fn main() {
     let mut book_hashmap = HashMap::new();
 
     for book in book_collection {
-        let return_value = book_hashmap.entry(book).or_insert(0); // return_value is a mutable reference. If nothing is there, it will be 0
-        *return_value +=1; // Now return_value is at least 1. And if there was another book, it will go up by 1
+        let return_value = book_hashmap.entry(book).or_insert(0); // return_value 是個可變參考。如果原先沒東西，它會是 0
+        *return_value +=1; // 現在 return_value 至少是 1。 且如果已經有另一本書，它會往上加 1
     }
 
     for (book, number) in book_hashmap {
@@ -4152,7 +4153,7 @@ fn main() {
 ```
 
 
-The important part is `let return_value = book_hashmap.entry(book).or_insert(0);`. If you take out the `let`, you get `book_hashmap.entry(book).or_insert(0)`. Without `let` it does nothing: it inserts 0, and nobody takes the mutable reference to 0. So we bind it to `return_value` so we can keep the 0. Then we increase the value by 1, which gives at least 1 for every book in the `HashMap`. Then when `.entry()` looks at *Eye of the World* again it doesn't insert anything, but it gives us a mutable 1. Then we increase it to 2, and that's why it prints this:
+重點在 `let return_value = book_hashmap.entry(book).or_insert(0);`。如果去掉 `let`，你會得到 `book_hashmap.entry(book).or_insert(0)`。沒有 `let` 時它什麼也不做：它只插入了 0，也沒有取得指向 0 的可變參考。所以我們把它連結到 `return_value` 上，這樣我們就可以保留 0。然後我們把值增加 1，這樣 `HashMap` 中的每本書都至少有 1。接著當 `.entry()` 再拿到 *世界之眼* 時，它就不會插入任何東西，但它給我們一個可變的 1。然後我們把它增加到 2，這也是為什麼它會印出這樣的結果：
 
 ```text
 L'Allemagne Moderne, 1
@@ -4161,14 +4162,14 @@ Eye of the World, 2
 ```
 
 
-You can also do things with `.or_insert()` like insert a vec and then push into the vec. Let's pretend that we asked men and women on the street what they think of a politician. They give a rating from 0 to 10. Then we want to put the numbers together to see if the politician is more popular with men or women. It can look like this:
+你也可以用 `.or_insert()` 做一些事情，比如插入向量，然後往向量裡推入資料。讓我們假設我們問街上的男女他們對一個政治家的看法。他們給出的評分從 0 到 10。然後我們要把這些數字放在一起，看看這個政治家是更受男性還是女性的歡迎。它可以像這樣：
 
 
 ```rust
 use std::collections::HashMap;
 
 fn main() {
-    let data = vec![ // This is the raw data
+    let data = vec![ // 原始資料
         ("male", 9),
         ("female", 5),
         ("male", 0),
@@ -4179,8 +4180,8 @@ fn main() {
 
     let mut survey_hash = HashMap::new();
 
-    for item in data { // This gives a tuple of (&str, i32)
-        survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1); // This pushes the number into the Vec inside
+    for item in data { // 給的型別是 (&str, i32) 的元組
+        survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1); // 推入數字到向量裡
     }
 
     for (male_or_female, numbers) in survey_hash {
@@ -4189,24 +4190,24 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 "female", [5, 6, 5]
 "male", [9, 0, 10]
 ```
 
-The important line is: `survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1);` So if it sees "female" it will check to see if there is "female" already in the `HashMap`. If not, it will insert a `Vec::new()`, then push the number in. If it sees "female" already in the `HashMap`, it will not insert a new Vec, and will just push the number into it.
+重點行是：`survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1);`，所以如果它看到 "female"，就會檢查 `HashMap` 中是否已經有 "female"。如果沒有，它就會插入 `Vec::new()`，然後把數字推入。如果它看到 "female" 已經在 `HashMap` 中，它將不會插入新的向量，而只是將數字推入其中。
 
-### HashSet and BTreeSet
+### HashSet 和 BTreeSet
 
-A `HashSet` is actually a `HashMap` that only has keys. On [the page for HashSet](https://doc.rust-lang.org/std/collections/struct.HashSet.html) it explains this on the top:
+`HashSet` 實際上是只有 key 的 `HashMap`。在 [HashSet 文件](https://doc.rust-lang.org/std/collections/struct.HashSet.html)的網頁上面有解釋：
 
-`A hash set implemented as a HashMap where the value is ().` So it's a `HashMap` with keys, no values.
+`A hash set implemented as a HashMap where the value is ().` 所以它是有鍵無值的 `HashMap`。
 
-You often use a `HashSet` if you just want to know if a key exists, or doesn't exist.
+如果你只是想知道某個鍵是不是存在，或者不存在，你經常會選擇用 `HashSet`。
 
-Imagine that you have 100 random numbers, and each number between 1 and 100. If you do this, some numbers will appear more than once, while some won't appear at all. If you put them into a `HashSet` then you will have a list of all the numbers that appeared.
+想像一下，你有 100 個隨機數，每個數字介於 1 和 100 之間。如果你這樣做，有些數字會出現不止一次，而有些數字根本不會出現。如果你把它們放到 `HashSet` 中，那麼你就會有一個所有已出現的數字列表。
 
 ```rust
 use std::collections::HashSet;
@@ -4225,13 +4226,13 @@ fn main() {
         number_hashset.insert(number);
     }
 
-    let hashset_length = number_hashset.len(); // The length tells us how many numbers are in it
+    let hashset_length = number_hashset.len(); // 長度會告訴我們有多少數字在裡面
     println!("There are {} unique numbers, so we are missing {}.", hashset_length, 100 - hashset_length);
 
-    // Let's see what numbers we are missing
+    // 讓我們看看漏了什麼數字
     let mut missing_vec = vec![];
     for number in 0..100 {
-        if number_hashset.get(&number).is_none() { // If .get() returns None,
+        if number_hashset.get(&number).is_none() { // 如果 .get() 回傳 None,
             missing_vec.push(number);
         }
     }
@@ -4243,14 +4244,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 There are 66 unique numbers, so we are missing 34.
 It does not contain: 1 2 4 6 7 9 12 21 23 27 30 31 39 40 45 47 48 50 52 53 62 65 69 70 72 75 77 78 83 85 88 97 98 99
 ```
 
-A `BTreeSet` is similar to a `HashSet` in the same way that a `BTreeMap` is similar to a `HashMap`. If we print each item in the `HashSet`, we don't know what the order will be:
+`BTreeSet` 與 `HashSet` 相似，就像 `BTreeMap` 與 `HashMap` 相似一樣。如果把 `HashSet` 中的每一項都印出來，我們就不知道順序會是什麼了：
 
 ```rust
 for entry in number_hashset { // 🚧
@@ -4258,12 +4259,12 @@ for entry in number_hashset { // 🚧
 }
 ```
 
-Maybe it will print this: `67 28 42 25 95 59 87 11 5 81 64 34 8 15 13 86 10 89 63 93 49 41 46 57 60 29 17 22 74 43 32 38 36 76 71 18 14 84 61 16 35 90 56 54 91 19 94 44 3 0 68 80 51 92 24 20 82 26 58 33 55 96 37 66 79 73`. But it will almost never print it in the same way again.
+也許它會印出這樣：`67 28 42 25 95 59 87 11 5 81 64 34 8 15 13 86 10 89 63 93 49 41 46 57 60 29 17 22 74 43 32 38 36 76 71 18 14 84 61 16 35 90 56 54 91 19 94 44 3 0 68 80 51 92 24 20 82 26 58 33 55 96 37 66 79 73`。但它幾乎不會再以同樣的方式印出。
 
-Here as well, it is easy to change your `HashSet` to a `BTreeSet` if you decide you need ordering. In our code, we only need to make two changes to switch from a `HashSet` to a `BTreeSet`.
+在這裡也一樣，如果你決定需要有序印出的話，把你的 `HashSet` 改成 `BTreeSet` 也很容易。在我們的程式碼中，我們只需要做兩處改動，就可以從 `HashSet` 切換到 `BTreeSet`。
 
 ```rust
-use std::collections::BTreeSet; // Change HashSet to BTreeSet
+use std::collections::BTreeSet; // 把 HashSet 改成 BTreeSet
 
 fn main() {
     let many_numbers = vec![
@@ -4273,7 +4274,7 @@ fn main() {
         96, 95, 55, 92, 28, 3, 17, 91, 36, 20, 24, 0, 86, 82, 58, 93, 68, 54, 80, 56, 22, 67, 82,
         58, 64, 80, 16, 61, 57, 14, 11];
 
-    let mut number_btreeset = BTreeSet::new(); // Change HashSet to BTreeSet
+    let mut number_btreeset = BTreeSet::new(); // 把 HashSet 改成 BTreeSet
 
     for number in many_numbers {
         number_btreeset.insert(number);
@@ -4284,19 +4285,19 @@ fn main() {
 }
 ```
 
-Now it will print in order: `0 3 5 8 10 11 13 14 15 16 17 18 19 20 22 24 25 26 28 29 32 33 34 35 36 37 38 41 42 43 44 46 49 51 54 55 56 57 58 59 60 61 63 64 66 67 68 71 73 74 76 79 80 81 82 84 86 87 89 90 91 92 93 94 95 96`.
+現在會依照順序印出： `0 3 5 8 10 11 13 14 15 16 17 18 19 20 22 24 25 26 28 29 32 33 34 35 36 37 38 41 42 43 44 46 49 51 54 55 56 57 58 59 60 61 63 64 66 67 68 71 73 74 76 79 80 81 82 84 86 87 89 90 91 92 93 94 95 96`。
 
 ### BinaryHeap
 
-A `BinaryHeap` is an interesting collection type, because it is mostly unordered but has a bit of order. It keeps the largest item in the front, but the other items are in any order.
+`BinaryHeap` 是種有趣的集合型別，因為它大部分是無序的，但也有一點有序性。它把最大的元素放前面，但其他元素是以任意順序排列的。
 
-We will use another list of items for an example, but this time smaller.
+我們將用另一個列表來舉例，但這次資料少一些。
 
 ```rust
 use std::collections::BinaryHeap;
 
-fn show_remainder(input: &BinaryHeap<i32>) -> Vec<i32> { // This function shows the remainder in the BinaryHeap. Actually an iterator would be
-                                                         // faster than a function - we will learn them later.
+fn show_remainder(input: &BinaryHeap<i32>) -> Vec<i32> { // 這個函式呈現BinaryHeap中剩餘部分。實際上
+                                                         // 疊代器會比函式快- 我們會在之後學到。
     let mut remainder_vec = vec![];
     for number in input {
         remainder_vec.push(*number)
@@ -4305,7 +4306,7 @@ fn show_remainder(input: &BinaryHeap<i32>) -> Vec<i32> { // This function shows 
 }
 
 fn main() {
-    let many_numbers = vec![0, 5, 10, 15, 20, 25, 30]; // These numbers are in order
+    let many_numbers = vec![0, 5, 10, 15, 20, 25, 30]; // 這些數字是有序的
 
     let mut my_heap = BinaryHeap::new();
 
@@ -4313,13 +4314,13 @@ fn main() {
         my_heap.push(number);
     }
 
-    while let Some(number) = my_heap.pop() { // .pop() returns Some(number) if a number is there, None if not. It pops from the front
+    while let Some(number) = my_heap.pop() { // 如果有數字 .pop() 回傳 Some(number)，否則 None。且從前面 pop
         println!("Popped off {}. Remaining numbers are: {:?}", number, show_remainder(&my_heap));
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Popped off 30. Remaining numbers are: [25, 15, 20, 0, 10, 5]
@@ -4331,9 +4332,9 @@ Popped off 5. Remaining numbers are: [0]
 Popped off 0. Remaining numbers are: []
 ```
 
-You can see that the number in the 0 index is always largest: 25, 20, 15, 10, 5, then 0. But the other ones are all different.
+你可以看到索引 0 的數字總是最大的25、20、15、10、5 然後是 0。但其它都不一樣。
 
-A good way to use a `BinaryHeap` is for a collection of things to do. Here we create a `BinaryHeap<(u8, &str)>` where the `u8` is a number for the importance of the task. The `&str` is a description of what to do.
+使用 `BinaryHeap<(u8, &str)>` 的好方法是用在待處理事物的集合。這裡我們建立 `BinaryHeap<(u8, &str)>`，其中 `u8` 是任務重要性的數字。`&str` 是對要處理什麼的描述。
 
 ```rust
 use std::collections::BinaryHeap;
@@ -4341,7 +4342,7 @@ use std::collections::BinaryHeap;
 fn main() {
     let mut jobs = BinaryHeap::new();
 
-    // Add jobs to do throughout the day
+    // 加入一整天要做的工作
     jobs.push((100, "Write back to email from the CEO"));
     jobs.push((80, "Finish the report today"));
     jobs.push((5, "Watch some YouTube"));
@@ -4354,7 +4355,7 @@ fn main() {
 }
 ```
 
-This will always print:
+總是會印出：
 
 ```text
 You need to: Write back to email from the CEO
@@ -4366,14 +4367,14 @@ You need to: Watch some YouTube
 
 ### VecDeque
 
-A `VecDeque` is a `Vec` that is good at popping items both off the front and the back. Rust has `VecDeque` because a `Vec` is great for popping off the back (the last item), but not so great off the front. When you use `.pop()` on a `Vec`, it just takes off the last item on the right and nothing else is moved. But if you take it off another part, all the items to the right are moved over one position to the left. You can see this in the description for `.remove()`:
+`VecDeque` 是一種既能從前面彈出元素，又能從後面彈出元素的 `Vec`。Rust 有 `VecDeque` 是因為 `Vec` 適合從後面(最後一個元素)彈出，但從前面彈出就不那麼好了。當你在 `Vec` 上使用 `.pop()` 的時候，它只是把右邊最後一個元素取出，其他的都不會動。但是如果你從其他地方取出元素，它右邊的所有元素都會被向左搬移一個位置。你可以在 `.remove()` 的文件描述中看到這一點：
 
 
 ```text
 Removes and returns the element at position index within the vector, shifting all elements after it to the left.
 ```
 
-So if you do this:
+所以如果你這樣做：
 
 ```rust
 fn main() {
@@ -4382,9 +4383,9 @@ fn main() {
 }
 ```
 
-it will remove `9`. `8` in index 1 will move to index 0, `7` in index 2 will move to index 1, and so on. Imagine a big parking lot where every time one car leaves all the cars on the right side have to move over.
+它將會刪除 `9`。索引 1 中的 `8` 將移到索引 0，索引 2 中的 `7` 將移到索引 1，以此類推。想像一個大停車場，每當有一輛車離開時，右邊所有的車都要移過來。
 
-This, for example, is a *lot* of work for the computer. In fact, if you run it on the Playground it will probably just give up because it's too much work.
+舉例來說這對電腦是*很大*的工作量。事實上，如果你在 Playground 上執行時，它很可能會因為工作量太大而直接放棄。
 
 ```rust
 fn main() {
@@ -4395,9 +4396,9 @@ fn main() {
 }
 ```
 
-This is a `Vec` of 600,000 zeros. Every time you use `remove(0)` on it, it moves each zero left one space to the left. And then it does it 600,000 times.
+這是有 60 萬個零的 `Vec`。每次你用 `remove(0)` 時，它就會把每個零向左搬移一個空間。並且它要做上 60 萬次。
 
-You don't have to worry about that with a `VecDeque`. It is usually a bit slower than a `Vec`, but if you have to do things on both ends then it is much faster. You can just use `VecDeque::from` with a `Vec` to make one. Our code above then looks like this:
+用 `VecDeque` 就不用擔心這個問題了。它通常比 `Vec` 慢一點，但如果你要在資料兩端都做事情，那麼它就快多了。你可以直接從 `Vec` 用 `VecDeque::from` 做出來。那麼上面我們的程式碼就會像這樣：
 
 ```rust
 use std::collections::VecDeque;
@@ -4405,21 +4406,21 @@ use std::collections::VecDeque;
 fn main() {
     let mut my_vec = VecDeque::from(vec![0; 600000]);
     for i in 0..600000 {
-        my_vec.pop_front(); // pop_front is like .pop but for the front
+        my_vec.pop_front(); // pop_front 就像 .pop 但是從前面處理
     }
 }
 ```
 
-It is now much faster, and on the Playground it finishes in under a second instead of giving up.
+現在速度快了很多，在 Playground 上它不到一秒就結束，而不是放棄。
 
-In this next example we have a `Vec` of things to do. Then we make a `VecDeque` and use `.push_front()` to put them at the front, so the first item we added will be on the right. But each item we push is a `(&str, bool)`: `&str` is the description and `false` means it's not done yet. We use our `done()` function to pop an item off the back, but we don't want to delete it. Instead, we change `false` to `true` and push it at the front so that we can keep it.
+在接下來的這個範例中，我們有個記錄待處理事物的 `Vec`。接著我們做出 `VecDeque`，用 `.push_front()` 把它們放到前面，使得我們新增的第一個元素會是在右邊。但是我們推送的每個元素型別是 `(&str, bool)`：`&str` 是描述，`false` 表示還沒完成。我們用 `done()` 函式從後面彈出一個元素，但是我們不想刪除它。我們反而是把 `false` 改成 `true`，然後把它推到前面，使得我們可以保留它。
 
-It looks like this:
+它看起來像這樣：
 
 ```rust
 use std::collections::VecDeque;
 
-fn check_remaining(input: &VecDeque<(&str, bool)>) { // Each item is a (&str, bool)
+fn check_remaining(input: &VecDeque<(&str, bool)>) { // 每個元素是 (&str, bool)
     for item in input {
         if item.1 == false {
             println!("You must: {}", item.0);
@@ -4428,9 +4429,9 @@ fn check_remaining(input: &VecDeque<(&str, bool)>) { // Each item is a (&str, bo
 }
 
 fn done(input: &mut VecDeque<(&str, bool)>) {
-    let mut task_done = input.pop_back().unwrap(); // pop off the back
-    task_done.1 = true;                            // now it's done - mark as true
-    input.push_front(task_done);                   // put it at the front now
+    let mut task_done = input.pop_back().unwrap(); // 後面彈出
+    task_done.1 = true;                            // 它完成了 - 標記為 true
+    input.push_front(task_done);                   // 現在把它放到前面
 }
 
 fn main() {
@@ -4452,38 +4453,38 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 You must: phone Loki back
 ("add new product to list", true) ("send email to customer", true) ("phone Loki back", false)
 ```
 
-## The ? operator
+## 問號(?)運算子
 
-There is an even shorter way to deal with `Result` (and `Option`), shorter than `match` and even shorter than `if let`. It is called the "question mark operator", and is just `?`. After a function that returns a result, you can add `?`. This will:
+有一種更短的方式來處理 `Result`(及 `Option`)，它比 `match` 和 `if let` 更短。它叫做"問號運算子"，就是 `?`。在回傳 Result 的函式後，可以加上 `?`。這會：
 
-- return what is inside the `Result` if it is `Ok`
-- pass the error back if it is `Err`
+- 如果是 `Ok`，回傳 `Result` 裡面的內容。
+- 如果是 `Err`，則將錯誤送回。
 
-In other words, it does almost everything for you.
+換句話說，它幾乎為你做了所有的事情。
 
-We can try this with `.parse()` again. We will write a function called `parse_str` that tries to turn a `&str` into a `i32`. It looks like this:
+我們可以用 `.parse()` 再試一次。我們將編寫名為 `parse_str` 的函式，試圖將 `&str` 變成 `i32`。它看起來像這樣：
 
 ```rust
 use std::num::ParseIntError;
 
 fn parse_str(input: &str) -> Result<i32, ParseIntError> {
-    let parsed_number = input.parse::<i32>()?; // Here is the question mark
+    let parsed_number = input.parse::<i32>()?; // 問號在這
     Ok(parsed_number)
 }
 
 fn main() {}
 ```
 
-This function takes a `&str`. If it is `Ok`, it gives an `i32` wrapped in `Ok`. If it is an `Err`, it returns a `ParseIntError`. Then we try to parse the number, and add `?`. That means "check if it is an error, and give what is inside the Result if it is okay". If it is not okay, it will return the error and end. But if it is okay, it will go to the next line. On the next line is the number inside of `Ok()`. We need to wrap it in `Ok` because the return is `Result<i32, ParseIntError>`, not `i32`.
+這個函式接受 `&str`。如果是 `Ok`，則它給出包在 `Ok` 中的 `i32`。如果是 `Err`，則回傳包起來的 `ParseIntError`。然後我們嘗試解析這個數字，並加上 `?`。也就是"檢查是否錯誤，如果沒問題就給出 Result 裡面的內容"。如果有問題，就會返回錯誤並結束。但如果沒問題，就會進入下一行。下一行是 `Ok()` 裡面的數字。我們需要用 `Ok` 來包裝，因為要回傳的是 `Result<i32, ParseIntError>`，而不是 `i32`。
 
-Now, we can try out our function. Let's see what it does with a vec of `&str`s.
+現在我們可以試試我們的函式。讓我們看看它對 `&str` 的向量有什麼作用。
 
 ```rust
 fn parse_str(input: &str) -> Result<i32, std::num::ParseIntError> {
@@ -4500,7 +4501,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Err(ParseIntError { kind: InvalidDigit })
@@ -4510,16 +4511,16 @@ Err(ParseIntError { kind: InvalidDigit })
 Ok(6060)
 ```
 
-How did we find `std::num::ParseIntError`? One easy way is to "ask" the compiler again.
+我們是怎麼找到 `std::num::ParseIntError` 的呢？一個簡單的方法就是再"問"一下編譯器。
 
 ```rust
 fn main() {
     let failure = "Not a number".parse::<i32>();
-    failure.rbrbrb(); // ⚠️ Compiler: "What is rbrbrb()???"
+    failure.rbrbrb(); // ⚠️ 編譯器: "rbrbrb()是什麼???"
 }
 ```
 
-The compiler doesn't understand, and says:
+編譯器無法了解，並說：
 
 ```text
 error[E0599]: no method named `rbrbrb` found for enum `std::result::Result<i32, std::num::ParseIntError>` in the current scope
@@ -4529,17 +4530,17 @@ error[E0599]: no method named `rbrbrb` found for enum `std::result::Result<i32, 
   |             ^^^^^^ method not found in `std::result::Result<i32, std::num::ParseIntError>`
 ```
 
-So `std::result::Result<i32, std::num::ParseIntError>` is the signature we need.
+所以 `std::result::Result<i32, std::num::ParseIntError>` 就是我們所需要的簽名。
 
-We don't need to write `std::result::Result` because `Result` is always "in scope" (in scope = ready to use). Rust does this for all the types we use a lot so we don't have to write `std::result::Result`, `std::collections::Vec`, etc.
+我們不需要寫 `std::result::Result`，因為 `Result` 總是"在範圍內"(in scope = 準備好使用)。Rust 對我們經常使用的所有型別都是這樣做的，所以我們不必寫 `std::result::Result`、`std::collections::Vec` 等。
 
-We aren't working with things like files yet, so the ? operator doesn't look too useful yet. But here is a useless but quick example that shows how you can use it on a single line. Instead of making an `i32` with `.parse()`, we'll do a lot more. We'll make an `u16`, then turn it to a `String`, then a `u32`, then to a `String` again, and finally to a `i32`.
+我們現在還沒有處理到像檔案這樣的東西，所以 ? 運算子看起來還不太有用。但這裡有個無用但快速的例子，說明你如何在單行上使用它。與其用 `.parse()` 建立 `i32`，不如做更多。我們將做個 `u16`，然後把它變成 `String`，再變成 `u32`，然後再變回 `String`，最後變成 `i32`。
 
 ```rust
 use std::num::ParseIntError;
 
 fn parse_str(input: &str) -> Result<i32, ParseIntError> {
-    let parsed_number = input.parse::<u16>()?.to_string().parse::<u32>()?.to_string().parse::<i32>()?; // Add a ? each time to check and pass it on
+    let parsed_number = input.parse::<u16>()?.to_string().parse::<u32>()?.to_string().parse::<i32>()?; // 每次檢查時加上 ? 並傳下去
     Ok(parsed_number)
 }
 
@@ -4552,13 +4553,13 @@ fn main() {
 }
 ```
 
-This prints the same thing, but this time we handled three `Result`s in a single line. Later on we will do this with files, because they always return `Result`s because many things can go wrong.
+印出同樣的東西，但這次我們在一行中處理了三個 `Result`。稍後我們將對檔案進行處理，因為很多事情都可能出錯，它們總是回傳 `Result`。
 
-Imagine the following: you want to open a file, write to it, and close it. First you need to successfully find the file (that's a `Result`). Then you need to successfully write to it (that's a `Result`). With `?` you can do that on one line.
+想像這件事：你想開啟檔案，向它寫入，然後關閉它。首先你需要成功找到這個檔案(這是 `Result`)。然後你需要成功地寫入它(也是 `Result`)。有了 `?` 你可以用一行做到那些事。
 
-### When panic and unwrap are good
+### 何時善用 panic 和 unwrap
 
-Rust has a `panic!` macro that you can use to make it panic. It is easy to use:
+Rust 有個 `panic!` 巨集讓你可以用來讓程式恐慌。它很容易使用：
 
 ```rust
 fn main() {
@@ -4566,11 +4567,11 @@ fn main() {
 }
 ```
 
-The message `"Time to panic!"` displays when you run the program: `thread 'main' panicked at 'Time to panic!', src\main.rs:2:3`
+`"Time to panic!"` 這個訊息在你執行程式時會顯示：`thread 'main' panicked at 'Time to panic!', src\main.rs:2:3`
 
-You will remember that `src\main.rs` is the directory and file name, and `2:3` is the line and column name. With this information, you can find the code and fix it.
+你會記得 `src\main.rs` 是目錄和檔名，`2:3` 是行號和列號。有了這些資訊，你就可以找到程式碼並修復它。
 
-`panic!` is a good macro to use to make sure that you know when something changes. For example, this function called `prints_three_things` always prints index [0], [1], and [2] from a vector. It is okay because we always give it a vector with three items:
+`panic!` 是個很好用的巨集，以確保你知道東西何時有變化。例如，這個叫做 `prints_three_things` 的函式總是從向量中印出索引 [0]、[1] 和 [2]。這沒關係，因為我們總是給它有三個元素的向量：
 
 ```rust
 fn prints_three_things(vector: Vec<i32>) {
@@ -4583,9 +4584,9 @@ fn main() {
 }
 ```
 
-It prints `8, 9, 10` and everything is fine.
+印出 `8, 9, 10`，一切正常。
 
-But imagine that later on we write more and more code, and forget that `my_vec` can only be three things. Now `my_vec` in this part has six things:
+但試想之後我們程式碼愈寫越多，忘記了 `my_vec` 只能有三個元素。現在 `my_vec` 在這部分有六個元素：
 
 ```rust
 fn prints_three_things(vector: Vec<i32>) {
@@ -4593,17 +4594,17 @@ fn prints_three_things(vector: Vec<i32>) {
 }
 
 fn main() {
-  let my_vec = vec![8, 9, 10, 10, 55, 99]; // Now my_vec has six things
+  let my_vec = vec![8, 9, 10, 10, 55, 99]; // 現在 my_vec 有六個東西
   prints_three_things(my_vec);
 }
 ```
 
-No error happens, because [0] and [1] and [2] are all inside this longer `Vec`. But what if it was really important to only have three things? We wouldn't know that there was a problem because the program doesn't panic. We should have done this instead:
+沒有發生錯誤，因為 [0]、[1] 和 [2] 都在這個較長的 `Vec` 裡面。但如果只能有三個元素真的很重要呢？因為程式不會恐慌，我們也就不會知道有問題了。我們反而應該這樣做:
 
 ```rust
 fn prints_three_things(vector: Vec<i32>) {
     if vector.len() != 3 {
-        panic!("my_vec must always have three items") // will panic if the length is not 3
+        panic!("my_vec must always have three items") // 如果長度不是 3 會恐慌
     }
     println!("{}, {}, {}", vector[0], vector[1], vector[2]);
 }
@@ -4614,7 +4615,7 @@ fn main() {
 }
 ```
 
-Now we will know if the vector has six items because it panics as it should:
+現在我們知道向量是否有三個元素，因為它如預期的發生恐慌：
 
 ```rust
     // ⚠️
@@ -4631,17 +4632,17 @@ fn main() {
 }
 ```
 
-This gives us `thread 'main' panicked at 'my_vec must always have three items', src\main.rs:8:9`. Thanks to `panic!`, we now remember that `my_vec` should only have three items. So `panic!` is a good macro to create reminders in your code.
+我們得到了 `thread 'main' panicked at 'my_vec must always have three items', src\main.rs:8:9`。多虧了 `panic!`，我們現在記得 `my_vec` 應該只能有三個元素。所以 `panic!` 是個可以在你的程式碼中建立提醒的好巨集。
 
-There are three other macros that are similar to `panic!` that you use a lot in testing. They are: `assert!`, `assert_eq!`, and `assert_ne!`.
+還有三個與 `panic!` 類似的巨集，你會在測試中經常使用。它們分別是 `assert!`、`assert_eq!` 和 `assert_ne!`。
 
-Here is what they mean:
+這是它們的涵義：
 
-- `assert!()`: if the part inside `()` is not true, the program will panic.
-- `assert_eq!()`: the two items inside `()` must be equal.
-- `assert_ne!()`: the two items inside `()` must not be equal. (*ne* means not equal)
+- `assert!()`: 如果 `()` 裡面的部分不是 true，程式就會恐慌。
+- `assert_eq!()`: `()` 裡面的兩個元素必須相同(equal)。
+- `assert_ne!()`: `()` 裡面的兩個元素必須不相同。(*ne* 表示不相同)
 
-Some examples:
+一些範例：
 
 ```rust
 fn main() {
@@ -4653,9 +4654,9 @@ fn main() {
 }
 ```
 
-This will do nothing, because all three assert macros are okay. (This is what we want)
+這沒做任何事，因為三個 assert 巨集都沒出錯。(也是我們想要的)
 
-You can also add a message if you want.
+如果你願意，還可以加個提示訊息。
 
 ```rust
 fn main() {
@@ -4679,7 +4680,7 @@ fn main() {
 }
 ```
 
-These messages will only display if the program panics. So if you run this:
+這些訊息只有在程式恐慌時才會顯示。所以如果你執行：
 
 ```rust
 fn main() {
@@ -4693,7 +4694,7 @@ fn main() {
 }
 ```
 
-It will display:
+會顯示：
 
 ```text
 thread 'main' panicked at 'assertion failed: `(left != right)`
@@ -4701,13 +4702,13 @@ thread 'main' panicked at 'assertion failed: `(left != right)`
  right: `"Mithridates"`: You entered Mithridates. Input must not equal Mithridates', src\main.rs:4:5
 ```
 
-So it is saying "you said that left != right, but left == right". And it displays our message that says `You entered Mithridates. Input must not equal Mithridates`.
+所以它說 "你說左邊 != 右邊，但是左邊 == 右邊"。而且它顯示我們寫的訊息為 `You entered Mithridates. Input must not equal Mithridates`。
 
-`unwrap` is also good when you are writing your program and you want it to crash when there is a problem. Later, when your code is finished it is good to change `unwrap` to something else that won't crash.
+`unwrap` 也適合用在你寫自己的程式，並想讓它在出現問題時崩潰。之後等你的程式碼寫完後，把 `unwrap` 改成其他不會崩潰的東西就好了。
 
-You can also use `expect`, which is like `unwrap` but a bit better because you give it your own message. Textbooks usually give this advice: "If you use `.unwrap()` a lot, at least use `.expect()` for better error messages."
+你也可以用 `expect`，它像是 `unwrap` 但更好一些，因為它讓你寫自己的訊息內容。教科書通常會給出這樣的建議："如果你經常使用 `.unwrap()`, 至少也要用 `.expect()` 來獲得更好的錯誤訊息。"
 
-This will crash:
+這樣會崩潰：
 
 ```rust
    // ⚠️
@@ -4722,9 +4723,9 @@ fn main() {
 }
 ```
 
-The error message is `thread 'main' panicked at 'called Option::unwrap() on a None value', src\main.rs:7:18`.
+錯誤訊息是 `thread 'main' panicked at 'called Option::unwrap() on a None value', src\main.rs:7:18`。
 
-Now we write our own message with `expect`:
+現在我們用 `expect` 來寫自己的訊息：
 
 ```rust
    // ⚠️
@@ -4739,7 +4740,7 @@ fn main() {
 }
 ```
 
-It crashes again, but the error is better: `thread 'main' panicked at 'Input vector needs at least 4 items', src\main.rs:7:18`. `.expect()` is a little better than `.unwrap()` because of this, but it will still panic on `None`. Now here is an example of a bad practice, a function that tries to unwrap two times. It takes a `Vec<Option<i32>>`, so maybe each part will have a `Some<i32>` or maybe a `None`.
+又崩潰了，但錯誤內容比較好：`thread 'main' panicked at 'Input vector needs at least 4 items', src\main.rs:7:18`。`.expect()` 因為這個原因比 `.unwrap()` 要好一點，但是在 `None` 上還是會恐慌。現在這裡有個不太好的案例，一個函式試圖 unwrap 兩次。它接受一個 `Vec<Option<i32>>`，所以可能每個部分會有 `Some<i32>`，也可能是 `None`。
 
 ```rust
 fn try_two_unwraps(input: Vec<Option<i32>>) {
@@ -4748,12 +4749,12 @@ fn try_two_unwraps(input: Vec<Option<i32>>) {
 }
 
 fn main() {
-    let vector = vec![None, Some(1000)]; // This vector has a None, so it will panic
+    let vector = vec![None, Some(1000)]; // 這個向量有None，所以會恐慌
     try_two_unwraps(vector);
 }
 ```
 
-The message is: ``thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:2:32``. We're not sure if it was the first `.unwrap()` or the second `.unwrap()` until we check the line. It would be better to check the length and also to not unwrap. But with `.expect()` at least it will be a *little* better. Here it is with `.expect()`:
+訊息是：``thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:2:32``。我們不確定是第一個 `.unwrap()` 還是第二個，直到我們去檢查行號。最好是檢查一下長度，也不要 unwrap。不過有了 `.expect()` 至少會好 *一點*。這裡用 `.expect()`：
 
 ```rust
 fn try_two_unwraps(input: Vec<Option<i32>>) {
@@ -4767,34 +4768,34 @@ fn main() {
 }
 ```
 
-So that is a bit better: `thread 'main' panicked at 'The first unwrap had a None!', src\main.rs:2:32`. We have the line number as well so we can find it.
+所以這有好一點：`thread 'main' panicked at 'The first unwrap had a None!', src\main.rs:2:32`。我們也有行號讓我們可以找到它。
 
 
-You can also use `unwrap_or` if you want to always have a value that you want to choose. If you do this it will never panic. That's:
+如果你要永遠有值且是你想選擇的，也可以用`unwrap_or`。如果你這樣做，它永遠不會恐慌。也就是：
 
-- 1) good because your program won't panic, but
-- 2) maybe not good if you want the program to panic if there's a problem.
+- 1) 很好，因為你的程式不會恐慌，但是
+- 2) 可能不太好，如果你想讓程式在出現問題時恐慌。
 
-But usually we don't want our program to panic, so `unwrap_or` is a good method to use.
+但通常我們都不希望自己的程式恐慌，所以 `unwrap_or` 是個適合拿來用的方法。
 
 ```rust
 fn main() {
     let my_vec = vec![8, 9, 10];
 
-    let fourth = my_vec.get(3).unwrap_or(&0); // If .get doesn't work, we will make the value &0.
-                                              // .get returns a reference, so we need &0 and not 0
-                                              // You can write "let *fourth" with a * if you want fourth to be
-                                              // a 0 and not a &0, but here we just print so it doesn't matter
+    let fourth = my_vec.get(3).unwrap_or(&0); // 如果 .get 沒成功，我們會傳回值 &0。
+                                              // .get 回傳的是參考，所以我們需要的是 &0 而非 0
+                                              // 如果你想要 fourth 是 0 而非 &0，你可以寫帶有 * 的
+                                              // "let *fourth"，但這裡我們只是要印出也就無關緊要
 
     println!("{}", fourth);
 }
 ```
 
-This prints `0` because `.unwrap_or(&0)` gives a 0 even if it is a `None`.
+印出 `0`，因為 `.unwrap_or(&0)` 即使在 `None` 時也會回傳 0。
 
-## Traits
+## 特徵
 
-We have seen traits before: `Debug`, `Copy`, `Clone` are all traits. To give a type a trait, you have to implement it. Because `Debug` and the others are so common, we have attributes that automatically do it. That's what happens when you write `#[derive(Debug)]`: you are automatically implementing `Debug`.
+我們以前見過特徵(Trait)：`Debug`、`Copy`、`Clone` 都是特徵。要賦予型別特徵，就必須實作它。因為 `Debug` 和其他的特徵都很常見，所以我們有可以自動實作的屬性(attribute)。那就是當你寫下 `#[derive(Debug)]` 時所發生的事情：你自動實作了 `Debug`。
 
 ```rust
 #[derive(Debug)]
@@ -4805,7 +4806,7 @@ struct MyStruct {
 fn main() {}
 ```
 
-But other traits are more difficult, so you need to implement them manually with `impl`. For example, `Add` (found at `std::ops::Add`) is used to add two things. But Rust doesn't know exactly how you want to add things, so you have to tell it.
+但是其他的特徵就比較困難了，所以需要用 `impl` 手動實作。例如，`Add` (在 `std::ops::Add` 找到) 是用來累加兩個東西的。但是 Rust 並不知道你到底要怎麼累加，所以你必須告訴它。
 
 ```rust
 struct ThingsToAdd {
@@ -4816,51 +4817,51 @@ struct ThingsToAdd {
 fn main() {}
 ```
 
-We can add `first_thing` and `second_thing`, but we need to give more information. Maybe we want an `f32`, so something like this:
+我們可以累加 `first_thing` 和 `second_thing`，但我們需要提供更多資訊。也許我們想要 `f32`，所以像這樣：
 
 ```rust
 // 🚧
 let result = self.second_thing + self.first_thing as f32
 ```
 
-But maybe we want an integer, so like this:
+但也許我們想要整數，所以像這樣：
 
 ```rust
 // 🚧
 let result = self.second_thing as u32 + self.first_thing
 ```
 
-Or maybe we want to just put `self.first_thing` next to `self.second_thing` and say that this is how we want to add. So if we add 55 to 33.4, we want to see 5533.4, not 88.4.
+或者我們只是想把 `self.first_thing` 放在 `self.second_thing` 旁邊這樣加起來。所以如果我們把 55 加到 33.4，我們想看到的是 5533.4，而不是 88.4。
 
-So first let's look at how to make a trait. The important thing to remember about `trait`s is that they are about behaviour. To make a trait, write `trait` and then create some functions.
+所以首先讓我們看一下如何做出特徵。`trait` 要記得的重點在於它們的行為 (behaviour)。要實作特徵時，寫下 `trait`，然後建立一些函式。
 
 ```rust
-struct Animal { // A simple struct - an Animal only has a name
+struct Animal { // 簡單結構體 - Animal只有名字
     name: String,
 }
 
-trait Dog { // The dog trait gives some functionality
-    fn bark(&self) { // It can bark
+trait Dog { // 狗的特徵給出一些功能性
+    fn bark(&self) { // 牠會吠叫
         println!("Woof woof!");
     }
-    fn run(&self) { // and it can run
+    fn run(&self) { // 並且牠會跑
         println!("The dog is running!");
     }
 }
 
-impl Dog for Animal {} // Now Animal has the trait Dog
+impl Dog for Animal {} // 現在Animal有了特徵Dog
 
 fn main() {
     let rover = Animal {
         name: "Rover".to_string(),
     };
 
-    rover.bark(); // Now Animal can use bark()
-    rover.run();  // and it can use run()
+    rover.bark(); // Animal能用 bark()
+    rover.run();  // 並且牠能用 run()
 }
 ```
 
-This is okay, but we don't want to print "The dog is running". You can change the methods that a `trait` gives you if you want, but you have to have the same signature. That means that it needs to take the same things, and return the same things. For example, we can change the method `.run()`, but we have to follow the signature. The signature says:
+這範例沒問題，但是我們不想印出 "The dog is running"。如果你想的話，你可以更改 `trait` 給你的方法，但你必須有相同的簽名。這意味著它需要接受同樣的東西，並回傳同樣的東西。例如，我們可以改變 `.run()` 方法，但我們必須遵循簽名。簽名是：
 
 ```rust
 // 🚧
@@ -4869,7 +4870,7 @@ fn run(&self) {
 }
 ```
 
-`fn run(&self)` means "fn `run()` takes `&self`, and returns nothing". So you can't do this:
+`fn run(&self)` 的意思是 "fn `run()` 接受 `&self` 引數，且不回傳任何內容"。所以你不能這樣做：
 
 ```rust
 fn run(&self) -> i32 { // ⚠️
@@ -4877,25 +4878,25 @@ fn run(&self) -> i32 { // ⚠️
 }
 ```
 
-Rust will say:
+Rust 會說：
 
 ```text
    = note: expected fn pointer `fn(&Animal)`
               found fn pointer `fn(&Animal) -> i32`
 ```
 
-But we can do this:
+但我們可以做這樣做：
 
 ```rust
-struct Animal { // A simple struct - an Animal only has a name
+struct Animal { // 簡單結構體 - Animal只有名字
     name: String,
 }
 
-trait Dog { // The dog trait gives some functionality
-    fn bark(&self) { // It can bark
+trait Dog { // 狗的特徵給出一些功能性
+    fn bark(&self) { // 牠會吠叫
         println!("Woof woof!");
     }
-    fn run(&self) { // and it can run
+    fn run(&self) { // 並且牠會跑
         println!("The dog is running!");
     }
 }
@@ -4911,15 +4912,15 @@ fn main() {
         name: "Rover".to_string(),
     };
 
-    rover.bark(); // Now Animal can use bark()
-    rover.run();  // and it can use run()
+    rover.bark(); // Animal能用 bark()
+    rover.run();  // 並且牠能用 run()
 }
 ```
 
-Now it prints `Rover is running!`. This is okay because we are returning `()`, or nothing, which is what the trait says.
+現在印出了 `Rover is running!`。這樣可以是因為我們回傳的是 `()`，也就是什麼都沒有，也是特徵簽名所說的。
 
 
-When you are writing a trait, you can just write the function signature. But if you do that, the user will have to write the function. Let's try that. Now we change `bark()` and `run()` to just say `fn bark(&self);` and `fn run(&self);`. This is not a full function, so the user must write it.
+當你在寫特徵時，你可以只寫函式簽名，但如果你這樣做，使用者將必須寫出函式的實作內容。讓我們來試試。現在我們把 `bark()` 和 `run()` 改成只有 `fn bark(&self);` 和 `fn run(&self);`。這不是完整的函式，所以必須由使用者來寫。
 
 ```rust
 struct Animal {
@@ -4927,9 +4928,9 @@ struct Animal {
 }
 
 trait Dog {
-    fn bark(&self); // bark() says it needs a &self and returns nothing
-    fn run(&self); // run() says it needs a &self and returns nothing.
-                   // So now we have to write them ourselves.
+    fn bark(&self); // bark() 說要有 &self 並且不回傳
+    fn run(&self); // run() 說要有 &self 並且不回傳。
+                   // 那麼現在我們必須要自己寫出它們。
 }
 
 impl Dog for Animal {
@@ -4951,9 +4952,9 @@ fn main() {
 }
 ```
 
-So when you create a trait, you must think: "Which functions should I write? And which functions should the user write?" If you think the user should use the function the same way every time, then write out the function. If you think the user will use it differently, then just write the function signature.
+所以當你建立特徵時，你必須思考："我應該寫哪些函式？而使用者又應該寫哪些函式？"如果你認為使用者每次使用某個函式的方式應該一致，那麼就該把它寫出來。如果你認為使用者會有不同的使用方式，那就只寫出函式簽名即可。
 
-So let's try implementing the Display trait for our struct. First we will make a simple struct:
+那讓我們嘗試為我們的結構體實作 Display 特徵。首先我們將做個簡單的結構體：
 
 ```rust
 struct Cat {
@@ -4969,7 +4970,7 @@ fn main() {
 }
 ```
 
-Now we want to print `mr_mantle`. Debug is easy to derive:
+現在我們想要印出 `mr_mantle`。Debug 很容易推導出：
 
 ```rust
 #[derive(Debug)]
@@ -4988,13 +4989,13 @@ fn main() {
 }
 ```
 
-but Debug print is not the prettiest way to print, because it looks like this.
+但 Debug 列印不是最漂亮的印出方式，因為它看起來像這樣。
 
 ```text
 Mr. Mantle is a Cat { name: "Reggie Mantle", age: 4 }
 ```
 
-So we need to implement `Display` for `Cat` if we want nicer printing. On [https://doc.rust-lang.org/std/fmt/trait.Display.html](https://doc.rust-lang.org/std/fmt/trait.Display.html) we can see the information for Display, and one example. It says:
+因此如果我們想要印出得更好看，就需要為 `Cat` 實作 `Display`。在 [https://doc.rust-lang.org/std/fmt/trait.Display.html](https://doc.rust-lang.org/std/fmt/trait.Display.html) 上我們可以看到 Display 的資訊，還有一個範例。它說：
 
 ```rust
 use std::fmt;
@@ -5013,7 +5014,7 @@ impl fmt::Display for Position {
 fn main() {}
 ```
 
-Some parts of this we don't understand yet, like `<'_>` and what `f` is doing. But we understand the `Position` struct: it is just two `f32`s. We also understand that `self.longitude` and `self.latitude` are the fields in the struct. So maybe we can just use this code for our struct, with `self.name` and `self.age`. Also, `write!` looks a lot like `println!` so it is pretty familiar. So we write this:
+有些部分我們還不明白，比如 `<'_>` 和 `f` 是做什麼的。但我們知道 `Position` 結構體：它只是兩個 `f32`。我們也懂 `self.longitude` 和 `self.latitude` 是結構體中的欄位。所以，也許我們可以拿這個程式碼來給我們的結構體用在 `self.name`和`self.age` 上。另外 `write!` 看起來很像 `println!`，所以會感到很熟悉。所以我們寫成這樣：
 
 ```rust
 use std::fmt;
@@ -5032,7 +5033,7 @@ impl fmt::Display for Cat {
 fn main() {}
 ```
 
-Let's add a `fn main()`. Now our code looks like this:
+讓我們新增 `fn main()`。現在我們的程式碼像這樣：
 
 ```rust
 use std::fmt;
@@ -5058,10 +5059,10 @@ fn main() {
 }
 ```
 
-Success! Now when we use `{}` to print, we get `Reggie Mantle is a cat who is 4 years old.`. This looks much better.
+成功了! 現在當我們使用 `{}` 列印時，我們得到 `Reggie Mantle is a cat who is 4 years old.`。這看起來好多了。
 
 
-By the way, if you implement `Display` then you get the `ToString` trait for free. That's because you use the `format!` macro for the `.fmt()` function, which lets you make a `String` with `.to_string()`. So we could do something like this where we pass `reggie_mantle` to a function that wants a `String`, or anything else.
+順帶一提，如果你實現了 `Display`，那麼你就可以免費得到 `ToString` 特徵。這是因為你使用 `format!` 巨集時間接使用了 `.fmt()` 函式，它讓你可以用 `.to_string()` 來做出 `String`。所以我們可以做類似這個範例做的事情，我們把 `reggie_mantle` 傳給想要 `String` 的函式，或者其他任何東西。
 
 ```rust
 use std::fmt;
@@ -5086,12 +5087,12 @@ fn main() {
         age: 4,
     };
 
-    print_cats(mr_mantle.to_string()); // Turn him into a String here
-    println!("Mr. Mantle's String is {} letters long.", mr_mantle.to_string().chars().count()); // Turn him into chars and count them
+    print_cats(mr_mantle.to_string()); // 這裡把牠轉換為 String
+    println!("Mr. Mantle's String is {} letters long.", mr_mantle.to_string().chars().count()); // 把牠轉換成字元計數
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Reggie Mantle is a cat who is 4 years old.
@@ -5101,9 +5102,9 @@ Mr. Mantle's String is 42 letters long.
 
 
 
-The thing to remember about traits is that they are about the behaviour of something. How does your `struct` act? What can it do? That's what traits are for. If you think of some of the traits we've seen so far, they are all about behaviour: `Copy` is something that a type can do. `Display` is also something that a type can do. `ToString` is another trait, and it's also something that a type can do: it can change into a `String`. In our `Dog` trait the word *dog* doesn't mean something you can do, but it gives some methods that let it do things. You could also implement it for a `struct Poodle` or `struct Beagle` and they would all get `Dog` methods.
+關於特徵要記得的是，它們與某些東西的行為有關。你的 `struct` 是如何動作的？它能做什麼？這就是特徵的作用。如果你想想我們到目前為止所看到的一些特徵，它們全都是關於行為的：`Copy` 是型別可以做的事情。`Display` 也是型別能做的事情。`ToString` 是另一個特徵，它也是型別可以做的事情：它可以改變型別成為 `String`。在我們的 `Dog` 特徵中，*Dog* 這個詞並不意味著你能做的事情，但它給出了一些讓它做某些事情的方法。你也可以為 `struct Poodle` 或 `struct Beagle` 實作它，它們都會得到 `Dog` 的方法。
 
-Let's look at another example that is even more connected to just behaviour. We'll imagine a fantasy game with some simple characters. One is a `Monster`, the other two are `Wizard` and `Ranger`. The `Monster` just has `health` so we can attack it, the other two don't have anything yet. But we made two traits. One is called `FightClose`, and lets you fight up close. The other is `FightFromDistance`, and lets you fight from far away. Only `Ranger` can use `FightFromDistance`. Here's what it looks like:
+讓我們再看另一個更純粹是行為的範例。我們將想像一個有一些簡單角色的幻想遊戲。一個是 `Monster`，另外兩個是`Wizard` 和 `Ranger`。`Monster` 只是有 `health`，所以我們可以攻擊它，其他兩個還沒有任何東西。但是我們做了兩個特徵。一個叫 `FightClose`，讓你近身作戰。另一個是 `FightFromDistance`，讓你在遠處戰鬥。只有 `Ranger` 可以使用 `FightFromDistance`。它會像是這裡看到的這樣：
 
 ```rust
 struct Monster {
@@ -5165,14 +5166,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 You attack with your sword. Your opponent now has 30 health left.
 You attack with your bow. Your opponent now has 20 health left.
 ```
 
-We pass `self` inside our trait all the time, but we can't do much with it right now. That's because Rust doesn't know what type is going to use it. It could be a `Wizard`, it could be a `Ranger`, it could be a new struct called `Toefocfgetobjtnode` or anything else. To give `self` some functionality, we can add necessary traits to the trait. If we want to print with `{:?}` for example then we need `Debug`. You can add it to the trait just by writing it after `:` (a colon). Now our code looks like this:
+我們總是在特徵裡傳入 `self`，但是我們現在還不能用它做什麼。那是因為 Rust 不知道什麼型別會使用它。它可能是一個 `Wizard`，也可能是一個 `Ranger`，也可能是一個叫做 `Toefocfgetobjtnode` 的新結構體，或者其他任何東西。為了讓 `self` 具有一定的功能，我們可以在特徵中加入必要的特徵。比如說，如果我們想用 `{:?}` 列印，那麼我們就需要 `Debug`。你只要把它寫在 `:`(冒號)後面，就可以把它加入到特徵中。現在我們的程式碼像這樣：
 
 
 ```rust
@@ -5180,20 +5181,20 @@ struct Monster {
     health: i32,
 }
 
-#[derive(Debug)] // Now Wizard has Debug
+#[derive(Debug)] // 現在 Wizard 有 Debug
 struct Wizard {
-    health: i32, // Now Wizard has health
+    health: i32, // 現在 Wizard 有 health
 }
-#[derive(Debug)] // So does Ranger
+#[derive(Debug)] // Ranger 也是
 struct Ranger {
-    health: i32, // So does Ranger
+    health: i32, // Ranger 也是
 }
 
-trait FightClose: std::fmt::Debug { // Now a type needs Debug to use FightClose
+trait FightClose: std::fmt::Debug { // 現在型別需要有 Debug 來使用 FightClose
     fn attack_with_sword(&self, opponent: &mut Monster) {
         opponent.health -= 10;
         println!(
-            "You attack with your sword. Your opponent now has {} health left. You are now at: {:?}", // We can now print self with {:?} because we have Debug
+            "You attack with your sword. Your opponent now has {} health left. You are now at: {:?}", // 我們現在可以用 {:?} 印出 self 因為我們有 Debug
             opponent.health, &self
         );
     }
@@ -5208,7 +5209,7 @@ trait FightClose: std::fmt::Debug { // Now a type needs Debug to use FightClose
 impl FightClose for Wizard {}
 impl FightClose for Ranger {}
 
-trait FightFromDistance: std::fmt::Debug { // We could also do trait FightFromDistance: FightClose because FightClose needs Debug
+trait FightFromDistance: std::fmt::Debug { // 我們也可以加上特徵 FightFromDistance : FightClose, 因為 FightClose 需要 Debug
     fn attack_with_bow(&self, opponent: &mut Monster, distance: u32) {
         if distance < 10 {
             opponent.health -= 10;
@@ -5241,21 +5242,21 @@ fn main() {
 }
 ```
 
-Now this prints:
+現在印出：
 
 ```text
 You attack with your sword. Your opponent now has 30 health left. You are now at: Wizard { health: 60 }
 You attack with your bow. Your opponent now has 20 health left.  You are now at: Ranger { health: 80 }
 ```
 
-In a real game it might be better to rewrite this for each type, because `You are now at: Wizard { health: 60 }` looks funny. That's also why methods inside traits are usually simple, because you don't know what type is going to use it. You can't write things like `self.0 += 10` for example. But this example shows that we can use other traits inside a trait we are writing. And when we do that, we get some methods that we can use.
+在真實的遊戲中，為每個型別重寫印出內容可能比較好，因為 `You are now at: Wizard { health: 60 }` 看起來有點可笑。這也是為什麼特徵裡面的方法通常很簡單，因為你不知道什麼型別會使用它。例如，你不能寫出 `self.0 += 10` 這樣的東西。但是這個範例表明，我們可以在我們正在撰寫的特徵裡面使用其他的特徵。當我們這樣做的時候，我們會得到一些我們可以使用的方法。
 
 
 
-One other way to use a trait is with what are called `trait bounds`. That means "limitations by a trait". Trait bounds are easy because a trait actually doesn't need any methods, or anything at all. Let's rewrite our code with something similar but different. This time our trait doesn't have any methods, but we have other functions that require traits to use.
+另外一種使用特徵的方式是使用所謂的 `特徵界限 (trait bound)`。意思是"透過特徵進行限制"。特徵限制很簡單，因為特徵實際上不需要任何方法，或者說根本不需要任何東西。讓我們用類似但不同的東西重寫我們的程式碼。這次我們的特徵沒有任何方法，但我們有限定要使用的特徵的其它函式。
 
 ```rust
-use std::fmt::Debug;  // So we don't have to write std::fmt::Debug every time now
+use std::fmt::Debug;  // 所以我們現在不用再每次寫 std::fmt::Debug
 
 struct Monster {
     health: i32,
@@ -5270,14 +5271,14 @@ struct Ranger {
     health: i32,
 }
 
-trait Magic{} // No methods for any of these traits. They are just trait bounds
+trait Magic{} // 這些特徵都沒有方法，它們只是特徵界限
 trait FightClose {}
 trait FightFromDistance {}
 
-impl FightClose for Ranger{} // Each type gets FightClose,
+impl FightClose for Ranger{} // 每個型別都得到 FightClose,
 impl FightClose for Wizard {}
-impl FightFromDistance for Ranger{} // but only Ranger gets FightFromDistance
-impl Magic for Wizard{}  // and only Wizard gets Magic
+impl FightFromDistance for Ranger{} // 但只有 Ranger 得到 FightFromDistance
+impl Magic for Wizard{}  // 且只有 Wizard 得到 Magic
 
 fn attack_with_bow<T: FightFromDistance + Debug>(character: &T, opponent: &mut Monster, distance: u32) {
     if distance < 10 {
@@ -5317,7 +5318,7 @@ fn main() {
 }
 ```
 
-This prints almost the same thing:
+印出來的東西幾乎一樣：
 
 ```text
 You attack with your sword. Your opponent now has 30 health left. You are now at: Wizard { health: 60 }
@@ -5325,13 +5326,13 @@ You attack with your bow. Your opponent now has 20 health left.  You are now at:
 You raise your hands and cast a fireball! Your opponent now has 0 health left. You are now at: Wizard { health: 60 }
 ```
 
-So you can see there are many ways to do the same thing when you use traits. It all depends on what makes the most sense for the program that you are writing.
+所以你可以看到，當你使用特徵時，有很多方式可以做到同樣的事情。這一切都取決於什麼對你正在編寫的程式最有意義。
 
-Now let's look at how to implement some of the main traits you will use in Rust.
+現在讓我們來看看如何實作一些你會在 Rust 中使用的主要特徵。
 
-### The From trait
+### From 特徵
 
-*From* is a very convenient trait to use, and you know this because you have seen it so much already. With *From* you can make a `String` from a `&str`, but you can make many types from many other types. For example, Vec uses *From* for the following:
+*From* 是個非常方便使用的特徵，你知道這一點是因為你已經看過很多遍。有了 *From* 你可以從 `&str` 做出 `String`，但你也可以用許多其他型別做出許多種型別。例如，Vec 能用 *From* 在以下型別：
 
 ```text
 From<&'_ [T]>
@@ -5349,12 +5350,12 @@ From<Vec<T>>
 From<VecDeque<T>>
 ```
 
-That is a lot of `Vec::from()` that we have not tried yet. Let's make a few and see what happens.
+那裡還有很多種 `Vec::from()` 我們還沒有嘗試用過。我們來用幾個看看會怎麼樣。
 
 ```rust
-use std::fmt::Display; // We will make a generic function to print them so we want Display
+use std::fmt::Display; // 我們會做個用來印出它們的泛型函式，所以我們想要 Display
 
-fn print_vec<T: Display>(input: &Vec<T>) { // Take any Vec<T> if type T has Display
+fn print_vec<T: Display>(input: &Vec<T>) { // 接受 Vec<T> 如果型別 T 有 Display
     for item in input {
         print!("{} ", item);
     }
@@ -5363,18 +5364,18 @@ fn print_vec<T: Display>(input: &Vec<T>) { // Take any Vec<T> if type T has Disp
 
 fn main() {
 
-    let array_vec = Vec::from([8, 9, 10]); // Try from an array
+    let array_vec = Vec::from([8, 9, 10]); // 試著對陣列 from
     print_vec(&array_vec);
 
-    let str_vec = Vec::from("What kind of vec will I be?"); // An array from a &str? This will be interesting
+    let str_vec = Vec::from("What kind of vec will I be?"); // 對 &str from 的陣列？ 這會蠻有趣的
     print_vec(&str_vec);
 
-    let string_vec = Vec::from("What kind of vec will a String be?".to_string()); // Also from a String
+    let string_vec = Vec::from("What kind of vec will a String be?".to_string()); // 也是對 String 去 from
     print_vec(&string_vec);
 }
 ```
 
-It prints the following:
+印出的內容如下：
 
 ```text
 8 9 10
@@ -5382,44 +5383,44 @@ It prints the following:
 87 104 97 116 32 107 105 110 100 32 111 102 32 118 101 99 32 119 105 108 108 32 97 32 83 116 114 105 110 103 32 98 101 63
 ```
 
-If you look at the type, the second and third vectors are `Vec<u8>`, which means the bytes of the `&str` and the `String`. So you can see that `From` is very flexible and used a lot. Let's try it with our own types.
+如果你觀察型別，第二個和第三個向量都是 `Vec<u8>`，也就是 `&str` 和 `String` 的位元組。所以你可以看到 `From` 是非常靈活的，且用得很多。讓我們用自己的型別來試試看。
 
-We'll make two structs and then implement `From` for one of them. One struct will be `City`, and the other will be `Country`. We want to be able to do this: `let country_name = Country::from(vector_of_cities)`.
+我們將做兩個結構體，然後為其中一個結構體實作 `From`。一個結構體會是 `City`，另一個結構體則會是 `Country`。我們希望能夠做到這件事：`let country_name = Country::from(vector_of_cities)`。
 
-It looks like this:
+它看起來像這樣：
 
 ```rust
-#[derive(Debug)] // So we can print City
+#[derive(Debug)] // 這樣我們可以印出 City
 struct City {
     name: String,
     population: u32,
 }
 
 impl City {
-    fn new(name: &str, population: u32) -> Self { // just a new function
+    fn new(name: &str, population: u32) -> Self { // 只是新的函式
         Self {
             name: name.to_string(),
             population,
         }
     }
 }
-#[derive(Debug)] // Country also needs to be printed
+#[derive(Debug)] // Country 也要可以被印出
 struct Country {
-    cities: Vec<City>, // Our cities go in here
+    cities: Vec<City>, // 我們的城市都在這裡
 }
 
-impl From<Vec<City>> for Country { // Note: we don't have to write From<City>, we can also do
-                                   // From<Vec<City>>. So we can also implement on a type that
-                                   // we didn't create
+impl From<Vec<City>> for Country { // 注意: 我們不用去寫 From<City>, 我們也可以改用
+                                   // From<Vec<City>>. 因此我們也能實作在我們
+                                   // 未曾建立的型別上
     fn from(cities: Vec<City>) -> Self {
         Self { cities }
     }
 }
 
 impl Country {
-    fn print_cities(&self) { // function to print the cities in Country
+    fn print_cities(&self) { // 函式印出 Country 內的城市
         for city in &self.cities {
-            // & because Vec<City> isn't Copy
+            // 用 & 因為 Vec<City> 不是 Copy
             println!("{:?} has a population of {:?}.", city.name, city.population);
         }
     }
@@ -5429,21 +5430,21 @@ fn main() {
     let helsinki = City::new("Helsinki", 631_695);
     let turku = City::new("Turku", 186_756);
 
-    let finland_cities = vec![helsinki, turku]; // This is the Vec<City>
-    let finland = Country::from(finland_cities); // So now we can use From
+    let finland_cities = vec![helsinki, turku]; // 這是 Vec<City>
+    let finland = Country::from(finland_cities); // 所以現在我們能用 From
 
     finland.print_cities();
 }
 ```
 
-This prints:
+印出：
 
 ```text
 "Helsinki" has a population of 631695.
 "Turku" has a population of 186756.
 ```
 
-You can see that `From` is easy to implement from types you didn't create like `Vec`, `i32`, and so on. Here is one more example where we create a vector that has two vectors. The first vector holds even numbers, and the second holds odd numbers. With `From` you can give it a vector of `i32`s and it will turn it into a `Vec<Vec<i32>>`: a vector that holds vectors of `i32`.
+你可以看到，很容易從你沒有建立的型別中實作出 `From`，比如 `Vec`、`i32` 等等。這裡還有一個例子是，我們建立有兩個向量的向量。第一個向量存放偶數，第二個向量存放奇數。你可以用 `From` 給它一個 `i32` 的向量，它會把它變成 `Vec<Vec<i32>>`：一個向量裡面有許多容納 `i32` 的向量。
 
 ```rust
 use std::convert::From;
@@ -5452,8 +5453,8 @@ struct EvenOddVec(Vec<Vec<i32>>);
 
 impl From<Vec<i32>> for EvenOddVec {
     fn from(input: Vec<i32>) -> Self {
-        let mut even_odd_vec: Vec<Vec<i32>> = vec![vec![], vec![]]; // A vec with two empty vecs inside
-                                                                    // This is the return value but first we must fill it
+        let mut even_odd_vec: Vec<Vec<i32>> = vec![vec![], vec![]]; // 向量的裡面有兩個空向量
+                                                                    // 這是回傳值但首先我們必須先將它填充
         for item in input {
             if item % 2 == 0 {
                 even_odd_vec[0].push(item);
@@ -5461,7 +5462,7 @@ impl From<Vec<i32>> for EvenOddVec {
                 even_odd_vec[1].push(item);
             }
         }
-        Self(even_odd_vec) // Now it is done so we return it as Self (Self = EvenOddVec)
+        Self(even_odd_vec) // 現在它完成了那我們把它回傳為 Self (Self = EvenOddVec)
     }
 }
 
@@ -5473,22 +5474,22 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Even numbers: [8, 222, 0, 8]
 Odd numbers: [7, -1, 3, 9787, -47, 77, 55, 7]
 ```
 
-A type like `EvenOddVec` is probably better as a generic `T` so we can use many number types. You can try to make the example generic if you want for practice.
+像 `EvenOddVec` 這樣的型別可能最好是用泛型的 `T`，這樣我們就可以用在許多數值型別。如果你想練習的話，你可以試著把這個範例做成泛型的。
 
-### Taking a String and a &str in a function
+### 接受 String 和 &str 的函式
 
-Sometimes you want a function that can take both a `String` and a `&str`. You can do this with generics and the `AsRef` trait. `AsRef` is used to give a reference from one type to another type. If you look at the documentation for `String`, you can see that it has `AsRef` for many types:
+有時你想讓函式能同時接受 `String` 和 `&str`。你可以透過泛型和 `AsRef` 特徵來做到這件事。`AsRef` 用於從某個型別向另一個型別提供參考。如果你查閱 `String` 文件，你可以看到它對許多型別都有提供 `AsRef`：
 
 [https://doc.rust-lang.org/std/string/struct.String.html](https://doc.rust-lang.org/std/string/struct.String.html)
 
-Here are some function signatures for them.
+這些是它們的一些函式簽名。
 
 `AsRef<str>`:
 
@@ -5517,9 +5518,9 @@ impl AsRef<OsStr> for String
 fn as_ref(&self) -> &OsStr
 ```
 
-You can see that it takes `&self` and gives a reference to the other type. This means that if you have a generic type T, you can say that it needs `AsRef<str>`. If you do that, it will be able to take a `&str` and a `String`.
+你可以看到，它接受 `&self`，並給出另一個型別的參考。這意味著，如果你有個泛型型別 T，你可以說它需要 `AsRef<str>`。如果你這樣做，它將會能夠接受 `&str` 和 `String`。
 
-Let's start with the generic function. This doesn't work yet:
+讓我們先從泛型函式說起。這個還不能執行：
 
 ```rust
 fn print_it<T>(input: T) {
@@ -5531,7 +5532,7 @@ fn main() {
 }
 ```
 
-Rust says `error[E0277]: T doesn't implement std::fmt::Display`. So we will require T to implement Display.
+Rust說 `error[E0277]: T doesn't implement std::fmt::Display`。所以我們會被要求給 T 實作 Display。
 
 ```rust
 use std::fmt::Display;
@@ -5545,7 +5546,7 @@ fn main() {
 }
 ```
 
-Now it works and prints `Please print me`. That is good, but T can still be too many things. It can be an `i8`, an `f32` and anything else with just `Display`. So we add `AsRef<str>`, and now T needs both `AsRef<str>` and `Display`.
+現在可以執行並印出 `Please print me`。這不錯，但 T 仍然可以是太多種類的型別。它可以是 `i8`、`f32` 及任何其它有 `Display` 的東西。所以我們加上 `AsRef<str>`，那麼現在 T 需要同時有實作 `AsRef<str>` 和 `Display`。
 
 ```rust
 use std::fmt::Display;
@@ -5557,20 +5558,20 @@ fn print_it<T: AsRef<str> + Display>(input: T) {
 fn main() {
     print_it("Please print me");
     print_it("Also, please print me".to_string());
-    // print_it(7); <- This will not print
+    // print_it(7); <- 這不會印出來
 }
 ```
 
-Now it won't take types like `i8`.
+現在它不會接受像 `i8` 這樣的型別。
 
-Don't forget that you can use `where` to write the function differently when it gets long. If we add Debug then it becomes `fn print_it<T: AsRef<str> + Display + Debug>(input: T)` which is long for one line. So we can write it like this:
+不要忘了，你可以在函式變長時用 `where` 以不一樣的方式寫出函式。如果我們加上 Debug，那麼它就會變成一整行長長的 `fn print_it<T: AsRef<str> + Display + Debug>(input: T)`。因此我們可以寫成這樣：
 
 ```rust
-use std::fmt::{Debug, Display}; // add Debug
+use std::fmt::{Debug, Display}; // 加上 Debug
 
-fn print_it<T>(input: T) // Now this line is easy to read
+fn print_it<T>(input: T) // 現在這行好讀多了
 where
-    T: AsRef<str> + Debug + Display, // and these traits are easy to read
+    T: AsRef<str> + Debug + Display, // 並且這些特徵也好讀
 {
     println!("{}", input)
 }
@@ -5581,9 +5582,9 @@ fn main() {
 }
 ```
 
-## Chaining methods
+## 鏈結方法
 
-Rust is a systems programming language like C and C++, and its code can be written as separate commands in separate lines, but it also has a functional style. Both styles are okay, but functional style is usually shorter. Here is an example of the non-functional style (called "imperative style") to make a `Vec` from 1 to 10:
+Rust 是一種系統程式語言，就像 C 和 C++ 一樣，它的程式碼可以寫成獨立的命令，單獨成行，但它也有函數式風格(functional style)。兩種風格都可以，但函數式通常比較短。下面以非函數式(稱為"命令式(imperative style)")為例，做出從 1 到 10 的 `Vec`。
 
 ```rust
 fn main() {
@@ -5599,22 +5600,22 @@ fn main() {
 }
 ```
 
-This prints `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
+印出 `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`。
 
-And here is an example of functional style:
+而這裡是函式式風格的範例：
 
 ```rust
 fn main() {
     let new_vec = (1..=10).collect::<Vec<i32>>();
-    // Or you can write it like this:
+    // 或者你能寫成像這樣:
     // let new_vec: Vec<i32> = (1..=10).collect();
     println!("{:?}", new_vec);
 }
 ```
 
-`.collect()` can make collections of many types, so we have to tell it the type.
+`.collect()` 可以做出很多型別的集合，所以我們要告訴它型別。
 
-With functional style you can chain methods. "Chaining methods" means to put many methods together in a single statement. Here is an example of many methods chained together:
+你可以用函數式風格來鏈結方法。"鏈結方法"的意思是把很多方法放在一個陳述式中。這裡是一個有很多方法鏈結在一起的範例：
 
 ```rust
 fn main() {
@@ -5626,43 +5627,43 @@ fn main() {
 }
 ```
 
-This creates a Vec with `[3, 4, 5, 6]`. This is a lot of information for one line, so it can help to put each method on a new line. Let's do that to make it easier to read:
+這樣就建立了一個是 `[3, 4, 5, 6]` 的 Vec。這一行的資訊量很大，所以把每個方法放在新的一行上會有幫助。讓我們這樣做，讓它更容易閱讀：
 
 ```rust
 fn main() {
     let my_vec = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     let new_vec = my_vec
-        .into_iter() // "iterate" over the items (iterate = work with each item inside it). into_iter() gives us owned values, not references
-        .skip(3) // skip over three items: 0, 1, and 2
-        .take(4) // take the next four: 3, 4, 5, and 6
-        .collect::<Vec<i32>>(); // put them in a new Vec<i32>
+        .into_iter() // "迭代"過所有元素 (iterate = 處理它裡面的每個項目). into_iter() 給我們的是具所有權的數值, 而非參考
+        .skip(3) // 略過三個項目: 0, 1, 和 2
+        .take(4) // 拿取後面四個: 3, 4, 5, 和 6
+        .collect::<Vec<i32>>(); // 把它們放進新的 Vec<i32>
 
     println!("{:?}", new_vec);
 }
 ```
 
-You can use this functional style best when you understand closures and iterators. So we will learn them next.
+當你瞭解閉包(closure)和疊代器(iterator)時，你就可以用最佳的方式運用這種函數式風格。所以我們接下來將學會它們。
 
-## Iterators
+## 疊代器
 
-An iterator is a construct that can give you the items in the collection, one at a time. Actually, we have already used iterators a lot: the `for` loop gives you an iterator. When you want to use an iterator other times, you have to choose what kind:
+疊代器是種可以一次拿給你集合中一個元素的構造。其實我們已經使用過疊代器很多次：`for` 迴圈就是給你疊代器使用。在其他時候當你想使用疊代器時，你必須選擇用那一種：
 
-- `.iter()` for an iterator of references
-- `.iter_mut()` for an iterator of mutable references
-- `.into_iter()` for an iterator of values (not references)
+- `.iter()` 給出參考的疊代器
+- `.iter_mut()` 給出可變參考的疊代器
+- `.into_iter()` 給出取值的疊代器(不是參考)
 
-A `for` loop is actually just an iterator that owns its values. That's why it can make it mutable and then you can change the values when you use it.
+`for` 迴圈其實只是一個擁有值的疊代器。這就是為什麼它可以是可變的，並在使用的時候改變值。
 
-We can use iterators like this:
+我們可以像這樣使用疊代器：
 
 ```rust
 fn main() {
-    let vector1 = vec![1, 2, 3]; // we will use .iter() and .into_iter() on this one
+    let vector1 = vec![1, 2, 3]; // 我們會對這個向量使用 .iter() 和 .into_iter()
     let vector1_a = vector1.iter().map(|x| x + 1).collect::<Vec<i32>>();
     let vector1_b = vector1.into_iter().map(|x| x * 10).collect::<Vec<i32>>();
 
-    let mut vector2 = vec![10, 20, 30]; // we will use .iter_mut() on this one
+    let mut vector2 = vec![10, 20, 30]; // 我們會對這個向量使用 .iter_mut()
     vector2.iter_mut().for_each(|x| *x +=100);
 
     println!("{:?}", vector1_a);
@@ -5671,7 +5672,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 [2, 3, 4]
@@ -5679,79 +5680,79 @@ This prints:
 [10, 20, 30]
 ```
 
-The first two we used a method called `.map()`. This method lets you do something to every item, then pass it on. The last one we used is one called `.for_each()`. This method just lets you do something to every item. `.iter_mut()` plus `for_each()` is basically just a `for` loop. Inside each method we can give a name to every item (we just called it `x`) and use that to change it. These are called closures and we will learn about them in the next section.
+在前兩個我們用了叫做 `.map()` 的方法。這個方法讓你對每個元素做些事情，然後把它傳遞下去。後面這個我們用的是叫做 `.for_each()` 的方法。這個方法也只是讓你對每個元素做些事情。`.iter_mut()` 加上 `for_each()` 基本上就是 `for` 迴圈。在每一個方法裡面，我們可以給每個元素取名(我們剛才叫它 `x`)，並用它的名字來改變它。這些被稱為閉包(closure)，我們將在下個章節學到。
 
-Let's go over them again, one at a time.
+讓我們再來一個個看過它們一遍。
 
-First we used `.iter()` on `vector1` to get references. We added 1 to each, and made it into a new Vec. `vector1` is still alive because we only used references: we didn't take by value. Now we have `vector1`, and a new Vec called `vector1_a`. Because `.map()` just passes it on, we needed to use `.collect()` to make it into a `Vec`.
+首先我們用 `.iter()` 對 `vector1` 取得元素的參考。我們給每一個元素都加上 1，並將結果變成新的 Vec。`vector1` 仍然還在，因為我們只用了參考：我們沒有拿走值。現在我們有 `vector1`，還有個新的 Vec 叫 `vector1_a`。因為 `.map()` 只是把它傳遞過去，所以我們還需要使用 `.collect()` 把它變成 `Vec`。
 
-Then we used `into_iter` to get an iterator by value from `vector1`. This destroys `vector1`, because that's what `into_iter()` does. So after we make `vector1_b` we can't use `vector1` again.
+然後我們用 `into_iter` 從 `vector1` 中得到取值疊代器。這樣就會銷毀 `vector1`，因為那就是 `into_iter()` 的作用。所以我們做出 `vector1_b` 之後，就不能再使用 `vector1` 了。
 
-Finally we used `.iter_mut()` for `vector2`. It is mutable, so we don't need to use `.collect()` to create a new Vec. Instead, we change the values in the same Vec with mutable references. So `vector2` is still there. Because we don't need a new Vec, we use `for_each`: it's just like a `for` loop.
+最後我們在 `vector2` 上使用了 `.iter_mut()`。它是可變的，因此我們不需要使用 `.collect()` 來建立新的 Vec。反而我們用可變參考改變同一個 Vec 中的值。所以 `vector2` 仍然存在。也因為我們不需要新的 Vec，可以直接使用 `for_each`：它就像 `for` 迴圈。
 
 
-### How an iterator works
+### 疊代器如何運作
 
-An iterator works by using a method called `.next()`, which gives an `Option`. When you use an iterator, Rust calls `next()` over and over again. If it gets `Some`, it keeps going. If it gets `None`, it stops.
+疊代器是藉由使用叫做 `.next()` 的方法來運作，這個方法會回傳 `Option`。當你使用疊代器時，Rust 會一遍又一遍地對它呼叫 `next()`。如果得到 `Some`，它就會繼續下去。如果得到 `None`，它就停止。
 
-Do you remember the `assert_eq!` macro? In documentation, you see it all the time. Here it is showing how an iterator works.
+你還記得 `assert_eq!` 巨集嗎？在文件中，你總是看得到它。這裡它展示了疊代器如何運作。
 
 ```rust
 fn main() {
-    let my_vec = vec!['a', 'b', '거', '柳']; // Just a regular Vec
+    let my_vec = vec!['a', 'b', '거', '柳']; // 只是正規的 Vec
 
-    let mut my_vec_iter = my_vec.iter(); // This is an Iterator type now, but we haven't called it yet
+    let mut my_vec_iter = my_vec.iter(); // 現在這是疊代器型別, 但我們還沒呼叫它
 
-    assert_eq!(my_vec_iter.next(), Some(&'a'));  // Call the first item with .next()
-    assert_eq!(my_vec_iter.next(), Some(&'b'));  // Call the next
-    assert_eq!(my_vec_iter.next(), Some(&'거')); // Again
-    assert_eq!(my_vec_iter.next(), Some(&'柳')); // Again
-    assert_eq!(my_vec_iter.next(), None);        // Nothing is left: just None
-    assert_eq!(my_vec_iter.next(), None);        // You can keep calling .next() but it will always be None
+    assert_eq!(my_vec_iter.next(), Some(&'a'));  // 用 .next() 呼叫第一個元素
+    assert_eq!(my_vec_iter.next(), Some(&'b'));  // 呼叫下一個
+    assert_eq!(my_vec_iter.next(), Some(&'거')); // 再一次
+    assert_eq!(my_vec_iter.next(), Some(&'柳')); // 再一次
+    assert_eq!(my_vec_iter.next(), None);        // 沒有東西留下: 只有 None
+    assert_eq!(my_vec_iter.next(), None);        // 你能持續呼叫 .next() 但它會永遠是 None
 }
 ```
 
-Implementing `Iterator` for your own struct or enum is not too hard. First let's make a book library and think about it.
+為自己的結構體或列舉實作 `Iterator` 並不太難。首先讓我們建立書庫，思考看看。
 
 ```rust
-#[derive(Debug)] // we want to print it with {:?}
+#[derive(Debug)] // 我們想用 {:?} 印出它
 struct Library {
-    library_type: LibraryType, // this is our enum
-    books: Vec<String>, // list of books
+    library_type: LibraryType, // 這是我們的列舉
+    books: Vec<String>, // 書本清單
 }
 
 #[derive(Debug)]
-enum LibraryType { // libraries can be city libraries or country libraries
+enum LibraryType { // 書庫可以是城市圖書館或國家圖書館
     City,
     Country,
 }
 
 impl Library {
-    fn add_book(&mut self, book: &str) { // we use add_book to add new books
-        self.books.push(book.to_string()); // we take a &str and turn it into a String, then add it to the Vec
+    fn add_book(&mut self, book: &str) { // 我們用 add_book 來加入新書
+        self.books.push(book.to_string()); // 我們接受 &str 並回傳為 String, 再加入 Vec 裡
     }
 
-    fn new() -> Self { // this creates a new Library
+    fn new() -> Self { // 這裡建立新的 Library
         Self {
-            library_type: LibraryType::City, // most are in the city so we'll choose City
-                                             // most of the time
+            library_type: LibraryType::City, // 多數是在城市裡所以
+                                             // 很多時候我們會選 City
             books: Vec::new(),
         }
     }
 }
 
 fn main() {
-    let mut my_library = Library::new(); // make a new library
-    my_library.add_book("The Doom of the Darksword"); // add some books
+    let mut my_library = Library::new(); // 做新的書庫
+    my_library.add_book("The Doom of the Darksword"); // 加入一些書
     my_library.add_book("Demian - die Geschichte einer Jugend");
     my_library.add_book("구운몽");
     my_library.add_book("吾輩は猫である");
 
-    println!("{:?}", my_library.books); // we can print our list of books
+    println!("{:?}", my_library.books); // 我們可以印出我們的書本清單
 }
 ```
 
-That works well. Now we want to implement `Iterator` for the library so we can use it in a `for` loop. Right now if we try a `for` loop, it doesn't work:
+這運作的很好。現在我們想為書庫實作 `Iterator`，這樣我們就可以在 `for` 迴圈中使用它。現在如果我們嘗試用 `for` 迴圈，它肯定不能用：
 
 ```rust
 for item in my_library {
@@ -5759,7 +5760,7 @@ for item in my_library {
 }
 ```
 
-It says:
+報出錯誤：
 
 ```text
 error[E0277]: `Library` is not an iterator
@@ -5772,14 +5773,14 @@ error[E0277]: `Library` is not an iterator
    = note: required by `std::iter::IntoIterator::into_iter`
 ```
 
-But we can make library into an iterator with `impl Iterator for Library`. Information on the `Iterator` trait is here in the standard library: [https://doc.rust-lang.org/std/iter/trait.Iterator.html](https://doc.rust-lang.org/std/iter/trait.Iterator.html)
+但是我們可以用 `impl Iterator for Library` 把書庫變成疊代器。`Iterator` 特徵的資訊能在標準函式庫中查看：[https://doc.rust-lang.org/std/iter/trait.Iterator.html](https://doc.rust-lang.org/std/iter/trait.Iterator.html)
 
-On the top left of the page it says: `Associated Types: Item` and `Required Methods: next`. An "associated type" means "a type that goes together". Our associated type will be `String`, because we want the iterator to give us Strings.
+在頁面的左上方寫著：`Associated Types: Item` 和 `Required Methods: next`。"關聯型別"的意思是"一起使用的型別"。我們的關聯型別將會是 `String`，因為我們希望疊代器回傳給我們 String。
 
-In the page it has an example that looks like this:
+在頁面中，它有個看起來像這樣的範例。
 
 ```rust
-// an iterator which alternates between Some and None
+// 交錯回傳 Some 和 None 的疊代器
 struct Alternate {
     state: i32,
 }
@@ -5791,7 +5792,7 @@ impl Iterator for Alternate {
         let val = self.state;
         self.state = self.state + 1;
 
-        // if it's even, Some(i32), else None
+        // 如果是偶數回傳 Some(i32), 不然就是 None
         if val % 2 == 0 {
             Some(val)
         } else {
@@ -5803,9 +5804,9 @@ impl Iterator for Alternate {
 fn main() {}
 ```
 
-You can see that under `impl Iterator for Alternate` it says `type Item = i32`. This is the associated type. Our iterator will be for our list of books, which is a `Vec<String>`. When we call next, it will give us a `String`. So we will write `type Item = String;`. That is the associated item.
+你可以看到 `impl Iterator for Alternate` 下面寫著 `type Item = i32`。這就是關聯型別。我們的疊代器將會用在型別是 `Vec<String>` 的書本清單上。當我們呼叫 next 的時候，它要回傳給我們 `String`。那麼我們就會要寫成 `type Item = String;`。那就是所謂的關聯型別。
 
-To implement `Iterator`, you need to write the `fn next()` function. This is where you decide what the iterator should do. For our `Library`, we want it to give us the last books first. So we will `match` with `.pop()` which takes the last item off if it is `Some`. We also want to print " is found!" for each item. Now it looks like this:
+為了實作 `Iterator`，你需要去寫 `fn next()` 函式。這是你決定疊代器應該要做什麼的地方。對於我們的 `Library`，我們希望它先給我們最後一本書。所以我們將會 `match` 從 `.pop()` 拿出來的最後一個元素，如果它是 `Some` 的話。我們還想為每個元素印出 " is found!"。現在它看起來像這樣：
 
 ```rust
 #[derive(Debug, Clone)]
@@ -5828,7 +5829,7 @@ impl Library {
     fn new() -> Self {
         Self {
             library_type: LibraryType::City,
-            // most of the time
+            // 很多時候
             books: Vec::new(),
         }
     }
@@ -5839,7 +5840,7 @@ impl Iterator for Library {
 
     fn next(&mut self) -> Option<String> {
         match self.books.pop() {
-            Some(book) => Some(book + " is found!"), // Rust allows String + &str
+            Some(book) => Some(book + " is found!"), // Rust 允許 String + &str
             None => None,
         }
     }
@@ -5852,13 +5853,13 @@ fn main() {
     my_library.add_book("구운몽");
     my_library.add_book("吾輩は猫である");
 
-    for item in my_library.clone() { // we can use a for loop now. Give it a clone so Library won't be destroyed
+    for item in my_library.clone() { // 我們現在能用for迴圈. 給它克隆這樣Library就不會被銷毀
         println!("{}", item);
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 吾輩は猫である is found!
@@ -5867,11 +5868,11 @@ Demian - die Geschichte einer Jugend is found!
 The Doom of the Darksword is found!
 ```
 
-## Closures
+## 閉包
 
-Closures are like quick functions that don't need a name. Sometimes they are called lambdas. Closures are easy to find because they use `||` instead of `()`. They are very common in Rust, and once you learn to use them you will wonder how you lived without them.
+閉包(Closure)就像不需要名字的快速函式。有時它們被稱為 lambda。閉包很容易辨識，因為它們使用 `||` 而不是 `()`。它們在 Rust 中非常常見，一旦你學會了使用它們，你就會愛不釋手。
 
-You can bind a closure to a variable, and then it looks exactly like a function when you use it:
+你可以將閉包連結到變數上，而當你使用它時，它看起來就像一個函式一樣：
 
 ```rust
 fn main() {
@@ -5880,9 +5881,9 @@ fn main() {
 }
 ```
 
-So this closure takes nothing: `||` and prints a message: `This is a closure`.
+所以這個閉包沒有接受東西：`||`，並印出訊息。`This is a closure`。
 
-In between the `||` we can add input variables and types, like inside `()` for a function:
+在 `||` 之間我們可以加上要輸入的變數和型別，就像在函式的 `()` 裡面一樣的用法：
 
 ```rust
 fn main() {
@@ -5893,14 +5894,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 5
 10
 ```
 
-When the closure becomes more complicated, you can add a code block. Then it can be as long as you want.
+當閉包變得更加復雜時，你可以加上程式碼區塊。那你就可以要寫多長就多長。
 
 ```rust
 fn main() {
@@ -5908,14 +5909,14 @@ fn main() {
         let number = 7;
         let other_number = 10;
         println!("The two numbers are {} and {}.", number, other_number);
-          // This closure can be as long as we want, just like a function.
+          // 這個閉包你想要寫多長就能有多長, 就像函式.
     };
 
     my_closure();
 }
 ```
 
-But closures are special because they can take variables that are outside the closure even if you only write `||`. So you can do this:
+但是閉包的特殊在於它可以接受閉包之外的變數，即使你只有寫 `||`。所以你可以這樣做：
 
 ```rust
 fn main() {
@@ -5927,19 +5928,19 @@ fn main() {
 }
 ```
 
-So this prints `16`. You didn't need to put anything in `||` because it can just take `number_one` and `number_two` and add them.
+就會印出 `16`。你不需要在 `||` 中放入任何東西，因為它可以直接拿到 `number_one` 和 `number_two` 並把它們加起來。
 
-By the way, that is where the name **closure** comes from, because they take variables and "enclose" them inside. And if you want to be very correct:
+順帶一提，這就是 **閉包(closure)** 這個名字的由來，因為它們會取得變數並將它們"封入(enclose)"在裡面。如果你想要很正確的說法：
 
-- a `||` that doesn't enclose a variable from outside is an "anonymous function". Anonymous means "doesn't have a name". It works more like a regular function.
-- a `||` that does enclose a variable from outside is a "closure". It "encloses" the variables around it to use them.
+- `||` 如果不把變數從外面封進來就是"匿名函式(anonymous function)"。匿名的意思是"沒有名字"。它用起來更像個正規函式。
+- `||` 有從外部封入變數的才是"閉包"。它把它周圍的變數"封起來"使用。
 
-But people will often call all `||` functions closures, so you don't have to worry about the name. We will just say "closure" for anything with a `||`, but remember that it can mean an "anonymous function".
+但是人們經常會把所有的 `||` 函式都叫做閉包，所以你不用擔心名字的問題。我們只會對帶有 `||` 的任何東西叫"閉包"，但請記住，它可能意味著一個"匿名函式"。
 
-Why is it good to know the difference? It's because an anonymous function actually makes the same machine code as a function with a name. They feel "high level", so sometimes people think that the machine code will be complicated. But the machine code that Rust makes from it is just as fast as a regular function.
+為什麼知道兩者的區別有益呢？因為匿名函式其實和具名函式產生一樣的機器碼(machine code)。它們給人的感覺是"高層抽象"，所以有時候大家會覺得機器碼會很複雜。但是 Rust 用它產生的機器碼其實和正規函式一樣快。
 
 
-So let's look at some more things that closures can do. You can also do this:
+所以讓我們再來看看更多一些閉包能做的事。你也可以這樣做：
 
 ```rust
 fn main() {
@@ -5951,21 +5952,21 @@ fn main() {
 }
 ```
 
-This closure takes `number_one` and `number_two`. We also gave it a new variable `x` and said that `x` is 5. Then it adds all three together to print `21`.
+這個閉包取用 `number_one` 和 `number_two`。我們還給了它新的變數 `x`，並且照範例來說 `x` 是 5。然後它把這三個都加在一起印出 `21`。
 
-Usually you see closures in Rust inside of a method, because it is very convenient to have a closure inside. We saw closures in the last section with `.map()` and `.for_each()`. In that section we wrote `|x|` to bring in the next item in an iterator, and that was a closure.
+通常在 Rust 中，你會在方法的引數裡面看到閉包，是因為用閉包作為引數是非常方便的事。我們在上個章節中有 `.map()` 和 `.for_each()` 的地方看到了閉包。在那個章節中，我們寫了 `|x|` 來代入疊代器的下一個元素，那就是一個閉包。
 
-Here is another example: the `unwrap_or` method that we know that you can use to give a value if `unwrap` doesn't work. Before, we wrote: `let fourth = my_vec.get(3).unwrap_or(&0);`. But there is also an `unwrap_or_else` method that has a closure inside. So you can do this:
+這裡是另一個範例：如果 `unwrap` 不起作用，可以用我們已知的 `unwrap_or` 方法給出一個值替代。之前我們寫的是：`let fourth = my_vec.get(3).unwrap_or(&0);`。但還有個引數是用閉包的 `unwrap_or_else` 方法。所以你可以這樣做：
 
 ```rust
 fn main() {
     let my_vec = vec![8, 9, 10];
 
-    let fourth = my_vec.get(3).unwrap_or_else(|| { // try to unwrap. If it doesn't work,
-        if my_vec.get(0).is_some() {               // see if my_vec has something at index [0]
-            &my_vec[0]                             // Give the number at index 0 if there is something
+    let fourth = my_vec.get(3).unwrap_or_else(|| { // 試著 unwrap. 如果它不能用,
+        if my_vec.get(0).is_some() {               // 就看 my_vec 是否有東西在索引 [0]
+            &my_vec[0]                             // 如果有東西就回傳在索引 [0] 的數值
         } else {
-            &0 // otherwise give a &0
+            &0 // 不然就給 &0
         }
     });
 
@@ -5973,36 +5974,36 @@ fn main() {
 }
 ```
 
-Of course, a closure can be very simple. You can just write `let fourth = my_vec.get(3).unwrap_or_else(|| &0);` for example. You don't always need to use a `{}` and write complicated code just because there is a closure. As long as you put the `||` in, the compiler knows that you have put in the closure that you need.
+當然，閉包也可以很簡單。例如你可以只寫 `let fourth = my_vec.get(3).unwrap_or_else(|| &0);`。你不必只因為有閉包，就總是需要用 `{}` 並寫出複雜的程式碼。只要你把 `||` 放進去，編譯器就知道你放了你需要的閉包。
 
-The most frequent closure method is maybe `.map()`. Let's take a look at it again. Here is one way to use it:
+最常用的閉包方法可能是 `.map()`。讓我們再來看看它。下面是一種使用方式：
 
 ```rust
 fn main() {
     let num_vec = vec![2, 4, 6];
 
-    let double_vec = num_vec        // take num_vec
-        .iter()                     // iterate over it
-        .map(|number| number * 2)   // for each item, multiply by two
-        .collect::<Vec<i32>>();     // then make a new Vec from this
+    let double_vec = num_vec        // 拿 num_vec
+        .iter()                     // 疊代它
+        .map(|number| number * 2)   // 對每個元素乘以二
+        .collect::<Vec<i32>>();     // 然後從結果做新的 Vec
     println!("{:?}", double_vec);
 }
 ```
 
-Another good example is with `.for_each()` after `.enumerate()`. The `.enumerate()` method gives an iterator with the index number and the item. For example: `[10, 9, 8]` becomes `(0, 10), (1, 9), (2, 8)`. The type for each item here is `(usize, i32)`. So you can do this:
+另一個好例子是在 `.enumerate()` 之後使用 `.for_each()`。`.enumerate()` 方法給的是帶有索引號碼和元素的疊代器。例如：`[10, 9, 8]` 變成 `(0, 10), (1, 9), (2, 8)`。這裡每個元素的型別是 `(usize, i32)`。所以你可以這樣做：
 
 ```rust
 fn main() {
     let num_vec = vec![10, 9, 8];
 
     num_vec
-        .iter()      // iterate over num_vec
-        .enumerate() // get (index, number)
-        .for_each(|(index, number)| println!("Index number {} has number {}", index, number)); // do something for each one
+        .iter()      // 疊代 num_vec
+        .enumerate() // 得到 (index, number)
+        .for_each(|(index, number)| println!("Index number {} has number {}", index, number)); // 對每一個做些事
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Index number 0 has number 10
@@ -6010,9 +6011,9 @@ Index number 1 has number 9
 Index number 2 has number 8
 ```
 
-In this case we use `for_each` instead of `map`. `map` is for **doing something to** each item and passing it on, and `for_each` is **doing something when you see each item**. Also, `map` doesn't do anything unless you use a method like `collect`.
+在這種情況下，我們用 `for_each` 代替 `map`。`map` 是用於對每個元素**做一些事情**，並將其傳遞出去，而 `for_each` 是**當你看到每個元素時做一些事情**。另外，`map` 不會做任何事情，除非你使用像 `collect` 這樣的方法。
 
-Actually, this is the interesting thing about iterators. If you try to `map` without a method like `collect`, the compiler will tell you that it doesn't do anything. It won't panic, but the compiler will tell you that you didn't do anything.
+其實，這就是疊代器有趣的地方。如果你試著用 `map` 之後卻沒用像 `collect` 這樣的方法，編譯器會告訴你它不會做任何事。它不會恐慌，但編譯器只會告訴你什麼事都沒做。
 
 ```rust
 fn main() {
@@ -6026,7 +6027,7 @@ fn main() {
 }
 ```
 
-It says:
+它說：
 
 ```text
 warning: unused `std::iter::Map` that must be used
@@ -6042,64 +6043,64 @@ warning: unused `std::iter::Map` that must be used
   = note: iterators are lazy and do nothing unless consumed
 ```
 
-This is a **warning**, so it's not an error: the program runs fine. But why doesn't num_vec do anything? We can look at the types to see.
+這是個**警告**，所以不是錯誤：程式有正常執行。但是為什麼 `num_vec` 沒做任何事呢？我們可以看看型別就知道了。
 
-- `let num_vec = vec![10, 9, 8];` Right now it is a `Vec<i32>`.
-- `.iter()` Now it is an `Iter<i32>`. So it is an iterator with items of `i32`.
-- `.enumerate()` Now it is an `Enumerate<Iter<i32>>`. So it is a type `Enumerate` of type `Iter` of `i32`s.
-- `.map()` Now it is a type `Map<Enumerate<Iter<i32>>>`. So it is a type `Map` of type `Enumerate` of type `Iter` of `i32`s.
+- `let num_vec = vec![10, 9, 8];` 現在是個 `Vec<i32>`。
+- `.iter()` 現在是個 `Iter<i32>`。所以它是個元素為 `i32` 的疊代器。
+- `.enumerate()` 現在是個 `Enumerate<Iter<i32>>`。所以它是 `i32` 的 `Iter` 型別的 `Enumerate` 型別。
+- `.map()` 現在是個 `Map<Enumerate<Iter<i32>>>` 的型別。所以它是 `i32` 的 `Iter` 型別的 `Enumerate` 型別的 `Map` 型別。
 
-All we did was make a more and more complicated structure. So this `Map<Enumerate<Iter<i32>>>` is a structure that is ready to go, but only when we tell it what to do. Rust does this because it needs to be fast. It doesn't want to do this:
+我們所做的只是個越來越複雜的結構體。所以這個 `Map<Enumerate<Iter<i32>>>` 結構體只是準備好，但只有在我們告訴它要做什麼事時才會處理好能用。Rust 這樣做是因為它需要保證足夠快。它不想這樣做：
 
-- iterate over all the `i32`s in the Vec
-- then enumerate over all the `i32`s from the iterator
-- then map over all the enumerated `i32`s
+- 迭代向量中所有的 `i32`
+- 然後列舉出疊代器中所有的 `i32`
+- 然後對映所有列舉出的 `i32`
 
-Rust only wants to do one calculation, so it creates the structure and waits. Then if we say `.collect::<Vec<i32>>()` it knows what to do, and starts moving. This is what `iterators are lazy and do nothing unless consumed` means. The iterators don't do anything until you "consume" them (use them up).
+Rust 只想做一次計算，所以它建立結構體並等待。之後如果我們講了 `.collect::<Vec<i32>>()`，它就會知道該怎麼做，並開始動作。這就是 `iterators are lazy and do nothing unless consumed` 的意思。疊代器在你"消耗(consume)"它們(用完它們)之前不會做任何事情。
 
 
-You can even create complicated things like `HashMap` using `.collect()`, so it is very powerful. Here is an example of how to put two vecs into a `HashMap`. First we make the two vectors, and then we will use `.into_iter()` on them to get an iterator of values. Then we use the `.zip()` method. This method takes two iterators and attaches them together, like a zipper. Finally, we use `.collect()` to make the `HashMap`.
+你甚至可以用 `.collect()` 建立像 `HashMap` 這樣複雜的東西，所以它非常強大。這裡是如何將兩個向量放進 `HashMap` 的範例。首先我們做兩個向量出來，然後我們會對它們使用 `.into_iter()` 來得到值的疊代器。接著我們使用 `.zip()` 方法。這個方法將兩個疊代器就像拉鍊一樣伴隨(attach)在一起，。最後我們使用 `.collect()` 來做出 `HashMap`。
 
-Here is the code:
+這裡是程式碼：
 
 ```rust
 use std::collections::HashMap;
 
 fn main() {
-    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // a Vec<i32>
-    let some_words = vec!["zero", "one", "two", "three", "four", "five"]; // a Vec<&str>
+    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // 是 Vec<i32>
+    let some_words = vec!["zero", "one", "two", "three", "four", "five"]; // 是 Vec<&str>
 
     let number_word_hashmap = some_numbers
-        .into_iter()                 // now it is an iter
-        .zip(some_words.into_iter()) // inside .zip() we put in the other iter. Now they are together.
+        .into_iter()                 // 現在是疊代器
+        .zip(some_words.into_iter()) // .zip() 裡面我們放入另一個疊代器. 現在它們在一起了.
         .collect::<HashMap<_, _>>();
 
     println!("For key {} we get {}.", 2, number_word_hashmap.get(&2).unwrap());
 }
 ```
 
-This prints:
+印出：
 
 ```text
 For key 2 we get two.
 ```
 
-You can see that we wrote `<HashMap<_, _>>` because that is enough information for Rust to decide on the type `HashMap<i32, &str>`. You can write `.collect::<HashMap<i32, &str>>();` if you want, or you can write it like this if you prefer:
+你可以看到我們寫得是 `<HashMap<_, _>>`，因為那有足夠資訊讓 Rust 判斷出型別是 `HashMap<i32, &str>`。如果你想要寫成 `.collect::<HashMap<i32, &str>>();` 也行，或者你偏好像這樣寫也可以：
 
 ```rust
 use std::collections::HashMap;
 
 fn main() {
-    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // a Vec<i32>
-    let some_words = vec!["zero", "one", "two", "three", "four", "five"]; // a Vec<&str>
-    let number_word_hashmap: HashMap<_, _> = some_numbers  // Because we tell it the type here...
+    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // 是 Vec<i32>
+    let some_words = vec!["zero", "one", "two", "three", "four", "five"]; // 是 Vec<&str>
+    let number_word_hashmap: HashMap<_, _> = some_numbers  // 因為我們在這裡告訴它型別...
         .into_iter()
         .zip(some_words.into_iter())
-        .collect(); // we don't have to tell it here
+        .collect(); // 我們就不用在這裡告訴它
 }
 ```
 
-There is another method that is like `.enumerate()` for `char`s: `char_indices()`. (Indices means "indexes"). You use it in the same way. Let's pretend we have a big string that made of 3-digit numbers.
+還有一種方法，就像 `char` 的 `.enumerate()`：`char_indices()`(Indices的意思是"索引")。你用它的方式是一樣的。讓我們假裝有個由許多3位數的數字組成的大字串。
 
 ```rust
 fn main() {
@@ -6107,21 +6108,21 @@ fn main() {
 
     for (index, number) in numbers_together.char_indices() {
         match (index % 3, number) {
-            (0..=1, number) => print!("{}", number), // just print the number if there is a remainder
-            _ => print!("{}\t", number), // otherwise print the number with a tab space
+            (0..=1, number) => print!("{}", number), // 在特定餘數時只印出數字
+            _ => print!("{}\t", number), // 不然就印出帶有定位空白的數字
         }
     }
 }
 ```
 
-This prints `140     399     923     481     800     622     623     218     009     598    281`.
+印出 `140     399     923     481     800     622     623     218     009     598    281`。
 
 
-### |_| in a closure
+### 閉包裡的 |_|
 
-Sometimes you see `|_|` in a closure. This means that the closure needs an argument (like `x`), but you don't want to use it. So `|_|` means "Okay, this closure takes an argument but I won't give it a name because I don't care about it".
+有時你會在閉包裡面看到 `|_|`。這意味著這個閉包需要一個引數(比如 `x`)，但你不想使用它。所以 `|_|` 意味著 "好吧，這個閉包接受一個引數，但我不會給它名字是因為我不在乎它"。
 
-Here is an example of an error when you don't do that:
+這裡的範例是當你不這樣做時會有的錯誤：
 
 ```rust
 fn main() {
@@ -6131,7 +6132,7 @@ fn main() {
 }
 ```
 
-Rust says that
+Rust 講說
 
 ```text
 error[E0593]: closure is expected to take 1 argument, but it takes 0 arguments
@@ -6143,7 +6144,7 @@ error[E0593]: closure is expected to take 1 argument, but it takes 0 arguments
    |                                    expected closure that takes 1 argument
 ```
 
-The compiler actually gives you some help:
+編譯器其實會給你一些幫助：
 
 ```text
 help: consider changing the closure to take and ignore the expected argument
@@ -6151,36 +6152,36 @@ help: consider changing the closure to take and ignore the expected argument
 28 |     println!("{:?}", my_vec.iter().for_each(|_| println!("We didn't use the variables at all")));
 ```
 
-This is good advice. If you change `||` to `|_|` then it will work.
+這是很好的建議。如果你把 `||` 改成 `|_|` 就可以運作了。
 
-### Helpful methods for closures and iterators
+### 閉包和疊代器的有用方法
 
-Rust becomes a very fun to language once you become comfortable with closures. With closures you can *chain* methods to each other and do a lot of things with very little code. Here are some closures and methods used with closures that we didn't see yet.
+一旦閉包讓你感到自在時，Rust 就會成為一種非常有趣的語言。有了閉包，你可以將方法互相 *連結* 起來，用很少的程式碼做很多事情。下面是一些我們還沒有見過的閉包和使用閉包的方法。
 
-`.filter()`: This lets you keep the items in an iterator that you want to keep. Let's filter the months of the year.
+`.filter()`：讓你保留疊代器中你想保留的元素。讓我們過濾一年之中的月份。
 
 ```rust
 fn main() {
     let months = vec!["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     let filtered_months = months
-        .into_iter()                         // make an iter
-        .filter(|month| month.len() < 5)     // We don't want months more than 5 bytes in length.
-                                             // We know that each letter is one byte so .len() is fine
-        .filter(|month| month.contains("u")) // Also we only like months with the letter u
+        .into_iter()                         // 做出疊代器
+        .filter(|month| month.len() < 5)     // 我們不想要月份名的長度超過 5 個位元組.
+                                             // 我們知道每個字母是一個位元組, 所以用 .len() 沒問題
+        .filter(|month| month.contains("u")) // 還有我們只喜歡字母有 u 的月份
         .collect::<Vec<&str>>();
 
     println!("{:?}", filtered_months);
 }
 ```
 
-This prints `["June", "July"]`.
+印出 `["June", "July"]`。
 
 
 
-`.filter_map()`. This is called `filter_map()` because it does `.filter()` and `.map()`. The closure must return an `Option<T>`, and then `filter_map()` takes the value out of each `Option` if it is `Some`. So for example if you were to `.filter_map()` a `vec![Some(2), None, Some(3)]`, it would return `[2, 3]`.
+`.filter_map()`：這叫做 `filter_map()` 是因為它做了 `.filter()` 和 `.map()`。傳入的閉包必須回傳 `Option<T>`, 接著 `filter_map()` 將會從每一個 `Option` 取出是 `Some` 的值。所以比如說你套用 `.filter_map()` 到 `vec![Some(2), None, Some(3)]`，它就會回傳 `[2, 3]`。
 
-We will write an example with a `Company` struct. Each company has a `name` so that field is `String`, but the CEO might have recently quit. So the `ceo` field is `Option<String>`. We will `.filter_map()` over some companies to just keep the CEO names.
+我們將寫一個用到 `Company` 結構體的範例。每個公司都有個 `name`，所以這個欄位是 `String`，但是 CEO 可能最近已經辭職了。所以 `ceo` 欄位是 `Option<String>`。我們會 `.filter_map()` 一些公司，只保留 CEO 的名字。
 
 ```rust
 struct Company {
@@ -6193,7 +6194,7 @@ impl Company {
         let ceo = match ceo {
             "" => None,
             ceo => Some(ceo.to_string()),
-        }; // ceo is decided, so now we return Self
+        }; // 確定 ceo 了, 那我們現在就回傳 Self
         Self {
             name: name.to_string(),
             ceo,
@@ -6201,7 +6202,7 @@ impl Company {
     }
 
     fn get_ceo(&self) -> Option<String> {
-        self.ceo.clone() // Just returns a clone of the CEO (struct is not Copy)
+        self.ceo.clone() // 只回傳 CEO 的克隆(結構體沒有 Copy 特徵)
     }
 }
 
@@ -6215,18 +6216,18 @@ fn main() {
 
     let all_the_ceos = company_vec
         .into_iter()
-        .filter_map(|company| company.get_ceo()) // filter_map needs Option<T>
+        .filter_map(|company| company.get_ceo()) // filter_map 需要 Option<T>
         .collect::<Vec<String>>();
 
     println!("{:?}", all_the_ceos);
 }
 ```
 
-This prints `["Unknown", "Doug Suttles"]`.
+印出 `["Unknown", "Doug Suttles"]`。
 
-Since `.filter_map()` needs an `Option`, what about `Result`? No problem: there is a method called `.ok()` that turns `Result` into `Option`. It is called `.ok()` because all it can send is the `Ok` result (the `Err` information is gone). You remember that `Option` is `Option<T>` while `Result` is `Result<T, E>` with information for both `Ok` and `Err`. So when you use `.ok()`, any `Err` information is lost and it becomes `None`.
+既然 `.filter_map()` 需要 `Option`，那麼 `Result` 呢？沒問題：有一個叫做 `.ok()` 的方法，可以把 `Result` 變成 `Option`。之所以叫 `.ok()`，是因為它能傳送的只是 `Ok` 的結果(`Err` 的資訊沒有了)。你記得`Option` 完整型別是 `Option<T>`，而 `Result` 是 `Result<T, E>`，同時有 `Ok` 和 `Err` 的資訊。所以當你使用 `.ok()` 時，任何 `Err` 的資訊都會丟棄，變成 `None`。
 
-Using `.parse()` is an easy example for this, where we try to parse some user input. `.parse()` here takes a `&str` and tries to turn it into an `f32`. It returns a `Result`, but we are using `filter_map()` so we just throw out the errors. Anything that is `Err` becomes `None` and is filtered out by `.filter_map()`.
+使用 `.parse()` 就是這種情況的簡單範例，我們嘗試解析一些使用者輸入。`.parse()` 在這裡接受 `&str`，並試著把它變成 `f32`。它回傳了 `Result`，但我們用的是 `filter_map()`，所以只要丟掉錯誤就可以。任何 `Err` 都會變成 `None`，並且被 `.filter_map()` 過濾掉。
 
 ```rust
 fn main() {
@@ -6241,14 +6242,14 @@ fn main() {
 }
 ```
 
-This prints `[8.9, 8.0, 7.6]`.
+印出 `[8.9, 8.0, 7.6]`。
 
-On the opposite side of `.ok()` is `.ok_or()` and `ok_or_else()`. This turns an `Option` into a `Result`. It is called `.ok_or()` because a `Result` gives an `Ok` **or** an `Err`, so you have to let it know what the `Err` value will be. That is because `None` in an `Option` doesn't have any information. Also, you can see now that the *else* part in the names of these methods means that it has a closure.
+與 `.ok()` 相對的是 `.ok_or()` 和 `ok_or_else()`。這樣就把 `Option` 變成了 `Result`。之所以叫 `.ok_or()`，是因為 `Result` 給你 `Ok` **或** `Err`，所以你必須讓它知道 `Err` 的值是多少。這是因為 `Option` 中的 `None` 沒有任何資訊。另外，你現在可以看到，這些方法的名稱中帶有 *else* 的部分意味著它接受閉包。
 
-We can take our `Option` from the `Company` struct and turn it into a `Result` this way. For long-term error handling it is good to create your own type of error. But for now we just give it an error message, so it becomes a `Result<String, &str>`.
+我們可以把我們的 `Option` 從 `Company` 結構體中取出來，然後用這個方式把它變成 `Result`。對於長期的錯誤處理方式，最好是建立自己的錯誤型別。但在現在我們只給了它錯誤訊息，所以它就變成了 `Result<String, &str>`。
 
 ```rust
-// Everything before main() is exactly the same
+// 在 main() 之前的一切都完全一樣
 struct Company {
     name: String,
     ceo: Option<String>,
@@ -6279,7 +6280,7 @@ fn main() {
         Company::new("Stark Enterprises", ""),
     ];
 
-    let mut results_vec = vec![]; // Pretend we need to gather error results too
+    let mut results_vec = vec![]; // 假裝我們也需要收集錯誤的結果
 
     company_vec
         .iter()
@@ -6291,16 +6292,16 @@ fn main() {
 }
 ```
 
-This line is the biggest change:
+最大的變化在這行：
 
 ```rust
 // 🚧
 .for_each(|company| results_vec.push(company.get_ceo().ok_or("No CEO found")));
 ```
 
-It means: "For each company, use `get_ceo()`. If you get it, then pass on the value inside `Ok`. And if you don't, pass on "No CEO found" inside `Err`. Then push this into the vec."
+它的意思是："每家公司都用 `get_ceo()`. 如果你拿得到，那就把 `Ok` 裡面的數值傳給你。如果沒有，就在 `Err` 裡面傳遞"No CEO found"。然後把它放到 vec 裡。"
 
-So when we print `results_vec` we get this:
+所以當我們印出 `results_vec` 時，會得到這樣的結果：
 
 ```text
 Ok("Unknown")
@@ -6309,10 +6310,10 @@ Err("No CEO found")
 Err("No CEO found")
 ```
 
-So now we have all four entries. Now let's use `.ok_or_else()` so we can use a closure and get a better error message. Now we have space to use `format!` to create a `String`, and put the company name in that. Then we return the `String`.
+所以現在我們有了所有四個元素。現在讓我們使用 `.ok_or_else()`，這樣我們就能使用閉包，並得到更好的錯誤訊息。現在我們有空間使用 `format!` 來建立 `String`，並將公司名稱放在其中。然後我們回傳這個 `String`。
 
 ```rust
-// Everything before main() is exactly the same
+// 在 main() 之前的一切都完全一樣
 struct Company {
     name: String,
     ceo: Option<String>,
@@ -6358,7 +6359,7 @@ fn main() {
 }
 ```
 
-This gives us:
+這樣我們就有了：
 
 ```text
 Ok("Unknown")
@@ -6368,16 +6369,16 @@ Err("No CEO found for Stark Enterprises")
 ```
 
 
-`.and_then()` is a helpful method that takes an `Option`, then lets you do something to its value and pass it on. So its input is an `Option`, and its output is also an `Option`. It is sort of like a safe "unwrap, then do something, then wrap again".
+`.and_then()` 是個很有用的方法，它接受 `Option`，然後讓你對它的值做一些事情，並把它傳遞出去。所以它的輸入是個 `Option`，輸出也是個 `Option`。這有點像一個安全的"解包(unwrap)，然後做一些事情，然後再包起來"。
 
-An easy example is a number that we get from a vec using `.get()`, because that returns an `Option`. Now we can pass it to `and_then()`, and do some math on it if it is `Some`. If it is `None`, then the `None` just gets passed through.
+一個簡單的例子是，我們使用 `.get()` 從向量中得到的數字，因為它回傳的是 `Option`。現在我們可以把它傳給 `and_then()`，如果它是 `Some`，我們還可以對它做一些數學運算。如果是 `None`，那麼 `None` 就會被傳遞過去。
 
 ```rust
 fn main() {
-    let new_vec = vec![8, 9, 0]; // just a vec with numbers
+    let new_vec = vec![8, 9, 0]; // 只是有數字的向量
 
-    let number_to_add = 5;       // use this in the math later
-    let mut empty_vec = vec![];  // results go in here
+    let number_to_add = 5;       // 後面用這個來運算
+    let mut empty_vec = vec![];  // 結果放進這裡
 
 
     for index in 0..5 {
@@ -6392,14 +6393,14 @@ fn main() {
 }
 ```
 
-This prints `[Some(14), Some(15), Some(6), None, None]`. You can see that `None` isn't filtered out, just passed on.
+印出了 `[Some(14), Some(15), Some(6), None, None]`。你可以看到 `None` 並沒有被過濾掉，只是傳遞過去了。
 
 
 
 
-`.and()` is sort of like a `bool` for `Option`. You can match many `Option`s to each other, and if they are all `Some` then it will give the last one. And if one of them is a `None`, then it will give `None`.
+`.and()` 有點像是 `bool` 的 `Option`。你可以匹配很多個 `Option`，如果它們都是 `Some`，那麼它會給出最後一個。而如果其中一個是 `None`，那麼就會給出 `None`。
 
-First here is a `bool` example to help imagine. You can see that if you are using `&&` (and), even one `false` makes everything `false`.
+首先這裡有個 `bool` 的範例來幫助想像。你可以看到，如果你用的是 `&&`(和)，哪怕是一個 `false`，也會讓一切 `false`。
 
 ```rust
 fn main() {
@@ -6408,12 +6409,12 @@ fn main() {
     let three = true;
     let four = true;
 
-    println!("{}", one && three); // prints true
-    println!("{}", one && two && three && four); // prints false
+    println!("{}", one && three); // 印出 true
+    println!("{}", one && two && three && four); // 印出 false
 }
 ```
 
-Now here is the same thing with `.and()`. Imagine we did five operations and put the results in a Vec<Option<&str>>. If we get a value, we push `Some("success!")` to the vec. Then we do this two more times. After that we use `.and()` to only show the indexes that got `Some` every time.
+現在這裡的 `.and()` 也是同樣的東西。想像一下，我們做了五次操作，並把結果放在 `Vec<Option<&str>>` 中。如果我們得到一個值，我們就把 `Some("success!")` 推到向量中。然後我們再多做兩次這樣的操作。之後我們只用 `.and()` 顯示每次是得到 `Some` 時的索引。
 
 ```rust
 fn main() {
@@ -6427,7 +6428,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 None
@@ -6437,15 +6438,15 @@ Some("success!")
 None
 ```
 
-The first one (index 0) is `None` because there is a `None` for index 0 in `second_try`. The second is `None` because there is a `None` in `first_try`. The next is `Some("success!")` because there is no `None` for `first_try`, `second try`, or `third_try`.
+第一個(索引 0)`None`，是因為在 `second_try` 中索引 0 有 `None`。第二個 `None`，是因為在 `first_try` 中有 `None`。下一個是 `Some("success!")`，是因為 `first_try`、`second try`、`third_try` 中都沒有 `None`。
 
 
 
-`.any()` and `.all()` are very easy to use in iterators. They return a `bool` depending on your input. In this example we make a very large vec (about 20,000 items) with all the characters from `'a'` to `'働'`. Then we make a function to check if a character is inside it.
+`.any()` 和 `.all()` 在疊代器中非常容易使用。它們根據你的輸入回傳 `bool` 值。在這個例子中，我們做了一個非常大的向量(大約 20000 個元素)，包含了從 `'a'` 到 `'働'` 的所有字元。然後我們建立函式來檢查是否有某個字元在其中。
 
-Next we make a smaller vec and ask it whether it is all alphabetic (with the `.is_alphabetic()` method). Then we ask it if all the characters are less than the Korean character `'행'`.
+接下來我們做一個比較小的向量，問它是否全部都是字母(用 `.is_alphabetic()` 方法)。然後我們問它是否所有的字元都小於韓文字 `'행'`。
 
-Also note that you put a reference in, because `.iter()` gives a reference and you need a `&` to compare with another `&`.
+還要注意的是你要傳一個參考進去，因為 `.iter()` 也會給出參考，你需要用傳進去的 `&` 和另一個 `&` 進行比較。
 
 ```rust
 fn in_char_vec(char_vec: &Vec<char>, check: char) {
@@ -6464,7 +6465,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Is i inside? true
@@ -6474,7 +6475,7 @@ All alphabetic? false
 All less than the character 행? true
 ```
 
-By the way, `.any()` only checks until it finds one matching item, and then it stops. It won't check them all if it has already found a match. If you are going to use `.any()` on a `Vec`, it might be a good idea to push the items that might match near the front. Or you can use `.rev()` after `.iter()` to reverse the iterator. Here's one vec like that:
+順便說，`.any()` 只檢查到它第一個匹配的元素，然後就停止了。如果它已經找到了匹配結果，它就不會檢查所有的元素。如果你要在向量上使用 `.any()`，最好把可能會匹配的元素放前面。或者你可以在 `.iter()` 之後使用 `.rev()` 來反向疊代。這是這樣的向量：
 
 ```rust
 fn main() {
@@ -6483,7 +6484,7 @@ fn main() {
 }
 ```
 
-So this `Vec` has 1000 `6` followed by one `5`. Let's pretend that we want to use `.any()` to see if it contains 5. First let's make sure that `.rev()` is working. Remember, an `Iterator` always has `.next()` that lets you check what it does every time.
+所以這個 `Vec` 有 1000 個 `6`，後面還有一個 `5`。讓我們假裝來用 `.any()` 看看它是否包含 5。首先讓我們確定 `.rev()` 有效。記住，`Iterator` 總是有 `.next()`，能讓你檢查它每次做了什麼。
 
 ```rust
 fn main() {
@@ -6496,14 +6497,14 @@ fn main() {
 }
 ```
 
-It prints:
+印出：
 
 ```text
 Some(5)
 Some(6)
 ```
 
-We were right: there is one `Some(5)` and then the 1000 `Some(6)` start. So we can write this:
+我們是對的：有一個 `Some(5)`，然後開始 1000 個 `Some(6)`。所以我們可以這樣寫：
 
 ```rust
 fn main() {
@@ -6514,19 +6515,19 @@ fn main() {
 }
 ```
 
-And because it's `.rev()`, it only calls `.next()` one time and stops. If we don't use `.rev()` then it will call `.next()` 1001 times before it stops. This code shows it:
+而且因為是 `.rev()`，所以它只呼叫 `.next()` 一次就停止。如果我們不用 `.rev()`，那麼它將呼叫 `.next()` 1001次才停止。這段程式碼秀出這件事：
 
 ```rust
 fn main() {
     let mut big_vec = vec![6; 1000];
     big_vec.push(5);
 
-    let mut counter = 0; // Start counting
-    let mut big_iter = big_vec.into_iter(); // Make it an Iterator
+    let mut counter = 0; // 開始計數
+    let mut big_iter = big_vec.into_iter(); // 做出 Iterator
 
     loop {
         counter +=1;
-        if big_iter.next() == Some(5) { // Keep calling .next() until we get Some(5)
+        if big_iter.next() == Some(5) { // 持續呼叫 .next() 直到我們得到 Some(5)
             break;
         }
     }
@@ -6534,23 +6535,23 @@ fn main() {
 }
 ```
 
-This prints `Final counter is: 1001` so we know that it had to call `.next()` 1001 times before it found 5.
+這裡印出 `Final counter is: 1001`，所以我們知道它必須呼叫 `.next()` 1001 次才能找到 5。
 
 
 
 
-`.find()` tells you if an iterator has something, and `.position()` tells you where it is. `.find()` is different from `.any()` because it returns an `Option` with the value inside (or `None`). Meanwhile, `.position()` is also an `Option` with the position number, or `None`. In other words:
+`.find()` 告訴你疊代器裡是否有某個東西，而 `.position()` 則告訴你它在哪裡。`.find()` 與 `.any()` 不同是因為它回傳裡面有值的 `Option`(或 `None`)。與此同時，`.position()` 也是帶有位置號碼的 `Option`，或著 `None`。換句話說：
 
-- `.find()`: "I'll try to get it for you"
-- `.position()`: "I'll try to find where it is for you"
+- `.find()`: "我會試著找給你"
+- `.position()`:"我會試著找看看在哪裡告訴你"
 
-Here is a simple example:
+這是簡單的範例：
 
 ```rust
 fn main() {
     let num_vec = vec![10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
-    println!("{:?}", num_vec.iter().find(|&number| number % 3 == 0)); // find takes a reference, so we give it &number
+    println!("{:?}", num_vec.iter().find(|&number| number % 3 == 0)); // find 接受參考, 所以我們給它 &number
     println!("{:?}", num_vec.iter().find(|&number| number * 2 == 30));
 
     println!("{:?}", num_vec.iter().position(|&number| number % 3 == 0));
@@ -6559,7 +6560,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Some(30) // This is the number itself
@@ -6570,7 +6571,7 @@ None
 
 
 
-With `.cycle()` you can create an iterator that loops forever. This type of iterator works well with `.zip()` to create something new, like this example which creates a `Vec<(i32, &str)>`:
+有了 `.cycle()` 你可以建立無窮迴圈的疊代器。這種型別的疊代器能和 `.zip()` 很好地結合在一起用來建立新東西，就像建立 `Vec<(i32, &str)>` 的這個例子：
 
 ```rust
 fn main() {
@@ -6583,13 +6584,13 @@ fn main() {
 }
 ```
 
-So even though `.cycle()` might never end, the other iterator only runs six times when zipping them together. That means that the iterator made by `.cycle()` doesn't get a `.next()` call again so it is done after six times. The output is:
+所以，即使 `.cycle()` 可能永遠不會結束，但當把它們 zip 在一起時，另一個疊代器只運作了六次。也就是說，`.cycle()` 所產生的疊代器不會再被 `.next()` 呼叫，所以六次之後就完成了。輸出：
 
 ```
 [(0, "even"), (1, "odd"), (2, "even"), (3, "odd"), (4, "even"), (5, "odd")]
 ```
 
-Something similar can be done with a range that doesn't have an ending. If you write `0..` then you create a range that never stops. You can use this very easily:
+類似的事情也可以用沒有結尾的範圍來做到。如果你寫 `0..`，那麼你就建立出永不停止的範圍。你可以很容易地使用這個方法：
 
 ```rust
 fn main() {
@@ -6601,7 +6602,7 @@ fn main() {
 }
 ```
 
-Both print ten characters, but the second one skipped 1300 places and prints ten letters in Armenian.
+兩者都是印出十個字元，但第二個跳過 1300 位置，印出亞美尼亞語的十個字母。
 
 ```
 ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
@@ -6609,7 +6610,7 @@ Both print ten characters, but the second one skipped 1300 places and prints ten
 ```
 
 
-Another popular method is called `.fold()`. This method is used a lot to add together the items in an iterator, but you can also do a lot more. It is somewhat similar to `.for_each()`. In `.fold()`, you first add a starting value (if you are adding items together, then 0), then a comma, then the closure. The closure gives you two items: the total so far, and the next item. First here is a simple example showing `.fold()` to add items together.
+另一種流行的方法叫做 `.fold()`。這個方法經常用於將疊代器中的元素加在一起，但你也可以做更多的事情。它和 `.for_each()` 有些類似。在 `.fold()` 中，你首先新增起始值 (如果你要把元素加在一起，那就是 0)，再逗號，然後是閉包。閉包給你兩個元素：到目前為止的總和和下一個元素。首先這個簡單的範例秀出 `.fold()` 怎麼將元素加在一起：
 
 ```rust
 fn main() {
@@ -6622,16 +6623,16 @@ fn main() {
 }
 ```
 
-So:
+過程是：
 
-- on step 1 it starts with 0 and adds the next number: 9.
-- Then it takes that 9 and adds the 6: 15.
-- Then it takes that 15, and adds the 9: 24.
-- Then it takes that 24, and adds the 10: 34.
-- Finally it takes that 34, and adds the 11: 45. So it prints `45`.
+- 第 1 步是從 0 開始，並加上下個數字：9。
+- 然後把 9 再加上 6：15。
+- 然後把 15 再加上 9: 24。
+- 然後把 24，再加上 10：34。
+- 最後把 34，再加上 11：45。所以它印出了 `45`。
 
 
-But you don't just need to add things with it. Here is an example where we add a '-' to every character to make a `String`.
+但是你不是只能用它來加上東西。在這裡的範例我們把每一個字元上加一個 '-'，來做出 `String`。
 
 ```rust
 fn main() {
@@ -6640,16 +6641,16 @@ fn main() {
     println!(
         "{}",
         a_string
-            .chars() // Now it's an iterator
-            .fold("-".to_string(), |mut string_so_far, next_char| { // Start with a String "-". Bring it in as mutable each time along with the next char
-                string_so_far.push(next_char); // Push the char on, then '-'
+            .chars() // 現在是個疊代器了
+            .fold("-".to_string(), |mut string_so_far, next_char| { // 從字串 "-" 開始. 每次把它代入成為可變的字串並跟著下個字元
+                string_so_far.push(next_char); // 把字完推進去, 再來是 '-'
                 string_so_far.push('-');
-                string_so_far} // Don't forget to pass it on to the next loop
+                string_so_far} // 別忘記傳到下一個迴圈
             ));
 }
 ```
 
-This prints:
+印出：
 
 ```text
 -I- -d-o-n-'-t- -h-a-v-e- -a-n-y- -d-a-s-h-e-s- -i-n- -m-e-.-
@@ -6657,23 +6658,23 @@ This prints:
 
 
 
-There are many other convenient methods like:
+還有許多其他方便的方法，比如：
 
-- `.take_while()` which takes into an iterator as long as it gets `true` (`take while x > 5` for example)
-- `.cloned()` which makes a clone inside the iterator. This turns a reference into a value.
-- `.by_ref()` which makes an iterator take a reference. This is good to make sure that you can use a `Vec` or something similar after you use it to make an iterator.
-- Many other `_while` methods: `.skip_while()`, `.map_while()`, and so on
-- `.sum()`: just adds everything together.
+- `.take_while()` 只要一直從閉包得到 `true`，就會帶元素到新的疊代器 (例如 `take while x > 5`)
+- `.cloned()` 會對疊代器內的元素做克隆。這將會把參考傳換成值。
+- `.by_ref()` 會讓疊代器取得參考。這很好的保證你在使用 `Vec` 或類似的東西來做疊代器後還可以使用它。
+- 許多其他名稱中有 `_while` 的方法：`.skip_while()`、`.map_while()` 等等。
+- `.sum()`：就是把所有的東西加在一起。
 
 
 
-`.chunks()` and `.windows()` are two ways of cutting up a vector into a size you want. You put the size you want into the brackets. Let's say you have a vector with 10 items, and you want a size of 3. It will work like this:
+`.chunks()` 和 `.windows()` 是將向量切割成你想要的尺寸的兩種方式。你把想要的尺寸放在括號裡。比如說你有個 10 個元素的向量，你想要 3 個的尺寸，它的工作原理是這樣：
 
-- `.chunks()` will give you four slices: [0, 1, 2], then [3, 4, 5], then [6, 7, 8], and finally [9]. So it will try to make a slice of three items, but if it doesn't have three then it won't panic. It will just give you what is left.
+- `.chunks()` 會給你 4 個切片(slice)： `[0, 1, 2]`, 然後是 `[3, 4, 5]`, 再來是 `[6, 7, 8]`, 最後是 `[9]`。所以它會嘗試用三個元素做一個切片，但如果它沒有三個元素，那麼它也不會恐慌。它只會給你剩下的東西。
 
-- `.windows()` will first give you a slice of [0, 1, 2]. Then it will move over one and give you [1, 2, 3]. It will do that until it finally reaches the last slice of three and stop.
+- `.windows()` 會先給你一個 `[0, 1, 2]` 的切片。然後它將會移過去下一個元素，給你 `[1, 2, 3]`。它會一直這樣做到終於到達最後三個元素的切片時才停止。
 
-So let's use them on a simple vector of numbers. It looks like this:
+所以讓我們在簡單的數字向量上使用它們。看起來像這樣：
 
 ```rust
 fn main() {
@@ -6689,7 +6690,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 [1, 2, 3]
@@ -6707,16 +6708,16 @@ This prints:
 [8, 9, 0]
 ```
 
-By the way, `.chunks()` will panic if you give it nothing. You can write `.chunks(1000)` for a vector with one item, but you can't write `.chunks()` with anything with a length of 0. You can see that right in the function if you click on [src] because it says `assert!(chunk_size != 0);`.
+順便說一下，如果你什麼都不給它，`.chunks()` 會恐慌。你可以寫 `.chunks(1000)` 給只有一個元素的向量，但你不能寫 `.chunks()` 給任何長度為 0 的東西。 如果你點選了[文件](https://doc.rust-lang.org/stable/std/primitive.slice.html#method.chunks)裡的 `[src]` 你可以看到它就在函式原始碼之中，因為它說 `assert!(chunk_size != 0);`。
 
 
 
-`.match_indices()` lets you pull out everything inside a `String` or `&str` that matches your input, and gives you the index too. It is similar to `.enumerate()` because it returns a tuple with two items.
+`.match_indices()` 讓你把 `String` 或 `&str` 裡面所有符合你的輸入的東西都拿出來，並給你索引。它與 `.enumerate()` 類似，因為它回傳包含兩個元素的元組。
 
 ```rust
 fn main() {
     let rules = "Rule number 1: No fighting. Rule number 2: Go to bed at 8 pm. Rule number 3: Wake up at 6 am.";
-    let rule_locations = rules.match_indices("Rule").collect::<Vec<(_, _)>>(); // This is Vec<usize, &str> but we just tell Rust to do it
+    let rule_locations = rules.match_indices("Rule").collect::<Vec<(_, _)>>(); // 這是 Vec<usize, &str> 但我們只告訴 Rust 去決定
     println!("{:?}", rule_locations);
 }
 ```
@@ -6729,12 +6730,12 @@ This prints:
 
 
 
-`.peekable()` lets you make an iterator where you can see (peek at) the next item. It's like calling `.next()` (it gives an `Option`) except that the iterator doesn't move, so you can use it as many times as you want. You can actually think of peekable as "stoppable", because you can stop for as long as you want. Here is an example of us using `.peek()` three times for every item. We can use `.peek()` forever until we use `.next()` to move to the next item.
+`.peekable()` 讓你建立可以偷看到 (peek at) 下一個元素的疊代器。除了疊代器不會移動外，它就像呼叫 `.next()` (它給你 `Option`)，所以你可以隨意使用它。實際上你可以把 peekable 想成是 "可停止"的，因為你可以想停多久就停多久。這裡的範例是我們對每個元素都使用 `.peek()` 三次。我們可以永遠使用 `.peek()`，直到我們使用 `.next()` 移動到下一個元素。
 
 ```rust
 fn main() {
     let just_numbers = vec![1, 5, 100];
-    let mut number_iter = just_numbers.iter().peekable(); // This actually creates a type of iterator called Peekable
+    let mut number_iter = just_numbers.iter().peekable(); // 這裡實際上建立了一種叫作 Peekable 的疊代器
 
     for _ in 0..3 {
         println!("I love the number {}", number_iter.peek().unwrap());
@@ -6745,7 +6746,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 I love the number 1
@@ -6759,7 +6760,7 @@ I really love the number 100
 100 is such a nice number
 ```
 
-Here is another example where we use `.peek()` to match on an item. After we are done using it, we call `.next()`.
+這是另一個範例，我們使用 `.peek()` 匹配一個元素。使用完後，我們呼叫 `.next()`。
 
 
 ```rust
@@ -6773,7 +6774,7 @@ fn main() {
     let mut location_iter = locations.iter().peekable();
     while location_iter.peek().is_some() {
         match location_iter.peek() {
-            Some((name, number)) if *number < 100 => { // .peek() gives us a reference so we need *
+            Some((name, number)) if *number < 100 => { // .peek() 給我們的是參考所以需要 *
                 println!("Found a hamlet: {} with {} people", name, number)
             }
             Some((name, number)) => println!("Found a town: {} with {} people", name, number),
@@ -6784,7 +6785,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Found a hamlet: Nevis with 25 people
@@ -6793,7 +6794,7 @@ Found a hamlet: Markerville with 45 people
 Found a town: Cardston with 3585 people
 ```
 
-Finally, here is an example where we also use `.match_indices()`. In this example we put names into a `struct` depending on the number of spaces in the `&str`.
+最後，這個範例我們也有用 `.match_indices()`。在這個例子中，我們根據 `&str` 中的空格數，將名字放入 `struct` 中。
 
 ```rust
 #[derive(Debug)]
@@ -6818,15 +6819,15 @@ fn main() {
 
     let mut iter_of_names = vec_of_names.iter().peekable();
 
-    let mut all_names = Names { // start an empty Names struct
+    let mut all_names = Names { // 開始空的 Names 結構體
         one_word: vec![],
         two_words: vec![],
         three_words: vec![],
     };
 
     while iter_of_names.peek().is_some() {
-        let next_item = iter_of_names.next().unwrap(); // We can use .unwrap() because we know it is Some
-        match next_item.match_indices(' ').collect::<Vec<_>>().len() { // Create a quick vec using .match_indices and check the length
+        let next_item = iter_of_names.next().unwrap(); // 我們可以用 .unwrap() 因為我們知道寫它是 Some
+        match next_item.match_indices(' ').collect::<Vec<_>>().len() { // 用 .match_indices 建立快速向量並檢查長度
             0 => all_names.one_word.push(next_item.to_string()),
             1 => all_names.two_words.push(next_item.to_string()),
             _ => all_names.three_words.push(next_item.to_string()),
@@ -6837,7 +6838,7 @@ fn main() {
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 Names { one_word: ["Caesar", "Data"], two_words: ["Frodo Baggins", "Bilbo Baggins", "Jean-Luc Picard", "Rand Al\'Thor", "Paul Atreides"], three_words:
@@ -6845,9 +6846,9 @@ Names { one_word: ["Caesar", "Data"], two_words: ["Frodo Baggins", "Bilbo Baggin
 ```
 
 
-## The dbg! macro and .inspect
+## dbg! 巨集和 .inspect
 
-`dbg!` is a very useful macro that prints quick information. It is a good alternative to `println!` because it is faster to type and gives more information:
+`dbg!` 是個非常有用的巨集，用來印出快速資訊。它是代替 `println!` 的好選擇，因為它輸入的速度更快，提供的資訊更多：
 
 ```rust
 fn main() {
@@ -6856,9 +6857,9 @@ fn main() {
 }
 ```
 
-This prints `[src\main.rs:4] my_number = 8`.
+印出 `[src\main.rs:4] my_number = 8`。
 
-But actually, you can put `dbg!` in many other places, and even wrap code in it. Look at this code for example:
+但實際上，你可以把 `dbg!` 放在其他許多地方，甚至可以把程式碼包在裡面。查看以此為例的程式碼：
 
 ```rust
 fn main() {
@@ -6871,7 +6872,7 @@ fn main() {
 }
 ```
 
-This code creates a new mutable number and changes it. Then it creates a vec, and uses `iter` and `map` and `collect` to create a new vec. We can put `dbg!` almost everywhere in this code. `dbg!` asks the compiler: "What are you doing at this moment?" and tells you.
+這段程式碼建立新的可變數字，並且改變了它。然後再建立向量，並使用 `iter`、`map` 和 `collect` 建立新的向量。我們可以把 `dbg!` 放在幾乎是這段程式碼的任何地方。`dbg!` 問編譯器："這個當下你在做什麼？"，並且告訴你：
 
 ```rust
 fn main() {
@@ -6886,19 +6887,19 @@ fn main() {
 }
 ```
 
-So this prints:
+所以會印出：
 
 ```text
 [src\main.rs:3] 9 = 9
 ```
 
-and:
+和：
 
 ```text
 [src\main.rs:4] my_number += 10 = ()
 ```
 
-and:
+和：
 
 ```text
 [src\main.rs:6] vec![8, 9, 10] = [
@@ -6908,7 +6909,7 @@ and:
 ]
 ```
 
-and this one, which even shows you the value of the expression:
+還有這個，甚至可以秀出表示式的值：
 
 ```text
 [src\main.rs:8] new_vec.iter().map(|x| x * 2).collect::<Vec<i32>>() = [
@@ -6918,7 +6919,7 @@ and this one, which even shows you the value of the expression:
 ]
 ```
 
-and:
+和：
 
 ```text
 [src\main.rs:10] double_vec = [
@@ -6928,7 +6929,7 @@ and:
 ]
 ```
 
-`.inspect` is a bit similar to `dbg!` but you use it like `map` in an iterator. It gives you the iterator item and you can print it or do whatever you want. For example, let's look at our `double_vec` again.
+`.inspect` 與 `dbg!` 有點類似，用起來就像在疊代器中用 `map` 一樣。它給你疊代的元素，你可以印出來或者做任何你想做的事情。例如，讓我們再來看看 `double_vec`。
 
 ```rust
 fn main() {
@@ -6941,7 +6942,7 @@ fn main() {
 }
 ```
 
-We want to know more information about what the code is doing. So we add `inspect()` in two places:
+我們想知道更多關於程式碼做了什麼的資訊。所以我們在兩個地方新增 `inspect()`：
 
 ```rust
 fn main() {
@@ -6956,7 +6957,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 The item is: 8
@@ -6967,7 +6968,7 @@ The item is: 10
 Then it is: 20
 ```
 
-And because `.inspect` takes a closure, we can write as much as we want:
+而且因為 `.inspect` 接受的是閉包，所以我們可以隨意寫：
 
 ```rust
 fn main() {
@@ -6977,7 +6978,7 @@ fn main() {
         .iter()
         .inspect(|first_item| {
             println!("The item is: {}", first_item);
-            match **first_item % 2 { // first item is a &&i32 so we use **
+            match **first_item % 2 { // 第一個元素是 &&i32 所以我們用 **
                 0 => println!("It is even."),
                 _ => println!("It is odd."),
             }
@@ -6988,7 +6989,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 The item is: 8
@@ -7002,29 +7003,29 @@ It is even.
 In binary it is 1010.
 ```
 
-## Types of &str
+## &str 的種類
 
-There is more than one type of `&str`. We have:
+`&str` 的種類不止一個。我們有：
 
-- String literals: you make these when you write `let my_str = "I am a &str"`. They last for the whole program, because they are written directly into the binary. They have the type `&'static str`. `'` means its lifetime, and string literal have a lifetime called `static`.
-- Borrowed str: This is the regular `&str` form without a `static` lifetime. If you create a `String` and get a reference to it, Rust will convert it to a `&str` when you need it. For example:
+- 字串字面常數 (String literal)：當你寫 `let my_str = "I am a &str"` 的時候，就會產生這種字串。它們在整個程式中持續存在，因為它們是直接寫進二進位檔案中的，它們的型別是 `&'static str`。`'` 是表示它的生命週期 (lifetime)，字串字面常數有著稱為 `static` 的生命週期。
+- 借用字串 (Borrowed str)：這是沒有 `static` 生命週期的 `&str` 的常規形式。如果你建立 `String` 並得到了它的參考，Rust 會在你需要它時把它轉換為 `&str`。例如：
 
 ```rust
-fn prints_str(my_str: &str) { // it can use &String like a &str
+fn prints_str(my_str: &str) { // 可以像 &str 般使用 &String
     println!("{}", my_str);
 }
 
 fn main() {
     let my_string = String::from("I am a string");
-    prints_str(&my_string); // we give prints_str a &String
+    prints_str(&my_string); // 我們傳給 prints_str 的型別是 &String
 }
 ```
 
-So what is a lifetime? We will learn that now.
+那什麼是生命週期呢？我們馬上會學到。
 
-## Lifetimes
+## 生命週期
 
-A lifetime means "how long the variable lives". You only need to think about lifetimes with references. This is because references can't live longer than the object they come from. For example, this function does not work:
+生命週期的意思是"變數存活得有多久"。你只需要思考參考的生命週期。這是因為參考不能存活得比它們所來自的物件更久。例如說這個函式就不能執行：
 
 ```rust
 fn returns_reference() -> &str {
@@ -7035,9 +7036,9 @@ fn returns_reference() -> &str {
 fn main() {}
 ```
 
-The problem is that `my_string` only lives inside `returns_reference`. We try to return `&my_string`, but `&my_string` can't exist without `my_string`. So the compiler says no.
+問題在於 `my_string` 只存活在 `returns_reference` 的範圍裡。我們試著回傳 `&my_string`，但是 `&my_string` 不能存在於沒有 `my_string` 的地方。所以編譯器會說不行。
 
-This code also doesn't work:
+這段程式碼也不能執行。
 
 ```rust
 fn returns_str() -> &str {
@@ -7051,7 +7052,7 @@ fn main() {
 }
 ```
 
-But it almost works. The compiler says:
+但是幾乎要成功了。編譯器卻說：
 
 ```text
 error[E0106]: missing lifetime specifier
@@ -7067,9 +7068,9 @@ help: consider using the `'static` lifetime
   |                     ^^^^^^^^
 ```
 
-`missing lifetime specifier` means that we need to add a `'` with the lifetime. Then it says that it `contains a borrowed value, but there is no value for it to be borrowed from`. That means that `I am a str` isn't borrowed from anything. It says `consider using the 'static lifetime` by writing `&'static str`. So it thinks we should try saying that this is a string literal.
+`missing lifetime specifier` 的意思是，我們需要加上表示生命週期的 `'`。然後它說 `contains a borrowed value, but there is no value for it to be borrowed from`。也就是說，`I am a str` 不是借來的。它說 `consider using the 'static lifetime` 要寫成 `&'static str`。因此它認為我們應該嘗試說這是個字串字面常數。
 
-Now it works:
+現在可以執行了：
 
 ```rust
 fn returns_str() -> &'static str {
@@ -7083,13 +7084,13 @@ fn main() {
 }
 ```
 
-That's because we returned a `&str` with a lifetime of `static`. Meanwhile, `my_string` can only be returned as a `String`: we can't return a reference to it because it is going to die in the next line.
+這是因為我們回傳了生命週期是 `static` 的 `&str`。同時，`my_string` 只能以 `String` 的型別回傳：我們不能回傳對它的參考，因為它將在下一行死亡。
 
-So now `fn returns_str() -> &'static str` tells Rust: "don't worry, we will only return a string literal". String literals live for the whole program, so Rust is happy. You'll notice that this is similar to generics. When we tell the compiler something like `<T: Display>`, we promise that we will only use inputs with `Display`. Lifetimes are similar: we are not changing any variable lifetimes. We are just telling the compiler what the lifetimes of the inputs will be.
+所以現在 `fn returns_str() -> &'static str` 告訴Rust，"別擔心，我們只會回傳字串字面常數"。字串字面常數存活在整個程式中，所以 Rust 很高興。你會注意到，這與泛型類似。當我們告訴編譯器像似 `<T: Display>` 的東西時，我們承諾的是我們將只會使用有 `Display` 特徵的輸入。生命週期也類似：我們並沒有改變任何變數的生命週期。我們只是告訴編譯器輸入的生命週期會是什麼。
 
-But `'static` is not the only lifetime. Actually, every variable has a lifetime, but usually we don't have to write it. The compiler is pretty smart and can usually figure out for itself. We only have to write the lifetime when the compiler doesn't know.
+但是 `'static` 並不是唯一的生命週期。實際上，每個變數都有一個生命週期，但通常我們不必寫出來。編譯器很聰明，通常都能自己想出來。只有在編譯器不知道的時候，我們才需要去寫出生命週期。
 
-Here is an example of another lifetime. Imagine we want to create a `City` struct and give it a `&str` for the name. We might want to do that because it gives faster performance than with `String`. So we write it like this, but it won't work yet:
+這是另一個生命週期的範例。想像一下，我們想建立 `City` 結構體，並給它 `&str` 的名字。我們可能想這樣做是因為效能比用 `String` 還快。所以我們寫成這樣，但還不能執行：
 
 ```rust
 #[derive(Debug)]
@@ -7106,7 +7107,7 @@ fn main() {
 }
 ```
 
-The compiler says:
+編譯器說：
 
 ```text
 error[E0106]: missing lifetime specifier
@@ -7122,14 +7123,14 @@ help: consider introducing a named lifetime parameter
   |
 ```
 
-Rust needs a lifetime for `&str` because `&str` is a reference. What happens when the value that `name` points to is dropped? That would be unsafe.
+Rust 需要 `&str` 的生命週期，因為 `&str` 是個參考。如果 `name` 指向的值被丟棄 (drop) 了會怎樣？那就不安全 (unsafe) 了。
 
-What about `'static`, will that work? We used it before. Let's try:
+那麼 `'static` 呢，能用嗎？我們以前用過。讓我們試試吧：
 
 ```rust
 #[derive(Debug)]
 struct City {
-    name: &'static str, // change &str to &'static str
+    name: &'static str, // 把 &str 改成 &'static str
     date_founded: u32,
 }
 
@@ -7143,20 +7144,20 @@ fn main() {
 }
 ```
 
-Okay, that works. And maybe this is what you wanted for the struct. However, note that we can only take "string literals", so not references to something else. So this will not work:
+好的，這就可以了。也許這就是你想要的結構體。不過，要注意我們只能接受"字串字面常數"，所以不能接受對其他東西的參考。所以這將無法執行：
 
 ```rust
 #[derive(Debug)]
 struct City {
-    name: &'static str, // must live for the whole program
+    name: &'static str, // 一定要在整個程式裡存活
     date_founded: u32,
 }
 
 fn main() {
-    let city_names = vec!["Ichinomiya".to_string(), "Kurume".to_string()]; // city_names does not live for the whole program
+    let city_names = vec!["Ichinomiya".to_string(), "Kurume".to_string()]; // city_names 沒有存活在整個程式
 
     let my_city = City {
-        name: &city_names[0], // ⚠️ This is a &str, but not a &'static str. It is a reference to a value inside city_names
+        name: &city_names[0], // ⚠️ 這是個 &str, 但不是 &'static str. 這是對 city_names 裡面的值的參考
         date_founded: 1921,
     };
 
@@ -7164,7 +7165,7 @@ fn main() {
 }
 ```
 
-The compiler says:
+編譯器說：
 
 ```text
 error[E0597]: `city_names` does not live long enough
@@ -7180,14 +7181,14 @@ error[E0597]: `city_names` does not live long enough
    | - `city_names` dropped here while still borrowed
 ```
 
-This is important to understand, because the reference we gave it actually lives long enough. But we promised that we would only give it a `&'static str`, and that is the problem.
+這一點很重要，因為我們給它的參考其實活得夠久了。但是我們承諾的只有給它 `&'static str`，這就是問題所在。
 
-So now we will try what the compiler suggested before. It said to try writing `struct City<'a>` and `name: &'a str`. This means that it will only take a reference for `name` if it lives as long as `City`.
+所以現在我們就試試之前編譯器的建議。它說嘗試寫成 `struct City<'a>` 和 `name: &'a str`。這就意味著，只有當 `name` 活得和 `City` 一樣久的情況下，它才會接受 `name` 的參考。
 
 ```rust
 #[derive(Debug)]
-struct City<'a> { // City has lifetime 'a
-    name: &'a str, // and name also has lifetime 'a.
+struct City<'a> { // City 的生命週期是 'a
+    name: &'a str, // 且 name 的生命週期也是 'a.
     date_founded: u32,
 }
 
@@ -7203,21 +7204,21 @@ fn main() {
 }
 ```
 
-Also remember that you can write anything instead of `'a` if you want. This is also similar to generics where we write `T` and `U` but can actually write anything.
+另外要記住，如果你願意你可以寫任何東西來代替 `'a`。這也和在泛型裡我們寫 `T` 和 `U` 時類似，但實際上可以寫任何東西。
 
 ```rust
 #[derive(Debug)]
-struct City<'city> { // The lifetime is now called 'city
-    name: &'city str, // and name has the 'city lifetime
+struct City<'city> { // 這裡的生命週期名稱叫做 'city
+    name: &'city str, // 並且 name 有著 'city 生命週期
     date_founded: u32,
 }
 
 fn main() {}
 ```
 
-So usually you will write `'a, 'b, 'c` etc. because it is quick and the usual way to write. But you can always change it if you want. One good tip is that changing the lifetime to a "human-readable" name can help you read code if it is very complicated.
+所以通常都會寫做 `'a, 'b, 'c` 等等，因為這是快速且常用的寫法。但如果你想的話，你永遠都可以更改。有個好建議是，把生命週期名稱改成 "人類可讀(human-readable)" 的名字有助於閱讀理解程式碼，尤其是程式碼非常複雜時。
 
-Let's look at the comparison to traits for generics again. For example:
+讓我們再來看看與用在泛型的特徵的比較。比如說：
 
 ```rust
 use std::fmt::Display;
@@ -7229,10 +7230,10 @@ fn prints<T: Display>(input: T) {
 fn main() {}
 ```
 
-When you write `T: Display`, it means "please only take T if it has Display".
-It does not mean: "I am giving Display to T".
+當你寫 `T: Display` 的時候，它的意思是"只有在 T 有 Display 時，才接受 T"。
+而不是說："我把 Display 給予 T"。
 
-The same is true for lifetimes. When you write 'a here:
+對於生命週期也是如此。當你在這裡寫 `'a`：
 
 ```rust
 #[derive(Debug)]
@@ -7244,10 +7245,10 @@ struct City<'a> {
 fn main() {}
 ```
 
-It means "please only take an input for `name` if it lives at least as long as `City`".
-It does not mean: "I will make the input for `name` live as long as `City`".
+意思是"如果 `name` 的生命週期至少與 `City` 一樣久，才接受 `name` 的輸入"。
+它的意思不是說："我會讓 `name` 的輸入與 `City` 活得一樣久"。
 
-Now we can learn about `<'_>` that we saw before. This is called the "anonymous lifetime" and is an indicator that references are being used. Rust will suggest it to you when you are implementing structs, for example. Here is one struct that almost works, but not yet:
+現在我們可以學到有關先前見過的 `<'_>`。這被稱為"匿名生命週期"，它是參考被使用時的指示器。例如，當你在實現結構時，Rust 會向你建議使用。這裡有個幾乎可以但還不能用的結構體：
 
 ```rust
     // ⚠️
@@ -7266,7 +7267,7 @@ impl Adventurer {
 fn main() {}
 ```
 
-So we did what we needed to do for the `struct`: first we said that `name` comes from a `&str`. That means we need a lifetime, so we gave it `<'a>`. Then we had to do the same for the `struct` to show that they are at least as long as this lifetime. But then Rust tells us to do this:
+所以我們對 `struct` 做了我們需要做的事情：首先我們說 `name` 來自於 `&str`。這就意味著我們需要生命週期，所以我們給了它 `<'a>`。然後我們必須對 `struct` 做同樣的處理，以證明它們至少和這個生命週期一樣久。但是 Rust 卻告訴我們要這樣做：
 
 ```text
 error[E0726]: implicit elided lifetime not allowed here
@@ -7276,7 +7277,7 @@ error[E0726]: implicit elided lifetime not allowed here
   |      ^^^^^^^^^^- help: indicate the anonymous lifetime: `<'_>`
 ```
 
-It wants us to add that anonymous lifetime to show that there is a reference being used. So if we write that, it will be happy:
+它想讓我們加上那個匿名生命週期，以表明有個參考被使用。所以如果我們這樣寫，它就會很高興：
 
 ```rust
 struct Adventurer<'a> {
@@ -7294,15 +7295,15 @@ impl Adventurer<'_> {
 fn main() {}
 ```
 
-This lifetime was made so that you don't always have to write things like `impl<'a> Adventurer<'a>`, because the struct already shows the lifetime.
+這個生命週期是為了讓你不必總是寫諸如 `impl<'a> Adventurer<'a>` 這樣的東西，因為結構體已經寫出了生命週期。
 
-Lifetimes can be difficult in Rust, but here are some tips to avoid getting too stressed about them:
+在 Rust 中，生命週期是可以很困難的，但這裡有一些技巧可以在面對它們時避免感到太大的壓力：
 
-- You can stay with owned types, use clones etc. if you want to avoid them for the time being.
-- Much of the time, when the compiler wants a lifetime you will just end up writing <'a> here and there and then it will work. It's just a way of saying "don't worry, I won't give you anything that doesn't live long enough".
-- You can explore lifetimes just a bit at a time. Write some code with owned values, then make one a reference. The compiler will start to complain, but also give some suggestions. And if it gets too complicated, you can undo it and try again next time.
+- 如果你想在當下避免它們，你可以繼續使用擁有所有權的型別，使用克隆等。
+- 很多時候，當編譯器想要生命週期的時候，到頭來你只要在這裡和那裡寫上 `<'a>` 就可以用了。這只是一種"別擔心，我不會給你任何活得不夠久的東西"的說法。
+- 你可以每次只探索生命週期一些些。寫一些擁有所有權的數值的程式碼，然後把其中一個變成參考。編譯器會開始抱怨，但也會給出一些建議。如果它變得太複雜，你可以撤銷它，下次再試。
 
-Let's do this with our code and see what the compiler says. First we'll go back and take the lifetimes out, and also implement `Display`. `Display` will just print the `Adventurer`'s name.
+讓我們用我們的程式碼來這麼做，看看編譯器會怎麼說。首先我們回去把生命週期去掉，同時也實作 `Display`。`Display` 就會印出 `Adventurer` 的名字。
 
 ```rust
 // ⚠️
@@ -7327,7 +7328,7 @@ impl std::fmt::Display for Adventurer {
 fn main() {}
 ```
 
-First complaint is this:
+第一個抱怨就是這個：
 
 ```text
 error[E0106]: missing lifetime specifier
@@ -7343,7 +7344,7 @@ help: consider introducing a named lifetime parameter
   |
 ```
 
-It suggests what to do: `<'a>` after Adventurer, and `&'a str`. So we do that:
+它建議這麼做：在 Adventurer 後面加上 `<'a>`，以及 `&'a str`。所以我們照著做：
 
 ```rust
 // ⚠️
@@ -7368,7 +7369,7 @@ impl std::fmt::Display for Adventurer {
 fn main() {}
 ```
 
-Now it's happy with those parts, but is wondering about the `impl` blocks. It wants us to mention that it's using references:
+現在它對那些部分很滿意了，但對 `impl` 區塊不太確定。它想要我們提示正在使用參考：
 
 ```text
 error[E0726]: implicit elided lifetime not allowed here
@@ -7384,7 +7385,7 @@ error[E0726]: implicit elided lifetime not allowed here
    |                            ^^^^^^^^^^- help: indicate the anonymous lifetime: `<'_>`
 ```
 
-Okay, so we will write those in...and now it works! Now we can make an `Adventurer` and do some things with it.
+好了，我們將這些寫進去......現在它通過編譯了！現在我們可以做出 `Adventurer`，然後用它做些事。
 
 ```rust
 struct Adventurer<'a> {
@@ -7416,22 +7417,22 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Billy has 100000 hit points.
 Billy has 99980 hit points left!
 ```
 
-So you can see that lifetimes are often just the compiler wanting to make sure. And it is usually smart enough to almost guess at what lifetimes you want, and just needs you to tell it so it can be certain.
+所以你可以看到，編譯器往往只是想要確定生命週期。而且它通常很聰明，幾乎可以猜到你想要的生命週期，只是需要你告訴它，它就可以確定了。
 
-## Interior mutability
+## 內部可變性
 
 ### Cell
 
-**Interior mutability** means having a little bit of mutability on the inside. Remember how in Rust you need to use `mut` to change a variable? There are also some ways to change them without the word `mut`. This is because Rust has some ways to let you safely change values inside of a struct that is immutable. Each one of them follows some rules that make sure that changing the values is still safe.
+**內部可變性(Interior mutability)** 的意思是在內部有一點可變性。還記得在 Rust 中，你需要用 `mut` 來改變變數嗎？也有一些方式能在不用 `mut` 這個詞時來改變它們。這是因為 Rust 有一些方式可以讓你安全地改變在不可變的結構體裡面的值。每一種方式都遵循一些規則，確保改變值時仍然是安全的。
 
-First, let's look at a simple example where we would want this. Imagine a `struct` called `PhoneModel` with many fields:
+首先，讓我們看看我們會想要這樣做的簡單範例。想像有個有很多欄位叫做 `PhoneModel` 的結構體：
 
 ```rust
 struct PhoneModel {
@@ -7456,15 +7457,15 @@ fn main() {
 }
 ```
 
-It is better for the fields in `PhoneModel` to be immutable, because we don't want the data to change. The `date_issued` and `screen_size` never change, for example.
+`PhoneModel` 中的欄位最好是不可變的，因為我們不希望資料改變。比如說 `date_issued` 和 `screen_size` 永遠不會變。
 
-But inside is one field called `on_sale`. A phone model will first be on sale (`true`), but later the company will stop selling it. Can we make just this one field mutable? Because we don't want to write `let mut super_phone_3000`. If we do, then every field will become mutable.
+但是裡面有個欄位叫 `on_sale`。一個手機型號會先是銷售中 (on sale, `true`)，但是後來公司會停賣它。我們能不能只讓這個欄位可變？因為我們不想寫 `let mut super_phone_3000`。如果我們這樣做，那麼每個欄位都會變得可變。
 
-Rust has many ways to allow some safe mutability inside of something that is immutable. The most simple way is called `Cell`. First we use `use std::cell::Cell` so that we can just write `Cell` instead of `std::cell::Cell` every time.
+Rust 有很多方式可以讓一些不可變的東西裡面允許有一些安全的可變性，最簡單的方式叫做 `Cell`。首先我們宣告 `use std::cell::Cell`，這樣我們就可以每次只寫 `Cell` 而不是 `std::cell::Cell`。
 
-Then we change `on_sale: bool` to `on_sale: Cell<bool>`. Now it isn't a bool: it's a `Cell` that holds a `bool`.
+然後我們把 `on_sale: bool` 改成 `on_sale: Cell<bool>`。現在它不是 bool：它是個容納了 `bool` 的 `Cell`。
 
-`Cell` has a method called `.set()` where you can change the value. We use `.set()` to change `on_sale: true` to `on_sale: Cell::new(true)`.
+`Cell` 有個叫做 `.set()` 的方法，可以用來改變值。我們用 `.set()` 把 `on_sale: true` 改為 `on_sale: Cell::new(true)`。
 
 ```rust
 use std::cell::Cell;
@@ -7488,20 +7489,20 @@ fn main() {
         on_sale: Cell::new(true),
     };
 
-    // 10 years later, super_phone_3000 is not on sale anymore
+    // 10 年後, super_phone_3000 不再銷售了
     super_phone_3000.on_sale.set(false);
 }
 ```
 
-`Cell` works for all types, but works best for simple Copy types because it gives values, not references. `Cell` has a method called `get()` for example that only works on Copy types.
+`Cell` 適用於所有型別，但對簡單的 Copy 型別效果最好，因為它給出的是值，而不是參考。`Cell` 有個叫做 `get()` 的方法，它只對 Copy 型別有效。
 
-Another type you can use is `RefCell`.
+另一個你可以使用的型別是 `RefCell`。
 
 ### RefCell
 
-A `RefCell` is another way to change values without needing to declare `mut`. It means "reference cell", and is like a `Cell` but uses references instead of copies.
+`RefCell` 是另一種無需宣告 `mut` 而改變值的方式。它的意思是 "reference cell"，就像 `Cell`，但使用的是參考而不是拷貝 (copy)。
 
-We will create a `User` struct. So far you can see that it is similar to `Cell`:
+我們將建立 `User` 結構。到目前為止，你可以看到它與 `Cell` 類似：
 
 ```rust
 use std::cell::RefCell;
@@ -7512,7 +7513,7 @@ struct User {
     year_registered: u32,
     username: String,
     active: RefCell<bool>,
-    // Many other fields
+    // 許多其它欄位
 }
 
 fn main() {
@@ -7527,15 +7528,15 @@ fn main() {
 }
 ```
 
-This prints `RefCell { value: true }`.
+印出 `RefCell { value: true }`。
 
-There are many methods for `RefCell`. Two of them are `.borrow()` and `.borrow_mut()`. With these methods, you can do the same thing you do with `&` and `&mut`. The rules are the same:
+`RefCell` 的方法有很多。其中兩種是 `.borrow()` 和 `.borrow_mut()`。使用這些方法，你可以做到與 `&` 和 `&mut` 相同的事情。規則都是一樣的：
 
-- Many borrows is fine,
-- one mutable borrow is fine,
-- but mutable and immutable together is not fine.
+- 可以有多個不可變借用，
+- 可以有一個可變的借用，
+- 但不行一起用可變和不可變借用。
 
-So changing the value in a `RefCell` is very easy:
+所以改變 `RefCell` 中的值是非常容易的：
 
 ```rust
 // 🚧
@@ -7543,7 +7544,7 @@ user_1.active.replace(false);
 println!("{:?}", user_1.active);
 ```
 
-And there are many other methods like `replace_with` that uses a closure:
+而且還有很多其他的方法，比如 `replace_with` 使用的是閉包：
 
 ```rust
 // 🚧
@@ -7555,7 +7556,7 @@ user_1
 println!("{:?}", user_1.active);
 ```
 
-But you have to be careful with a `RefCell`, because it checks borrows at runtime, not compilation time. Runtime means when the program is actually running (after compilation). So this will compile, even though it is wrong:
+但是你要小心使用 `RefCell`，因為它是在執行時期而不是編譯時檢查借用。執行時期是指程式實際執行的時候(在編譯之後)。所以這將會被編譯，即使它是錯誤的：
 
 ```rust
 use std::cell::RefCell;
@@ -7566,7 +7567,7 @@ struct User {
     year_registered: u32,
     username: String,
     active: RefCell<bool>,
-    // Many other fields
+    // 許多其它欄位
 }
 
 fn main() {
@@ -7577,12 +7578,12 @@ fn main() {
         active: RefCell::new(true),
     };
 
-    let borrow_one = user_1.active.borrow_mut(); // first mutable borrow - okay
-    let borrow_two = user_1.active.borrow_mut(); // second mutable borrow - not okay
+    let borrow_one = user_1.active.borrow_mut(); // 第一個可變借用 - okay
+    let borrow_two = user_1.active.borrow_mut(); // 第二個可變借用 - 不 okay
 }
 ```
 
-But if you run it, it will immediately panic.
+但如果你執行它，它就會立即恐慌。
 
 ```text
 thread 'main' panicked at 'already borrowed: BorrowMutError', C:\Users\mithr\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\src\libcore\cell.rs:877:9
@@ -7590,37 +7591,37 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 error: process didn't exit successfully: `target\debug\rust_book.exe` (exit code: 101)
 ```
 
-`already borrowed: BorrowMutError` is the important part. So when you use a `RefCell`, it is good to compile **and** run to check.
+`already borrowed: BorrowMutError` 是重點。所以當你使用 `RefCell` 時，最好去編譯**並**執行來檢查。
 
 ### Mutex
 
-`Mutex` is another way to change values without declaring `mut`. Mutex means `mutual exclusion`, which means "only one at a time". This is why a `Mutex` is safe, because it only lets one process change it at a time. To do this, it uses `.lock()`. `Lock` is like locking a door from the inside. You go into a room, lock the door, and now you can change things inside the room. Nobody else can come in and stop you, because you locked the door.
+`Mutex`(互斥鎖) 是另一種不需要宣告 `mut` 就能改變數值的方式。互斥鎖的意思是 `mutual exclusion`，也就是"一次只能改一個"。這就是為什麼 `Mutex` 是安全的，因為它每次只讓一個執行緒改變它。為了做到這一點，它使用了 `.lock()`。`Lock` 就像從裡面鎖上門。你進入房間，鎖上門，現在你可以在房間裡面改變東西。別人不能進來阻止你，因為你把門鎖上了。
 
-A `Mutex` is easier to understand through examples.
+透過範例更容易理解 `Mutex`：
 
 ```rust
 use std::sync::Mutex;
 
 fn main() {
-    let my_mutex = Mutex::new(5); // A new Mutex<i32>. We don't need to say mut
-    let mut mutex_changer = my_mutex.lock().unwrap(); // mutex_changer is a MutexGuard
-                                                     // It has to be mut because we will change it
-                                                     // Now it has access to the Mutex
-                                                     // Let's print my_mutex to see:
+    let my_mutex = Mutex::new(5); // 新的 Mutex<i32>. 我們不需要加 mut
+    let mut mutex_changer = my_mutex.lock().unwrap(); // mutex_changer 是個 MutexGuard
+                                                     // 它必須是 mut 因為我們將會改變它
+                                                     // 現在它能存取 Mutex 了
+                                                     // 讓我們印 my_mutex 來看:
 
-    println!("{:?}", my_mutex); // This prints "Mutex { data: <locked> }"
-                                // So we can't access the data with my_mutex now,
-                                // only with mutex_changer
+    println!("{:?}", my_mutex); // 印出 "Mutex { data: <locked> }"
+                                // 因此我們現在不能用 my_mutex 存取資料,
+                                // 只能用 mutex_changer
 
-    println!("{:?}", mutex_changer); // This prints 5. Let's change it to 6.
+    println!("{:?}", mutex_changer); // 印出 5. 讓我們改成 6.
 
-    *mutex_changer = 6; // mutex_changer is a MutexGuard<i32> so we use * to change the i32
+    *mutex_changer = 6; // mutex_changer 是個 MutexGuard<i32> 所以我們用 * 來改變 i32
 
-    println!("{:?}", mutex_changer); // Now it says 6
+    println!("{:?}", mutex_changer); // 現在它說是 6
 }
 ```
 
-But `mutex_changer` still has a lock after it is done. How do we stop it? A `Mutex` is unlocked when the `MutexGuard` goes out of scope. "Go out of scope" means the code block is finished. For example:
+但是 `mutex_changer` 做完後還是持有著鎖。我們該如何停止呢？`Mutex` 在 `MutexGuard` 超出範圍 (out of scope) 時就會被解鎖。"超出範圍"表示該程式碼區塊已經結束執行。比如說：
 
 ```rust
 use std::sync::Mutex;
@@ -7630,13 +7631,13 @@ fn main() {
     {
         let mut mutex_changer = my_mutex.lock().unwrap();
         *mutex_changer = 6;
-    } // mutex_changer goes out of scope - now it is gone. It is not locked anymore
+    } // mutex_changer 已經超出範圍 - 現在它不見了. 不再鎖著了
 
-    println!("{:?}", my_mutex); // Now it says: Mutex { data: 6 }
+    println!("{:?}", my_mutex); // 現在它會說: Mutex { data: 6 }
 }
 ```
 
-If you don't want to use a different `{}` code block, you can use `std::mem::drop(mutex_changer)`. `std::mem::drop` means "make this go out of scope".
+如果你不想用不同的 `{}` 程式碼區塊，你可以使用 `std::mem::drop(mutex_changer)`。`std::mem::drop` 的意思是"讓這個超出範圍"。
 
 ```rust
 use std::sync::Mutex;
@@ -7645,31 +7646,31 @@ fn main() {
     let my_mutex = Mutex::new(5);
     let mut mutex_changer = my_mutex.lock().unwrap();
     *mutex_changer = 6;
-    std::mem::drop(mutex_changer); // drop mutex_changer - it is gone now
-                                   // and my_mutex is unlocked
+    std::mem::drop(mutex_changer); // 丟棄 mutex_changer ── 現在不見了
+                                   // 而且 my_mutex 解鎖了
 
-    println!("{:?}", my_mutex); // Now it says: Mutex { data: 6 }
+    println!("{:?}", my_mutex); // 現在它會說: Mutex { data: 6 }
 }
 ```
 
-You have to be careful with a `Mutex` because if another variable tries to `lock` it, it will wait:
+你必須小心使用 `Mutex`，因為如果有另一個變數試圖 `lock` 它，它將會等待：
 
 ```rust
 use std::sync::Mutex;
 
 fn main() {
     let my_mutex = Mutex::new(5);
-    let mut mutex_changer = my_mutex.lock().unwrap(); // mutex_changer has the lock
-    let mut other_mutex_changer = my_mutex.lock().unwrap(); // other_mutex_changer wants the lock
-                                                            // the program is waiting
-                                                            // and waiting
-                                                            // and will wait forever.
+    let mut mutex_changer = my_mutex.lock().unwrap(); // mutex_changer 拿到鎖
+    let mut other_mutex_changer = my_mutex.lock().unwrap(); // other_mutex_changer 想拿鎖
+                                                            // 程式正在等
+                                                            // 還在等
+                                                            // 又會等到永遠.
 
     println!("This will never print...");
 }
 ```
 
-One other method is `try_lock()`. Then it will try once, and if it doesn't get the lock it will give up. Don't do `try_lock().unwrap()`, because it will panic if it doesn't work. `if let` or `match` is better:
+還有一種方法是 `try_lock()`。然後它會試一次，如果沒能鎖上就會放棄。`try_lock().unwrap()` 就不做了，因為如果不成功它就會恐慌。`if let` 或 `match` 比較好：
 
 ```rust
 use std::sync::Mutex;
@@ -7677,7 +7678,7 @@ use std::sync::Mutex;
 fn main() {
     let my_mutex = Mutex::new(5);
     let mut mutex_changer = my_mutex.lock().unwrap();
-    let mut other_mutex_changer = my_mutex.try_lock(); // try to get the lock
+    let mut other_mutex_changer = my_mutex.try_lock(); // 試著拿到鎖
 
     if let Ok(value) = other_mutex_changer {
         println!("The MutexGuard has: {}", value)
@@ -7687,7 +7688,7 @@ fn main() {
 }
 ```
 
-Also, you don't need to make a variable to change the `Mutex`. You can just do this:
+另外，你不需要做出變數來改變 `Mutex`。你可以直接這樣做：
 
 ```rust
 use std::sync::Mutex;
@@ -7701,7 +7702,7 @@ fn main() {
 }
 ```
 
-`*my_mutex.lock().unwrap() = 6;` means "unlock my_mutex and make it 6". There is no variable that holds it so you don't need to call `std::mem::drop`. You can do it 100 times if you want - it doesn't matter:
+`*my_mutex.lock().unwrap() = 6;` 的意思是"解鎖 my_mutex 並使其成為 6"。沒有任何變數來儲存它，所以你不需要呼叫 `std::mem::drop`。如果你願意，你可以做 100 次──這不要緊：
 
 ```rust
 use std::sync::Mutex;
@@ -7710,7 +7711,7 @@ fn main() {
     let my_mutex = Mutex::new(5);
 
     for _ in 0..100 {
-        *my_mutex.lock().unwrap() += 1; // locks and unlocks 100 times
+        *my_mutex.lock().unwrap() += 1; // 上鎖又解鎖 100 次
     }
 
     println!("{:?}", my_mutex);
@@ -7719,13 +7720,13 @@ fn main() {
 
 ### RwLock
 
-`RwLock` means "read write lock". It is like a `Mutex` but also like a `RefCell`. You use `.write().unwrap()` instead of `.lock().unwrap()` to change it. But you can also use `.read().unwrap()` to get read access. It is like `RefCell` because it follows the rules:
+`RwLock` 的意思是"讀寫鎖"。它像 `Mutex`，但也像 `RefCell`。你用 `.write().unwrap()` 代替 `.lock().unwrap()` 來改變它。但你也可以用 `.read().unwrap()` 來獲得讀取許可權。它像是 `RefCell` 一樣遵循這些規則：
 
-- many `.read()` variables is okay,
-- one `.write()` variable is okay,
-- but more than one `.write()` or `.read()` together with `.write()` is not okay.
+- 可以有很多 `.read()` 變數，
+- 可以有一個 `.write()` 變數，
+- 但不能有多個 `.write()` 或同時有 `.read()` 與 `.write()`。
 
-The program will run forever if you try to `.write()` when you can't get access:
+如果在無法存取的情況下嘗試 `.write()`時，程式將會永遠執行：
 
 ```rust
 use std::sync::RwLock;
@@ -7733,20 +7734,20 @@ use std::sync::RwLock;
 fn main() {
     let my_rwlock = RwLock::new(5);
 
-    let read1 = my_rwlock.read().unwrap(); // one .read() is fine
-    let read2 = my_rwlock.read().unwrap(); // two .read()s is also fine
+    let read1 = my_rwlock.read().unwrap(); // 一個 .read() 很好
+    let read2 = my_rwlock.read().unwrap(); // 二個 .read() 也很好
 
     println!("{:?}, {:?}", read1, read2);
 
-    let write1 = my_rwlock.write().unwrap(); // uh oh, now the program will wait forever
+    let write1 = my_rwlock.write().unwrap(); // 噢哦, 現在程式會永遠等待
 }
 ```
 
-So we use `std::mem::drop`, just like in a `Mutex`.
+所以我們用 `std::mem::drop`，就像用 `Mutex` 一樣。
 
 ```rust
 use std::sync::RwLock;
-use std::mem::drop; // We will use drop() many times
+use std::mem::drop; // 我們將會使用 drop() 許多次
 
 fn main() {
     let my_rwlock = RwLock::new(5);
@@ -7757,7 +7758,7 @@ fn main() {
     println!("{:?}, {:?}", read1, read2);
 
     drop(read1);
-    drop(read2); // we dropped both, so we can use .write() now
+    drop(read2); // 一起丟棄, 那現在我們才能使用 .write()
 
     let mut write1 = my_rwlock.write().unwrap();
     *write1 = 6;
@@ -7766,7 +7767,7 @@ fn main() {
 }
 ```
 
-And you can use `try_read()` and `try_write()` too.
+而且你也可以使用 `try_read()` 和 `try_write()`。
 
 ```rust
 use std::sync::RwLock;
@@ -7788,9 +7789,9 @@ fn main() {
 
 ## Cow
 
-Cow is a very convenient enum. It means "clone on write" and lets you return a `&str` if you don't need a `String`, and a `String` if you need it. (It can also do the same with arrays vs. Vecs, etc.)
+Cow 是一種非常方便的列舉。它的意思是"寫時克隆"，如果你不需要 `String`，可以回傳 `&str`，如果你需要就回傳 `String`。(它也可以對陣列與向量等等做同樣的處理)。
 
-To understand it, let's look at the signature. It says:
+為了理解它，我們看一下簽名。它說：
 
 ```rust
 pub enum Cow<'a, B>
@@ -7804,17 +7805,17 @@ where
 fn main() {}
 ```
 
-You know right away that `'a` means it works with references. The `ToOwned` trait means that it is a type that can be turned into an owned type. For example, `str` is usually a reference (`&str`) and you can turn it into an owned `String`.
+你馬上就知道，`'a` 意味著它可以和參考一起用。`ToOwned` 特徵意味著它是個可以轉換成具有擁有權的型別。例如，`str` 通常是參考(`&str`)，你可以把它轉換成具有擁有權的 `String`。
 
-Next is `?Sized`. This means "maybe Sized, but maybe not". Almost every type in Rust is Sized, but types like `str` are not. That is why we need a `&` for a `str`, because the compiler doesn't know the size. So if you want a trait that can use something like a `str`, you add `?Sized.`
+接下來是 `?Sized`。這意味著"也許是 Sized，但也許不是"。Rust 中幾乎每個型別都是 Sized 的，但像 `str` 這樣的型別卻不是。這就是為什麼我們需要附帶 `&` 給 `str`，因為編譯器不知道大小。所以如果你想要可以用像是 `str` 的特徵，你可以加上 `?Sized`。
 
-Next are the `enum` variants. They are `Borrowed` and `Owned`.
+接下來是 `enum` 的變體。它們是 `Borrowed` 和 `Owned`。
 
-Imagine that you have a function that returns `Cow<'static, str>`. If you tell the function to return `"My message".into()`, it will look at the type: "My message" is a `str`. This is a `Borrowed` type, so it chooses `Borrowed(&'a B)`. So it becomes `Cow::Borrowed(&'static str)`.
+想像你有個回傳 `Cow<'static, str>` 的函式。如果你告訴函式回傳 `"My message".into()`，它就會檢視型別："My message"是 `str`。這是個 `Borrowed` 型別，所以它選擇 `Borrowed(&'a B)`。那它就變成了 `Cow::Borrowed(&'static str)`。
 
-And if you give it a `format!("{}", "My message").into()` then it will look at the type. This time it is a `String`, because `format!` makes a `String`. So this time it will select "Owned".
+而如果你給它 `format!("{}", "My message").into()`，那麼它就會檢視型別。這次是個 `String`，因為 `format!` 做出 `String`。那這次就會選擇 "Owned"。
 
-Here is an example to test `Cow`. We will put a number into a function that returns a `Cow<'static, str>`. Depending on the number, it will create a `&str` or a `String`. Then it uses `.into()` to turn it into a `Cow`. When you do that, it will choose either `Cow::Borrowed` or `Cow::Owned`. Then we will match to see which one it chose.
+這是個測試 `Cow` 的範例。我們將把數字放入會回傳 `Cow<'static, str>` 的函式中。根據這個數字，它會建立 `&str` 或 `String`。然後用 `.into()` 將其變成 `Cow`。這樣做的時候，它就會選擇 `Cow::Borrowed` 或者 `Cow::Owned` 其中之一。那我們就匹配看看它選的是哪一個。
 
 ```rust
 use std::borrow::Cow;
@@ -7837,7 +7838,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 1 went in. The Cow is borrowed with this message: Remainder is 1
@@ -7848,13 +7849,13 @@ This prints:
 6 went in. The Cow is borrowed with this message: Remainder is 0
 ```
 
-`Cow` has some other methods like `into_owned` or `into_borrowed` so you can change it if you need to.
+`Cow` 還有一些其他方法，像是 `into_owned` 或者 `into_borrowed`，如果你需要就可以改變它。
 
-## Type aliases
+## 類型別名
 
-A type alias means "giving a new name to another type". Type aliases are very easy. Usually you use them when you have a very long type and don't want to write it every time. It is also good when you want to give a type a better name that is easy to remember. Here are two examples of type aliases.
+類型別名 (Type alias) 的意思是"給某個型別新名字"。類型別名非常簡單。通常你會使用在有個很長的型別，而又不想每次都寫它時。或是當你想給型別取個更好的名字方便記憶時，也可以使用它。這裡有兩個類型別名的範例。
 
-Here is a type that is not difficult, but you want to make your code easier to understand for other people (or for you):
+這裡的型別不難，但是你想讓你的程式碼更容易被其他人(或者你自己)理解：
 
 ```rust
 type CharacterVec = Vec<char>;
@@ -7862,10 +7863,10 @@ type CharacterVec = Vec<char>;
 fn main() {}
 ```
 
-Here's a type that is very difficult to read:
+這裡是種非常難以閱讀的型別：
 
 ```rust
-// this return type is extremely long
+// 這個回傳型別超長
 fn returns<'a>(input: &'a Vec<char>) -> std::iter::Take<std::iter::Skip<std::slice::Iter<'a, char>>> {
     input.iter().skip(4).take(5)
 }
@@ -7873,7 +7874,7 @@ fn returns<'a>(input: &'a Vec<char>) -> std::iter::Take<std::iter::Skip<std::sli
 fn main() {}
 ```
 
-So you can change it to this:
+所以你可以改成這樣：
 
 ```rust
 type SkipFourTakeFive<'a> = std::iter::Take<std::iter::Skip<std::slice::Iter<'a, char>>>;
@@ -7885,7 +7886,7 @@ fn returns<'a>(input: &'a Vec<char>) -> SkipFourTakeFive {
 fn main() {}
 ```
 
-Of course, you can also import items to make the type shorter:
+當然你也可以匯入型別，讓它更短：
 
 ```rust
 use std::iter::{Take, Skip};
@@ -7898,9 +7899,9 @@ fn returns<'a>(input: &'a Vec<char>) -> Take<Skip<Iter<'a, char>>> {
 fn main() {}
 ```
 
-So you can decide what looks best in your code depending on what you like.
+所以你可以根據自己的喜好來決定呈現你的程式碼的最佳方式。
 
-Note that this doesn't create an actual new type. It's just a name to use instead of an existing type. So if you write `type File = String;`, the compiler just sees a `String`. So this will print `true`:
+請注意這並沒有建立實際的新型別。它只是替代現有型別的名稱。所以如果你寫了 `type File = String;`，編譯器只會看到 `String`。所以將會印出 `true`：
 
 ```rust
 type File = String;
@@ -7912,12 +7913,12 @@ fn main() {
 }
 ```
 
-So what if you want an actual new type?
+那麼如果你想要實際的新型別呢？
 
-If you want a new file type that the compiler sees as a `File`, you can put it in a struct. (This is actually called the `newtype` idiom)
+如果你想要編譯器看到的是 `File` 的新檔案型別，你可以把它放在結構體中。(這是所謂的 `newtype` 慣用寫法)
 
 ```rust
-struct File(String); // File is a wrapper around String
+struct File(String); // File 是個對 String 的封裝
 
 fn main() {
     let my_file = File(String::from("I am file contents"));
@@ -7925,19 +7926,19 @@ fn main() {
 }
 ```
 
-Now this will not work, because they are two different types:
+現在這樣就不能執行了，因為它們是兩種不同的型別：
 
 ```rust
-struct File(String); // File is a wrapper around String
+struct File(String); // File 是個對 String 的封裝
 
 fn main() {
     let my_file = File(String::from("I am file contents"));
     let my_string = String::from("I am file contents");
-    println!("{}", my_file == my_string);  // ⚠️ cannot compare File with String
+    println!("{}", my_file == my_string);  // ⚠️ 無法比較 File 和 String
 }
 ```
 
-If you want to compare the String inside, you can use my_file.0:
+如果你想比較裡面的 String，可以用 `my_file.0`：
 
 ```rust
 struct File(String);
@@ -7945,22 +7946,22 @@ struct File(String);
 fn main() {
     let my_file = File(String::from("I am file contents"));
     let my_string = String::from("I am file contents");
-    println!("{}", my_file.0 == my_string); // my_file.0 is a String, so this prints true
+    println!("{}", my_file.0 == my_string); // my_file.0 是個 String, 因此印出 true
 }
 ```
 
-And now this type doesn't have any traits, so you can implement them yourself. This is not too surprising:
+並且現在這個型別沒有任何特徵，所以你自己可以實作它們。這並不會太意外：
 
 ```rust
 #[derive(Clone, Debug)]
 struct File(String);
 ```
 
-So when you use the `File` type here you can clone it and Debug print it, but it doesn't have the traits of String unless you use `.0` to get to the String inside it. But in other people's code you can only use `.0` if it's marked `pub` for public. And that's why these sorts of types use the `Deref` trait a lot. We will learn about both `pub` and `Deref` later.
+那麼當你使用這裡的 `File` 型別時，你可以克隆它和用 Debug 印出它，但它不會有 String 的特徵，除非你用 `.0` 來取得它裡面的 String。但是在其他人的程式碼中，如果它被標記為 `pub` 公開使用時，你就只能用 `.0`。而且那也是為什麼這些不同種類的型別會用 `Deref` 特徵用得相當多。我們會在之後都學到 `pub` 和 `Deref`。
 
-### Importing and renaming inside a function
+### 在函式中匯入和重新命名
 
-Usually you write `use` at the top of the program, like this:
+通常你會在程式的頂端寫 `use`，像這樣：
 
 ```rust
 use std::cell::{Cell, RefCell};
@@ -7968,7 +7969,7 @@ use std::cell::{Cell, RefCell};
 fn main() {}
 ```
 
-But we saw that you can do this anywhere, especially in functions with enums that have long names. Here is an example.
+但我們會看到，你可以在任何地方這樣做，特別是在函式中使用名稱較長的例舉。像這裡的範例：
 
 ```rust
 enum MapDirection {
@@ -7988,13 +7989,13 @@ fn give_direction(direction: &MapDirection) {
     match direction {
         MapDirection::North => println!("You are heading north."),
         MapDirection::NorthEast => println!("You are heading northeast."),
-        // So much more left to type...
-        // ⚠️ because we didn't write every possible variant
+        // 還剩下相當多要打字...
+        // ⚠️ 因為我們沒寫出每個可能出現的變體
     }
 }
 ```
 
-So now we will import MapDirection inside the function. That means that inside the function you can just write `North` and so on.
+所以現在我們要在函數裡面匯入 MapDirection。也就是說，在函數里面你可以直接寫 `North` 等變體名稱。
 
 ```rust
 enum MapDirection {
@@ -8011,21 +8012,21 @@ enum MapDirection {
 fn main() {}
 
 fn give_direction(direction: &MapDirection) {
-    use MapDirection::*; // Import everything in MapDirection
+    use MapDirection::*; // 匯入 MapDirection 裡的所有東西
     let m = "You are heading";
 
     match direction {
         North => println!("{} north.", m),
         NorthEast => println!("{} northeast.", m),
-        // This is a bit better
+        // 這比較好一點
         // ⚠️
     }
 }
 ```
 
-We've seen that `::*` means "import everything after the ::". In our case, that means `North`, `NorthEast`...and all the way to `NorthWest`. When you import other people's code you can do that too, but if the code is very large you might have problems. What if it has some items that are the same as your code? So it's usually best to not use `::*` all the time unless you're sure. A lot of times you see  a section called `prelude` in other people's code with all the main items you probably need. So then you will usually use it like this: `name::prelude::*`. We will talk about this more in the sections for `modules` and `crates`.
+我們已經看到 `::*` 的意思是"匯入在 :: 之後的所有內容"。在我們的例子中，這意味著匯入 `North`、`NorthEast`、......一直到 `NorthWest`。你也可以在你匯入別人的程式碼時這樣做，但如果程式碼非常大，你可能會遇到問題。要是它有一些元素和你的程式碼是一樣的呢？所以一般情況下，除非你有把握最好是不要一直使用`::*`。很多時候你在別人的程式碼裡看到一個叫 `prelude` 的部分，裡面有你可能需要的所有主要元素。那麼你通常會這樣使用：`name::prelude::*`。我們將會在 `modules` 和 `crates` 的章節中講到更多。
 
-You can also use `as` to change the name. For example, maybe you are using someone else's code and you can't change the names in an enum:
+您也可以使用 `as` 來更改名稱。例如，也許你正在使用別人的程式碼，而你不能改變列舉中的名稱：
 
 ```rust
 enum FileState {
@@ -8038,7 +8039,7 @@ enum FileState {
 fn main() {}
 ```
 
-So then you can 1) import everything and 2) change the names:
+那麼你就能 1) 匯入所有東西 並且 2) 更改名稱：
 
 ```rust
 enum FileState {
@@ -8066,26 +8067,26 @@ fn give_filestate(input: &FileState) {
 fn main() {}
 ```
 
-So now you can write `OtherDirectory` instead of `FileState::SimilarFileNameInNextDirectory`.
+所以現在你可以寫成 `OtherDirectory` 而不是`FileState::SimilarFileNameInNextDirectory`。
 
-## The todo! macro
+## todo! 巨集
 
-Sometimes you want to write code in general to help you imagine your project. For example, imagine a simple project to do something with books. Here's what you think as you write it:
+有時你通常想寫點程式碼幫助你想像你的專案。例如，想像一個簡單的專案，會用書籍來做一些事情。這裡是你思考寫下的想法：
 
 ```rust
-struct Book {} // Okay, first I need a book struct.
-               // Nothing in there yet - will add later
+struct Book {} // Okay, 首先我需要書籍的結構體.
+               // 還沒有東西在那 - 之後會加入
 
-enum BookType { // A book can be hardcover or softcover, so add an enum
+enum BookType { // 一本書可以是精裝或平裝, 所以加入這個例舉
     HardCover,
     SoftCover,
 }
 
-fn get_book(book: &Book) -> Option<String> {} // ⚠️ get_book should take a &Book and return an Option<String>
+fn get_book(book: &Book) -> Option<String> {} // ⚠️ get_book 應該要接受 &Book 並回傳 Option<String>
 
-fn delete_book(book: Book) -> Result<(), String> {} // delete_book should take a Book and return a Result...
-                                                    // TODO: impl block and make these functions methods...
-fn check_book_type(book_type: &BookType) { // Let's make sure the match statement works
+fn delete_book(book: Book) -> Result<(), String> {} // delete_book 應該要接受 Book 並回傳 Result...
+                                                    // TODO: impl 區塊和寫出這些函式方法...
+fn check_book_type(book_type: &BookType) { // 讓我們確定來匹配有成功
     match book_type {
         BookType::HardCover => println!("It's hardcover"),
         BookType::SoftCover => println!("It's softcover"),
@@ -8094,11 +8095,11 @@ fn check_book_type(book_type: &BookType) { // Let's make sure the match statemen
 
 fn main() {
     let book_type = BookType::HardCover;
-    check_book_type(&book_type); // Okay, let's check this function!
+    check_book_type(&book_type); // Okay, 讓我們來檢查這個函式!
 }
 ```
 
-But Rust is not happy with `get_book` and `delete_book`. It says:
+但 Rust 對 `get_book` 和 `delete_book` 不滿意。它說：
 
 ```text
 error[E0308]: mismatched types
@@ -8124,13 +8125,13 @@ error[E0308]: mismatched types
            found unit type `()`
 ```
 
-But you don't care about `get_book` and `delete_book` right now. This is where you can use `todo!()`. If you add that to the function, Rust will not complain, and will compile.
+但是你這時並不關心 `get_book` 和 `delete_book`。這就是你能使用 `todo!()` 的地方。如果你把它加到函式中，Rust 不會抱怨，而且會編譯好。
 
 ```rust
 struct Book {}
 
 fn get_book(book: &Book) -> Option<String> {
-    todo!() // todo means "I will do it later, please be quiet"
+    todo!() // todo 的意思是 "我之後會做, 請安靜"
 }
 
 fn delete_book(book: Book) -> Result<(), String> {
@@ -8140,11 +8141,11 @@ fn delete_book(book: Book) -> Result<(), String> {
 fn main() {}
 ```
 
-So now the code compiles and you can see the result of `check_book_type`: `It's hardcover`.
+所以現在程式碼能編譯，你可以看到 `check_book_type` 的結果：`It's hardcover`。
 
-But careful, because it only compiles - you can't use the function. If you call a function with `todo!()` inside it, it will panic.
+但是要小心，因為它只是能編譯--你不能使用函式。如果你呼叫裡面有 `todo!()` 的函式，它就會恐慌。
 
-Also, `todo!()` functions still need real input and output types. If you just write this, it will not compile:
+另外，`todo!()` 函式仍然需要真實的輸入和輸出型別。如果你只寫這樣，它將無法編譯：
 
 ```rust
 struct Book {}
@@ -8156,7 +8157,7 @@ fn get_book(book: &Book) -> WorldsBestType { // ⚠️
 fn main() {}
 ```
 
-It will say:
+它會說：
 
 ```text
 error[E0412]: cannot find type `WorldsBestType` in this scope
@@ -8166,11 +8167,11 @@ error[E0412]: cannot find type `WorldsBestType` in this scope
    |                             ^^^^^^^^^^^^^^ not found in this scope
 ```
 
-`todo!()` is actually the same as another macro: `unimplemented!()`. Programmers were using `unimplemented!()` a lot but it was long to type, so they created `todo!()` which is shorter.
+`todo!()` 其實和另一個巨集一樣：`unimplemented!()`。程式設計師們經常使用 `unimplemented!()`，但打字時太長了，所以他們建立了比較短的 `todo!()`。
 
 ## Rc
 
-Rc means "reference counter". You know that in Rust, every variable can only have one owner. That is why this doesn't work:
+Rc 的意思是 "參考計數器(reference counter)"。你知道在 Rust 中，每個變數只能有一個所有者(owner)。這就是為什麼這個不能執行的原因：
 
 ```rust
 fn takes_a_string(input: String) {
@@ -8189,9 +8190,9 @@ fn main() {
 }
 ```
 
-After `takes_a_string` takes `user_name`, you can't use it anymore. Here that is no problem: you can just give it `user_name.clone()`. But sometimes a variable is part of a struct, and maybe you can't clone the struct. Or maybe the `String` is really long and you don't want to clone it. These are some reasons for `Rc`, which lets you have more than one owner. An `Rc` is like a good office worker: `Rc` writes down who has ownership, and how many. Then once the number of owners goes down to 0, the variable can disappear.
+`takes_a_string` 拿走 `user_name` 之後，你就不能再用它了。這樣也沒問題：你可以直接給它 `user_name.clone()`。但有時變數是某個結構體的一部分，也許你不能克隆這個結構。或者也許 `String` 真的很長，你不想克隆它。這些都是會有 `Rc` 的一些原因，它讓你可以有多個所有者。`Rc` 就像個優秀的辦公人員：`Rc` 寫下誰擁有所有權，以及有多少個。然後一旦所有者的數量下降到 0，這個變數就可以消失不要了。
 
-Here's how you use an `Rc`. First imagine two structs: one called `City`, and another called `CityData`. `City` has information for one city, and `CityData` puts all the cities together in `Vec`s.
+這裡告訴你如何使用 `Rc`。首先想像兩個結構體：一個叫 `City`，另一個叫 `CityData`。`City` 有關於一個城市的資訊，而 `CityData` 把所有的城市都一起放在 `Vec` 中。
 
 ```rust
 #[derive(Debug)]
@@ -8211,20 +8212,20 @@ fn main() {
     let calgary = City {
         name: "Calgary".to_string(),
         population: 1_200_000,
-           // Pretend that this string is very very long
+           // 假裝這個字串非常非常長
         city_history: "Calgary began as a fort called Fort Calgary that...".to_string(),
     };
 
     let canada_cities = CityData {
-        names: vec![calgary.name], // This is using calgary.name, which is short
-        histories: vec![calgary.city_history], // But this String is very long
+        names: vec![calgary.name], // 用 calgary.name 比較短
+        histories: vec![calgary.city_history], // 但這個字串非常長
     };
 
     println!("Calgary's history is: {}", calgary.city_history);  // ⚠️
 }
 ```
 
-Of course, it doesn't work because `canada_cities` now owns the data and `calgary` doesn't. It says:
+當然這是不可能執行的，因為現在 `canada_cities` 擁有了資料，而 `calgary` 沒有。它說：
 
 ```text
 error[E0382]: borrow of moved value: `calgary.city_history`
@@ -8239,9 +8240,9 @@ error[E0382]: borrow of moved value: `calgary.city_history`
    = note: move occurs because `calgary.city_history` has type `std::string::String`, which does not implement the `Copy` trait
 ```
 
-We can clone the name: `names: vec![calgary.name.clone()]` but we don't want to clone the `city_history`, which is long. So we can use an `Rc`.
+我們可以克隆名稱：`names: vec![calgary.name.clone()]`，但是我們不想克隆很長的 `city_history`。所以我們可以用 `Rc`。
 
-Add the `use` declaration:
+加上 `use` 的宣告：
 
 ```rust
 use std::rc::Rc;
@@ -8249,7 +8250,7 @@ use std::rc::Rc;
 fn main() {}
 ```
 
-Then put `Rc` around `String`.
+用 `Rc` 把 `String` 包起來：
 
 ```rust
 use std::rc::Rc;
@@ -8270,9 +8271,9 @@ struct CityData {
 fn main() {}
 ```
 
-To add a new reference, you have to `clone` the `Rc`. But hold on, didn't we want to avoid using `.clone()`? Not exactly: we didn't want to clone the whole String. But a clone of an `Rc` just clones the pointer - it's basically free. It's like putting a name sticker on a box of books to show that two people own it, instead of making a whole new box.
+要增加新的參考，你必須克隆 `Rc`。但是等一下，我們不是想避免使用 `.clone()` 嗎？不完全是：我們只是不想克隆整個 String。但是 `Rc` 的克隆只是克隆了指標(pointer)--它基本上是沒有開銷的。這就像在一盒書上貼上名字貼紙，證明有兩個人擁有它，而不是做一盒全新的書。
 
-You can clone an `Rc` called `item` with `item.clone()` or with `Rc::clone(&item)`. So calgary.city_history has 2 owners. We can check the number of owners with `Rc::strong_count(&item)`. Also let's add a new owner. Now our code looks like this:
+你可以用 `item.clone()` 或者用 `Rc::clone(&item)` 來克隆叫做 `item` 的 `Rc`。所以 calgary.city_history 有兩個所有者。我們可以用 `Rc::strong_count(&item)` 查詢所有者的數量。另外我們再增加一個新的所有者。現在我們的程式碼看起來像這樣：
 
 ```rust
 use std::rc::Rc;
@@ -8281,26 +8282,26 @@ use std::rc::Rc;
 struct City {
     name: String,
     population: u32,
-    city_history: Rc<String>, // String inside an Rc
+    city_history: Rc<String>, // 包在 Rc 裡的 String
 }
 
 #[derive(Debug)]
 struct CityData {
     names: Vec<String>,
-    histories: Vec<Rc<String>>, // A Vec of Strings inside Rcs
+    histories: Vec<Rc<String>>, // 有包在 Rc 裡的 String 的向量
 }
 
 fn main() {
     let calgary = City {
         name: "Calgary".to_string(),
         population: 1_200_000,
-           // Pretend that this string is very very long
-        city_history: Rc::new("Calgary began as a fort called Fort Calgary that...".to_string()), // Rc::new() to make the Rc
+           // 假裝這個字串非常非常長
+        city_history: Rc::new("Calgary began as a fort called Fort Calgary that...".to_string()), // 用 Rc::new() 做出 Rc
     };
 
     let canada_cities = CityData {
         names: vec![calgary.name],
-        histories: vec![calgary.city_history.clone()], // .clone() to increase the count
+        histories: vec![calgary.city_history.clone()], // 用 .clone() 來增加計數
     };
 
     println!("Calgary's history is: {}", calgary.city_history);
@@ -8309,16 +8310,16 @@ fn main() {
 }
 ```
 
-This prints `2`. And `new_owner` is now an `Rc<String>`. Now if we use `println!("{}", Rc::strong_count(&calgary.city_history));`, we get `3`.
+印出 `2`。而 `new_owner` 現在是 `Rc<String>`。現在如果我們用 `println!("{}", Rc::strong_count(&calgary.city_history));`，我們得到 `3`。
 
-So if there are strong pointers, are there weak pointers? Yes, there are. Weak pointers are useful because if two `Rc`s point at each other, they can't die. This is called a "reference cycle". If item 1 has an Rc to item 2, and item 2 has an Rc to item 1, they can't get to 0. In this case you want to use weak references. Then `Rc` will count the references, but if it only has weak references then it can die. You use `Rc::downgrade(&item)` instead of `Rc::clone(&item)` to make weak references. Also, you use `Rc::weak_count(&item)` to see the weak count.
+那麼，如果有強指標，是否有弱指標(weak references)呢？是的，有。弱指標蠻有用的，因為如果有兩個 `Rc` 互相指向對方，它們就不會死掉。這就是所謂的"循環參考(reference cycle)"。如果第 1 項有 Rc 指向第 2 項，而第 2 項有 Rc 指向第 1 項，計數就不會降到 0，在這種情況下，你會想要使用弱參考。那麼 `Rc` 就會對參考計數，但如果只有弱參考它就可以死掉。你要使用 `Rc::downgrade(&item)` 而不是 `Rc::clone(&item)` 來做出弱參考。另外，你需要用 `Rc::weak_count(&item)` 來檢視弱參考的數量。
 
-## Multiple threads
+## 多執行緒
 
-If you use multiple threads, you can do many things at the same time. Modern computers have more than one core so they can do more than one thing at the same time, and Rust lets you use them. Rust uses threads that are called "OS threads". OS thread means the operating system creates the thread on a different core. (Some other languages use "green threads", which are less powerful)
+如果你使用多個執行緒 (Thread)，你可以同時做很多事情。現代電腦有一個以上的核心 (Core)，所以它們可以同時做多件事情，Rust 讓你能運用它們。Rust 使用的執行緒被稱為"OS 執行緒"。OS 執行緒的意思是作業系統在不同的核心上建立執行緒。(其他一些語言使用功能沒那麼強大的"green threads")
 
 
-You create threads with `std::thread::spawn` and then a closure to tell it what to do. Threads are interesting because they run at the same time, and you can test it to see what happens. Here is a simple example:
+你要用 `std::thread::spawn` 建立執行緒，以及用閉包來告訴它該怎麼做。執行緒很有趣，因為它們同時執行，你可以測試它看看會發生什麼。這裡是個簡單的範例：
 
 ```rust
 fn main() {
@@ -8328,19 +8329,19 @@ fn main() {
 }
 ```
 
-If you run this, it will be different every time. Sometimes it will print, and sometimes it won't print (this depends on your computer speed too). That is because sometimes `main()` finishes before the thread finishes. And when `main()` finishes, the program is over. This is easier to see in a `for` loop:
+如果你執行它，每次結果都會不同。有時會印出來，有時不會(這也取決於你的電腦速度)。這是因為有時 `main()` 比執行緒還早結束。而當 `main()` 完成後，程式就終結了。這在 `for` 迴圈中更容易觀察到：
 
 ```rust
 fn main() {
-    for _ in 0..10 { // set up ten threads
+    for _ in 0..10 { // 設置十個執行緒
         std::thread::spawn(|| {
             println!("I am printing something");
         });
-    }   // Now the threads start.
-}       // How many can finish before main() ends here?
+    }   // 現在執行緒啟動了.
+}       // 有多少能在這裡的 main() 結束之前完成?
 ```
 
-Usually about four threads will print before `main` ends, but it is always different. If your computer is faster then it might not print any. Also, sometimes the threads will panic:
+在 `main` 結束之前，通常大約會有四條執行緒印出來，但總是不一樣。如果你的電腦速度比較快，那麼可能就印不出來了。另外，有時執行緒會恐慌：
 
 ```text
 thread 'thread 'I am printing something
@@ -8349,9 +8350,9 @@ thread '<unnamed><unnamed>thread '' panicked at '<unnamed>I am printing somethin
 shutdown
 ```
 
-This is the error when the thread tries to do something right when the program is shutting down.
+這是程式正在關閉時，執行緒試圖做一些事情時會出現的錯誤。
 
-You can give the computer something to do so it won't shut down right away:
+你可以給電腦做些事，這樣它就不會馬上關閉了：
 
 ```rust
 fn main() {
@@ -8360,14 +8361,14 @@ fn main() {
             println!("I am printing something");
         });
     }
-    for _ in 0..1_000_000 { // make the program declare "let x = 9" one million times
-                            // It has to finish this before it can exit the main function
+    for _ in 0..1_000_000 { // 讓電腦宣告 "let x = 9" 一百萬次
+                            // 它要在它可以離開 main 函式前完成這件事
         let _x = 9;
     }
 }
 ```
 
-But that is a silly way to give the threads time to finish. The better way is to bind the threads to a variable. If you add `let`, then you will create a `JoinHandle`. You can see this in the signature for `spawn`:
+但這是個讓執行緒有時間完成的蠢方法。更好的方式是將執行緒繫結到變數上。如果你加上 `let`，你就能建立 `JoinHandle`。你可以在 `spawn` 的簽名中看到這一點：
 
 ```text
 pub fn spawn<F, T>(f: F) -> JoinHandle<T>
@@ -8377,9 +8378,9 @@ where
     T: Send + 'static,
 ```
 
-(`f` is the closure - we will learn how to put closures into our functions later)
+> `f` 是閉包──我們將在後面學到如何將閉包放入我們的函式中
 
-So now we have a `JoinHandle` every time.
+所以現在我們每次都有 `JoinHandle`。
 
 ```rust
 fn main() {
@@ -8392,7 +8393,7 @@ fn main() {
 }
 ```
 
-`handle` is now a `JoinHandle`. What do we do with it? We use a method called `.join()`. This method means "wait until all the threads are done" (it waits for the threads to join it). So now just write `handle.join()` and it will wait for each of the threads to finish.
+`handle` 現在是個 `JoinHandle`。我們怎麼處理它呢？我們要使用叫做 `.join()` 的方法。這個方法的意思是"等待所有執行緒完成"(它等待執行緒加入它)。所以現在只要寫 `handle.join()`，它就會等待每個執行緒完成。
 
 ```rust
 fn main() {
@@ -8401,20 +8402,20 @@ fn main() {
             println!("I am printing something");
         });
 
-        handle.join(); // Wait for the threads to finish
+        handle.join(); // 等待執行緒完成
     }
 }
 ```
 
-Now we will learn about the three types of closures. The three types are:
+現在我們就來了解一下閉包的三種類型。這三種類型是
 
-- `FnOnce`: takes the whole value
-- `FnMut`: takes a mutable reference
-- `Fn`: takes a regular reference
+- `FnOnce`：接受整個值
+- `FnMut`：接受可變參考
+- `Fn`：接受常規參考
 
-A closure will try to use `Fn` if it can. But if it needs to change the value it will use `FnMut`, and if it needs to take the whole value, it will use `FnOnce`. `FnOnce` is a good name because it explains what it does: it takes the value once, and then it can't take it again.
+如果可以閉包會盡量試著使用 `Fn`。但如果它需要改變值，它將使用 `FnMut`，而如果它需要接受整個值，它將使用 `FnOnce`。`FnOnce` 是個好名字，因為這解釋了它做了什麼：它接受一次值，然後就不能再拿了。
 
-Here is an example:
+這裡是範例：
 
 ```rust
 fn main() {
@@ -8425,9 +8426,9 @@ fn main() {
 }
 ```
 
-`String` is not `Copy`, so `my_closure()` is `Fn`: it takes a reference.
+`String` 不能 `Copy`，所以 `my_closure()` 是個 `Fn`：它拿到參考。
 
-If we change `my_string`, it will be `FnMut`.
+如果我們改變 `my_string`，它會變成 `FnMut`。
 
 ```rust
 fn main() {
@@ -8441,14 +8442,14 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 I will go into the closure now
 I will go into the closure now now
 ```
 
-And if you take by value, then it will be `FnOnce`.
+而如果拿值來用，則會是 `FnOnce`。
 
 ```rust
 fn main() {
@@ -8465,9 +8466,9 @@ fn main() {
 }
 ```
 
-We took by value, so we can't run `my_closure()` more than once. That is where the name comes from.
+我們拿值來用，所以我們無法再執行一次 `my_closure()`。就是這個名字的由來。
 
-So now back to threads. Let's try to use a value from outside:
+那麼現在回到執行緒。讓我們試著使用外面的值：
 
 ```rust
 fn main() {
@@ -8481,7 +8482,7 @@ fn main() {
 }
 ```
 
-The compiler says that this won't work.
+編譯器說這樣不行。
 
 ```text
 error[E0373]: closure may outlive the current function, but it borrows `my_string`, which is owned by the current function
@@ -8506,25 +8507,25 @@ help: to force the closure to take ownership of `my_string` (and any other refer
    |                                     ^^^^^^^
 ```
 
-It is a long message, but helpful: it says to ``use the `move` keyword``. The problem is that we can do anything to `my_string` while the thread is using it, but it doesn't own it. That would be unsafe.
+這條訊息很長，但很有用：它說到 ``use the `move` keyword``。問題是我們雖然可以在執行緒裡使用 `my_string` 時對它做任何事情，但執行緒卻不擁有它。因為那樣會不安全。
 
-Let's try something else that doesn't work:
+讓我們試試其他行不通的方式：
 
 ```rust
 fn main() {
     let mut my_string = String::from("Can I go inside the thread?");
 
     let handle = std::thread::spawn(|| {
-        println!("{}", my_string); // now my_string is being used as a reference
+        println!("{}", my_string); // 現在 my_string 被拿來當參考使用
     });
 
-    std::mem::drop(my_string);  // ⚠️ We try to drop it here. But the thread still needs it.
+    std::mem::drop(my_string);  // ⚠️ 我們嘗試在這丟棄它. 但執行緒仍然需要它.
 
     handle.join();
 }
 ```
 
-So you have to take the value with `move`. Now it is safe:
+所以你要用 `move` 來拿走值。現在安全了：
 
 ```rust
 fn main() {
@@ -8534,13 +8535,13 @@ fn main() {
         println!("{}", my_string);
     });
 
-    std::mem::drop(my_string);  // ⚠️ we can't drop, because handle has it. So this won't work
+    std::mem::drop(my_string);  // ⚠️ 我們無法丟棄, 因為 handle 擁有它. 因此這將會無法執行
 
     handle.join();
 }
 ```
 
-So we delete the `std::mem::drop`, and now it is okay. `handle` takes `my_string` and our code is safe.
+所以當我們把 `std::mem::drop` 刪掉，現在就可以用了。在 `handle` 拿走 `my_string` 後，我們的程式碼就安全了。
 
 ```rust
 fn main() {
@@ -8554,15 +8555,15 @@ fn main() {
 }
 ```
 
-So just remember: if you need a value in a thread from outside the thread, you need to use `move`.
+所以只要記住：如果你需要從外面取得某個執行緒裡面的值，你需要使用 `move`。
 
 
 
-## Closures in functions
+## 函式中的閉包
 
-Closures are great. So how do we put them into our own functions?
+閉包超棒的。那麼我們要如何把它們放到我們擁有的函式中呢？
 
-You can make your own functions that take closures, but inside them it is less free and you have to decide the type. Outside a function a closure can decide by itself between `Fn`, `FnMut` and `FnOnce`, but inside you have to choose one. The best way to understand is to look at a few function signatures. Here is the one for `.all()`. We remember that it checks an iterator to see if everything is `true` (depending on what you decide is `true` or `false`). Part of its signature says this:
+你可以寫你自己的函式來接受閉包，但是在它裡面就沒那麼自由了，你必須決定型別。在函式外的閉包可以在 `Fn`、`FnMut` 和 `FnOnce` 之間自行決定，但在函式內部你必須選擇其中一種。最好的理解方式是多看幾個函式簽名。這裡是其中的 `.all()`。我們記得它會檢查疊代器，看看所有的東西是否是 `true`(取決於你怎麼決定是 `true` 還是 `false`)。它的部分簽名是這樣說的：
 
 
 ```rust
@@ -8571,13 +8572,13 @@ You can make your own functions that take closures, but inside them it is less f
         F: FnMut(Self::Item) -> bool,
 ```
 
-`fn all<F>`: this tells you that there is a generic type `F`. A closure is always generic because every time it is a different type.
+`fn all<F>`：這告訴你有個泛型 `F`。閉包永遠是泛型的，因為每次都是不同的型別。
 
-`(&mut self, f: F)`: `&mut self` tells you that it's a method. `f: F` is usually what you see for a closure: this is the variable name and the type.  Of course, there is nothing special about `f` and `F` and they could be different names. You could write `my_closure: Closure` if you wanted - it doesn't matter. But in signatures you almost always see `f: F`.
+`(&mut self, f: F)`：`&mut self` 告訴你這是方法。你通常看到 `f: F` 就是閉包：這是變數名和型別。當然，`f` 和 `F` 並沒有什麼特別之處，它們可以是不同的名字。如果想要你也可以寫成 `my_closure: Closure`──這並不要緊。但在簽名中，你幾乎總是會看到 `f: F`。
 
-Next is the part about the closure: `F: FnMut(Self::Item) -> bool`. Here it decides that the closure is `FnMut`, so it can change the values. It changes the values of `Self::Item`, which is the iterator that it takes. And it has to return `true` or `false`.
+接下來是關於閉包的部分：`F: FnMut(Self::Item) -> bool`。在這裡它決定閉包型別是 `FnMut`，所以它可以改變值。它改變了它所接受的疊代器 `Self::Item` 的值。而且它必須回傳 `true` 或 `false`。
 
-Here is a much simpler signature with a closure:
+這裡是個更簡單帶有閉包的簽名：
 
 ```rust
 fn do_something<F>(f: F)    // 🚧
@@ -8588,7 +8589,7 @@ where
 }
 ```
 
-This just says that it takes a closure, takes the value (`FnOnce` = takes the value), and doesn't return anything. So now we can call this closure that takes nothing and do whatever we like. We will create a `Vec` and then iterate over it just to show what we can do now.
+這只是說它接受閉包，取得值(`FnOnce` = 取值)，且不回傳任何東西。所以現在我們可以呼叫這個什麼都不拿的閉包，做我們想要做的事情。現在我們將會建立 `Vec`，然後對它進行疊代，只是展示我們可以做些什麼。
 
 ```rust
 fn do_something<F>(f: F)
@@ -8608,9 +8609,9 @@ fn main() {
 }
 ```
 
-For a more real example, we will create a `City` struct again. This time the `City` struct has more data about years and populations. It has a `Vec<u32>` for all the years, and another `Vec<u32>` for all the populations.
+看個更真實的例子，我們將再次建立 `City` 結構體。這次 `City` 結構體有更多關於年份和人口的資料。它有個 `Vec<u32>` 來表示所有的年份，還有另一個 `Vec<u32>` 來表示所有的人口。
 
-`City` has two functions: `new()` to create a new `City`, and `.city_data()` which has a closure. When we use `.city_data()`, it gives us the years and the populations and a closure, so we can do what we want with the data. The closure type is `FnMut` so we can change the data. It looks like this:
+`City` 有兩個函式：`new()` 用於建立新的 `City`, `.city_data()` 有個閉包引數。當我們使用 `.city_data()` 時，它給我們提供了年份和人口以及閉包，所以我們可以對資料做我們想做的事情。閉包型別是 `FnMut`，所以我們可以改變資料。它看起來像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -8630,15 +8631,15 @@ impl City {
         }
     }
 
-    fn city_data<F>(&mut self, mut f: F) // We bring in self, but only f is generic F. f is the closure
+    fn city_data<F>(&mut self, mut f: F) // 我們帶入 self, 但只有 f 是泛型的 F. f 是閉包
 
     where
-        F: FnMut(&mut Vec<u32>, &mut Vec<u32>), // The closure takes mutable vectors of u32
-                                                // which are the year and population data
+        F: FnMut(&mut Vec<u32>, &mut Vec<u32>), // 閉包接受 u32 的可變向量
+                                                // 那些是年份和人口資料
     {
-        f(&mut self.years, &mut self.populations) // Finally this is the actual function. It says
-                                                  // "use a closure on self.years and self.populations"
-                                                  // We can do whatever we want with the closure
+        f(&mut self.years, &mut self.populations) // 最後這是實際的函式. 它說
+                                                  // "把 self.years 和 self.populations 用在閉包上"
+                                                  // 我們可以用閉包做我們想要做的事
     }
 }
 
@@ -8650,35 +8651,35 @@ fn main() {
         3_250, 15_300, 24_000, 45_900, 58_800, 119_800, 283_071, 478_974, 400_378, 401_694,
         406_703, 437_619,
     ];
-    // Now we can create our city
+    // 現在我們可以建立我們的城市
     let mut tallinn = City::new("Tallinn", years, populations);
 
-    // Now we have a .city_data() method that has a closure. We can do anything we want.
+    // 現在我們有 .city_data() 方法能傳入閉包. 我們可以做我們想做的任何事.
 
-    // First let's put the data for 5 years together and print it.
-    tallinn.city_data(|city_years, city_populations| { // We can call the input anything we want
+    // 首先讓我們一起放入 5 年的資料並印出來.
+    tallinn.city_data(|city_years, city_populations| { // 我們可以任意稱呼輸入名稱
         let new_vec = city_years
             .into_iter()
-            .zip(city_populations.into_iter()) // Zip the two together
-            .take(5)                           // but only take the first 5
-            .collect::<Vec<(_, _)>>(); // Tell Rust to decide the type inside the tuple
+            .zip(city_populations.into_iter()) // 兩個 Zip 在一起
+            .take(5)                           // 但只有拿前 5 個
+            .collect::<Vec<(_, _)>>(); // 叫 Rust 決定元組內部的型別
         println!("{:?}", new_vec);
     });
 
-    // Now let's add some data for the year 2030
-    tallinn.city_data(|x, y| { // This time we just call the input x and y
+    // 現在讓我們給 2030 年份加上一些資料
+    tallinn.city_data(|x, y| { // 這次我們只稱呼輸入為 x 和 y
         x.push(2030);
         y.push(500_000);
     });
 
-    // We don't want the 1834 data anymore
+    // 我們不再想要 1834 的資料
     tallinn.city_data(|x, y| {
         let position_option = x.iter().position(|x| *x == 1834);
         if let Some(position) = position_option {
             println!(
                 "Going to delete {} at position {:?} now.",
                 x[position], position
-            ); // Confirm that we delete the right item
+            ); // 確認我們刪除了對的元素
             x.remove(position);
             y.remove(position);
         }
@@ -8691,7 +8692,7 @@ fn main() {
 }
 ```
 
-This will print the result of all the times we called `.city_data().` It is:
+印出一直以來我們呼叫 `.city_data()` 的結果。就是：
 
 ```text
 [(1372, 3250), (1834, 15300), (1851, 24000), (1881, 45900), (1897, 58800)]
@@ -8701,9 +8702,9 @@ Populations left are [3250, 24000, 45900, 58800, 119800, 283071, 478974, 400378,
 ```
 
 
-## impl Trait
+## impl 特徵
 
-`impl Trait` is similar to generics. You remember that generics use a type `T` (or any other name) which then gets decided when the program compiles. First let's look at a concrete type:
+`impl 特徵` 與泛型類似。你還記得，泛型使用型別 `T`(或任何其他名稱)，來表示在程式編譯時才決定的型別。首先讓我們來看個具體的型別：
 
 ```rust
 fn gives_higher_i32(one: i32, two: i32) {
@@ -8716,9 +8717,9 @@ fn main() {
 }
 ```
 
-This prints: `10 is higher.`.
+印出：`10 is higher.`。
 
-But this only takes `i32`, so now we will make it generic. We need to compare and we need to print with `{}`, so our type T needs `PartialOrd` and `Display`. Remember, this means "only take types that already have `PartialOrd` and `Display`".
+但是這個只接受 `i32`，所以現在我們要把它做成泛型的。我們需要比較，我們還需要用 `{}` 列印，所以我們的型別 T 需要具有 `PartialOrd` 和 `Display` 特徵。記住，這意味著"只接受已經具有 `PartialOrd` 和 `Display` 的型別"。
 
 ```rust
 use std::fmt::Display;
@@ -8733,10 +8734,10 @@ fn main() {
 }
 ```
 
-Now let's look at `impl Trait`, which is similar. Instead of a type `T`, we can bring in a type `impl Trait`. Then it will take in a type that implements that trait. It is almost the same:
+現在我們來看看類似的 `impl 特徵`。我們可以帶入 `impl 特徵` 型別，而不是 `T` 型別。然後它將接受實作該特徵的型別。這幾乎是一樣的：
 
 ```rust
-fn prints_it(input: impl Into<String> + std::fmt::Display) { // Takes anything that can turn into a String and has Display
+fn prints_it(input: impl Into<String> + std::fmt::Display) { // 接受能轉換成 String 且具有 Display 的任意型別
     println!("You can print many things, including {}", input);
 }
 
@@ -8748,7 +8749,7 @@ fn main() {
 }
 ```
 
-However, the more interesting part is that we can return `impl Trait`, and that lets us return closures because their function signatures are traits. You can see this in the signatures for methods that have them. For example, this is the signature for `.map()`:
+然而，更有趣的是我們可以回傳 `impl 特徵`，這讓我們可以回傳閉包，因為它們的函式簽名是特徵。你可以在有使用它們的方法的簽名中見到這點。例如，這是 `.map()` 的簽名：
 
 ```rust
 fn map<B, F>(self, f: F) -> Map<Self, F>     // 🚧
@@ -8760,9 +8761,9 @@ fn map<B, F>(self, f: F) -> Map<Self, F>     // 🚧
     }
 ```
 
-`fn map<B, F>(self, f: F)` mean that it takes two generic types. `F` is a function that takes one item from the container implementing `.map()` and `B` is the return type of that function. Then after the `where` we see the trait bounds. ("Trait bound" means "it must have this trait".) One is `Sized`, and the next is the closure signature. It must be an `FnMut`, and do the closure on `Self::Item`, which is the iterator that you give it. Then it returns `B`.
+`fn map<B, F>(self, f: F)` 的意思是，它接受兩個泛型型別。`F` 是個從實作 `.map()` 的容器中取一個元素的函式，`B` 是該函式的回傳型別。然後在`where` 之後，我們看到的是特徵界限 (trait bound)。("特徵界限"的意思是"它必須有這個特徵"。)一個是 `Sized`，接下來是個閉包簽名。它必須是個 `FnMut`，並在 `Self::Item` 上做閉包，也就是你給它的疊代器。然後它回傳 `B`。
 
-So we can do the same thing to return a closure. To return a closure, use `impl` and then the closure signature. Once you return it, you can use it just like a function. Here is a small example of a function that gives you a closure depending on the text you put in. If you put "double" or "triple" in then it multiplies it by 2 or 3, and otherwise it gives you the same number. Because it's a closure we can do anything we want, so we also print a message.
+所以我們可以做同樣的事來回傳閉包。要回傳閉包時，使用 `impl`，然後是閉包簽名。一旦你回傳它，你就可以像使用函式一樣使用它。這裡的小例子是會根據你輸入的文字給出閉包的函式。如果你輸入 "double" 或 "triple"，那麼它就會把它乘以 2 或 3，否則就會給你相同的數字。因為它是閉包，我們可以做任何我們想做的事情，所以我們也印出一段訊息。
 
 ```rust
 fn returns_a_closure(input: &str) -> impl FnMut(i32) -> i32 {
@@ -8787,7 +8788,7 @@ fn returns_a_closure(input: &str) -> impl FnMut(i32) -> i32 {
 fn main() {
     let my_number = 10;
 
-    // Make three closures
+    // 做出三個閉包
     let mut doubles = returns_a_closure("double");
     let mut triples = returns_a_closure("triple");
     let mut quadruples = returns_a_closure("quadruple");
@@ -8798,24 +8799,24 @@ fn main() {
 }
 ```
 
-Here is a bit longer example. Let's imagine a game where your character is facing monsters that are stronger at night. We can make an enum called `TimeOfDay` to keep track of the day. Your character is named Simon and has a number called `character_fear`, which is an `f64`. It goes up at night and down during the day. We will make a `change_fear` function that changes his fear, but also does other things like write messages. It could look like this:
+下面是個有點長的範例。讓我們想像在遊戲中，你的角色面對的是晚上比較強的怪物。我們可以做出叫 `TimeOfDay` 的列舉來記錄一天的情況。你的角色叫西蒙，有個叫 `character_fear` 是 `f64` 的數字。它晚上上升、白天下降。我們將寫個叫 `change_fear` 的函式來改變他的恐懼，但也會做其他事情，如寫訊息。它大概會是這樣：
 
 
 ```rust
-enum TimeOfDay { // just a simple enum
+enum TimeOfDay { // 只是單純的列舉
     Dawn,
     Day,
     Sunset,
     Night,
 }
 
-fn change_fear(input: TimeOfDay) -> impl FnMut(f64) -> f64 { // The function takes a TimeOfDay. It returns a closure.
-                                                             // We use impl FnMut(64) -> f64 to say that it needs to
-                                                             // change the value, and also gives the same type back.
-    use TimeOfDay::*; // So we only have to write Dawn, Day, Sunset, Night
-                      // Instead of TimeOfDay::Dawn, TimeOfDay::Day, etc.
+fn change_fear(input: TimeOfDay) -> impl FnMut(f64) -> f64 { // 這個函式接受 TimeOfDay. 回傳閉包.
+                                                             // 我們用 impl FnMut(64) -> f64 來說明它需要
+                                                             // 改變值, 並且也給回一樣的型別.
+    use TimeOfDay::*; // 所以我們只要寫 Dawn、Day、Sunset、Night
+                      // 而不是 TimeOfDay::Dawn、TimeOfDay::Day 等等.
     match input {
-        Dawn => |x| { // This is the variable character_fear that we give it later
+        Dawn => |x| { // 這就是我們之後會給予的變數 character_fear
             println!("The morning sun has vanquished the horrible night. You no longer feel afraid.");
             println!("Your fear is now {}", x * 0.5);
             x * 0.5
@@ -8840,23 +8841,23 @@ fn change_fear(input: TimeOfDay) -> impl FnMut(f64) -> f64 { // The function tak
 
 fn main() {
     use TimeOfDay::*;
-    let mut character_fear = 10.0; // Start Simon with 10
+    let mut character_fear = 10.0; // 西蒙從 10 開始
 
-    let mut daytime = change_fear(Day); // Make four closures here to call every time we want to change Simon's fear.
+    let mut daytime = change_fear(Day); // 這裡做四個閉包在每次我們想改變西蒙的恐懼時去呼叫.
     let mut sunset = change_fear(Sunset);
     let mut night = change_fear(Night);
     let mut morning = change_fear(Dawn);
 
-    character_fear = daytime(character_fear); // Call the closures on Simon's fear. They give a message and change the fear number.
-                                              // In real life we would have a Character struct and use it as a method instead,
-                                              // like this: character_fear.daytime()
+    character_fear = daytime(character_fear); // 對西蒙的恐懼呼叫閉包. 它們給出訊息並改變恐懼數值.
+                                              // 在現實生活我們會有 Character 結構體並把它當方法用,
+                                              // 像這樣: character_fear.daytime()
     character_fear = sunset(character_fear);
     character_fear = night(character_fear);
     character_fear = morning(character_fear);
 }
 ```
 
-This prints:
+印出：
 
 ```text
 What a nice day. Maybe put your feet up and rest a bit.
@@ -8871,51 +8872,51 @@ Your fear is now 7
 
 ## Arc
 
-You remember that we used an `Rc` to give a variable more than one owner. If we are doing the same thing in a thread, we need an `Arc`. `Arc` means "atomic reference counter". Atomic means that it uses the computer's processor so that data only gets written once each time. This is important because if two threads write data at the same time, you will get the wrong result. For example, imagine if you could do this in Rust:
+你還記得我們用 `Rc` 來給予變數一個以上的所有者。如果我們執行緒中做一樣的事情，我們則需要 `Arc`。`Arc` 的意思是 "原子參考計數器(atomic reference counter)"。原子的意思是它使用計算機的處理器，所以資料每回只會被寫入一次。這點很重要，因為如果兩個執行緒同時寫入資料，你會得到錯誤的結果。例如，想像如果你能在 Rust 中做到這一點：
 
 ```rust
 // 🚧
 let mut x = 10;
 
-for i in 0..10 { // Thread 1
+for i in 0..10 { // 執行緒 1
     x += 1
 }
-for i in 0..10 { // Thread 2
+for i in 0..10 { // 執行緒 2
     x += 1
 }
 ```
 
-If Thread 1 and Thread 2 just start together, maybe this will happen:
+如果執行緒 1 和執行緒 2 一起啟動，也許就會出現這種情況：
 
-- Thread 1 sees 10, writes 11. Then Thread 2 sees 11, writes 12. No problem so far.
-- Thread 1 sees 12. At the same time, Thread 2 sees 12. Thread 1 writes 13. And Thread 2 writes 13. Now we have 13, but it should be 14. That's a big problem.
+- 執行緒 1 看到 10，寫入 11，接著執行緒 2 看到 11，寫入 12。到目前為止沒有問題。
+- 執行緒 1 看到 12。同時，執行緒 2 看到 12。執行緒 1，寫入 13。執行緒 2 也寫入 13。現在我們有 13，但應該要是 14。這是個大問題。
 
-An `Arc` uses the processor to make sure this doesn't happen, so it is the method you must use when you have threads. You don't want an `Arc` for just one thread though, because `Rc` is a bit faster.
+`Arc` 使用處理器來確保這種情況不會發生，所以當你有多個執行緒時這個方法你就必須使用。然而你不會想在單執行緒上用 `Arc`，因為 `Rc` 更快一些。
 
-You can't change data with just an `Arc` though. So you wrap the data in a `Mutex`, and then you wrap the `Mutex` in an `Arc`.
+不過你不能只用 `Arc` 來改變資料。所以你要用 `Mutex` 把資料包起來，然後再用 `Arc` 把 `Mutex` 包起來。
 
-So let's use a `Mutex` inside an `Arc` to change the value of a number. First let's set up one thread:
+所以讓我們用 `Mutex` 來在 `Arc` 裡面改變數字的值。首先讓我們設定一個執行緒：
 
 ```rust
 fn main() {
 
     let handle = std::thread::spawn(|| {
-        println!("The thread is working!") // Just testing the thread
+        println!("The thread is working!") // 只測試執行緒
     });
 
-    handle.join().unwrap(); // Make the thread wait here until it is done
+    handle.join().unwrap(); // 讓執行緒在這等待直到完成
     println!("Exiting the program");
 }
 ```
 
-So far this just prints:
+目前為止只印出：
 
 ```text
 The thread is working!
 Exiting the program
 ```
 
-Good. Now let's put it in a `for` loop for `0..5`:
+很好。現在讓我們把它放在 `for` 迴圈中，跑 `0..5`。
 
 ```rust
 fn main() {
@@ -8931,7 +8932,7 @@ fn main() {
 }
 ```
 
-This works too. We get the following:
+這也是可行的。我們得到以下結果：
 
 ```text
 The thread is working!
@@ -8942,7 +8943,7 @@ The thread is working!
 Exiting the program
 ```
 
-Now let's make one more thread. Each thread will do the same thing. You can see that the threads are working at the same time. Sometimes it will say `Thread 1 is working!` first, but other times `Thread 2 is working!` is first. This is called **concurrency**, which means "running together".
+現在讓我們再多加一個執行緒。每個執行緒都會做同樣的事情。你可以看到這些執行緒是同時工作的。有時會先印出 `Thread 1 is working!`，但其他時候是 `Thread 2 is working!` 先印出。這就是所謂的**並行(concurrency)**，也就是 "一起執行"的意思。
 
 ```rust
 fn main() {
@@ -8965,7 +8966,7 @@ fn main() {
 }
 ```
 
-This will print:
+會列印：
 
 ```text
 Thread 1 is working!
@@ -8981,24 +8982,24 @@ Thread 2 is working!
 Exiting the program
 ```
 
-Now we want to change the value of `my_number`. Right now it is an `i32`. We will change it to an `Arc<Mutex<i32>>`: an `i32` that can be changed, protected by an `Arc`.
+現在我們要改變 `my_number` 的數值。現在它是 `i32`。我們將把它改為 `Arc<Mutex<i32>>`：由 `Arc` 保護可以改變的 `i32`。
 
 ```rust
 // 🚧
 let my_number = Arc::new(Mutex::new(0));
 ```
 
-Now that we have this, we can clone it. Each clone can go into a different thread. We have two threads, so we will make two clones:
+現在我們有了這個，我們可以克隆它。每個克隆可以進入不同的執行緒。我們有兩個執行緒，所以我們將做兩個克隆：
 
 ```rust
 // 🚧
 let my_number = Arc::new(Mutex::new(0));
 
-let my_number1 = Arc::clone(&my_number); // This clone goes into Thread 1
-let my_number2 = Arc::clone(&my_number); // This clone goes into Thread 2
+let my_number1 = Arc::clone(&my_number); // 這個克隆去到執行緒 1
+let my_number2 = Arc::clone(&my_number); // 這個克隆去到執行緒 2
 ```
 
-Now that we have safe clones attached to `my_number`, we can `move` them into other threads with no problem.
+現在，我們已把安全的克隆附加到 `my_number`，我們可以將它們 `move` 到其它執行緒中沒問題。
 
 ```rust
 use std::sync::{Arc, Mutex};
@@ -9009,13 +9010,13 @@ fn main() {
     let my_number1 = Arc::clone(&my_number);
     let my_number2 = Arc::clone(&my_number);
 
-    let thread1 = std::thread::spawn(move || { // Only the clone goes into Thread 1
+    let thread1 = std::thread::spawn(move || { // 只有克隆去到執行緒 1
         for _ in 0..10 {
-            *my_number1.lock().unwrap() +=1; // Lock the Mutex, change the value
+            *my_number1.lock().unwrap() +=1; // 鎖住 Mutex, 改值
         }
     });
 
-    let thread2 = std::thread::spawn(move || { // Only the clone goes into Thread 2
+    let thread2 = std::thread::spawn(move || { // 只有克隆去到執行緒 2
         for _ in 0..10 {
             *my_number2.lock().unwrap() += 1;
         }
@@ -9028,61 +9029,61 @@ fn main() {
 }
 ```
 
-The program prints:
+程式印出：
 
 ```text
 Value is: Mutex { data: 20 }
 Exiting the program
 ```
 
-So it was a success.
+所以它成功了。
 
-Then we can join the two threads together in a single `for` loop, and make the code smaller.
+接著我們可以將兩個執行緒一起合併(join)到一個 `for` 迴圈裡，並使程式碼更短。
 
-We need to save the handles so we can call `.join()` on each one outside of the loop. If we do this inside the loop, it will wait for the first thread to finish before starting the new one.
+我們需要儲存控制碼(handle)，這樣我們就可以在迴圈外對每個執行緒呼叫 `.join()`。如果我們在迴圈內這樣做，它將等待第一個執行緒完成後再啟動新的執行緒。
 
 ```rust
 use std::sync::{Arc, Mutex};
 
 fn main() {
     let my_number = Arc::new(Mutex::new(0));
-    let mut handle_vec = vec![]; // JoinHandles will go in here
+    let mut handle_vec = vec![]; // JoinHandles 將會放在這
 
-    for _ in 0..2 { // do this twice
-        let my_number_clone = Arc::clone(&my_number); // Make the clone before starting the thread
-        let handle = std::thread::spawn(move || { // Put the clone in
+    for _ in 0..2 { // 做兩次
+        let my_number_clone = Arc::clone(&my_number); // 在啟動執行緒前做出克隆
+        let handle = std::thread::spawn(move || { // 移入克隆
             for _ in 0..10 {
                 *my_number_clone.lock().unwrap() += 1;
             }
         });
-        handle_vec.push(handle); // save the handle so we can call join on it outside of the loop
-                                 // If we don't push it in the vec, it will just die here
+        handle_vec.push(handle); // 儲存控制碼我們才能在迴圈外對它呼叫 join
+                                 // 如果我們不把它推入向量, 它將會直接死在這
     }
 
-    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // call join on all handles
+    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // 對所有控制碼呼叫 join
     println!("{:?}", my_number);
 }
 ```
 
-Finally this prints `Mutex { data: 20 }`.
+最後印出 `Mutex { data: 20 }`。
 
-This looks complicated but `Arc<Mutex<SomeType>>>` is used very often in Rust, so it becomes natural. Also, you can always write your code to make it cleaner. Here is the same code with one more `use` statement and two functions. The functions don't do anything new, but they move some code out of `main()`. You can try rewriting code like this if it is hard to read.
+這看起來很複雜，但 `Arc<Mutex<SomeType>>>` 在 Rust 中非常頻繁的被使用，所以它變得很自然。另外，你也可以隨時把你的程式碼寫得更乾淨。這裡是同樣的程式碼，多了一行 `use` 敘述和兩個函式。這些函式並沒有做任何新的事情，但是它們把一些程式碼從 `main()` 中移出。如果很難讀懂的話，你可以嘗試重寫這樣的程式碼。
 
 ```rust
 use std::sync::{Arc, Mutex};
-use std::thread::spawn; // Now we just write spawn
+use std::thread::spawn; // 現在我們只需要寫 spawn
 
-fn make_arc(number: i32) -> Arc<Mutex<i32>> { // Just a function to make a Mutex in an Arc
+fn make_arc(number: i32) -> Arc<Mutex<i32>> { // 只是用來做 Arc 裡有 Mutex 的函式
     Arc::new(Mutex::new(number))
 }
 
-fn new_clone(input: &Arc<Mutex<i32>>) -> Arc<Mutex<i32>> { // Just a function so we can write new_clone
+fn new_clone(input: &Arc<Mutex<i32>>) -> Arc<Mutex<i32>> { // 只是讓我們可以寫成 new_clone 的函式
     Arc::clone(&input)
 }
 
-// Now main() is easier to read
+// 現在 main() 更容易閱讀了
 fn main() {
-    let mut handle_vec = vec![]; // each handle will go in here
+    let mut handle_vec = vec![]; // 每個控制碼將會放到這裡
     let my_number = make_arc(0);
 
     for _ in 0..2 {
@@ -9093,25 +9094,25 @@ fn main() {
                 *value_inside += 1;
             }
         });
-        handle_vec.push(handle);    // the handle is done, so put it in the vector
+        handle_vec.push(handle);    // 拿到控制碼了, 所以放進向量裡
     }
 
-    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // Make each one wait
+    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // 讓每一個等待
 
     println!("{:?}", my_number);
 }
 ```
 
-## Channels
+## 通道
 
-A channel is an easy way to use many threads that send to one place. They are fairly popular because they are pretty simple to put together. You can create a channel in Rust with `std::sync::mpsc`. `mpsc` means "multiple producer, single consumer", so "many threads sending to one place". To start a channel, you use `channel()`. This creates a `Sender` and a `Receiver` that are tied together. You can see this in the function signature:
+通道(Channel)是一種容易讓使用許多執行緒能寄送(send)資料到某個地方的方式。它們相當流行，因為它們能相當簡單得和其它東西放在一起用。你可以在 Rust 中用 `std::sync::mpsc` 建立通道。`mpsc` 的意思是"多個生產者，單個消費者"(Multiple Producer, Single Consumer)，也就是"許多執行緒寄送一個地方"。要啟動通道，你可以使用 `channel()`。這會建立被束縛在一起的 `Sender` 和 `Receiver`。你可以在函式簽名中看到這一點：
 
 ```rust
 // 🚧
 pub fn channel<T>() -> (Sender<T>, Receiver<T>)
 ```
 
-So you have to choose one name for the sender and one for the receiver. Usually you see something like `let (sender, receiver) = channel();` to start. Because it's generic, Rust won't know the type if that is all you write:
+所以你要選擇一個名字給傳送者、另一個給接收者。通常你會看到像 `let (sender, receiver) = channel();` 這樣的開頭。因為它是泛型的，如果你只寫這樣，Rust 會不知道型別：
 
 ```rust
 use std::sync::mpsc::channel;
@@ -9121,7 +9122,7 @@ fn main() {
 }
 ```
 
-The compiler says:
+編譯器說：
 
 ```text
 error[E0282]: type annotations needed for `(std::sync::mpsc::Sender<T>, std::sync::mpsc::Receiver<T>)`
@@ -9134,19 +9135,19 @@ error[E0282]: type annotations needed for `(std::sync::mpsc::Sender<T>, std::syn
 the type parameter `T` is specified
 ```
 
-It suggests adding a type for the `Sender` and `Receiver`. You can do that if you want:
+它建議為 `Sender` 和 `Receiver` 加上型別。如果你想可以這樣做：
 
 ```rust
-use std::sync::mpsc::{channel, Sender, Receiver}; // Added Sender and Receiver here
+use std::sync::mpsc::{channel, Sender, Receiver}; // 在這加上 Sender 和 Receiver
 
 fn main() {
     let (sender, receiver): (Sender<i32>, Receiver<i32>) = channel();
 }
 ```
 
-but you don't have to. Once you start using the `Sender` and `Receiver`, Rust can guess the type.
+但你不必這樣做：一旦你開始使用 `Sender` 和 `Receiver`，Rust 就能猜到型別。
 
-So let's look at the simplest way to use a channel.
+所以讓我們來看一下使用通道最簡單的方式。
 
 ```rust
 use std::sync::mpsc::channel;
@@ -9155,11 +9156,11 @@ fn main() {
     let (sender, receiver) = channel();
 
     sender.send(5);
-    receiver.recv(); // recv = receive, not "rec v"
+    receiver.recv(); // recv = receive, 不是 "rec v"
 }
 ```
 
-Now the compiler knows the type. `sender` is a `Result<(), SendError<i32>>` and `receiver` is a `Result<i32, RecvError>`. So you can use `.unwrap()` to see if the sending works, or use better error handling. Let's add `.unwrap()` and also `println!` to see what we get:
+現在編譯器知道型別了。`sender` 的是 `Result<(), SendError<i32>>`，`receiver` 的是 `Result<i32, RecvError>`。所以你可以用 `.unwrap()` 來看看是否有寄送到，或者用更好的錯誤處理。讓我們加上 `.unwrap()` 還有 `println!`，看看得到什麼：
 
 ```rust
 use std::sync::mpsc::channel;
@@ -9172,9 +9173,9 @@ fn main() {
 }
 ```
 
-This prints `5`.
+印出 `5`。
 
-A `channel` is like an `Arc` because you can clone it and send the clones into other threads. Let's make two threads and send values to `receiver`. This code will work, but it is not exactly what we want.
+`channel` 就像 `Arc` 一樣，因為你可以克隆它，並將克隆的內容寄送到其他執行緒中。讓我們做兩個執行緒，並將值寄送到 `receiver`。這段程式碼可以執行，但它並不是我們明確想要的那樣。
 
 ```rust
 use std::sync::mpsc::channel;
@@ -9183,11 +9184,11 @@ fn main() {
     let (sender, receiver) = channel();
     let sender_clone = sender.clone();
 
-    std::thread::spawn(move|| { // move sender in
+    std::thread::spawn(move|| { // 移入 sender
         sender.send("Send a &str this time").unwrap();
     });
 
-    std::thread::spawn(move|| { // move sender_clone in
+    std::thread::spawn(move|| { // 移入 sender_clone
         sender_clone.send("And here is another &str").unwrap();
     });
 
@@ -9195,7 +9196,7 @@ fn main() {
 }
 ```
 
-The two threads start sending, and then we `println!`. It might say `Send a &str this time` or `And here is another &str`, depending on which thread finished first. Let's make a join handle to make them wait.
+讓兩個執行緒開始寄送，然後我們用 `println!`。它可能會印出 `Send a &str this time` 或者 `And here is another &str`，這取決於哪個執行緒先完成。讓我們做出會合控制碼(join handle)來讓它們等待。
 
 ```rust
 use std::sync::mpsc::channel;
@@ -9203,30 +9204,30 @@ use std::sync::mpsc::channel;
 fn main() {
     let (sender, receiver) = channel();
     let sender_clone = sender.clone();
-    let mut handle_vec = vec![]; // Put our handles in here
+    let mut handle_vec = vec![]; // 把我們的控制碼放在這
 
-    handle_vec.push(std::thread::spawn(move|| {  // push this into the vec
+    handle_vec.push(std::thread::spawn(move|| {  // 把它推進向量裡
         sender.send("Send a &str this time").unwrap();
     }));
 
-    handle_vec.push(std::thread::spawn(move|| {  // and push this into the vec
+    handle_vec.push(std::thread::spawn(move|| {  // 還有把這個推進向量
         sender_clone.send("And here is another &str").unwrap();
     }));
 
-    for _ in handle_vec { // now handle_vec has 2 items. Let's print them
+    for _ in handle_vec { // 現在 handle_vec 裡有 2 個元素. 讓我們把它們印出來
         println!("{:?}", receiver.recv().unwrap());
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 "Send a &str this time"
 "And here is another &str"
 ```
 
-Now let's make a `results_vec` instead of printing.
+現在讓我們做出 `results_vec`，而不是列印。
 
 ```rust
 use std::sync::mpsc::channel;
@@ -9253,9 +9254,9 @@ fn main() {
 }
 ```
 
-Now the results are in our vec: `["Send a &str this time", "And here is another &str"]`.
+現在結果在我們的向量中：`["Send a &str this time", "And here is another &str"]`。
 
-Now let's pretend that we have a lot of work to do, and want to use threads. We have a big vec with 1 million items, all 0. We want to change each 0 to a 1. We will use ten threads, and each thread will do one tenth of the work. We will create a new vec and use `.extend()` to put the work in.
+現在讓我們假設我們有很多工作要做，並且想要使用執行緒。我們有一百萬個元素的大向量，全部是 0，我們想把每個 0 都變成 1，我們將使用十個執行緒，每一個將負責十分之一的工作。我們還將建立新向量，並使用 `.extend()` 來收集結果。
 
 ```rust
 use std::sync::mpsc::channel;
@@ -9269,34 +9270,34 @@ fn main() {
 
     for i in 0..10 {
         let sender_clone = sender.clone();
-        let mut work: Vec<u8> = Vec::with_capacity(hugevec.len() / 10); // new vec to put the work in. 1/10th the size
-        work.extend(&hugevec[i*100_000..(i+1)*100_000]); // first part gets 0..100_000, next gets 100_000..200_000, etc.
-        let handle =spawn(move || { // make a handle
+        let mut work: Vec<u8> = Vec::with_capacity(hugevec.len() / 10); // 新向量來收集結果. 1/10 的大小
+        work.extend(&hugevec[i*100_000..(i+1)*100_000]); // 第一部份拿 0..100_000, 下一次拿 100_000..200_000, 以此類推.
+        let handle =spawn(move || { // 做出控制碼
 
-            for number in work.iter_mut() { // do the actual work
+            for number in work.iter_mut() { // 做實際的工作
                 *number += 1;
             };
-            sender_clone.send(work).unwrap(); // use the sender_clone to send the work to the receiver
+            sender_clone.send(work).unwrap(); // 用 sender_clone 來寄送工作到 receiver
         });
         handle_vec.push(handle);
     }
     
-    for handle in handle_vec { // stop until the threads are done
+    for handle in handle_vec { // 停止直到執行緒都完成工作
         handle.join().unwrap();
     }
     
     while let Ok(results) = receiver.try_recv() {
-        newvec.push(results); // push the results from receiver.recv() into the vec
+        newvec.push(results); // 從 receiver.recv() 推送結果進向量
     }
 
-    // Now we have a Vec<Vec<u8>>. To put it together we can use .flatten()
-    let newvec = newvec.into_iter().flatten().collect::<Vec<u8>>(); // Now it's one vec of 1_000_000 u8 numbers
+    // 現在我們有了 Vec<Vec<u8>>. 我們可以用 .flatten() 全部放在一起
+    let newvec = newvec.into_iter().flatten().collect::<Vec<u8>>(); // 現在它是個有 1_000_000 個 u8 數字的向量
     
-    println!("{:?}, {:?}, total length: {}", // Let's print out some numbers to make sure they are all 1
-        &newvec[0..10], &newvec[newvec.len()-10..newvec.len()], newvec.len() // And show that the length is 1_000_000 items
+    println!("{:?}, {:?}, total length: {}", // 讓我們印出一些數字來確定它們全部都是 1
+        &newvec[0..10], &newvec[newvec.len()-10..newvec.len()], newvec.len() // 以及證明大小是 1_000_000 個元素
     );
     
-    for number in newvec { // And let's tell Rust that it can panic if even one number is not 1
+    for number in newvec { // 並且讓我們告訴 Rust 它可以恐慌, 如果有任何一個數字不是 1 的話
         if number != 1 {
             panic!();
         }
@@ -9304,13 +9305,13 @@ fn main() {
 }
 ```
 
-## Reading Rust documentation
+## 閱讀 Rust 文件
 
-It's important to know how to read documentation in Rust so you can understand what other people wrote. Here are some things to know in Rust documentation:
+知道如何閱讀 Rust 文件是很重要的，這樣你才能理解其他人寫的東西。這裡有一些 Rust 文件中需要知道的事情：
 
 ### assert_eq!
 
-You saw that `assert_eq!` is used when doing testing. You put two items inside the function and the program will panic if they are not equal. Here is a simple example where we need an even number.
+你會看到 `assert_eq!` 被用在做測試的時候。你把兩個元素放進函數裡面，如果它們不相等程式就會恐慌。這裡是我們需要偶數的簡單範例：
 
 ```rust
 fn main() {
@@ -9318,13 +9319,13 @@ fn main() {
 }
 
 fn prints_number(input: i32) {
-    assert_eq!(input % 2, 0); // number must be equal.
-                              // If number % 2 is not 0, it panics
+    assert_eq!(input % 2, 0); // 數字必須相等.
+                              // 如果數字 % 2 不是 0 就恐慌
     println!("The number is not odd. It is {}", input);
 }
 ```
 
-Maybe you don't have any plans to use `assert_eq!` in your code, but it is everywhere in Rust documentation. This is because in a document you would need a lot of room to `println!` everything. Also, you would require `Display` or `Debug` for the things you want to print. That's why documentation has `assert_eq!` everywhere. Here is an example from here [https://doc.rust-lang.org/std/vec/struct.Vec.html](https://doc.rust-lang.org/std/vec/struct.Vec.html) showing how to use a Vec:
+也許你沒有任何計劃要在你的程式碼中使用 `assert_eq!`，但它在 Rust 文件中隨處可見。這是因為在文件中，你需要非常大的空間來 `println!` 所有東西。另外，對於你想印的東西也要具備 `Display` 或 `Debug` 才行。這就是為什麼文件中到處都有 `assert_eq!` 的原因。這裡的範例來自[https://doc.rust-lang.org/std/vec/struct.Vec.html](https://doc.rust-lang.org/std/vec/struct.Vec.html)，展示如何使用向量：
 
 ```rust
 fn main() {
@@ -9350,7 +9351,7 @@ fn main() {
 }
 ```
 
-In these examples, you can just think of `assert_eq!(a, b)` as saying "a is b". Now look at the same example with comments on the right. The comments show what it actually means.
+在這些範例中，你可以只把 `assert_eq!(a, b)` 想成是在說 "a 是 b"。現在來看看右邊帶有註解的相同範例。註解顯示了它的實際含義。
 
 ```rust
 fn main() {
@@ -9358,38 +9359,38 @@ fn main() {
     vec.push(1);
     vec.push(2);
 
-    assert_eq!(vec.len(), 2); // "The vec length is 2"
-    assert_eq!(vec[0], 1); // "vec[0] is 1"
+    assert_eq!(vec.len(), 2); // "向量長度是 2"
+    assert_eq!(vec[0], 1); // "vec[0] 是 1"
 
-    assert_eq!(vec.pop(), Some(2)); // "When you use .pop(), you get Some()"
-    assert_eq!(vec.len(), 1); // "The vec length is now 1"
+    assert_eq!(vec.pop(), Some(2)); // "當你使用 .pop(), 你得到 Some()"
+    assert_eq!(vec.len(), 1); // "向量長度現在是 1"
 
     vec[0] = 7;
-    assert_eq!(vec[0], 7); // "Vec[0] is 7"
+    assert_eq!(vec[0], 7); // "Vec[0] 是 7"
 
     vec.extend([1, 2, 3].iter().copied());
 
     for x in &vec {
         println!("{}", x);
     }
-    assert_eq!(vec, [7, 1, 2, 3]); // "The vec now has [7, 1, 2, 3]"
+    assert_eq!(vec, [7, 1, 2, 3]); // "向量現在有 [7, 1, 2, 3]"
 }
 ```
 
-### Searching
+### 搜尋
 
-The top bar of a Rust document is the search bar. It shows you results as you type. When you go down a page you can't see the search bar anymore, but if you press the **s** key on the keyboard you can search again. So pressing **s** anywhere lets you search right away.
+Rust 文件的頂端是搜尋欄。它在你一邊輸入時一邊顯示結果。當你往下翻頁時，你沒辨法再看到搜尋欄，但如果你按鍵盤上的 **s** 鍵就可以再次搜尋。所以在任何地方按下 **s** 鍵可以讓你馬上搜索。
 
-### [src] button
+### [src] 按鈕
 
-Usually the code for a method, struct, etc. will not be complete. This is because you don't usually need to see the full source to know how it works, and the full code can be confusing. But if you want to know more, you can click on [src] and see everything. For example, on the page for `String` you can see this signature for `.with_capacity()`:
+通常方法、結構體等的程式碼不會是完整的。這是因為你通常不需要看到完整的原始碼就能知道它是如何工作的，而完整的程式碼可能會讓人困惑。但如果你想知道更多，你可以點選 [src] 就可以看到所有的內容。例如，在 `String` 的頁面上，你可以看到 `.with_capacity()` 的這個簽名：
 
 ```rust
 // 🚧
 pub fn with_capacity(capacity: usize) -> String
 ```
 
-Okay, so you put a number in and it gives you a `String`. That's easy, but maybe we are curious and want to see more. If you click on [src] you can see this:
+好了，你輸入數字，它給你 `String`。這很容易，但也許我們很好奇，想看更多。如果你點選 [src] 你可以看到這個：
 
 ```rust
 // 🚧
@@ -9398,19 +9399,19 @@ pub fn with_capacity(capacity: usize) -> String {
 }
 ```
 
-Interesting! Now you can see that a String is a kind of `Vec`. And actually a `String` is a vector of `u8` bytes, which is interesting to know. You didn't need to know that to use the `with_capacity` method so you only see it if you click [src]. So clicking on [src] is a good idea if the document doesn't have much detail and you want to know more.
+有趣吧！現在你可以看到，字串是一種 `Vec`。而實際上 `String` 是 `u8` 位元組的向量，這很有意思。你不需要知道就可以使用 `with_capacity` 的方法，你只有點選 [src] 才能看到。所以如果文件沒有太多細節，而你又想知道更多的話，點選 [src] 是個好主意。
 
-### Information on traits
+### 特徵資訊
 
-The important part of the documentation for a trait is "Required Methods" on the left. If you see Required Methods, it probably means that you have to write the method yourself. For example, for `Iterator` you need to write the `.next()` method. And for `From` you need to write the `.from()` method. But some traits can be implemented with just an **attribute**, like we see in `#[derive(Debug)]`. `Debug` needs the `.fmt()` method, but usually you just use `#[derive(Debug)]` unless you want to do it yourself. That's why the page on `std::fmt::Debug` says that "Generally speaking, you should just derive a Debug implementation."
+特徵的文件最重要部分在於左邊的 "Required Methods"。如果你有看到 "Required Methods"，可能意味著你必須自己寫出方法。例如，對於 `Iterator`，你需要實作 `.next()` 方法。而對於 `From`，你需要實作 `.from()` 方法。但是有些特徵只需要**屬性**就可以被實作出來，比如我們見過的 `#[derive(Debug)]`。`Debug` 需要 `.fmt()` 方法，但通常你只需要使用 `#[derive(Debug)]`，除非你想自己動手做。這就是為什麼在 `std::fmt::Debug` 的頁面上有說"一般來說，你應該只需要推導出 Debug 的實作"。
 
-## Attributes
+## 屬性
 
-You have seen code like `#[derive(Debug)]` before: this type of code is called an *attribute*. These attributes are small pieces of code that give information to the compiler. They are not easy to create, but they are very easy to use. If you write an attribute with just `#` then it will affect the code on the next line. But if you write it with `#!` then it will affect everything in its own space.
+你之前有見過 `#[derive(Debug)]` 這樣的程式碼：這種類型的程式碼叫做 *屬性(Attribute)*。這些屬性是能提供資訊給編譯器的小塊程式碼。它們雖然不容易建立，但使用起來非常方便。如果你只用 `#` 來寫屬性，那麼它將影響下一行的程式碼。但如果你是用 `#!` 來寫，那麼將影響它自己空間裡的一切。
 
-Here are some attributes you will see a lot:
+這裡是一些你會經常見到的屬性：
 
-`#[allow(dead_code)]` and `#[allow(unused_variables)]`. If you write code that you don't use, Rust will still compile but it will let you know. For example, here is a struct with nothing in it and one variable. We don't use either of them.
+`#[allow(dead_code)]` 和 `#[allow(unused_variables)]`。如果你寫了用不到的程式碼，Rust 仍然會編譯，但會讓你知道。例如這裡是裡面什麼都沒有結構體和一個變數。它們任何一個我們都沒有用。
 
 ```rust
 struct JustAStruct {}
@@ -9420,7 +9421,7 @@ fn main() {
 }
 ```
 
-If you write this, Rust will remind you that you didn't use them:
+如果你這樣寫，Rust 會提醒你你沒有使用它們：
 
 ```text
 warning: unused variable: `some_char`
@@ -9440,7 +9441,7 @@ warning: struct is never constructed: `JustAStruct`
   = note: `#[warn(dead_code)]` on by default
 ```
 
-We know that you can write a `_` before the name to make the compiler be quiet:
+我們知道可以在名字前面寫 `_`，讓編譯器安靜下來：
 
 ```rust
 struct _JustAStruct {}
@@ -9450,29 +9451,29 @@ fn main() {
 }
 ```
 
-but you can also use attributes. You'll notice in the message that it uses `#[warn(unused_variables)]` and `#[warn(dead_code)]`. In our code, `JustAStruct` is dead code, and `some_char` is an unused variable. The opposite of `warn` is `allow`, so we can write this and it will not say anything:
+但你也可以使用屬性。你會注意到在訊息中，它使用了 `#[warn(unused_variables)]` 和 `#[warn(dead_code)]`。在我們的程式碼中，`JustAStruct` 是死程式碼(dead code)，而 `some_char` 是個未使用的變數。`warn` 的反面是 `allow`，所以我們可以這樣寫，它就不會再說什麼了：
 
 ```rust
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
-struct Struct1 {} // Create five structs
+struct Struct1 {} // 做五個結構體
 struct Struct2 {}
 struct Struct3 {}
 struct Struct4 {}
 struct Struct5 {}
 
 fn main() {
-    let char1 = 'ん'; // and four variables. We don't use any of them but the compiler is quiet
+    let char1 = 'ん'; // 還有四個變數. 我們不使用它們任何一個但編譯器安靜了
     let char2 = ';';
     let some_str = "I'm just a regular &str";
     let some_vec = vec!["I", "am", "just", "a", "vec"];
 }
 ```
 
-Of course, dealing with dead code and unused variables is important. But sometimes you want the compiler to be quiet for a while. Or you might need to show some code or teach people Rust and don't want to confuse them with compiler messages.
+當然，處理死程式碼和未使用的變數是很重要的。但有時你希望編譯器安靜一段時間。或者是你可能需要展示一些程式碼或教人們 Rust，但又不想讓編譯器訊息來迷惑他們的時候。
 
-`#[derive(TraitName)]` lets you derive some traits for structs and enums that you create. This works with many common traits that can be automatically derived. Some like `Display` can't be automatically derived, because for `Display` you have to choose how to display:
+`#[derive(TraitName)]` 讓你可以給你建立的結構和列舉推導出一些特徵。這適用於許多可以被自動推導的常見特徵。有些像 `Display` 這樣的特徵不能自動推導，因為對於 `Display`，你必須選擇如何去顯示：
 
 ```rust
 // ⚠️
@@ -9488,7 +9489,7 @@ fn main() {
 }
 ```
 
-The error message will tell you that.
+錯誤訊息會告訴你：
 
 ```text
 error: cannot find derive macro `Display` in this scope
@@ -9498,7 +9499,7 @@ error: cannot find derive macro `Display` in this scope
   |
 ```
 
-But for traits that you can automatically derive, you can put in as many as you like. Let's give `HoldsAString` seven traits in a single line, just for fun, even though it only needs one.
+但是對於可以自動推匯出的特徵，你可以隨心所欲的放進去。讓我們在一行裡加入七個特徵給 `HoldsAString`，當然只是為了好玩，儘管它只需要一個。
 
 ```rust
 #[derive(Debug, PartialEq, Eq, Ord, PartialOrd, Hash, Clone)]
@@ -9514,13 +9515,13 @@ fn main() {
 }
 ```
 
-Also, you can make a struct `Copy` if (and only if) its fields are all `Copy`. `HoldsAString` has `String` which is not `Copy` so you can't use `#[derive(Copy)]` for it. But for this struct you can:
+另外，如果(也只有在)結構體的所有欄位都實作了 `Copy` 的情況下，你才可以讓結構體是 `Copy` 的。`HoldsAString` 裡的 `String` 不是 `Copy`，所以你不能對它使用 `#[derive(Copy)]`。但是對下面這個結構是可以的：
 
 ```rust
-#[derive(Clone, Copy)] // You also need Clone to use Copy
+#[derive(Clone, Copy)] // 你也需要 Clone 來使用 Copy
 struct NumberAndBool {
-    number: i32, // i32 is Copy
-    true_or_false: bool // bool is also Copy. So no problem
+    number: i32, // i32 是 Copy
+    true_or_false: bool // bool 也是 Copy. 所以沒問題
 }
 
 fn does_nothing(input: NumberAndBool) {
@@ -9534,51 +9535,51 @@ fn main() {
     };
 
     does_nothing(number_and_bool);
-    does_nothing(number_and_bool); // If it didn't have copy, this would make an error
+    does_nothing(number_and_bool); // 如果它不能拷貝, 這裡會造成錯誤
 }
 ```
 
-`#[cfg()]` means configuration and tells the compiler whether to run code or not. You see it usually like this: `#[cfg(test)]`. You use that when writing test functions so that it knows not to run them unless you are testing. Then you can have tests next to your code but the compiler won't run them unless you tell it to.
+`#[cfg()]` 的意思是組態，告訴編譯器是否執行程式碼。它通常是像這樣的：`#[cfg(test)]`。你會在寫測試函式的時候用到，這樣它就知道不要執行它們除非你在跑測試。那麼你可以在你的程式碼附近寫測試，但編譯器不會執行它們，除非你告訴它這麼做。
 
-One other example using `cfg` is `#[cfg(target_os = "windows")]`. With that you can tell the compiler to only run the code on Windows, or Linux, or anything else.
+另一個會使用 `cfg` 的例子是 `#[cfg(target_os = "windows")]`。有了它，你可以告訴編譯器只能在 Windows 上執行程式碼，Linux 或其他平臺則不能。
 
-`#![no_std]` is an interesting attribute that tells Rust not to bring in the standard library. That means you don't have `Vec`, `String`, and anything else in the standard library. You will see this in code for small devices that don't have much memory or space.
+`#![no_std]` 是個有趣的屬性，它告訴 Rust 不要引入標準函式庫。這表示你沒有 `Vec`、`String` 以及標準函式庫中的其他任何東西可以用。你會在那些沒有多少記憶體或空間的小型裝置的程式碼中看到這個。
 
-You can see many more attributes [here](https://doc.rust-lang.org/reference/attributes.html).
+你可以在[這裡](https://doc.rust-lang.org/reference/attributes.html)看到更多的屬性。
 
 
 ## Box
 
-`Box` is a very convenient type in Rust. When you use a `Box`, you can put a type on the heap instead of the stack. To make a new `Box`, just use `Box::new()` and put the item inside.
+`Box` 是 Rust 中非常方便的型別。當你使用 `Box` 時，你可以把型別放在堆積上而不是堆疊上。要做出新的 `Box`，只要用 `Box::new()` 並把元素放在裡面即可。
 
 ```rust
-fn just_takes_a_variable<T>(item: T) {} // Takes anything and drops it.
+fn just_takes_a_variable<T>(item: T) {} // 接受任何東西並丟棄.
 
 fn main() {
-    let my_number = 1; // This is an i32
+    let my_number = 1; // 這是 i32
     just_takes_a_variable(my_number);
-    just_takes_a_variable(my_number); // Using this function twice is no problem, because it's Copy
+    just_takes_a_variable(my_number); // 使用這個函式兩次也沒問題, 因為它是 Copy
 
-    let my_box = Box::new(1); // This is a Box<i32>
-    just_takes_a_variable(my_box.clone()); // Without .clone() the second function would make an error
-    just_takes_a_variable(my_box); // because Box is not Copy
+    let my_box = Box::new(1); // 這是 Box<i32>
+    just_takes_a_variable(my_box.clone()); // 沒有 .clone() 時第二個函式會造成錯誤
+    just_takes_a_variable(my_box); // 因為 Box 不是 Copy
 }
 ```
 
-At first it is hard to imagine where to use it, but you use it in Rust a lot. You remember that `&` is used for `str` because the compiler doesn't know the size of a `str`: it can be any length. But the `&` reference is always the same length, so the compiler can use it. `Box` is similar. Also, you can use `*` on a `Box` to get to the value, just like with `&`:
+一開始很難想像能在哪裡使用它，但你會在 Rust 中經常使用它。你記得 `&` 被用在 `str` 是因為編譯器不知道 `str` 的大小：它可以是任何長度。但是用 `&` 的參考永遠是相同的長度，所以編譯器可以使用它。`Box` 也類似。另外你也可以在 `Box` 上使用 `*` 來獲得值，就像使用 `&` 一樣：
 
 ```rust
 fn main() {
-    let my_box = Box::new(1); // This is a Box<i32>
-    let an_integer = *my_box; // This is an i32
+    let my_box = Box::new(1); // 這是 Box<i32>
+    let an_integer = *my_box; // 這是 i32
     println!("{:?}", my_box);
     println!("{:?}", an_integer);
 }
 ```
 
-This is why Box is called a "smart pointer", because it is like a `&` reference (a kind of pointer) but can do more things.
+這就是為什麼 Box 被稱為"智慧指標(smart pointer)"的原因，因為它就像 `&` 的參考(一種指標)，但可以做更多的事情。
 
-You can also use a Box to create structs with the same struct inside. These are called *recursive*, which means that inside Struct A is maybe another Struct A. Sometimes you can use Boxes to create linked lists, although these lists are not very popular in Rust. But if you want to create a recursive struct, you can use a `Box`. Here's what happens if you try without a `Box`:
+你也可以使用 Box 來建立裡面有相同結構的結構體。這些是被稱為 *遞迴* 的結構，這意味著在 Struct A 裡面也許是另一個 Struct A，有時你可以使用 Box 來建立連結串列，儘管這在 Rust 中並不十分流行。但如果你想建立遞迴結構體，你可以使用 `Box`。如果你試著不用 `Box` 會發生什麼：
 
 
 ```rust
@@ -9587,7 +9588,7 @@ struct List {
 }
 ```
 
-This simple `List` has one item, that may be `Some<List>` (another list), or `None`. Because you can choose `None`, it will not be recursive forever. But the compiler still doesn't know the size:
+這個簡單的 `List` 有一個元素，可能是個 `Some<List>` (另一個列表)，也可能是 `None`。因為你可以選擇 `None`，所以它不會永遠遞迴。但是編譯器還是不知道大小：
 
 ```text
 error[E0072]: recursive type `List` has infinite size
@@ -9601,7 +9602,7 @@ error[E0072]: recursive type `List` has infinite size
    = help: insert indirection (e.g., a `Box`, `Rc`, or `&`) at some point to make `List` representable
 ```
 
-You can see that it even suggests trying a `Box`. So let's put a `Box` around List:
+你可以看到它甚至建議嘗試 `Box`。所以讓我們用 `Box` 把 List 包起來：
 
 ```rust
 struct List {
@@ -9610,7 +9611,7 @@ struct List {
 fn main() {}
 ```
 
-Now the compiler is fine with the `List`, because everything is behind a `Box`, and it knows the size of a `Box`. Then a very simple list might look like this:
+現在編譯器就可以用 `List` 了，因為所有的東西都在 `Box` 後面，而且它知道 `Box` 的大小。那麼一個非常簡單的列表可能像這樣：
 
 ```rust
 struct List {
@@ -9630,13 +9631,13 @@ fn main() {
 }
 ```
 
-Even without data it is a bit complicated, and Rust does not use this type of pattern very much. This is because Rust has strict rules on borrowing and ownership, as you know. But if you want to start a list like this (a linked list), `Box` can help.
+即使沒有資料也有點複雜，Rust 並不怎麼常用這種類型的模式(pattern)。這是因為 Rust 如你所知的對借用(borrowing)和所有權(ownership)有嚴格的規定。但如果你想開始寫這樣的列表(連結串列)時，`Box` 能幫上忙。
 
-A `Box` also lets you use `std::mem::drop` on it, because it's on the heap. That can be convenient sometimes.
+`Box` 還可以讓你對它使用 `std::mem::drop`，因為它放在堆積上。這有時候會很方便。
 
-## Box around traits
+## Box 包裹的特徵
 
-`Box` is very useful for returning traits. You know that you can write traits in generic functions like in this example:
+`Box` 對於回傳特徵非常有用。你知道你可以把特徵用在泛型函式就像這個範例：
 
 ```rust
 use std::fmt::Display;
@@ -9650,15 +9651,15 @@ fn displays_it<T: Display>(input: T) {
 fn main() {}
 ```
 
-This only takes something with `Display`, so it can't accept our struct `DoesntImplementDisplay`. But it can take in a lot of others like `String`.
+這個函式只能接受是 `Display` 的東西，所以它不能接納我們的 `DoesntImplementDisplay` 結構體。但是它可以接受很多其他的東西，比如 `String`。
 
-You also saw that we can use `impl Trait` to return other traits, or closures. `Box` can be used in a similar way. You can use a `Box` because otherwise the compiler won't know the size of the value. This example shows that a trait can be used on something of any size:
+你也看到了，我們可以使用 `impl 特徵` 來回傳其他的特徵或閉包。`Box` 也可以用類似的方式來使用。你可以使用 `Box` 是因為不這樣編譯器將不會知道值的大小。這個範例證明特徵可以用在任何大小的東西上：
 
 ```rust
-#![allow(dead_code)] // Tell the compiler to be quiet
-use std::mem::size_of; // This gives the size of a type
+#![allow(dead_code)] // 告訴編譯器要安靜
+use std::mem::size_of; // 這會給出型別的大小
 
-trait JustATrait {} // We will implement this on everything
+trait JustATrait {} // 我們將會實作這個在所有東西上
 
 enum EnumOfNumbers {
     I8(i8),
@@ -9689,7 +9690,7 @@ struct StructOfOtherTypes {
 impl JustATrait for StructOfOtherTypes {}
 
 struct ArrayAndI8 {
-    array: [i8; 1000], // This one will be very large
+    array: [i8; 1000], // 這一個將會非常大
     an_i8: i8,
     in_u8: u8,
 }
@@ -9707,7 +9708,7 @@ fn main() {
 }
 ```
 
-When we print the size of these, we get `2, 3, 32, 32, 1002`. So if you were to do this, it would give an error:
+當我們列印這些東西大小的時候，我們得到 `2, 3, 32, 32, 1002`。所以如果你像下面這樣做的話會造成錯誤：
 
 ```rust
 // ⚠️
@@ -9717,7 +9718,7 @@ fn returns_just_a_trait() -> JustATrait {
 }
 ```
 
-It says:
+它說：
 
 ```text
 error[E0746]: return type cannot have an unboxed trait object
@@ -9727,9 +9728,9 @@ error[E0746]: return type cannot have an unboxed trait object
    |                              ^^^^^^^^^^ doesn't have a size known at compile-time
 ```
 
-And this is true, because the size could be 2, 3, 32, 1002, or anything else. So we put it in a `Box` instead. Here we also add the keyword `dyn`. `dyn` is a word that shows you that you are talking about a trait, not a struct or anything else.
+而這是真的，因為大小可以是 2、3、32、1002，或者其他任何東西。所以我們把它放在 `Box` 中。在這裡我們還加上了 `dyn` 這個關鍵詞。`dyn` 這個詞告訴你，你說的是個特徵，而不是結構體或其他任何東西。
 
-So you can change the function to this:
+所以你可以把函式改成這樣：
 
 ```rust
 // 🚧
@@ -9739,13 +9740,13 @@ fn returns_just_a_trait() -> Box<dyn JustATrait> {
 }
 ```
 
-And now it works, because on the stack is just a `Box` and we know the size of `Box`.
+現在它能執行了，因為在堆疊上只是個 `Box`，而我們也知道 `Box` 的大小。
 
-You see this a lot in the form `Box<dyn Error>`, because sometimes you can have more than one possible error.
+你會經常看到 `Box<dyn Error>` 這種形式，因為有時你可能會有多個可能的錯誤。
 
-We can quickly create two error types to show this. To make an official error type, you have to implement `std::error::Error` for it. That part is easy: just write `impl std::error::Error {}`. But errors also need `Debug` and `Display` so they can give information on the problem. `Debug` is easy with `#[derive(Debug)]` but `Display` needs the `.fmt()` method. We did this once before.
+我們可以快速建立兩個錯誤型別來顯示這一點。要建立正式的錯誤型別，你必須為它實作 `std::error::Error`。這部分很容易：只要寫出 `impl std::error::Error {}`。但錯誤型別還需要 `Debug` 和 `Display`，這樣才能給出問題的資訊。`Debug` 很容易，只要加上 `#[derive(Debug)]` 就行，但 `Display` 需要 `.fmt()` 方法。我們之前做過一次。
 
-The code looks like this:
+程式碼像這樣：
 
 ```rust
 use std::error::Error;
@@ -9754,16 +9755,16 @@ use std::fmt;
 #[derive(Debug)]
 struct ErrorOne;
 
-impl Error for ErrorOne {} // Now it is an error type with Debug. Time for Display:
+impl Error for ErrorOne {} // 現在錯誤型別有 Debug 了. 換 Display:
 
 impl fmt::Display for ErrorOne {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "You got the first error!") // All it does is write this message
+        write!(f, "You got the first error!") // 所有要做的就是寫這段訊息
     }
 }
 
 
-#[derive(Debug)] // Do the same thing with ErrorTwo
+#[derive(Debug)] // 對 ErrorTwo 做一樣的事
 struct ErrorTwo;
 
 impl Error for ErrorTwo {}
@@ -9774,20 +9775,20 @@ impl fmt::Display for ErrorTwo {
     }
 }
 
-// Make a function that just returns a String or an error
-fn returns_errors(input: u8) -> Result<String, Box<dyn Error>> { // With Box<dyn Error> you can return anything that has the Error trait
+// 做出只回傳 String 或錯誤的函式
+fn returns_errors(input: u8) -> Result<String, Box<dyn Error>> { // 有了 Box<dyn Error> 你就能回傳任何有 Error 特徵的東西
 
     match input {
-        0 => Err(Box::new(ErrorOne)), // Don't forget to put it in a box
+        0 => Err(Box::new(ErrorOne)), // 不要忘記放進 Box 裡
         1 => Err(Box::new(ErrorTwo)),
-        _ => Ok("Looks fine to me".to_string()), // This is the success type
+        _ => Ok("Looks fine to me".to_string()), // 這是成功的型別
     }
 
 }
 
 fn main() {
 
-    let vec_of_u8s = vec![0_u8, 1, 80]; // Three numbers to try out
+    let vec_of_u8s = vec![0_u8, 1, 80]; // 用來嘗試的三個數字
 
     for number in vec_of_u8s {
         match returns_errors(number) {
@@ -9798,7 +9799,7 @@ fn main() {
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 You got the first error!
@@ -9806,7 +9807,7 @@ You got the second error!
 Looks fine to me
 ```
 
-If we didn't have a `Box<dyn Error>` and wrote this, we would have a problem:
+如果我們在沒有 `Box<dyn Error>` 時寫成這樣，我們就會有問題了：
 
 ```rust
 // ⚠️
@@ -9819,18 +9820,18 @@ fn returns_errors(input: u8) -> Result<String, Error> {
 }
 ```
 
-It will tell you:
+它會告訴你：
 
 ```text
 21  | fn returns_errors(input: u8) -> Result<String, Error> {
     |                                 ^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
 ```
 
-This is not surprising, because we know that a trait can work on many things, and they each have different sizes.
+這並不是很意外，因為我們知道特徵可以用在很多東西上，而且它們各自有不同的大小。
 
-## Default and the builder pattern
+## Default 和生成器模式
 
-You can implement the `Default` trait to give values to a `struct` or `enum` that you think will be most common. The builder pattern works nicely with this to let users easily make changes when they want. First let's look at `Default`. Actually, most general types in Rust already have `Default`. They are not surprising: 0, "" (empty strings), `false`, etc.
+你可以實作 `Default` 特徵在你認為最常見的 `struct` 或 `enum` 上用來賦值。生成器模式可以很好地和它配合，來讓使用者在需要時輕鬆地進行修改。首先我們來看看 `Default`。實際上，在 Rust 大多數的通用型別已經有 `Default`。它們並不另人意外：像是 0、""(空字串)、`false`, 等等。
 
 ```rust
 fn main() {
@@ -9842,9 +9843,9 @@ fn main() {
 }
 ```
 
-This prints `'0', '', 'false'`.
+印出 `'0', '', 'false'`。
 
-So `Default` is like the `new` function except you don't have to enter anything. First we will make a `struct` that doesn't implement `Default` yet. It has a `new` function which we use to make a character named Billy with some stats.
+所以 `Default` 就像 `new` 函式一樣，除了你不需要輸入任何東西。首先我們將要建立還沒有實現 `Default` 的 `struct`。它有個 `new` 函式是我們用來做出名為比利 (Billy) 的角色並附帶一些角色個人資訊。
 
 ```rust
 struct Character {
@@ -9879,7 +9880,7 @@ fn main() {
 }
 ```
 
-But maybe in our world we want most of the characters to be named Billy, age 15, height 170, weight 70, and alive. We can implement `Default` so that we can just write `Character::default()`. It looks like this:
+但也許在我們的世界裡，我們希望大部分角色都叫比利，年齡 15 歲、身高 170、體重 70，還活著。我們可以實作 `Default`，這樣我們就可以只寫 `Character::default()`。它看起來像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -9937,9 +9938,9 @@ fn main() {
 }
 ```
 
-It prints `The character "Billy" is 15 years old.` Much easier!
+印出 `The character "Billy" is 15 years old.` 簡單多了!
 
-Now comes the builder pattern. We will have many Billys, so we will keep the default. But a lot of other characters will be only a bit different. The builder pattern lets us chain very small methods to change one value each time. Here is one such method for `Character`:
+現在我們來看生成器模式。我們會有很多比利，所以我們會保留預設的。但是很多其他角色只會有一點點不同。生成器模式讓我們可以把小方法連結起來，每次改變一個值。在 `Character` 裡這就是一個這樣的方法：
 
 ```rust
 fn height(mut self, height: u32) -> Self {    // 🚧
@@ -9948,9 +9949,9 @@ fn height(mut self, height: u32) -> Self {    // 🚧
 }
 ```
 
-Make sure to notice that it takes a `mut self`. We saw this once before, and it is not a mutable reference (`&mut self`). It takes ownership of `Self` and with `mut` it will be mutable, even if it wasn't mutable before. That's because `.height()` has full ownership and nobody else can touch it, so it is safe to be mutable. Then it just changes `self.height` and returns `Self` (which is `Character`).
+一定要注意，它接受的是 `mut self`。我們之前看到過一次，它不是可變引用(`&mut self`)。它取得了 `Self` 的所有權，並且有了 `mut`，它將是可變的，即使它先前不是可變的。這是因為 `.height()` 擁有完整的所有權，沒人能接觸它，所以它能安全的作為可變變數來用。接著它只是改變 `self.height`，並回傳 `Self`(也就是 `Character`)。
 
-So let's have three of these builder methods. They are almost the same:
+所以我們有三個這樣的生成器方法。它們幾乎是一樣的：
 
 ```rust
 fn height(mut self, height: u32) -> Self {     // 🚧
@@ -9969,7 +9970,7 @@ fn name(mut self, name: &str) -> Self {
 }
 ```
 
-Each one of those changes one variable and gives `Self` back: this is what you see in the builder pattern. So now we can write something like this to make a character: `let character_1 = Character::default().height(180).weight(60).name("Bobby");`. If you are building a library for someone else to use, this can make it easy for them. It's easy for the end user because it almost looks like natural English: "Give me a default character but with height of 180, weight of 60, and name of Bobby." So far our code looks like this:
+這些每一個都會改變其中一個變數，並給出 `Self` 回傳：這就是你在生成器模式中會看到的。所以現在我們類似這樣寫些東西來做出角色：`let character_1 = Character::default().height(180).weight(60).name("Bobby");`。如果你正在建造函式庫給別人使用，這可以讓他們很容易使用。對終端使用者來說很容易，因為它看起來幾乎像是自然的英語："給我預設的角色，但身高為 180、體重為 60、名字是 Bobby。" 到目前為止，我們的程式碼看起來像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -10039,9 +10040,9 @@ fn main() {
 }
 ```
 
-One last method to add is usually called `.build()`. This method is a sort of final check. When you give a user a method like `.height()` you can make sure that they only put in a `u32()`, but what if they enter 5000 for height? That might not be okay in the game you are making. We will use a final method called `.build()` that returns a `Result`. Inside it we will check if the user input is okay, and if it is, we will return an `Ok(Self)`.
+最後一個要新增的方法通常叫 `.build()`。這個方法是某種最終檢查。當你給使用者提供像是 `.height()` 這樣的方法時，你可以確保他們只輸入 `u32()`，但是如果他們輸入身高為 5000 時怎麼辦？在你正在製作的遊戲中那可能就不對了。我們將使用名為 `.build()` 的最後方法去回傳 `Result`。在它裡面我們將檢查使用者輸入是否正常，如果正常的話我們將回傳 `Ok(Self)`。
 
-First though let's change the `.new()` method. We don't want users to be free to create any kind of character anymore. So we'll move the values from `impl Default` to `.new()`. And now `.new()` doesn't take any input.
+不過首先讓我們更改 `.new()` 方法。我們不希望使用者再自由建立任何一種角色。所以我們將把 `impl Default` 的值移到 `.new()`。而現在 `.new()` 不再接受任何輸入。
 
 ```rust
     fn new() -> Self {    // 🚧
@@ -10055,9 +10056,9 @@ First though let's change the `.new()` method. We don't want users to be free to
     }
 ```
 
-That means we don't need `impl Default` anymore, because `.new()` has all the default values. So we can delete `impl Default`.
+這意味著我們不再需要 `impl Default` 了，因為 `.new()` 有所有的預設值。所以我們可以刪除 `impl Default`。
 
-Now our code looks like this:
+現在我們的程式碼像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -10111,9 +10112,9 @@ fn main() {
 }
 ```
 
-This prints the same thing: `Character { name: "Bobby", age: 15, height: 180, weight: 60, lifestate: Alive }`.
+印出來的結果一樣：`Character { name: "Bobby", age: 15, height: 180, weight: 60, lifestate: Alive }`。
 
-We are almost ready to write the method `.build()`, but there is one problem: how do we make the user use it? Right now a user can write `let x = Character::new().height(76767);` and get a `Character`. There are many ways to do this, and maybe you can imagine your own. But we will add a `can_use: bool` value to `Character`.
+我們幾乎已經準備好寫 `.build()` 方法了，但是還有個問題：要如何讓使用者使用它？現在使用者可以寫 `let x = Character::new().height(76767);`，然後得到 `Character`。有很多方式可以做到這一點，也許你能想出自己的方法。但是我們會在 `Character` 中加上 `can_use: bool` 的值。
 
 ```rust
 #[derive(Debug)]       // 🚧
@@ -10123,10 +10124,10 @@ struct Character {
     height: u32,
     weight: u32,
     lifestate: LifeState,
-    can_use: bool, // Set whether the user can use the character
+    can_use: bool, // 設定使用者是否能使用角色
 }
 
-\\ Cut other code
+// Cut other code
 
     fn new() -> Self {
         Self {
@@ -10135,14 +10136,14 @@ struct Character {
             height: 170,
             weight: 70,
             lifestate: LifeState::Alive,
-            can_use: true, // .new() always gives a good character, so it's true
+            can_use: true, // .new() 永遠給出好的角色, 所以是 true
         }
     }
 ```
 
-And for the other methods like `.height()`, we will set `can_use` to `false`. Only `.build()` will set it to `true` again, so now the user has to do a final check with `.build()`. We will make sure that `height` is not above 200 and `weight` is not above 300. Also, in our game there is a bad word called `smurf` that we don't want characters to use.
+而對於其他的方法，比如 `.height()`，我們會將 `can_use` 設定為 `false`。只有 `.build()` 會再次設定為 `true`，所以現在使用者要用 `.build()` 做最後的檢查。我們要確保 `height` 不高於 200，`weight` 不寬於 300。另外，在我們的遊戲中，有個不好的字叫 `smurf`，我們不希望任何角色使用它。
 
-Our `.build()` method looks like this:
+我們的 `.build()` 方法像這樣：
 
 ```rust
 fn build(mut self) -> Result<Character, String> {      // 🚧
@@ -10159,11 +10160,11 @@ fn build(mut self) -> Result<Character, String> {      // 🚧
 }
 ```
 
-`!self.name.to_lowercase().contains("smurf")` makes sure that the user doesn't write something like "SMURF" or "IamSmurf" . It makes the whole `String` lowercase (small letters), and checks for `.contains()` instead of `==`. And the `!` in front means "not".
+`!self.name.to_lowercase().contains("smurf")` 確保使用者不會寫出類似 "SMURF" 或 "IamSmurf" 的字樣。它讓整個 `String` 都變成小寫字母，並檢查 `.contains()` 而不是 `==`。而前面的 `!` 表示"不是"(邏輯運算補數)。
 
-If everything is okay, we set `can_use` to `true`, and give the character to the user inside `Ok`.
+如果一切正常，我們就把 `can_use` 設定為 `true`，然後把角色包在 `Ok` 裡面回傳給使用者。
 
-Now that our code is done, we will create three characters that don't work, and one character that does work. The final code looks like this:
+現在我們的程式碼已經完成了，我們將建立三個不能使用的角色，及一個能使用的角色。最後的程式碼像這樣：
 
 ```rust
 #[derive(Debug)]
@@ -10173,7 +10174,7 @@ struct Character {
     height: u32,
     weight: u32,
     lifestate: LifeState,
-    can_use: bool, // Here is the new value
+    can_use: bool, // 這裡是新的值
 }
 
 #[derive(Debug)]
@@ -10192,13 +10193,13 @@ impl Character {
             height: 170,
             weight: 70,
             lifestate: LifeState::Alive,
-            can_use: true,  // .new() makes a fine character, so it is true
+            can_use: true,  // .new() 做出可用的角色, 所以是 true
         }
     }
 
     fn height(mut self, height: u32) -> Self {
         self.height = height;
-        self.can_use = false; // Now the user can't use the character
+        self.can_use = false; // 現在使用者還不能使用角色
         self
     }
 
@@ -10216,8 +10217,8 @@ impl Character {
 
     fn build(mut self) -> Result<Character, String> {
         if self.height < 200 && self.weight < 300 && !self.name.to_lowercase().contains("smurf") {
-            self.can_use = true;   // Everything is okay, so set to true
-            Ok(self)               // and return the character
+            self.can_use = true;   // 一切都沒問題, 所以設定為 true
+            Ok(self)               // 並回傳角色
         } else {
             Err("Could not create character. Characters must have:
 1) Height below 200
@@ -10229,29 +10230,29 @@ impl Character {
 }
 
 fn main() {
-    let character_with_smurf = Character::new().name("Lol I am Smurf!!").build(); // This one contains "smurf" - not okay
-    let character_too_tall = Character::new().height(400).build(); // Too tall - not okay
-    let character_too_heavy = Character::new().weight(500).build(); // Too heavy - not okay
+    let character_with_smurf = Character::new().name("Lol I am Smurf!!").build(); // 這一個包含 "smurf" - 不行
+    let character_too_tall = Character::new().height(400).build(); // 太高 - 不行
+    let character_too_heavy = Character::new().weight(500).build(); // 太重 - 不行
     let okay_character = Character::new()
         .name("Billybrobby")
         .height(180)
         .weight(100)
-        .build();   // This character is okay. Name is fine, height and weight are fine
+        .build();   // 這個角色沒問題. 名字很好、身高體重也都很好
 
-    // Now they are not Character, they are Result<Character, String>. So let's put them in a Vec so we can see them:
+    // 現在它們還不是 Character, 它們是 Result<Character, String>. 所以讓我們把它們放進 Vec 裡，那樣我們就能一起處理它們：
     let character_vec = vec![character_with_smurf, character_too_tall, character_too_heavy, okay_character];
 
-    for character in character_vec { // Now we will print the character if it's Ok, and print the error if it's Err
+    for character in character_vec { // 現在我們會印出角色如果是 Ok, 以及印出錯誤如果是 Err
         match character {
             Ok(character_info) => println!("{:?}", character_info),
             Err(err_info) => println!("{}", err_info),
         }
-        println!(); // Then add one more line
+        println!(); // 再多加上一個換行
     }
 }
 ```
 
-This will print:
+將會印出：
 
 ```text
 Could not create character. Characters must have:
@@ -10274,22 +10275,22 @@ Character { name: "Billybrobby", age: 15, height: 180, weight: 100, lifestate: A
 
 
 
-## Deref and DerefMut
+## Deref 和 DerefMut
 
-`Deref` is the trait that lets you use `*` to dereference something. We saw the word `Deref` before when using a tuple struct to make a new type, and now it's time to learn it.
+`Deref` 是讓你用 `*` 來對某些東西取值(dereference)的特徵。我們之前在使用元組結構體來做出新的型別時見過 `Deref` 這個字，現在是時候學會它了。
 
-We know that a reference is not the same as a value:
+我們知道，參考和值是不一樣的：
 
 ```rust
 // ⚠️
 fn main() {
-    let value = 7; // This is an i32
-    let reference = &7; // This is a &i32
+    let value = 7; // 這是個 i32
+    let reference = &7; // 這是個 &i32
     println!("{}", value == reference);
 }
 ```
 
-And Rust won't even give a `false` because it won't even compare the two.
+而 Rust 連 `false` 都不給，因為它甚至不會比較兩者。
 
 ```text
 error[E0277]: can't compare `{integer}` with `&{integer}`
@@ -10299,7 +10300,7 @@ error[E0277]: can't compare `{integer}` with `&{integer}`
   |                          ^^ no implementation for `{integer} == &{integer}`
 ```
 
-Of course, the solution here is `*`. So this will print `true`:
+當然，這裡的解法是使用 `*`。所以這將會印出 `true`：
 
 ```rust
 fn main() {
@@ -10310,9 +10311,9 @@ fn main() {
 ```
 
 
-Now let's imagine a simple type that just holds a number. It will be like a `Box`, and we have some ideas for some extra functions for it. But if we just give it a number, it won't be able to do much with it.
+現在讓我們想像一下只容納一個數字的簡單型別。它就像 `Box`，我們有些想法為它提供一些額外的功能。但如果我們只是給它一個數字，它就不能做那麼多了。
 
-We can't use `*` like we can with `Box`:
+我們不能像使用 `Box` 那樣使用 `*`：
 
 ```rust
 // ⚠️
@@ -10324,7 +10325,7 @@ fn main() {
 }
 ```
 
-The error is:
+錯誤訊息是：
 
 ```text
 error[E0614]: type `HoldsANumber` cannot be dereferenced
@@ -10333,11 +10334,11 @@ error[E0614]: type `HoldsANumber` cannot be dereferenced
 24 |     println!("{:?}", *my_number + 20);
 ```
 
-We can of course do this: `println!("{:?}", my_number.0 + 20);`. But then we are just adding a separate `u8` to the 20. It would be nice if we could just add them together. The message `cannot be dereferenced` gives us a clue: we need to implement `Deref`. Something simple that implements `Deref` is sometimes called a "smart pointer". A smart pointer can point to its item, has information about it, and can use its methods. Because right now we can add `my_number.0`, which is a `u8`, but we can't do much else with a `HoldsANumber`: all it has so far is `Debug`.
+我們當然可以做到這一點：`println!("{:?}", my_number.0 + 20);`。但是這樣的話，我們就是在 20 的基礎上再單獨加 `u8`。如果我們能把它們直接加在一起就更好了。`cannot be dereferenced` 這個訊息給了我們線索：我們需要實作 `Deref`。實作 `Deref` 的簡單東西有時被稱為"智慧指標(smart pointer)"。一個智慧指標可以指向它的元素，有它的資訊，並且可以使用它的方法。因為現在我們可以新增 `u8` 的 `my_number.0`，但我們不能用 `HoldsANumber` 來做其他的事情：到目前為止，它只有 `Debug`。
 
-Interesting fact: `String` is actually a smart pointer to `&str` and `Vec` is a smart pointer to array (or other types). So we have actually been using smart pointers since the beginning.
+有趣的事實是：`String` 其實是 `&str` 的智慧指標，`Vec` 是陣列(或其他型別)的智慧指標。所以我們其實從一開始就在使用智慧指標。
 
-Implementing `Deref` is not too hard and the examples in the standard library are easy. [Here's the sample code from the standard library](https://doc.rust-lang.org/std/ops/trait.Deref.html):
+實現 `Deref` 並不難，標準函式庫中的範例也很簡單。[這裡是標準函式庫中的範例程式碼](https://doc.rust-lang.org/std/ops/trait.Deref.html)：
 
 ```rust
 use std::ops::Deref;
@@ -10361,21 +10362,21 @@ fn main() {
 ```
 
 
-So we follow that and now our `Deref` looks like this:
+所以我們按照這個來，現在我們的 `Deref` 像這樣：
 
 ```rust
 // 🚧
 impl Deref for HoldsANumber {
-    type Target = u8; // Remember, this is the "associated type": the type that goes together.
-                      // You have to use the right type Target = (the type you want to return)
+    type Target = u8; // 記得, 這是"關聯型別(associated type)": 型別會一起寫在這.
+                      // 你必須要使用正確的 type Target = (你想回傳的型別)
 
-    fn deref(&self) -> &Self::Target { // Rust calls .deref() when you use *. We just defined Target as a u8 so this is easy to understand
-        &self.0   // We chose &self.0 because it's a tuple struct. In a named struct it would be something like "&self.number"
+    fn deref(&self) -> &Self::Target { // 當你使用 * 時 Rust 會呼叫 .deref(). 我們只定義 Target 為 u8 所以這很容易理解
+        &self.0   // 我們選擇 &self.0 因為這是元組結構體. 在具名結構體中它就會是像 "&self.number" 之類的東西
     }
 }
 ```
 
-So now we can do this with `*`:
+所以現在我們可以用 `*` 來做：
 
 ```rust
 use std::ops::Deref;
@@ -10396,7 +10397,7 @@ fn main() {
 }
 ```
 
-So that will print `40` and we didn't need to write `my_number.0`. That means we get the methods of `u8` and we can write our own methods for `HoldsANumber`. We will add our own simple method and use another method we get from `u8` called `.checked_sub()`. The `.checked_sub()` method is a safe subtraction that returns an `Option`. If it can do the subtraction then it gives it to you inside `Some`, and if it can't do it then it gives a `None`. Remember, a `u8` can't be negative so it's safer to do `.checked_sub()` so we don't panic.
+所以會印出 `40`，我們也不需要寫 `my_number.0` 了。這意味著我們有 `u8` 型別的方法可以用，我們可以為 `HoldsANumber` 寫出我們自己的方法。我們將新增自己寫的簡單方法，並使用我們從 `u8` 中得到的另一個方法，稱為 `.checked_sub()`。`.checked_sub()` 方法是安全的減法，它能回傳 `Option`。如果它能做減法，那麼它就會在 `Some` 裡面給你結果，如果它不能做減法，那麼它就會給你 `None`。記住，`u8` 不能是負數，所以還是 `.checked_sub()` 比較安全，這樣就不會恐慌了。
 
 ```rust
 use std::ops::Deref;
@@ -10419,19 +10420,19 @@ impl Deref for HoldsANumber {
 
 fn main() {
     let my_number = HoldsANumber(20);
-    println!("{:?}", my_number.checked_sub(100)); // This method comes from u8
-    my_number.prints_the_number_times_two(); // This is our own method
+    println!("{:?}", my_number.checked_sub(100)); // 這是來自 u8 的方法
+    my_number.prints_the_number_times_two(); // 這是我們自己的方法
 }
 ```
 
-This prints:
+印出：
 
 ```text
 None
 40
 ```
 
-We can also implement `DerefMut` so we can change the values through `*`. It looks almost the same. You need `Deref` before you can implement `DerefMut`.
+我們也可以實作 `DerefMut`，這樣我們就能透過 `*` 來改變數值。它看起來幾乎一樣。在實作 `DerefMut` 之前，你需要先實作 `Deref`。
 
 ```rust
 use std::ops::{Deref, DerefMut};
@@ -10452,8 +10453,8 @@ impl Deref for HoldsANumber {
     }
 }
 
-impl DerefMut for HoldsANumber { // You don't need type Target = u8; here because it already knows thanks to Deref
-    fn deref_mut(&mut self) -> &mut Self::Target { // Everything else is the same except it says mut everywhere
+impl DerefMut for HoldsANumber { // 這裡你不需要 type Target = u8; 這要感謝 Deref 因為它已經知道了
+    fn deref_mut(&mut self) -> &mut Self::Target { // 除了到處用 mut 以外，其它一切都一樣
         &mut self.0
     }
 }
@@ -10466,9 +10467,9 @@ fn main() {
 }
 ```
 
-So you can see that `Deref` gives your type a lot of power.
+所以你可以看到，`Deref` 給你的型別提供了強大的力量。
 
-This is also why the standard library says: `Deref should only be implemented for smart pointers to avoid confusion`. That's because you can do some strange things with `Deref` for a complicated type. Let's imagine a really confusing example to understand what they mean. We'll start with `Character` struct for a game. A new `Character` needs some stats like intelligence and strength. So here is our first character:
+這也是為什麼標準函式庫說：`Deref should only be implemented for smart pointers to avoid confusion`。這是因為對於複雜的型別，你可以用 `Deref` 做一些奇怪的事情。讓我們想像一個非常混亂的範例來理解它們的含義。我們將從一個遊戲的 `Character` 結構體開始。新的 `Character` 需要一些資料，比如智力和力量。所以這裡是我們的第一個角色：
 
 ```rust
 struct Character {
@@ -10520,13 +10521,13 @@ fn main() {
 }
 ```
 
-Now let's imagine that we want to keep character hit points in a big vec. Maybe we'll put monster data in there too, and keep it all together. Since `hit_points` is an `i8`, we implement `Deref` so we can do all sorts of math on it. But look at how strange it looks in our `main()` function now:
+現在讓我們想像我們想存放人物的生命值(hit points)在一個大向量裡面。也許我們也會把怪物級資料也放進去，並存放在一起。由於 `hit_points` 是 `i8`，我們實作了 `Deref`，來讓我們可以對它進行各式各樣的數學計算。但是現在看看我們的 `main()` 函式有多麼奇怪：
 
 
 ```rust
 use std::ops::Deref;
 
-// All the other code is the same until after the enum Alignment
+// 直到例舉 Alignment 之後，以外的所有程式碼是一樣的
 struct Character {
     name: String,
     strength: u8,
@@ -10571,7 +10572,7 @@ enum Alignment {
     Evil,
 }
 
-impl Deref for Character { // impl Deref for Character. Now we can do any integer math we want!
+impl Deref for Character { // 給 Character 實作 Deref. 現在我們可以任意做整數計算!
     type Target = i8;
 
     fn deref(&self) -> &Self::Target {
@@ -10582,38 +10583,38 @@ impl Deref for Character { // impl Deref for Character. Now we can do any intege
 
 
 fn main() {
-    let billy = Character::new("Billy".to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good); // Create two characters, billy and brandy
+    let billy = Character::new("Billy".to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good); // 建立兩個角色, billy 和 brandy
     let brandy = Character::new("Brandy".to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good);
 
-    let mut hit_points_vec = vec![]; // Put our hit points data in here
-    hit_points_vec.push(*billy);     // Push *billy?
-    hit_points_vec.push(*brandy);    // Push *brandy?
+    let mut hit_points_vec = vec![]; // 把我們的生命值資料放在這裡
+    hit_points_vec.push(*billy);     // 推入 *billy?
+    hit_points_vec.push(*brandy);    // 推入 *brandy?
 
     println!("{:?}", hit_points_vec);
 }
 ```
 
-This just prints `[5, 5]`. Our code is now very strange for someone to read. We can read `Deref` just above `main()` and figure out that `*billy` means `i8`, but what if there was a lot of code? Maybe our code is 2000 lines long, and suddenly we have to figure out why we are `.push()`ing `*billy`. `Character` is certainly more than just a smart pointer for `i8`.
+印出 `[5, 5]`。我們的程式碼現在讓人讀起來感覺非常奇怪。我們可以讀懂在 `main()` 上面的 `Deref`，然後弄清楚 `*billy` 的意思是 `i8`，但是如果有很多程式碼呢？可能我們的程式碼長 2000 行，並且突然之間我們要弄清楚為什麼要 `.push()` `*billy`。`Character` 當然不僅僅是 `i8` 的智慧指標。
 
-Of course, it is not illegal to write `hit_points_vec.push(*billy)`, but it makes the code look very strange. Probably a simple `.get_hp()` method would be much better, or another struct that holds the characters. Then you could iterate through and push the `hit_points` for each one. `Deref` gives a lot of power but it's good to make sure that the code is logical.
+當然寫 `hit_points_vec.push(*billy)` 並不違法，但這讓程式碼看起來非常奇怪。也許簡單的 `.get_hp()` 方法會好得多，或者另一個存放角色的結構體。然後你可以疊代並推入每個角色的 `hit_points`。`Deref` 雖然提供了強大的力量，但最好確保程式碼的邏輯性。
 
 
 
-## Crates and modules
+## Crates 和模組
 
-Every time you write code in Rust, you are writing it in a `crate`. A `crate` is the file, or files, that go together for your code. Inside the file you write you can also make a `mod`. A `mod` is a space for functions, structs, etc. and is used for a few reasons:
+每次你用 Rust 寫程式碼時，你都是寫在 `crate` 裡面。`crate` 是一或多個檔案，把你的程式碼組織在一起。在你寫的檔案裡面，你也可以做出 `mod`。`mod`(module，模組)是存放函式、結構體等等的空間，因為這些原因而被使用：
 
-- Building your code: it helps you think about the general structure of your code. This can be important as your code gets larger and larger.
-- Reading your code: people can understand your code more easily. For example, the name `std::collections::HashMap` tells you that it's in `std` inside the module `collections`. This gives you a hint that maybe there are more collection types inside `collections` that you can try.
-- Privacy: everything starts out as private. That lets you keep users from using functions directly.
+- 構建你的程式碼：幫助你思考程式碼的一般結構。當你的程式碼愈來愈大時，這會愈重要。
+- 閱讀你的程式碼：人們可以更容易理解你的程式碼。例如，`std::collections::HashMap` 這個名字告訴你，它是在 `std` 的 `collections` 模組裡面。這給了你提示，也許 `collections` 裡面還有更多的集合型別可以讓你嘗試。
+- 隱私權：所有的東西一開始都是私有的(private)。這樣可以讓你避免使用者直接使用函式。
 
-To make a `mod`, just write `mod` and start a code block with `{}`. We will make a mod called `print_things` that has some printing-related functions.
+要做出 `mod`，只需要寫 `mod`，然後用 `{}` 開始程式碼塊。我們將做出名為 `print_things` 的模組，裡面有一些列印相關的功能。
 
 ```rust
 mod print_things {
     use std::fmt::Display;
 
-    fn prints_one_thing<T: Display>(input: T) { // Print anything that implements Display
+    fn prints_one_thing<T: Display>(input: T) { // 印出實作 Display 的任何東西
         println!("{}", input)
     }
 }
@@ -10621,7 +10622,7 @@ mod print_things {
 fn main() {}
 ```
 
-You can see that we wrote `use std::fmt::Display;` inside `print_things`, because it is a separate space. If you wrote `use std::fmt::Display;` inside `main()` it wouldn't help. Also, we can't call it from `main()` right now. Without the `pub` keyword in front of `fn` it will stay private. Let's try to call it without `pub`. Here's one way to write it:
+你可以看到，我們把 `use std::fmt::Display;` 寫在 `print_things` 裡面，因為它是獨立分開的空間。如果你把 `use std::fmt::Display;` 寫在 `main()` 裡面，就沒有用了。而且我們現在也不能從 `main()` 裡面呼叫。在 `fn` 前面沒有 `pub` 這個關鍵字時，它會保持為私有的。讓我們試著在沒有 `pub` 的情況下呼叫它。這裡是其中一種寫法：
 
 ```rust
 // 🚧
@@ -10630,7 +10631,7 @@ fn main() {
 }
 ```
 
-`crate` means "inside this project", but for our simple example it's the same as "inside this file". Inside that is the mod `print_things`, then finally the `prints_one_thing()` function. You can write that every time, or you can write `use` to import it. Now we can see the error that says that it's private:
+`crate` 的意思是"在這個專案(project)裡"，但對於我們的簡單範例來說，它和"在這個檔案裡面"是一樣的。在那裡面是 `print_things` 這個模組，最後是 `prints_one_thing()` 函式。你可以每次都這樣寫，也可以寫 `use` 來匯入。現在我們可以看到錯誤說它是私有的：
 
 ```rust
 // ⚠️
@@ -10650,7 +10651,7 @@ fn main() {
 }
 ```
 
-Here's the error:
+這裡是錯誤訊息：
 
 ```text
 error[E0603]: function `prints_one_thing` is private
@@ -10665,9 +10666,9 @@ note: the function `prints_one_thing` is defined here
 4  |     fn prints_one_thing<T: Display>(input: T) {
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
-It's easy to understand that function `prints_one_thing` is private. It also shows us with `src\main.rs:4:5` where to find the function. This is helpful because you can write `mod`s not just in one file, but over a lot of files as well.
+`print_one_thing` 是私有的函式很容易理解。它還用 `src\main.rs:4:5` 告訴我們在哪裡可以找到這個函式。這很有幫助，因為你不僅可以在一個檔案中寫 `mod`，還能在很多檔案中寫 `mod`。
 
-Now we just write `pub fn` instead of `fn` and everything works.
+現在我們只要寫 `pub fn` 而不是 `fn`，一切就可以執行了。
 
 ```rust
 mod print_things {
@@ -10686,40 +10687,40 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 6
 Trying to print a string...
 ```
 
-How about `pub` for a struct, enum, trait, or module? `pub` works like this for them:
+`pub` 對結構體、列舉、特徵或模組有什麼作用？`pub` 對它們來說用起來像這樣：
 
-- `pub` for a struct: it makes the struct public, but the items are not public. To make an item public, you have to write `pub` for each one too.
-- `pub` for an enum or trait: everything becomes public. This makes sense because traits are about giving the same behaviour to something. And enums are about choosing between items, and you need to see them all to choose them.
-- `pub` for a module: a top level module will be `pub` because if it isn't pub then nobody can touch anything in it at all. But modules inside modules need `pub` to be public.
+- `pub` 對於結構體：它使結構體公開，但裡面的成員不是公開的。要想讓成員公開，你也要為每個成員分別寫 `pub`。
+- `pub` 對於列舉或特徵：所有的東西都變成了公開的。這是合理的，因為特徵是關於賦予事物相同的行為。而列舉是關於值之間的選擇，而且你需要看到所有的列舉值才能做選擇。
+- `pub` 對於模組來說：頂層的模組會是 `pub` 的，因為如果它不是那就沒有人可以使用裡面的任何東西。但是模組裡面的模組需要使用 `pub` 才能成為公開的。
 
-So let's put a struct named `Billy` inside `print_things`. This struct will be almost all public, but not quite. The struct is public so it will say `pub struct Billy`. Inside it will have a `name` and `times_to_print`. `name` will not be public, because we only want the user to create structs named `"Billy".to_string()`. But the user can select the number of times to print, so that will be public. It looks like this:
+那讓我們在 `print_things` 裡面放個名為 `Billy` 的結構體。這個結構體幾乎全部會是公開的，但也不盡然。這個結構體是公開的，所以它寫做：`pub struct Billy`。裡面將會有 `name` 和 `times_to_print`。`name` 不會是公開的，因為我們只想讓使用者建立命名為 `"Billy".to_string()` 的結構體。但是使用者可以選擇印出的次數，所以那將會是公開的。它看起來像這樣：
 
 ```rust
 mod print_things {
     use std::fmt::{Display, Debug};
 
     #[derive(Debug)]
-    pub struct Billy { // Billy is public
-        name: String, // but name is private.
+    pub struct Billy { // Billy 是公開的
+        name: String, // 但 name 是私有的.
         pub times_to_print: u32,
     }
 
     impl Billy {
-        pub fn new(times_to_print: u32) -> Self { // That means the user needs to use new to create a Billy. The user can only change the number of times_to_print
+        pub fn new(times_to_print: u32) -> Self { // 這表示使用者需要去用 new 來建立 Billy. 使用者只能改變 times_to_print 的次數
             Self {
-                name: "Billy".to_string(), // We choose the name - the user can't
+                name: "Billy".to_string(), // 我們選擇的名字 - 使用者不能選
                 times_to_print,
             }
         }
 
-        pub fn print_billy(&self) { // This function prints a Billy
+        pub fn print_billy(&self) { // 這個函式印出 Billy
             for _ in 0..self.times_to_print {
                 println!("{:?}", self.name);
             }
@@ -10732,14 +10733,14 @@ mod print_things {
 }
 
 fn main() {
-    use crate::print_things::*; // Now we use *. This imports everything from print_things
+    use crate::print_things::*; // 現在我們使用 *. 這會匯入所有來自 print_things 的東西
 
     let my_billy = Billy::new(3);
     my_billy.print_billy();
 }
 ```
 
-This will print:
+印出：
 
 ```text
 "Billy"
@@ -10747,26 +10748,25 @@ This will print:
 "Billy"
 ```
 
-By the way, the `*` to import everything is called the "glob operator". Glob means "global", so it means everything.
+對了，匯入一切的 `*` 叫做"glob 運算子"。Glob 的意思是"全域性(global)"，所以它意味著一切事物。
 
-Inside a `mod` you can create other mods. A child mod (a mod inside of a mod) can always use anything inside a parent mod. You can see this in the next example where we have a `mod city` inside a `mod province` inside a `mod country`.
+在 `mod` 裡面你可以建立其他模組。一個子模組(模組裡的模組)總是可以使用上層模組內部的任何東西。你可以在下一個範例中看到這一點，在那裡我們會有個在 `mod country` 裡面的 `mod province` 裡面的 `mod city`。
 
-You can think of the structure like this: even if you are in a country, you might not be in a province. And even if you are in a province, you might not be in a city. But if you are in a city, you are in its province and you are in its country.
-
+你可以把這個結構想成這樣：即使你在一個國家，你可能不在一個省。而即使你在一個省，你也可能不在一個城市。但如果你在一個城市，你就肯定在這個城市的省份和國家裡。
 
 ```rust
-mod country { // The main mod doesn't need pub
-    fn print_country(country: &str) { // Note: this function isn't public
+mod country { // 頂層模組不需要寫 pub
+    fn print_country(country: &str) { // 注意: 這個函式不是公開的
         println!("We are in the country of {}", country);
     }
-    pub mod province { // Make this mod public
+    pub mod province { // 讓這個模組是公開的
 
-        fn print_province(province: &str) { // Note: this function isn't public
+        fn print_province(province: &str) { // 注意: 這個函式不是公開的
             println!("in the province of {}", province);
         }
 
-        pub mod city { // Make this mod public
-            pub fn print_city(country: &str, province: &str, city: &str) {  // This function is public though
+        pub mod city { // 讓這個模組是公開的
+            pub fn print_city(country: &str, province: &str, city: &str) {  // 然而這個函式是公開的
                 crate::country::print_country(country);
                 crate::country::province::print_province(province);
                 println!("in the city of {}", city);
@@ -10780,9 +10780,9 @@ fn main() {
 }
 ```
 
-The interesting part is that `print_city` can access `print_province` and `print_country`. That's because `mod city` is inside the other mods. It doesn't need `pub` in front of `print_province` to use it. And that makes sense: a city doesn't need to do anything to be inside a province and inside a country.
+有趣的是，`print_city` 可以存取 `print_province` 和 `print_country`。這是因為 `mod city` 在其他模組裡面。它不需要在 `print_province` 前面加上 `pub` 之後才能使用。這也合理：城市不需要做什麼，它本來就在一個省裡，在一個國家裡。
 
-You probably noticed that `crate::country::province::print_province(province);` is very long. When we are inside a module we can use `super` to bring in items from above. Actually the word super itself means "above", like in "superior". In our example we only used the function once, but if you use it more then it is a good idea to import. It can also be a good idea if it makes your code easier to read, even if you only use the function once. The code is almost the same now, but a bit easier to read:
+你可能有注意到，`crate::country::province::print_province(province);` 非常長。當我們在模組裡面的時候，我們可以用 `super` 從上層模組存取成員。其實 super 這個字本身就是"上面(above)"的意思，比如"上級(superior)"。在我們的簵例中，我們只用了函式一次，但是如果你用的比較多的話，那麼最好是匯入它。如果它能讓你的程式碼更容易閱讀，那也是個好主意，即使你只用了函式一次。程式碼現在幾乎是一樣的，但更容易閱讀一些：
 
 ```rust
 mod country {
@@ -10795,8 +10795,8 @@ mod country {
         }
 
         pub mod city {
-            use super::super::*; // use everything in "above above": that means mod country
-            use super::*;        // use everything in "above": that means mod province
+            use super::super::*; // 使用 "上面的上面" 的一切: 那表示 country 模組
+            use super::*;        // 使用 "上面" 的一切: 那表示 province 模組
 
             pub fn print_city(country: &str, province: &str, city: &str) {
                 print_country(country);
@@ -10808,20 +10808,20 @@ mod country {
 }
 
 fn main() {
-    use crate::country::province::city::print_city; // bring in the function
+    use crate::country::province::city::print_city; // 帶入函式使用
 
     print_city("Canada", "New Brunswick", "Moncton");
-    print_city("Korea", "Gyeonggi-do", "Gwangju"); // Now it's less work to use it again
+    print_city("Korea", "Gyeonggi-do", "Gwangju"); // 現在再用一次也沒負擔
 }
 ```
 
 
 
-## Testing
+## 測試
 
-Testing is a good subject to learn now that we understand modules. Testing your code is very easy in Rust, because you can write tests right next to your code.
+在我們瞭解模組後，測試正是現在學習的好主題。在 Rust 中測試你的程式碼是非常容易的，因為你可以立刻在你的程式碼旁寫測試。
 
-The easiest way to start testing is to add `#[test]` above a function. Here is a simple one:
+開始測試最簡單的方法就是在函式上面加上 `#[test]`。這裡是個簡單的範例：
 
 ```rust
 #[test]
@@ -10830,9 +10830,9 @@ fn two_is_two() {
 }
 ```
 
-But if you try to run it in the Playground, it gives an error: ``error[E0601]: `main` function not found in crate `playground``. That's because you don't use _Run_ for tests, you use _Test_. Also, you don't use a `main()` function for tests - they go outside. To run this in the Playground, click on `···` next to _RUN_ and change it to _Test_. Now if you click on it, it will run the test. (If you have Rust installed already, you will type `cargo test` to do this)
+但如果你試圖在 Playground 中執行它，它會給出錯誤：``error[E0601]: `main` function not found in crate `playground``。這是因為你不使用 _Run_ 來進行測試，你要使用的是 _Test_。另外，你不使用 `main()` 函式進行測試 - 它們在外面執行。要在 Playground 中執行這個，點選 _RUN_ 旁邊的 `···`，然後把它改為 _Test_。現在如果你點選它，它將會跑測試。(如果你已經安裝了 Rust，你將輸入 `cargo test` 來做測試)
 
-Here is the output:
+這裡是輸出內容：
 
 ```text
 running 1 test
@@ -10841,7 +10841,7 @@ test two_is_two ... ok
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-Let's change `assert_eq!(2, 2)` to `assert_eq!(2, 3)` and see what we get. When a test fails you get a lot more information:
+讓我們把 `assert_eq!(2, 2)` 改成 `assert_eq!(2, 3)`，看看會有什麼結果。當測試失敗時，你會得到更多的資訊：
 
 ```text
 running 1 test
@@ -10862,9 +10862,9 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-`assert_eq!(left, right)` is the main way to test a function in Rust. If it doesn't work, it will show the different values: left has 2, but right has 3.
+`assert_eq!(left, right)` 是 Rust 中測試函式的主要方法。如果它不成功，它將會顯示值的不同：左邊有 2，但右邊有 3。
 
-What does `RUST_BACKTRACE=1` mean? This is a setting on your computer to give a lot more information about errors. Luckily the Playground has it too: click on `···` next to `STABLE` and set backtrace to `ENABLED`. If you do that, it will give you *a lot* of information:
+`RUST_BACKTRACE=1` 是什麼意思？這是電腦上的設定，可以提供更多關於錯誤的資訊。幸好 Playground 也有：點選 `STABLE` 旁邊的 `···`，然後設定 Backtrace 為 `ENABLED`。如果你這樣做，它會給你 *很多* 的資訊：
 
 ```text
 running 1 test
@@ -10930,7 +10930,7 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-You don't need to use a backtrace unless you really can't find where the problem is. But luckily you don't need to understand it all either.  If you keep reading, you will eventually see line 13 where it says `playground` - that's where it talks about your code. Everything else is about what Rust is doing in other libraries to run your program. But these two lines show you that it looked at line 2 and line 3 of playground, which is a hint to check there. Here's that part again:
+除非你真的找不到問題所在，否則你不需要使用回溯(Backtrace)。但幸運的是你也不需要全部理解。如果你繼續閱讀，你最終會看到第 13 行，那裡寫著 `playground`──那是它提到的你的程式碼的位置。其它的一切都是關於 Rust 為了執行你的程式,在其他函式庫中所做的事情。但是這兩行告訴你，它看的是 playground 的第 2 行和第 3 行，這是個要檢查那裡的提示。這裡重複那個部分：
 
 ```text
   13: playground::two_is_two
@@ -10939,7 +10939,7 @@ You don't need to use a backtrace unless you really can't find where the problem
              at src/lib.rs:2
 ```
 
-Edit: Rust improved its backtrace messages in early 2021 to only show the most meaningful information. Now it's much easier to read:
+編輯：Rust 在 2021 年初改進了它的回溯訊息，只顯示最有意義的資訊。現在更容易閱讀了：
 
 ```text
 failures:
@@ -10970,7 +10970,7 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
 ```
 
-Now let's turn backtrace off again and return to regular tests. Now we'll write some other functions, and use test functions to test them. Here are a few:
+現在讓我們再把回溯關閉，回到常規的測試。現在我們將會寫一些其他函式，並使用測試函式來測試它們。這裡有幾個範例：
 
 ```rust
 fn return_two() -> i8 {
@@ -10990,7 +10990,7 @@ fn it_returns_six() {
 }
 ```
 
-Now it runs both:
+現在都能執行成功：
 
 ```text
 running 2 tests
@@ -11000,9 +11000,9 @@ test it_returns_six ... ok
 test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-That's not too hard.
+這不是太難。
 
-Usually you will want to put your tests in their own module. To do this, use the same `mod` keyword and add `#[cfg(test)]` above it (remember: `cfg` means "configure). You also want to continue to write `#[test]` above each test. This is because later on when you install Rust, you can do more complicated testing. You will be able to run one test, or all of them, or run a few. Also don't forget to write `use super::*;` because the test module needs to use the functions above it. Now it will look like this:
+通常你會想把你的測試放在它們自己的模組中。要做到這一點，需要使用相同的 `mod` 關鍵字，並在它前面加上 `#[cfg(test)]`(記住：`cfg` 的意思是"組態")。你還想要繼續在每一個測試前面寫 `#[test]`。這是因為以後當你安裝 Rust 時，你可以做更復雜的測試。你將可以執行一個測試、全部測試、或者其中一些測試。另外別忘了要寫 `use super::*;`，因為測試模組需要使用它上層的函式。現在它看起來會像這樣：
 
 ```rust
 fn return_two() -> i8 {
@@ -11027,13 +11027,13 @@ mod tests {
 }
 ```
 
-### Test-driven development
+### 測試驅動開發
 
-You might see the words "test-driven development" when reading about Rust or another language. It's one way to write programs, and some people like it while others prefer something else. "Test-driven development" means "writing tests first, then writing the code". When you do this, you will have a lot of tests for everything you want your code to do. Then you start writing the code, and run the tests to see if you did it right. Then the tests are always there to show you if something goes wrong when you add to and rewrite your code. This is pretty easy in Rust because the compiler gives a lot of information about what to fix. Let's write a small example of test-driven development and see what it looks like.
+在閱讀 Rust 或其他語言時，你可能會看到"測試驅動開發(Test-driven development)"這個詞。這是編寫程式的一種方式，有些人喜歡它，而有些人則喜歡其他的方式。"測試驅動開發"的意思是"先寫測試，再寫程式碼"。當你這樣做的時候，你將會有很多測試程式碼給所有你想要你的程式碼去做的事情。然後你才開始寫程式碼，並執行測試來看你是否做對了。接著當你加入和重寫你的程式碼時，測試程式碼會一直在那裡告訴你是否有什麼東西出了問題。這在 Rust 中相當容易，因為編譯器給出了很多關於待修復內容的資訊。讓我們寫個測試驅動開發的小範例，來看看它像什麼樣子。
 
-Let's imagine a calculator that takes user input. It can add (+) and it can subtract (-). If the user writes "5 + 6" it should return 11, if the user writes "5 + 6 - 7" it should return 4, and so on. So we'll start with test functions. You can also see that function names in tests are usually quite long. That is because you might run a lot of tests, and you want to understand which tests have failed.
+讓我們想像可以接受使用者輸入的計算機。它可以加 (+)，也可以減 (-)。如果使用者寫 "5 + 6"，它應該回傳 11，如果使用者寫 "5 + 6 - 7"，它應該回傳 4，以此類推。所以我們將先從測試函式開始。你也可以看到，測試中的函式名通常都相當長。這是因為你可能會執行很多的測試，並且你想瞭解哪些測試失敗了。
 
-We'll imagine that a single function called `math()` will do everything. It will return an `i32` (we won't use floats). Because it needs to return something, we'll just return `6` every time. Then we will write three test functions. They will all fail, of course. Now the code looks like this:
+我們將想像有個名為 `math()` 的單獨函式會做完所有工作。它將回傳 `i32`(我們將不會使用浮點數)。因為它需要回傳一些東西，我們每次都將只會回傳 `6`。然後我們將寫三個測試函式。當然它們都會失敗。現在的程式碼像這樣：
 
 ```rust
 fn math(input: &str) -> i32 {
@@ -11059,7 +11059,7 @@ mod tests {
 }
 ```
 
-It gives us this information:
+它給我們這些資訊：
 
 ```text
 running 3 tests
@@ -11068,22 +11068,22 @@ test tests::one_minus_two_is_minus_one ... FAILED
 test tests::one_plus_one_is_two ... FAILED
 ```
 
-and all the information about ``thread 'tests::one_plus_one_is_two' panicked at 'assertion failed: `(left == right)` ``. We don't need to print it all here.
+以及關於 ``thread 'tests::one_plus_one_is_two' panicked at 'assertion failed: `(left == right)` `` 的所有資訊。我們不需要在這裡全部印出來。
 
-Now to think about how to make the calculator. We will accept any number, and the symbols `+-`. We will allow spaces, but nothing else. So let's start with a `const` that contains all the values. Then we will use `.chars()` to iterate by character, and `.all()` to make sure they are all inside.
+現在來思考如何做出計算機。我們將接受任何數字，以及 `+-` 符號。我們將允許空格，但不允許其他任何東西。所以讓我們從帶有 `const` 並包含以上所有字元的字串開始。然後我們將使用 `.chars()` 按字元進行疊代，並使用 `.all()` 確保它們都在裡面。
 
-Then we will add a test that should panic. To do that, add `#[should_panic]` attribute: now if it panics the test will succeed.
+然後，我們將新增一個會恐慌的測試。要做到這一點，要加上 `#[should_panic]` 屬性：現在如果它恐慌了測試就會成功。
 
-Now the code looks like this:
+現在程式碼看起來像這樣：
 
 ```rust
-const OKAY_CHARACTERS: &str = "1234567890+- "; // Don't forget the space at the end
+const OKAY_CHARACTERS: &str = "1234567890+- "; // 別忘記結尾的空白
 
 fn math(input: &str) -> i32 {
     if !input.chars().all(|character| OKAY_CHARACTERS.contains(character)) {
         panic!("Please only input numbers, +-, or spaces");
     }
-    6 // we still return a 6 for now
+    6 // 現在我們仍然還是回傳 6
 }
 
 #[cfg(test)]
@@ -11104,14 +11104,14 @@ mod tests {
     }
 
     #[test]
-    #[should_panic]  // Here is our new test - it should panic
+    #[should_panic]  // 這裡是我們的新測試 - 它應該要恐慌
     fn panics_when_characters_not_right() {
         math("7 + seven");
     }
 }
 ```
 
-Now when we run the tests we get this result:
+現在當我們執行測試時，我們得到這樣的結果：
 
 ```text
 running 4 tests
@@ -11121,19 +11121,19 @@ test tests::panics_when_characters_not_right ... ok
 test tests::one_plus_one_is_two ... FAILED
 ```
 
-One succeeded! Our `math()` function will only accept good input now.
+有一個成功了！我們的 `math()` 函式現在只能接受設定好的輸入了。
 
 
-The next step is to write the actual calculator. This is the interesting part about having tests first: the actual code starts much later. First we will put the logic together for the calculator. We want the following:
+下一步是編寫實際的計算機。這就是先有測試的有趣之處：實際的程式碼要晚很多才開始出現。首先我們將把計算機的邏輯放在一起。我們要做到以下幾點：
 
-- All empty spaces should be removed. This is easy with `.filter()`
-- The input should turn into a `Vec` with all the inputs. `+` doesn't need to be an input, but when the program sees `+` it should know that the number is done. For example, the input `11+1` should do something like this: 1) See `1`, push it into an empty string. 2) See another 1, push it into the string (it is now "11"). 3) See a `+`, know the number has ended. It will push the string into the vec, then clear the string.
-- The program must count the number of `-`. An odd number (1, 3, 5...) will mean subtract, an even number (2, 4, 6...) will mean add. So "1--9" should give 10, not -8.
-- The program should remove anything after the last number. `5+5+++++----` is made out of all the characters in `OKAY_CHARACTERS`, but it should turn to `5+5`. This is easy with `.trim_end_matches()`, where you remove anything that matches at the end of a `&str`.
+- 所有的空白都應該被移除。這很容易用 `.filter()` 實作。
+- 所有輸入容應該變成 `Vec` 中的元素。`+` 不需要成為輸入，但是當程式看到 `+` 時，應該知道數字已經完成處理了。例如，輸入 `11+1` 應該像這樣做：1) 看到 `1`，把它推到一個空字串中。1) 看到另一個 1，把它推到字串中(現在是 "11")。3) 看到 `+`，知道數字已經結束，把字串推到向量裡，然後清空字串。
+- 程式必須計算出 `-` 的數量。奇數(1、3、5...)表示減法，偶數(2、4、6...)表示加法。所以 "1--9" 應該是 10，而不是 -8。
+- 程式應該移除最後一個數字後面的任何東西。`5+5+++++----` 都是由出現在 `OKAY_CHARACTERS` 中的所有字元組成，但它應該清理變成 `5+5`。這很容易用 `.trim_end_matches()` 做到，它能讓你把符合 `&str` 結尾的東西都去掉。
 
-(By the way, `.trim_end_matches()` and `.trim_start_matches()` used to be `trim_right_matches()` and `trim_left_matches()`. But then people noticed that some languages go from right to left (Persian, Hebrew, etc.) so right and left were wrong. You might still see the older names in some code but they are the same thing.)
+> 順便說一下，`.trim_end_matches()` 和 `.trim_start_matches()` 曾經是 `trim_right_matches()` 和 `trim_left_matches()`。但後來人們注意到有些語言是從右到左(波斯語、希伯來語等)，所以左右都是錯的。你可能還能在一些程式碼中看到舊名字，但它們是一樣的。
 
-First we just want to pass all the tests. After we pass the tests, we can "refactor". Refactor means to make code better, usually through things like structs and enums and methods. Here is our code to make the tests pass:
+首先我們只想通過所有的測試。通過測試後，我們就可以"重構(Refactor)"了。重構的意思是讓程式碼變得更好，通常是透過像結構體、列舉和方法等方式。這裡是我們使測試通過的程式碼：
 
 ```rust
 const OKAY_CHARACTERS: &str = "1234567890+- ";
@@ -11145,64 +11145,64 @@ fn math(input: &str) -> i32 {
         panic!("Please only input numbers, +-, or spaces.");
     }
 
-    let input = input.trim_end_matches(|x| "+- ".contains(x)).chars().filter(|x| *x != ' ').collect::<String>(); // Remove + and - at the end, and all spaces
-    let mut result_vec = vec![]; // Results go in here
-    let mut push_string = String::new(); // This is the string we push in every time. We will keep reusing it in the loop.
+    let input = input.trim_end_matches(|x| "+- ".contains(x)).chars().filter(|x| *x != ' ').collect::<String>(); // 移除結尾的 + 和 -, 和全部空白
+    let mut result_vec = vec![]; // Results 放在這裡
+    let mut push_string = String::new(); // 這是我們每次推送資料的字串. 我們將會在迴圈裡持續重複使用它.
     for character in input.chars() {
         match character {
             '+' => {
-                if !push_string.is_empty() { // If the string is empty, we don't want to push "" into result_vec
-                    result_vec.push(push_string.clone()); // But if it's not empty, it will be a number. Push it into the vec
-                    push_string.clear(); // Then clear the string
+                if !push_string.is_empty() { // 如果字串是空的, 我們不想把 "" 推到 result_vec 裡
+                    result_vec.push(push_string.clone()); // 但如果不是空的, 它就會是數字. 把它推到向量裡
+                    push_string.clear(); // 接著清除字串
                 }
             },
-            '-' => { // If we get a -,
-                if push_string.contains('-') || push_string.is_empty() { // check to see if it's empty or has a -
-                    push_string.push(character) // if so, then push it in
-                } else { // otherwise, it will contain a number
-                result_vec.push(push_string.clone()); // so push the number into result_vec, clear it and then push -
+            '-' => { // 如果我們得到的是 -,
+                if push_string.contains('-') || push_string.is_empty() { // 檢查看看是否為空或有 -
+                    push_string.push(character) // 如果是如此, 那麼把它推到字串裡
+                } else { // 不然, 它將會包含數字
+                result_vec.push(push_string.clone()); // 那麼把數字推到 result_vec 裡, 清除字串後再把 - 推進去
                 push_string.clear();
                 push_string.push(character);
                 }
             },
-            number => { // number here means "anything else that matches". We selected the name here
-                if push_string.contains('-') { // We might have some - characters to push in first
+            number => { // number 在這裡的意思是 "其它任何匹配到的東西". 也是我們所選擇的名字
+                if push_string.contains('-') { // 我們可能有一些 - 字元要先推進去
                     result_vec.push(push_string.clone());
                     push_string.clear();
                     push_string.push(number);
-                } else { // But if we don't, that means we can push the number in
+                } else { // 但如果沒有, 那就表示我們可以把數字推進去
                     push_string.push(number);
                 }
             },
         }
     }
-    result_vec.push(push_string); // Push one last time after the loop is over. Don't need to .clone() because we don't use it anymore
+    result_vec.push(push_string); // 迴圈結束後把字串推進去. 沒有 .clone() 的必要因為我們不會再使用它了
 
-    let mut total = 0; // Now it's time to do math. Start with a total
-    let mut adds = true; // true = add, false = subtract
+    let mut total = 0; // 現在是時候算數學了. 從總合開始
+    let mut adds = true; // true = 加法, false = 減法
     let mut math_iter = result_vec.into_iter();
-    while let Some(entry) = math_iter.next() { // Iter through the items
-        if entry.contains('-') { // If it has a - character, check if it's even or odd
+    while let Some(entry) = math_iter.next() { // 疊代元素過去
+        if entry.contains('-') { // 如果有 - 字元, 檢查奇數或偶數
             if entry.chars().count() % 2 == 1 {
                 adds = match adds {
                     true => false,
                     false => true
                 };
-                continue; // Go to the next item
+                continue; // 繼續處理下一個元素
             } else {
                 continue;
             }
         }
         if adds == true {
-            total += entry.parse::<i32>().unwrap(); // If there is no '-', it must be a number. So we are safe to unwrap
+            total += entry.parse::<i32>().unwrap(); // 如果沒有 '-', 肯定是數字. 那我們解包很安全
         } else {
             total -= entry.parse::<i32>().unwrap();
-            adds = true;  // After subtracting, reset adds to true.
+            adds = true;  // 減完後, 重設 adds 為 true.
         }
     }
-    total // Finally, return the total
+    total // 終於要回傳總合
 }
-   /// We'll add a few more tests just to make sure
+   /// 我們將多加上一些測試來確認行為
 
 #[cfg(test)]
 mod tests {
@@ -11222,11 +11222,11 @@ mod tests {
     }
     #[test]
     fn nine_plus_nine_minus_nine_minus_nine_is_zero() {
-        assert_eq!(math("9+9-9-9"), 0); // This is a new test
+        assert_eq!(math("9+9-9-9"), 0); // 這是新測試
     }
     #[test]
     fn eight_minus_nine_plus_nine_is_eight_even_with_characters_on_the_end() {
-        assert_eq!(math("8  - 9     +9-----+++++"), 8); // This is a new test
+        assert_eq!(math("8  - 9     +9-----+++++"), 8); // 這是新測試
     }
     #[test]
     #[should_panic]
@@ -11236,7 +11236,7 @@ mod tests {
 }
 ```
 
-And now the tests pass!
+現在測試都通過了！
 
 ```text
 running 6 tests
@@ -11250,18 +11250,18 @@ test tests::panics_when_characters_not_right ... ok
 test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-You can see that there is a back and forth process in test-driven development. It's something like this:
+你可以看到，在測試驅動的開發中有來回的過程。它是像這樣的：
 
-- First you write all the tests you can think of.
-- Then you start writing the code.
-- As you write the code, you get ideas for other tests.
-- You add the tests, and your tests grow as you go. The more tests you have, the more times your code gets checked.
+- 首先你要寫出所有你能想得到的測試。
+- 然後你開始寫程式碼。
+- 當你寫程式碼的時候，你會得到其他測試的想法。
+- 你新增測試，你的測試隨著你的進展而成長。你有的測試越多，你的程式碼被檢查的次數就越多。
 
-Of course, tests don't check everything and it is wrong to think that "passing all tests = the code is perfect". But tests are great for when you change your code. If you change your code later on and run the tests, if one of them doesn't work you will know what to fix.
+當然測試並不能檢查所有的東西，認為"通過所有測試 = 完美的程式碼"是錯誤的。但是測試對於修改程式碼是很棒的。如果你以後修改了程式碼並執行測試，如果其中有一個測試不成功，你就會知道什麼該修復。
 
-Now we can rewrite (refactor) the code a bit. One good way to start is with clippy. If you installed Rust then you can type `cargo clippy`, and if you're using the Playground then click on `TOOLS` and select Clippy. Clippy will look at your code and give you tips to make it simpler. Our code doesn't have any mistakes, but it could be better.
+現在我們可以重寫（重構）一點程式碼。一個好方式是用 Clippy 開始。如果你安裝了 Rust，那麼你可以輸入 `cargo clippy`。如果你使用的是 Playground，那麼點選 `TOOLS`，選擇 Clippy。Clippy 會檢閱你的程式碼，並給出能讓你的程式碼更精簡的提示。我們的程式碼沒有任何錯誤，但它能更好。
 
-Clippy tells us two things:
+Clippy 告訴我們兩件事：
 
 ```text
 warning: this loop could be written as a `for` loop
@@ -11283,9 +11283,9 @@ warning: equality checks against true are unnecessary
    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#bool_comparison
 ```
 
-This is true: `for entry in math_iter` is much simpler than `while let Some(entry) = math_iter.next()`. And a `for` loop is actually an iterator so we don't have any reason to write `.iter()`. Thanks, clippy! And also we didn't need to make `math_iter`: we can just write `for entry in result_vec`.
+這是真的：`for entry in math_iter` 比 `while let Some(entry) = math_iter.next()` 簡單得多。而 `for` 迴圈實際上是個疊代器，所以我們沒有任何理由要寫 `.iter()`。謝謝 clippy！而且我們也不需要做 `math_iter`：我們可以只要寫 `for entry in result_vec`。
 
-Now we'll start some real refactoring. Instead of separate variables, we will create a `Calculator` struct. This will have all the variables we used together. We will change two names to make it more clear. `result_vec` will become `results`, and `push_string` will become `current_input` (current means "now"). And so far it only has one method: new.
+現在我們將開始做些真正的重構。我們將建立 `Calculator` 結構體，而不是單獨的變數。這將擁有我們使用的所有變數。我們將改變兩個名字來讓它更清楚。`result_vec` 將變成 `results`，`push_string` 將變成 `current_input`(currenㄙㄨ的意思是 "現在")。而到目前為止，它只有一種方法：new。
 
 ```rust
 // 🚧
@@ -11309,7 +11309,7 @@ impl Calculator {
 }
 ```
 
-Now our code is actually a bit longer, but easier to read. For example, `if adds` is now `if calculator.adds`, which is exactly like reading English. It looks like this:
+現在我們的程式碼實際上更長了一點，但也更容易讀懂。比如 `if adds` 現在是 `if calculator.adds`，這就跟讀英文完全一樣。看起來像這樣：
 
 ```rust
 #[derive(Clone)]
@@ -11426,7 +11426,7 @@ mod tests {
 }
 ```
 
-Finally we add two new methods. One is called `.clear()` and clears the `current_input()`. The other one is called `push_char()` and pushes the input onto `current_input()`. Here is our refactored code:
+最後我們增加兩個新方法。一個叫做 `.clear()`，清除 `current_input()`。另一個叫做 `push_char()`，把輸入推到 `current_input()` 上。這裡是我們重構後的程式碼：
 
 ```rust
 #[derive(Clone)]
@@ -11551,28 +11551,28 @@ mod tests {
 }
 ```
 
-This is probably good enough for now. We could write more methods but lines like `calculator.results.push(calculator.current_input.clone());` are already very clear. Refactoring is best when you can still easily read the code after you are done. You don't want to just refactor to make the code short: `clc.clr()` is much worse than `calculator.clear()`, for example.
+現在大概已經夠好了。我們可以寫更多的方法，但是很多行像是 `calculator.results.push(calculator.current_input.clone());` 已經很清楚了。重構的時機最好是在你的程式碼完成後還能輕鬆閱讀的時候。你不希望只是為了讓程式碼變短而重構：例如，`clc.clr()` 就比 `calculator.clear()` 差很多。
 
 
 
-## External crates
+## 外部 crates
 
-An external crate means "someone else's crate".
+外部 crate 的意思是"別人的 crate"。
 
-For this section you *almost* need to install Rust, but we can still use just the Playground. Now we are going to learn how to import crates that other people have written. This is important in Rust because of two reasons:
+在本章節中，你 *幾乎* 需要去安裝 Rust，但我們仍然可以只使用 Playground。現在我們將要學習如何匯入別人所寫的 crate。這在 Rust 中很重要，原因有二：
 
-- It is very easy to import other crates, and
-- The Rust standard library is quite small.
+- 匯入其他的 crate 很容易，
+- Rust 標準函式庫也相當小。
 
-That means that it is normal in Rust to bring in an external crate for a lot of basic functions. The idea is that if it is easy to use external crates, then you can choose the best one. Maybe one person will make a crate for one function, and then someone else will make a better one.
+這意味著為了很多基本功能引進外部 crate 在 Rust 中很普遍。想法是這樣，如果使用外部 crate 很容易，那你就可以選擇最好的那一個。也許某個人會為某個功能做出 crate，當然之後也會有別的人去做出更好的。
 
-In this book we will only look at the most popular crates, the crates that everyone who uses Rust knows.
+在本書中，我們只看最流行的 crate，也就是每個使用 Rust 的人都知道的那些。
 
-To begin learning external crates, we will start with the most common one: `rand`.
+要開始學習外部 Crate，我們將從最常見的開始：`rand`。
 
 ### rand
 
-Did you notice that we didn't use any random numbers yet? That's because random numbers aren't in the standard library. But there are a lot of crates that are "almost standard library" because everybody uses them. In any case, it's very easy to bring in a crate. If you have Rust on your computer, there is a file called `Cargo.toml` that has this information. A `Cargo.toml` file looks like this when you start:
+你有沒有注意到，我們還沒有使用過任何隨機數？那是因為隨機數並不在標準函式庫裡。但是有很多 crate "幾乎是函式標準庫"，因為大家都在使用它們。在任何情況下，引進 crate 是非常容易的。如果你的電腦上有安裝 Rust，就會有個叫 `Cargo.toml` 的檔案，裡面有這些資訊。`Cargo.toml` 檔在你啟動時像這樣：
 
 ```text
 [package]
@@ -11586,7 +11586,7 @@ edition = "2018"
 [dependencies]
 ```
 
-Now if you want to add the `rand` crate, search for it on `crates.io`, which is where all the crates go. That takes you to `https://crates.io/crates/rand`. And when you click on that, you can see a screen that says `Cargo.toml   rand = "0.7.3"`. All you do is add that under [dependencies] like this:
+現在，如果你想加上 `rand` crate 可以在 `crates.io` 上搜尋它，這是所有 crate 的去處。那會將你帶到 `https://crates.io/crates/rand`。當你點選那個，你可以看到畫面上寫著 `Cargo.toml   rand = "0.7.3"`。你所要做的就是在 [dependencies] 下新增像這樣的內容:
 
 ```text
 [package]
@@ -11601,9 +11601,9 @@ edition = "2018"
 rand = "0.7.3"
 ```
 
-And then Cargo will do the rest for you. Then you can start writing code like [this example code](https://docs.rs/rand/0.7.3/rand/) on the `rand` document website. To get to the documents you can click on the `docs` button in [the page on crates.io](https://crates.io/crates/rand).
+然後 Cargo 會幫你完成剩下的工作。然後你就可以在 `rand` 的文件網站上開始編寫像[本例程式碼](https://docs.rs/rand/0.7.3/rand/)這樣的程式碼。要想進入文件，你可以點選在 [crates.io 的頁面](https://crates.io/crates/rand) 中的 `docs` 按鈕。
 
-So that's enough about Cargo: we are still using just the Playground. Luckily, the Playground already has the top 100 crates installed. So you don't need to write in `Cargo.toml` yet. On the Playground you can imagine that it has a long list like this with 100 crates:
+關於 Cargo 的介紹就到這裡了：我們現在使用的還只是 Playground。幸運的是，Playground 已經安裝了前 100 個 crate。所以你還不需要寫進 `Cargo.toml`。在 Playground 上，你可以想像，它有個像這樣的長長列表，有 100 個 crate：
 
 ```text
 [dependencies]
@@ -11612,12 +11612,12 @@ some_other_crate = "0.1.0"
 another_nice_crate = "1.7"
 ```
 
-That means that to use `rand`, you can just do this.
+也就是說，如果要使用 `rand`，你可以直接這樣做:
 
 ```rust
-use rand; // This means the whole crate rand
-          // On your computer you can't just write this;
-          // you need to write in the Cargo.toml file first
+use rand; // 這是表示整個 crate rand
+          // 在你的電腦上你無法只寫這樣;
+          // 你需要先寫在 Cargo.toml 檔案裡
 
 fn main() {
     for _ in 0..5 {
@@ -11627,15 +11627,15 @@ fn main() {
 }
 ```
 
-It will print a different `u16` number every time, like `42266 52873 56528 46927 6867`.
+每次都會列印不同的 `u16` 號碼，像是 `42266 52873 56528 46927 6867`。
 
 
-The main functions in `rand` are `random` and `thread_rng` (rng means "random number generator"). And actually if you look at `random` it says: "This is simply a shortcut for `thread_rng().gen()`". So it's actually just `thread_rng` that does almost everything.
+`rand` 中的主要功能是 `random` 和 `thread_rng`(rng 的意思是"隨機數產生器")。而實際上如果你看 `random`，它說："這只是 `thread_rng().gen()` 的快捷方式"。所以其實是 `thread_rng` 基本做完了一切。
 
-Here is a simple example of numbers from 1 to 10. To get those numbers, we use `.gen_range()` between 1 and 11.
+這裡是個簡單的範例，從 1 到 10 的數字。為了得到這些數字，我們在 1 到 11 之間使用 `.gen_range()`。
 
 ```rust
-use rand::{thread_rng, Rng}; // Or just use rand::*; if we are lazy
+use rand::{thread_rng, Rng}; // 或是只用 rand::*; 如果我們有些懶散
 
 fn main() {
     let mut number_maker = thread_rng();
@@ -11645,46 +11645,46 @@ fn main() {
 }
 ```
 
-This will print something like `7 2 4 8 6`.
+會印出像 `7 2 4 8 6` 的東西。
 
-With random numbers we can do fun things like make characters for a game. We will use `rand` and some other things we know to make them. In this game our characters have six stats, and you use a d6 for them. A d6 is a cube that gives 1, 2, 3, 4, 5, or 6 when you throw it. Each character rolls a d6 three times, so each stat is between 3 and 18.
+我們可以用隨機數做一些有趣的事情，比如為遊戲做角色。我們將使用 `rand` 和其它一些我們知道的東西來做出它們。在這個遊戲中，我們的角色有六種狀態，用 d6 來表示他們。d6 是個立方體，當你投擲它時，它能給出 1、2、3、4、5 或 6。每個角色都會擲三次 d6，所以每個狀態都在 3 到 18 之間。
 
-But sometimes it can be unfair if your character has something low like a 3 or 4. If your strength is 3 you can't carry anything, for example. So there is one more method that uses a d6 four times. You roll it four times, and throw away the lowest number. So if you roll 3, 3, 1, 6 then you keep 3, 3, 6 = 12. We will make this method too so the owner of the game can decide.
+但是有時候如果你的角色狀態值有一些低，比如 3 或 4，那就不公平了。比如說你的力量是 3，你就不能背東西。所以還有一種方法是用 d6 四次。你擲四次，然後扔掉最低的數字。所以如果你擲出 3、3、1、6，那麼你保留 3、3、6 = 12。我們也會把這個方法做出來，所以遊戲的主人可以決定要不要用。
 
-Here is our simple character creator. We created a `Character` struct for the stats, and even implemented `Display` to print it the way we want.
+這是我們的簡單角色建立器。我們為狀態建立了 `Character` 結構體，甚至還實作 `Display` 來按照我們想要的方式印出。
 
 ```rust
-use rand::{thread_rng, Rng}; // Or just use rand::*; if we are lazy
-use std::fmt; // Going to impl Display for our character
+use rand::{thread_rng, Rng}; // 或是只用 rand::*; 如果我們有些懶散
+use std::fmt; // 要給我們的角色實作 Display
 
 
 struct Character {
     strength: u8,
-    dexterity: u8,    // This means "body quickness"
-    constitution: u8, // This means "health"
+    dexterity: u8,    // 這表示 "身體反應速度"
+    constitution: u8, // 這表示 "健康程度"
     intelligence: u8,
     wisdom: u8,
-    charisma: u8, // This means "popularity with people"
+    charisma: u8, // 這表示 "受人歡迎的程度"
 }
 
-fn three_die_six() -> u8 { // A "die" is the thing you throw to get the number
-    let mut generator = thread_rng(); // Create our random number generator
-    let mut stat = 0; // This is the total
+fn three_die_six() -> u8 { // "die" 是讓 你擲出去得到數字的東西
+    let mut generator = thread_rng(); // 建立我們的隨機數產生器
+    let mut stat = 0; // 這是總合
     for _ in 0..3 {
-        stat += generator.gen_range(1..=6); // Add each time
+        stat += generator.gen_range(1..=6); // 加上每次結果
     }
-    stat // Return the total
+    stat // 回傳總合
 }
 
 fn four_die_six() -> u8 {
     let mut generator = thread_rng();
-    let mut results = vec![]; // First put the numbers in a vec
+    let mut results = vec![]; // 先把數字放在向量
     for _ in 0..4 {
         results.push(generator.gen_range(1..=6));
     }
-    results.sort(); // Now a result like [4, 3, 2, 6] becomes [2, 3, 4, 6]
-    results.remove(0); // Now it would be [3, 4, 6]
-    results.iter().sum() // Return this result
+    results.sort(); // 現在像是 [4, 3, 2, 6] 的結果會變成 [2, 3, 4, 6]
+    results.remove(0); // 現在就會是 [3, 4, 6]
+    results.iter().sum() // 回傳這個結果
 }
 
 enum Dice {
@@ -11693,7 +11693,7 @@ enum Dice {
 }
 
 impl Character {
-    fn new(dice: Dice) -> Self { // true for three dice, false for four
+    fn new(dice: Dice) -> Self { // true 是三個骰子, false 則是四個
         match dice {
             Dice::Three => Self {
                 strength: three_die_six(),
@@ -11713,13 +11713,13 @@ impl Character {
             },
         }
     }
-    fn display(&self) { // We can do this because we implemented Display below
+    fn display(&self) { // 我們可以這樣做是因為我們在後面有實作 Display
         println!("{}", self);
         println!();
     }
 }
 
-impl fmt::Display for Character { // Just follow the code for in https://doc.rust-lang.org/std/fmt/trait.Display.html and change it a bit
+impl fmt::Display for Character { // 只是沿用在 https://doc.rust-lang.org/std/fmt/trait.Display.html 的範例程式碼並稍作修改
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
@@ -11750,7 +11750,7 @@ fn main() {
 }
 ```
 
-It will print something like this:
+會印出像這樣的東西：
 
 ```rust
 Your character has these stats:
@@ -11770,19 +11770,19 @@ wisdom: 16
 charisma: 10
 ```
 
-The character with four dice is usually a bit better at most things.
+有四個骰子的角色通常在大多數事情上都會好一點。
 
 
 ### rayon
 
-`rayon` is a popular crate that lets you speed up your Rust code. It's popular because it creates threads without needing things like `thread::spawn`. In other words, it is popular because it is effective but easy to write. For example:
+`rayon` 是個流行的 crate，能讓你為 Rust 程式碼加速。它受歡迎是因為它不需要像 `thread::spawn` 這樣的東西就能建立執行緒。換句話說，它受歡迎的原因是它既有效又容易編寫。比如說：
 
-- `.iter()`, `.iter_mut()`, `into_iter()` in rayon is written like this:
-- `.par_iter()`, `.par_iter_mut()`, `par_into_iter()`. So you just add `par_` and your code becomes much faster. (par means "parallel")
+- `.iter()`、`.iter_mut()`、`into_iter()` 在 rayon 中寫起來像這樣：
+- `.par_iter()`、`.par_iter_mut()`、`par_into_iter()`。所以你只需要加上 `par_`，你的程式碼就會變快很多。(par 表示"並行")
 
-Other methods are the same: `.chars()` is `.par_chars()`, and so on.
+其他方法也一樣：`.chars()` 就是 `.par_chars()`，以此類推。
 
-Here is an example of a simple piece of code that is making the computer do a lot of work:
+這裡舉例的是一段簡單的程式碼，卻能讓電腦做很多工作：
 ```rust
 fn main() {
     let mut my_vec = vec![0; 200_000];
@@ -11791,23 +11791,23 @@ fn main() {
 }
 ```
 
-It creates a vector with 200,000 items: each one is 0. Then it calls `.enumerate()` to get the index for each number, and changes the 0 to the index number. It's too long to print so we only print items 5000 to 5004. This is still very fast in Rust, but if you want you can make it faster with Rayon. The code is almost the same:
+這建立有二十萬個元素的向量：每一個都是0，然後呼叫 `.enumerate()` 來取得每個數字的索引，並將 0 改為索引值。它列印時間太長，所以我們只印出第 5000 到 5004 個元素。這在 Rust 中還是非常快的，但如果你願意，你可以用 Rayon 讓它更快。但程式碼幾乎一樣：
 
 ```rust
-use rayon::prelude::*; // Import rayon
+use rayon::prelude::*; // 匯入 rayon
 
 fn main() {
     let mut my_vec = vec![0; 200_000];
-    my_vec.par_iter_mut().enumerate().for_each(|(index, number)| *number+=index+1); // add par_ to iter_mut
+    my_vec.par_iter_mut().enumerate().for_each(|(index, number)| *number+=index+1); // 加上 par_ 在 iter_mut 前面
     println!("{:?}", &my_vec[5000..5005]);
 }
 ```
 
-And that's it. `rayon` has many other methods to customize what you want to do, but at its most simple it is just "add `_par` to make your program faster".
+就這樣。`rayon` 還有很多其他的方法來訂做你想要的事，但最簡單的就是"加上 `_par` 來讓你的程式更快"。
 
 ### serde
 
-`serde` is a popular crate that lets you convert to and from formats like JSON, YAML, etc. The most common way to use it is by creating a `struct` with two attributes on top. [It looks like this](https://serde.rs/):
+`serde` 是相當流行的 crate，讓你可以在 JSON、YAML 等格式之間相互轉換。最常見的使用方式是透過建立具有兩個屬性在上面的 `struct`，。[看起來像這樣](https://serde.rs/)：
 
 ```rust
 #[derive(Serialize, Deserialize, Debug)]
@@ -11817,24 +11817,24 @@ struct Point {
 }
 ```
 
-The `Serialize` and `Deserialize` traits are what make the conversion easy. (That's also where the name `serde` comes from) If you have them on your struct, then you can just call a method to turn it into and from JSON or anything else.
+`Serialize` 和 `Deserialize` 特徵讓轉換變得容易。(這也是 `serde` 這個名字的由來)如果你的結構體上有它們，那麼你只需要呼叫一個方法就可以把它在 JSON 或任意格式間轉換。
 
 ### regex
 
-The [regex](https://crates.io/crates/regex) crate lets you search through text using [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). With that you can get matches for something like `colour`, `color`, `colours` and `colors` through a single search. Regular expressions are a whole other language have to learn that too if you want to use them.
+[regex](https://crates.io/crates/regex) crate 讓你可以使用 [正則表示式(Regular expression)](https://en.wikipedia.org/wiki/Regular_expression) 搜尋文字。有了它，你可以只透過一次搜尋便得到諸如 `colour`, `color`, `colours` 和 `colors` 的匹配資訊。正則表示式是一門全然不同也需要學習的語言，如果你想使用它們的話。
 
 ### chrono
 
-[chrono](https://crates.io/crates/chrono) is the main crate for people who need more functionality for time. We will look at the standard library now which has functions for time, but if you need more then this is a good crate to use.
+[chrono](https://crates.io/crates/chrono) 是為給那些需要更多時間功能的人準備的主要 crate。我們會看到標準函式庫現在有時間相關的功能，但是如果你需要更多的功能，那麼這個 crate 是個不錯的選擇。
 
 
-## A tour of the standard library
+## 標準函式庫之旅
 
-Now that you know a lot of Rust, you will be able to understand most things inside the standard library. The code inside it isn't so scary anymore. Let's take a look at some of the parts in it that we haven't learned yet. This tour will go over most parts of the standard library that you don't need to install Rust for. We will revisit a lot of items we already know so we can learn them with greater understanding.
+現在你已經知道了很多 Rust 的知識，你將能夠理解標準函式庫裡面大多數的東西。它裡面的程式碼已經不再那麼可怕了。讓我們來看看它裡面一些我們還沒有學過的部分。這次旅程將介紹標準函式庫裡不需要安裝 Rust 的絕大多數部分。我們將重溫很多我們已經知道的內容，這樣我們就可以更深入地學習它們。
 
-### Arrays
+### 陣列
 
-In the past (before Rust 1.53), arrays didn't implement `Iterator` and you needed to use methods like `.iter()` on them in for `loops`. (People also used `&` to get a slice in `for` loops). So this didn't work in the past:
+在過去的版本 (Rust 1.53 以前) 裡陣列 (Array) 還沒有實作 `Iterator`，你要在 `for` 迴圈裡對它們使用像是 `.iter()` 的方法。（人們以前也常在 `for` 迴圈裡用 `&` 來得到切片。）因此這個範例在過去是不能執行的：
 
 ```rust
 fn main() {
@@ -11846,7 +11846,7 @@ fn main() {
 }
 ```
 
-The compiler used to give this message:
+編譯器常常給出這段訊息：
 
 ```text
 error[E0277]: `[&str; 3]` is not an iterator
@@ -11855,7 +11855,7 @@ error[E0277]: `[&str; 3]` is not an iterator
   |                 ^^^^^^^^^ borrow the array with `&` or call `.iter()` on it to iterate over it
 ```
 
-Luckily, that isn't a problem anymore! So all three of these work:
+幸運的是那不再是問題了！所以這三種用法全都能用：
 
 ```rust
 fn main() {
@@ -11873,7 +11873,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Beirut
@@ -11889,7 +11889,7 @@ Nicosia
 
 
 
-If you want to get variables from an array, you can put their names inside `[]` to destructure it. This is the same as using a tuple in `match` statements or to get variables from a struct.
+如果你想從陣列中得到變數，你可以把它們的變數名放在 `[]` 中來解構它。這和在 `match` 陳敘式中使用元組或從結構體中得到變數是一樣的。
 
 ```rust
 fn main() {
@@ -11899,11 +11899,11 @@ fn main() {
 }
 ```
 
-This prints `Beirut`.
+印出 `Beirut`。
 
-### char
+### 字元
 
-You can use the `.escape_unicode()` method to get the Unicode number for a `char`:
+你可以使用 `.escape_unicode()` 方法來得到字元 (char) 的 Unicode 號碼。
 
 ```rust
 fn main() {
@@ -11914,22 +11914,22 @@ fn main() {
 }
 ```
 
-This prints `\u{ccad} \u{cd98} \u{c608} \u{cc2c}`.
+印出 `\u{ccad} \u{cd98} \u{c608} \u{cc2c}`。
 
 
-You can get a char from `u8` using the `From` trait, but for a `u32` you use `TryFrom` because it might not work. There are many more numbers in `u32` than characters in Unicode. We can see this with a simple demonstration.
+你可以使用 `From` 特徵從 `u8` 中得到字元，但是從 `u32` 時，你要使用 `TryFrom`，因為它有可能不成功。`u32` 可容納的數字比 Unicode 中的字元多很多。我們可以透過簡單的示範來觀察到這件事。
 
 ```rust
-use std::convert::TryFrom; // You need to bring TryFrom in to use it
-use rand::prelude::*;      // We will use random numbers too
+use std::convert::TryFrom; // 你需要引進 TryFrom 來使用它
+use rand::prelude::*;      // 我們也將會用到隨機數
 
 fn main() {
-    let some_character = char::from(99); // This one is easy - no need for TryFrom
+    let some_character = char::from(99); // 這個容易 - 不需要 TryFrom
     println!("{}", some_character);
 
     let mut random_generator = rand::thread_rng();
-    // This will try 40,000 times to make a char from a u32.
-    // The range is 0 (std::u32::MIN) to u32's highest number (std::u32::MAX). If it doesn't work, we will give it '-'.
+    // 這將會嘗試 40,000 次來從 u32 做出字元.
+    // 範圍從 0 (std::u32::MIN) 到 u32 的最大數值 (std::u32::MAX). 如果它不成功, 我們會給它 '-'.
     for _ in 0..40_000 {
         let bigger_character = char::try_from(random_generator.gen_range(std::u32::MIN..std::u32::MAX)).unwrap_or('-');
         print!("{}", bigger_character)
@@ -11937,7 +11937,7 @@ fn main() {
 }
 ```
 
-Almost every time it will generate a `-`. This is part of the sort of output you will see:
+幾乎每次都會產生 `-`。這是你會看到的那種輸出的一部分：
 
 ```text
 ------------------------------------------------------------------------𤒰---------------------
@@ -11955,18 +11955,18 @@ Almost every time it will generate a `-`. This is part of the sort of output you
 ------------򇍜----------------------------------------------------
 ```
 
-So it's a good thing you need to use `TryFrom`.
+所以你需要使用 `TryFrom` 其實是件好事。
 
-Also, as of late August 2020 you can now get a `String` from a `char`. (`String` implements `From<char>`) Just write `String::from()` and put a `char` inside.
-
-
-### Integers
-
-There are a lot of math methods for these types, plus some others. Here are some of the most useful ones.
+另外，從 2020 年八月底開始，你現在可以從 `char` 中得到 `String`。(`String` 實作了 `From<char>`) 只要寫 `String::from()`，然後把 `char` 放在裡面。
 
 
+### 整數
 
-`.checked_add()`, `.checked_sub()`, `.checked_mul()`, `.checked_div()`. These are good methods if you think you might get a number that won't fit into a type. They return an `Option` so you can safely check that your math works without making the program panic.
+給這些整數型別用的數學方法有很多，再加上一些其他用途的方法。這裡是一些最有用的：
+
+
+
+`.checked_add()`、`.checked_sub()`、`.checked_mul()`、`.checked_div()`。如果你認為你可能會得到一個不適合型別的數字，這些都是不錯的方法。它們會回傳 `Option`，這樣你就可以安全地檢查你的數學運算是否正常，而不會讓程式恐慌。
 
 ```rust
 fn main() {
@@ -11978,7 +11978,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 None
@@ -11986,22 +11986,22 @@ Some(201)
 ```
 
 
-You'll notice that on the page for integers it says `rhs` a lot. This means "right hand side", which is the right hand side when you do some math. For example, in `5 + 6`, `5` is on the left and `6` is on the right, so it's the `rhs`. This is not a keyword, but you will see it a lot so it's good to know.
+你會注意到，在整數的頁面上經常說著 `rhs`。這意味著"右手邊(right hand side)"，也就是你做一些數學運算時右手邊的運算元。比如在 `5 + 6` 中，`5` 在左、`6` 在右，所以 `6` 就是 `rhs`。這個不是關鍵詞，但是你會經常看到，所以先知道比較好。
 
-While we are on the subject, let's learn how to implement `Add`. After you implement `Add`, you can use `+` on a type that you create. You need to implement `Add` yourself because add can mean a lot of things. Here's the example in the standard library page:
+說到這裡，我們來學習一下如何實作 `Add`。在你實作了 `Add` 之後，你可以在你建立的型別上使用 `+`。你需要自己實作 `Add`，因為 add 可以表達很多意思。這是標準函式庫頁面中的範例：
 
 ```rust
-use std::ops::Add; // first bring in Add
+use std::ops::Add; // 首先引進 Add
 
-#[derive(Debug, Copy, Clone, PartialEq)] // PartialEq is probably the most important part here. You want to be able to compare numbers
+#[derive(Debug, Copy, Clone, PartialEq)] // PartialEq 大概是這裡最重要的部份了. 你會想要讓數字能比較
 struct Point {
     x: i32,
     y: i32,
 }
 
 impl Add for Point {
-    type Output = Self; // Remember, this is called an "associated type": a "type that goes together".
-                        // In this case it's just another Point
+    type Output = Self; // 記得嗎, 這叫做"關聯型別": "一起出現的型別".
+                        // 這個情況下這不過是另一個 Point
 
     fn add(self, other: Self) -> Self {
         Self {
@@ -12012,7 +12012,7 @@ impl Add for Point {
 }
 ```
 
-Now let's implement `Add` for our own type. Let's imagine that we want to add two countries together so we can compare their economies. It looks like this:
+現在讓我們為自己的型別實作 `Add`。讓我們想像我們想把兩個國家加在一起，這樣我們就可以比較它們的經濟。那看起來像這樣：
 
 ```rust
 use std::fmt;
@@ -12022,7 +12022,7 @@ use std::ops::Add;
 struct Country {
     name: String,
     population: u32,
-    gdp: u32, // This is the size of the economy
+    gdp: u32, // 這是經濟大小
 }
 
 impl Country {
@@ -12040,9 +12040,9 @@ impl Add for Country {
 
     fn add(self, other: Self) -> Self {
         Self {
-            name: format!("{} and {}", self.name, other.name), // We will add the names together,
-            population: self.population + other.population, // and the population,
-            gdp: self.gdp + other.gdp,   // and the GDP
+            name: format!("{} and {}", self.name, other.name), // 我們會一起加上名稱,
+            population: self.population + other.population, // 以及人口數,
+            gdp: self.gdp + other.gdp,   // 和 GDP
         }
     }
 }
@@ -12051,7 +12051,7 @@ impl fmt::Display for Country {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "In {} are {} people and a GDP of ${}", // Then we can print them all with just {}
+            "In {} are {} people and a GDP of ${}", // 然後我們可以只用 {} 把它們全部印出來
             self.name, self.population, self.gdp
         )
     }
@@ -12062,15 +12062,15 @@ fn main() {
     let vanuatu = Country::new("Vanuatu", 307_815, 820_000_000);
     let micronesia = Country::new("Micronesia", 104_468, 367_000_000);
 
-    // We could have given Country a &str instead of a String for the name. But we would have to write lifetimes everywhere
-    // and that would be too much for a small example. Better to just clone them when we call println!.
+    // 我們可以給予 Country 的 name 是個 &str 而不是 String. 但是我們就需要到處寫上生命週期
+    // 並且那樣對小範例來說就太多東西了. 比較好的方式是只在我們呼叫 println! 時克隆它們.
     println!("{}", nauru.clone());
     println!("{}", nauru.clone() + vanuatu.clone());
     println!("{}", nauru + vanuatu + micronesia);
 }
 ```
 
-This prints:
+印出：
 
 ```text
 In Nauru are 10670 people and a GDP of $160000000
@@ -12078,21 +12078,21 @@ In Nauru and Vanuatu are 318485 people and a GDP of $980000000
 In Nauru and Vanuatu and Micronesia are 422953 people and a GDP of $1347000000
 ```
 
-Later on in this code we could change `.fmt()` to display a number that is easier to read.
+以後在這段程式碼中，我們可以把 `.fmt()` 改為顯示更容易閱讀的數字。
 
-The three others are called `Sub`, `Mul`, and `Div`, and they are basically the same to implement. For `+=`, `-=`, `*=` and `/=`, just add `Assign`: `AddAssign`, `SubAssign`, `MulAssign`, and `DivAssign`. You can see the full list [here](https://doc.rust-lang.org/std/ops/index.html#structs), because there are many more. `%` for example is called `Rem`, `-` is called `Neg`, and so on.
+另外三個叫 `Sub`、`Mul` 和 `Div`，實作起來基本一樣。`+=`、`-=`、`*=` 和 `/=`，只要加上 `Assign`：`AddAssign`、`SubAssign`、`MulAssign` 和 `DivAssign` 即可。你可以在[這裡](https://doc.rust-lang.org/std/ops/index.html#structs)看到完整的列表，因為還有很多。例如 `%` 被稱為 `Rem`，`-` 被稱為 `Neg`，等等。
 
 
-### Floats
+### 浮點數
 
-`f32` and `f64` have a very large number of methods that you use when doing math. We won't look at those, but here are some methods that you might use. They are: `.floor()`, `.ceil()`, `.round()`, and `.trunc()`. All of these return an `f32` or `f64` that is like an integer, with only `0` after the period. They do this:
+`f32` 和 `f64` 有非常大量的方法讓你在做數學運算時使用。我們不會去看這些東西，但這裡有一些你可能會用到的方法。它們分別是 `.floor()`、`.ceil()`、`.round()` 和 `.trunc()`。所有這些方法都會回傳像整數的 `f32` 或者 `f64`，但小數點後面是 `0`。它們是這樣做的：
 
-- `.floor()`: gives you the next lowest integer.
-- `.ceil()`: gives you the next highest integer.
-- `.round()`: gives you a higher number if 0.5 or more, or the same number if less than 0.5. This is called rounding because it gives you a "round" number (a number that has a short, simple form).
-- `.trunc()`: just cuts off the part after the period. Truncate means "to cut off".
+- `.floor()`：給你下一個最低的整數。
+- `.ceil()`：給你下一個最高的整數。
+- `.round()`：給你較大的整數，如果小數大於等於 0.5；或是相同的整數，如果小數小於 0.5。這就是所謂的四捨五入，因為它給你"捨去或進位(round)"的數字(數字的精簡形式)。
+- `.trunc()`：只是切除掉小數點號後的部分。截斷(Truncate)是"切除"的意思。
 
-Here is a simple function to print them.
+這裡是個簡單的函式來印出它們。
 
 ```rust
 fn four_operations(input: f64) {
@@ -12118,7 +12118,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 For the number 9.1:
@@ -12146,20 +12146,20 @@ rounded: -20
 truncated: -19
 ```
 
-`f32` and `f64` have a method called `.max()` and `.min()` that gives you the higher or the lower of two numbers. (For other types you can just use `std::cmp::max` and `std::cmp::min`.) Here is a way to use this with `.fold()` to get the highest or lowest number. You can see again that `.fold()` isn't just for adding numbers.
+`f32` 和 `f64` 有方法叫做 `.max()` 和 `.min()`，可以得到兩個數字中較大或較小的數字。(對於其他型別，你可以直接使用 `std::cmp::max` 和 `std::cmp::min`。)這裡的範例是用 `.fold()` 來得到最高或最低數字的方法。你可以再次看到 `.fold()` 不僅僅是用來加數字的。
 
 ```rust
 fn main() {
     let my_vec = vec![8.0_f64, 7.6, 9.4, 10.0, 22.0, 77.345, 10.22, 3.2, -7.77, -10.0];
-    let maximum = my_vec.iter().fold(f64::MIN, |current_number, next_number| current_number.max(*next_number)); // Note: start with the lowest possible number for an f64.
-    let minimum = my_vec.iter().fold(f64::MAX, |current_number, next_number| current_number.min(*next_number)); // And here start with the highest possible number
+    let maximum = my_vec.iter().fold(f64::MIN, |current_number, next_number| current_number.max(*next_number)); // 註: 從 f64 的最低可能的數字開始.
+    let minimum = my_vec.iter().fold(f64::MAX, |current_number, next_number| current_number.min(*next_number)); // 而這裡則從最高可能的數字開始
     println!("{}, {}", maximum, minimum);
 }
 ```
 
-### bool
+### 布林
 
-In Rust you can turn a `bool` into an integer if you want, because it's safe to do that. But you can't do it the other way around. As you can see, `true` turns to 1 and `false` turns to 0.
+在 Rust 中，如果你願意，你可以把 `bool` 變成整數，因為這樣做是安全的。但你不能反過來做。如你所見，`true` 變成了 1，`false` 變成了 0。
 
 ```rust
 fn main() {
@@ -12168,7 +12168,7 @@ fn main() {
 }
 ```
 
-This prints `1 0`. Or you can use `.into()` if you tell the compiler the type:
+印出 `1 0`。或者是如果你告訴編譯器型別，也可以使用 `.into()`：
 
 ```rust
 fn main() {
@@ -12177,9 +12177,9 @@ fn main() {
 }
 ```
 
-This prints the same thing.
+印出的是一樣的東西。
 
-As of Rust 1.50 (released in February 2021), there is now a method called `then()`, which turns a `bool` into an `Option`. With `then()` you write a closure, and the closure is called if the item is `true`. Also, whatever is returned from the closure goes inside the `Option`. Here's a small example:
+從 Rust 1.50 (2021 年 2 月釋出)開始，有個叫做 `then()` 的方法，它將 `bool` 變成 `Option`。使用 `then()` 時需要接受閉包，如果元素是`true`，閉包就會被呼叫。另外，無論從閉包中回傳什麼，都會放入 `Option` 裡。這裡是個小範例：
 
 ```rust
 fn main() {
@@ -12189,9 +12189,9 @@ fn main() {
 }
 ```
 
-This just prints `Some(8), None`.
+只是印出 `Some(8), None`。
 
-And now a bit larger example:
+而現在是個長一點的範例：
 
 ```rust
 fn main() {
@@ -12200,24 +12200,24 @@ fn main() {
     let option_vec = bool_vec
         .iter()
         .map(|item| {
-            item.then(|| { // Put this inside of map so we can pass it on
+            item.then(|| { // 把這個放在 map 裡面那我們才可以把它傳下去
                 println!("Got a {}!", item);
-                "It's true, you know" // This goes inside Some if it's true
-                                      // Otherwise it just passes on None
+                "It's true, you know" // 如果是 true 就把這個放進 Some 裡
+                                      // 不然就只傳 None 下去
             })
         })
         .collect::<Vec<_>>();
 
     println!("Now we have: {:?}", option_vec);
 
-    // That printed out the Nones too. Let's filter map them out in a new Vec.
+    // 那也會印出 Nones. 讓我們從 map 過濾它們到新的向量裡.
     let filtered_vec = option_vec.into_iter().filter_map(|c| c).collect::<Vec<_>>();
 
     println!("And without the Nones: {:?}", filtered_vec);
 }
 ```
 
-And here's what this prints:
+這裡是印出的內容：
 
 ```text
 Got a true!
@@ -12226,9 +12226,9 @@ Now we have: [Some("It\'s true, you know"), None, Some("It\'s true, you know"), 
 And without the Nones: ["It\'s true, you know", "It\'s true, you know"]
 ```
 
-### Vec
+### 向量
 
-Vec has a lot of methods that we haven't looked at yet. Let's start with `.sort()`. `.sort()` is not surprising at all. It uses a `&mut self` to sort a vector.
+Vec（向量）有很多方法我們還沒有看過。先來說說 `.sort()`。`.sort()` 一點都不意外，使用了 `&mut self` 來對向量進行排序。
 
 ```rust
 fn main() {
@@ -12238,10 +12238,10 @@ fn main() {
 }
 ```
 
-This prints `[0, 0, 0, 0, 0, 80, 90, 100]`. But there is one more interesting way to sort called `.sort_unstable()`, and it is usually faster. It can be faster because it doesn't care about the order of numbers if they are the same number. In regular `.sort()`, you know that the last `0, 0, 0, 0, 0` will be in the same order after `.sort()`. But `.sort_unstable()` might move the last zero to index 0, then the third last zero to index 2, etc.
+印出 `[0, 0, 0, 0, 0, 80, 90, 100]`。但還有一種更有趣的排序方式叫 `.sort_unstable()`，它通常更快。它之所以更快，是因為它不在乎排序前後相同數字的先後順序。在常規的 `.sort()` 中，你知道最後的 `0, 0, 0, 0, 0` 會在 `.sort()` 之後的順序相同。但是 `.sort_unstable()` 可能會把最後一個零移到索引 0，然後把倒數第三個零移到索引 2，等等。
 
 
-`.dedup()` means "de-duplicate". It will remove items that are the same in a vector, but only if they are next to each other. This next code will not just print `"sun", "moon"`:
+`.dedup()` 的意思是"去重複"(de-duplicate)。它將刪除向量中相同的元素，但只有當它們彼此相鄰時才會刪除。接下來這段程式碼不會只印出 `"sun", "moon"`。
 
 ```rust
 fn main() {
@@ -12251,9 +12251,9 @@ fn main() {
 }
 ```
 
-It only gets rid of "sun" next to the other "sun", then "moon" next to one "moon", and again with "moon" next to another "moon". The result is: `["sun", "moon", "sun", "moon"]`.
+它只是把 "sun" 旁邊的另一個 "sun" 去掉，然後把 "moon" 旁邊的下一個 "moon" 去掉，再把 "moon" 旁邊的另一個 "moon" 去掉。結果是 `["sun", "moon", "sun", "moon"]`。
 
-If you want to remove every duplicate, just `.sort()` first:
+如果你想把每個重複的都去掉，就先 `.sort()`：
 
 ```rust
 fn main() {
@@ -12264,28 +12264,28 @@ fn main() {
 }
 ```
 
-Result: `["moon", "sun"]`.
+結果：`["moon", "sun"]`。
 
 
-### String
+### 字串
 
-You will remember that a `String` is kind of like a `Vec`. It is so like a `Vec` that you can do a lot of the same methods. For example, you can start one with `String::with_capacity()`. You want that if you are always going to be pushing a `char` with `.push()` or pushing a `&str` with `.push_str()`. Here's an example of a `String` that has too many allocations.
+你會記得 `String` 有點像是一種 `Vec`。它很像 `Vec` 讓你可以呼叫很多相同的方法。比如說，你可以用 `String::with_capacity()` 建立字串，尤其是如果你會需要一直用 `.push()` 推進 `char` 多次，或者用 `.push_str()` 推進 `&str`。這裡是個對 `String` 有太多次記憶體分配 (allocation) 的範例。
 
 ```rust
 fn main() {
     let mut push_string = String::new();
-    let mut capacity_counter = 0; // capacity starts at 0
-    for _ in 0..100_000 { // Do this 100,000 times
-        if push_string.capacity() != capacity_counter { // First check if capacity is different now
-            println!("{}", push_string.capacity()); // If it is, print it
-            capacity_counter = push_string.capacity(); // then update the counter
+    let mut capacity_counter = 0; // 容量從 0 開始
+    for _ in 0..100_000 { // 做 100,000 次
+        if push_string.capacity() != capacity_counter { // 首先檢查容量現在是否不同
+            println!("{}", push_string.capacity()); // 如果是就印出來
+            capacity_counter = push_string.capacity(); // 再來更新計數器
         }
-        push_string.push_str("I'm getting pushed into the string!"); // and push this in every time
+        push_string.push_str("I'm getting pushed into the string!"); // 並且每次推這個字串進去
     }
 }
 ```
 
-This prints:
+印出：
 
 ```text
 35
@@ -12308,11 +12308,11 @@ This prints:
 4587520
 ```
 
-We had to reallocate (copy everything over) 18 times. But now we know the final capacity. So we'll give it the capacity right away, and we don't need to reallocate: just one `String` capacity is enough.
+我們不得不重分配(reallocate，把所有東西複製過來到另一處記憶體位置) 18次。但既然我們知道了最終的容量(capacity)，那麼我們將馬上給它容量，就不需要重分配：只要一個 `String` 容量值就夠了。
 
 ```rust
 fn main() {
-    let mut push_string = String::with_capacity(4587520); // We know the exact number. Some different big number could work too
+    let mut push_string = String::with_capacity(4587520); // 我們知道明確的數字. 一些不同的大數字也行得通
     let mut capacity_counter = 0;
     for _ in 0..100_000 {
         if push_string.capacity() != capacity_counter {
@@ -12324,9 +12324,9 @@ fn main() {
 }
 ```
 
-And this prints `4587520`. Perfect! We never had to allocate again.
+印出 `4587520`。完美！我們永遠不再需要分配了。
 
-Of course, the actual length is certainly smaller than this. If you try 100,001 times, 101,000 times, etc., it'll still say `4587520`. That's because each time the capacity is two times what it was before. We can shrink it though with `.shrink_to_fit()` (same as for a `Vec`). Our `String` is very large and we don't want to add anything more to it, so we can make it a bit smaller. But only do this if you are sure. Here is why:
+當然實際長度肯定比這個小。如果你試了 100001 次、101000 次等等，還是會說 `4587520`。這是因為每次的容量都是之前的兩倍。不過我們可以用 `.shrink_to_fit()` 來縮小它(和 `Vec` 一樣)。我們的 `String` 已經非常大了，我們不想再給它增加任何東西，所以我們可以把它縮小一點。但是只有在你有把握的情況下才可以這樣做。這裡是原因：
 
 ```rust
 fn main() {
@@ -12348,7 +12348,7 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 4587520
@@ -12357,9 +12357,9 @@ This prints:
 3500001
 ```
 
-So first we had a size of `4587520`, but we weren't using it all. We used `.shrink_to_fit()` and got the size down to `3500000`. But then we forget that we needed to push an `a` on. When we did that, Rust saw that we needed more space and gave us double: now it's `7000000`. Whoops! So we did `.shrink_to_fit()` again and now it's back down to `3500001`.
+所以首先我們的大小是 `4587520`，但我們沒有全部使用到。我們用了 `.shrink_to_fit()`，然後把大小降到了 `3500000`。但是我們忘記了需要推上 `a`。當我們這樣做的時候，Rust 看到我們需要更多的空間，並加倍給了我們：現在是 `7000000`。哎呀！所以我們又呼叫了 `.shrink_to_fit()` 一次，現在又回到了 `3500001`。
 
-`.pop()` works for a `String`, just like for a `Vec`.
+`.pop()` 能用在 `String`，就像用在 `Vec` 一樣。
 
 ```rust
 fn main() {
@@ -12374,45 +12374,45 @@ fn main() {
 }
 ```
 
-This prints `This string is a little bit hard to read.` because it starts from the last character.
+印出 `This string is a little bit hard to read.` 因為它從最後一個字元開始。
 
-`.retain()` is a method that uses a closure, which is rare for `String`. It's just like `.filter()` for an iterator.
+`.retain()` 是使用閉包的方法，這對 `String` 來說很少見。就像在疊代器上的 `.filter()` 一樣。
 
 ```rust
 fn main() {
     let mut my_string = String::from("Age: 20 Height: 194 Weight: 80");
-    my_string.retain(|character| character.is_alphabetic() || character == ' '); // Keep if a letter or a space
-    dbg!(my_string); // Let's use dbg!() for fun this time instead of println!
+    my_string.retain(|character| character.is_alphabetic() || character == ' '); // 如果是字母或空白就保留
+    dbg!(my_string); // 為了好玩這次讓我們用 dbg!() 而不是 println!
 }
 ```
 
-This prints:
+印出：
 
 ```text
 [src\main.rs:4] my_string = "Age  Height  Weight "
 ```
 
 
-### OsString and CString
+### OsString 和 CString
 
-`std::ffi` is the part of `std` that helps you use Rust with other languages or operating systems. It has types like `OsString` and `CString`, which are like `String` for the operating system or `String` for the language C. They each have their own `&str` type too: `OsStr` and `CStr`. `ffi` means "foreign function interface".
+`std::ffi` 是 `std` 的一部分，它幫助你將 Rust 與其他程式設計語言或作業系統一起使用。它有 `OsString` 和 `CString` 這樣的型別，它們就像給作業系統用的 `String` 或給 C 語言用的 `String` 一樣，它們各自也有自己的 `&str` 型別：`OsStr` 和 `CStr`。`ffi` 的意思是"外部函式介面"(foreign function interface)。
 
-You can use `OsString` when you have to work with an operating system that doesn't have Unicode. All Rust strings are unicode, but not every operating system has it. Here is the simple English explanation from the standard library on why we have `OsString`:
+當你必須與沒有 Unicode 的作業系統互動時，你可以使用 `OsString`。Rust 所有的字串都是 unicode，但不是每個作業系統支援。這些是標準函式庫中關於為什麼我們會有 `OsString` 的簡單解釋。
 
-- A string on Unix (Linux, etc.) might be lots of bytes together that don't have zeros. And sometimes you read them as Unicode UTF-8.
-- A string on Windows might be made of random 16-bit values that don't have zeros. And sometimes you read them as Unicode UTF-16.
-- In Rust, strings are always valid UTF-8, which may contain zeros.
+- Unix (Linux 等等)上的字串可能是很多沒有零的位元組組合在一起。而且有時你會把它們讀取為 Unicode UTF-8。
+- Windows 上的字串可能是由隨機的沒有零的 16 位元值組成。有時你會把它們讀取為 Unicode UTF-16。
+- 在 Rust 中，字串總是有效的 UTF-8，其中可能包含多個零。
 
-So an `OsString` is made to be read by all of them.
+所以 `OsString` 被設計為可以被它們全部讀取到。
 
-You can do all the regular things with an `OsString` like `OsString::from("Write something here")`. It also has an interesting method called `.into_string()` that tries to make it into a regular `String`. It returns a `Result`, but the `Err` part is just the original `OsString`:
+你可以用 `OsString` 來做所有常規的事情，比如 `OsString::from("Write something here")`。它還有個有趣的方法叫做 `.into_string()`，那會試圖把自己變成常規的 `String`。它會回傳 `Result`，但 `Err` 部分只是原來的 `OsString`：
 
 ```rust
 // 🚧
 pub fn into_string(self) -> Result<String, OsString>
 ```
 
-So if it doesn't work then you just get it back. You can't call `.unwrap()` because it will panic, but you can use `match` to get the `OsString` back. Let's test it out by calling methods that don't exist.
+所以如果不行用的話，那你就把它拿回來。你不能呼叫 `.unwrap()`，因為它會恐慌，但是你可以使用 `match` 來拿回 `OsString`。讓我們透過呼叫不存在的方法來測試一下：
 
 ```rust
 use std::ffi::OsString;
@@ -12421,13 +12421,13 @@ fn main() {
     // ⚠️
     let os_string = OsString::from("This string works for your OS too.");
     match os_string.into_string() {
-        Ok(valid) => valid.thth(),           // Compiler: "What's .thth()??"
-        Err(not_valid) => not_valid.occg(),  // Compiler: "What's .occg()??"
+        Ok(valid) => valid.thth(),           // 編譯器: "什麼是 .thth()??"
+        Err(not_valid) => not_valid.occg(),  // 編譯器: "什麼是 .occg()??"
     }
 }
 ```
 
-Then the compiler tells us exactly what we want to know:
+然後編譯器準確地告訴我們什麼是我們想知道的：
 
 ```text
 error[E0599]: no method named `thth` found for struct `std::string::String` in the current scope
@@ -12443,11 +12443,11 @@ error[E0599]: no method named `occg` found for struct `std::ffi::OsString` in th
   |                                     ^^^^ method not found in `std::ffi::OsString`
 ```
 
-We can see that the type of `valid` is `String` and the type of `not_valid` is `OsString`.
+我們可以看到 `valid` 的型別是 `String` 以及 `not_valid` 的型別是 `OsString`。
 
 ### mem
 
-`std::mem` has some pretty interesting methods. We saw some of them already, such as `.size_of()`, `.size_of_val()` and `.drop()`:
+`std::mem` 有一些非常有趣的方法。我們已經看到過一些了，比如 `.size_of()`、`.size_of_val()` 和 `.drop()`：
 
 
 ```rust
@@ -12459,30 +12459,30 @@ fn main() {
     println!("{}", mem::size_of_val(&my_array));
     let mut some_string = String::from("You can drop a String because it's on the heap");
     mem::drop(some_string);
-    // some_string.clear();   If we did this it would panic
+    // some_string.clear();   如果我們這樣做就會恐慌
 }
 ```
 
-This prints:
+印出：
 
 ```text
 4
 200
 ```
 
-Here are some other methods in `mem`:
+這裡是 `mem` 中的一些其他方法：
 
-`swap()`: with this you can change the values between two variables. You use a mutable reference for each to do it. This is helpful when you have two things you want to switch and Rust doesn't let you because of borrowing rules. Or just when you want to quickly switch two things.
+`swap()`：用這個方法你可以交換兩個變數之間的值。你為每個變數建立可變參考來做到這件事。在你有兩樣東西想交換，卻因為借用規則 Rust 不允許時很有用。或是當你只想快速切換兩樣東西的時候。
 
-Here's one example:
+這裡是一個範例：
 
 ```rust
 use std::{mem, fmt};
 
-struct Ring { // Create a ring from Lord of the Rings
+struct Ring { // 從 Lord of the Rings 建立戒指
     owner: String,
     former_owner: String,
-    seeker: String, // seeker means "person looking for it"
+    seeker: String, // 意思是 "尋求它的人"
 }
 
 impl Ring {
@@ -12495,7 +12495,7 @@ impl Ring {
     }
 }
 
-impl fmt::Display for Ring { // Display to show who has it and who wants it
+impl fmt::Display for Ring { // Display 用來秀出誰擁有它及誰想得到它
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
             write!(f, "{} has the ring, {} used to have it, and {} wants it", self.owner, self.former_owner, self.seeker)
         }
@@ -12504,19 +12504,19 @@ impl fmt::Display for Ring { // Display to show who has it and who wants it
 fn main() {
     let mut one_ring = Ring::new("Frodo", "Gollum", "Sauron");
     println!("{}", one_ring);
-    mem::swap(&mut one_ring.owner, &mut one_ring.former_owner); // Gollum got the ring back for a second
+    mem::swap(&mut one_ring.owner, &mut one_ring.former_owner); // Gollum 拿回了戒指一下子
     println!("{}", one_ring);
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 Frodo has the ring, Gollum used to have it, and Sauron wants it
 Gollum has the ring, Frodo used to have it, and Sauron wants it
 ```
 
-`replace()`: this is like swap, and actually uses swap inside it, as you can see:
+`replace()`：這像是 swap，其實裡面也用了 swap，如同你看到的：
 
 ```rust
 pub fn replace<T>(dest: &mut T, mut src: T) -> T {
@@ -12525,7 +12525,7 @@ pub fn replace<T>(dest: &mut T, mut src: T) -> T {
 }
 ```
 
-So it just does a swap and then returns the other item. With this you replace the value with something else you put in. And since it returns the old value, so you should use it with `let`. Here's a quick example.
+所以它只是做交換，然後回傳另外一個。有了這個，你就能用放進去的其他東西來替換值。因為它會回傳舊的值，所以你應該用 `let` 來取得它。這裡是個便捷的範例：
 
 ```rust
 use std::mem;
@@ -12552,9 +12552,9 @@ fn main() {
 }
 ```
 
-This prints `The city once called Constantinople is now called Istanbul.`.
+印出 `The city once called Constantinople is now called Istanbul.`。
 
-One function called `.take()` is like `.replace()` but it leaves the default value in the item. You will remember that default values are usually things like 0, "", and so on. Here is the signature:
+有個函式叫 `.take()`，和 `.replace()` 類似，但它在元素中留下了預設值。你會記得，預設值通常像是 0、"" 之類的東西。這裡是它的簽名：
 
 ```rust
 // 🚧
@@ -12563,7 +12563,7 @@ where
     T: Default,
 ```
 
-So you can do something like this:
+所以你可以做像這樣的事情：
 
 ```rust
 use std::mem;
@@ -12581,7 +12581,7 @@ fn main() {
 }
 ```
 
-And as you can see, it replaced all the numbers with 0: no index was deleted.
+如同你看到的，所有數字都被替換為 0：沒有任何索引的元素被刪除。
 
 ```text
 [0, 0, 0, 0, 0, 0]
@@ -12589,26 +12589,26 @@ And as you can see, it replaced all the numbers with 0: no index was deleted.
 ```
 
 
-Of course, for your own type you can implement `Default` to whatever you want. Let's look at an example where we have a `Bank` and a `Robber`. Every time he robs the `Bank`, he gets the money at the desk. But the desk can take money from the back any time, so it always has 50. We will make our own type for this so it will always have 50. Here is how it works:
+對於你自己的型別，你當然可以把 `Default` 實現成任何你想要的型別。讓我們來看看我們的 `Bank` 和 `Robber` 的範例。每次他搶了 `Bank`，他就會在桌子上拿到錢。但是辦公桌可以隨時從後面拿錢，所以它永遠會有 50。我們將會為這件事做我們自己的型別，所以它也永遠會有 50。這裡是它怎麼做到的：
 
 ```rust
 use std::mem;
-use std::ops::{Deref, DerefMut}; // We will use this to get the power of u32
+use std::ops::{Deref, DerefMut}; // 我們將會使用這個來得到 u32 的威力
 
 struct Bank {
     money_inside: u32,
-    money_at_desk: DeskMoney, // This is our "smart pointer" type. It has its own default, but it will use u32
+    money_at_desk: DeskMoney, // 這是我們的 "智慧指標" 型別. 它有自己的預設值, 但他會使用 u32
 }
 
 struct DeskMoney(u32);
 
 impl Default for DeskMoney {
     fn default() -> Self {
-        Self(50) // default is always 50, not 0
+        Self(50) // 預設值永遠是 50, 不是 0
     }
 }
 
-impl Deref for DeskMoney { // With this we can access the u32 using *
+impl Deref for DeskMoney { // 有的這個我們可以使用 * 存取 u32
     type Target = u32;
 
     fn deref(&self) -> &Self::Target {
@@ -12616,7 +12616,7 @@ impl Deref for DeskMoney { // With this we can access the u32 using *
     }
 }
 
-impl DerefMut for DeskMoney { // And with this we can add, subtract, etc.
+impl DerefMut for DeskMoney { // 並且有了這個我們就可以做加減法等等
     fn deref_mut(&mut self) -> &mut Self::Target {
         &mut self.0
     }
@@ -12626,7 +12626,7 @@ impl Bank {
     fn check_money(&self) {
         println!(
             "There is ${} in the back and ${} at the desk.\n",
-            self.money_inside, *self.money_at_desk // Use * so we can just print the u32
+            self.money_inside, *self.money_at_desk // 要用 * 這樣我們才能印出 u32
         );
     }
 }
@@ -12641,37 +12641,37 @@ impl Robber {
     }
 
     fn rob_bank(&mut self, bank: &mut Bank) {
-        let new_money = mem::take(&mut bank.money_at_desk); // Here it takes the money, and leaves 50 because that is the default
-        self.money_in_pocket += *new_money; // Use * because we can only add u32. DeskMoney can't add
-        bank.money_inside -= *new_money;    // Same here
+        let new_money = mem::take(&mut bank.money_at_desk); // 這裡拿走錢, 並留下 50 因為那是預設值
+        self.money_in_pocket += *new_money; // 用 * 因為我們可以只加上 u32. DeskMoney 不能加
+        bank.money_inside -= *new_money;    // 這裡一樣
         println!("She robbed the bank. She now has ${}!\n", self.money_in_pocket);
     }
 }
 
 fn main() {
-    let mut bank_of_klezkavania = Bank { // Set up our bank
+    let mut bank_of_klezkavania = Bank { // 安排我們的銀行
         money_inside: 5000,
         money_at_desk: DeskMoney(50),
     };
     bank_of_klezkavania.check_money();
 
-    let mut robber = Robber { // Set up our robber
+    let mut robber = Robber { // 安排我們的搶匪
         money_in_pocket: 50,
     };
     robber.check_money();
 
-    robber.rob_bank(&mut bank_of_klezkavania); // Rob, then check money
+    robber.rob_bank(&mut bank_of_klezkavania); // 搶劫, 再來檢查金額
     robber.check_money();
     bank_of_klezkavania.check_money();
 
-    robber.rob_bank(&mut bank_of_klezkavania); // Do it again
+    robber.rob_bank(&mut bank_of_klezkavania); // 再做一次
     robber.check_money();
     bank_of_klezkavania.check_money();
 
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 There is $5000 in the back and $50 at the desk.
@@ -12691,29 +12691,29 @@ The robber has $150 right now.
 There is $4900 in the back and $50 at the desk.
 ```
 
-You can see that there is always $50 at the desk.
+你可以看到桌子上總是有 50 美元。
 
 
 ### prelude
 
-The standard library has a prelude too, which is why you don't have to write things like `use std::vec::Vec` to create a `Vec`. You can see all the items [here](https://doc.rust-lang.org/std/prelude/index.html#prelude-contents), and will already know almost all of them:
+標準函式庫也有 prelude (預先載入的函式庫)，這就是為什麼你不用寫像是 `use std::vec::Vec` 的東西來建立 `Vec`。你可以在[這裡](https://doc.rust-lang.org/std/prelude/index.html#prelude-contents)看到所有這些元素，並且已經大致瞭解他們：
 
-- `std::marker::{Copy, Send, Sized, Sync, Unpin}`. You haven't seen `Unpin` before, because it is used for almost every type (like `Sized`, which is also very common). To "pin" means to not let something move. In this case a `Pin` means that it can't move in memory, but most items have `Unpin` so you can. That's why functions like `std::mem::replace` work, because they aren't pinned.
-- `std::ops::{Drop, Fn, FnMut, FnOnce}`.
-- `std::mem::drop`
-- `std::boxed::Box`.
-- `std::borrow::ToOwned`. You saw this before a bit with `Cow`, which can take borrowed content and make it owned. It uses `.to_owned()` to do this. You can also use `.to_owned()` on a `&str` to get a `String`, and the same for other borrowed values.
-- `std::clone::Clone`
-- `std::cmp::{PartialEq, PartialOrd, Eq, Ord}`.
-- `std::convert::{AsRef, AsMut, Into, From}`.
-- `std::default::Default`.
-- `std::iter::{Iterator, Extend, IntoIterator, DoubleEndedIterator, ExactSizeIterator}`. We used `.rev()` for an iterator before: this actually makes a `DoubleEndedIterator`. An `ExactSizeIterator` is just something like `0..10`: it already knows that it has a `.len()` of 10. Other iterators don't know their length for sure.
-- `std::option::Option::{self, Some, None}`.
-- `std::result::Result::{self, Ok, Err}`.
-- `std::string::{String, ToString}`.
-- `std::vec::Vec`.
+- `std::marker::{Copy, Send, Sized, Sync, Unpin}`。你以前沒有見過 `Unpin`，因為幾乎每一種型別都會用到它(比如 `Sized`，也很常見)。"Pin" 的意思是釘住不讓東西動。在這種情況下，`Pin` 意味著它不能在記憶體中移動，但大多數都有 `Unpin`，所以可以移動。這就是為什麼像 `std::mem::replace` 這樣的函式能用，因為它們沒有被釘住。
+- `std::ops::{Drop, Fn, FnMut, FnOnce}`。
+- `std::mem::drop`。
+- `std::boxed::Box`。
+- `std::borrow::ToOwned`。你之前在 `Cow` 有看到過一些，它可以把內容從借來的變成擁有所有權的。它使用 `.to_owned()` 來做到這件事。你也可以使用 `.to_owned()` 在 `&str` 上來得到 `String`，對於其它的借來值用法也一樣。
+- `std::clone::Clone`。
+- `std::cmp::{PartialEq, PartialOrd, Eq, Ord}`。
+- `std::convert::{AsRef, AsMut, Into, From}`。
+- `std::default::Default`。
+- `std::iter::{Iterator, Extend, IntoIterator, DoubleEndedIterator, ExactSizeIterator}`。我們之前在疊代器用過 `.rev()`：實際上是做出了`DoubleEndedIterator`。`ExactSizeIterator` 只是類似於 `0..10` 的東西：它已經知道自己的 `.len()` 是 10。其他疊代器肯定是不知道它們的長度。
+- `std::option::Option::{self, Some, None}`。
+- `std::result::Result::{self, Ok, Err}`。
+- `std::string::{String, ToString}`。
+- `std::vec::Vec`。
 
-What if you don't want the prelude for some reason? Just add the attribute `#![no_implicit_prelude]`. Let's give it a try and watch the compiler complain:
+如果你因為某些原因不想要有 prelude 怎麼辦？就加上屬性 `#![no_implicit_prelude]`。讓我們來試一試，看編譯器抱怨什麼：
 
 ```rust
 // ⚠️
@@ -12725,7 +12725,7 @@ fn main() {
 }
 ```
 
-Now Rust has no idea what you are trying to do:
+現在 Rust 根本不知道你在嘗試做什麼：
 
 ```text
 error: cannot find macro `println` in this scope
@@ -12749,16 +12749,16 @@ error[E0433]: failed to resolve: use of undeclared type or module `String`
 error: aborting due to 3 previous errors
 ```
 
-So for this simple code you need to tell Rust to use the `extern` (external) crate called `std`, and then the items you want. Here is everything we have to do just to create a Vec and a String and print it:
+因此對於這個簡單的程式碼，你需要告訴 Rust 去使用叫做 `std` 的 `extern` (外部) crate，以及你想要用的元素。這裡是一切我們所需要做的事，只是為了建立 Vec 和 String 並印出它：
 
 ```rust
 #![no_implicit_prelude]
 
-extern crate std; // Now you have to tell Rust that you want to use a crate called std
-use std::vec; // We need the vec macro
-use std::string::String; // and string
-use std::convert::From; // and this to convert from a &str to the String
-use std::println; // and this to print
+extern crate std; // 現在你需要告訴 Rust 你想要用叫做 std 的 crate
+use std::vec; // 我們需要 vec 巨集
+use std::string::String; // 還有 String
+use std::convert::From; // 和這個來轉換 &str 到 String
+use std::println; // 還有這個來列印
 
 fn main() {
     let my_vec = vec![8, 9, 10];
@@ -12767,21 +12767,21 @@ fn main() {
 }
 ```
 
-And now it finally works, printing `[8, 9, 10], This won't work`. So you can see why Rust uses the prelude. But if you want, you don't need to use it. And you can even use `#![no_std]` (we saw this once) for when you can't even use something like stack memory. But most of the time you don't have to think about not using the prelude or `std` at all.
+現在終於成功印出 `[8, 9, 10], This won't work`。所以你可以明白為什麼 Rust 要用 prelude 了。但如果你願意，你不需要使用它。而且你甚至可以使用 `#![no_std]` (我們曾經看過一次)，用在你連堆疊記憶體這種東西都無法使用的時候。但大多數時候，你根本不用考慮是否不用 prelude 或 `std`。
 
-So why didn't we see the `extern` keyword before? It's because you don't need it that much anymore. Before, when bringing in an external crate you had to use it. So to use `rand` in the past, you had to write:
+那為什麼之前我們沒有看過 `extern` 這個關鍵字呢？是因為你已經不再那麼需要它了。以前在引進外部 crate 時，你必須使用它。所以過去要用 `rand`，你必須要寫成：
 
 ```rust
 extern crate rand;
 ```
 
-and then `use` statements for the mods, traits, etc. that you wanted to use. But the Rust compiler now doesn't need this help anymore - you can just use `use` and it knows where to find it. So you almost never need `extern crate` anymore, but in other people's Rust code you might still see it on the top.
+然後用 `use` 陳述式來表示你想要使用的模組、特徵等等。但現在 Rust 編譯器已經不需要這些幫助了──你只需要使用 `use`，Rust 就知道在哪裡可以找到它。所以你幾乎再也不需要 `extern crate` 了，但在其他人的 Rust 程式碼中，你可能仍然會在頂部看得到它。
 
 
 
-### time
+### 時間
 
-`std::time` is where you can get functions for time. (If you want even more functions, a crate like `chrono` can work.) The simplest function is just getting the system time with `Instant::now()`.
+`std::time` 是你可以找到時間相關函式的地方。(如果你想要更多的功能，有 `chrono` 這樣的 crate 可以用。) 最簡單的功能就是用`Instant::now()` 取得系統時間。
 
 ```rust
 use std::time::Instant;
@@ -12792,9 +12792,9 @@ fn main() {
 }
 ```
 
-If you print it, you'll get something like this: `Instant { tv_sec: 2738771, tv_nsec: 685628140 }`. That's talking about seconds and nanoseconds, but it's not very useful. If you look at 2738771 seconds for example (written in August), it is 31.70 days. That doesn't have anything to do with the month or the day of the year. But the page on `Instant` tells us that it isn't supposed to be useful on its own. It says that it is "opaque and useful only with Duration." Opaque means "you can't figure it out", and duration means "how much time passed". So it's only useful when doing things like comparing times.
+如果你印出來，你會得到這樣的東西：`Instant { tv_sec: 2738771, tv_nsec: 685628140 }`。那裡講的是秒和奈秒，但用處不大。比如你看 2738771 秒(寫於 8 月)，就是31.70 天。這和月份、日數沒有任何關係。但是 `Instant` 的[頁面](https://doc.rust-lang.org/std/time/struct.Instant.html)告訴我們，它對本身不應該有用。它說它是 "不透明的(Opaque)，只有和 Duration 一起才有用"。這裡不透明的的意思是"你無法搞清楚"，而 Duration 的意思是"過去多少時間"。所以它只有在做比較時間這樣的事情時才有用。
 
-If you look at the traits on the left, one of them is `Sub<Instant>`. That means we can use `-` to subtract one from another. And when we click on [src] to see what it does, it says:
+如果你看頁面左側的特徵，其中一個是 `Sub<Instant>`。也就是說我們可以用 `-` 來減去另一個。而當我們點選 [src] 看它做了什麼時，它說：
 
 ```rust
 impl Sub<Instant> for Instant {
@@ -12806,19 +12806,19 @@ impl Sub<Instant> for Instant {
 }
 ```
 
-So it takes an `Instant` and uses `.duration_since()` to give a `Duration`. Let's try printing that. We'll make two `Instant::now()`s right next to each other, then we'll make the program busy for a while. Then we'll make one more `Instant::now()`. Finally, we'll see how long it took.
+因此，它需要 `Instant`，並使用 `.duration_since()` 給出 `Duration`。讓我們試著把它印出來。我們將做出兩個直接相鄰的 `Instant::now()`，然後再讓程式忙碌一下。然後我們再多做出一個 `Instant::now()`。 最後我們將看看花了多長時間。
 
 ```rust
 use std::time::Instant;
 
 fn main() {
     let time1 = Instant::now();
-    let time2 = Instant::now(); // These two are right next to each other
+    let time2 = Instant::now(); // 這兩個直接相鄰
 
     let mut new_string = String::new();
     loop {
-        new_string.push('წ'); // Make Rust push this Georgian letter onto the String
-        if new_string.len() > 100_000 { //  until it is 100,000 bytes long
+        new_string.push('წ'); // 讓 Rust 把喬治亞字母推到 String 上
+        if new_string.len() > 100_000 { // 直到它長達 100,000 位元組
             break;
         }
     }
@@ -12828,16 +12828,16 @@ fn main() {
 }
 ```
 
-This will print something like this:
+會印出類似這樣：
 
 ```text
 1.025µs
 683.378µs
 ```
 
-So that's just over 1 microsecond vs. 683 microseconds. We can see that Rust did take some time to do it.
+所以這只是 1 微秒多對上 683 毫秒。我們可以看到 Rust 確實花了一些時間來做。
 
-There is one fun thing we can do with just a single `Instant` though. We can turn it into a `String` with `format!("{:?}", Instant::now());`. It looks like this:
+然而我們可以只用一個 `Instant` 來做一件有趣的事情。我們可以用 `format!("{:?}", Instant::now());` 把它轉換成 `String`。看起來像這樣：
 
 ```rust
 use std::time::Instant;
@@ -12848,7 +12848,7 @@ fn main() {
 }
 ```
 
-That prints something like `Instant { tv_sec: 2740773, tv_nsec: 632821036 }`. That's not useful, but if we use `.iter()` and `.rev()` and `.skip(2)`, we can skip the `}` and ` ` at the end. We can use it to make a random number generator.
+那會印出類似 `Instant { tv_sec: 2740773, tv_nsec: 632821036 }` 的東西。那沒什麼用，但是如果我們使用 `.iter()` 和 `.rev()` 以及 `.skip(2)`，我們可以跳過尾端的 `}` 和 ` `。我們可以用它來做出隨機數產生器。
 
 ```rust
 use std::time::Instant;
@@ -12877,7 +12877,7 @@ fn main() {
 }
 ```
 
-This will print something like:
+會印出類似這樣：
 
 ```text
 6
@@ -12886,9 +12886,9 @@ This will print something like:
 180
 ```
 
-The function is called `bad_random_number` because it's not a very good random number generator. Rust has better crates that make random numbers with less code than `rand` like `fastrand`. But it's a good example of how you can use your imagination to do something with `Instant`.
+這個函式被稱為 `bad_random_number`，因為它不是個非常好的隨機數產生器。Rust 有更好的 crate，可以用比 `rand` 更少的程式碼做出隨機數，比如 `fastrand`。但這是個你如何可以利用你的想像力透過 `Instant` 來做一些事情的好範例。
 
-When you have a thread, you can use `std::thread::sleep` to make it stop for a while. When you do this, you have to give it a duration. You don't have to make more than one thread to do this because every program is on at least one thread. `sleep` needs a `Duration` though, so it can know how long to sleep. You can pick the unit like this: `Duration::from_millis()`, `Duration::from_secs`, etc. Here's one example:
+當你有個執行緒運作時，你可以使用 `std::thread::sleep` 使它停止一段時間。當你這樣做時，你必須給它 duration。你不必做出多個執行緒來做這件事，因為每個程式至少運作在一個執行緒上。然而 `sleep` 需要 `Duration`，所以它可以知道要睡多久。你可以像這樣選擇單位：`Duration::from_millis()`、`Duration::from_secs` 等等。這裡舉個例子：
 
 ```rust
 use std::time::Duration;
@@ -12902,32 +12902,32 @@ fn main() {
 }
 ```
 
-This will just print
+只會印出：
 
 ```text
 I must sleep now.
 Did I miss anything?
 ```
 
-but the thread will do nothing for three seconds. You usually use `.sleep()` when you have many threads that need to try something a lot, like connecting. You don't want the thread to use your processor to try 100,000 times in a second when you just want it to check sometimes. So then you can set a `Duration`, and it will try to do its task every time it wakes up.
+但執行緒在三秒鐘內什麼也不做。當你有很多執行緒需要經常嘗試一些事情時，比如連線，你通常會使用 `.sleep()`。你不希望執行緒使用你的處理器在一秒鐘內嘗試十萬次，而你只是想讓它有時檢查一下。所以你就可以設定 `Duration`，它就會在每次醒來的時候嘗試做它的任務。
 
 
-### Other macros
+### 其他巨集
 
 
-Let's take a look at some other macros.
+讓我們再來看看一些其他巨集。
 
-`unreachable!()`
+#### `unreachable!()`
 
-This macro is kind of like `todo!()` except it's for code that you will never do. Maybe you have a `match` in an enum that you know will never choose one of the arms, so the code can never be reached. If that's so, you can write `unreachable!()` so the compiler knows that it can ignore that part.
+這個巨集有點像 `todo!()`，除了它是針對你永遠不會用的程式碼。也許你在列舉中有個 `match`，你知道它永遠不會選擇其中的某個分支，所以程式碼永遠無法到達。如果是這樣，你可以寫 `unreachable!()`，這樣編譯器就知道可以忽略這部分。
 
-For example, let's say you have a program that writes something when you choose a place to live in. They are in Ukraine, and all of them are nice except Chernobyl. Your program doesn't let anyone choose Chernobyl, because it's not a good place to live right now. But the enum was made a long time ago in someone else's code, and you can't change it. So in the `match` arm you can use the macro here. It looks like this:
+例如，假設你有個程式，當你選擇一個地方居住時，它會寫一些東西。在烏克蘭除了車諾比外，其他地方都不錯。你的程式不讓任何人選擇車諾比，因為它現在不是個居住的好地方。但是這個列舉是很早以前在別人的程式碼裡做的，你無法更改。所以在 `match` 的分支中，你可以在這裡用這個巨集。看起來像這樣：
 
 ```rust
 enum UkrainePlaces {
     Kiev,
     Kharkiv,
-    Chernobyl, // Pretend we can't change the enum - Chernobyl will always be here
+    Chernobyl, // 假裝我們不能改變列舉 - 車諾比會永遠在這
     Odesa,
     Dnipro,
 }
@@ -12944,16 +12944,16 @@ fn choose_city(place: &UkrainePlaces) {
 }
 
 fn main() {
-    let user_input = UkrainePlaces::Kiev; // Pretend the user input is made from some other function. The user can't choose Chernobyl, no matter what
+    let user_input = UkrainePlaces::Kiev; // 假裝使用者輸入是來自一些其它函示. 無論如何使用者不能選擇車諾比
     choose_city(&user_input);
 }
 ```
 
-This will print `You will live in Kiev`.
+會印出 `You will live in Kiev`。
 
-`unreachable!()` is also nice for you to read because it reminds you that some part of the code is unreachable. You have to be sure that the code is actually unreachable though. If the compiler ever calls `unreachable!()`, the program will panic.
+`unreachable!()` 對你來說也很好讀，因為它提醒你程式碼的某些部分是不能到達的。不過你必須確定程式碼實際上是到達不了的。如果呼叫了 `unreachable!()`，程式就會恐慌。
 
-Also, if you ever have unreachable code that the compiler knows about, it will tell you. Here is a quick example:
+此外，如果你曾經有到達不了的程式碼，而編譯器知道，它就會告訴你。這裡是個便捷的範例：
 
 ```rust
 fn main() {
@@ -12962,12 +12962,12 @@ fn main() {
     match true_or_false {
         true => println!("It's true"),
         false => println!("It's false"),
-        true => println!("It's true"), // Whoops, we wrote true again
+        true => println!("It's true"), // 哎呀, 我們又寫了 true
     }
 }
 ```
 
-It will say:
+它會說：
 
 ```text
 warning: unreachable pattern
@@ -12978,20 +12978,20 @@ warning: unreachable pattern
   |
 ```
 
-But `unreachable!()` is for when the compiler can't know, like our other example.
+但是 `unreachable!()` 是用於編譯器無法知道的時候，就像我們的另一個範例。
 
 
 
-`column!`, `line!`, `file!`, `module_path!`
+#### `column!`、`line!`、`file!`、`module_path!`
 
-These four macros are kind of like `dbg!()` because you just put them in to give you debug information. But they don't take any variables - you just use them with the brackets and nothing else. They are easy to learn together:
+這四個巨集有點像 `dbg!()`，因為你只是把它們放進程式碼來給你除錯資訊。但是它們不需要接受任何變數——你只需要把它們和括號一起使用，而且沒有其他東西。它們放到一起很容易學：
 
-- `column!()` gives you the column where you wrote it,
-- `file!()` gives you the name of the file where you wrote it,
-- `line!()` gives you the line where you wrote it, and
-- `module_path!()` gives you the module where it is.
+- `column!()` 給你寫的那一列
+- `file!()` 給你寫的檔案名稱
+- `line!()` 給你寫的那一行，然後是
+- `module_path!()` 給你模組所在的位置。
 
-The next code shows all three in a simple example. We will pretend there is a lot more code (mods inside mods), because that is why we would want to use these macros. You can imagine a big Rust program over many mods and files.
+接下來的程式碼會在簡單的例子中秀出這三者。我們將假裝有更多的程式碼(模組裡面的模組)，因為那就是我們要使用這些巨集的原因。你可以想像 Rust 大程式，它有許多模組與檔案。
 
 ```rust
 pub mod something {
@@ -13010,17 +13010,17 @@ fn main() {
     use something::third_mod::*;
     let mut country_vec = vec!["Portugal", "Czechia", "Finland"];
     
-    // do some stuff
+    // 做一些事情
     println!("Hello from file {}", file!());
 
-    // do some stuff
+    // 做一些事情
     println!(
         "On line {} we got the country {}",
         line!(),
         country_vec.pop().unwrap()
     );
 
-    // do some more stuff
+    // 做多一些事情
 
     println!(
         "The next country is {} on line {} and column {}.",
@@ -13029,13 +13029,13 @@ fn main() {
         column!(),
     );
 
-    // lots more code
+    // 很多很多的程式碼
 
     print_a_country(&mut country_vec);
 }
 ```
 
-It prints this:
+印出這樣：
 
 ```text
 Hello from file src/main.rs
@@ -13046,9 +13046,9 @@ The last country is Portugal inside the module rust_book::something::third_mod
 
 
 
-`cfg!`
+#### `cfg!`
 
-We know that you can use attributes like `#[cfg(test)]` and `#[cfg(windows)]` to tell the compiler what to do in certain cases. When you have `test`, it will run the code when you run Rust under testing mode (if it's on your computer you type `cargo test`). And when you use `windows`, it will run the code if the user is using Windows. But maybe you just want to change one tiny bit of code depending on the operating system, etc. That's when this macro is useful. It returns a `bool`.
+我們知道你可以使用 `#[cfg(test)]` 和 `#[cfg(windows)]` 這樣的屬性來告訴編譯器在某些情況下該怎麼做。當你有 `test` 時，當你在測試模式下執行Rust 時，它會執行程式碼(如果是在電腦上，你輸入 `cargo test`)。而當你使用 `windows` 時，如果使用者使用的是 Windows，它就會執行程式碼。但也許你只是想根據不同作業系統對依賴系統的程式碼做很小的修改。這時候這個巨集就很有用了。它回傳 `bool`。
 
 ```rust
 fn main() {
@@ -13061,32 +13061,32 @@ fn main() {
 }
 ```
 
-This will print differently, depending on your system. The Rust Playground runs on Linux, so it will print:
+取決於你的系統這將以不同的方式列印。Rust Playground 在 Linux上執行，所以會印出：
 
 ```text
 ...then in your hard drive, type the directory name followed by a slash. Then you...
 ```
 
-`cfg!()` works for any kind of configuration. Here is an example of a function that runs differently when you use it inside a test.
+`cfg!()` 適用於任何一種配置。這裡的範例是當你在測試中使用函式時，它的執行方式會有所不同。
 
 ```rust
-#[cfg(test)] // cfg! will know to look for the word test
+#[cfg(test)] // cfg! 會知道要尋找 test 這個字
 mod testing {
     use super::*;
     #[test]
     fn check_if_five() {
-        assert_eq!(bring_number(true), 5); // This bring_number() function should return 5
+        assert_eq!(bring_number(true), 5); // bring_number() 函式應該回傳 5
     }
 }
 
-fn bring_number(should_run: bool) -> u32 { // This function takes a bool as to whether it should run
-    if cfg!(test) && should_run { // if it should run and has the configuration test, return 5
+fn bring_number(should_run: bool) -> u32 { // 這個函式接受 bool 作為是否他應該執行的條件
+    if cfg!(test) && should_run { // 如果它應該執行並且有組態測試就回傳 5
         5
-    } else if should_run { // if it's not a test but it should run, print something. When you run a test it ignores println! statements
+    } else if should_run { // 如果它不是 test 但它應該執行, 印出某些東西. 當你執行測試它會忽略 println! 陳述式
         println!("Returning 5. This is not a test");
         5
     } else {
-        println!("This shouldn't run, returning 0."); // otherwise return 0
+        println!("This shouldn't run, returning 0."); // 否則回傳 0
         0
     }
 }
@@ -13097,14 +13097,14 @@ fn main() {
 }
 ```
 
-Now it will run differently depending on the configuration. If you just run the program, it will give you this:
+現在根據組態的不同，它的執行方式也會不同。如果你只是執行程式，它會給你這樣的結果：
 
 ```text
 Returning 5. This is not a test
 This shouldn't run, returning 0.
 ```
 
-But if you run it in test mode (`cargo test` for Rust on your computer), it will actually run the test. And because the test always returns 5 in this case, it will pass.
+但如果你在測試模式下執行它 (`cargo test`，用你電腦上的 Rust 跑)，它實際上會執行測試。因為在這種情況下，測試總是回傳 5，所以它會通過。
 
 ```text
 running 1 test
@@ -13115,11 +13115,11 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 
 
-## Writing macros
+## 撰寫巨集
 
-Writing macros can be very complicated. You almost never need to write one, but sometimes you might want to because they are very convenient. Writing macros is interesting because they are almost a different language. To write one, you actually use another macro called `macro_rules!`. Then you add your macro name and open a `{}` block. Inside is sort of like a `match` statement.
+撰寫巨集可以到非常複雜。而你幾乎永遠都不需要寫巨集，但有時你可能會因為它們非常方便而想去寫。寫巨集很有趣，因為它們幾乎是不同的語言。寫巨集時你實際上會用到另一個叫 `macro_rules!` 的巨集。然後加入你的巨集名稱，並開啟 `{}` 區塊。裡面有點像 `match` 陳述式。
 
-Here's one that only takes `()`, then just returns 6:
+這裡有個巨集的範例只有接受 `()`，也只回傳 6：
 
 ```rust
 macro_rules! give_six {
@@ -13134,7 +13134,7 @@ fn main() {
 }
 ```
 
-But it's not the same as a `match` statement, because a macro actually doesn't compile anything. It just takes an input and gives an output. Then the compiler checks to see if it makes sense. That's why a macro is like "code that writes code". You will remember that a true `match` statement needs to give the same type, so this won't work:
+但它和 `match` 陳述式不太一樣，因為巨集實際上不會編譯任何東西。它只是接受一個輸入並給出一個輸出。然後編譯器會檢查它是否合理。這就是為什麼巨集就像是"寫程式碼的程式碼"。你會記得，真正的 `match` 陳述式需要給出相同的型別，所以這個就會不能編譯：
 
 ```rust
 fn main() {
@@ -13147,7 +13147,7 @@ fn main() {
 }
 ```
 
-It will complain that you want to return `()` in one case, and `i32` in the other.
+它會抱怨你在一種情況下要回傳 `()`，卻在另一種情況下要回傳 `i32`。
 
 ```text
 error[E0308]: `match` arms have incompatible types
@@ -13162,7 +13162,7 @@ error[E0308]: `match` arms have incompatible types
   | |_____- `match` arms have incompatible types
 ```
 
-But a macro doesn't care, because it's just giving an output. It's not a compiler - it's code before code. So you can do this:
+但巨集並不關心，因為它只是給予輸出。它不是編譯器——它是程式碼的程式碼。所以你可以這樣做：
 
 ```rust
 macro_rules! six_or_print {
@@ -13180,7 +13180,7 @@ fn main() {
 }
 ```
 
-This is just fine, and prints `You didn't give me 6.`. You can also see that it's not a match arm because there's no `_` case. We can only give it `(6)`, or `()`. Anything else will make an error. And the `6` we give it isn't even an `i32`, it's just an input 6. You can actually set anything as the input for a macro, because it's just looking at input to see what it gets. For example:
+這就好辦了，印出 `You didn't give me 6.`。你也可以看到，這不是匹配陳述式的分支，因為沒有 `_` 的情況。我們只能給它 `(6)`，或者 `()`，其他的都會出錯。而我們給它的 `6` 甚至不是 `i32`，只是輸入的 6。其實你可以設定任何東西作為巨集的輸入，因為它只查看輸入見到了什麼。比如說：
 
 ```rust
 macro_rules! might_print {
@@ -13198,14 +13198,14 @@ fn main() {
 }
 ```
 
-So this strange macro only responds to two things: `()` and `(THis is strange input 하하はは哈哈 but it still works)`. Nothing else. It prints:
+所以這個奇怪的巨集只回應兩件事。`()` 和 `(THis is strange input 하하はは哈哈 but it still works)`。沒有其他的東西。印出：
 
 ```text
 You guessed the secret message!
 You didn't guess it
 ```
 
-So a macro isn't exactly Rust syntax. But a macro can also understand different types of input that you give it. Take this example:
+所以巨集不完全是 Rust 語法。但是巨集也可以理解你給它的不同型別的輸入。拿這個例子來說：
 
 ```rust
 macro_rules! might_print {
@@ -13219,23 +13219,23 @@ fn main() {
 }
 ```
 
-This will print `You gave me: 6`. The `$input:expr` part is important. It means "for an expression, give it the variable name $input". In macros, variables start with a `$`. In this macro, if you give it one expression, it will print it. Let's try it out some more:
+會印出 `You gave me: 6`。`$input:expr` 的部分很重要。它的意思是"對於表達式，給它取變數名稱為 $input"。巨集中的變數是以 `$` 開頭。在這個巨集中，如果你給它表達式，表達式就會印出來。讓我們再來多試幾次：
 
 ```rust
 macro_rules! might_print {
     ($input:expr) => {
-        println!("You gave me: {:?}", $input); // Now we'll use {:?} because we will give it different kinds of expressions
+        println!("You gave me: {:?}", $input); // 現在我們將會使用 {:?} 因為我們將會給它不同的種類的表達式
     }
 }
 
 fn main() {
-    might_print!(()); // give it a ()
-    might_print!(6); // give it a 6
-    might_print!(vec![8, 9, 7, 10]); // give it a vec
+    might_print!(()); // 給它 ()
+    might_print!(6); // 給它 6
+    might_print!(vec![8, 9, 7, 10]); // 給它向量
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 You gave me: ()
@@ -13243,9 +13243,9 @@ You gave me: 6
 You gave me: [8, 9, 7, 10]
 ```
 
-Also note that we wrote `{:?}`, but it won't check to see if `&input` implements `Debug`. It'll just write the code and try to make it compile, and if it doesn't then it gives an error.
+另外注意，我們寫的是 `{:?}`，但它不會檢查 `&input` 是否實現了 `Debug`。它只會寫程式碼，並嘗試讓它編譯，如果不行，那它就會給出錯誤。
 
-So what can a macro see besides `expr`? They are: `block | expr | ident | item | lifetime | literal  | meta | pat | path | stmt | tt | ty | vis`. This is the complicated part. You can see what each of them means [here](https://doc.rust-lang.org/beta/reference/macros-by-example.html), where it says:
+那麼除了 `expr` fragment，巨集還能看到什麼呢？它們是 `block | expr | ident | item | lifetime | literal  | meta | pat | path | stmt | tt | ty | vis`。這就是複雜的部分。你可以在[這裡](https://doc.rust-lang.org/beta/reference/macros-by-example.html)看到它們各自的意思，這裡說：
 
 ```text
 item: an Item
@@ -13263,9 +13263,9 @@ vis: a possibly empty Visibility qualifier
 literal: matches -?LiteralExpression
 ```
 
-There is another good site called cheats.rs that explains them [here](https://cheats.rs/#macros-attributes) and gives examples for each.
+有個好網站叫 cheats.rs，在[這裡](https://cheats.rs/#macros-attributes)解釋了它們，並且為每一種 fragment 給出範例。
 
-However, for most macros you will use `expr`, `ident`, and `tt`. `ident` means identifier and is for variable or function names. `tt` means token tree and sort of means any type of input. Let's try a simple macro with both.
+然而對於大多數巨集，你只會用到 `expr`、`ident` 和 `tt`。`ident` 表示識別字，用於變數或函式名稱。`tt` 表示標記樹 (Token tree)，和任何型別的輸入。讓我們嘗試用前兩者寫個簡單的巨集。
 
 ```rust
 macro_rules! check {
@@ -13288,7 +13288,7 @@ fn main() {
 }
 ```
 
-So this will take one `ident` (like a variable name) and an expression and see if they are the same. It prints:
+所以這將接受一個 `ident` (像是變數名)和一個表達式，看看它們是否相同。印出：
 
 ```text
 Is 6 equal to 6? true
@@ -13296,7 +13296,7 @@ Is [7, 8, 9] equal to [7, 8, 9]? true
 Is 6 equal to 10? false
 ```
 
-And here's one macro that takes a `tt` and prints it. It uses a macro called `stringify!` to make a string first.
+而這裡有一個巨集，它接受輸入 `tt`，然後把它印出來。它會先使用叫做 `stringify!` 的巨集做出字串。
 
 ```rust
 macro_rules! print_anything {
@@ -13312,20 +13312,20 @@ fn main() {
 }
 ```
 
-This prints:
+印出：
 
 ```text
 ththdoetd
 87575oehq75onth
 ```
 
-But it won't print if we give it something with spaces, commas, etc. It will think that we are giving it more than one item or extra information, so it will be confused.
+但如果我們給它一些帶有空格、逗號等的東西，它就不會印出來了。它會認為我們給它不止一個元素或額外的資訊，所以它會感到困惑。
 
-This is where macros start to get difficult.
+這就是巨集開始變得困難的地方。
 
-To give a macro more than one item at a time, we have to use a different syntax. Instead of `$input`, it will be `$($input1),*`. This means zero or more (this is what * means), separated by a comma. If you want one or more, use `+` instead of `*`.
+要一次提供給巨集多個元素，我們必須使用不同的語法。不是原先的 `$input`，而是要用 `$($input1),*`。這意味著用逗號分隔的零或更多(這就是 `*` 的意思)元素。如果你想要一個或多個，要改用 `+` 而不是 `*`。
 
-Now our macro looks like this:
+現在我們的巨集看起來像這樣：
 
 ```rust
 macro_rules! print_anything {
@@ -13343,7 +13343,7 @@ fn main() {
 }
 ```
 
-So it takes any token tree separated by commas, and uses `stringify!` to make it into a string. Then it prints it. It prints:
+所以它接受任何用逗號隔開的標記樹，並使用 `stringify!` 把它變成字串，再印出來。印出：
 
 ```text
 ththdoetd, rcofe
@@ -13351,15 +13351,15 @@ ththdoetd, rcofe
 87575oehq75onth, ntohe, 987987o, 097
 ```
 
-If we used `+` instead of `*` it would give an error, because one time we gave it no input. So `*` is a bit safer option.
+如果我們使用 `+` 而不是 `*`，它會給出錯誤，因為其中一次呼叫時我們沒有給它輸入。所以 `*` 是個比較安全一點的選擇。
 
-So now we can start to see the power of macros. In this next example we can actually make our own functions:
+所以現在我們可以開始見識到巨集的威力了。在接下來的範例中，我們實際上可以做出我們自己的函式：
 
 ```rust
 macro_rules! make_a_function {
-    ($name:ident, $($input:tt),*) => { // First you give it one name for the function, then it checks everything else
+    ($name:ident, $($input:tt),*) => { // 首先你給它函式一個名字, 然後它檢查其它所有東西
         fn $name() {
-            let output = stringify!($($input),*); // It makes everything else into a string
+            let output = stringify!($($input),*); // 它讓其它所有東西變成字串
             println!("{}", output);
         }
     };
@@ -13367,14 +13367,14 @@ macro_rules! make_a_function {
 
 
 fn main() {
-    make_a_function!(print_it, 5, 5, 6, I); // We want a function called print_it() that prints everything else we give it
+    make_a_function!(print_it, 5, 5, 6, I); // 我們想要函式呼叫 print_it() 來印出我們給的其它所有東西
     print_it();
-    make_a_function!(say_its_nice, this, is, really, nice); // Same here but we change the function name
+    make_a_function!(say_its_nice, this, is, really, nice); // 這裡一樣但是我們改了函式名
     say_its_nice();
 }
 ```
 
-This prints:
+印出：
 
 ```text
 5, 5, 6, I
@@ -13382,7 +13382,7 @@ this, is, really, nice
 ```
 
 
-So now we can start to understand other macros. You can see that some of the macros we've already been using are pretty simple. Here's the one for `write!` that we used to write to files:
+所以現在我們可以開始瞭解其他的巨集了。你可以見到，我們已經使用的一些巨集相當簡單。這裡是我們過去常用來寫入檔案的 `write!` 巨集：
 
 ```rust
 macro_rules! write {
@@ -13390,16 +13390,16 @@ macro_rules! write {
 }
 ```
 
-So to use it, you enter this:
+要使用它時，你要輸入這些：
 
-- an expression (`expr`) that gets the variable name `$dst`.
-- everything after that. If it wrote `$arg:tt` then it would only take one, but because it wrote `$($arg:tt)*` it takes zero, one, or any number.
+- 一個表達式 (`expr`) 用來得到變數名 `$dst`。
+- 之後的所有東西。如果它寫的是 `$arg:tt`，那麼它只會接受一個元素，但因為它寫的是 `$($arg:tt)*`，所以它可以接受零、一個或者任意多個。
 
-Then it takes `$dst` and uses a method called `write_fmt` on it. Inside that, it uses another macro called `format_args!` that takes all `$($arg)*`, or all the arguments we put in.
+然後它接受 `$dst`，並對它呼叫了叫做 `write_fmt` 的方法。在那裡面，它使用了另一個叫做 `format_args!` 的巨集來接受所有的 `$($arg)*`，或者說我們放進去的全部引數。
 
 
 
-Now let's take a look at the `todo!` macro. That's the one you use when you want the program to compile but haven't written your code yet. It looks like this:
+現在我們來看一下 `todo!` 這個巨集。當你想讓程式能編譯但你的程式碼還沒寫出來時，這就是你會用到的那個巨集。看起來像這樣：
 
 ```rust
 macro_rules! todo {
@@ -13408,12 +13408,12 @@ macro_rules! todo {
 }
 ```
 
-This one has two options: you can enter `()`, or a number of token trees (`tt`).
+這個有兩個選項：你可以輸入 `()`，也可以輸入一些標記樹 (`tt`)。
 
-- If you enter `()`, it just uses `panic!` with a message. So you could actually just write `panic!("not yet implemented")` instead of `todo!` and it would be the same.
-- If you enter some arguments, it will try to print them. You can see the same `format_args!` macro inside, which works like `println!`.
+- 如果你輸入的是 `()`，它只是使用加上訊息的 `panic!`。所以其實你可以直接寫 `panic!("not yet implemented")`，而不是 `todo!`，結果也一樣。
+- 如果你輸入一些引數，它會嘗試印出它們。你可以見到裡面有同樣的 `format_args!` 巨集，它的工作原理和 `println!` 一樣。
 
-So if you write this, it will work too:
+所以如果你寫成這樣，一樣也行得通：
 
 ```rust
 fn not_done() {
@@ -13427,14 +13427,14 @@ fn main() {
 }
 ```
 
-This will print:
+會印出：
 
 ```text
 thread 'main' panicked at 'not yet implemented: Not done yet because of lack of time. Check back in 8 hours', src/main.rs:4:5
 ```
 
 
-Inside a macro you can even call the same macro. Here's one:
+在巨集裡面你甚至可以呼叫相同的巨集。這裡是這樣的範例：
 
 ```rust
 macro_rules! my_macro {
@@ -13457,18 +13457,18 @@ fn main() {
 }
 ```
 
-This one takes either `()`, or one expression, or many expressions. But it ignores all the expressions no matter what you put in, and just calls `my_macro!` on `()`. So the output is just `Let's print this`, four times.
+這個巨集接受 `()`、或一個表達式、或很多個表達式都可以。但是不論你放了什麼，它都會忽略所有的表達式，並且最後只呼叫 `my_macro!` 的 `()`。所以四次輸出都只是 `Let's print this`。
 
-You can see the same thing in the `dbg!` macro, which also calls itself.
+在 `dbg!` 巨集中也可以看到同樣的情況，也就是呼叫自己。
 
 ```rust
 macro_rules! dbg {
     () => {
-        $crate::eprintln!("[{}:{}]", $crate::file!(), $crate::line!()); //$crate means the crate that it's in.
+        $crate::eprintln!("[{}:{}]", $crate::file!(), $crate::line!()); // $crate 的意思是指本身所在的 crate.
     };
     ($val:expr) => {
-        // Use of `match` here is intentional because it affects the lifetimes
-        // of temporaries - https://stackoverflow.com/a/48732525/1063961
+        // 這裡 `match` 的使用是有意的因為它影響了暫存變數的
+        // 生命週期 - https://stackoverflow.com/a/48732525/1063961
         match $val {
             tmp => {
                 $crate::eprintln!("[{}:{}] {} = {:#?}",
@@ -13477,7 +13477,7 @@ macro_rules! dbg {
             }
         }
     };
-    // Trailing comma with single argument is ignored
+    // 單一引數的後緣逗號會被忽略
     ($val:expr,) => { $crate::dbg!($val) };
     ($($val:expr),+ $(,)?) => {
         ($($crate::dbg!($val)),+,)
@@ -13485,9 +13485,9 @@ macro_rules! dbg {
 }
 ```
 
-(`eprintln!` is the same as `println!` except it prints to `io::stderr` instead of `io::stdout`. There is also `eprint!` that doesn't add a new line)
+> `eprintln!` 與 `println!` 相同，除了它印出到 `io::stderr` 而不是 `io::stdout`。當然也有個 `eprint!` 印出時不會加上換行。
 
-So we can try this out ourself.
+所以我們可以自己去試一試。
 
 ```rust
 fn main() {
@@ -13495,9 +13495,9 @@ fn main() {
 }
 ```
 
-That matches the first arm, so it will print the file name and line name with the `file!` and `line!` macros. It prints `[src/main.rs:2]`.
+這與第一分支相匹配，所以它會用 `file!` 和 `line!` 巨集印出檔名和行數。印出 `[src/main.rs:2]`。
 
-Let's try it with this:
+讓我們用這個來試試：
 
 ```rust
 fn main() {
@@ -13505,7 +13505,7 @@ fn main() {
 }
 ```
 
-This will match the next arm, because it's one expression. It will then call the input `tmp` and use this code: ` $crate::eprintln!("[{}:{}] {} = {:#?}", $crate::file!(), $crate::line!(), $crate::stringify!($val), &tmp);`. So it will print with `file!` and `line!`, then `$val` made into a `String`, and pretty print with `{:#?}` for `tmp`. So for our input it will write this:
+這將會匹配到下一個分支，因為它是個表達式。然後它將把輸入叫做 `tmp` 並使用這段程式碼：`$crate::eprintln!("[{}:{}] {} = {:#?}", $crate::file!(), $crate::line!(), $crate::stringify!($val), &tmp);`。所以它會用 `file!` 和 `line!` 來印出，再把 `$val` 做成 `String`，並且用 `{:#?}` 來給 `tmp` 做漂亮列印。所以對於我們的輸入，它會寫成這樣：
 
 ```text
 [src/main.rs:2] vec![8, 9, 10] = [
@@ -13515,25 +13515,25 @@ This will match the next arm, because it's one expression. It will then call the
 ]
 ```
 
-And for the rest of it it just calls `dbg!` on itself even if you put in an extra comma.
+剩下的部分，即使你加了額外的逗號，它也只是對自己呼叫 `dbg!`。
 
-As you can see, macros are very complicated! Usually you only want a macro to automatically do something that a simple function can't do very well. The best way to learn about macros is to look at other macro examples. Not many people can quickly write macros without problems. So don't think that you need to know everything about macros to know how to write in Rust. But if you read other macros, and change them a little, you can easily borrow their power. Then you might start to get comfortable with writing your own.
+正如你所見，巨集是非常複雜的！通常你只想讓巨集自動做些簡單函式無法做得很好的事情。學習巨集的最佳方法就是看看其他巨集的例子。沒有多少人能夠快速寫出巨集而不出問題。所以在 Rust 中，不用認為你需要知道巨集的一切才能知道如何撰寫。但如果你讀了其他巨集，並稍加修改，你就可以很容易地借用它們的威力。之後你可能就會開始習慣寫出自己的巨集。
 
 
-# Part 2 - Rust on your computer
+# 第二部 - 電腦上的 Rust
 
-You saw that we can learn almost anything in Rust just using the Playground. But if you learned everything so far, you will probably want Rust on your computer now. There are always things that you can't do with the Playground like using files or code in more than just one file. Some other things you need Rust on your computer for are input and flags. But most important is that with Rust on your computer you can use crates. We already learned about crates, but in the Playground you could only use the most popular ones. But with Rust on your computer you can use any crate in your program.
+你見到了我們可以只使用 Playground 就學習到 Rust 裡的幾乎任何東西。但到目前為止如果你已經學了這麼多，現在你也許會想要在你的電腦上使用 Rust。總有一些事情是你沒辨法用 Playground 做到的，比如使用檔案或在多個檔案中的程式碼。也有一些其它東西需要在電腦上安裝 Rust 的是輸入功能和 flags。但最重要的事是在你的電腦上有了 Rust，你可以使用 Crate。我們已經學過 Crate ，但在 Playground 中你只能使用最流行的那一個。但在你的電腦上有了 Rust，你就可以在你的程式中使用任何 Crate。
 
 ## cargo
 
-`rustc` means Rust compiler, and it's what does the actual compiling. A rust file ends with an `.rs`. But most people don't write something like `rustc main.rs` to compile. They use something called `cargo`, which is the main package manager for Rust.
+`rustc` 的意思是 Rust 編譯器，實際的編譯工作由它完成。Rust 檔案是用 `.rs` 作結尾。但大多數人不會去寫類似 `rustc main.rs` 的東西來編譯。他們使用的是名為 `cargo` 的東西，它是 Rust 的主要套件管理器。
 
-One note about the name: it's called `cargo` because when you put crates together, you get cargo. A crate is a wooden box that you see on ships or trucks, but you remember that every Rust project is also called a crate. Then when you put them together you get the whole cargo.
+關於這個名字的說明：之所以叫 `cargo`，是因為當你把板條箱 (crate) 放在一起時，你會得到貨物 (cargo)。Crate 就是你在貨船或卡車上見到的木箱，但你會記得，每個 Rust 專案也叫 Crate。那麼當你把它們放在一起時，你就會得到一整個 Cargo。
 
-You can see this when you use cargo to run a project. Let's try something simple with `rand`: we'll just randomly choose between eight letters.
+當你使用 Cargo 來執行專案時，你可以見到這一點。讓我們用 `rand` 來試試簡單的東西：我們只會隨機在八個字母之間選擇。
 
 ```rust
-use rand::seq::SliceRandom; // Use this for .choose over slices
+use rand::seq::SliceRandom; // 讓 .choose 能使用在 slices 上
 
 fn main() {
 
@@ -13546,7 +13546,7 @@ fn main() {
 }
 ```
 
-This will print something like `b c g h e a`. But we want to see what `cargo` does first. To use `cargo` and run our program, usually we type `cargo run`. This will build our program and run it for us. But when it starts compiling, it does something like this:
+會印出 `b **c** g h e a` 這樣的東西。但我們想先看看 `cargo` 的作用。要使用 `cargo` 來執行我們的程式，通常我們按鍵輸入 `cargo run`。這樣就可以組建我們的程式，並為我們執行。當它開始編譯時，會做這樣的事情：
 
 ```text
    Compiling getrandom v0.1.14
@@ -13561,9 +13561,9 @@ This will print something like `b c g h e a`. But we want to see what `cargo` do
 g f c f h b
 ```
 
-So it looks like it didn't just bring in `rand`, but some others too. That's because we need `rand` for our crate, but `rand` also has some code that needs other crates too. So `cargo` will find all the crates we need and put them together. In our case we only had seven, but on very big projects you may have 200 or more crates to bring in.
+所以看起來不只引進了 `rand`，還有一些其它的也是。這是因為我們的 crate 需要 `rand`，而 `rand` 也有一些程式碼也需要其它 crate。所以 `cargo` 會找到我們需要的所有 crate，並把它們放在一起。在我們的案例中，我們只有七個，但在非常大的專案中，你可能會有 200 個或更多的 crate 要引進。
 
-This is where you can see the tradeoff for Rust. Rust is extremely fast, because it compiles ahead of time. It does this by looking through the code and looking to see what the code you write actually does. For example, you might write this generic code:
+這就是你可以看到 Rust 的權衡妥協的地方。Rust 的速度極快，因為它提前編譯。它透過檢視程式碼，看你寫的程式碼到底做了什麼。例如，你可能會寫這樣的泛型程式碼：
 
 ```rust
 use std::fmt::Display;
@@ -13579,28 +13579,28 @@ fn main() {
 }
 ```
 
-This function can take anything with `Display`, so we gave it a `&str` and next gave it a `f64` and that is no problem for us. But the compiler doesn't look at generics, because it doesn't want to do anything at runtime. It wants to put together a program that can run by itself as fast as possible. So when it looks at the first part with `"Windy"`, it doesn't see `fn print_and_return_thing<T: Display>(input: T) -> T`. It sees something like `fn print_and_return_thing(input: &str) -> &str`. And next it sees `fn print_and_return_thing(input: f64) -> f64`. All the checking about traits and so on is done during compile time. That's why generics take longer to compile, because it needs to figure them out, and make it concrete.
+這個函式可以接受實作 `Display` 的任何型別作為引數，所以我們給它 `&str`，接下來給它 `f64`，這對我們來說沒什麼問題。但是編譯器不看泛型，因為它不想在執行時期做任何事情。它想把能執行的程式儘可能快地組裝起來。所以當它看第一部分的 `"Windy"` 時，它不是看到 `fn print_and_return_thing<T: Display>(input: T) -> T`，它看到的是 `fn print_and_return_thing(input: &str) -> &str` 這樣的東西。而接下來它看到的是 `fn print_and_return_thing(input: f64) -> f64`。所有關於特徵的檢查等等都是在編譯時期完成的。這就是為什麼泛型需要更長的時間來編譯，因為它需要弄清楚它們，並使之具體化。
 
-One more thing: Rust in 2020 is working hard on compile time, because this part takes the longest. Every version of Rust is a little bit faster at compiling, and there are some other plans to speed it up. But in the meantime, here's what you should know:
+還有一件事：Rust 2020 正在努力處理編譯時間問題，因為這部分需要的時間最長。每個版本的 Rust 在編譯時都會快一點，而且還有一些其他的計劃來加快它的速度。但與此同時，這裡是你該知道的：
 
-- `cargo build` will build your program so you can run it
-- `cargo run` will build your program and run it
-- `cargo build --release` and `cargo run --release` will do the same but in release mode. What's that? Release mode is for when your code is finally done. Then Rust will take even longer to compile, but it does this because it uses everything it knows to make it faster. Release mode is actually a *lot* faster than the regular mode, which is called debug mode. That's because it compiles quicker and has more debug information. The regular `cargo build` is called a "debug build" and `cargo build --release` is called a "release build".
-- `cargo check` is a way to check your code. It's like compiling except that it won't actually make your program. This is a good way to check your code a lot because it doesn't take as long as `build` or `run`.
+- `cargo build` 會組建你的程式，這樣你就可以執行它了。
+- `cargo run` 將組建你的程式並且執行。
+- `cargo build --release` 和 `cargo run --release` 有同樣的效果，不過是在釋出模式 (Release mode) 下。那是什麼？釋出模式是用在當你的程式碼終於完成的時候。然後 Rust 會花更多的時間來編譯，但它這樣做是因為它使用了它所知道的一切，來使編譯出的程式執行得更快。釋出模式實際上比被稱為除錯模式 (Debug mode) 的常規模式執行時還 *快的多*。那是因為常規模式的編譯速度更快，而且有更多的除錯資訊。常規的 `cargo build` 叫做 "debug build"，`cargo build --release` 叫做 "release build"。
+- `cargo check` 是一種檢查程式碼的方式。它就像編譯一樣，除了它並不會真正地做出你的程式。這是經常檢查你的程式碼的好方式，因為它不像 `build` 或 `run` 那樣需要花很長時間。
 
-By the way, the `--release` part of the command is called a `flag`. That means extra information in a command.
+對了，命令中的 `--release` 這部分叫做 `flag`。這意味著命令裡帶有額外的資訊。
 
-Some other things you need to know are:
+一些其他你需要知道的事情：
 
-- `cargo new`. You do this to create a new Rust project. After `new`, write the name of the project and `cargo` will make the folder and all the files you need.
-- `cargo clean`. When you add crates to `Cargo.toml`, the computer will download all the files it needs and they can take a lot of space. If you don't want them on your computer anymore, type `cargo clean`.
+- `cargo new` 這麼做是為了建立新的 Rust 專案。在 `new` 之後寫上專案名稱，`cargo` 將會做出所有你需要的檔案和資料夾。
+- `cargo clean` 當你把 crate 新增到 `Cargo.toml` 時，電腦會下載所有需要的檔案，並且會佔用很多空間。如果你不想再讓它們留在你的電腦上，可以輸入 `cargo clean`。
 
-One more thing about the compiler: it only takes the most time when you use `cargo build` or `cargo run` the first time. After that it will remember, and it will compile fast again. But if you use `cargo clean` and then run `cargo build`, it will have to compile slowly one more time.
+關於編譯器還有一件事：只有當你第一次使用 `cargo build` 或 `cargo run` 時，它才會花費最多的時間。在那之後它就會記得一些資訊，又會快速的編譯了。但如果你使用 `cargo clean`，然後執行 `cargo build`，它將不得不再慢慢地編譯一次。
 
 
-## Taking user input
+## 接受使用者輸入
 
-One easy way to take input from the user is with `std::io::stdin`. This means "standard in", which is the input from the keyboard. With `stdin()` you can get user input, but then you will want to put it in a `&mut String` with `.read_line()`. Here is a simple example of that, but it both works and doesn't work:
+接受使用者的輸入的一個簡單的方式是用 `std::io::stdin`。這意味著"標準輸入" (standard input)，也就是來自鍵盤的輸入。用 `stdin()` 可以獲得使用者的輸入內容，但是接下來你就會想用 `.read_line()` 把它放到 `&mut String` 中。這裡是那種情境的簡單範例，但它既能用、也不能用：
 
 ```rust
 use std::io;
@@ -13609,16 +13609,16 @@ fn main() {
     println!("Please type something, or x to escape:");
     let mut input_string = String::new();
 
-    while input_string != "x" { // This is the part that doesn't work right
-        input_string.clear(); // First clear the String. Otherwise it will keep adding to it
-        io::stdin().read_line(&mut input_string).unwrap(); // Get the stdin from the user, and put it in read_string
+    while input_string != "x" { // 這是不能用的部分
+        input_string.clear(); // 首先清除 String 內容. 不然會一直加入東西進去
+        io::stdin().read_line(&mut input_string).unwrap(); // 從使用者獲得的 stdin, 並把它放進去 read_string
         println!("You wrote {}", input_string);
     }
     println!("See you later!");
 }
 ```
 
-Here is what an output looks like:
+這裡是輸出看起來的樣子：
 
 ```text
 Please type something, or x to escape:
@@ -13638,7 +13638,7 @@ x
 You wrote x
 ```
 
-It takes our input and gives it back, and it even knows that we typed `x`. But it doesn't exit the program. The only way to get out is to close the window, or type ctrl and c. Let's change the `{}` to `{:?}` in `println!` to get more information (or you could use `dbg!(&input_string)` if you like that macro). Now it says:
+它接受我們的輸入，然後把它還給我們，它甚至知道我們輸入了 `x`。但它並沒有退出程式。唯一的辦法是關閉視窗，或者輸入 ctrl 和 c。讓我們把 `println!` 中的 `{}` 改為 `{:?}`，來得到更多資訊（如果你喜歡用巨集，也可以使用 `dbg!(&input_string)`）。現在它說：
 
 ```text
 Please type something, or x to escape:
@@ -13654,7 +13654,7 @@ You wrote "x\r\n"
 
 
 
-This is because the keyboard input is actually not just `something`, it is `something` and the `Enter` key. There is an easy method to fix this called `.trim()`, which removes all the whitespace. Whitespace, by the way, is all [these characters](https://doc.rust-lang.org/reference/whitespace.html):
+這是因為鍵盤輸入其實不只是 `something`，而是 `something` 和 `Enter` 鍵。有個簡單的方法可以修正這個問題，叫做 `.trim()`，它可以把所有的空白字元都去掉。順便說一下，[這些字元](https://doc.rust-lang.org/reference/whitespace.html)都是空白字元：
 
 ```text
 U+0009 (horizontal tab, '\t')
@@ -13670,7 +13670,7 @@ U+2028 (line separator)
 U+2029 (paragraph separator)
 ```
 
-So that will turn `x\r\n` into just `x`. Now it works:
+這樣就可以把 `x\r\n` 變成只剩 `x` 了。現在它可以用了：
 
 ```rust
 use std::io;
@@ -13688,7 +13688,7 @@ fn main() {
 }
 ```
 
-Now it will print:
+現在會印出：
 
 ```text
 Please type something, or x to escape:
@@ -13706,7 +13706,7 @@ See you later!
 
 
 
-There is another kind of user input called `std::env::Args` (env means environment). `Args` is what the user types when starting the program. There is actually always at least one `Arg` in a program. Let's write a program that only prints them using `std::env::args()` to see what they are.
+還有另一種使用者輸入叫 `std::env::Args`(env 的意思是環境 environment )。`Args` 是使用者啟動程式時打字輸入的內容。其實在程式執行時總是至少有一個 `Arg`。讓我們寫個程式，裡面只使用 `std::env::args()` 印出它們，來看看它們是什麼。
 
 ```rust
 fn main() {
@@ -13714,19 +13714,19 @@ fn main() {
 }
 ```
 
-If we write `cargo run` then it prints something like this:
+如果我們寫 `cargo run`，就會像這樣印出來：
 
 ```text
 Args { inner: ["target\\debug\\rust_book.exe"] }
 ```
 
-Let's give it more input and see what it does. We'll type `cargo run but with some extra words`. It gives us:
+讓我們給它更多輸入來看看它的作用。我們輸入 `cargo run but with some extra words` 來執行，會給我們：
 
 ```text
 Args { inner: ["target\\debug\\rust_book.exe", "but", "with", "some", "extra", "words"] }
 ```
 
-Interesting. And when we look at [the page for Args](https://doc.rust-lang.org/std/env/struct.Args.html), we see that it implements `IntoIterator`. That means we can do all the things we know about iterators to read and change it. Let's try this:
+真有趣。而當我們瀏覽 [Args 文件](https://doc.rust-lang.org/std/env/struct.Args.html)時，我們看到它實作了 `IntoIterator`。這意味著我們可以做全部疊代器我們所知的一切事情來讀取和改變它。讓我們試試這個：
 
 ```rust
 use std::env::args;
@@ -13740,7 +13740,7 @@ fn main() {
 }
 ```
 
-Now it says:
+現在它說：
 
 ```text
 You entered: target\debug\rust_book.exe
@@ -13751,7 +13751,7 @@ You entered: extra
 You entered: words
 ```
 
-You can see that the first argument is always the program name, so you will often want to skip it, like this:
+你可以看到第一個引數總是程式名，所以你經常會想跳過它，比如這樣：
 
 ```rust
 use std::env::args;
@@ -13765,7 +13765,7 @@ fn main() {
 }
 ```
 
-That will print:
+會印出：
 
 ```text
 You wrote but, which in capital letters is BUT
@@ -13775,7 +13775,7 @@ You wrote extra, which in capital letters is EXTRA
 You wrote words, which in capital letters is WORDS
 ```
 
-One common use for `Args` is for user settings. You can make sure that the user writes the input you need, and only run the program if it's right. Here's a small program that either makes letters big (capital) or small (lowercase):
+`Args` 的一個常見用途是用於使用者設定。你可以確保使用者寫出你需要的輸入，只有在正確的情況下才執行程式。這裡有個小程式能讓字母變大（大寫）或變小（小寫）：
 
 ```rust
 use std::env::args;
@@ -13809,21 +13809,21 @@ fn main() {
 }
 ```
 
-Here are some examples of what it gives:
+這裡的一些範例是它給的輸出：
 
-Input: `cargo run please make capitals`:
+輸入：`cargo run please make capitals`：
 
 ```text
 make capitals
 ```
 
-Input: `cargo run capital`:
+輸入：`cargo run capital`：
 
 ```text
-// Nothing here...
+// 這裡沒東西輸出...
 ```
 
-Input: `cargo run capital I think I understand now`:
+輸入：`cargo run capital I think I understand now`：
 
 ```text
 I
@@ -13833,7 +13833,7 @@ UNDERSTAND
 NOW
 ```
 
-Input: `cargo run lowercase Does this work too?`
+輸入：`cargo run lowercase Does this work too?`：
 
 ```text
 does
@@ -13844,7 +13844,7 @@ too?
 
 
 
-Besides `Args` given by the user, available in `std::env::args()`, there are also `Vars` which are the system variables. Those are the basic settings for the program that the user didn't type in. You can use `std::env::vars()` to see them all as a `(String, String)`. There are very many. For example:
+除了使用者給予的 `Args`，在 `std::env::args()` 中找得到的那些，還有系統變數 `Vars`。這些都是非使用者輸入的程式基本設定。你可以用 `std::env::vars()` 把它們全部輸出成格式 `(String, String)`，會有非常多筆資料。舉例來說：
 
 ```rust
 fn main() {
@@ -13854,7 +13854,7 @@ fn main() {
 }
 ```
 
-Just doing this shows you all the information about your user session. It will show information like this:
+只要這樣做就能秀出你目前使用者會話 (user session) 的所有資訊。它將會顯示像這樣的資訊：
 
 ```text
 ("CARGO", "/playground/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo")
@@ -13888,9 +13888,9 @@ Just doing this shows you all the information about your user session. It will s
 ("_", "/usr/bin/timeout")
 ```
 
-So if you need this information, `Vars` is what you want.
+所以如果你需要這些資訊，`Vars` 就是你想要的。
 
-The easiest way to get a single `Var` is by using the `env!` macro. You just give it the name of the variable, and it will give you a `&str` with the value. It won't work if the variable is spelled wrong or does not exist, so if you aren't sure then use `option_env!` instead. If we write this on the Playground:
+要獲得單獨的 `Var` 最簡單的方法是使用 `env!` 巨集。你只要給它變數名，它就會給你 `&str` 的值。如果變數拼寫錯誤或不存在就沒作用了，所以如果你不確定那就用 `option_env!`。如果我們在 Playground 上寫這樣：
 
 ```rust
 fn main() {
@@ -13900,7 +13900,7 @@ fn main() {
 }
 ```
 
-then we get the output:
+那我們會得到輸出：
 
 ```text
 playground
@@ -13908,15 +13908,15 @@ Can't find ROOT
 /playground/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo
 ```
 
-So `option_env!` is always going to be the safer macro. `env!` is better if you actually want the program to crash when you can't find the environment variable.
+所以 `option_env!` 永遠會是比較安全的巨集。如果你實際上是想讓程式在找不到環境變數 (environment variable) 時崩潰，那麼 `env!` 會更好。
 
 
 
-## Using files
+## 使用檔案
 
-Now that we are using Rust on the computer, we can start working with files. You will notice that now we will start to see more and more `Result`s in our code. That is because once you start working with files and similar things, many things can go wrong. A file might not be there, or maybe the computer can't read it.
+現在我們正在電腦上使用 Rust，我們可以開始處理檔案了。你會注意到，現在我們會開始在程式碼中看到愈來愈多的 `Result`。這是因為一旦你開始處理檔案和類似的東西，很多事情都會出錯。檔案可能不在那裡，或者也許計算機無法讀取它。
 
-You might remember that if you want to use the `?` operator, it has to return a `Result` in the function it is in. If you can't remember the error type, you can just give it nothing and let the compiler tell you. Let's try that with a function that tries to make a number with `.parse()`.
+你可能還記得，如果你想使用 `?` 運算子，它所在的函式也必須回傳 `Result`。如果你不記得錯誤型別，你可以什麼都不給它，讓編譯器告訴你。讓我們寫個試圖用 `.parse()` 建立數字的函式來試試。
 
 ```rust
 // ⚠️
@@ -13930,7 +13930,7 @@ fn main() {
 }
 ```
 
-The compiler tells us exactly what to do:
+編譯器明確告訴我們到底該怎麼做：
 
 ```text
 error[E0308]: mismatched types
@@ -13945,7 +13945,7 @@ error[E0308]: mismatched types
              found enum `std::result::Result<_, std::num::ParseIntError>`
 ```
 
-Great! So we just change the return to what the compiler says:
+很好！所以我們只要把回傳值改成編譯器說的就可以了：
 
 ```rust
 use std::num::ParseIntError;
@@ -13960,14 +13960,14 @@ fn main() {
 }
 ```
 
-Now the program works!
+現在程式可以執行了！
 
 ```text
 Ok(88)
 Ok(5)
 ```
 
-So now we want to use `?` to just give us the value if it works, and the error if it doesn't. But how to do this in `fn main()`? If we try to use `?` in main, it won't work.
+所以現在我們想用 `?` 直接給我們數值，如果這樣可以的話，如果不能就給錯誤。但是如何在 `fn main()` 中做到呢？如果我們嘗試在 main 中使用 `?`，那就行不通了。
 
 ```rust
 // ⚠️
@@ -13983,7 +13983,7 @@ fn main() {
 }
 ```
 
-It says:
+它說：
 
 ```text
 error[E0277]: the `?` operator can only be used in a function that returns `Result` or `Option` (or another type that implements `std::ops::Try`)
@@ -13997,7 +13997,7 @@ error[E0277]: the `?` operator can only be used in a function that returns `Resu
    | |_- this function should return `Result` or `Option` to accept `?`
 ```
 
-But actually `main()` can return a `Result`, just like any other function. If our function works, we don't want to return anything (main() isn't giving anything to anything else). And if it doesn't work, we will return the same error. So we can write it like this:
+但實際上 `main()` 可以回傳 `Result`，就像其它函式一樣。如果我們的函式能用，我們不想回傳任何東西（main() 不會回傳任何東西以外的東西）。而如果它不能用，我們將回傳同樣的錯誤。所以我們可以寫成這樣：
 
 ```rust
 use std::num::ParseIntError;
@@ -14013,7 +14013,7 @@ fn main() -> Result<(), ParseIntError> {
 }
 ```
 
-Don't forget the `Ok(())` at the end: this is very common in Rust. It means `Ok`, inside of which is `()`, which is our return value. Now it prints:
+不要忘了最後的 `Ok(())`：這在 Rust 中非常常見，它的意思是 `Ok`，裡面是 `()`，也就是我們的回傳值。現在印出：
 
 ```text
 88
@@ -14021,38 +14021,38 @@ Don't forget the `Ok(())` at the end: this is very common in Rust. It means `Ok`
 ```
 
 
-This wasn't very useful when just using `.parse()`, but it will be with files. That's because `?` also changes error types for us. Here's what [the page for the ? operator](https://doc.rust-lang.org/std/macro.try.html) says in simple English:
+只有用 `.parse()` 的時候不是很有用處，但是用在檔案就不同了。這是因為 `?` 也為我們改變了錯誤型別。這裡是用簡單英語改寫來自 [? 運算子文件](https://doc.rust-lang.org/std/macro.try.html)所說的內容：
 
-```text
-If you get an `Err`, it will get the inner error. Then `?` does a conversion using `From`. With that it can change specialized errors to more general ones. The error it gets is then returned.
-```
+> If you get an `Err`, it will get the inner error. Then `?` does a conversion using `From`. With that it can change specialized errors to more general ones. The error it gets is then returned.
 
-Also, Rust has a convenient `Result` type when using `File`s and similar things. It's called `std::io::Result`, and this is what you usually see in `main()` when you are using `?` to open and do things to files. It's actually a type alias. It looks like this:
 
-```text
+
+另外，在使用 `File` 和類似的東西時，Rust 有個方便的 `Result` 型別叫做 `std::io::Result`。在 `main()` 中當你使用 `?` 在開啟和操作檔案時，通常看到的就是這個。這其實是類型別名 (type alias)。像這樣：
+
+```rust
 type Result<T> = Result<T, Error>;
 ```
 
-So it is a `Result<T, Error>`, but we only need to write the `Result<T>` part.
+所以這是 `Result<T, Error>`，但我們只需要寫 `Result<T>` 的部分。
 
-Now let's try working with files for the first time. `std::fs` is where the methods are for working with files, and with `std::io::Write` you can write in them. With that we can use `.write_all()` to write into the file.
+現在讓我們第一次嘗試操作檔案。`std::fs` 是處理檔案的方法所在的模組，並且用 `std::io::Write` 特徵你就可以寫入資料。有了那些，我們就可以用 `.write_all()` 來寫資料進檔案。
 
 ```rust
 use std::fs;
 use std::io::Write;
 
 fn main() -> std::io::Result<()> {
-    let mut file = fs::File::create("myfilename.txt")?; // Create a file with this name.
-                                                        // CAREFUL! If you have a file with this name already,
-                                                        // it will delete everything in it.
-    file.write_all(b"Let's put this in the file")?;     // Don't forget the b in front of ". That's because files take bytes.
+    let mut file = fs::File::create("myfilename.txt")?; // 用這個名稱建立檔案.
+                                                        // 小心! 如果你有已經有個同名的檔案,
+                                                        // 它會刪除檔案裡面所有內容.
+    file.write_all(b"Let's put this in the file")?;     // 別忘記在 " 前面的 b. 那是因為檔案接受位元組資料.
     Ok(())
 }
 ```
 
-Then if you click on the new file `myfilename.txt`, it will say `Let's put this in the file`.
+然後如果你開啟新檔案 `myfilename.txt`，會看到內容說 `Let's put this in the file`。
 
-We don't need to do this on two lines though, because we have the `?` operator. It will pass on the result we want if it works, kind of like when you use lots of methods on an iterator. This is when `?` becomes very convenient.
+然而我們不需要寫成兩行，因為我們有 `?` 運算子。如果能用，它就會傳遞我們想要的結果下去，有點像在疊代器上串連很多方法一樣。這時候 `?` 就變得非常方便了。
 
 ```rust
 use std::fs;
@@ -14064,17 +14064,17 @@ fn main() -> std::io::Result<()> {
 }
 ```
 
-So this is saying "Please try to create a file and check if it worked. If it did, then use `.write_all()` and then check if that worked."
+所以這是說"請嘗試建立檔案，然後檢查是否成功。如果成功了，那就使用 `.write_all()`，然後檢查是否成功。"
 
-And in fact, there is also a function that does both of these things together. It's called `std::fs::write`. Inside it you give it the file name you want, and the content you want to put inside. Again, careful! It will delete everything in that file if it already exists. Also, it lets you write a `&str` without `b` in front, because of this:
+而事實上，也有個函式可以同時做這兩件事。它叫做 `std::fs::write`。在它裡面，你給它你想要的檔名，以及你想放在裡面的內容。再次強調，要小心！如果該檔案已經存在，它將刪除其中的所有內容。另外，它允許你寫入 `&str`，而前面不用寫 `b`，因為這個：
 
 ```rust
 pub fn write<P: AsRef<Path>, C: AsRef<[u8]>>(path: P, contents: C) -> Result<()>
 ```
 
-`AsRef<[u8]>` is why you can give it either one.
+`AsRef<[u8]>` 就是為什麼你給它兩者皆可。
 
-It's very simple:
+用起來非常簡單：
 
 ```rust
 use std::fs;
@@ -14090,16 +14090,16 @@ Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 }
 ```
 
-So that's the file we will use. It's a conversation with a comic book character named Calvin and his dad, who is not serious about his question. With this we can create a file to use every time.
+所以這就是我們要用的檔案。這是名叫 Calvin 的漫畫人物和他爸爸的對話，他爸爸對他的問題並不認真。有了這個，每次我們都可以建立檔案來使用。
 
 
 
-Opening a file is just as easy as creating one. You just use `open()` instead of `create()`. After that (if it finds your file), you can do things like `read_to_string()`. To do that you can create a mutable `String` and read the file into there. It looks like this:
+開啟檔案如同建立檔案一樣簡單。你只要用 `open()` 代替 `create()` 就可以了。之後(如果它找到了你的檔案)，你就可以做像 `read_to_string()` 這樣的事情。你可以建立可變的 `String` 來做到，然後把檔案讀取到那裡面。像這樣：
 
 ```rust
 use std::fs;
 use std::fs::File;
-use std::io::Read; // this is to use the function .read_to_string()
+use std::io::Read; // 這是為了要使用 .read_to_string() 函式
 
 fn main() -> std::io::Result<()> {
      fs::write("calvin_with_dad.txt", 
@@ -14109,24 +14109,24 @@ Calvin: Really?
 Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 
 
-    let mut calvin_file = File::open("calvin_with_dad.txt")?; // Open the file we just made
-    let mut calvin_string = String::new(); // This String will hold it
-    calvin_file.read_to_string(&mut calvin_string)?; // Read the file into it
+    let mut calvin_file = File::open("calvin_with_dad.txt")?; // 開啟我們做的檔案
+    let mut calvin_string = String::new(); // 這個 String 會保留讀取內容
+    calvin_file.read_to_string(&mut calvin_string)?; // 讀取檔案到 String 裡
 
-    calvin_string.split_whitespace().for_each(|word| print!("{} ", word.to_uppercase())); // Do things with the String now
+    calvin_string.split_whitespace().for_each(|word| print!("{} ", word.to_uppercase())); // 現在用 String 做些事
 
     Ok(())
 }
 ```
 
-That will print:
+會印出：
 
-```rust
+```text
 CALVIN: DAD, HOW COME OLD PHOTOGRAPHS ARE ALWAYS BLACK AND WHITE? DIDN'T THEY HAVE COLOR FILM BACK THEN? DAD: SURE THEY DID. IN 
 FACT, THOSE PHOTOGRAPHS *ARE* IN COLOR. IT'S JUST THE *WORLD* WAS BLACK AND WHITE THEN. CALVIN: REALLY? DAD: YEP. THE WORLD DIDN'T TURN COLOR UNTIL SOMETIMES IN THE 1930S...
 ```
 
-Okay, what if we want to create a file but not do it if there is already another file with the same name? Maybe you don't want to delete the other file if it's already there just to make a new one. To do this, there is a struct called `OpenOptions`. Actually, we've been using `OpenOptions` all this time and didn't know it. Take a look at the source for `File::open`:
+好吧，要是我們想建立檔案，但如果已經有同名的檔案就不要這樣做該怎麼辦？也許你不想為了建立新的檔案而刪除已經存在的其他檔案。要做到這一點，有個結構叫 `OpenOptions` 可以用。其實我們一直有在用 `OpenOptions` 卻不知道。看看 `File::open` 的原始碼吧：
 
 ```rust
 pub fn open<P: AsRef<Path>>(path: P) -> io::Result<File> {
@@ -14134,7 +14134,7 @@ pub fn open<P: AsRef<Path>>(path: P) -> io::Result<File> {
     }
 ```
 
-Interesting, that looks like the builder pattern that we learned. It's the same for `File::create`:
+真有趣，這好像是我們學過的生成器模式。`File::create` 也是如此：
 
 ```rust
 pub fn create<P: AsRef<Path>>(path: P) -> io::Result<File> {
@@ -14142,16 +14142,16 @@ pub fn create<P: AsRef<Path>>(path: P) -> io::Result<File> {
     }
 ```
 
-If you go to [the page for OpenOptions](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html), you can see all the methods that you can choose from. Most take a `bool`:
+如果你去看 [OpenOptions 文件](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html)，你可以見到所有你能選擇使用的方法。大多數都接受 `bool`：
 
-- `append()`: This means "add to the content that's already there instead of deleting".
-- `create()`: This lets `OpenOptions` create a file.
-- `create_new()`: This means it will only create a file if it's not there already.
-- `read()`: Set this to `true` if you want it to be able to read a file.
-- `truncate()`: Set this to true if you want to cut the file content to 0 (delete the contents) when you open it.
-- `write()`: This lets it write to a file.
+- `append()`：意思是"加入資料到已經存在的內容後面，而不是刪除"。
+- `create()`：這讓 `OpenOptions` 建立檔案。
+- `create_new()`：意思是檔案還沒有在那裡的情況下才會建立檔案。
+- `read()`：如果你想讓它讀取檔案，就把這個設定為 `true`。
+- `truncate()`：如果你想在開啟檔案時把檔案內容清空為 0 (刪除內容)，就把這個設定為 `true`。
+- `write()`：這讓它寫入檔案。
 
-Then at the end you use `.open()` with the file name, and that will give you a `Result`. Let's look at one example:
+然後在結尾你用 `.open()` 加上檔名，你就會得到 `Result`。讓我們來看這樣的範例：
 
 ```rust
 // ⚠️
@@ -14171,15 +14171,15 @@ Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 }
 ```
 
-First we made an `OpenOptions` with `new` (always start with `new`). Then we gave it the ability to `write`. After that we set `create_new()` to `true`, and tried to open the file we made. It won't work, which is what we want:
+首先我們用 `new` 做了一個 `OpenOptions` (總是以 `new` 開頭)。然後我們給它 `write` 的能力。之後我們把 `create_new()` 設定為 `true`，然後試著開啟我們做出的檔案。會打不開，是我們想要的結果：
 
 ```text
 Error: Os { code: 80, kind: AlreadyExists, message: "The file exists." }
 ```
 
-Let's try using `.append()` so we can write to a file. To write to the file we can use `.write_all()`, which is a method that tries to write in everything you give it.
+讓我們嘗試使用 `.append()`，這樣我們就可以寫入到檔案。為了寫入檔案，我們可以使用 `.write_all()`，這是個會嘗試寫入你給它的一切內容的方法。
 
-Also, we will use the `write!` macro to do the same thing. You will remember this macro from when we did `impl Display` for our structs. This time we are using it on a file though instead of a buffer.
+另外，我們將使用 `write!` 巨集來做同樣的事情。你會記得這個巨集是來自我們在為結構體做 `impl Display` 的時候。而這次我們是在檔案上使用它，不是在緩衝區 (buffer) 上。
 
 ```rust
 use std::fs;
@@ -14194,7 +14194,7 @@ Calvin: Really?
 Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 
     let mut calvin_file = OpenOptions::new()
-        .append(true) // Now we can write without deleting it
+        .append(true) // 現在我們可以繼續寫入而不用刪除檔案
         .read(true)
         .open("calvin_with_dad.txt")?;
     calvin_file.write_all(b"And it was a pretty grainy color for a while too.\n")?;
@@ -14207,7 +14207,7 @@ Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 }
 ```
 
-This prints:
+印出：
 
 ```text
 Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
@@ -14218,11 +14218,11 @@ That's really weird.
 Well, truth is stranger than fiction.
 ```
 
-## cargo doc
+## cargo doc 命令
 
-You might have noticed that Rust documentation always looks almost the same. On the left side you can see `struct`s and `trait`s, code examples are on the right, etc. This is because you can automatically make documentation just by typing `cargo doc`.
+你可能已經注意到，Rust 文件看起來總是幾乎一樣。在左邊你可以見到 `struct` 和 `trait`，程式碼範例在右邊等等。這是因為你只要輸入 `cargo doc` 就可以自動產生文件。
 
-Even making a project with nothing can help you learn about traits in Rust. For example, here are two structs that do almost nothing, and a `fn main()` that also does nothing.
+即使是建立一個什麼都不做的專案，也可以幫助你瞭解 Rust 中的特徵。例如，這裡有兩個幾乎什麼都不做的結構體，以及一個也什麼都不做的 `fn main()`。
 
 ```rust
 struct DoesNothing {}
@@ -14238,7 +14238,7 @@ fn main() {}
 ```
 
 
-But if you type `cargo doc --open`, you can see a lot more information than you expected. First it shows you this:
+但如果你輸入 `cargo doc --open`，你可以見到比你預期更多的資訊。首先它秀出這些給你：
 
 ```text
 Crate rust_book
@@ -14251,7 +14251,7 @@ Functions
 main
 ```
 
-But if you click on one of the structs, it will show you a lot of traits that you didn't think were there:
+但是如果你點選其中的一個結構體，會讓你看到很多你想都沒想到過的特徵：
 
 ```text
 Struct rust_book::DoesNothing
@@ -14296,9 +14296,9 @@ where
     U: TryFrom<T>,
 ```
 
-This is because of all the traits that Rust automatically makes for every type.
+這是因為 Rust 自動為每個型別所實作的所有特徵。
 
-Then if we add some documentation comments you can see them when you type `cargo doc`.
+那麼如果我們新增一些文件註解，當你輸入 `cargo doc` 的時候就可以看到。
 
 ```rust
 /// This is a struct that does nothing
@@ -14316,7 +14316,7 @@ fn main() {}
 ```
 
 
-Now it will print:
+現在會印出：
 
 ```text
 Crate rust_book
@@ -14327,8 +14327,8 @@ Functions
 main
 ```
 
-`cargo doc` is very nice when you use a lot of other people's crates. Because these crates are all on different websites, it can take some time to search them all. But if you use `cargo doc`, you will have them all in the same place on your hard drive.
+當你使用很多別人的 crate 時，`cargo doc` 就非常友善。因為這些 crate 全部都在不同的網站上，可能需要花些時間來搜尋所有的 crate。但如果你使用 `cargo doc`，你就會擁有它們全部，而且被放在你硬碟裡的同個地方。
 
-## The end?
+## 結束了嗎？
 
-This is the end of Rust in Easy English. But I am still here, and you can let me know if you have any questions. Feel free to [contact me on Twitter](https://twitter.com/mithridates) or add a pull request, issue, etc. You can also tell me if some parts weren't easy to understand. Rust in Easy English needs to be very easy to understand, so please let me know where the English is too difficult. Of course, Rust itself can be difficult to understand, but we can at least make sure that the English is easy.
+簡單英語學 Rust 就這樣結束了。但是我還在這裡，如果你有什麼問題可以告訴我。歡迎[在 Twitter 上聯絡我](https://twitter.com/mithridates)或者新增 pull request、issue 等。如果有些地方不容易理解，你也可以告訴我。簡單英語學 Rust 需要非常容易理解，所以請告訴我英語太難的地方。當然 Rust 本身也可能是很難理解的，但我們至少可以確保英語是容易的。

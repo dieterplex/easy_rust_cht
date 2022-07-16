@@ -1,6 +1,11 @@
 [book]
 authors = ["David MacLeod"]
-language = "en"
+language = "zh-TW"
 multilingual = false
 src = "src"
-title = "Easy Rust" 
+title = "Easy Rust"
+translator = "Dieter Xu"
+
+[output.html]
+git-repository-url = "https://github.com/dieterplex/easy_rust_cht"
+edit-url-template = "https://github.com/dieterplex/easy_rust_cht/edit/main/README.md"

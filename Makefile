@@ -20,11 +20,14 @@ help: ## Print help for each target
 	@grep '^[[:alnum:]_-]*:.* ##' $(MAKEFILE_LIST) \
         | sort | awk 'BEGIN {FS=":.* ## "}; {printf "%-25s %s\n", $$1, $$2};'
 
-book: ## Generate an mdBook version on your local and start serving in browser
-	@./createBookFromReadme.sh
+book: clean src ## Generate an mdBook version on your local and start serving in browser
+	@./createContentFromReadme.sh
 
-github_pages: ## Generate an mdBook version for the Github Pages
-	@./createGithubPagesFromReadme.sh
+github_pages: clean src ## Generate an mdBook version for the Github Pages
+	@./createContentFromReadme.sh gh-pages
+
+pdf: clean src ## Generate a PDF version on your local latex directory
+	@./createContentFromReadme.sh pdf
 
 snippets: clean ## Create snippets
 	@type md2src >/dev/null 2>&1 || (echo "Run 'cargo install md2src' first." >&2 ; exit 1)
@@ -41,4 +44,10 @@ feedback: ## Give feedback
 	@open https://github.com/Dhghomon/easy_rust/issues
 
 clean: ## Cleanup
-	@rm -rf "$(SNIPPETS)"
+	@rm -rf "$(SNIPPETS)" src latex
+
+src:
+	@mkdir src
+
+latex:
+	@mkdir latex
