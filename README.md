@@ -144,7 +144,7 @@ Rust是一門相當新卻已經非常流行的程式設計語言。它之所以�
   - [接受使用者輸入](#接受使用者輸入)
   - [使用檔案](#使用檔案)
   - [cargo doc 命令](#cargo-doc-命令)
-  - [The end?](#the-end)
+  - [結束了嗎？](#結束了嗎)
 
 # 第1部 - 瀏覽器中的 Rust
 
@@ -14329,6 +14329,6 @@ main
 
 當你使用很多別人的 crate 時，`cargo doc` 就非常友善。因為這些 crate 全部都在不同的網站上，可能需要花些時間來搜尋所有的 crate。但如果你使用 `cargo doc`，你就會擁有它們全部，而且被放在你硬碟裡的同個地方。
 
-## The end?
+## 結束了嗎？
 
-This is the end of Rust in Easy English. But I am still here, and you can let me know if you have any questions. Feel free to [contact me on Twitter](https://twitter.com/mithridates) or add a pull request, issue, etc. You can also tell me if some parts weren't easy to understand. Rust in Easy English needs to be very easy to understand, so please let me know where the English is too difficult. Of course, Rust itself can be difficult to understand, but we can at least make sure that the English is easy.
+簡單英語學 Rust 就這樣結束了。但是我還在這裡，如果你有什麼問題可以告訴我。歡迎[在 Twitter 上聯絡我](https://twitter.com/mithridates)或者新增 pull request、issue 等。如果有些地方不容易理解，你也可以告訴我。簡單英語學 Rust 需要非常容易理解，所以請告訴我英語太難的地方。當然 Rust 本身也可能是很難理解的，但我們至少可以確保英語是容易的。
