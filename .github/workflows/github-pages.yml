@@ -4,16 +4,14 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - run: sudo apt install linuxbrew-wrapper
-      - run: brew install coreutils
-      #- run: cargo install mdbook
-      - run: chmod 777 -R ./
+      - uses: actions/checkout@v3
+
       - run: make github_pages
 
       - name: Setup mdBook
@@ -28,3 +26,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book
+          force_orphan: true
