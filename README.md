@@ -1792,7 +1792,7 @@ fn main() {
 
 所以和說 `let my_number = { 100 };` 差不多。
 
-另外注意，`my_number` 不是 `mut`。我們在給它 50 之前並沒有給它一個值，所以它的值不曾改變過。最後，`my_number` 的真正程式碼只是 `let my_number = 100;`。
+另外注意，`my_number` 不是 `mut`。在它得到 100 之前它並沒有值可取得，所以它的值不曾改變過。最後，`my_number` 的真正程式碼只是 `let my_number = 100;`。
 
 ## 集合型別
 
