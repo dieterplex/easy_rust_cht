@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 問號(?)運算子 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html" class="active"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="問號運算子"><a class="header" href="#問號運算子">問號(?)運算子</a></h2>
+<p>有一種更短的方式來處理 <code>Result</code>(及 <code>Option</code>)，它比 <code>match</code> 和 <code>if let</code> 更短。它叫做&quot;問號運算子&quot;，就是 <code>?</code>。在回傳 Result 的函式後，可以加上 <code>?</code>。這會：</p>
+<ul>
+<li>如果是 <code>Ok</code>，回傳 <code>Result</code> 裡面的內容。</li>
+<li>如果是 <code>Err</code>，則將錯誤送回。</li>
+</ul>
+<p>換句話說，它幾乎為你做了所有的事情。</p>
+<p>我們可以用 <code>.parse()</code> 再試一次。我們將編寫名為 <code>parse_str</code> 的函式，試圖將 <code>&amp;str</code> 變成 <code>i32</code>。它看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::num::ParseIntError;
+
+fn parse_str(input: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
+    let parsed_number = input.parse::&lt;i32&gt;()?; // 問號在這
+    Ok(parsed_number)
+}
+
+fn main() {}</code></pre></pre>
+<p>這個函式接受 <code>&amp;str</code>。如果是 <code>Ok</code>，則它給出包在 <code>Ok</code> 中的 <code>i32</code>。如果是 <code>Err</code>，則回傳包起來的 <code>ParseIntError</code>。然後我們嘗試解析這個數字，並加上 <code>?</code>。也就是&quot;檢查是否錯誤，如果沒問題就給出 Result 裡面的內容&quot;。如果有問題，就會返回錯誤並結束。但如果沒問題，就會進入下一行。下一行是 <code>Ok()</code> 裡面的數字。我們需要用 <code>Ok</code> 來包裝，因為要回傳的是 <code>Result&lt;i32, ParseIntError&gt;</code>，而不是 <code>i32</code>。</p>
+<p>現在我們可以試試我們的函式。讓我們看看它對 <code>&amp;str</code> 的向量有什麼作用。</p>
+<pre><pre class="playground"><code class="language-rust">fn parse_str(input: &amp;str) -&gt; Result&lt;i32, std::num::ParseIntError&gt; {
+    let parsed_number = input.parse::&lt;i32&gt;()?;
+    Ok(parsed_number)
+}
+
+fn main() {
+    let str_vec = vec![&quot;Seven&quot;, &quot;8&quot;, &quot;9.0&quot;, &quot;nice&quot;, &quot;6060&quot;];
+    for item in str_vec {
+        let parsed = parse_str(item);
+        println!(&quot;{:?}&quot;, parsed);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Err(ParseIntError { kind: InvalidDigit })
+Ok(8)
+Err(ParseIntError { kind: InvalidDigit })
+Err(ParseIntError { kind: InvalidDigit })
+Ok(6060)
+</code></pre>
+<p>我們是怎麼找到 <code>std::num::ParseIntError</code> 的呢？一個簡單的方法就是再&quot;問&quot;一下編譯器。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let failure = &quot;Not a number&quot;.parse::&lt;i32&gt;();
+    failure.rbrbrb(); // ⚠️ 編譯器: &quot;rbrbrb()是什麼???&quot;
+}</code></pre></pre>
+<p>編譯器無法了解，並說：</p>
+<pre><code class="language-text">error[E0599]: no method named `rbrbrb` found for enum `std::result::Result&lt;i32, std::num::ParseIntError&gt;` in the current scope
+ --&gt; src\main.rs:3:13
+  |
+3 |     failure.rbrbrb();
+  |             ^^^^^^ method not found in `std::result::Result&lt;i32, std::num::ParseIntError&gt;`
+</code></pre>
+<p>所以 <code>std::result::Result&lt;i32, std::num::ParseIntError&gt;</code> 就是我們所需要的簽名。</p>
+<p>我們不需要寫 <code>std::result::Result</code>，因為 <code>Result</code> 總是&quot;在範圍內&quot;(in scope = 準備好使用)。Rust 對我們經常使用的所有型別都是這樣做的，所以我們不必寫 <code>std::result::Result</code>、<code>std::collections::Vec</code> 等。</p>
+<p>我們現在還沒有處理到像檔案這樣的東西，所以 ? 運算子看起來還不太有用。但這裡有個無用但快速的例子，說明你如何在單行上使用它。與其用 <code>.parse()</code> 建立 <code>i32</code>，不如做更多。我們將做個 <code>u16</code>，然後把它變成 <code>String</code>，再變成 <code>u32</code>，然後再變回 <code>String</code>，最後變成 <code>i32</code>。</p>
+<pre><pre class="playground"><code class="language-rust">use std::num::ParseIntError;
+
+fn parse_str(input: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
+    let parsed_number = input.parse::&lt;u16&gt;()?.to_string().parse::&lt;u32&gt;()?.to_string().parse::&lt;i32&gt;()?; // 每次檢查時加上 ? 並傳下去
+    Ok(parsed_number)
+}
+
+fn main() {
+    let str_vec = vec![&quot;Seven&quot;, &quot;8&quot;, &quot;9.0&quot;, &quot;nice&quot;, &quot;6060&quot;];
+    for item in str_vec {
+        let parsed = parse_str(item);
+        println!(&quot;{:?}&quot;, parsed);
+    }
+}</code></pre></pre>
+<p>印出同樣的東西，但這次我們在一行中處理了三個 <code>Result</code>。稍後我們將對檔案進行處理，因為很多事情都可能出錯，它們總是回傳 <code>Result</code>。</p>
+<p>想像這件事：你想開啟檔案，向它寫入，然後關閉它。首先你需要成功找到這個檔案(這是 <code>Result</code>)。然後你需要成功地寫入它(也是 <code>Result</code>)。有了 <code>?</code> 你可以用一行做到那些事。</p>
+<h3 id="何時善用-panic-和-unwrap"><a class="header" href="#何時善用-panic-和-unwrap">何時善用 panic 和 unwrap</a></h3>
+<p>Rust 有個 <code>panic!</code> 巨集讓你可以用來讓程式恐慌。它很容易使用：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    panic!(&quot;Time to panic!&quot;);
+}</code></pre></pre>
+<p><code>&quot;Time to panic!&quot;</code> 這個訊息在你執行程式時會顯示：<code>thread 'main' panicked at 'Time to panic!', src\main.rs:2:3</code></p>
+<p>你會記得 <code>src\main.rs</code> 是目錄和檔名，<code>2:3</code> 是行號和列號。有了這些資訊，你就可以找到程式碼並修復它。</p>
+<p><code>panic!</code> 是個很好用的巨集，以確保你知道東西何時有變化。例如，這個叫做 <code>prints_three_things</code> 的函式總是從向量中印出索引 [0]、[1] 和 [2]。這沒關係，因為我們總是給它有三個元素的向量：</p>
+<pre><pre class="playground"><code class="language-rust">fn prints_three_things(vector: Vec&lt;i32&gt;) {
+    println!(&quot;{}, {}, {}&quot;, vector[0], vector[1], vector[2]);
+}
+
+fn main() {
+    let my_vec = vec![8, 9, 10];
+    prints_three_things(my_vec);
+}</code></pre></pre>
+<p>印出 <code>8, 9, 10</code>，一切正常。</p>
+<p>但試想之後我們程式碼愈寫越多，忘記了 <code>my_vec</code> 只能有三個元素。現在 <code>my_vec</code> 在這部分有六個元素：</p>
+<pre><pre class="playground"><code class="language-rust">fn prints_three_things(vector: Vec&lt;i32&gt;) {
+  println!(&quot;{}, {}, {}&quot;, vector[0], vector[1], vector[2]);
+}
+
+fn main() {
+  let my_vec = vec![8, 9, 10, 10, 55, 99]; // 現在 my_vec 有六個東西
+  prints_three_things(my_vec);
+}</code></pre></pre>
+<p>沒有發生錯誤，因為 [0]、[1] 和 [2] 都在這個較長的 <code>Vec</code> 裡面。但如果只能有三個元素真的很重要呢？因為程式不會恐慌，我們也就不會知道有問題了。我們反而應該這樣做:</p>
+<pre><pre class="playground"><code class="language-rust">fn prints_three_things(vector: Vec&lt;i32&gt;) {
+    if vector.len() != 3 {
+        panic!(&quot;my_vec must always have three items&quot;) // 如果長度不是 3 會恐慌
+    }
+    println!(&quot;{}, {}, {}&quot;, vector[0], vector[1], vector[2]);
+}
+
+fn main() {
+    let my_vec = vec![8, 9, 10];
+    prints_three_things(my_vec);
+}</code></pre></pre>
+<p>現在我們知道向量是否有三個元素，因為它如預期的發生恐慌：</p>
+<pre><pre class="playground"><code class="language-rust">    // ⚠️
+fn prints_three_things(vector: Vec&lt;i32&gt;) {
+    if vector.len() != 3 {
+        panic!(&quot;my_vec must always have three items&quot;)
+    }
+    println!(&quot;{}, {}, {}&quot;, vector[0], vector[1], vector[2]);
+}
+
+fn main() {
+    let my_vec = vec![8, 9, 10, 10, 55, 99];
+    prints_three_things(my_vec);
+}</code></pre></pre>
+<p>我們得到了 <code>thread 'main' panicked at 'my_vec must always have three items', src\main.rs:8:9</code>。多虧了 <code>panic!</code>，我們現在記得 <code>my_vec</code> 應該只能有三個元素。所以 <code>panic!</code> 是個可以在你的程式碼中建立提醒的好巨集。</p>
+<p>還有三個與 <code>panic!</code> 類似的巨集，你會在測試中經常使用。它們分別是 <code>assert!</code>、<code>assert_eq!</code> 和 <code>assert_ne!</code>。</p>
+<p>這是它們的涵義：</p>
+<ul>
+<li><code>assert!()</code>: 如果 <code>()</code> 裡面的部分不是 true，程式就會恐慌。</li>
+<li><code>assert_eq!()</code>: <code>()</code> 裡面的兩個元素必須相同(equal)。</li>
+<li><code>assert_ne!()</code>: <code>()</code> 裡面的兩個元素必須不相同。(<em>ne</em> 表示不相同)</li>
+</ul>
+<p>一些範例：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_name = &quot;Loki Laufeyson&quot;;
+
+    assert!(my_name == &quot;Loki Laufeyson&quot;);
+    assert_eq!(my_name, &quot;Loki Laufeyson&quot;);
+    assert_ne!(my_name, &quot;Mithridates&quot;);
+}</code></pre></pre>
+<p>這沒做任何事，因為三個 assert 巨集都沒出錯。(也是我們想要的)</p>
+<p>如果你願意，還可以加個提示訊息。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_name = &quot;Loki Laufeyson&quot;;
+
+    assert!(
+        my_name == &quot;Loki Laufeyson&quot;,
+        &quot;{} should be Loki Laufeyson&quot;,
+        my_name
+    );
+    assert_eq!(
+        my_name, &quot;Loki Laufeyson&quot;,
+        &quot;{} and Loki Laufeyson should be equal&quot;,
+        my_name
+    );
+    assert_ne!(
+        my_name, &quot;Mithridates&quot;,
+        &quot;You entered {}. Input must not equal Mithridates&quot;,
+        my_name
+    );
+}</code></pre></pre>
+<p>這些訊息只有在程式恐慌時才會顯示。所以如果你執行：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_name = &quot;Mithridates&quot;;
+
+    assert_ne!(
+        my_name, &quot;Mithridates&quot;,
+        &quot;You enter {}. Input must not equal Mithridates&quot;,
+        my_name
+    );
+}</code></pre></pre>
+<p>會顯示：</p>
+<pre><code class="language-text">thread 'main' panicked at 'assertion failed: `(left != right)`
+  left: `&quot;Mithridates&quot;`,
+ right: `&quot;Mithridates&quot;`: You entered Mithridates. Input must not equal Mithridates', src\main.rs:4:5
+</code></pre>
+<p>所以它說 &quot;你說左邊 != 右邊，但是左邊 == 右邊&quot;。而且它顯示我們寫的訊息為 <code>You entered Mithridates. Input must not equal Mithridates</code>。</p>
+<p><code>unwrap</code> 也適合用在你寫自己的程式，並想讓它在出現問題時崩潰。之後等你的程式碼寫完後，把 <code>unwrap</code> 改成其他不會崩潰的東西就好了。</p>
+<p>你也可以用 <code>expect</code>，它像是 <code>unwrap</code> 但更好一些，因為它讓你寫自己的訊息內容。教科書通常會給出這樣的建議：&quot;如果你經常使用 <code>.unwrap()</code>, 至少也要用 <code>.expect()</code> 來獲得更好的錯誤訊息。&quot;</p>
+<p>這樣會崩潰：</p>
+<pre><pre class="playground"><code class="language-rust">   // ⚠️
+fn get_fourth(input: &amp;Vec&lt;i32&gt;) -&gt; i32 {
+    let fourth = input.get(3).unwrap();
+    *fourth
+}
+
+fn main() {
+    let my_vec = vec![9, 0, 10];
+    let fourth = get_fourth(&amp;my_vec);
+}</code></pre></pre>
+<p>錯誤訊息是 <code>thread 'main' panicked at 'called Option::unwrap() on a None value', src\main.rs:7:18</code>。</p>
+<p>現在我們用 <code>expect</code> 來寫自己的訊息：</p>
+<pre><pre class="playground"><code class="language-rust">   // ⚠️
+fn get_fourth(input: &amp;Vec&lt;i32&gt;) -&gt; i32 {
+    let fourth = input.get(3).expect(&quot;Input vector needs at least 4 items&quot;);
+    *fourth
+}
+
+fn main() {
+    let my_vec = vec![9, 0, 10];
+    let fourth = get_fourth(&amp;my_vec);
+}</code></pre></pre>
+<p>又崩潰了，但錯誤內容比較好：<code>thread 'main' panicked at 'Input vector needs at least 4 items', src\main.rs:7:18</code>。<code>.expect()</code> 因為這個原因比 <code>.unwrap()</code> 要好一點，但是在 <code>None</code> 上還是會恐慌。現在這裡有個不太好的案例，一個函式試圖 unwrap 兩次。它接受一個 <code>Vec&lt;Option&lt;i32&gt;&gt;</code>，所以可能每個部分會有 <code>Some&lt;i32&gt;</code>，也可能是 <code>None</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn try_two_unwraps(input: Vec&lt;Option&lt;i32&gt;&gt;) {
+    println!(&quot;Index 0 is: {}&quot;, input[0].unwrap());
+    println!(&quot;Index 1 is: {}&quot;, input[1].unwrap());
+}
+
+fn main() {
+    let vector = vec![None, Some(1000)]; // 這個向量有None，所以會恐慌
+    try_two_unwraps(vector);
+}</code></pre></pre>
+<p>訊息是：<code>thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:2:32</code>。我們不確定是第一個 <code>.unwrap()</code> 還是第二個，直到我們去檢查行號。最好是檢查一下長度，也不要 unwrap。不過有了 <code>.expect()</code> 至少會好 <em>一點</em>。這裡用 <code>.expect()</code>：</p>
+<pre><pre class="playground"><code class="language-rust">fn try_two_unwraps(input: Vec&lt;Option&lt;i32&gt;&gt;) {
+    println!(&quot;Index 0 is: {}&quot;, input[0].expect(&quot;The first unwrap had a None!&quot;));
+    println!(&quot;Index 1 is: {}&quot;, input[1].expect(&quot;The second unwrap had a None!&quot;));
+}
+
+fn main() {
+    let vector = vec![None, Some(1000)];
+    try_two_unwraps(vector);
+}</code></pre></pre>
+<p>所以這有好一點：<code>thread 'main' panicked at 'The first unwrap had a None!', src\main.rs:2:32</code>。我們也有行號讓我們可以找到它。</p>
+<p>如果你要永遠有值且是你想選擇的，也可以用<code>unwrap_or</code>。如果你這樣做，它永遠不會恐慌。也就是：</p>
+<ul>
+<li>
+<ol>
+<li>很好，因為你的程式不會恐慌，但是</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>可能不太好，如果你想讓程式在出現問題時恐慌。</li>
+</ol>
+</li>
+</ul>
+<p>但通常我們都不希望自己的程式恐慌，所以 <code>unwrap_or</code> 是個適合拿來用的方法。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec = vec![8, 9, 10];
+
+    let fourth = my_vec.get(3).unwrap_or(&amp;0); // 如果 .get 沒成功，我們會傳回值 &amp;0。
+                                              // .get 回傳的是參考，所以我們需要的是 &amp;0 而非 0
+                                              // 如果你想要 fourth 是 0 而非 &amp;0，你可以寫帶有 * 的
+                                              // &quot;let *fourth&quot;，但這裡我們只是要印出也就無關緊要
+
+    println!(&quot;{}&quot;, fourth);
+}</code></pre></pre>
+<p>印出 <code>0</code>，因為 <code>.unwrap_or(&amp;0)</code> 即使在 <code>None</code> 時也會回傳 0。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_32.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_34.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_32.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_34.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

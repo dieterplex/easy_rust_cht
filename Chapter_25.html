@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 列舉 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html" class="active"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="列舉"><a class="header" href="#列舉">列舉</a></h2>
+<p><strong>YouTube 上觀看本章內容: <a href="https://youtu.be/SRnqNTJUgjs">Part 1</a>, <a href="https://youtu.be/F_EcbWM63lk">Part 2</a>, <a href="https://youtu.be/2uh64U9JesA">Part 3</a> 及 <a href="https://youtu.be/LOHVUYTc5Us">Part 4</a></strong></p>
+<p><code>enum</code> 是列舉(enumeration)的簡稱。它們看起來與結構體非常相似，但又有所不同。區別有：</p>
+<ul>
+<li>當你想要一個東西<strong>和</strong>另一個東西時，使用<code>struct</code>。</li>
+<li>當你想要一個東西<strong>或</strong>另一個東西時，請使用 <code>enum</code>。</li>
+</ul>
+<p>所以，結構體是用於<strong>多個事物</strong>在一起，而列舉則是用於<strong>多個選擇</strong>在一起。</p>
+<p>要宣告列舉時，寫下 <code>enum</code>，並用程式碼區塊將包含的選項用逗號分隔。就像 <code>struct</code> 一樣，最後一部分的逗號則可有可無。我們將建立一個名為 <code>ThingsInTheSky</code> 的列舉：</p>
+<pre><pre class="playground"><code class="language-rust">enum ThingsInTheSky {
+    Sun,
+    Stars,
+}
+
+fn main() {}</code></pre></pre>
+<p>這是個列舉，因為你可以看到太陽<strong>或</strong>星星：你必須選擇一個。這些叫做<strong>變體(variants)</strong>。</p>
+<pre><pre class="playground"><code class="language-rust">// 建立兩個選擇的列舉
+enum ThingsInTheSky {
+    Sun,
+    Stars,
+}
+
+// 有這個函式我們可以用i32來建立ThingsInTheSky。
+fn create_skystate(time: i32) -&gt; ThingsInTheSky {
+    match time {
+        6..=18 =&gt; ThingsInTheSky::Sun, // 介於6到18小時之間我們可以見到太陽
+        _ =&gt; ThingsInTheSky::Stars, // 除此之外，我們可以見到星星
+    }
+}
+
+// 有這個函式我們可以匹配到ThingsInTheSky的兩個選擇。
+fn check_skystate(state: &amp;ThingsInTheSky) {
+    match state {
+        ThingsInTheSky::Sun =&gt; println!(&quot;I can see the sun!&quot;),
+        ThingsInTheSky::Stars =&gt; println!(&quot;I can see the stars!&quot;)
+    }
+}
+
+fn main() {
+    let time = 8; // 這是 8 點鐘
+    let skystate = create_skystate(time); // create_skystate回傳ThingsInTheSky
+    check_skystate(&amp;skystate); // 給它參考那麼它就能讀到變數skystate
+}</code></pre></pre>
+<p>印出 <code>I can see the sun!</code>。</p>
+<p>你也可以將資料新增到列舉中。</p>
+<pre><pre class="playground"><code class="language-rust">enum ThingsInTheSky {
+    Sun(String), // 現在每個變體都有字串
+    Stars(String),
+}
+
+fn create_skystate(time: i32) -&gt; ThingsInTheSky {
+    match time {
+        6..=18 =&gt; ThingsInTheSky::Sun(String::from(&quot;I can see the sun!&quot;)), // 這裡寫下字串
+        _ =&gt; ThingsInTheSky::Stars(String::from(&quot;I can see the stars!&quot;)),
+    }
+}
+
+fn check_skystate(state: &amp;ThingsInTheSky) {
+    match state {
+        ThingsInTheSky::Sun(description) =&gt; println!(&quot;{}&quot;, description), // 給字串命名為description那麼我們就能使用它
+        ThingsInTheSky::Stars(n) =&gt; println!(&quot;{}&quot;, n), // 或你能命名成 n。或其它任何東西──它無關緊要
+    }
+}
+
+fn main() {
+    let time = 8; // 這是 8 點鐘
+    let skystate = create_skystate(time); // create_skystate 回傳 ThingsInTheSky
+    check_skystate(&amp;skystate); // 給它參考那麼它就能讀到變數skystate
+}</code></pre></pre>
+<p>印出來的結果一樣：<code>I can see the sun!</code>。</p>
+<p>你也可以&quot;匯入(import)&quot;一個列舉，這樣你就不用打那麼多字了。下面這個例子裡，我們每次在匹配我們的 mood 時都要輸入 <code>Mood::</code>：</p>
+<pre><pre class="playground"><code class="language-rust">enum Mood {
+    Happy,
+    Sleepy,
+    NotBad,
+    Angry,
+}
+
+fn match_mood(mood: &amp;Mood) -&gt; i32 {
+    let happiness_level = match mood {
+        Mood::Happy =&gt; 10, // 我們每次都要輸入 Mood::
+        Mood::Sleepy =&gt; 6,
+        Mood::NotBad =&gt; 7,
+        Mood::Angry =&gt; 2,
+    };
+    happiness_level
+}
+
+fn main() {
+    let my_mood = Mood::NotBad;
+    let happiness_level = match_mood(&amp;my_mood);
+    println!(&quot;Out of 1 to 10, my happiness is {}&quot;, happiness_level);
+}</code></pre></pre>
+<p>印出的是 <code>Out of 1 to 10, my happiness is 7</code>。讓我們匯入，這樣我們就可以少打點字了。要匯入所有的東西時寫做 <code>*</code>。注意：它和反參考關鍵字的 <code>*</code> 一樣，但完全不同。</p>
+<pre><pre class="playground"><code class="language-rust">enum Mood {
+    Happy,
+    Sleepy,
+    NotBad,
+    Angry,
+}
+
+fn match_mood(mood: &amp;Mood) -&gt; i32 {
+    use Mood::*; // 我們匯入Mood裡的所有東西。現在我們可以只寫Happy、Sleepy等變體名。
+    let happiness_level = match mood {
+        Happy =&gt; 10, // 我們不用再寫 Mood:: 了
+        Sleepy =&gt; 6,
+        NotBad =&gt; 7,
+        Angry =&gt; 2,
+    };
+    happiness_level
+}
+
+fn main() {
+    let my_mood = Mood::Happy;
+    let happiness_level = match_mood(&amp;my_mood);
+    println!(&quot;Out of 1 to 10, my happiness is {}&quot;, happiness_level);
+}</code></pre></pre>
+<p><code>enum</code> 的一部分也可以轉變成整數。這是因為 Rust 給 <code>enum</code> 提供了以 0 開頭的數字給每個分支各自使用。如果你的列舉中沒有任何其他資料的話，你可以拿它來做些事情。</p>
+<pre><pre class="playground"><code class="language-rust">enum Season {
+    Spring, // 如果這是 Spring(String) 或其它東西，它就不能這樣用
+    Summer,
+    Autumn,
+    Winter,
+}
+
+fn main() {
+    use Season::*;
+    let four_seasons = vec![Spring, Summer, Autumn, Winter];
+    for season in four_seasons {
+        println!(&quot;{}&quot;, season as u32);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">0
+1
+2
+3
+</code></pre>
+<p>不過如果你想的話，你也可以給它一個不同的數字──Rust 並不在意，可以用同樣的方式來使用它。只要在你想要有數值的變體加上 <code>=</code> 和數字。你不必給數字到所有變體。但如果你不這樣做，Rust 就會給變體從前一個分支數字加 1 的數字。</p>
+<pre><pre class="playground"><code class="language-rust">enum Star {
+    BrownDwarf = 10,
+    RedDwarf = 50,
+    YellowStar = 100,
+    RedGiant = 1000,
+    DeadStar, // 想想看這個數字會有多少？
+}
+
+fn main() {
+    use Star::*;
+    let starvec = vec![BrownDwarf, RedDwarf, YellowStar, RedGiant];
+    for star in starvec {
+        match star as u32 {
+            size if size &lt;= 80 =&gt; println!(&quot;Not the biggest star.&quot;), // 記得: size 沒有任何意思。只不過是我們為了可以列印所選的名稱 
+            size if size &gt;= 80 =&gt; println!(&quot;This is a good-sized star.&quot;),
+            _ =&gt; println!(&quot;That star is pretty big!&quot;),
+        }
+    }
+    println!(&quot;What about DeadStar? It's the number {}.&quot;, DeadStar as u32);
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Not the biggest star.
+Not the biggest star.
+This is a good-sized star.
+This is a good-sized star.
+What about DeadStar? It's the number 1001.
+</code></pre>
+<p><code>DeadStar</code> 本來是 4 號，但現在是 1001。</p>
+<h3 id="使用多種型別的列舉"><a class="header" href="#使用多種型別的列舉">使用多種型別的列舉</a></h3>
+<p>你知道向量、陣列等等之中的元素都需要相同的型別(只有 tuple 不同)。但其實你可以用列舉來放不同的型別。想象一下，我們想要有個向量，有 <code>u32</code> 或 <code>i32</code>。當然，你可以做出 <code>Vec&lt;(u32, i32)&gt;</code>(帶有 <code>(u32, i32)</code> 元組的向量)，但是我們想要每次只有一種。所以這裡可以使用列舉。這是簡單的範例：</p>
+<pre><pre class="playground"><code class="language-rust">enum Number {
+    U32(u32),
+    I32(i32),
+}
+
+fn main() {}</code></pre></pre>
+<p>所以這有兩個變體：<code>U32</code> 變體裡有 <code>u32</code>，<code>I32</code> 變體裡有 <code>i32</code>。<code>U32</code> 和 <code>I32</code> 只是我們取的名字。它們可以取名叫 <code>UThirtyTwo</code>、<code>IThirtyTwo</code> 或其他任何東西。</p>
+<p>現在，如果我們把它們放到向量中，我們就會有 <code>Vec&lt;Number&gt;</code>，因為都是同一個型別編譯器會很開心。編譯器並不在乎我們有的是 <code>u32</code> 或者是 <code>i32</code>，因為它們都在一個叫做 <code>Number</code> 的單一型別裡面。因為它是列舉，你必須選擇一種，這就是我們想要的。我們將使用 <code>.is_positive()</code> 方法來挑選。如果是 <code>true</code>，那麼我們將選擇 <code>U32</code>，如果是 <code>false</code>，那麼我們將選擇 <code>I32</code>。</p>
+<p>現在程式碼像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">enum Number {
+    U32(u32),
+    I32(i32),
+}
+
+fn get_number(input: i32) -&gt; Number {
+    let number = match input.is_positive() {
+        true =&gt; Number::U32(input as u32), // 如果是正數改成 u32
+        false =&gt; Number::I32(input), // 不然就給數字因為它已經是 i32
+    };
+    number
+}
+
+
+fn main() {
+    let my_vec = vec![get_number(-800), get_number(8)];
+
+    for item in my_vec {
+        match item {
+            Number::U32(number) =&gt; println!(&quot;It's a u32 with the value {}&quot;, number),
+            Number::I32(number) =&gt; println!(&quot;It's an i32 with the value {}&quot;, number),
+        }
+    }
+}</code></pre></pre>
+<p>印出了我們想看到的結果：</p>
+<pre><code class="language-text">It's an i32 with the value -800
+It's a u32 with the value 8
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_24.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_26.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_24.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_26.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 函式中的閉包 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html" class="active"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="函式中的閉包"><a class="header" href="#函式中的閉包">函式中的閉包</a></h2>
+<p>閉包超棒的。那麼我們要如何把它們放到我們擁有的函式中呢？</p>
+<p>你可以寫你自己的函式來接受閉包，但是在它裡面就沒那麼自由了，你必須決定型別。在函式外的閉包可以在 <code>Fn</code>、<code>FnMut</code> 和 <code>FnOnce</code> 之間自行決定，但在函式內部你必須選擇其中一種。最好的理解方式是多看幾個函式簽名。這裡是其中的 <code>.all()</code>。我們記得它會檢查疊代器，看看所有的東西是否是 <code>true</code>(取決於你怎麼決定是 <code>true</code> 還是 <code>false</code>)。它的部分簽名是這樣說的：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    fn all&lt;F&gt;(&amp;mut self, f: F) -&gt; bool    // 🚧
+    where
+        F: FnMut(Self::Item) -&gt; bool,
+<span class="boring">}</span></code></pre></pre>
+<p><code>fn all&lt;F&gt;</code>：這告訴你有個泛型 <code>F</code>。閉包永遠是泛型的，因為每次都是不同的型別。</p>
+<p><code>(&amp;mut self, f: F)</code>：<code>&amp;mut self</code> 告訴你這是方法。你通常看到 <code>f: F</code> 就是閉包：這是變數名和型別。當然，<code>f</code> 和 <code>F</code> 並沒有什麼特別之處，它們可以是不同的名字。如果想要你也可以寫成 <code>my_closure: Closure</code>──這並不要緊。但在簽名中，你幾乎總是會看到 <code>f: F</code>。</p>
+<p>接下來是關於閉包的部分：<code>F: FnMut(Self::Item) -&gt; bool</code>。在這裡它決定閉包型別是 <code>FnMut</code>，所以它可以改變值。它改變了它所接受的疊代器 <code>Self::Item</code> 的值。而且它必須回傳 <code>true</code> 或 <code>false</code>。</p>
+<p>這裡是個更簡單帶有閉包的簽名：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn do_something&lt;F&gt;(f: F)    // 🚧
+where
+    F: FnOnce(),
+{
+    f();
+}
+<span class="boring">}</span></code></pre></pre>
+<p>這只是說它接受閉包，取得值(<code>FnOnce</code> = 取值)，且不回傳任何東西。所以現在我們可以呼叫這個什麼都不拿的閉包，做我們想要做的事情。現在我們將會建立 <code>Vec</code>，然後對它進行疊代，只是展示我們可以做些什麼。</p>
+<pre><pre class="playground"><code class="language-rust">fn do_something&lt;F&gt;(f: F)
+where
+    F: FnOnce(),
+{
+    f();
+}
+
+fn main() {
+    let some_vec = vec![9, 8, 10];
+    do_something(|| {
+        some_vec
+            .into_iter()
+            .for_each(|x| println!(&quot;The number is: {}&quot;, x));
+    })
+}</code></pre></pre>
+<p>看個更真實的例子，我們將再次建立 <code>City</code> 結構體。這次 <code>City</code> 結構體有更多關於年份和人口的資料。它有個 <code>Vec&lt;u32&gt;</code> 來表示所有的年份，還有另一個 <code>Vec&lt;u32&gt;</code> 來表示所有的人口。</p>
+<p><code>City</code> 有兩個函式：<code>new()</code> 用於建立新的 <code>City</code>, <code>.city_data()</code> 有個閉包引數。當我們使用 <code>.city_data()</code> 時，它給我們提供了年份和人口以及閉包，所以我們可以對資料做我們想做的事情。閉包型別是 <code>FnMut</code>，所以我們可以改變資料。它看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City {
+    name: String,
+    years: Vec&lt;u32&gt;,
+    populations: Vec&lt;u32&gt;,
+}
+
+impl City {
+    fn new(name: &amp;str, years: Vec&lt;u32&gt;, populations: Vec&lt;u32&gt;) -&gt; Self {
+
+        Self {
+            name: name.to_string(),
+            years,
+            populations,
+        }
+    }
+
+    fn city_data&lt;F&gt;(&amp;mut self, mut f: F) // 我們帶入 self, 但只有 f 是泛型的 F. f 是閉包
+
+    where
+        F: FnMut(&amp;mut Vec&lt;u32&gt;, &amp;mut Vec&lt;u32&gt;), // 閉包接受 u32 的可變向量
+                                                // 那些是年份和人口資料
+    {
+        f(&amp;mut self.years, &amp;mut self.populations) // 最後這是實際的函式. 它說
+                                                  // &quot;把 self.years 和 self.populations 用在閉包上&quot;
+                                                  // 我們可以用閉包做我們想要做的事
+    }
+}
+
+fn main() {
+    let years = vec![
+        1372, 1834, 1851, 1881, 1897, 1925, 1959, 1989, 2000, 2005, 2010, 2020,
+    ];
+    let populations = vec![
+        3_250, 15_300, 24_000, 45_900, 58_800, 119_800, 283_071, 478_974, 400_378, 401_694,
+        406_703, 437_619,
+    ];
+    // 現在我們可以建立我們的城市
+    let mut tallinn = City::new(&quot;Tallinn&quot;, years, populations);
+
+    // 現在我們有 .city_data() 方法能傳入閉包. 我們可以做我們想做的任何事.
+
+    // 首先讓我們一起放入 5 年的資料並印出來.
+    tallinn.city_data(|city_years, city_populations| { // 我們可以任意稱呼輸入名稱
+        let new_vec = city_years
+            .into_iter()
+            .zip(city_populations.into_iter()) // 兩個 Zip 在一起
+            .take(5)                           // 但只有拿前 5 個
+            .collect::&lt;Vec&lt;(_, _)&gt;&gt;(); // 叫 Rust 決定元組內部的型別
+        println!(&quot;{:?}&quot;, new_vec);
+    });
+
+    // 現在讓我們給 2030 年份加上一些資料
+    tallinn.city_data(|x, y| { // 這次我們只稱呼輸入為 x 和 y
+        x.push(2030);
+        y.push(500_000);
+    });
+
+    // 我們不再想要 1834 的資料
+    tallinn.city_data(|x, y| {
+        let position_option = x.iter().position(|x| *x == 1834);
+        if let Some(position) = position_option {
+            println!(
+                &quot;Going to delete {} at position {:?} now.&quot;,
+                x[position], position
+            ); // 確認我們刪除了對的元素
+            x.remove(position);
+            y.remove(position);
+        }
+    });
+
+    println!(
+        &quot;Years left are {:?}\nPopulations left are {:?}&quot;,
+        tallinn.years, tallinn.populations
+    );
+}</code></pre></pre>
+<p>印出一直以來我們呼叫 <code>.city_data()</code> 的結果。就是：</p>
+<pre><code class="language-text">[(1372, 3250), (1834, 15300), (1851, 24000), (1881, 45900), (1897, 58800)]
+Going to delete 1834 at position 1 now.
+Years left are [1372, 1851, 1881, 1897, 1925, 1959, 1989, 2000, 2005, 2010, 2020, 2030]
+Populations left are [3250, 24000, 45900, 58800, 119800, 283071, 478974, 400378, 401694, 406703, 437619, 500000]
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_46.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_48.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_46.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_48.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 控制流程 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html" class="active"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="控制流程"><a class="header" href="#控制流程">控制流程</a></h2>
+<p><strong>YouTube 上觀看本章內容: <a href="https://youtu.be/UAymDOpv_us">Part 1</a> 及 <a href="https://youtu.be/eqysTfiiQZs">Part 2</a></strong></p>
+<p>控制流程(control flow)的意思是告訴你的程式碼在不同的情況下該怎麼做。最簡單的控制流程是 <code>if</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number = 5;
+    if my_number == 7 {
+        println!(&quot;It's seven&quot;);
+    }
+}</code></pre></pre>
+<p>另外注意，你用的是 <code>==</code> 而不是 <code>=</code>。<code>==</code> 是用來比較的，<code>=</code> 是用來<em>賦值</em>的(給一個值)。另外注意，我們寫的是 <code>if my_number == 7</code> 而不是 <code>if (my_number == 7)</code>。在 Rust 中，你不需要在 <code>if</code> 條件用括號。</p>
+<p><code>else if</code> 和 <code>else</code> 給你更多的控制：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number = 5;
+    if my_number == 7 {
+        println!(&quot;It's seven&quot;);
+    } else if my_number == 6 {
+        println!(&quot;It's six&quot;)
+    } else {
+        println!(&quot;It's a different number&quot;)
+    }
+}</code></pre></pre>
+<p>印出 <code>It's a different number</code>，因為它不等於 7 或 6。</p>
+<p>您可以使用 <code>&amp;&amp;</code>(和)和 <code>||</code>(或)來新增更多條件。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number = 5;
+    if my_number % 2 == 1 &amp;&amp; my_number &gt; 0 { // % 2 表示除以2之後的餘下的數
+        println!(&quot;It's a positive odd number&quot;);
+    } else if my_number == 6 {
+        println!(&quot;It's six&quot;)
+    } else {
+        println!(&quot;It's a different number&quot;)
+    }
+}</code></pre></pre>
+<p>印出 <code>It's a positive odd number</code>，因為當你把它除以 2 時，你有餘數 1，且它大於0。</p>
+<p>你可以看到，過多的 <code>if</code>、<code>else</code> 和 <code>else if</code> 會很難讀。在這種情況下，你可以使用 <code>match</code> 來代替，它看起來更乾淨。但是您必須為每一個可能的結果進行匹配(match)。例如，這將無法運作：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number: u8 = 5;
+    match my_number {
+        0 =&gt; println!(&quot;it's zero&quot;),
+        1 =&gt; println!(&quot;it's one&quot;),
+        2 =&gt; println!(&quot;it's two&quot;),
+        // ⚠️
+    }
+}</code></pre></pre>
+<p>編譯器說：</p>
+<pre><code class="language-text">error[E0004]: non-exhaustive patterns: `3u8..=std::u8::MAX` not covered
+ --&gt; src\main.rs:3:11
+  |
+3 |     match my_number {
+  |           ^^^^^^^^^ pattern `3u8..=std::u8::MAX` not covered
+</code></pre>
+<p>這就意味著&quot;你告訴我 0 到 2，但 <code>u8</code> 可以到 255。那 3 呢？4 呢？5 呢？&quot;以此類推。所以你可以加上 <code>_</code>，意思是&quot;其他任何東西&quot;。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number: u8 = 5;
+    match my_number {
+        0 =&gt; println!(&quot;it's zero&quot;),
+        1 =&gt; println!(&quot;it's one&quot;),
+        2 =&gt; println!(&quot;it's two&quot;),
+        _ =&gt; println!(&quot;It's some other number&quot;),
+    }
+}</code></pre></pre>
+<p>印出 <code>It's some other number</code>。</p>
+<p>記住這些匹配的規則：</p>
+<ul>
+<li>你寫下 <code>match</code>，然後做一個 <code>{}</code> 程式碼區塊。</li>
+<li>在左邊寫上<em>模式</em>，用 <code>=&gt;</code> 胖箭頭說明匹配時該怎麼做。</li>
+<li>每一行稱為一個&quot;分支(arm)&quot;。</li>
+<li>在分支之間放一個逗號(不是分號)。</li>
+</ul>
+<p>你可以用匹配結果來宣告一個值：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number = 5;
+    let second_number = match my_number {
+        0 =&gt; 0,
+        5 =&gt; 10,
+        _ =&gt; 2,
+    };
+}</code></pre></pre>
+<p><code>second_number</code> 將是 10。你看到最後的分號了嗎？那是因為，在 match 結束後，我們實際上告訴了編譯器這個資訊：<code>let second_number = 10;</code></p>
+<p>你也可以在更復雜的事情上進行匹配。你要用元組來做到。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let sky = &quot;cloudy&quot;;
+    let temperature = &quot;warm&quot;;
+
+    match (sky, temperature) {
+        (&quot;cloudy&quot;, &quot;cold&quot;) =&gt; println!(&quot;It's dark and unpleasant today&quot;),
+        (&quot;clear&quot;, &quot;warm&quot;) =&gt; println!(&quot;It's a nice day&quot;),
+        (&quot;cloudy&quot;, &quot;warm&quot;) =&gt; println!(&quot;It's dark but not bad&quot;),
+        _ =&gt; println!(&quot;Not sure what the weather is.&quot;),
+    }
+}</code></pre></pre>
+<p>印出 <code>It's dark but not bad</code>，因為它與 <code>sky</code> 和 <code>temperature</code> 的 &quot;cloudy&quot; 和 &quot;warm&quot; 相匹配。</p>
+<p>你甚至可以把 <code>if</code> 放在 <code>match</code> 裡面。這稱為 &quot;match guard&quot;：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let children = 5;
+    let married = true;
+
+    match (children, married) {
+        (children, married) if married == false =&gt; println!(&quot;Not married with {} children&quot;, children),
+        (children, married) if children == 0 &amp;&amp; married == true =&gt; println!(&quot;Married but no children&quot;),
+        _ =&gt; println!(&quot;Married? {}. Number of children: {}.&quot;, married, children),
+    }
+}</code></pre></pre>
+<p>這將印出 <code>Married? true. Number of children: 5.</code></p>
+<p>在匹配時，你可以隨意多次使用 _。在這個關於顏色的匹配中，我們有三個顏色，但一次只能選中一個。</p>
+<pre><pre class="playground"><code class="language-rust">fn match_colours(rbg: (i32, i32, i32)) {
+    match rbg {
+        (r, _, _) if r &lt; 10 =&gt; println!(&quot;Not much red&quot;),
+        (_, b, _) if b &lt; 10 =&gt; println!(&quot;Not much blue&quot;),
+        (_, _, g) if g &lt; 10 =&gt; println!(&quot;Not much green&quot;),
+        _ =&gt; println!(&quot;Each colour has at least 10&quot;),
+    }
+}
+
+fn main() {
+    let first = (200, 0, 0);
+    let second = (50, 50, 50);
+    let third = (200, 50, 0);
+
+    match_colours(first);
+    match_colours(second);
+    match_colours(third);
+
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Not much blue
+Each colour has at least 10
+Not much green
+</code></pre>
+<p>這也說明了 <code>match</code> 陳述式的作用，因為在第一個例子中，它只印了 <code>Not much blue</code>。但是 <code>first</code> 也沒有多少綠色。<code>match</code> 陳述式總是在找到一個匹配項時停止，而不檢查其他的。這就是程式碼編譯得很好，但不是你想要的程式碼的一個好例子。</p>
+<p>你可以做一個非常大的 <code>match</code> 陳述式來解決這個問題，但是使用 <code>for</code> 迴圈(loop)可能更好。我們將很快會討論到迴圈。</p>
+<p>匹配必須回傳相同的型別。所以你不能這樣做：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number = 10;
+    let some_variable = match my_number {
+        10 =&gt; 8,
+        _ =&gt; &quot;Not ten&quot;, // ⚠️
+    };
+}</code></pre></pre>
+<p>編譯器告訴你：</p>
+<pre><code class="language-text">error[E0308]: `match` arms have incompatible types
+  --&gt; src\main.rs:17:14
+   |
+15 |       let some_variable = match my_number {
+   |  _________________________-
+16 | |         10 =&gt; 8,
+   | |               - this is found to be of type `{integer}`
+17 | |         _ =&gt; &quot;Not ten&quot;,
+   | |              ^^^^^^^^^ expected integer, found `&amp;str`
+18 | |     };
+   | |_____- `match` arms have incompatible types
+</code></pre>
+<p>這樣也不行，原因同上。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let some_variable = if my_number == 10 { 8 } else { &quot;something else &quot;}; // ⚠️
+}</code></pre></pre>
+<p>但是這樣就可以了，因為不是 <code>match</code>，所以你每次都有不同的 <code>let</code> 陳述式：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number = 10;
+
+    if my_number == 10 {
+        let some_variable = 8;
+    } else {
+        let some_variable = &quot;Something else&quot;;
+    }
+}</code></pre></pre>
+<p>你也可以使用 <code>@</code> 給 <code>match</code> 表示式的值命名，然後你就可以使用它。在這個範例中，我們在函式中匹配 <code>i32</code> 輸入。如果是 4 或 13，我們要在 <code>println!</code> 陳述式中使用這個數字。否則，我們不需要使用它。</p>
+<pre><pre class="playground"><code class="language-rust">fn match_number(input: i32) {
+    match input {
+    number @ 4 =&gt; println!(&quot;{} is an unlucky number in China (sounds close to 死)!&quot;, number),
+    number @ 13 =&gt; println!(&quot;{} is unlucky in North America, lucky in Italy! In bocca al lupo!&quot;, number),
+    _ =&gt; println!(&quot;Looks like a normal number&quot;),
+    }
+}
+
+fn main() {
+    match_number(50);
+    match_number(13);
+    match_number(4);
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Looks like a normal number
+13 is unlucky in North America, lucky in Italy! In bocca al lupo!
+4 is an unlucky number in China (sounds close to 死)!
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_22.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_24.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_22.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_24.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

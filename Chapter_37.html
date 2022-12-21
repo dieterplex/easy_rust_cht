@@ -1,0 +1,915 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 閉包 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html" class="active"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="閉包"><a class="header" href="#閉包">閉包</a></h2>
+<p>閉包(Closure)就像不需要名字的快速函式。有時它們被稱為 lambda。閉包很容易辨識，因為它們使用 <code>||</code> 而不是 <code>()</code>。它們在 Rust 中非常常見，一旦你學會了使用它們，你就會愛不釋手。</p>
+<p>你可以將閉包連結到變數上，而當你使用它時，它看起來就像一個函式一樣：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_closure = || println!(&quot;This is a closure&quot;);
+    my_closure();
+}</code></pre></pre>
+<p>所以這個閉包沒有接受東西：<code>||</code>，並印出訊息。<code>This is a closure</code>。</p>
+<p>在 <code>||</code> 之間我們可以加上要輸入的變數和型別，就像在函式的 <code>()</code> 裡面一樣的用法：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_closure = |x: i32| println!(&quot;{}&quot;, x);
+
+    my_closure(5);
+    my_closure(5+5);
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">5
+10
+</code></pre>
+<p>當閉包變得更加復雜時，你可以加上程式碼區塊。那你就可以要寫多長就多長。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_closure = || {
+        let number = 7;
+        let other_number = 10;
+        println!(&quot;The two numbers are {} and {}.&quot;, number, other_number);
+          // 這個閉包你想要寫多長就能有多長, 就像函式.
+    };
+
+    my_closure();
+}</code></pre></pre>
+<p>但是閉包的特殊在於它可以接受閉包之外的變數，即使你只有寫 <code>||</code>。所以你可以這樣做：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number_one = 6;
+    let number_two = 10;
+
+    let my_closure = || println!(&quot;{}&quot;, number_one + number_two);
+    my_closure();
+}</code></pre></pre>
+<p>就會印出 <code>16</code>。你不需要在 <code>||</code> 中放入任何東西，因為它可以直接拿到 <code>number_one</code> 和 <code>number_two</code> 並把它們加起來。</p>
+<p>順帶一提，這就是 <strong>閉包(closure)</strong> 這個名字的由來，因為它們會取得變數並將它們&quot;封入(enclose)&quot;在裡面。如果你想要很正確的說法：</p>
+<ul>
+<li><code>||</code> 如果不把變數從外面封進來就是&quot;匿名函式(anonymous function)&quot;。匿名的意思是&quot;沒有名字&quot;。它用起來更像個正規函式。</li>
+<li><code>||</code> 有從外部封入變數的才是&quot;閉包&quot;。它把它周圍的變數&quot;封起來&quot;使用。</li>
+</ul>
+<p>但是人們經常會把所有的 <code>||</code> 函式都叫做閉包，所以你不用擔心名字的問題。我們只會對帶有 <code>||</code> 的任何東西叫&quot;閉包&quot;，但請記住，它可能意味著一個&quot;匿名函式&quot;。</p>
+<p>為什麼知道兩者的區別有益呢？因為匿名函式其實和具名函式產生一樣的機器碼(machine code)。它們給人的感覺是&quot;高層抽象&quot;，所以有時候大家會覺得機器碼會很複雜。但是 Rust 用它產生的機器碼其實和正規函式一樣快。</p>
+<p>所以讓我們再來看看更多一些閉包能做的事。你也可以這樣做：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number_one = 6;
+    let number_two = 10;
+
+    let my_closure = |x: i32| println!(&quot;{}&quot;, number_one + number_two + x);
+    my_closure(5);
+}</code></pre></pre>
+<p>這個閉包取用 <code>number_one</code> 和 <code>number_two</code>。我們還給了它新的變數 <code>x</code>，並且照範例來說 <code>x</code> 是 5。然後它把這三個都加在一起印出 <code>21</code>。</p>
+<p>通常在 Rust 中，你會在方法的引數裡面看到閉包，是因為用閉包作為引數是非常方便的事。我們在上個章節中有 <code>.map()</code> 和 <code>.for_each()</code> 的地方看到了閉包。在那個章節中，我們寫了 <code>|x|</code> 來代入疊代器的下一個元素，那就是一個閉包。</p>
+<p>這裡是另一個範例：如果 <code>unwrap</code> 不起作用，可以用我們已知的 <code>unwrap_or</code> 方法給出一個值替代。之前我們寫的是：<code>let fourth = my_vec.get(3).unwrap_or(&amp;0);</code>。但還有個引數是用閉包的 <code>unwrap_or_else</code> 方法。所以你可以這樣做：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec = vec![8, 9, 10];
+
+    let fourth = my_vec.get(3).unwrap_or_else(|| { // 試著 unwrap. 如果它不能用,
+        if my_vec.get(0).is_some() {               // 就看 my_vec 是否有東西在索引 [0]
+            &amp;my_vec[0]                             // 如果有東西就回傳在索引 [0] 的數值
+        } else {
+            &amp;0 // 不然就給 &amp;0
+        }
+    });
+
+    println!(&quot;{}&quot;, fourth);
+}</code></pre></pre>
+<p>當然，閉包也可以很簡單。例如你可以只寫 <code>let fourth = my_vec.get(3).unwrap_or_else(|| &amp;0);</code>。你不必只因為有閉包，就總是需要用 <code>{}</code> 並寫出複雜的程式碼。只要你把 <code>||</code> 放進去，編譯器就知道你放了你需要的閉包。</p>
+<p>最常用的閉包方法可能是 <code>.map()</code>。讓我們再來看看它。下面是一種使用方式：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let num_vec = vec![2, 4, 6];
+
+    let double_vec = num_vec        // 拿 num_vec
+        .iter()                     // 疊代它
+        .map(|number| number * 2)   // 對每個元素乘以二
+        .collect::&lt;Vec&lt;i32&gt;&gt;();     // 然後從結果做新的 Vec
+    println!(&quot;{:?}&quot;, double_vec);
+}</code></pre></pre>
+<p>另一個好例子是在 <code>.enumerate()</code> 之後使用 <code>.for_each()</code>。<code>.enumerate()</code> 方法給的是帶有索引號碼和元素的疊代器。例如：<code>[10, 9, 8]</code> 變成 <code>(0, 10), (1, 9), (2, 8)</code>。這裡每個元素的型別是 <code>(usize, i32)</code>。所以你可以這樣做：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let num_vec = vec![10, 9, 8];
+
+    num_vec
+        .iter()      // 疊代 num_vec
+        .enumerate() // 得到 (index, number)
+        .for_each(|(index, number)| println!(&quot;Index number {} has number {}&quot;, index, number)); // 對每一個做些事
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Index number 0 has number 10
+Index number 1 has number 9
+Index number 2 has number 8
+</code></pre>
+<p>在這種情況下，我們用 <code>for_each</code> 代替 <code>map</code>。<code>map</code> 是用於對每個元素<strong>做一些事情</strong>，並將其傳遞出去，而 <code>for_each</code> 是<strong>當你看到每個元素時做一些事情</strong>。另外，<code>map</code> 不會做任何事情，除非你使用像 <code>collect</code> 這樣的方法。</p>
+<p>其實，這就是疊代器有趣的地方。如果你試著用 <code>map</code> 之後卻沒用像 <code>collect</code> 這樣的方法，編譯器會告訴你它不會做任何事。它不會恐慌，但編譯器只會告訴你什麼事都沒做。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let num_vec = vec![10, 9, 8];
+
+    num_vec
+        .iter()
+        .enumerate()
+        .map(|(index, number)| println!(&quot;Index number {} has number {}&quot;, index, number));
+
+}</code></pre></pre>
+<p>它說：</p>
+<pre><code class="language-text">warning: unused `std::iter::Map` that must be used
+ --&gt; src\main.rs:4:5
+  |
+4 | /     num_vec
+5 | |         .iter()
+6 | |         .enumerate()
+7 | |         .map(|(index, number)| println!(&quot;Index number {} has number {}&quot;, index, number));
+  | |_________________________________________________________________________________________^
+  |
+  = note: `#[warn(unused_must_use)]` on by default
+  = note: iterators are lazy and do nothing unless consumed
+</code></pre>
+<p>這是個<strong>警告</strong>，所以不是錯誤：程式有正常執行。但是為什麼 <code>num_vec</code> 沒做任何事呢？我們可以看看型別就知道了。</p>
+<ul>
+<li><code>let num_vec = vec![10, 9, 8];</code> 現在是個 <code>Vec&lt;i32&gt;</code>。</li>
+<li><code>.iter()</code> 現在是個 <code>Iter&lt;i32&gt;</code>。所以它是個元素為 <code>i32</code> 的疊代器。</li>
+<li><code>.enumerate()</code> 現在是個 <code>Enumerate&lt;Iter&lt;i32&gt;&gt;</code>。所以它是 <code>i32</code> 的 <code>Iter</code> 型別的 <code>Enumerate</code> 型別。</li>
+<li><code>.map()</code> 現在是個 <code>Map&lt;Enumerate&lt;Iter&lt;i32&gt;&gt;&gt;</code> 的型別。所以它是 <code>i32</code> 的 <code>Iter</code> 型別的 <code>Enumerate</code> 型別的 <code>Map</code> 型別。</li>
+</ul>
+<p>我們所做的只是個越來越複雜的結構體。所以這個 <code>Map&lt;Enumerate&lt;Iter&lt;i32&gt;&gt;&gt;</code> 結構體只是準備好，但只有在我們告訴它要做什麼事時才會處理好能用。Rust 這樣做是因為它需要保證足夠快。它不想這樣做：</p>
+<ul>
+<li>迭代向量中所有的 <code>i32</code></li>
+<li>然後列舉出疊代器中所有的 <code>i32</code></li>
+<li>然後對映所有列舉出的 <code>i32</code></li>
+</ul>
+<p>Rust 只想做一次計算，所以它建立結構體並等待。之後如果我們講了 <code>.collect::&lt;Vec&lt;i32&gt;&gt;()</code>，它就會知道該怎麼做，並開始動作。這就是 <code>iterators are lazy and do nothing unless consumed</code> 的意思。疊代器在你&quot;消耗(consume)&quot;它們(用完它們)之前不會做任何事情。</p>
+<p>你甚至可以用 <code>.collect()</code> 建立像 <code>HashMap</code> 這樣複雜的東西，所以它非常強大。這裡是如何將兩個向量放進 <code>HashMap</code> 的範例。首先我們做兩個向量出來，然後我們會對它們使用 <code>.into_iter()</code> 來得到值的疊代器。接著我們使用 <code>.zip()</code> 方法。這個方法將兩個疊代器就像拉鍊一樣伴隨(attach)在一起，。最後我們使用 <code>.collect()</code> 來做出 <code>HashMap</code>。</p>
+<p>這裡是程式碼：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // 是 Vec&lt;i32&gt;
+    let some_words = vec![&quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;]; // 是 Vec&lt;&amp;str&gt;
+
+    let number_word_hashmap = some_numbers
+        .into_iter()                 // 現在是疊代器
+        .zip(some_words.into_iter()) // .zip() 裡面我們放入另一個疊代器. 現在它們在一起了.
+        .collect::&lt;HashMap&lt;_, _&gt;&gt;();
+
+    println!(&quot;For key {} we get {}.&quot;, 2, number_word_hashmap.get(&amp;2).unwrap());
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">For key 2 we get two.
+</code></pre>
+<p>你可以看到我們寫得是 <code>&lt;HashMap&lt;_, _&gt;&gt;</code>，因為那有足夠資訊讓 Rust 判斷出型別是 <code>HashMap&lt;i32, &amp;str&gt;</code>。如果你想要寫成 <code>.collect::&lt;HashMap&lt;i32, &amp;str&gt;&gt;();</code> 也行，或者你偏好像這樣寫也可以：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let some_numbers = vec![0, 1, 2, 3, 4, 5]; // 是 Vec&lt;i32&gt;
+    let some_words = vec![&quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;]; // 是 Vec&lt;&amp;str&gt;
+    let number_word_hashmap: HashMap&lt;_, _&gt; = some_numbers  // 因為我們在這裡告訴它型別...
+        .into_iter()
+        .zip(some_words.into_iter())
+        .collect(); // 我們就不用在這裡告訴它
+}</code></pre></pre>
+<p>還有一種方法，就像 <code>char</code> 的 <code>.enumerate()</code>：<code>char_indices()</code>(Indices的意思是&quot;索引&quot;)。你用它的方式是一樣的。讓我們假裝有個由許多3位數的數字組成的大字串。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let numbers_together = &quot;140399923481800622623218009598281&quot;;
+
+    for (index, number) in numbers_together.char_indices() {
+        match (index % 3, number) {
+            (0..=1, number) =&gt; print!(&quot;{}&quot;, number), // 在特定餘數時只印出數字
+            _ =&gt; print!(&quot;{}\t&quot;, number), // 不然就印出帶有定位空白的數字
+        }
+    }
+}</code></pre></pre>
+<p>印出 <code>140     399     923     481     800     622     623     218     009     598    281</code>。</p>
+<h3 id="閉包裡的-_"><a class="header" href="#閉包裡的-_">閉包裡的 |_|</a></h3>
+<p>有時你會在閉包裡面看到 <code>|_|</code>。這意味著這個閉包需要一個引數(比如 <code>x</code>)，但你不想使用它。所以 <code>|_|</code> 意味著 &quot;好吧，這個閉包接受一個引數，但我不會給它名字是因為我不在乎它&quot;。</p>
+<p>這裡的範例是當你不這樣做時會有的錯誤：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec = vec![8, 9, 10];
+
+    println!(&quot;{:?}&quot;, my_vec.iter().for_each(|| println!(&quot;We didn't use the variables at all&quot;))); // ⚠️
+}</code></pre></pre>
+<p>Rust 講說</p>
+<pre><code class="language-text">error[E0593]: closure is expected to take 1 argument, but it takes 0 arguments
+  --&gt; src\main.rs:28:36
+   |
+28 |     println!(&quot;{:?}&quot;, my_vec.iter().for_each(|| println!(&quot;We didn't use the variables at all&quot;)));
+   |                                    ^^^^^^^^ -- takes 0 arguments
+   |                                    |
+   |                                    expected closure that takes 1 argument
+</code></pre>
+<p>編譯器其實會給你一些幫助：</p>
+<pre><code class="language-text">help: consider changing the closure to take and ignore the expected argument
+   |
+28 |     println!(&quot;{:?}&quot;, my_vec.iter().for_each(|_| println!(&quot;We didn't use the variables at all&quot;)));
+</code></pre>
+<p>這是很好的建議。如果你把 <code>||</code> 改成 <code>|_|</code> 就可以運作了。</p>
+<h3 id="閉包和疊代器的有用方法"><a class="header" href="#閉包和疊代器的有用方法">閉包和疊代器的有用方法</a></h3>
+<p>一旦閉包讓你感到自在時，Rust 就會成為一種非常有趣的語言。有了閉包，你可以將方法互相 <em>連結</em> 起來，用很少的程式碼做很多事情。下面是一些我們還沒有見過的閉包和使用閉包的方法。</p>
+<p><code>.filter()</code>：讓你保留疊代器中你想保留的元素。讓我們過濾一年之中的月份。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let months = vec![&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;];
+
+    let filtered_months = months
+        .into_iter()                         // 做出疊代器
+        .filter(|month| month.len() &lt; 5)     // 我們不想要月份名的長度超過 5 個位元組.
+                                             // 我們知道每個字母是一個位元組, 所以用 .len() 沒問題
+        .filter(|month| month.contains(&quot;u&quot;)) // 還有我們只喜歡字母有 u 的月份
+        .collect::&lt;Vec&lt;&amp;str&gt;&gt;();
+
+    println!(&quot;{:?}&quot;, filtered_months);
+}</code></pre></pre>
+<p>印出 <code>[&quot;June&quot;, &quot;July&quot;]</code>。</p>
+<p><code>.filter_map()</code>：這叫做 <code>filter_map()</code> 是因為它做了 <code>.filter()</code> 和 <code>.map()</code>。傳入的閉包必須回傳 <code>Option&lt;T&gt;</code>, 接著 <code>filter_map()</code> 將會從每一個 <code>Option</code> 取出是 <code>Some</code> 的值。所以比如說你套用 <code>.filter_map()</code> 到 <code>vec![Some(2), None, Some(3)]</code>，它就會回傳 <code>[2, 3]</code>。</p>
+<p>我們將寫一個用到 <code>Company</code> 結構體的範例。每個公司都有個 <code>name</code>，所以這個欄位是 <code>String</code>，但是 CEO 可能最近已經辭職了。所以 <code>ceo</code> 欄位是 <code>Option&lt;String&gt;</code>。我們會 <code>.filter_map()</code> 一些公司，只保留 CEO 的名字。</p>
+<pre><pre class="playground"><code class="language-rust">struct Company {
+    name: String,
+    ceo: Option&lt;String&gt;,
+}
+
+impl Company {
+    fn new(name: &amp;str, ceo: &amp;str) -&gt; Self {
+        let ceo = match ceo {
+            &quot;&quot; =&gt; None,
+            ceo =&gt; Some(ceo.to_string()),
+        }; // 確定 ceo 了, 那我們現在就回傳 Self
+        Self {
+            name: name.to_string(),
+            ceo,
+        }
+    }
+
+    fn get_ceo(&amp;self) -&gt; Option&lt;String&gt; {
+        self.ceo.clone() // 只回傳 CEO 的克隆(結構體沒有 Copy 特徵)
+    }
+}
+
+fn main() {
+    let company_vec = vec![
+        Company::new(&quot;Umbrella Corporation&quot;, &quot;Unknown&quot;),
+        Company::new(&quot;Ovintiv&quot;, &quot;Doug Suttles&quot;),
+        Company::new(&quot;The Red-Headed League&quot;, &quot;&quot;),
+        Company::new(&quot;Stark Enterprises&quot;, &quot;&quot;),
+    ];
+
+    let all_the_ceos = company_vec
+        .into_iter()
+        .filter_map(|company| company.get_ceo()) // filter_map 需要 Option&lt;T&gt;
+        .collect::&lt;Vec&lt;String&gt;&gt;();
+
+    println!(&quot;{:?}&quot;, all_the_ceos);
+}</code></pre></pre>
+<p>印出 <code>[&quot;Unknown&quot;, &quot;Doug Suttles&quot;]</code>。</p>
+<p>既然 <code>.filter_map()</code> 需要 <code>Option</code>，那麼 <code>Result</code> 呢？沒問題：有一個叫做 <code>.ok()</code> 的方法，可以把 <code>Result</code> 變成 <code>Option</code>。之所以叫 <code>.ok()</code>，是因為它能傳送的只是 <code>Ok</code> 的結果(<code>Err</code> 的資訊沒有了)。你記得<code>Option</code> 完整型別是 <code>Option&lt;T&gt;</code>，而 <code>Result</code> 是 <code>Result&lt;T, E&gt;</code>，同時有 <code>Ok</code> 和 <code>Err</code> 的資訊。所以當你使用 <code>.ok()</code> 時，任何 <code>Err</code> 的資訊都會丟棄，變成 <code>None</code>。</p>
+<p>使用 <code>.parse()</code> 就是這種情況的簡單範例，我們嘗試解析一些使用者輸入。<code>.parse()</code> 在這裡接受 <code>&amp;str</code>，並試著把它變成 <code>f32</code>。它回傳了 <code>Result</code>，但我們用的是 <code>filter_map()</code>，所以只要丟掉錯誤就可以。任何 <code>Err</code> 都會變成 <code>None</code>，並且被 <code>.filter_map()</code> 過濾掉。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let user_input = vec![&quot;8.9&quot;, &quot;Nine point nine five&quot;, &quot;8.0&quot;, &quot;7.6&quot;, &quot;eleventy-twelve&quot;];
+
+    let actual_numbers = user_input
+        .into_iter()
+        .filter_map(|input| input.parse::&lt;f32&gt;().ok())
+        .collect::&lt;Vec&lt;f32&gt;&gt;();
+
+    println!(&quot;{:?}&quot;, actual_numbers);
+}</code></pre></pre>
+<p>印出 <code>[8.9, 8.0, 7.6]</code>。</p>
+<p>與 <code>.ok()</code> 相對的是 <code>.ok_or()</code> 和 <code>ok_or_else()</code>。這樣就把 <code>Option</code> 變成了 <code>Result</code>。之所以叫 <code>.ok_or()</code>，是因為 <code>Result</code> 給你 <code>Ok</code> <strong>或</strong> <code>Err</code>，所以你必須讓它知道 <code>Err</code> 的值是多少。這是因為 <code>Option</code> 中的 <code>None</code> 沒有任何資訊。另外，你現在可以看到，這些方法的名稱中帶有 <em>else</em> 的部分意味著它接受閉包。</p>
+<p>我們可以把我們的 <code>Option</code> 從 <code>Company</code> 結構體中取出來，然後用這個方式把它變成 <code>Result</code>。對於長期的錯誤處理方式，最好是建立自己的錯誤型別。但在現在我們只給了它錯誤訊息，所以它就變成了 <code>Result&lt;String, &amp;str&gt;</code>。</p>
+<pre><pre class="playground"><code class="language-rust">// 在 main() 之前的一切都完全一樣
+struct Company {
+    name: String,
+    ceo: Option&lt;String&gt;,
+}
+
+impl Company {
+    fn new(name: &amp;str, ceo: &amp;str) -&gt; Self {
+        let ceo = match ceo {
+            &quot;&quot; =&gt; None,
+            ceo =&gt; Some(ceo.to_string()),
+        };
+        Self {
+            name: name.to_string(),
+            ceo,
+        }
+    }
+
+    fn get_ceo(&amp;self) -&gt; Option&lt;String&gt; {
+        self.ceo.clone()
+    }
+}
+
+fn main() {
+    let company_vec = vec![
+        Company::new(&quot;Umbrella Corporation&quot;, &quot;Unknown&quot;),
+        Company::new(&quot;Ovintiv&quot;, &quot;Doug Suttles&quot;),
+        Company::new(&quot;The Red-Headed League&quot;, &quot;&quot;),
+        Company::new(&quot;Stark Enterprises&quot;, &quot;&quot;),
+    ];
+
+    let mut results_vec = vec![]; // 假裝我們也需要收集錯誤的結果
+
+    company_vec
+        .iter()
+        .for_each(|company| results_vec.push(company.get_ceo().ok_or(&quot;No CEO found&quot;)));
+
+    for item in results_vec {
+        println!(&quot;{:?}&quot;, item);
+    }
+}</code></pre></pre>
+<p>最大的變化在這行：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+.for_each(|company| results_vec.push(company.get_ceo().ok_or(&quot;No CEO found&quot;)));
+<span class="boring">}</span></code></pre></pre>
+<p>它的意思是：&quot;每家公司都用 <code>get_ceo()</code>. 如果你拿得到，那就把 <code>Ok</code> 裡面的數值傳給你。如果沒有，就在 <code>Err</code> 裡面傳遞&quot;No CEO found&quot;。然後把它放到 vec 裡。&quot;</p>
+<p>所以當我們印出 <code>results_vec</code> 時，會得到這樣的結果：</p>
+<pre><code class="language-text">Ok(&quot;Unknown&quot;)
+Ok(&quot;Doug Suttles&quot;)
+Err(&quot;No CEO found&quot;)
+Err(&quot;No CEO found&quot;)
+</code></pre>
+<p>所以現在我們有了所有四個元素。現在讓我們使用 <code>.ok_or_else()</code>，這樣我們就能使用閉包，並得到更好的錯誤訊息。現在我們有空間使用 <code>format!</code> 來建立 <code>String</code>，並將公司名稱放在其中。然後我們回傳這個 <code>String</code>。</p>
+<pre><pre class="playground"><code class="language-rust">// 在 main() 之前的一切都完全一樣
+struct Company {
+    name: String,
+    ceo: Option&lt;String&gt;,
+}
+
+impl Company {
+    fn new(name: &amp;str, ceo: &amp;str) -&gt; Self {
+        let ceo = match ceo {
+            &quot;&quot; =&gt; None,
+            name =&gt; Some(name.to_string()),
+        };
+        Self {
+            name: name.to_string(),
+            ceo,
+        }
+    }
+
+    fn get_ceo(&amp;self) -&gt; Option&lt;String&gt; {
+        self.ceo.clone()
+    }
+}
+
+fn main() {
+    let company_vec = vec![
+        Company::new(&quot;Umbrella Corporation&quot;, &quot;Unknown&quot;),
+        Company::new(&quot;Ovintiv&quot;, &quot;Doug Suttles&quot;),
+        Company::new(&quot;The Red-Headed League&quot;, &quot;&quot;),
+        Company::new(&quot;Stark Enterprises&quot;, &quot;&quot;),
+    ];
+
+    let mut results_vec = vec![];
+
+    company_vec.iter().for_each(|company| {
+        results_vec.push(company.get_ceo().ok_or_else(|| {
+            let err_message = format!(&quot;No CEO found for {}&quot;, company.name);
+            err_message
+        }))
+    });
+
+    for item in results_vec {
+        println!(&quot;{:?}&quot;, item);
+    }
+}</code></pre></pre>
+<p>這樣我們就有了：</p>
+<pre><code class="language-text">Ok(&quot;Unknown&quot;)
+Ok(&quot;Doug Suttles&quot;)
+Err(&quot;No CEO found for The Red-Headed League&quot;)
+Err(&quot;No CEO found for Stark Enterprises&quot;)
+</code></pre>
+<p><code>.and_then()</code> 是個很有用的方法，它接受 <code>Option</code>，然後讓你對它的值做一些事情，並把它傳遞出去。所以它的輸入是個 <code>Option</code>，輸出也是個 <code>Option</code>。這有點像一個安全的&quot;解包(unwrap)，然後做一些事情，然後再包起來&quot;。</p>
+<p>一個簡單的例子是，我們使用 <code>.get()</code> 從向量中得到的數字，因為它回傳的是 <code>Option</code>。現在我們可以把它傳給 <code>and_then()</code>，如果它是 <code>Some</code>，我們還可以對它做一些數學運算。如果是 <code>None</code>，那麼 <code>None</code> 就會被傳遞過去。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let new_vec = vec![8, 9, 0]; // 只是有數字的向量
+
+    let number_to_add = 5;       // 後面用這個來運算
+    let mut empty_vec = vec![];  // 結果放進這裡
+
+
+    for index in 0..5 {
+        empty_vec.push(
+            new_vec
+               .get(index)
+                .and_then(|number| Some(number + 1))
+                .and_then(|number| Some(number + number_to_add))
+        );
+    }
+    println!(&quot;{:?}&quot;, empty_vec);
+}</code></pre></pre>
+<p>印出了 <code>[Some(14), Some(15), Some(6), None, None]</code>。你可以看到 <code>None</code> 並沒有被過濾掉，只是傳遞過去了。</p>
+<p><code>.and()</code> 有點像是 <code>bool</code> 的 <code>Option</code>。你可以匹配很多個 <code>Option</code>，如果它們都是 <code>Some</code>，那麼它會給出最後一個。而如果其中一個是 <code>None</code>，那麼就會給出 <code>None</code>。</p>
+<p>首先這裡有個 <code>bool</code> 的範例來幫助想像。你可以看到，如果你用的是 <code>&amp;&amp;</code>(和)，哪怕是一個 <code>false</code>，也會讓一切 <code>false</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let one = true;
+    let two = false;
+    let three = true;
+    let four = true;
+
+    println!(&quot;{}&quot;, one &amp;&amp; three); // 印出 true
+    println!(&quot;{}&quot;, one &amp;&amp; two &amp;&amp; three &amp;&amp; four); // 印出 false
+}</code></pre></pre>
+<p>現在這裡的 <code>.and()</code> 也是同樣的東西。想像一下，我們做了五次操作，並把結果放在 <code>Vec&lt;Option&lt;&amp;str&gt;&gt;</code> 中。如果我們得到一個值，我們就把 <code>Some(&quot;success!&quot;)</code> 推到向量中。然後我們再多做兩次這樣的操作。之後我們只用 <code>.and()</code> 顯示每次是得到 <code>Some</code> 時的索引。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let first_try = vec![Some(&quot;success!&quot;), None, Some(&quot;success!&quot;), Some(&quot;success!&quot;), None];
+    let second_try = vec![None, Some(&quot;success!&quot;), Some(&quot;success!&quot;), Some(&quot;success!&quot;), Some(&quot;success!&quot;)];
+    let third_try = vec![Some(&quot;success!&quot;), Some(&quot;success!&quot;), Some(&quot;success!&quot;), Some(&quot;success!&quot;), None];
+
+    for i in 0..first_try.len() {
+        println!(&quot;{:?}&quot;, first_try[i].and(second_try[i]).and(third_try[i]));
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">None
+None
+Some(&quot;success!&quot;)
+Some(&quot;success!&quot;)
+None
+</code></pre>
+<p>第一個(索引 0)<code>None</code>，是因為在 <code>second_try</code> 中索引 0 有 <code>None</code>。第二個 <code>None</code>，是因為在 <code>first_try</code> 中有 <code>None</code>。下一個是 <code>Some(&quot;success!&quot;)</code>，是因為 <code>first_try</code>、<code>second try</code>、<code>third_try</code> 中都沒有 <code>None</code>。</p>
+<p><code>.any()</code> 和 <code>.all()</code> 在疊代器中非常容易使用。它們根據你的輸入回傳 <code>bool</code> 值。在這個例子中，我們做了一個非常大的向量(大約 20000 個元素)，包含了從 <code>'a'</code> 到 <code>'働'</code> 的所有字元。然後我們建立函式來檢查是否有某個字元在其中。</p>
+<p>接下來我們做一個比較小的向量，問它是否全部都是字母(用 <code>.is_alphabetic()</code> 方法)。然後我們問它是否所有的字元都小於韓文字 <code>'행'</code>。</p>
+<p>還要注意的是你要傳一個參考進去，因為 <code>.iter()</code> 也會給出參考，你需要用傳進去的 <code>&amp;</code> 和另一個 <code>&amp;</code> 進行比較。</p>
+<pre><pre class="playground"><code class="language-rust">fn in_char_vec(char_vec: &amp;Vec&lt;char&gt;, check: char) {
+    println!(&quot;Is {} inside? {}&quot;, check, char_vec.iter().any(|&amp;char| char == check));
+}
+
+fn main() {
+    let char_vec = ('a'..'働').collect::&lt;Vec&lt;char&gt;&gt;();
+    in_char_vec(&amp;char_vec, 'i');
+    in_char_vec(&amp;char_vec, '뷁');
+    in_char_vec(&amp;char_vec, '鑿');
+
+    let smaller_vec = ('A'..'z').collect::&lt;Vec&lt;char&gt;&gt;();
+    println!(&quot;All alphabetic? {}&quot;, smaller_vec.iter().all(|&amp;x| x.is_alphabetic()));
+    println!(&quot;All less than the character 행? {}&quot;, smaller_vec.iter().all(|&amp;x| x &lt; '행'));
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Is i inside? true
+Is 뷁 inside? false
+Is 鑿 inside? false
+All alphabetic? false
+All less than the character 행? true
+</code></pre>
+<p>順便說，<code>.any()</code> 只檢查到它第一個匹配的元素，然後就停止了。如果它已經找到了匹配結果，它就不會檢查所有的元素。如果你要在向量上使用 <code>.any()</code>，最好把可能會匹配的元素放前面。或者你可以在 <code>.iter()</code> 之後使用 <code>.rev()</code> 來反向疊代。這是這樣的向量：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut big_vec = vec![6; 1000];
+    big_vec.push(5);
+}</code></pre></pre>
+<p>所以這個 <code>Vec</code> 有 1000 個 <code>6</code>，後面還有一個 <code>5</code>。讓我們假裝來用 <code>.any()</code> 看看它是否包含 5。首先讓我們確定 <code>.rev()</code> 有效。記住，<code>Iterator</code> 總是有 <code>.next()</code>，能讓你檢查它每次做了什麼。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut big_vec = vec![6; 1000];
+    big_vec.push(5);
+
+    let mut iterator = big_vec.iter().rev();
+    println!(&quot;{:?}&quot;, iterator.next());
+    println!(&quot;{:?}&quot;, iterator.next());
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Some(5)
+Some(6)
+</code></pre>
+<p>我們是對的：有一個 <code>Some(5)</code>，然後開始 1000 個 <code>Some(6)</code>。所以我們可以這樣寫：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut big_vec = vec![6; 1000];
+    big_vec.push(5);
+
+    println!(&quot;{:?}&quot;, big_vec.iter().rev().any(|&amp;number| number == 5));
+}</code></pre></pre>
+<p>而且因為是 <code>.rev()</code>，所以它只呼叫 <code>.next()</code> 一次就停止。如果我們不用 <code>.rev()</code>，那麼它將呼叫 <code>.next()</code> 1001次才停止。這段程式碼秀出這件事：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut big_vec = vec![6; 1000];
+    big_vec.push(5);
+
+    let mut counter = 0; // 開始計數
+    let mut big_iter = big_vec.into_iter(); // 做出 Iterator
+
+    loop {
+        counter +=1;
+        if big_iter.next() == Some(5) { // 持續呼叫 .next() 直到我們得到 Some(5)
+            break;
+        }
+    }
+    println!(&quot;Final counter is: {}&quot;, counter);
+}</code></pre></pre>
+<p>這裡印出 <code>Final counter is: 1001</code>，所以我們知道它必須呼叫 <code>.next()</code> 1001 次才能找到 5。</p>
+<p><code>.find()</code> 告訴你疊代器裡是否有某個東西，而 <code>.position()</code> 則告訴你它在哪裡。<code>.find()</code> 與 <code>.any()</code> 不同是因為它回傳裡面有值的 <code>Option</code>(或 <code>None</code>)。與此同時，<code>.position()</code> 也是帶有位置號碼的 <code>Option</code>，或著 <code>None</code>。換句話說：</p>
+<ul>
+<li><code>.find()</code>: &quot;我會試著找給你&quot;</li>
+<li><code>.position()</code>:&quot;我會試著找看看在哪裡告訴你&quot;</li>
+</ul>
+<p>這是簡單的範例：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let num_vec = vec![10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+    println!(&quot;{:?}&quot;, num_vec.iter().find(|&amp;number| number % 3 == 0)); // find 接受參考, 所以我們給它 &amp;number
+    println!(&quot;{:?}&quot;, num_vec.iter().find(|&amp;number| number * 2 == 30));
+
+    println!(&quot;{:?}&quot;, num_vec.iter().position(|&amp;number| number % 3 == 0));
+    println!(&quot;{:?}&quot;, num_vec.iter().position(|&amp;number| number * 2 == 30));
+
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Some(30) // This is the number itself
+None // No number inside times 2 == 30
+Some(2) // This is the position
+None
+</code></pre>
+<p>有了 <code>.cycle()</code> 你可以建立無窮迴圈的疊代器。這種型別的疊代器能和 <code>.zip()</code> 很好地結合在一起用來建立新東西，就像建立 <code>Vec&lt;(i32, &amp;str)&gt;</code> 的這個例子：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let even_odd = vec![&quot;even&quot;, &quot;odd&quot;];
+
+    let even_odd_vec = (0..6)
+        .zip(even_odd.into_iter().cycle())
+        .collect::&lt;Vec&lt;(i32, &amp;str)&gt;&gt;();
+    println!(&quot;{:?}&quot;, even_odd_vec);
+}</code></pre></pre>
+<p>所以，即使 <code>.cycle()</code> 可能永遠不會結束，但當把它們 zip 在一起時，另一個疊代器只運作了六次。也就是說，<code>.cycle()</code> 所產生的疊代器不會再被 <code>.next()</code> 呼叫，所以六次之後就完成了。輸出：</p>
+<pre><code>[(0, &quot;even&quot;), (1, &quot;odd&quot;), (2, &quot;even&quot;), (3, &quot;odd&quot;), (4, &quot;even&quot;), (5, &quot;odd&quot;)]
+</code></pre>
+<p>類似的事情也可以用沒有結尾的範圍來做到。如果你寫 <code>0..</code>，那麼你就建立出永不停止的範圍。你可以很容易地使用這個方法：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let ten_chars = ('a'..).take(10).collect::&lt;Vec&lt;char&gt;&gt;();
+    let skip_then_ten_chars = ('a'..).skip(1300).take(10).collect::&lt;Vec&lt;char&gt;&gt;();
+
+    println!(&quot;{:?}&quot;, ten_chars);
+    println!(&quot;{:?}&quot;, skip_then_ten_chars);
+}</code></pre></pre>
+<p>兩者都是印出十個字元，但第二個跳過 1300 位置，印出亞美尼亞語的十個字母。</p>
+<pre><code>['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+['յ', 'ն', 'շ', 'ո', 'չ', 'պ', 'ջ', 'ռ', 'ս', 'վ']
+</code></pre>
+<p>另一種流行的方法叫做 <code>.fold()</code>。這個方法經常用於將疊代器中的元素加在一起，但你也可以做更多的事情。它和 <code>.for_each()</code> 有些類似。在 <code>.fold()</code> 中，你首先新增起始值 (如果你要把元素加在一起，那就是 0)，再逗號，然後是閉包。閉包給你兩個元素：到目前為止的總和和下一個元素。首先這個簡單的範例秀出 <code>.fold()</code> 怎麼將元素加在一起：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let some_numbers = vec![9, 6, 9, 10, 11];
+
+    println!(&quot;{}&quot;, some_numbers
+        .iter()
+        .fold(0, |total_so_far, next_number| total_so_far + next_number)
+    );
+}</code></pre></pre>
+<p>過程是：</p>
+<ul>
+<li>第 1 步是從 0 開始，並加上下個數字：9。</li>
+<li>然後把 9 再加上 6：15。</li>
+<li>然後把 15 再加上 9: 24。</li>
+<li>然後把 24，再加上 10：34。</li>
+<li>最後把 34，再加上 11：45。所以它印出了 <code>45</code>。</li>
+</ul>
+<p>但是你不是只能用它來加上東西。在這裡的範例我們把每一個字元上加一個 '-'，來做出 <code>String</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let a_string = &quot;I don't have any dashes in me.&quot;;
+
+    println!(
+        &quot;{}&quot;,
+        a_string
+            .chars() // 現在是個疊代器了
+            .fold(&quot;-&quot;.to_string(), |mut string_so_far, next_char| { // 從字串 &quot;-&quot; 開始. 每次把它代入成為可變的字串並跟著下個字元
+                string_so_far.push(next_char); // 把字完推進去, 再來是 '-'
+                string_so_far.push('-');
+                string_so_far} // 別忘記傳到下一個迴圈
+            ));
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">-I- -d-o-n-'-t- -h-a-v-e- -a-n-y- -d-a-s-h-e-s- -i-n- -m-e-.-
+</code></pre>
+<p>還有許多其他方便的方法，比如：</p>
+<ul>
+<li><code>.take_while()</code> 只要一直從閉包得到 <code>true</code>，就會帶元素到新的疊代器 (例如 <code>take while x &gt; 5</code>)</li>
+<li><code>.cloned()</code> 會對疊代器內的元素做克隆。這將會把參考傳換成值。</li>
+<li><code>.by_ref()</code> 會讓疊代器取得參考。這很好的保證你在使用 <code>Vec</code> 或類似的東西來做疊代器後還可以使用它。</li>
+<li>許多其他名稱中有 <code>_while</code> 的方法：<code>.skip_while()</code>、<code>.map_while()</code> 等等。</li>
+<li><code>.sum()</code>：就是把所有的東西加在一起。</li>
+</ul>
+<p><code>.chunks()</code> 和 <code>.windows()</code> 是將向量切割成你想要的尺寸的兩種方式。你把想要的尺寸放在括號裡。比如說你有個 10 個元素的向量，你想要 3 個的尺寸，它的工作原理是這樣：</p>
+<ul>
+<li>
+<p><code>.chunks()</code> 會給你 4 個切片(slice)： <code>[0, 1, 2]</code>, 然後是 <code>[3, 4, 5]</code>, 再來是 <code>[6, 7, 8]</code>, 最後是 <code>[9]</code>。所以它會嘗試用三個元素做一個切片，但如果它沒有三個元素，那麼它也不會恐慌。它只會給你剩下的東西。</p>
+</li>
+<li>
+<p><code>.windows()</code> 會先給你一個 <code>[0, 1, 2]</code> 的切片。然後它將會移過去下一個元素，給你 <code>[1, 2, 3]</code>。它會一直這樣做到終於到達最後三個元素的切片時才停止。</p>
+</li>
+</ul>
+<p>所以讓我們在簡單的數字向量上使用它們。看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let num_vec = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+    for chunk in num_vec.chunks(3) {
+        println!(&quot;{:?}&quot;, chunk);
+    }
+    println!();
+    for window in num_vec.windows(3) {
+        println!(&quot;{:?}&quot;, window);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
+[0]
+
+[1, 2, 3]
+[2, 3, 4]
+[3, 4, 5]
+[4, 5, 6]
+[5, 6, 7]
+[6, 7, 8]
+[7, 8, 9]
+[8, 9, 0]
+</code></pre>
+<p>順便說一下，如果你什麼都不給它，<code>.chunks()</code> 會恐慌。你可以寫 <code>.chunks(1000)</code> 給只有一個元素的向量，但你不能寫 <code>.chunks()</code> 給任何長度為 0 的東西。 如果你點選了<a href="https://doc.rust-lang.org/stable/std/primitive.slice.html#method.chunks">文件</a>裡的 <code>[src]</code> 你可以看到它就在函式原始碼之中，因為它說 <code>assert!(chunk_size != 0);</code>。</p>
+<p><code>.match_indices()</code> 讓你把 <code>String</code> 或 <code>&amp;str</code> 裡面所有符合你的輸入的東西都拿出來，並給你索引。它與 <code>.enumerate()</code> 類似，因為它回傳包含兩個元素的元組。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let rules = &quot;Rule number 1: No fighting. Rule number 2: Go to bed at 8 pm. Rule number 3: Wake up at 6 am.&quot;;
+    let rule_locations = rules.match_indices(&quot;Rule&quot;).collect::&lt;Vec&lt;(_, _)&gt;&gt;(); // 這是 Vec&lt;usize, &amp;str&gt; 但我們只告訴 Rust 去決定
+    println!(&quot;{:?}&quot;, rule_locations);
+}</code></pre></pre>
+<p>This prints:</p>
+<pre><code class="language-text">[(0, &quot;Rule&quot;), (28, &quot;Rule&quot;), (62, &quot;Rule&quot;)]
+</code></pre>
+<p><code>.peekable()</code> 讓你建立可以偷看到 (peek at) 下一個元素的疊代器。除了疊代器不會移動外，它就像呼叫 <code>.next()</code> (它給你 <code>Option</code>)，所以你可以隨意使用它。實際上你可以把 peekable 想成是 &quot;可停止&quot;的，因為你可以想停多久就停多久。這裡的範例是我們對每個元素都使用 <code>.peek()</code> 三次。我們可以永遠使用 <code>.peek()</code>，直到我們使用 <code>.next()</code> 移動到下一個元素。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let just_numbers = vec![1, 5, 100];
+    let mut number_iter = just_numbers.iter().peekable(); // 這裡實際上建立了一種叫作 Peekable 的疊代器
+
+    for _ in 0..3 {
+        println!(&quot;I love the number {}&quot;, number_iter.peek().unwrap());
+        println!(&quot;I really love the number {}&quot;, number_iter.peek().unwrap());
+        println!(&quot;{} is such a nice number&quot;, number_iter.peek().unwrap());
+        number_iter.next();
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">I love the number 1
+I really love the number 1
+1 is such a nice number
+I love the number 5
+I really love the number 5
+5 is such a nice number
+I love the number 100
+I really love the number 100
+100 is such a nice number
+</code></pre>
+<p>這是另一個範例，我們使用 <code>.peek()</code> 匹配一個元素。使用完後，我們呼叫 <code>.next()</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let locations = vec![
+        (&quot;Nevis&quot;, 25),
+        (&quot;Taber&quot;, 8428),
+        (&quot;Markerville&quot;, 45),
+        (&quot;Cardston&quot;, 3585),
+    ];
+    let mut location_iter = locations.iter().peekable();
+    while location_iter.peek().is_some() {
+        match location_iter.peek() {
+            Some((name, number)) if *number &lt; 100 =&gt; { // .peek() 給我們的是參考所以需要 *
+                println!(&quot;Found a hamlet: {} with {} people&quot;, name, number)
+            }
+            Some((name, number)) =&gt; println!(&quot;Found a town: {} with {} people&quot;, name, number),
+            None =&gt; break,
+        }
+        location_iter.next();
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Found a hamlet: Nevis with 25 people
+Found a town: Taber with 8428 people
+Found a hamlet: Markerville with 45 people
+Found a town: Cardston with 3585 people
+</code></pre>
+<p>最後，這個範例我們也有用 <code>.match_indices()</code>。在這個例子中，我們根據 <code>&amp;str</code> 中的空格數，將名字放入 <code>struct</code> 中。</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct Names {
+    one_word: Vec&lt;String&gt;,
+    two_words: Vec&lt;String&gt;,
+    three_words: Vec&lt;String&gt;,
+}
+
+fn main() {
+    let vec_of_names = vec![
+        &quot;Caesar&quot;,
+        &quot;Frodo Baggins&quot;,
+        &quot;Bilbo Baggins&quot;,
+        &quot;Jean-Luc Picard&quot;,
+        &quot;Data&quot;,
+        &quot;Rand Al'Thor&quot;,
+        &quot;Paul Atreides&quot;,
+        &quot;Barack Hussein Obama&quot;,
+        &quot;Bill Jefferson Clinton&quot;,
+    ];
+
+    let mut iter_of_names = vec_of_names.iter().peekable();
+
+    let mut all_names = Names { // 開始空的 Names 結構體
+        one_word: vec![],
+        two_words: vec![],
+        three_words: vec![],
+    };
+
+    while iter_of_names.peek().is_some() {
+        let next_item = iter_of_names.next().unwrap(); // 我們可以用 .unwrap() 因為我們知道寫它是 Some
+        match next_item.match_indices(' ').collect::&lt;Vec&lt;_&gt;&gt;().len() { // 用 .match_indices 建立快速向量並檢查長度
+            0 =&gt; all_names.one_word.push(next_item.to_string()),
+            1 =&gt; all_names.two_words.push(next_item.to_string()),
+            _ =&gt; all_names.three_words.push(next_item.to_string()),
+        }
+    }
+
+    println!(&quot;{:?}&quot;, all_names);
+}</code></pre></pre>
+<p>會印出：</p>
+<pre><code class="language-text">Names { one_word: [&quot;Caesar&quot;, &quot;Data&quot;], two_words: [&quot;Frodo Baggins&quot;, &quot;Bilbo Baggins&quot;, &quot;Jean-Luc Picard&quot;, &quot;Rand Al\'Thor&quot;, &quot;Paul Atreides&quot;], three_words:
+[&quot;Barack Hussein Obama&quot;, &quot;Bill Jefferson Clinton&quot;] }
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_36.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_38.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_36.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_38.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

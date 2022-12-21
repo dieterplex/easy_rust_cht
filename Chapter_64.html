@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 使用檔案 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html" class="active"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="使用檔案"><a class="header" href="#使用檔案">使用檔案</a></h2>
+<p>現在我們正在電腦上使用 Rust，我們可以開始處理檔案了。你會注意到，現在我們會開始在程式碼中看到愈來愈多的 <code>Result</code>。這是因為一旦你開始處理檔案和類似的東西，很多事情都會出錯。檔案可能不在那裡，或者也許計算機無法讀取它。</p>
+<p>你可能還記得，如果你想使用 <code>?</code> 運算子，它所在的函式也必須回傳 <code>Result</code>。如果你不記得錯誤型別，你可以什麼都不給它，讓編譯器告訴你。讓我們寫個試圖用 <code>.parse()</code> 建立數字的函式來試試。</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+fn give_number(input: &amp;str) -&gt; Result&lt;i32, ()&gt; {
+    input.parse::&lt;i32&gt;()
+}
+
+fn main() {
+    println!(&quot;{:?}&quot;, give_number(&quot;88&quot;));
+    println!(&quot;{:?}&quot;, give_number(&quot;5&quot;));
+}</code></pre></pre>
+<p>編譯器明確告訴我們到底該怎麼做：</p>
+<pre><code class="language-text">error[E0308]: mismatched types
+ --&gt; src\main.rs:4:5
+  |
+3 | fn give_number(input: &amp;str) -&gt; Result&lt;i32, ()&gt; {
+  |                                --------------- expected `std::result::Result&lt;i32, ()&gt;` because of return type
+4 |     input.parse::&lt;i32&gt;()
+  |     ^^^^^^^^^^^^^^^^^^^^ expected `()`, found struct `std::num::ParseIntError`
+  |
+  = note: expected enum `std::result::Result&lt;_, ()&gt;`
+             found enum `std::result::Result&lt;_, std::num::ParseIntError&gt;`
+</code></pre>
+<p>很好！所以我們只要把回傳值改成編譯器說的就可以了：</p>
+<pre><pre class="playground"><code class="language-rust">use std::num::ParseIntError;
+
+fn give_number(input: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
+    input.parse::&lt;i32&gt;()
+}
+
+fn main() {
+    println!(&quot;{:?}&quot;, give_number(&quot;88&quot;));
+    println!(&quot;{:?}&quot;, give_number(&quot;5&quot;));
+}</code></pre></pre>
+<p>現在程式可以執行了！</p>
+<pre><code class="language-text">Ok(88)
+Ok(5)
+</code></pre>
+<p>所以現在我們想用 <code>?</code> 直接給我們數值，如果這樣可以的話，如果不能就給錯誤。但是如何在 <code>fn main()</code> 中做到呢？如果我們嘗試在 main 中使用 <code>?</code>，那就行不通了。</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+use std::num::ParseIntError;
+
+fn give_number(input: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
+    input.parse::&lt;i32&gt;()
+}
+
+fn main() {
+    println!(&quot;{:?}&quot;, give_number(&quot;88&quot;)?);
+    println!(&quot;{:?}&quot;, give_number(&quot;5&quot;)?);
+}</code></pre></pre>
+<p>它說：</p>
+<pre><code class="language-text">error[E0277]: the `?` operator can only be used in a function that returns `Result` or `Option` (or another type that implements `std::ops::Try`)
+  --&gt; src\main.rs:8:22
+   |
+7  | / fn main() {
+8  | |     println!(&quot;{:?}&quot;, give_number(&quot;88&quot;)?);
+   | |                      ^^^^^^^^^^^^^^^^^^ cannot use the `?` operator in a function that returns `()`
+9  | |     println!(&quot;{:?}&quot;, give_number(&quot;5&quot;)?);
+10 | | }
+   | |_- this function should return `Result` or `Option` to accept `?`
+</code></pre>
+<p>但實際上 <code>main()</code> 可以回傳 <code>Result</code>，就像其它函式一樣。如果我們的函式能用，我們不想回傳任何東西（main() 不會回傳任何東西以外的東西）。而如果它不能用，我們將回傳同樣的錯誤。所以我們可以寫成這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::num::ParseIntError;
+
+fn give_number(input: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
+    input.parse::&lt;i32&gt;()
+}
+
+fn main() -&gt; Result&lt;(), ParseIntError&gt; {
+    println!(&quot;{:?}&quot;, give_number(&quot;88&quot;)?);
+    println!(&quot;{:?}&quot;, give_number(&quot;5&quot;)?);
+    Ok(())
+}</code></pre></pre>
+<p>不要忘了最後的 <code>Ok(())</code>：這在 Rust 中非常常見，它的意思是 <code>Ok</code>，裡面是 <code>()</code>，也就是我們的回傳值。現在印出：</p>
+<pre><code class="language-text">88
+5
+</code></pre>
+<p>只有用 <code>.parse()</code> 的時候不是很有用處，但是用在檔案就不同了。這是因為 <code>?</code> 也為我們改變了錯誤型別。這裡是用簡單英語改寫來自 <a href="https://doc.rust-lang.org/std/macro.try.html">? 運算子文件</a>所說的內容：</p>
+<blockquote>
+<p>If you get an <code>Err</code>, it will get the inner error. Then <code>?</code> does a conversion using <code>From</code>. With that it can change specialized errors to more general ones. The error it gets is then returned.</p>
+</blockquote>
+<p>另外，在使用 <code>File</code> 和類似的東西時，Rust 有個方便的 <code>Result</code> 型別叫做 <code>std::io::Result</code>。在 <code>main()</code> 中當你使用 <code>?</code> 在開啟和操作檔案時，通常看到的就是這個。這其實是類型別名 (type alias)。像這樣：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>type Result&lt;T&gt; = Result&lt;T, Error&gt;;
+<span class="boring">}</span></code></pre></pre>
+<p>所以這是 <code>Result&lt;T, Error&gt;</code>，但我們只需要寫 <code>Result&lt;T&gt;</code> 的部分。</p>
+<p>現在讓我們第一次嘗試操作檔案。<code>std::fs</code> 是處理檔案的方法所在的模組，並且用 <code>std::io::Write</code> 特徵你就可以寫入資料。有了那些，我們就可以用 <code>.write_all()</code> 來寫資料進檔案。</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs;
+use std::io::Write;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let mut file = fs::File::create(&quot;myfilename.txt&quot;)?; // 用這個名稱建立檔案.
+                                                        // 小心! 如果你有已經有個同名的檔案,
+                                                        // 它會刪除檔案裡面所有內容.
+    file.write_all(b&quot;Let's put this in the file&quot;)?;     // 別忘記在 &quot; 前面的 b. 那是因為檔案接受位元組資料.
+    Ok(())
+}</code></pre></pre>
+<p>然後如果你開啟新檔案 <code>myfilename.txt</code>，會看到內容說 <code>Let's put this in the file</code>。</p>
+<p>然而我們不需要寫成兩行，因為我們有 <code>?</code> 運算子。如果能用，它就會傳遞我們想要的結果下去，有點像在疊代器上串連很多方法一樣。這時候 <code>?</code> 就變得非常方便了。</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs;
+use std::io::Write;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    fs::File::create(&quot;myfilename.txt&quot;)?.write_all(b&quot;Let's put this in the file&quot;)?;
+    Ok(())
+}</code></pre></pre>
+<p>所以這是說&quot;請嘗試建立檔案，然後檢查是否成功。如果成功了，那就使用 <code>.write_all()</code>，然後檢查是否成功。&quot;</p>
+<p>而事實上，也有個函式可以同時做這兩件事。它叫做 <code>std::fs::write</code>。在它裡面，你給它你想要的檔名，以及你想放在裡面的內容。再次強調，要小心！如果該檔案已經存在，它將刪除其中的所有內容。另外，它允許你寫入 <code>&amp;str</code>，而前面不用寫 <code>b</code>，因為這個：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn write&lt;P: AsRef&lt;Path&gt;, C: AsRef&lt;[u8]&gt;&gt;(path: P, contents: C) -&gt; Result&lt;()&gt;
+<span class="boring">}</span></code></pre></pre>
+<p><code>AsRef&lt;[u8]&gt;</code> 就是為什麼你給它兩者皆可。</p>
+<p>用起來非常簡單：</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    fs::write(&quot;calvin_with_dad.txt&quot;, 
+&quot;Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
+Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
+Calvin: Really?
+Dad: Yep. The world didn't turn color until sometimes in the 1930s...&quot;)?;
+
+    Ok(())
+}</code></pre></pre>
+<p>所以這就是我們要用的檔案。這是名叫 Calvin 的漫畫人物和他爸爸的對話，他爸爸對他的問題並不認真。有了這個，每次我們都可以建立檔案來使用。</p>
+<p>開啟檔案如同建立檔案一樣簡單。你只要用 <code>open()</code> 代替 <code>create()</code> 就可以了。之後(如果它找到了你的檔案)，你就可以做像 <code>read_to_string()</code> 這樣的事情。你可以建立可變的 <code>String</code> 來做到，然後把檔案讀取到那裡面。像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs;
+use std::fs::File;
+use std::io::Read; // 這是為了要使用 .read_to_string() 函式
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+     fs::write(&quot;calvin_with_dad.txt&quot;, 
+&quot;Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
+Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
+Calvin: Really?
+Dad: Yep. The world didn't turn color until sometimes in the 1930s...&quot;)?;
+
+
+    let mut calvin_file = File::open(&quot;calvin_with_dad.txt&quot;)?; // 開啟我們做的檔案
+    let mut calvin_string = String::new(); // 這個 String 會保留讀取內容
+    calvin_file.read_to_string(&amp;mut calvin_string)?; // 讀取檔案到 String 裡
+
+    calvin_string.split_whitespace().for_each(|word| print!(&quot;{} &quot;, word.to_uppercase())); // 現在用 String 做些事
+
+    Ok(())
+}</code></pre></pre>
+<p>會印出：</p>
+<pre><code class="language-text">CALVIN: DAD, HOW COME OLD PHOTOGRAPHS ARE ALWAYS BLACK AND WHITE? DIDN'T THEY HAVE COLOR FILM BACK THEN? DAD: SURE THEY DID. IN 
+FACT, THOSE PHOTOGRAPHS *ARE* IN COLOR. IT'S JUST THE *WORLD* WAS BLACK AND WHITE THEN. CALVIN: REALLY? DAD: YEP. THE WORLD DIDN'T TURN COLOR UNTIL SOMETIMES IN THE 1930S...
+</code></pre>
+<p>好吧，要是我們想建立檔案，但如果已經有同名的檔案就不要這樣做該怎麼辦？也許你不想為了建立新的檔案而刪除已經存在的其他檔案。要做到這一點，有個結構叫 <code>OpenOptions</code> 可以用。其實我們一直有在用 <code>OpenOptions</code> 卻不知道。看看 <code>File::open</code> 的原始碼吧：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn open&lt;P: AsRef&lt;Path&gt;&gt;(path: P) -&gt; io::Result&lt;File&gt; {
+        OpenOptions::new().read(true).open(path.as_ref())
+    }
+<span class="boring">}</span></code></pre></pre>
+<p>真有趣，這好像是我們學過的生成器模式。<code>File::create</code> 也是如此：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn create&lt;P: AsRef&lt;Path&gt;&gt;(path: P) -&gt; io::Result&lt;File&gt; {
+        OpenOptions::new().write(true).create(true).truncate(true).open(path.as_ref())
+    }
+<span class="boring">}</span></code></pre></pre>
+<p>如果你去看 <a href="https://doc.rust-lang.org/std/fs/struct.OpenOptions.html">OpenOptions 文件</a>，你可以見到所有你能選擇使用的方法。大多數都接受 <code>bool</code>：</p>
+<ul>
+<li><code>append()</code>：意思是&quot;加入資料到已經存在的內容後面，而不是刪除&quot;。</li>
+<li><code>create()</code>：這讓 <code>OpenOptions</code> 建立檔案。</li>
+<li><code>create_new()</code>：意思是檔案還沒有在那裡的情況下才會建立檔案。</li>
+<li><code>read()</code>：如果你想讓它讀取檔案，就把這個設定為 <code>true</code>。</li>
+<li><code>truncate()</code>：如果你想在開啟檔案時把檔案內容清空為 0 (刪除內容)，就把這個設定為 <code>true</code>。</li>
+<li><code>write()</code>：這讓它寫入檔案。</li>
+</ul>
+<p>然後在結尾你用 <code>.open()</code> 加上檔名，你就會得到 <code>Result</code>。讓我們來看這樣的範例：</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+use std::fs;
+use std::fs::OpenOptions;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+     fs::write(&quot;calvin_with_dad.txt&quot;, 
+&quot;Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
+Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
+Calvin: Really?
+Dad: Yep. The world didn't turn color until sometimes in the 1930s...&quot;)?;
+
+    let calvin_file = OpenOptions::new().write(true).create_new(true).open(&quot;calvin_with_dad.txt&quot;)?;
+
+    Ok(())
+}</code></pre></pre>
+<p>首先我們用 <code>new</code> 做了一個 <code>OpenOptions</code> (總是以 <code>new</code> 開頭)。然後我們給它 <code>write</code> 的能力。之後我們把 <code>create_new()</code> 設定為 <code>true</code>，然後試著開啟我們做出的檔案。會打不開，是我們想要的結果：</p>
+<pre><code class="language-text">Error: Os { code: 80, kind: AlreadyExists, message: &quot;The file exists.&quot; }
+</code></pre>
+<p>讓我們嘗試使用 <code>.append()</code>，這樣我們就可以寫入到檔案。為了寫入檔案，我們可以使用 <code>.write_all()</code>，這是個會嘗試寫入你給它的一切內容的方法。</p>
+<p>另外，我們將使用 <code>write!</code> 巨集來做同樣的事情。你會記得這個巨集是來自我們在為結構體做 <code>impl Display</code> 的時候。而這次我們是在檔案上使用它，不是在緩衝區 (buffer) 上。</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs;
+use std::fs::OpenOptions;
+use std::io::Write;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    fs::write(&quot;calvin_with_dad.txt&quot;, 
+&quot;Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
+Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
+Calvin: Really?
+Dad: Yep. The world didn't turn color until sometimes in the 1930s...&quot;)?;
+
+    let mut calvin_file = OpenOptions::new()
+        .append(true) // 現在我們可以繼續寫入而不用刪除檔案
+        .read(true)
+        .open(&quot;calvin_with_dad.txt&quot;)?;
+    calvin_file.write_all(b&quot;And it was a pretty grainy color for a while too.\n&quot;)?;
+    write!(&amp;mut calvin_file, &quot;That's really weird.\n&quot;)?;
+    write!(&amp;mut calvin_file, &quot;Well, truth is stranger than fiction.&quot;)?;
+
+    println!(&quot;{}&quot;, fs::read_to_string(&quot;calvin_with_dad.txt&quot;)?);
+
+    Ok(())
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
+Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
+Calvin: Really?
+Dad: Yep. The world didn't turn color until sometimes in the 1930s...And it was a pretty grainy color for a while too.
+That's really weird.
+Well, truth is stranger than fiction.
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_63.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_65.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_63.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_65.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

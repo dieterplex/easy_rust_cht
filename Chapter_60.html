@@ -1,0 +1,1178 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 標準函式庫之旅 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html" class="active"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="標準函式庫之旅"><a class="header" href="#標準函式庫之旅">標準函式庫之旅</a></h2>
+<p>現在你已經知道了很多 Rust 的知識，你將能夠理解標準函式庫裡面大多數的東西。它裡面的程式碼已經不再那麼可怕了。讓我們來看看它裡面一些我們還沒有學過的部分。這次旅程將介紹標準函式庫裡不需要安裝 Rust 的絕大多數部分。我們將重溫很多我們已經知道的內容，這樣我們就可以更深入地學習它們。</p>
+<h3 id="陣列"><a class="header" href="#陣列">陣列</a></h3>
+<p>在過去的版本 (Rust 1.53 以前) 裡陣列 (Array) 還沒有實作 <code>Iterator</code>，你要在 <code>for</code> 迴圈裡對它們使用像是 <code>.iter()</code> 的方法。（人們以前也常在 <code>for</code> 迴圈裡用 <code>&amp;</code> 來得到切片。）因此這個範例在過去是不能執行的：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_cities = [&quot;Beirut&quot;, &quot;Tel Aviv&quot;, &quot;Nicosia&quot;];
+
+    for city in my_cities {
+        println!(&quot;{}&quot;, city);
+    }
+}</code></pre></pre>
+<p>編譯器常常給出這段訊息：</p>
+<pre><code class="language-text">error[E0277]: `[&amp;str; 3]` is not an iterator
+ --&gt; src\main.rs:5:17
+  |
+  |                 ^^^^^^^^^ borrow the array with `&amp;` or call `.iter()` on it to iterate over it
+</code></pre>
+<p>幸運的是那不再是問題了！所以這三種用法全都能用：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_cities = [&quot;Beirut&quot;, &quot;Tel Aviv&quot;, &quot;Nicosia&quot;];
+
+    for city in my_cities {
+        println!(&quot;{}&quot;, city);
+    }
+    for city in &amp;my_cities {
+        println!(&quot;{}&quot;, city);
+    }
+    for city in my_cities.iter() {
+        println!(&quot;{}&quot;, city);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Beirut
+Tel Aviv
+Nicosia
+Beirut
+Tel Aviv
+Nicosia
+Beirut
+Tel Aviv
+Nicosia
+</code></pre>
+<p>如果你想從陣列中得到變數，你可以把它們的變數名放在 <code>[]</code> 中來解構它。這和在 <code>match</code> 陳敘式中使用元組或從結構體中得到變數是一樣的。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_cities = [&quot;Beirut&quot;, &quot;Tel Aviv&quot;, &quot;Nicosia&quot;];
+    let [city1, city2, city3] = my_cities;
+    println!(&quot;{}&quot;, city1);
+}</code></pre></pre>
+<p>印出 <code>Beirut</code>。</p>
+<h3 id="字元"><a class="header" href="#字元">字元</a></h3>
+<p>你可以使用 <code>.escape_unicode()</code> 方法來得到字元 (char) 的 Unicode 號碼。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let korean_word = &quot;청춘예찬&quot;;
+    for character in korean_word.chars() {
+        print!(&quot;{} &quot;, character.escape_unicode());
+    }
+}</code></pre></pre>
+<p>印出 <code>\u{ccad} \u{cd98} \u{c608} \u{cc2c}</code>。</p>
+<p>你可以使用 <code>From</code> 特徵從 <code>u8</code> 中得到字元，但是從 <code>u32</code> 時，你要使用 <code>TryFrom</code>，因為它有可能不成功。<code>u32</code> 可容納的數字比 Unicode 中的字元多很多。我們可以透過簡單的示範來觀察到這件事。</p>
+<pre><pre class="playground"><code class="language-rust">use std::convert::TryFrom; // 你需要引進 TryFrom 來使用它
+use rand::prelude::*;      // 我們也將會用到隨機數
+
+fn main() {
+    let some_character = char::from(99); // 這個容易 - 不需要 TryFrom
+    println!(&quot;{}&quot;, some_character);
+
+    let mut random_generator = rand::thread_rng();
+    // 這將會嘗試 40,000 次來從 u32 做出字元.
+    // 範圍從 0 (std::u32::MIN) 到 u32 的最大數值 (std::u32::MAX). 如果它不成功, 我們會給它 '-'.
+    for _ in 0..40_000 {
+        let bigger_character = char::try_from(random_generator.gen_range(std::u32::MIN..std::u32::MAX)).unwrap_or('-');
+        print!(&quot;{}&quot;, bigger_character)
+    }
+}</code></pre></pre>
+<p>幾乎每次都會產生 <code>-</code>。這是你會看到的那種輸出的一部分：</p>
+<pre><code class="language-text">------------------------------------------------------------------------𤒰---------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-------------------------------------------------------------춗--------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+------------򇍜----------------------------------------------------
+</code></pre>
+<p>所以你需要使用 <code>TryFrom</code> 其實是件好事。</p>
+<p>另外，從 2020 年八月底開始，你現在可以從 <code>char</code> 中得到 <code>String</code>。(<code>String</code> 實作了 <code>From&lt;char&gt;</code>) 只要寫 <code>String::from()</code>，然後把 <code>char</code> 放在裡面。</p>
+<h3 id="整數"><a class="header" href="#整數">整數</a></h3>
+<p>給這些整數型別用的數學方法有很多，再加上一些其他用途的方法。這裡是一些最有用的：</p>
+<p><code>.checked_add()</code>、<code>.checked_sub()</code>、<code>.checked_mul()</code>、<code>.checked_div()</code>。如果你認為你可能會得到一個不適合型別的數字，這些都是不錯的方法。它們會回傳 <code>Option</code>，這樣你就可以安全地檢查你的數學運算是否正常，而不會讓程式恐慌。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let some_number = 200_u8;
+    let other_number = 200_u8;
+
+    println!(&quot;{:?}&quot;, some_number.checked_add(other_number));
+    println!(&quot;{:?}&quot;, some_number.checked_add(1));
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">None
+Some(201)
+</code></pre>
+<p>你會注意到，在整數的頁面上經常說著 <code>rhs</code>。這意味著&quot;右手邊(right hand side)&quot;，也就是你做一些數學運算時右手邊的運算元。比如在 <code>5 + 6</code> 中，<code>5</code> 在左、<code>6</code> 在右，所以 <code>6</code> 就是 <code>rhs</code>。這個不是關鍵詞，但是你會經常看到，所以先知道比較好。</p>
+<p>說到這裡，我們來學習一下如何實作 <code>Add</code>。在你實作了 <code>Add</code> 之後，你可以在你建立的型別上使用 <code>+</code>。你需要自己實作 <code>Add</code>，因為 add 可以表達很多意思。這是標準函式庫頁面中的範例：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::ops::Add; // 首先引進 Add
+
+#[derive(Debug, Copy, Clone, PartialEq)] // PartialEq 大概是這裡最重要的部份了. 你會想要讓數字能比較
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl Add for Point {
+    type Output = Self; // 記得嗎, 這叫做&quot;關聯型別&quot;: &quot;一起出現的型別&quot;.
+                        // 這個情況下這不過是另一個 Point
+
+    fn add(self, other: Self) -&gt; Self {
+        Self {
+            x: self.x + other.x,
+            y: self.y + other.y,
+        }
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>現在讓我們為自己的型別實作 <code>Add</code>。讓我們想像我們想把兩個國家加在一起，這樣我們就可以比較它們的經濟。那看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::fmt;
+use std::ops::Add;
+
+#[derive(Clone)]
+struct Country {
+    name: String,
+    population: u32,
+    gdp: u32, // 這是經濟大小
+}
+
+impl Country {
+    fn new(name: &amp;str, population: u32, gdp: u32) -&gt; Self {
+        Self {
+            name: name.to_string(),
+            population,
+            gdp,
+        }
+    }
+}
+
+impl Add for Country {
+    type Output = Self;
+
+    fn add(self, other: Self) -&gt; Self {
+        Self {
+            name: format!(&quot;{} and {}&quot;, self.name, other.name), // 我們會一起加上名稱,
+            population: self.population + other.population, // 以及人口數,
+            gdp: self.gdp + other.gdp,   // 和 GDP
+        }
+    }
+}
+
+impl fmt::Display for Country {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter&lt;'_&gt;) -&gt; fmt::Result {
+        write!(
+            f,
+            &quot;In {} are {} people and a GDP of ${}&quot;, // 然後我們可以只用 {} 把它們全部印出來
+            self.name, self.population, self.gdp
+        )
+    }
+}
+
+fn main() {
+    let nauru = Country::new(&quot;Nauru&quot;, 10_670, 160_000_000);
+    let vanuatu = Country::new(&quot;Vanuatu&quot;, 307_815, 820_000_000);
+    let micronesia = Country::new(&quot;Micronesia&quot;, 104_468, 367_000_000);
+
+    // 我們可以給予 Country 的 name 是個 &amp;str 而不是 String. 但是我們就需要到處寫上生命週期
+    // 並且那樣對小範例來說就太多東西了. 比較好的方式是只在我們呼叫 println! 時克隆它們.
+    println!(&quot;{}&quot;, nauru.clone());
+    println!(&quot;{}&quot;, nauru.clone() + vanuatu.clone());
+    println!(&quot;{}&quot;, nauru + vanuatu + micronesia);
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">In Nauru are 10670 people and a GDP of $160000000
+In Nauru and Vanuatu are 318485 people and a GDP of $980000000
+In Nauru and Vanuatu and Micronesia are 422953 people and a GDP of $1347000000
+</code></pre>
+<p>以後在這段程式碼中，我們可以把 <code>.fmt()</code> 改為顯示更容易閱讀的數字。</p>
+<p>另外三個叫 <code>Sub</code>、<code>Mul</code> 和 <code>Div</code>，實作起來基本一樣。<code>+=</code>、<code>-=</code>、<code>*=</code> 和 <code>/=</code>，只要加上 <code>Assign</code>：<code>AddAssign</code>、<code>SubAssign</code>、<code>MulAssign</code> 和 <code>DivAssign</code> 即可。你可以在<a href="https://doc.rust-lang.org/std/ops/index.html#structs">這裡</a>看到完整的列表，因為還有很多。例如 <code>%</code> 被稱為 <code>Rem</code>，<code>-</code> 被稱為 <code>Neg</code>，等等。</p>
+<h3 id="浮點數"><a class="header" href="#浮點數">浮點數</a></h3>
+<p><code>f32</code> 和 <code>f64</code> 有非常大量的方法讓你在做數學運算時使用。我們不會去看這些東西，但這裡有一些你可能會用到的方法。它們分別是 <code>.floor()</code>、<code>.ceil()</code>、<code>.round()</code> 和 <code>.trunc()</code>。所有這些方法都會回傳像整數的 <code>f32</code> 或者 <code>f64</code>，但小數點後面是 <code>0</code>。它們是這樣做的：</p>
+<ul>
+<li><code>.floor()</code>：給你下一個最低的整數。</li>
+<li><code>.ceil()</code>：給你下一個最高的整數。</li>
+<li><code>.round()</code>：給你較大的整數，如果小數大於等於 0.5；或是相同的整數，如果小數小於 0.5。這就是所謂的四捨五入，因為它給你&quot;捨去或進位(round)&quot;的數字(數字的精簡形式)。</li>
+<li><code>.trunc()</code>：只是切除掉小數點號後的部分。截斷(Truncate)是&quot;切除&quot;的意思。</li>
+</ul>
+<p>這裡是個簡單的函式來印出它們。</p>
+<pre><pre class="playground"><code class="language-rust">fn four_operations(input: f64) {
+    println!(
+&quot;For the number {}:
+floor: {}
+ceiling: {}
+rounded: {}
+truncated: {}\n&quot;,
+        input,
+        input.floor(),
+        input.ceil(),
+        input.round(),
+        input.trunc()
+    );
+}
+
+fn main() {
+    four_operations(9.1);
+    four_operations(100.7);
+    four_operations(-1.1);
+    four_operations(-19.9);
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">For the number 9.1:
+floor: 9
+ceiling: 10
+rounded: 9 // because less than 9.5
+truncated: 9
+
+For the number 100.7:
+floor: 100
+ceiling: 101
+rounded: 101 // because more than 100.5
+truncated: 100
+
+For the number -1.1:
+floor: -2
+ceiling: -1
+rounded: -1
+truncated: -1
+
+For the number -19.9:
+floor: -20
+ceiling: -19
+rounded: -20
+truncated: -19
+</code></pre>
+<p><code>f32</code> 和 <code>f64</code> 有方法叫做 <code>.max()</code> 和 <code>.min()</code>，可以得到兩個數字中較大或較小的數字。(對於其他型別，你可以直接使用 <code>std::cmp::max</code> 和 <code>std::cmp::min</code>。)這裡的範例是用 <code>.fold()</code> 來得到最高或最低數字的方法。你可以再次看到 <code>.fold()</code> 不僅僅是用來加數字的。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec = vec![8.0_f64, 7.6, 9.4, 10.0, 22.0, 77.345, 10.22, 3.2, -7.77, -10.0];
+    let maximum = my_vec.iter().fold(f64::MIN, |current_number, next_number| current_number.max(*next_number)); // 註: 從 f64 的最低可能的數字開始.
+    let minimum = my_vec.iter().fold(f64::MAX, |current_number, next_number| current_number.min(*next_number)); // 而這裡則從最高可能的數字開始
+    println!(&quot;{}, {}&quot;, maximum, minimum);
+}</code></pre></pre>
+<h3 id="布林"><a class="header" href="#布林">布林</a></h3>
+<p>在 Rust 中，如果你願意，你可以把 <code>bool</code> 變成整數，因為這樣做是安全的。但你不能反過來做。如你所見，<code>true</code> 變成了 1，<code>false</code> 變成了 0。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let true_false = (true, false);
+    println!(&quot;{} {}&quot;, true_false.0 as u8, true_false.1 as i32);
+}</code></pre></pre>
+<p>印出 <code>1 0</code>。或者是如果你告訴編譯器型別，也可以使用 <code>.into()</code>：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let true_false: (i128, u16) = (true.into(), false.into());
+    println!(&quot;{} {}&quot;, true_false.0, true_false.1);
+}</code></pre></pre>
+<p>印出的是一樣的東西。</p>
+<p>從 Rust 1.50 (2021 年 2 月釋出)開始，有個叫做 <code>then()</code> 的方法，它將 <code>bool</code> 變成 <code>Option</code>。使用 <code>then()</code> 時需要接受閉包，如果元素是<code>true</code>，閉包就會被呼叫。另外，無論從閉包中回傳什麼，都會放入 <code>Option</code> 裡。這裡是個小範例：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+
+    let (tru, fals) = (true.then(|| 8), false.then(|| 8));
+    println!(&quot;{:?}, {:?}&quot;, tru, fals);
+}</code></pre></pre>
+<p>只是印出 <code>Some(8), None</code>。</p>
+<p>而現在是個長一點的範例：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let bool_vec = vec![true, false, true, false, false];
+    
+    let option_vec = bool_vec
+        .iter()
+        .map(|item| {
+            item.then(|| { // 把這個放在 map 裡面那我們才可以把它傳下去
+                println!(&quot;Got a {}!&quot;, item);
+                &quot;It's true, you know&quot; // 如果是 true 就把這個放進 Some 裡
+                                      // 不然就只傳 None 下去
+            })
+        })
+        .collect::&lt;Vec&lt;_&gt;&gt;();
+
+    println!(&quot;Now we have: {:?}&quot;, option_vec);
+
+    // 那也會印出 Nones. 讓我們從 map 過濾它們到新的向量裡.
+    let filtered_vec = option_vec.into_iter().filter_map(|c| c).collect::&lt;Vec&lt;_&gt;&gt;();
+
+    println!(&quot;And without the Nones: {:?}&quot;, filtered_vec);
+}</code></pre></pre>
+<p>這裡是印出的內容：</p>
+<pre><code class="language-text">Got a true!
+Got a true!
+Now we have: [Some(&quot;It\'s true, you know&quot;), None, Some(&quot;It\'s true, you know&quot;), None, None]
+And without the Nones: [&quot;It\'s true, you know&quot;, &quot;It\'s true, you know&quot;]
+</code></pre>
+<h3 id="向量"><a class="header" href="#向量">向量</a></h3>
+<p>Vec（向量）有很多方法我們還沒有看過。先來說說 <code>.sort()</code>。<code>.sort()</code> 一點都不意外，使用了 <code>&amp;mut self</code> 來對向量進行排序。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_vec = vec![100, 90, 80, 0, 0, 0, 0, 0];
+    my_vec.sort();
+    println!(&quot;{:?}&quot;, my_vec);
+}</code></pre></pre>
+<p>印出 <code>[0, 0, 0, 0, 0, 80, 90, 100]</code>。但還有一種更有趣的排序方式叫 <code>.sort_unstable()</code>，它通常更快。它之所以更快，是因為它不在乎排序前後相同數字的先後順序。在常規的 <code>.sort()</code> 中，你知道最後的 <code>0, 0, 0, 0, 0</code> 會在 <code>.sort()</code> 之後的順序相同。但是 <code>.sort_unstable()</code> 可能會把最後一個零移到索引 0，然後把倒數第三個零移到索引 2，等等。</p>
+<p><code>.dedup()</code> 的意思是&quot;去重複&quot;(de-duplicate)。它將刪除向量中相同的元素，但只有當它們彼此相鄰時才會刪除。接下來這段程式碼不會只印出 <code>&quot;sun&quot;, &quot;moon&quot;</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_vec = vec![&quot;sun&quot;, &quot;sun&quot;, &quot;moon&quot;, &quot;moon&quot;, &quot;sun&quot;, &quot;moon&quot;, &quot;moon&quot;];
+    my_vec.dedup();
+    println!(&quot;{:?}&quot;, my_vec);
+}</code></pre></pre>
+<p>它只是把 &quot;sun&quot; 旁邊的另一個 &quot;sun&quot; 去掉，然後把 &quot;moon&quot; 旁邊的下一個 &quot;moon&quot; 去掉，再把 &quot;moon&quot; 旁邊的另一個 &quot;moon&quot; 去掉。結果是 <code>[&quot;sun&quot;, &quot;moon&quot;, &quot;sun&quot;, &quot;moon&quot;]</code>。</p>
+<p>如果你想把每個重複的都去掉，就先 <code>.sort()</code>：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_vec = vec![&quot;sun&quot;, &quot;sun&quot;, &quot;moon&quot;, &quot;moon&quot;, &quot;sun&quot;, &quot;moon&quot;, &quot;moon&quot;];
+    my_vec.sort();
+    my_vec.dedup();
+    println!(&quot;{:?}&quot;, my_vec);
+}</code></pre></pre>
+<p>結果：<code>[&quot;moon&quot;, &quot;sun&quot;]</code>。</p>
+<h3 id="字串"><a class="header" href="#字串">字串</a></h3>
+<p>你會記得 <code>String</code> 有點像是一種 <code>Vec</code>。它很像 <code>Vec</code> 讓你可以呼叫很多相同的方法。比如說，你可以用 <code>String::with_capacity()</code> 建立字串，尤其是如果你會需要一直用 <code>.push()</code> 推進 <code>char</code> 多次，或者用 <code>.push_str()</code> 推進 <code>&amp;str</code>。這裡是個對 <code>String</code> 有太多次記憶體分配 (allocation) 的範例。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut push_string = String::new();
+    let mut capacity_counter = 0; // 容量從 0 開始
+    for _ in 0..100_000 { // 做 100,000 次
+        if push_string.capacity() != capacity_counter { // 首先檢查容量現在是否不同
+            println!(&quot;{}&quot;, push_string.capacity()); // 如果是就印出來
+            capacity_counter = push_string.capacity(); // 再來更新計數器
+        }
+        push_string.push_str(&quot;I'm getting pushed into the string!&quot;); // 並且每次推這個字串進去
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">35
+70
+140
+280
+560
+1120
+2240
+4480
+8960
+17920
+35840
+71680
+143360
+286720
+573440
+1146880
+2293760
+4587520
+</code></pre>
+<p>我們不得不重分配(reallocate，把所有東西複製過來到另一處記憶體位置) 18次。但既然我們知道了最終的容量(capacity)，那麼我們將馬上給它容量，就不需要重分配：只要一個 <code>String</code> 容量值就夠了。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut push_string = String::with_capacity(4587520); // 我們知道明確的數字. 一些不同的大數字也行得通
+    let mut capacity_counter = 0;
+    for _ in 0..100_000 {
+        if push_string.capacity() != capacity_counter {
+            println!(&quot;{}&quot;, push_string.capacity());
+            capacity_counter = push_string.capacity();
+        }
+        push_string.push_str(&quot;I'm getting pushed into the string!&quot;);
+    }
+}</code></pre></pre>
+<p>印出 <code>4587520</code>。完美！我們永遠不再需要分配了。</p>
+<p>當然實際長度肯定比這個小。如果你試了 100001 次、101000 次等等，還是會說 <code>4587520</code>。這是因為每次的容量都是之前的兩倍。不過我們可以用 <code>.shrink_to_fit()</code> 來縮小它(和 <code>Vec</code> 一樣)。我們的 <code>String</code> 已經非常大了，我們不想再給它增加任何東西，所以我們可以把它縮小一點。但是只有在你有把握的情況下才可以這樣做。這裡是原因：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut push_string = String::with_capacity(4587520);
+    let mut capacity_counter = 0;
+    for _ in 0..100_000 {
+        if push_string.capacity() != capacity_counter {
+            println!(&quot;{}&quot;, push_string.capacity());
+            capacity_counter = push_string.capacity();
+        }
+        push_string.push_str(&quot;I'm getting pushed into the string!&quot;);
+    }
+    push_string.shrink_to_fit();
+    println!(&quot;{}&quot;, push_string.capacity());
+    push_string.push('a');
+    println!(&quot;{}&quot;, push_string.capacity());
+    push_string.shrink_to_fit();
+    println!(&quot;{}&quot;, push_string.capacity());
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">4587520
+3500000
+7000000
+3500001
+</code></pre>
+<p>所以首先我們的大小是 <code>4587520</code>，但我們沒有全部使用到。我們用了 <code>.shrink_to_fit()</code>，然後把大小降到了 <code>3500000</code>。但是我們忘記了需要推上 <code>a</code>。當我們這樣做的時候，Rust 看到我們需要更多的空間，並加倍給了我們：現在是 <code>7000000</code>。哎呀！所以我們又呼叫了 <code>.shrink_to_fit()</code> 一次，現在又回到了 <code>3500001</code>。</p>
+<p><code>.pop()</code> 能用在 <code>String</code>，就像用在 <code>Vec</code> 一樣。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_string = String::from(&quot;.daer ot drah tib elttil a si gnirts sihT&quot;);
+    loop {
+        let pop_result = my_string.pop();
+        match pop_result {
+            Some(character) =&gt; print!(&quot;{}&quot;, character),
+            None =&gt; break,
+        }
+    }
+}</code></pre></pre>
+<p>印出 <code>This string is a little bit hard to read.</code> 因為它從最後一個字元開始。</p>
+<p><code>.retain()</code> 是使用閉包的方法，這對 <code>String</code> 來說很少見。就像在疊代器上的 <code>.filter()</code> 一樣。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_string = String::from(&quot;Age: 20 Height: 194 Weight: 80&quot;);
+    my_string.retain(|character| character.is_alphabetic() || character == ' '); // 如果是字母或空白就保留
+    dbg!(my_string); // 為了好玩這次讓我們用 dbg!() 而不是 println!
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">[src\main.rs:4] my_string = &quot;Age  Height  Weight &quot;
+</code></pre>
+<h3 id="osstring-和-cstring"><a class="header" href="#osstring-和-cstring">OsString 和 CString</a></h3>
+<p><code>std::ffi</code> 是 <code>std</code> 的一部分，它幫助你將 Rust 與其他程式設計語言或作業系統一起使用。它有 <code>OsString</code> 和 <code>CString</code> 這樣的型別，它們就像給作業系統用的 <code>String</code> 或給 C 語言用的 <code>String</code> 一樣，它們各自也有自己的 <code>&amp;str</code> 型別：<code>OsStr</code> 和 <code>CStr</code>。<code>ffi</code> 的意思是&quot;外部函式介面&quot;(foreign function interface)。</p>
+<p>當你必須與沒有 Unicode 的作業系統互動時，你可以使用 <code>OsString</code>。Rust 所有的字串都是 unicode，但不是每個作業系統支援。這些是標準函式庫中關於為什麼我們會有 <code>OsString</code> 的簡單解釋。</p>
+<ul>
+<li>Unix (Linux 等等)上的字串可能是很多沒有零的位元組組合在一起。而且有時你會把它們讀取為 Unicode UTF-8。</li>
+<li>Windows 上的字串可能是由隨機的沒有零的 16 位元值組成。有時你會把它們讀取為 Unicode UTF-16。</li>
+<li>在 Rust 中，字串總是有效的 UTF-8，其中可能包含多個零。</li>
+</ul>
+<p>所以 <code>OsString</code> 被設計為可以被它們全部讀取到。</p>
+<p>你可以用 <code>OsString</code> 來做所有常規的事情，比如 <code>OsString::from(&quot;Write something here&quot;)</code>。它還有個有趣的方法叫做 <code>.into_string()</code>，那會試圖把自己變成常規的 <code>String</code>。它會回傳 <code>Result</code>，但 <code>Err</code> 部分只是原來的 <code>OsString</code>：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+pub fn into_string(self) -&gt; Result&lt;String, OsString&gt;
+<span class="boring">}</span></code></pre></pre>
+<p>所以如果不行用的話，那你就把它拿回來。你不能呼叫 <code>.unwrap()</code>，因為它會恐慌，但是你可以使用 <code>match</code> 來拿回 <code>OsString</code>。讓我們透過呼叫不存在的方法來測試一下：</p>
+<pre><pre class="playground"><code class="language-rust">use std::ffi::OsString;
+
+fn main() {
+    // ⚠️
+    let os_string = OsString::from(&quot;This string works for your OS too.&quot;);
+    match os_string.into_string() {
+        Ok(valid) =&gt; valid.thth(),           // 編譯器: &quot;什麼是 .thth()??&quot;
+        Err(not_valid) =&gt; not_valid.occg(),  // 編譯器: &quot;什麼是 .occg()??&quot;
+    }
+}</code></pre></pre>
+<p>然後編譯器準確地告訴我們什麼是我們想知道的：</p>
+<pre><code class="language-text">error[E0599]: no method named `thth` found for struct `std::string::String` in the current scope
+ --&gt; src/main.rs:6:28
+  |
+6 |         Ok(valid) =&gt; valid.thth(),
+  |                            ^^^^ method not found in `std::string::String`
+
+error[E0599]: no method named `occg` found for struct `std::ffi::OsString` in the current scope
+ --&gt; src/main.rs:7:37
+  |
+7 |         Err(not_valid) =&gt; not_valid.occg(),
+  |                                     ^^^^ method not found in `std::ffi::OsString`
+</code></pre>
+<p>我們可以看到 <code>valid</code> 的型別是 <code>String</code> 以及 <code>not_valid</code> 的型別是 <code>OsString</code>。</p>
+<h3 id="mem"><a class="header" href="#mem">mem</a></h3>
+<p><code>std::mem</code> 有一些非常有趣的方法。我們已經看到過一些了，比如 <code>.size_of()</code>、<code>.size_of_val()</code> 和 <code>.drop()</code>：</p>
+<pre><pre class="playground"><code class="language-rust">use std::mem;
+
+fn main() {
+    println!(&quot;{}&quot;, mem::size_of::&lt;i32&gt;());
+    let my_array = [8; 50];
+    println!(&quot;{}&quot;, mem::size_of_val(&amp;my_array));
+    let mut some_string = String::from(&quot;You can drop a String because it's on the heap&quot;);
+    mem::drop(some_string);
+    // some_string.clear();   如果我們這樣做就會恐慌
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">4
+200
+</code></pre>
+<p>這裡是 <code>mem</code> 中的一些其他方法：</p>
+<p><code>swap()</code>：用這個方法你可以交換兩個變數之間的值。你為每個變數建立可變參考來做到這件事。在你有兩樣東西想交換，卻因為借用規則 Rust 不允許時很有用。或是當你只想快速切換兩樣東西的時候。</p>
+<p>這裡是一個範例：</p>
+<pre><pre class="playground"><code class="language-rust">use std::{mem, fmt};
+
+struct Ring { // 從 Lord of the Rings 建立戒指
+    owner: String,
+    former_owner: String,
+    seeker: String, // 意思是 &quot;尋求它的人&quot;
+}
+
+impl Ring {
+    fn new(owner: &amp;str, former_owner: &amp;str, seeker: &amp;str) -&gt; Self {
+        Self {
+            owner: owner.to_string(),
+            former_owner: former_owner.to_string(),
+            seeker: seeker.to_string(),
+        }
+    }
+}
+
+impl fmt::Display for Ring { // Display 用來秀出誰擁有它及誰想得到它
+        fn fmt(&amp;self, f: &amp;mut fmt::Formatter&lt;'_&gt;) -&gt; fmt::Result {
+            write!(f, &quot;{} has the ring, {} used to have it, and {} wants it&quot;, self.owner, self.former_owner, self.seeker)
+        }
+}
+
+fn main() {
+    let mut one_ring = Ring::new(&quot;Frodo&quot;, &quot;Gollum&quot;, &quot;Sauron&quot;);
+    println!(&quot;{}&quot;, one_ring);
+    mem::swap(&amp;mut one_ring.owner, &amp;mut one_ring.former_owner); // Gollum 拿回了戒指一下子
+    println!(&quot;{}&quot;, one_ring);
+}</code></pre></pre>
+<p>會印出：</p>
+<pre><code class="language-text">Frodo has the ring, Gollum used to have it, and Sauron wants it
+Gollum has the ring, Frodo used to have it, and Sauron wants it
+</code></pre>
+<p><code>replace()</code>：這像是 swap，其實裡面也用了 swap，如同你看到的：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn replace&lt;T&gt;(dest: &amp;mut T, mut src: T) -&gt; T {
+    swap(dest, &amp;mut src);
+    src
+}
+<span class="boring">}</span></code></pre></pre>
+<p>所以它只是做交換，然後回傳另外一個。有了這個，你就能用放進去的其他東西來替換值。因為它會回傳舊的值，所以你應該用 <code>let</code> 來取得它。這裡是個便捷的範例：</p>
+<pre><pre class="playground"><code class="language-rust">use std::mem;
+
+struct City {
+    name: String,
+}
+
+impl City {
+    fn change_name(&amp;mut self, name: &amp;str) {
+        let old_name = mem::replace(&amp;mut self.name, name.to_string());
+        println!(
+            &quot;The city once called {} is now called {}.&quot;,
+            old_name, self.name
+        );
+    }
+}
+
+fn main() {
+    let mut capital_city = City {
+        name: &quot;Constantinople&quot;.to_string(),
+    };
+    capital_city.change_name(&quot;Istanbul&quot;);
+}</code></pre></pre>
+<p>印出 <code>The city once called Constantinople is now called Istanbul.</code>。</p>
+<p>有個函式叫 <code>.take()</code>，和 <code>.replace()</code> 類似，但它在元素中留下了預設值。你會記得，預設值通常像是 0、&quot;&quot; 之類的東西。這裡是它的簽名：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+pub fn take&lt;T&gt;(dest: &amp;mut T) -&gt; T
+where
+    T: Default,
+<span class="boring">}</span></code></pre></pre>
+<p>所以你可以做像這樣的事情：</p>
+<pre><pre class="playground"><code class="language-rust">use std::mem;
+
+fn main() {
+    let mut number_vec = vec![8, 7, 0, 2, 49, 9999];
+    let mut new_vec = vec![];
+
+    number_vec.iter_mut().for_each(|number| {
+        let taker = mem::take(number);
+        new_vec.push(taker);
+    });
+
+    println!(&quot;{:?}\n{:?}&quot;, number_vec, new_vec);
+}</code></pre></pre>
+<p>如同你看到的，所有數字都被替換為 0：沒有任何索引的元素被刪除。</p>
+<pre><code class="language-text">[0, 0, 0, 0, 0, 0]
+[8, 7, 0, 2, 49, 9999]
+</code></pre>
+<p>對於你自己的型別，你當然可以把 <code>Default</code> 實現成任何你想要的型別。讓我們來看看我們的 <code>Bank</code> 和 <code>Robber</code> 的範例。每次他搶了 <code>Bank</code>，他就會在桌子上拿到錢。但是辦公桌可以隨時從後面拿錢，所以它永遠會有 50。我們將會為這件事做我們自己的型別，所以它也永遠會有 50。這裡是它怎麼做到的：</p>
+<pre><pre class="playground"><code class="language-rust">use std::mem;
+use std::ops::{Deref, DerefMut}; // 我們將會使用這個來得到 u32 的威力
+
+struct Bank {
+    money_inside: u32,
+    money_at_desk: DeskMoney, // 這是我們的 &quot;智慧指標&quot; 型別. 它有自己的預設值, 但他會使用 u32
+}
+
+struct DeskMoney(u32);
+
+impl Default for DeskMoney {
+    fn default() -&gt; Self {
+        Self(50) // 預設值永遠是 50, 不是 0
+    }
+}
+
+impl Deref for DeskMoney { // 有的這個我們可以使用 * 存取 u32
+    type Target = u32;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.0
+    }
+}
+
+impl DerefMut for DeskMoney { // 並且有了這個我們就可以做加減法等等
+    fn deref_mut(&amp;mut self) -&gt; &amp;mut Self::Target {
+        &amp;mut self.0
+    }
+}
+
+impl Bank {
+    fn check_money(&amp;self) {
+        println!(
+            &quot;There is ${} in the back and ${} at the desk.\n&quot;,
+            self.money_inside, *self.money_at_desk // 要用 * 這樣我們才能印出 u32
+        );
+    }
+}
+
+struct Robber {
+    money_in_pocket: u32,
+}
+
+impl Robber {
+    fn check_money(&amp;self) {
+        println!(&quot;The robber has ${} right now.\n&quot;, self.money_in_pocket);
+    }
+
+    fn rob_bank(&amp;mut self, bank: &amp;mut Bank) {
+        let new_money = mem::take(&amp;mut bank.money_at_desk); // 這裡拿走錢, 並留下 50 因為那是預設值
+        self.money_in_pocket += *new_money; // 用 * 因為我們可以只加上 u32. DeskMoney 不能加
+        bank.money_inside -= *new_money;    // 這裡一樣
+        println!(&quot;She robbed the bank. She now has ${}!\n&quot;, self.money_in_pocket);
+    }
+}
+
+fn main() {
+    let mut bank_of_klezkavania = Bank { // 安排我們的銀行
+        money_inside: 5000,
+        money_at_desk: DeskMoney(50),
+    };
+    bank_of_klezkavania.check_money();
+
+    let mut robber = Robber { // 安排我們的搶匪
+        money_in_pocket: 50,
+    };
+    robber.check_money();
+
+    robber.rob_bank(&amp;mut bank_of_klezkavania); // 搶劫, 再來檢查金額
+    robber.check_money();
+    bank_of_klezkavania.check_money();
+
+    robber.rob_bank(&amp;mut bank_of_klezkavania); // 再做一次
+    robber.check_money();
+    bank_of_klezkavania.check_money();
+
+}</code></pre></pre>
+<p>會印出：</p>
+<pre><code class="language-text">There is $5000 in the back and $50 at the desk.
+
+The robber has $50 right now.
+
+She robbed the bank. She now has $100!
+
+The robber has $100 right now.
+
+There is $4950 in the back and $50 at the desk.
+
+She robbed the bank. She now has $150!
+
+The robber has $150 right now.
+
+There is $4900 in the back and $50 at the desk.
+</code></pre>
+<p>你可以看到桌子上總是有 50 美元。</p>
+<h3 id="prelude"><a class="header" href="#prelude">prelude</a></h3>
+<p>標準函式庫也有 prelude (預先載入的函式庫)，這就是為什麼你不用寫像是 <code>use std::vec::Vec</code> 的東西來建立 <code>Vec</code>。你可以在<a href="https://doc.rust-lang.org/std/prelude/index.html#prelude-contents">這裡</a>看到所有這些元素，並且已經大致瞭解他們：</p>
+<ul>
+<li><code>std::marker::{Copy, Send, Sized, Sync, Unpin}</code>。你以前沒有見過 <code>Unpin</code>，因為幾乎每一種型別都會用到它(比如 <code>Sized</code>，也很常見)。&quot;Pin&quot; 的意思是釘住不讓東西動。在這種情況下，<code>Pin</code> 意味著它不能在記憶體中移動，但大多數都有 <code>Unpin</code>，所以可以移動。這就是為什麼像 <code>std::mem::replace</code> 這樣的函式能用，因為它們沒有被釘住。</li>
+<li><code>std::ops::{Drop, Fn, FnMut, FnOnce}</code>。</li>
+<li><code>std::mem::drop</code>。</li>
+<li><code>std::boxed::Box</code>。</li>
+<li><code>std::borrow::ToOwned</code>。你之前在 <code>Cow</code> 有看到過一些，它可以把內容從借來的變成擁有所有權的。它使用 <code>.to_owned()</code> 來做到這件事。你也可以使用 <code>.to_owned()</code> 在 <code>&amp;str</code> 上來得到 <code>String</code>，對於其它的借來值用法也一樣。</li>
+<li><code>std::clone::Clone</code>。</li>
+<li><code>std::cmp::{PartialEq, PartialOrd, Eq, Ord}</code>。</li>
+<li><code>std::convert::{AsRef, AsMut, Into, From}</code>。</li>
+<li><code>std::default::Default</code>。</li>
+<li><code>std::iter::{Iterator, Extend, IntoIterator, DoubleEndedIterator, ExactSizeIterator}</code>。我們之前在疊代器用過 <code>.rev()</code>：實際上是做出了<code>DoubleEndedIterator</code>。<code>ExactSizeIterator</code> 只是類似於 <code>0..10</code> 的東西：它已經知道自己的 <code>.len()</code> 是 10。其他疊代器肯定是不知道它們的長度。</li>
+<li><code>std::option::Option::{self, Some, None}</code>。</li>
+<li><code>std::result::Result::{self, Ok, Err}</code>。</li>
+<li><code>std::string::{String, ToString}</code>。</li>
+<li><code>std::vec::Vec</code>。</li>
+</ul>
+<p>如果你因為某些原因不想要有 prelude 怎麼辦？就加上屬性 <code>#![no_implicit_prelude]</code>。讓我們來試一試，看編譯器抱怨什麼：</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+#![no_implicit_prelude]
+fn main() {
+    let my_vec = vec![8, 9, 10];
+    let my_string = String::from(&quot;This won't work&quot;);
+    println!(&quot;{:?}, {}&quot;, my_vec, my_string);
+}</code></pre></pre>
+<p>現在 Rust 根本不知道你在嘗試做什麼：</p>
+<pre><code class="language-text">error: cannot find macro `println` in this scope
+ --&gt; src/main.rs:5:5
+  |
+5 |     println!(&quot;{:?}, {}&quot;, my_vec, my_string);
+  |     ^^^^^^^
+
+error: cannot find macro `vec` in this scope
+ --&gt; src/main.rs:3:18
+  |
+3 |     let my_vec = vec![8, 9, 10];
+  |                  ^^^
+
+error[E0433]: failed to resolve: use of undeclared type or module `String`
+ --&gt; src/main.rs:4:21
+  |
+4 |     let my_string = String::from(&quot;This won't work&quot;);
+  |                     ^^^^^^ use of undeclared type or module `String`
+
+error: aborting due to 3 previous errors
+</code></pre>
+<p>因此對於這個簡單的程式碼，你需要告訴 Rust 去使用叫做 <code>std</code> 的 <code>extern</code> (外部) crate，以及你想要用的元素。這裡是一切我們所需要做的事，只是為了建立 Vec 和 String 並印出它：</p>
+<pre><pre class="playground"><code class="language-rust">#![no_implicit_prelude]
+
+extern crate std; // 現在你需要告訴 Rust 你想要用叫做 std 的 crate
+use std::vec; // 我們需要 vec 巨集
+use std::string::String; // 還有 String
+use std::convert::From; // 和這個來轉換 &amp;str 到 String
+use std::println; // 還有這個來列印
+
+fn main() {
+    let my_vec = vec![8, 9, 10];
+    let my_string = String::from(&quot;This won't work&quot;);
+    println!(&quot;{:?}, {}&quot;, my_vec, my_string);
+}</code></pre></pre>
+<p>現在終於成功印出 <code>[8, 9, 10], This won't work</code>。所以你可以明白為什麼 Rust 要用 prelude 了。但如果你願意，你不需要使用它。而且你甚至可以使用 <code>#![no_std]</code> (我們曾經看過一次)，用在你連堆疊記憶體這種東西都無法使用的時候。但大多數時候，你根本不用考慮是否不用 prelude 或 <code>std</code>。</p>
+<p>那為什麼之前我們沒有看過 <code>extern</code> 這個關鍵字呢？是因為你已經不再那麼需要它了。以前在引進外部 crate 時，你必須使用它。所以過去要用 <code>rand</code>，你必須要寫成：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>extern crate rand;
+<span class="boring">}</span></code></pre></pre>
+<p>然後用 <code>use</code> 陳述式來表示你想要使用的模組、特徵等等。但現在 Rust 編譯器已經不需要這些幫助了──你只需要使用 <code>use</code>，Rust 就知道在哪裡可以找到它。所以你幾乎再也不需要 <code>extern crate</code> 了，但在其他人的 Rust 程式碼中，你可能仍然會在頂部看得到它。</p>
+<h3 id="時間"><a class="header" href="#時間">時間</a></h3>
+<p><code>std::time</code> 是你可以找到時間相關函式的地方。(如果你想要更多的功能，有 <code>chrono</code> 這樣的 crate 可以用。) 最簡單的功能就是用<code>Instant::now()</code> 取得系統時間。</p>
+<pre><pre class="playground"><code class="language-rust">use std::time::Instant;
+
+fn main() {
+    let time = Instant::now();
+    println!(&quot;{:?}&quot;, time);
+}</code></pre></pre>
+<p>如果你印出來，你會得到這樣的東西：<code>Instant { tv_sec: 2738771, tv_nsec: 685628140 }</code>。那裡講的是秒和奈秒，但用處不大。比如你看 2738771 秒(寫於 8 月)，就是31.70 天。這和月份、日數沒有任何關係。但是 <code>Instant</code> 的<a href="https://doc.rust-lang.org/std/time/struct.Instant.html">頁面</a>告訴我們，它對本身不應該有用。它說它是 &quot;不透明的(Opaque)，只有和 Duration 一起才有用&quot;。這裡不透明的的意思是&quot;你無法搞清楚&quot;，而 Duration 的意思是&quot;過去多少時間&quot;。所以它只有在做比較時間這樣的事情時才有用。</p>
+<p>如果你看頁面左側的特徵，其中一個是 <code>Sub&lt;Instant&gt;</code>。也就是說我們可以用 <code>-</code> 來減去另一個。而當我們點選 [src] 看它做了什麼時，它說：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Sub&lt;Instant&gt; for Instant {
+    type Output = Duration;
+
+    fn sub(self, other: Instant) -&gt; Duration {
+        self.duration_since(other)
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>因此，它需要 <code>Instant</code>，並使用 <code>.duration_since()</code> 給出 <code>Duration</code>。讓我們試著把它印出來。我們將做出兩個直接相鄰的 <code>Instant::now()</code>，然後再讓程式忙碌一下。然後我們再多做出一個 <code>Instant::now()</code>。 最後我們將看看花了多長時間。</p>
+<pre><pre class="playground"><code class="language-rust">use std::time::Instant;
+
+fn main() {
+    let time1 = Instant::now();
+    let time2 = Instant::now(); // 這兩個直接相鄰
+
+    let mut new_string = String::new();
+    loop {
+        new_string.push('წ'); // 讓 Rust 把喬治亞字母推到 String 上
+        if new_string.len() &gt; 100_000 { // 直到它長達 100,000 位元組
+            break;
+        }
+    }
+    let time3 = Instant::now();
+    println!(&quot;{:?}&quot;, time2 - time1);
+    println!(&quot;{:?}&quot;, time3 - time1);
+}</code></pre></pre>
+<p>會印出類似這樣：</p>
+<pre><code class="language-text">1.025µs
+683.378µs
+</code></pre>
+<p>所以這只是 1 微秒多對上 683 毫秒。我們可以看到 Rust 確實花了一些時間來做。</p>
+<p>然而我們可以只用一個 <code>Instant</code> 來做一件有趣的事情。我們可以用 <code>format!(&quot;{:?}&quot;, Instant::now());</code> 把它轉換成 <code>String</code>。看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::time::Instant;
+
+fn main() {
+    let time1 = format!(&quot;{:?}&quot;, Instant::now());
+    println!(&quot;{}&quot;, time1);
+}</code></pre></pre>
+<p>那會印出類似 <code>Instant { tv_sec: 2740773, tv_nsec: 632821036 }</code> 的東西。那沒什麼用，但是如果我們使用 <code>.iter()</code> 和 <code>.rev()</code> 以及 <code>.skip(2)</code>，我們可以跳過尾端的 <code>}</code> 和 <code> </code>。我們可以用它來做出隨機數產生器。</p>
+<pre><pre class="playground"><code class="language-rust">use std::time::Instant;
+
+fn bad_random_number(digits: usize) {
+    if digits &gt; 9 {
+        panic!(&quot;Random number can only be up to 9 digits&quot;);
+    }
+    let now = Instant::now();
+    let output = format!(&quot;{:?}&quot;, now);
+
+    output
+        .chars()
+        .rev()
+        .skip(2)
+        .take(digits)
+        .for_each(|character| print!(&quot;{}&quot;, character));
+    println!();
+}
+
+fn main() {
+    bad_random_number(1);
+    bad_random_number(1);
+    bad_random_number(3);
+    bad_random_number(3);
+}</code></pre></pre>
+<p>會印出類似這樣：</p>
+<pre><code class="language-text">6
+4
+967
+180
+</code></pre>
+<p>這個函式被稱為 <code>bad_random_number</code>，因為它不是個非常好的隨機數產生器。Rust 有更好的 crate，可以用比 <code>rand</code> 更少的程式碼做出隨機數，比如 <code>fastrand</code>。但這是個你如何可以利用你的想像力透過 <code>Instant</code> 來做一些事情的好範例。</p>
+<p>當你有個執行緒運作時，你可以使用 <code>std::thread::sleep</code> 使它停止一段時間。當你這樣做時，你必須給它 duration。你不必做出多個執行緒來做這件事，因為每個程式至少運作在一個執行緒上。然而 <code>sleep</code> 需要 <code>Duration</code>，所以它可以知道要睡多久。你可以像這樣選擇單位：<code>Duration::from_millis()</code>、<code>Duration::from_secs</code> 等等。這裡舉個例子：</p>
+<pre><pre class="playground"><code class="language-rust">use std::time::Duration;
+use std::thread::sleep;
+
+fn main() {
+    let three_seconds = Duration::from_secs(3);
+    println!(&quot;I must sleep now.&quot;);
+    sleep(three_seconds);
+    println!(&quot;Did I miss anything?&quot;);
+}</code></pre></pre>
+<p>只會印出：</p>
+<pre><code class="language-text">I must sleep now.
+Did I miss anything?
+</code></pre>
+<p>但執行緒在三秒鐘內什麼也不做。當你有很多執行緒需要經常嘗試一些事情時，比如連線，你通常會使用 <code>.sleep()</code>。你不希望執行緒使用你的處理器在一秒鐘內嘗試十萬次，而你只是想讓它有時檢查一下。所以你就可以設定 <code>Duration</code>，它就會在每次醒來的時候嘗試做它的任務。</p>
+<h3 id="其他巨集"><a class="header" href="#其他巨集">其他巨集</a></h3>
+<p>讓我們再來看看一些其他巨集。</p>
+<h4 id="unreachable"><a class="header" href="#unreachable"><code>unreachable!()</code></a></h4>
+<p>這個巨集有點像 <code>todo!()</code>，除了它是針對你永遠不會用的程式碼。也許你在列舉中有個 <code>match</code>，你知道它永遠不會選擇其中的某個分支，所以程式碼永遠無法到達。如果是這樣，你可以寫 <code>unreachable!()</code>，這樣編譯器就知道可以忽略這部分。</p>
+<p>例如，假設你有個程式，當你選擇一個地方居住時，它會寫一些東西。在烏克蘭除了車諾比外，其他地方都不錯。你的程式不讓任何人選擇車諾比，因為它現在不是個居住的好地方。但是這個列舉是很早以前在別人的程式碼裡做的，你無法更改。所以在 <code>match</code> 的分支中，你可以在這裡用這個巨集。看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">enum UkrainePlaces {
+    Kiev,
+    Kharkiv,
+    Chernobyl, // 假裝我們不能改變列舉 - 車諾比會永遠在這
+    Odesa,
+    Dnipro,
+}
+
+fn choose_city(place: &amp;UkrainePlaces) {
+    use UkrainePlaces::*;
+    match place {
+        Kiev =&gt; println!(&quot;You will live in Kiev&quot;),
+        Kharkiv =&gt; println!(&quot;You will live in Kharkiv&quot;),
+        Chernobyl =&gt; unreachable!(),
+        Odesa =&gt; println!(&quot;You will live in Odesa&quot;),
+        Dnipro =&gt; println!(&quot;You will live in Dnipro&quot;),
+    }
+}
+
+fn main() {
+    let user_input = UkrainePlaces::Kiev; // 假裝使用者輸入是來自一些其它函示. 無論如何使用者不能選擇車諾比
+    choose_city(&amp;user_input);
+}</code></pre></pre>
+<p>會印出 <code>You will live in Kiev</code>。</p>
+<p><code>unreachable!()</code> 對你來說也很好讀，因為它提醒你程式碼的某些部分是不能到達的。不過你必須確定程式碼實際上是到達不了的。如果呼叫了 <code>unreachable!()</code>，程式就會恐慌。</p>
+<p>此外，如果你曾經有到達不了的程式碼，而編譯器知道，它就會告訴你。這裡是個便捷的範例：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let true_or_false = true;
+
+    match true_or_false {
+        true =&gt; println!(&quot;It's true&quot;),
+        false =&gt; println!(&quot;It's false&quot;),
+        true =&gt; println!(&quot;It's true&quot;), // 哎呀, 我們又寫了 true
+    }
+}</code></pre></pre>
+<p>它會說：</p>
+<pre><code class="language-text">warning: unreachable pattern
+ --&gt; src/main.rs:7:9
+  |
+7 |         true =&gt; println!(&quot;It's true&quot;),
+  |         ^^^^
+  |
+</code></pre>
+<p>但是 <code>unreachable!()</code> 是用於編譯器無法知道的時候，就像我們的另一個範例。</p>
+<h4 id="columnlinefilemodule_path"><a class="header" href="#columnlinefilemodule_path"><code>column!</code>、<code>line!</code>、<code>file!</code>、<code>module_path!</code></a></h4>
+<p>這四個巨集有點像 <code>dbg!()</code>，因為你只是把它們放進程式碼來給你除錯資訊。但是它們不需要接受任何變數——你只需要把它們和括號一起使用，而且沒有其他東西。它們放到一起很容易學：</p>
+<ul>
+<li><code>column!()</code> 給你寫的那一列</li>
+<li><code>file!()</code> 給你寫的檔案名稱</li>
+<li><code>line!()</code> 給你寫的那一行，然後是</li>
+<li><code>module_path!()</code> 給你模組所在的位置。</li>
+</ul>
+<p>接下來的程式碼會在簡單的例子中秀出這三者。我們將假裝有更多的程式碼(模組裡面的模組)，因為那就是我們要使用這些巨集的原因。你可以想像 Rust 大程式，它有許多模組與檔案。</p>
+<pre><pre class="playground"><code class="language-rust">pub mod something {
+    pub mod third_mod {
+        pub fn print_a_country(input: &amp;mut Vec&lt;&amp;str&gt;) {
+            println!(
+                &quot;The last country is {} inside the module {}&quot;,
+                input.pop().unwrap(),
+                module_path!()
+            );
+        }
+    }
+}
+
+fn main() {
+    use something::third_mod::*;
+    let mut country_vec = vec![&quot;Portugal&quot;, &quot;Czechia&quot;, &quot;Finland&quot;];
+    
+    // 做一些事情
+    println!(&quot;Hello from file {}&quot;, file!());
+
+    // 做一些事情
+    println!(
+        &quot;On line {} we got the country {}&quot;,
+        line!(),
+        country_vec.pop().unwrap()
+    );
+
+    // 做多一些事情
+
+    println!(
+        &quot;The next country is {} on line {} and column {}.&quot;,
+        country_vec.pop().unwrap(),
+        line!(),
+        column!(),
+    );
+
+    // 很多很多的程式碼
+
+    print_a_country(&amp;mut country_vec);
+}</code></pre></pre>
+<p>印出這樣：</p>
+<pre><code class="language-text">Hello from file src/main.rs
+On line 23 we got the country Finland
+The next country is Czechia on line 32 and column 9.
+The last country is Portugal inside the module rust_book::something::third_mod
+</code></pre>
+<h4 id="cfg"><a class="header" href="#cfg"><code>cfg!</code></a></h4>
+<p>我們知道你可以使用 <code>#[cfg(test)]</code> 和 <code>#[cfg(windows)]</code> 這樣的屬性來告訴編譯器在某些情況下該怎麼做。當你有 <code>test</code> 時，當你在測試模式下執行Rust 時，它會執行程式碼(如果是在電腦上，你輸入 <code>cargo test</code>)。而當你使用 <code>windows</code> 時，如果使用者使用的是 Windows，它就會執行程式碼。但也許你只是想根據不同作業系統對依賴系統的程式碼做很小的修改。這時候這個巨集就很有用了。它回傳 <code>bool</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let helpful_message = if cfg!(target_os = &quot;windows&quot;) { &quot;backslash&quot; } else { &quot;slash&quot; };
+
+    println!(
+        &quot;...then in your hard drive, type the directory name followed by a {}. Then you...&quot;,
+        helpful_message
+    );
+}</code></pre></pre>
+<p>取決於你的系統這將以不同的方式列印。Rust Playground 在 Linux上執行，所以會印出：</p>
+<pre><code class="language-text">...then in your hard drive, type the directory name followed by a slash. Then you...
+</code></pre>
+<p><code>cfg!()</code> 適用於任何一種配置。這裡的範例是當你在測試中使用函式時，它的執行方式會有所不同。</p>
+<pre><pre class="playground"><code class="language-rust">#[cfg(test)] // cfg! 會知道要尋找 test 這個字
+mod testing {
+    use super::*;
+    #[test]
+    fn check_if_five() {
+        assert_eq!(bring_number(true), 5); // bring_number() 函式應該回傳 5
+    }
+}
+
+fn bring_number(should_run: bool) -&gt; u32 { // 這個函式接受 bool 作為是否他應該執行的條件
+    if cfg!(test) &amp;&amp; should_run { // 如果它應該執行並且有組態測試就回傳 5
+        5
+    } else if should_run { // 如果它不是 test 但它應該執行, 印出某些東西. 當你執行測試它會忽略 println! 陳述式
+        println!(&quot;Returning 5. This is not a test&quot;);
+        5
+    } else {
+        println!(&quot;This shouldn't run, returning 0.&quot;); // 否則回傳 0
+        0
+    }
+}
+
+fn main() {
+    bring_number(true);
+    bring_number(false);
+}</code></pre></pre>
+<p>現在根據組態的不同，它的執行方式也會不同。如果你只是執行程式，它會給你這樣的結果：</p>
+<pre><code class="language-text">Returning 5. This is not a test
+This shouldn't run, returning 0.
+</code></pre>
+<p>但如果你在測試模式下執行它 (<code>cargo test</code>，用你電腦上的 Rust 跑)，它實際上會執行測試。因為在這種情況下，測試總是回傳 5，所以它會通過。</p>
+<pre><code class="language-text">running 1 test
+test testing::check_if_five ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_59.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_61.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_59.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_61.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

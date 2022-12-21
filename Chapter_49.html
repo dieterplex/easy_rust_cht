@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Arc - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html" class="active"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="arc"><a class="header" href="#arc">Arc</a></h2>
+<p>你還記得我們用 <code>Rc</code> 來給予變數一個以上的所有者。如果我們執行緒中做一樣的事情，我們則需要 <code>Arc</code>。<code>Arc</code> 的意思是 &quot;原子參考計數器(atomic reference counter)&quot;。原子的意思是它使用計算機的處理器，所以資料每回只會被寫入一次。這點很重要，因為如果兩個執行緒同時寫入資料，你會得到錯誤的結果。例如，想像如果你能在 Rust 中做到這一點：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+let mut x = 10;
+
+for i in 0..10 { // 執行緒 1
+    x += 1
+}
+for i in 0..10 { // 執行緒 2
+    x += 1
+}
+<span class="boring">}</span></code></pre></pre>
+<p>如果執行緒 1 和執行緒 2 一起啟動，也許就會出現這種情況：</p>
+<ul>
+<li>執行緒 1 看到 10，寫入 11，接著執行緒 2 看到 11，寫入 12。到目前為止沒有問題。</li>
+<li>執行緒 1 看到 12。同時，執行緒 2 看到 12。執行緒 1，寫入 13。執行緒 2 也寫入 13。現在我們有 13，但應該要是 14。這是個大問題。</li>
+</ul>
+<p><code>Arc</code> 使用處理器來確保這種情況不會發生，所以當你有多個執行緒時這個方法你就必須使用。然而你不會想在單執行緒上用 <code>Arc</code>，因為 <code>Rc</code> 更快一些。</p>
+<p>不過你不能只用 <code>Arc</code> 來改變資料。所以你要用 <code>Mutex</code> 把資料包起來，然後再用 <code>Arc</code> 把 <code>Mutex</code> 包起來。</p>
+<p>所以讓我們用 <code>Mutex</code> 來在 <code>Arc</code> 裡面改變數字的值。首先讓我們設定一個執行緒：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+
+    let handle = std::thread::spawn(|| {
+        println!(&quot;The thread is working!&quot;) // 只測試執行緒
+    });
+
+    handle.join().unwrap(); // 讓執行緒在這等待直到完成
+    println!(&quot;Exiting the program&quot;);
+}</code></pre></pre>
+<p>目前為止只印出：</p>
+<pre><code class="language-text">The thread is working!
+Exiting the program
+</code></pre>
+<p>很好。現在讓我們把它放在 <code>for</code> 迴圈中，跑 <code>0..5</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+
+    let handle = std::thread::spawn(|| {
+        for _ in 0..5 {
+            println!(&quot;The thread is working!&quot;)
+        }
+    });
+
+    handle.join().unwrap();
+    println!(&quot;Exiting the program&quot;);
+}</code></pre></pre>
+<p>這也是可行的。我們得到以下結果：</p>
+<pre><code class="language-text">The thread is working!
+The thread is working!
+The thread is working!
+The thread is working!
+The thread is working!
+Exiting the program
+</code></pre>
+<p>現在讓我們再多加一個執行緒。每個執行緒都會做同樣的事情。你可以看到這些執行緒是同時工作的。有時會先印出 <code>Thread 1 is working!</code>，但其他時候是 <code>Thread 2 is working!</code> 先印出。這就是所謂的<strong>並行(concurrency)</strong>，也就是 &quot;一起執行&quot;的意思。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+
+    let thread1 = std::thread::spawn(|| {
+        for _ in 0..5 {
+            println!(&quot;Thread 1 is working!&quot;)
+        }
+    });
+
+    let thread2 = std::thread::spawn(|| {
+        for _ in 0..5 {
+            println!(&quot;Thread 2 is working!&quot;)
+        }
+    });
+
+    thread1.join().unwrap();
+    thread2.join().unwrap();
+    println!(&quot;Exiting the program&quot;);
+}</code></pre></pre>
+<p>會列印：</p>
+<pre><code class="language-text">Thread 1 is working!
+Thread 1 is working!
+Thread 1 is working!
+Thread 1 is working!
+Thread 1 is working!
+Thread 2 is working!
+Thread 2 is working!
+Thread 2 is working!
+Thread 2 is working!
+Thread 2 is working!
+Exiting the program
+</code></pre>
+<p>現在我們要改變 <code>my_number</code> 的數值。現在它是 <code>i32</code>。我們將把它改為 <code>Arc&lt;Mutex&lt;i32&gt;&gt;</code>：由 <code>Arc</code> 保護可以改變的 <code>i32</code>。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+let my_number = Arc::new(Mutex::new(0));
+<span class="boring">}</span></code></pre></pre>
+<p>現在我們有了這個，我們可以克隆它。每個克隆可以進入不同的執行緒。我們有兩個執行緒，所以我們將做兩個克隆：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+let my_number = Arc::new(Mutex::new(0));
+
+let my_number1 = Arc::clone(&amp;my_number); // 這個克隆去到執行緒 1
+let my_number2 = Arc::clone(&amp;my_number); // 這個克隆去到執行緒 2
+<span class="boring">}</span></code></pre></pre>
+<p>現在，我們已把安全的克隆附加到 <code>my_number</code>，我們可以將它們 <code>move</code> 到其它執行緒中沒問題。</p>
+<pre><pre class="playground"><code class="language-rust">use std::sync::{Arc, Mutex};
+
+fn main() {
+    let my_number = Arc::new(Mutex::new(0));
+
+    let my_number1 = Arc::clone(&amp;my_number);
+    let my_number2 = Arc::clone(&amp;my_number);
+
+    let thread1 = std::thread::spawn(move || { // 只有克隆去到執行緒 1
+        for _ in 0..10 {
+            *my_number1.lock().unwrap() +=1; // 鎖住 Mutex, 改值
+        }
+    });
+
+    let thread2 = std::thread::spawn(move || { // 只有克隆去到執行緒 2
+        for _ in 0..10 {
+            *my_number2.lock().unwrap() += 1;
+        }
+    });
+
+    thread1.join().unwrap();
+    thread2.join().unwrap();
+    println!(&quot;Value is: {:?}&quot;, my_number);
+    println!(&quot;Exiting the program&quot;);
+}</code></pre></pre>
+<p>程式印出：</p>
+<pre><code class="language-text">Value is: Mutex { data: 20 }
+Exiting the program
+</code></pre>
+<p>所以它成功了。</p>
+<p>接著我們可以將兩個執行緒一起合併(join)到一個 <code>for</code> 迴圈裡，並使程式碼更短。</p>
+<p>我們需要儲存控制碼(handle)，這樣我們就可以在迴圈外對每個執行緒呼叫 <code>.join()</code>。如果我們在迴圈內這樣做，它將等待第一個執行緒完成後再啟動新的執行緒。</p>
+<pre><pre class="playground"><code class="language-rust">use std::sync::{Arc, Mutex};
+
+fn main() {
+    let my_number = Arc::new(Mutex::new(0));
+    let mut handle_vec = vec![]; // JoinHandles 將會放在這
+
+    for _ in 0..2 { // 做兩次
+        let my_number_clone = Arc::clone(&amp;my_number); // 在啟動執行緒前做出克隆
+        let handle = std::thread::spawn(move || { // 移入克隆
+            for _ in 0..10 {
+                *my_number_clone.lock().unwrap() += 1;
+            }
+        });
+        handle_vec.push(handle); // 儲存控制碼我們才能在迴圈外對它呼叫 join
+                                 // 如果我們不把它推入向量, 它將會直接死在這
+    }
+
+    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // 對所有控制碼呼叫 join
+    println!(&quot;{:?}&quot;, my_number);
+}</code></pre></pre>
+<p>最後印出 <code>Mutex { data: 20 }</code>。</p>
+<p>這看起來很複雜，但 <code>Arc&lt;Mutex&lt;SomeType&gt;&gt;&gt;</code> 在 Rust 中非常頻繁的被使用，所以它變得很自然。另外，你也可以隨時把你的程式碼寫得更乾淨。這裡是同樣的程式碼，多了一行 <code>use</code> 敘述和兩個函式。這些函式並沒有做任何新的事情，但是它們把一些程式碼從 <code>main()</code> 中移出。如果很難讀懂的話，你可以嘗試重寫這樣的程式碼。</p>
+<pre><pre class="playground"><code class="language-rust">use std::sync::{Arc, Mutex};
+use std::thread::spawn; // 現在我們只需要寫 spawn
+
+fn make_arc(number: i32) -&gt; Arc&lt;Mutex&lt;i32&gt;&gt; { // 只是用來做 Arc 裡有 Mutex 的函式
+    Arc::new(Mutex::new(number))
+}
+
+fn new_clone(input: &amp;Arc&lt;Mutex&lt;i32&gt;&gt;) -&gt; Arc&lt;Mutex&lt;i32&gt;&gt; { // 只是讓我們可以寫成 new_clone 的函式
+    Arc::clone(&amp;input)
+}
+
+// 現在 main() 更容易閱讀了
+fn main() {
+    let mut handle_vec = vec![]; // 每個控制碼將會放到這裡
+    let my_number = make_arc(0);
+
+    for _ in 0..2 {
+        let my_number_clone = new_clone(&amp;my_number);
+        let handle = spawn(move || {
+            for _ in 0..10 {
+                let mut value_inside = my_number_clone.lock().unwrap();
+                *value_inside += 1;
+            }
+        });
+        handle_vec.push(handle);    // 拿到控制碼了, 所以放進向量裡
+    }
+
+    handle_vec.into_iter().for_each(|handle| handle.join().unwrap()); // 讓每一個等待
+
+    println!(&quot;{:?}&quot;, my_number);
+}</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_48.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_50.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_48.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_50.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

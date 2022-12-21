@@ -1,0 +1,497 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Option 和 Result - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html" class="active"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="option-和-result"><a class="header" href="#option-和-result">Option 和 Result</a></h2>
+<p>我們現在理解了列舉和泛型，所以我們也能理解 <code>Option</code> 和 <code>Result</code>。Rust 用這兩種列舉來使程式碼更安全。</p>
+<p>我們將從 <code>Option</code> 開始。</p>
+<h3 id="option"><a class="header" href="#option">Option</a></h3>
+<p>當你有一個值，它可能存在，也可能不存在時，你就該用 <code>Option</code>。當一個值存在時它就是 <code>Some(value)</code>，不存在時就是 <code>None</code>，下面是一個可以用<code>Option</code> 來改進的壞程式碼範例。</p>
+<pre><pre class="playground"><code class="language-rust">    // ⚠️
+fn take_fifth(value: Vec&lt;i32&gt;) -&gt; i32 {
+    value[4]
+}
+
+fn main() {
+    let new_vec = vec![1, 2];
+    let index = take_fifth(new_vec);
+}</code></pre></pre>
+<p>當我們執行這段程式碼時，它發生恐慌(panic)。這是訊息：</p>
+<pre><code class="language-text">thread 'main' panicked at 'index out of bounds: the len is 2 but the index is 4', src\main.rs:34:5
+</code></pre>
+<p>恐慌的意思是，程式在問題發生前就停止了。Rust 看到函式想要做些不可能的事情，就會停止。它&quot;解開(unwind)堆疊&quot;(從堆疊中取出值)，並告訴你&quot;對不起，我不能那樣做&quot;。</p>
+<p>所以現在我們將回傳型別從 <code>i32</code> 改為 <code>Option&lt;i32&gt;</code>。這意味著&quot;如果有的話給我 <code>Some(i32)</code>，如果沒有的話給我 <code>None</code>&quot;。我們說 <code>i32</code> 是&quot;包&quot;在 <code>Option</code> 裡面，也就是說它放在 <code>Option</code> 裡面。你必須做些事情才能把這個值取出來。</p>
+<pre><pre class="playground"><code class="language-rust">fn take_fifth(value: Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
+    if value.len() &lt; 5 { // .len() 給出向量的長度。
+                         // 它必需是至少是 5。
+        None
+    } else {
+        Some(value[4])
+    }
+}
+
+fn main() {
+    let new_vec = vec![1, 2];
+    let bigger_vec = vec![1, 2, 3, 4, 5];
+    println!(&quot;{:?}, {:?}&quot;, take_fifth(new_vec), take_fifth(bigger_vec));
+}</code></pre></pre>
+<p>印出的是 <code>None, Some(5)</code>。這下好了，因為現在我們再也不恐慌了。但是我們要如何得到 5 這個值呢？</p>
+<p>我們可以用 <code>.unwrap()</code> 從 Option 裡面得取值，但要小心使用 <code>.unwrap()</code>。這就像拆禮物一樣：也許裡面有好東西，也許裡面有條憤怒的蛇。只有在你確定的情況下，你才會想要用 <code>.unwrap()</code>。如果你拆開一個 <code>None</code> 的值，程式就會恐慌。</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+fn take_fifth(value: Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
+    if value.len() &lt; 5 {
+        None
+    } else {
+        Some(value[4])
+    }
+}
+
+fn main() {
+    let new_vec = vec![1, 2];
+    let bigger_vec = vec![1, 2, 3, 4, 5];
+    println!(&quot;{:?}, {:?}&quot;,
+        take_fifth(new_vec).unwrap(), // 這個是 None。 .unwrap() 會恐慌！
+        take_fifth(bigger_vec).unwrap()
+    );
+}</code></pre></pre>
+<p>訊息是：</p>
+<pre><code class="language-text">thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:14:9
+</code></pre>
+<p>但我們可以不需要用 <code>.unwrap()</code>。我們能用 <code>match</code>。那麼我們就可以把我們有 <code>Some</code> 的值印出來，如果是 <code>None</code> 的值就不要碰。比如說：</p>
+<pre><pre class="playground"><code class="language-rust">fn take_fifth(value: Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
+    if value.len() &lt; 5 {
+        None
+    } else {
+        Some(value[4])
+    }
+}
+
+fn handle_option(my_option: Vec&lt;Option&lt;i32&gt;&gt;) {
+  for item in my_option {
+    match item {
+      Some(number) =&gt; println!(&quot;Found a {}!&quot;, number),
+      None =&gt; println!(&quot;Found a None!&quot;),
+    }
+  }
+}
+
+fn main() {
+    let new_vec = vec![1, 2];
+    let bigger_vec = vec![1, 2, 3, 4, 5];
+    let mut option_vec = Vec::new(); // 用新的向量存放我們的 option
+                                     // 向量的型別: Vec&lt;Option&lt;i32&gt;&gt;。那是 Option&lt;i32&gt; 的向量。
+
+    option_vec.push(take_fifth(new_vec)); // 這會推送 &quot;None&quot; 進向量
+    option_vec.push(take_fifth(bigger_vec)); // 這會推送 &quot;Some(5)&quot; 進向量
+
+    handle_option(option_vec); // handle_option 查看向量裡的每個 option。
+                               // 並印出值如果是 Some。如果是 None 就不碰。
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Found a None!
+Found a 5!
+</code></pre>
+<p>因為我們知道泛型，所以我們能夠讀懂 <code>Option</code> 的程式碼。它看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">enum Option&lt;T&gt; {
+    None,
+    Some(T),
+}
+
+fn main() {}</code></pre></pre>
+<p>要記得的重點是：有了 <code>Some</code>，你就有了型別為 <code>T</code> 的值(任何型別)。還要注意的是，<code>enum</code> 名字後面有圍繞著 <code>T</code> 的角括號是用來告訴編譯器它是泛型。且它沒有 <code>Display</code> 這樣的特徵(trait)或任何東西來限制它，所以它可以是任何東西。但 <code>None</code> 的話，你就什麼都沒有。</p>
+<p>所以在 Option 的 <code>match</code> 陳述式中，你不能說：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+Some(value) =&gt; println!(&quot;The value is {}&quot;, value),
+None(value) =&gt; println!(&quot;The value is {}&quot;, value),
+<span class="boring">}</span></code></pre></pre>
+<p>因為 <code>None</code> 就只是 <code>None</code>。</p>
+<p>當然，還有更簡單的方式來使用 Option。在這段程式碼中，我們將會使用一個叫做 <code>.is_some()</code> 的方法來告訴我們它是否是 <code>Some</code>。(對，還有個叫做 <code>.is_none()</code> 的方法。)在這個更簡單的方式中，我們不再需要 <code>handle_option()</code> 了。我們也不需要存放 Option 的向量了。</p>
+<pre><pre class="playground"><code class="language-rust">fn take_fifth(value: Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
+    if value.len() &lt; 5 {
+        None
+    } else {
+        Some(value[4])
+    }
+}
+
+fn main() {
+    let new_vec = vec![1, 2];
+    let bigger_vec = vec![1, 2, 3, 4, 5];
+    let vec_of_vecs = vec![new_vec, bigger_vec];
+    for vec in vec_of_vecs {
+        let inside_number = take_fifth(vec);
+        if inside_number.is_some() {
+            // 如果我們得到 Some，.is_some() 就回傳 true，None 就回傳 false
+            println!(&quot;We got: {}&quot;, inside_number.unwrap()); // 因為我們已經檢查過了，現在它能安全的使用 .unwrap()
+        } else {
+            println!(&quot;We got nothing.&quot;);
+        }
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">We got nothing.
+We got: 5
+</code></pre>
+<h3 id="result"><a class="header" href="#result">Result</a></h3>
+<p>Result 和 Option 類似，但區別是：</p>
+<ul>
+<li>Option 和 <code>Some</code> 或 <code>None</code> 有關 (有值或無值)，</li>
+<li>Result 和 <code>Ok</code> 或 <code>Err</code> 有關 (成功的，或錯誤的結果)。</li>
+</ul>
+<p>所以 <code>Option</code> 是用在如果你思考的是：&quot;也許會有東西，也許不會有。&quot;但 <code>Result</code> 則是用在如果你思考的是：&quot;也許會失敗。&quot;</p>
+<p>比較一下，這是 Option 和 Result 的簽名(signature)。</p>
+<pre><pre class="playground"><code class="language-rust">enum Option&lt;T&gt; {
+    None,
+    Some(T),
+}
+
+enum Result&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+
+fn main() {}</code></pre></pre>
+<p>所以 Result 在 &quot;Ok&quot; 裡面有值，在 &quot;Err&quot; 裡面也有值。這是因為錯誤裡通常有包含描述錯誤的資訊。</p>
+<p><code>Result&lt;T, E&gt;</code> 的意思是你要想好 <code>Ok</code> 要回傳什麼，<code>Err</code> 要回傳什麼。其實，你可以決定任何事情。甚至這樣也可以：</p>
+<pre><pre class="playground"><code class="language-rust">fn check_error() -&gt; Result&lt;(), ()&gt; {
+    Ok(())
+}
+
+fn main() {
+    check_error();
+}</code></pre></pre>
+<p><code>check_error</code> 說&quot;如果得到 <code>Ok</code> 就回傳 <code>()</code>，如果得到 <code>Err</code> 就回傳 <code>()</code>&quot;。然後我們用 <code>()</code> 回傳 <code>Ok</code>。</p>
+<p>編譯器給了我們有趣的警告：</p>
+<pre><code class="language-text">warning: unused `std::result::Result` that must be used
+ --&gt; src\main.rs:6:5
+  |
+6 |     check_error();
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_must_use)]` on by default
+  = note: this `Result` may be an `Err` variant, which should be handled
+</code></pre>
+<p>這是真的：我們只回傳了 <code>Result</code>，但它可能是 <code>Err</code>。所以讓我們稍微處理一下這個錯誤，儘管我們仍然沒有真的做任何事情。</p>
+<pre><pre class="playground"><code class="language-rust">fn give_result(input: i32) -&gt; Result&lt;(), ()&gt; {
+    if input % 2 == 0 {
+        return Ok(())
+    } else {
+        return Err(())
+    }
+}
+
+fn main() {
+    if give_result(5).is_ok() {
+        println!(&quot;It's okay, guys&quot;)
+    } else {
+        println!(&quot;It's an error, guys&quot;)
+    }
+}</code></pre></pre>
+<p>印出 <code>It's an error, guys</code>。所以我們只處理了第一個錯誤。</p>
+<p>記住，輕鬆檢查的四種方法是<code>.is_some()</code>、<code>is_none()</code>、<code>is_ok()</code> 和 <code>is_err()</code>。</p>
+<p>有時一個帶有 Result 的函式會用 <code>String</code> 來表示 <code>Err</code> 的值。這不是最好的方法，但比我們目前所做的要好一些。</p>
+<pre><pre class="playground"><code class="language-rust">fn check_if_five(number: i32) -&gt; Result&lt;i32, String&gt; {
+    match number {
+        5 =&gt; Ok(number),
+        _ =&gt; Err(&quot;Sorry, the number wasn't five.&quot;.to_string()), // 這是我們的錯誤訊息
+    }
+}
+
+fn main() {
+    let mut result_vec = Vec::new(); // 建立新的向量放結果
+
+    for number in 2..7 {
+        result_vec.push(check_if_five(number)); // 推送每個結果進向量
+    }
+
+    println!(&quot;{:?}&quot;, result_vec);
+}</code></pre></pre>
+<p>我們的向量印出：</p>
+<pre><code class="language-text">[Err(&quot;Sorry, the number wasn\'t five.&quot;), Err(&quot;Sorry, the number wasn\'t five.&quot;), Err(&quot;Sorry, the number wasn\'t five.&quot;), Ok(5),
+Err(&quot;Sorry, the number wasn\'t five.&quot;)]
+</code></pre>
+<p>就像 Option 一樣，在 <code>Err</code> 上用 <code>.unwrap()</code> 就會恐慌。</p>
+<pre><pre class="playground"><code class="language-rust">    // ⚠️
+fn main() {
+    let error_value: Result&lt;i32, &amp;str&gt; = Err(&quot;There was an error&quot;); // 建立已經是Err的Result
+    println!(&quot;{}&quot;, error_value.unwrap()); // 拆開它
+}</code></pre></pre>
+<p>程式恐慌並印出：</p>
+<pre><code class="language-text">thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: &quot;There was an error&quot;', src\main.rs:30:20
+</code></pre>
+<p>這些資訊幫助你修正你的程式碼。<code>src\main.rs:30:20</code> 的意思是&quot;在目錄 src 的 main.rs 內，第 30 行和第 20 列&quot;。所以你可以去那裡檢視你的程式碼並修復問題。</p>
+<p>你也可以建立自己的錯誤型別，標準函式庫中的 Result 函式和其他人的程式碼通常都會這樣做。例如，標準函式庫中的這個函式：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+pub fn from_utf8(vec: Vec&lt;u8&gt;) -&gt; Result&lt;String, FromUtf8Error&gt;
+<span class="boring">}</span></code></pre></pre>
+<p>這個函式接受位元組向量(<code>u8</code>)，並嘗試做出 <code>String</code>，所以 Result 的成功情況是 <code>String</code>，錯誤情況是 <code>FromUtf8Error</code>。你可以給你的錯誤型別取任何你想要的名字。</p>
+<p>和 <code>Option</code> 及 <code>Result</code> 一起使用的 <code>match</code> 有時需要很多程式碼。例如，在 <code>Vec</code> 的 <code>.get()</code> 方法回傳 <code>Option</code>。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec = vec![2, 3, 4];
+    let get_one = my_vec.get(0); // 用 0 來取得第一個數
+    let get_two = my_vec.get(10); // 回傳 None
+    println!(&quot;{:?}&quot;, get_one);
+    println!(&quot;{:?}&quot;, get_two);
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Some(2)
+None
+</code></pre>
+<p>所以現在我們可以匹配得到值了。讓我們使用 0 到 10 的範圍，看看是否匹配 <code>my_vec</code> 中的數字。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec = vec![2, 3, 4];
+
+    for index in 0..10 {
+      match my_vec.get(index) {
+        Some(number) =&gt; println!(&quot;The number is: {}&quot;, number),
+        None =&gt; {}
+      }
+    }
+}</code></pre></pre>
+<p>這不錯，但是我們不對 <code>None</code> 做任何處理，因為我們不關心。這裡我們可以用 <code>if let</code> 讓程式碼變小。<code>if let</code> 的意思是&quot;匹配就做，否則不做&quot;。<code>if let</code> 是在你不要求對所有的東西都匹配的時候使用。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec = vec![2, 3, 4];
+
+    for index in 0..10 {
+      if let Some(number) = my_vec.get(index) {
+        println!(&quot;The number is: {}&quot;, number);
+      }
+    }
+}</code></pre></pre>
+<p><strong>切記</strong>：<code>if let Some(number) = my_vec.get(index)</code> 的意思是 &quot;如果你從 <code>my_vec.get(index)</code> 得到 <code>Some(number)</code>&quot;。</p>
+<p>另外注意：它使用的是 <code>=</code>。它不是布林值。</p>
+<p><code>while let</code> 是像 <code>if let</code> 的 while 迴圈。想象一下，我們有這樣的氣象站資料：</p>
+<pre><code class="language-text">[&quot;Berlin&quot;, &quot;cloudy&quot;, &quot;5&quot;, &quot;-7&quot;, &quot;78&quot;]
+[&quot;Athens&quot;, &quot;sunny&quot;, &quot;not humid&quot;, &quot;20&quot;, &quot;10&quot;, &quot;50&quot;]
+</code></pre>
+<p>我們想拿到數字，而不是文字。對於數字，我們可以使用叫做 <code>parse::&lt;i32&gt;()</code> 的方法。<code>parse()</code> 是方法，<code>::&lt;i32&gt;</code> 是型別。它將嘗試把 <code>&amp;str</code> 變成 <code>i32</code>，如果成功的話就把結果給我們。它回傳 <code>Result</code>，因為它可能無法執行(比如你想讓它解析&quot;Billybrobby&quot;──那不是一個數字)。</p>
+<p>我們也會用 <code>.pop()</code>。這會從向量中取出最後一個元素。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let weather_vec = vec![
+        vec![&quot;Berlin&quot;, &quot;cloudy&quot;, &quot;5&quot;, &quot;-7&quot;, &quot;78&quot;],
+        vec![&quot;Athens&quot;, &quot;sunny&quot;, &quot;not humid&quot;, &quot;20&quot;, &quot;10&quot;, &quot;50&quot;],
+    ];
+    for mut city in weather_vec {
+        println!(&quot;For the city of {}:&quot;, city[0]); // 在我們的資料中，每一筆的第一個元素都是城市名
+        while let Some(information) = city.pop() {
+            // 這行意思是：直到你不能 pop 前繼續執迴圈
+            // 當向量沒有元素時，它會回傳 None
+            // 並且它會停正。
+            if let Ok(number) = information.parse::&lt;i32&gt;() {
+                // 試著解析我們稱作information的變數
+                // 這裡的回傳結果如果是 Ok(number)，它會印出數值
+                println!(&quot;The number is: {}&quot;, number);
+            }  // 這裡我們不寫任何東西，因為如果我們遇到錯誤我們不做處理。會把(錯誤)它們都拋出去
+        }
+    }
+}</code></pre></pre>
+<p>將印出：</p>
+<pre><code class="language-text">For the city of Berlin:
+The number is: 78
+The number is: -7
+The number is: 5
+For the city of Athens:
+The number is: 50
+The number is: 10
+The number is: 20
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_30.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_32.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_30.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_32.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 生命週期 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html" class="active"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="生命週期"><a class="header" href="#生命週期">生命週期</a></h2>
+<p>生命週期的意思是&quot;變數存活得有多久&quot;。你只需要思考參考的生命週期。這是因為參考不能存活得比它們所來自的物件更久。例如說這個函式就不能執行：</p>
+<pre><pre class="playground"><code class="language-rust">fn returns_reference() -&gt; &amp;str {
+    let my_string = String::from(&quot;I am a string&quot;);
+    &amp;my_string // ⚠️
+}
+
+fn main() {}</code></pre></pre>
+<p>問題在於 <code>my_string</code> 只存活在 <code>returns_reference</code> 的範圍裡。我們試著回傳 <code>&amp;my_string</code>，但是 <code>&amp;my_string</code> 不能存在於沒有 <code>my_string</code> 的地方。所以編譯器會說不行。</p>
+<p>這段程式碼也不能執行。</p>
+<pre><pre class="playground"><code class="language-rust">fn returns_str() -&gt; &amp;str {
+    let my_string = String::from(&quot;I am a string&quot;);
+    &quot;I am a str&quot; // ⚠️
+}
+
+fn main() {
+    let my_str = returns_str();
+    println!(&quot;{}&quot;, my_str);
+}</code></pre></pre>
+<p>但是幾乎要成功了。編譯器卻說：</p>
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt; src\main.rs:6:21
+  |
+6 | fn returns_str() -&gt; &amp;str {
+  |                     ^ expected named lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but there is no value for it to be borrowed from
+help: consider using the `'static` lifetime
+  |
+6 | fn returns_str() -&gt; &amp;'static str {
+  |                     ^^^^^^^^
+</code></pre>
+<p><code>missing lifetime specifier</code> 的意思是，我們需要加上表示生命週期的 <code>'</code>。然後它說 <code>contains a borrowed value, but there is no value for it to be borrowed from</code>。也就是說，<code>I am a str</code> 不是借來的。它說 <code>consider using the 'static lifetime</code> 要寫成 <code>&amp;'static str</code>。因此它認為我們應該嘗試說這是個字串字面常數。</p>
+<p>現在可以執行了：</p>
+<pre><pre class="playground"><code class="language-rust">fn returns_str() -&gt; &amp;'static str {
+    let my_string = String::from(&quot;I am a string&quot;);
+    &quot;I am a str&quot;
+}
+
+fn main() {
+    let my_str = returns_str();
+    println!(&quot;{}&quot;, my_str);
+}</code></pre></pre>
+<p>這是因為我們回傳了生命週期是 <code>static</code> 的 <code>&amp;str</code>。同時，<code>my_string</code> 只能以 <code>String</code> 的型別回傳：我們不能回傳對它的參考，因為它將在下一行死亡。</p>
+<p>所以現在 <code>fn returns_str() -&gt; &amp;'static str</code> 告訴Rust，&quot;別擔心，我們只會回傳字串字面常數&quot;。字串字面常數存活在整個程式中，所以 Rust 很高興。你會注意到，這與泛型類似。當我們告訴編譯器像似 <code>&lt;T: Display&gt;</code> 的東西時，我們承諾的是我們將只會使用有 <code>Display</code> 特徵的輸入。生命週期也類似：我們並沒有改變任何變數的生命週期。我們只是告訴編譯器輸入的生命週期會是什麼。</p>
+<p>但是 <code>'static</code> 並不是唯一的生命週期。實際上，每個變數都有一個生命週期，但通常我們不必寫出來。編譯器很聰明，通常都能自己想出來。只有在編譯器不知道的時候，我們才需要去寫出生命週期。</p>
+<p>這是另一個生命週期的範例。想像一下，我們想建立 <code>City</code> 結構體，並給它 <code>&amp;str</code> 的名字。我們可能想這樣做是因為效能比用 <code>String</code> 還快。所以我們寫成這樣，但還不能執行：</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City {
+    name: &amp;str, // ⚠️
+    date_founded: u32,
+}
+
+fn main() {
+    let my_city = City {
+        name: &quot;Ichinomiya&quot;,
+        date_founded: 1921,
+    };
+}</code></pre></pre>
+<p>編譯器說：</p>
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt; src\main.rs:3:11
+  |
+3 |     name: &amp;str,
+  |           ^ expected named lifetime parameter
+  |
+help: consider introducing a named lifetime parameter
+  |
+2 | struct City&lt;'a&gt; {
+3 |     name: &amp;'a str,
+  |
+</code></pre>
+<p>Rust 需要 <code>&amp;str</code> 的生命週期，因為 <code>&amp;str</code> 是個參考。如果 <code>name</code> 指向的值被丟棄 (drop) 了會怎樣？那就不安全 (unsafe) 了。</p>
+<p>那麼 <code>'static</code> 呢，能用嗎？我們以前用過。讓我們試試吧：</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City {
+    name: &amp;'static str, // 把 &amp;str 改成 &amp;'static str
+    date_founded: u32,
+}
+
+fn main() {
+    let my_city = City {
+        name: &quot;Ichinomiya&quot;,
+        date_founded: 1921,
+    };
+
+    println!(&quot;{} was founded in {}&quot;, my_city.name, my_city.date_founded);
+}</code></pre></pre>
+<p>好的，這就可以了。也許這就是你想要的結構體。不過，要注意我們只能接受&quot;字串字面常數&quot;，所以不能接受對其他東西的參考。所以這將無法執行：</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City {
+    name: &amp;'static str, // 一定要在整個程式裡存活
+    date_founded: u32,
+}
+
+fn main() {
+    let city_names = vec![&quot;Ichinomiya&quot;.to_string(), &quot;Kurume&quot;.to_string()]; // city_names 沒有存活在整個程式
+
+    let my_city = City {
+        name: &amp;city_names[0], // ⚠️ 這是個 &amp;str, 但不是 &amp;'static str. 這是對 city_names 裡面的值的參考
+        date_founded: 1921,
+    };
+
+    println!(&quot;{} was founded in {}&quot;, my_city.name, my_city.date_founded);
+}</code></pre></pre>
+<p>編譯器說：</p>
+<pre><code class="language-text">error[E0597]: `city_names` does not live long enough
+  --&gt; src\main.rs:12:16
+   |
+12 |         name: &amp;city_names[0],
+   |                ^^^^^^^^^^
+   |                |
+   |                borrowed value does not live long enough
+   |                requires that `city_names` is borrowed for `'static`
+...
+18 | }
+   | - `city_names` dropped here while still borrowed
+</code></pre>
+<p>這一點很重要，因為我們給它的參考其實活得夠久了。但是我們承諾的只有給它 <code>&amp;'static str</code>，這就是問題所在。</p>
+<p>所以現在我們就試試之前編譯器的建議。它說嘗試寫成 <code>struct City&lt;'a&gt;</code> 和 <code>name: &amp;'a str</code>。這就意味著，只有當 <code>name</code> 活得和 <code>City</code> 一樣久的情況下，它才會接受 <code>name</code> 的參考。</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City&lt;'a&gt; { // City 的生命週期是 'a
+    name: &amp;'a str, // 且 name 的生命週期也是 'a.
+    date_founded: u32,
+}
+
+fn main() {
+    let city_names = vec![&quot;Ichinomiya&quot;.to_string(), &quot;Kurume&quot;.to_string()];
+
+    let my_city = City {
+        name: &amp;city_names[0],
+        date_founded: 1921,
+    };
+
+    println!(&quot;{} was founded in {}&quot;, my_city.name, my_city.date_founded);
+}</code></pre></pre>
+<p>另外要記住，如果你願意你可以寫任何東西來代替 <code>'a</code>。這也和在泛型裡我們寫 <code>T</code> 和 <code>U</code> 時類似，但實際上可以寫任何東西。</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City&lt;'city&gt; { // 這裡的生命週期名稱叫做 'city
+    name: &amp;'city str, // 並且 name 有著 'city 生命週期
+    date_founded: u32,
+}
+
+fn main() {}</code></pre></pre>
+<p>所以通常都會寫做 <code>'a, 'b, 'c</code> 等等，因為這是快速且常用的寫法。但如果你想的話，你永遠都可以更改。有個好建議是，把生命週期名稱改成 &quot;人類可讀(human-readable)&quot; 的名字有助於閱讀理解程式碼，尤其是程式碼非常複雜時。</p>
+<p>讓我們再來看看與用在泛型的特徵的比較。比如說：</p>
+<pre><pre class="playground"><code class="language-rust">use std::fmt::Display;
+
+fn prints&lt;T: Display&gt;(input: T) {
+    println!(&quot;T is {}&quot;, input);
+}
+
+fn main() {}</code></pre></pre>
+<p>當你寫 <code>T: Display</code> 的時候，它的意思是&quot;只有在 T 有 Display 時，才接受 T&quot;。
+而不是說：&quot;我把 Display 給予 T&quot;。</p>
+<p>對於生命週期也是如此。當你在這裡寫 <code>'a</code>：</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City&lt;'a&gt; {
+    name: &amp;'a str,
+    date_founded: u32,
+}
+
+fn main() {}</code></pre></pre>
+<p>意思是&quot;如果 <code>name</code> 的生命週期至少與 <code>City</code> 一樣久，才接受 <code>name</code> 的輸入&quot;。
+它的意思不是說：&quot;我會讓 <code>name</code> 的輸入與 <code>City</code> 活得一樣久&quot;。</p>
+<p>現在我們可以學到有關先前見過的 <code>&lt;'_&gt;</code>。這被稱為&quot;匿名生命週期&quot;，它是參考被使用時的指示器。例如，當你在實現結構時，Rust 會向你建議使用。這裡有個幾乎可以但還不能用的結構體：</p>
+<pre><pre class="playground"><code class="language-rust">    // ⚠️
+struct Adventurer&lt;'a&gt; {
+    name: &amp;'a str,
+    hit_points: u32,
+}
+
+impl Adventurer {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+fn main() {}</code></pre></pre>
+<p>所以我們對 <code>struct</code> 做了我們需要做的事情：首先我們說 <code>name</code> 來自於 <code>&amp;str</code>。這就意味著我們需要生命週期，所以我們給了它 <code>&lt;'a&gt;</code>。然後我們必須對 <code>struct</code> 做同樣的處理，以證明它們至少和這個生命週期一樣久。但是 Rust 卻告訴我們要這樣做：</p>
+<pre><code class="language-text">error[E0726]: implicit elided lifetime not allowed here
+ --&gt; src\main.rs:6:6
+  |
+6 | impl Adventurer {
+  |      ^^^^^^^^^^- help: indicate the anonymous lifetime: `&lt;'_&gt;`
+</code></pre>
+<p>它想讓我們加上那個匿名生命週期，以表明有個參考被使用。所以如果我們這樣寫，它就會很高興：</p>
+<pre><pre class="playground"><code class="language-rust">struct Adventurer&lt;'a&gt; {
+    name: &amp;'a str,
+    hit_points: u32,
+}
+
+impl Adventurer&lt;'_&gt; {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+fn main() {}</code></pre></pre>
+<p>這個生命週期是為了讓你不必總是寫諸如 <code>impl&lt;'a&gt; Adventurer&lt;'a&gt;</code> 這樣的東西，因為結構體已經寫出了生命週期。</p>
+<p>在 Rust 中，生命週期是可以很困難的，但這裡有一些技巧可以在面對它們時避免感到太大的壓力：</p>
+<ul>
+<li>如果你想在當下避免它們，你可以繼續使用擁有所有權的型別，使用克隆等。</li>
+<li>很多時候，當編譯器想要生命週期的時候，到頭來你只要在這裡和那裡寫上 <code>&lt;'a&gt;</code> 就可以用了。這只是一種&quot;別擔心，我不會給你任何活得不夠久的東西&quot;的說法。</li>
+<li>你可以每次只探索生命週期一些些。寫一些擁有所有權的數值的程式碼，然後把其中一個變成參考。編譯器會開始抱怨，但也會給出一些建議。如果它變得太複雜，你可以撤銷它，下次再試。</li>
+</ul>
+<p>讓我們用我們的程式碼來這麼做，看看編譯器會怎麼說。首先我們回去把生命週期去掉，同時也實作 <code>Display</code>。<code>Display</code> 就會印出 <code>Adventurer</code> 的名字。</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+struct Adventurer {
+    name: &amp;str,
+    hit_points: u32,
+}
+
+impl Adventurer {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+impl std::fmt::Display for Adventurer {
+        fn fmt(&amp;self, f: &amp;mut std::fmt::Formatter&lt;'_&gt;) -&gt; std::fmt::Result {
+            write!(f, &quot;{} has {} hit points.&quot;, self.name, self.hit_points)
+        }
+}
+
+fn main() {}</code></pre></pre>
+<p>第一個抱怨就是這個：</p>
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt; src\main.rs:2:11
+  |
+2 |     name: &amp;str,
+  |           ^ expected named lifetime parameter
+  |
+help: consider introducing a named lifetime parameter
+  |
+1 | struct Adventurer&lt;'a&gt; {
+2 |     name: &amp;'a str,
+  |
+</code></pre>
+<p>它建議這麼做：在 Adventurer 後面加上 <code>&lt;'a&gt;</code>，以及 <code>&amp;'a str</code>。所以我們照著做：</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+struct Adventurer&lt;'a&gt; {
+    name: &amp;'a str,
+    hit_points: u32,
+}
+
+impl Adventurer {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+impl std::fmt::Display for Adventurer {
+        fn fmt(&amp;self, f: &amp;mut std::fmt::Formatter&lt;'_&gt;) -&gt; std::fmt::Result {
+            write!(f, &quot;{} has {} hit points.&quot;, self.name, self.hit_points)
+        }
+}
+
+fn main() {}</code></pre></pre>
+<p>現在它對那些部分很滿意了，但對 <code>impl</code> 區塊不太確定。它想要我們提示正在使用參考：</p>
+<pre><code class="language-text">error[E0726]: implicit elided lifetime not allowed here
+ --&gt; src\main.rs:6:6
+  |
+6 | impl Adventurer {
+  |      ^^^^^^^^^^- help: indicate the anonymous lifetime: `&lt;'_&gt;`
+
+error[E0726]: implicit elided lifetime not allowed here
+  --&gt; src\main.rs:12:28
+   |
+12 | impl std::fmt::Display for Adventurer {
+   |                            ^^^^^^^^^^- help: indicate the anonymous lifetime: `&lt;'_&gt;`
+</code></pre>
+<p>好了，我們將這些寫進去......現在它通過編譯了！現在我們可以做出 <code>Adventurer</code>，然後用它做些事。</p>
+<pre><pre class="playground"><code class="language-rust">struct Adventurer&lt;'a&gt; {
+    name: &amp;'a str,
+    hit_points: u32,
+}
+
+impl Adventurer&lt;'_&gt; {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+impl std::fmt::Display for Adventurer&lt;'_&gt; {
+
+        fn fmt(&amp;self, f: &amp;mut std::fmt::Formatter&lt;'_&gt;) -&gt; std::fmt::Result {
+            write!(f, &quot;{} has {} hit points.&quot;, self.name, self.hit_points)
+        }
+}
+
+fn main() {
+    let mut billy = Adventurer {
+        name: &quot;Billy&quot;,
+        hit_points: 100_000,
+    };
+    println!(&quot;{}&quot;, billy);
+    billy.take_damage();
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Billy has 100000 hit points.
+Billy has 99980 hit points left!
+</code></pre>
+<p>所以你可以看到，編譯器往往只是想要確定生命週期。而且它通常很聰明，幾乎可以猜到你想要的生命週期，只是需要你告訴它，它就可以確定了。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_39.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_41.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_39.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_41.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

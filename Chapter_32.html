@@ -1,0 +1,619 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 其他集合型別 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html" class="active"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="其他集合型別"><a class="header" href="#其他集合型別">其他集合型別</a></h2>
+<p>Rust 還有很多集合型別。你可以在標準函式庫中的 https://doc.rust-lang.org/beta/std/collections/ 看到它們。那個頁面對為什麼要使用某種型別有很好的解釋，所以如果你不知道你想要什麼型別就去那裡。這些集合都在標準函式庫的 <code>std::collections</code> 裡面。使用它們最好的方法是使用 <code>use</code> 陳述式。就像我們對 <code>enums</code> 做的。我們將從非常常見的 <code>HashMap</code> 開始。</p>
+<h3 id="hashmap-和-btreemap"><a class="header" href="#hashmap-和-btreemap">HashMap (和 BTreeMap)</a></h3>
+<p>HashMap 是由 <em>鍵(key)</em> 和 <em>值(value)</em> 組成的集合。你使用鍵來查詢與鍵匹配的值。你可以只用 <code>HashMap::new()</code> 建立一個新的<code>HashMap</code>，並使用<code>.insert(key, value)</code>來插入元素。</p>
+<p><code>HashMap</code> 是沒有順序的，所以如果你把 <code>HashMap</code> 中的每個鍵都一起印出來，可能每次會印出不同的結果。我們可以在範例中看到這一點：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap; // 因此這是我們能只寫 HashMap 而不用每次都寫 std::collections::HashMap
+
+struct City {
+    name: String,
+    population: HashMap&lt;u32, u32&gt;, // 這會記錄年度和該年度的人口數
+}
+
+fn main() {
+
+    let mut tallinn = City {
+        name: &quot;Tallinn&quot;.to_string(),
+        population: HashMap::new(), // 目前為止 HashMap 是空的
+    };
+
+    tallinn.population.insert(1372, 3_250); // 插入三筆年度資料
+    tallinn.population.insert(1851, 24_000);
+    tallinn.population.insert(2020, 437_619);
+
+
+    for (year, population) in tallinn.population { // HashMap 型別是 HashMap&lt;u32, u32&gt; 所以它每次回傳有兩個元素的元組
+        println!(&quot;In the year {} the city of {} had a population of {}.&quot;, year, tallinn.name, population);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">In the year 1372 the city of Tallinn had a population of 3250.
+In the year 2020 the city of Tallinn had a population of 437619.
+In the year 1851 the city of Tallinn had a population of 24000.
+</code></pre>
+<p>或者可能印出：</p>
+<pre><code class="language-text">In the year 1851 the city of Tallinn had a population of 24000.
+In the year 2020 the city of Tallinn had a population of 437619.
+In the year 1372 the city of Tallinn had a population of 3250.
+</code></pre>
+<p>你可以看到它沒有按順序排列。</p>
+<p>如果你想要一個可以排序的 <code>HashMap</code>，你可以用 <code>BTreeMap</code>。其實它們之間是非常相似的，所以我們可以快速的把我們的 <code>HashMap</code> 改成 <code>BTreeMap</code> 來看看。大家可以看到，這幾乎是一樣的程式碼。</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::BTreeMap; // HashMap 只改成 BTreeMap
+
+struct City {
+    name: String,
+    population: BTreeMap&lt;u32, u32&gt;, // HashMap 只改成 BTreeMap
+}
+
+fn main() {
+
+    let mut tallinn = City {
+        name: &quot;Tallinn&quot;.to_string(),
+        population: BTreeMap::new(), // HashMap 只改成 BTreeMap
+    };
+
+    tallinn.population.insert(1372, 3_250);
+    tallinn.population.insert(1851, 24_000);
+    tallinn.population.insert(2020, 437_619);
+
+    for (year, population) in tallinn.population {
+        println!(&quot;In the year {} the city of {} had a population of {}.&quot;, year, tallinn.name, population);
+    }
+}</code></pre></pre>
+<p>現在總是會印出：</p>
+<pre><code class="language-text">In the year 1372 the city of Tallinn had a population of 3250.
+In the year 1851 the city of Tallinn had a population of 24000.
+In the year 2020 the city of Tallinn had a population of 437619.
+</code></pre>
+<p>現在我們再回來看看 <code>HashMap</code>。</p>
+<p>只要把鍵放在 <code>[]</code> 的方括號裡，就可以得到 <code>HashMap</code> 的值。在接下來的這個範例中，我們將帶出 <code>Bielefeld</code> 這個鍵的值，也就是 <code>Germany</code>。但是要注意，因為如果沒有鍵，程式會崩潰(crash)。比如你寫了 <code>println!(&quot;{:?}&quot;, city_hashmap[&quot;Bielefeldd&quot;]);</code>，那麼就會崩潰，因為 <code>Bielefeldd</code> 不存在。</p>
+<p>如果你不確定會有鍵，你可以使用 <code>.get()</code>，它會回傳 <code>Option</code>。如果它存在就會是 <code>Some(value)</code>，如果不存在你將得到 <code>None</code>，而不是使程式崩潰。這就是為什麼 <code>.get()</code> 是從 <code>HashMap</code> 中取值較安全的方法。</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let canadian_cities = vec![&quot;Calgary&quot;, &quot;Vancouver&quot;, &quot;Gimli&quot;];
+    let german_cities = vec![&quot;Karlsruhe&quot;, &quot;Bad Doberan&quot;, &quot;Bielefeld&quot;];
+
+    let mut city_hashmap = HashMap::new();
+
+    for city in canadian_cities {
+        city_hashmap.insert(city, &quot;Canada&quot;);
+    }
+    for city in german_cities {
+        city_hashmap.insert(city, &quot;Germany&quot;);
+    }
+
+    println!(&quot;{:?}&quot;, city_hashmap[&quot;Bielefeld&quot;]);
+    println!(&quot;{:?}&quot;, city_hashmap.get(&quot;Bielefeld&quot;));
+    println!(&quot;{:?}&quot;, city_hashmap.get(&quot;Bielefeldd&quot;));
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">&quot;Germany&quot;
+Some(&quot;Germany&quot;)
+None
+</code></pre>
+<p>這是因為 <em>Bielefeld</em> 存在，但 <em>Bielefeldd</em> 不存在。</p>
+<p>如果 <code>HashMap</code> 已經有一個鍵，當你試圖把它放進去時，它的值將被覆蓋：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let mut book_hashmap = HashMap::new();
+
+    book_hashmap.insert(1, &quot;L'Allemagne Moderne&quot;);
+    book_hashmap.insert(1, &quot;Le Petit Prince&quot;);
+    book_hashmap.insert(1, &quot;섀도우 오브 유어 스마일&quot;);
+    book_hashmap.insert(1, &quot;Eye of the World&quot;);
+
+    println!(&quot;{:?}&quot;, book_hashmap.get(&amp;1));
+}</code></pre></pre>
+<p>印出 <code>Some(&quot;Eye of the World&quot;)</code>，因為它是你最後用 <code>.insert()</code> 的值。</p>
+<p>檢查項目存在很容易，因為你可以用會回傳 <code>Option</code> 的 <code>.get()</code> 檢查：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let mut book_hashmap = HashMap::new();
+
+    book_hashmap.insert(1, &quot;L'Allemagne Moderne&quot;);
+
+    if book_hashmap.get(&amp;1).is_none() { // is_none()回傳布林值: true如果是None, false如果是Some
+        book_hashmap.insert(1, &quot;Le Petit Prince&quot;);
+    }
+
+    println!(&quot;{:?}&quot;, book_hashmap.get(&amp;1));
+}</code></pre></pre>
+<p>印出 <code>Some(&quot;L\'Allemagne Moderne&quot;)</code> 是因為已經有個 key 為 <code>1</code>，所以我們沒有插入 <code>Le Petit Prince</code>。</p>
+<p><code>HashMap</code> 有個非常有趣的方法叫做 <code>.entry()</code>，你肯定想試試。有了它，你可以在沒有鍵的情況下，加入一筆項目 (entry) 並用像是 <code>.or_insert()</code> 這類方法來插入值。有趣的是，它還傳回了可變參考，所以如果你想的話你可以改變它。首先的範例是我們每次插入書名到 <code>HashMap</code> 時，我們就在值插入 <code>true</code>。</p>
+<p>讓我們假裝我們有個圖書館，並希望跟蹤我們的書籍。</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let book_collection = vec![&quot;L'Allemagne Moderne&quot;, &quot;Le Petit Prince&quot;, &quot;Eye of the World&quot;, &quot;Eye of the World&quot;]; // Eye of the World 出現兩次
+
+    let mut book_hashmap = HashMap::new();
+
+    for book in book_collection {
+        book_hashmap.entry(book).or_insert(true);
+    }
+    for (book, true_or_false) in book_hashmap {
+        println!(&quot;Do we have {}? {}&quot;, book, true_or_false);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Do we have Eye of the World? true
+Do we have Le Petit Prince? true
+Do we have L'Allemagne Moderne? true
+</code></pre>
+<p>但這並不是我們想要的。也許最好數一下書的數量，這樣我們就知道 <em>世界之眼</em> 有兩本。首先讓我們看看 <code>.entry()</code> 做了什麼，以及 <code>.or_insert()</code> 做了什麼。<code>.entry()</code> 其實是回傳了名為 <code>Entry</code> 的 <code>enum</code>：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn entry(&amp;mut self, key: K) -&gt; Entry&lt;K, V&gt; // 🚧
+<span class="boring">}</span></code></pre></pre>
+<p>可以查看<a href="https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html">Entry 文件</a>的網頁。下面是它的原始程式碼的簡化版。<code>K</code> 表示 key，<code>V</code> 表示 value。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+use std::collections::hash_map::*;
+
+enum Entry&lt;K, V&gt; {
+    Occupied(OccupiedEntry&lt;K, V&gt;),
+    Vacant(VacantEntry&lt;K, V&gt;),
+}
+<span class="boring">}</span></code></pre></pre>
+<p>然後當我們呼叫 <code>.or_insert()</code> 時，它就會檢視列舉，並決定該怎麼做。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn or_insert(self, default: V) -&gt; &amp;mut V { // 🚧
+    match self {
+        Occupied(entry) =&gt; entry.into_mut(),
+        Vacant(entry) =&gt; entry.insert(default),
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>有趣的是，它回傳 <code>mut</code> 的引用：<code>&amp;mut V</code>。這意味著你可以使用 <code>let</code> 將其附加到變數上，並藉由改變這個變數來改變 <code>HashMap</code> 中的值。所以對於每本書，如果沒有項目，我們就會插入 0。而如果有的話，我們將在參考上使用 <code>+= 1</code> 來增加數字。現在它看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let book_collection = vec![&quot;L'Allemagne Moderne&quot;, &quot;Le Petit Prince&quot;, &quot;Eye of the World&quot;, &quot;Eye of the World&quot;];
+
+    let mut book_hashmap = HashMap::new();
+
+    for book in book_collection {
+        let return_value = book_hashmap.entry(book).or_insert(0); // return_value 是個可變參考。如果原先沒東西，它會是 0
+        *return_value +=1; // 現在 return_value 至少是 1。 且如果已經有另一本書，它會往上加 1
+    }
+
+    for (book, number) in book_hashmap {
+        println!(&quot;{}, {}&quot;, book, number);
+    }
+}</code></pre></pre>
+<p>重點在 <code>let return_value = book_hashmap.entry(book).or_insert(0);</code>。如果去掉 <code>let</code>，你會得到 <code>book_hashmap.entry(book).or_insert(0)</code>。沒有 <code>let</code> 時它什麼也不做：它只插入了 0，也沒有取得指向 0 的可變參考。所以我們把它連結到 <code>return_value</code> 上，這樣我們就可以保留 0。然後我們把值增加 1，這樣 <code>HashMap</code> 中的每本書都至少有 1。接著當 <code>.entry()</code> 再拿到 <em>世界之眼</em> 時，它就不會插入任何東西，但它給我們一個可變的 1。然後我們把它增加到 2，這也是為什麼它會印出這樣的結果：</p>
+<pre><code class="language-text">L'Allemagne Moderne, 1
+Le Petit Prince, 1
+Eye of the World, 2
+</code></pre>
+<p>你也可以用 <code>.or_insert()</code> 做一些事情，比如插入向量，然後往向量裡推入資料。讓我們假設我們問街上的男女他們對一個政治家的看法。他們給出的評分從 0 到 10。然後我們要把這些數字放在一起，看看這個政治家是更受男性還是女性的歡迎。它可以像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let data = vec![ // 原始資料
+        (&quot;male&quot;, 9),
+        (&quot;female&quot;, 5),
+        (&quot;male&quot;, 0),
+        (&quot;female&quot;, 6),
+        (&quot;female&quot;, 5),
+        (&quot;male&quot;, 10),
+    ];
+
+    let mut survey_hash = HashMap::new();
+
+    for item in data { // 給的型別是 (&amp;str, i32) 的元組
+        survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1); // 推入數字到向量裡
+    }
+
+    for (male_or_female, numbers) in survey_hash {
+        println!(&quot;{:?}: {:?}&quot;, male_or_female, numbers);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">&quot;female&quot;, [5, 6, 5]
+&quot;male&quot;, [9, 0, 10]
+</code></pre>
+<p>重點行是：<code>survey_hash.entry(item.0).or_insert(Vec::new()).push(item.1);</code>，所以如果它看到 &quot;female&quot;，就會檢查 <code>HashMap</code> 中是否已經有 &quot;female&quot;。如果沒有，它就會插入 <code>Vec::new()</code>，然後把數字推入。如果它看到 &quot;female&quot; 已經在 <code>HashMap</code> 中，它將不會插入新的向量，而只是將數字推入其中。</p>
+<h3 id="hashset-和-btreeset"><a class="header" href="#hashset-和-btreeset">HashSet 和 BTreeSet</a></h3>
+<p><code>HashSet</code> 實際上是只有 key 的 <code>HashMap</code>。在 <a href="https://doc.rust-lang.org/std/collections/struct.HashSet.html">HashSet 文件</a>的網頁上面有解釋：</p>
+<p><code>A hash set implemented as a HashMap where the value is ().</code> 所以它是有鍵無值的 <code>HashMap</code>。</p>
+<p>如果你只是想知道某個鍵是不是存在，或者不存在，你經常會選擇用 <code>HashSet</code>。</p>
+<p>想像一下，你有 100 個隨機數，每個數字介於 1 和 100 之間。如果你這樣做，有些數字會出現不止一次，而有些數字根本不會出現。如果你把它們放到 <code>HashSet</code> 中，那麼你就會有一個所有已出現的數字列表。</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashSet;
+
+fn main() {
+    let many_numbers = vec![
+        94, 42, 59, 64, 32, 22, 38, 5, 59, 49, 15, 89, 74, 29, 14, 68, 82, 80, 56, 41, 36, 81, 66,
+        51, 58, 34, 59, 44, 19, 93, 28, 33, 18, 46, 61, 76, 14, 87, 84, 73, 71, 29, 94, 10, 35, 20,
+        35, 80, 8, 43, 79, 25, 60, 26, 11, 37, 94, 32, 90, 51, 11, 28, 76, 16, 63, 95, 13, 60, 59,
+        96, 95, 55, 92, 28, 3, 17, 91, 36, 20, 24, 0, 86, 82, 58, 93, 68, 54, 80, 56, 22, 67, 82,
+        58, 64, 80, 16, 61, 57, 14, 11];
+
+    let mut number_hashset = HashSet::new();
+
+    for number in many_numbers {
+        number_hashset.insert(number);
+    }
+
+    let hashset_length = number_hashset.len(); // 長度會告訴我們有多少數字在裡面
+    println!(&quot;There are {} unique numbers, so we are missing {}.&quot;, hashset_length, 100 - hashset_length);
+
+    // 讓我們看看漏了什麼數字
+    let mut missing_vec = vec![];
+    for number in 0..100 {
+        if number_hashset.get(&amp;number).is_none() { // 如果 .get() 回傳 None,
+            missing_vec.push(number);
+        }
+    }
+
+    print!(&quot;It does not contain: &quot;);
+    for number in missing_vec {
+        print!(&quot;{} &quot;, number);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">There are 66 unique numbers, so we are missing 34.
+It does not contain: 1 2 4 6 7 9 12 21 23 27 30 31 39 40 45 47 48 50 52 53 62 65 69 70 72 75 77 78 83 85 88 97 98 99
+</code></pre>
+<p><code>BTreeSet</code> 與 <code>HashSet</code> 相似，就像 <code>BTreeMap</code> 與 <code>HashMap</code> 相似一樣。如果把 <code>HashSet</code> 中的每一項都印出來，我們就不知道順序會是什麼了：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for entry in number_hashset { // 🚧
+    print!(&quot;{} &quot;, entry);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>也許它會印出這樣：<code>67 28 42 25 95 59 87 11 5 81 64 34 8 15 13 86 10 89 63 93 49 41 46 57 60 29 17 22 74 43 32 38 36 76 71 18 14 84 61 16 35 90 56 54 91 19 94 44 3 0 68 80 51 92 24 20 82 26 58 33 55 96 37 66 79 73</code>。但它幾乎不會再以同樣的方式印出。</p>
+<p>在這裡也一樣，如果你決定需要有序印出的話，把你的 <code>HashSet</code> 改成 <code>BTreeSet</code> 也很容易。在我們的程式碼中，我們只需要做兩處改動，就可以從 <code>HashSet</code> 切換到 <code>BTreeSet</code>。</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::BTreeSet; // 把 HashSet 改成 BTreeSet
+
+fn main() {
+    let many_numbers = vec![
+        94, 42, 59, 64, 32, 22, 38, 5, 59, 49, 15, 89, 74, 29, 14, 68, 82, 80, 56, 41, 36, 81, 66,
+        51, 58, 34, 59, 44, 19, 93, 28, 33, 18, 46, 61, 76, 14, 87, 84, 73, 71, 29, 94, 10, 35, 20,
+        35, 80, 8, 43, 79, 25, 60, 26, 11, 37, 94, 32, 90, 51, 11, 28, 76, 16, 63, 95, 13, 60, 59,
+        96, 95, 55, 92, 28, 3, 17, 91, 36, 20, 24, 0, 86, 82, 58, 93, 68, 54, 80, 56, 22, 67, 82,
+        58, 64, 80, 16, 61, 57, 14, 11];
+
+    let mut number_btreeset = BTreeSet::new(); // 把 HashSet 改成 BTreeSet
+
+    for number in many_numbers {
+        number_btreeset.insert(number);
+    }
+    for entry in number_btreeset {
+        print!(&quot;{} &quot;, entry);
+    }
+}</code></pre></pre>
+<p>現在會依照順序印出： <code>0 3 5 8 10 11 13 14 15 16 17 18 19 20 22 24 25 26 28 29 32 33 34 35 36 37 38 41 42 43 44 46 49 51 54 55 56 57 58 59 60 61 63 64 66 67 68 71 73 74 76 79 80 81 82 84 86 87 89 90 91 92 93 94 95 96</code>。</p>
+<h3 id="binaryheap"><a class="header" href="#binaryheap">BinaryHeap</a></h3>
+<p><code>BinaryHeap</code> 是種有趣的集合型別，因為它大部分是無序的，但也有一點有序性。它把最大的元素放前面，但其他元素是以任意順序排列的。</p>
+<p>我們將用另一個列表來舉例，但這次資料少一些。</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::BinaryHeap;
+
+fn show_remainder(input: &amp;BinaryHeap&lt;i32&gt;) -&gt; Vec&lt;i32&gt; { // 這個函式呈現BinaryHeap中剩餘部分。實際上
+                                                         // 疊代器會比函式快- 我們會在之後學到。
+    let mut remainder_vec = vec![];
+    for number in input {
+        remainder_vec.push(*number)
+    }
+    remainder_vec
+}
+
+fn main() {
+    let many_numbers = vec![0, 5, 10, 15, 20, 25, 30]; // 這些數字是有序的
+
+    let mut my_heap = BinaryHeap::new();
+
+    for number in many_numbers {
+        my_heap.push(number);
+    }
+
+    while let Some(number) = my_heap.pop() { // 如果有數字 .pop() 回傳 Some(number)，否則 None。且從前面 pop
+        println!(&quot;Popped off {}. Remaining numbers are: {:?}&quot;, number, show_remainder(&amp;my_heap));
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">Popped off 30. Remaining numbers are: [25, 15, 20, 0, 10, 5]
+Popped off 25. Remaining numbers are: [20, 15, 5, 0, 10]
+Popped off 20. Remaining numbers are: [15, 10, 5, 0]
+Popped off 15. Remaining numbers are: [10, 0, 5]
+Popped off 10. Remaining numbers are: [5, 0]
+Popped off 5. Remaining numbers are: [0]
+Popped off 0. Remaining numbers are: []
+</code></pre>
+<p>你可以看到索引 0 的數字總是最大的25、20、15、10、5 然後是 0。但其它都不一樣。</p>
+<p>使用 <code>BinaryHeap&lt;(u8, &amp;str)&gt;</code> 的好方法是用在待處理事物的集合。這裡我們建立 <code>BinaryHeap&lt;(u8, &amp;str)&gt;</code>，其中 <code>u8</code> 是任務重要性的數字。<code>&amp;str</code> 是對要處理什麼的描述。</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::BinaryHeap;
+
+fn main() {
+    let mut jobs = BinaryHeap::new();
+
+    // 加入一整天要做的工作
+    jobs.push((100, &quot;Write back to email from the CEO&quot;));
+    jobs.push((80, &quot;Finish the report today&quot;));
+    jobs.push((5, &quot;Watch some YouTube&quot;));
+    jobs.push((70, &quot;Tell your team members thanks for always working hard&quot;));
+    jobs.push((30, &quot;Plan who to hire next for the team&quot;));
+
+    while let Some(job) = jobs.pop() {
+        println!(&quot;You need to: {}&quot;, job.1);
+    }
+}</code></pre></pre>
+<p>總是會印出：</p>
+<pre><code class="language-text">You need to: Write back to email from the CEO
+You need to: Finish the report today
+You need to: Tell your team members thanks for always working hard
+You need to: Plan who to hire next for the team
+You need to: Watch some YouTube
+</code></pre>
+<h3 id="vecdeque"><a class="header" href="#vecdeque">VecDeque</a></h3>
+<p><code>VecDeque</code> 是一種既能從前面彈出元素，又能從後面彈出元素的 <code>Vec</code>。Rust 有 <code>VecDeque</code> 是因為 <code>Vec</code> 適合從後面(最後一個元素)彈出，但從前面彈出就不那麼好了。當你在 <code>Vec</code> 上使用 <code>.pop()</code> 的時候，它只是把右邊最後一個元素取出，其他的都不會動。但是如果你從其他地方取出元素，它右邊的所有元素都會被向左搬移一個位置。你可以在 <code>.remove()</code> 的文件描述中看到這一點：</p>
+<pre><code class="language-text">Removes and returns the element at position index within the vector, shifting all elements after it to the left.
+</code></pre>
+<p>所以如果你這樣做：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_vec = vec![9, 8, 7, 6, 5];
+    my_vec.remove(0);
+}</code></pre></pre>
+<p>它將會刪除 <code>9</code>。索引 1 中的 <code>8</code> 將移到索引 0，索引 2 中的 <code>7</code> 將移到索引 1，以此類推。想像一個大停車場，每當有一輛車離開時，右邊所有的車都要移過來。</p>
+<p>舉例來說這對電腦是<em>很大</em>的工作量。事實上，如果你在 Playground 上執行時，它很可能會因為工作量太大而直接放棄。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_vec = vec![0; 600_000];
+    for i in 0..600000 {
+        my_vec.remove(0);
+    }
+}</code></pre></pre>
+<p>這是有 60 萬個零的 <code>Vec</code>。每次你用 <code>remove(0)</code> 時，它就會把每個零向左搬移一個空間。並且它要做上 60 萬次。</p>
+<p>用 <code>VecDeque</code> 就不用擔心這個問題了。它通常比 <code>Vec</code> 慢一點，但如果你要在資料兩端都做事情，那麼它就快多了。你可以直接從 <code>Vec</code> 用 <code>VecDeque::from</code> 做出來。那麼上面我們的程式碼就會像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::VecDeque;
+
+fn main() {
+    let mut my_vec = VecDeque::from(vec![0; 600000]);
+    for i in 0..600000 {
+        my_vec.pop_front(); // pop_front 就像 .pop 但是從前面處理
+    }
+}</code></pre></pre>
+<p>現在速度快了很多，在 Playground 上它不到一秒就結束，而不是放棄。</p>
+<p>在接下來的這個範例中，我們有個記錄待處理事物的 <code>Vec</code>。接著我們做出 <code>VecDeque</code>，用 <code>.push_front()</code> 把它們放到前面，使得我們新增的第一個元素會是在右邊。但是我們推送的每個元素型別是 <code>(&amp;str, bool)</code>：<code>&amp;str</code> 是描述，<code>false</code> 表示還沒完成。我們用 <code>done()</code> 函式從後面彈出一個元素，但是我們不想刪除它。我們反而是把 <code>false</code> 改成 <code>true</code>，然後把它推到前面，使得我們可以保留它。</p>
+<p>它看起來像這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::VecDeque;
+
+fn check_remaining(input: &amp;VecDeque&lt;(&amp;str, bool)&gt;) { // 每個元素是 (&amp;str, bool)
+    for item in input {
+        if item.1 == false {
+            println!(&quot;You must: {}&quot;, item.0);
+        }
+    }
+}
+
+fn done(input: &amp;mut VecDeque&lt;(&amp;str, bool)&gt;) {
+    let mut task_done = input.pop_back().unwrap(); // 後面彈出
+    task_done.1 = true;                            // 它完成了 - 標記為 true
+    input.push_front(task_done);                   // 現在把它放到前面
+}
+
+fn main() {
+    let mut my_vecdeque = VecDeque::new();
+    let things_to_do = vec![&quot;send email to customer&quot;, &quot;add new product to list&quot;, &quot;phone Loki back&quot;];
+
+    for thing in things_to_do {
+        my_vecdeque.push_front((thing, false));
+    }
+
+    done(&amp;mut my_vecdeque);
+    done(&amp;mut my_vecdeque);
+
+    check_remaining(&amp;my_vecdeque);
+
+    for task in my_vecdeque {
+        print!(&quot;{:?} &quot;, task);
+    }
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">You must: phone Loki back
+(&quot;add new product to list&quot;, true) (&quot;send email to customer&quot;, true) (&quot;phone Loki back&quot;, false)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_31.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_33.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_31.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_33.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

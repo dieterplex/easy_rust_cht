@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 接受使用者輸入 - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html" class="active"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="接受使用者輸入"><a class="header" href="#接受使用者輸入">接受使用者輸入</a></h2>
+<p>接受使用者的輸入的一個簡單的方式是用 <code>std::io::stdin</code>。這意味著&quot;標準輸入&quot; (standard input)，也就是來自鍵盤的輸入。用 <code>stdin()</code> 可以獲得使用者的輸入內容，但是接下來你就會想用 <code>.read_line()</code> 把它放到 <code>&amp;mut String</code> 中。這裡是那種情境的簡單範例，但它既能用、也不能用：</p>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!(&quot;Please type something, or x to escape:&quot;);
+    let mut input_string = String::new();
+
+    while input_string != &quot;x&quot; { // 這是不能用的部分
+        input_string.clear(); // 首先清除 String 內容. 不然會一直加入東西進去
+        io::stdin().read_line(&amp;mut input_string).unwrap(); // 從使用者獲得的 stdin, 並把它放進去 read_string
+        println!(&quot;You wrote {}&quot;, input_string);
+    }
+    println!(&quot;See you later!&quot;);
+}</code></pre></pre>
+<p>這裡是輸出看起來的樣子：</p>
+<pre><code class="language-text">Please type something, or x to escape:
+something
+You wrote something
+
+Something else
+You wrote Something else
+
+x
+You wrote x
+
+x
+You wrote x
+
+x
+You wrote x
+</code></pre>
+<p>它接受我們的輸入，然後把它還給我們，它甚至知道我們輸入了 <code>x</code>。但它並沒有退出程式。唯一的辦法是關閉視窗，或者輸入 ctrl 和 c。讓我們把 <code>println!</code> 中的 <code>{}</code> 改為 <code>{:?}</code>，來得到更多資訊（如果你喜歡用巨集，也可以使用 <code>dbg!(&amp;input_string)</code>）。現在它說：</p>
+<pre><code class="language-text">Please type something, or x to escape:
+something
+You wrote &quot;something\r\n&quot;
+Something else
+You wrote &quot;Something else\r\n&quot;
+x
+You wrote &quot;x\r\n&quot;
+x
+You wrote &quot;x\r\n&quot;
+</code></pre>
+<p>這是因為鍵盤輸入其實不只是 <code>something</code>，而是 <code>something</code> 和 <code>Enter</code> 鍵。有個簡單的方法可以修正這個問題，叫做 <code>.trim()</code>，它可以把所有的空白字元都去掉。順便說一下，<a href="https://doc.rust-lang.org/reference/whitespace.html">這些字元</a>都是空白字元：</p>
+<pre><code class="language-text">U+0009 (horizontal tab, '\t')
+U+000A (line feed, '\n')
+U+000B (vertical tab)
+U+000C (form feed)
+U+000D (carriage return, '\r')
+U+0020 (space, ' ')
+U+0085 (next line)
+U+200E (left-to-right mark)
+U+200F (right-to-left mark)
+U+2028 (line separator)
+U+2029 (paragraph separator)
+</code></pre>
+<p>這樣就可以把 <code>x\r\n</code> 變成只剩 <code>x</code> 了。現在它可以用了：</p>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!(&quot;Please type something, or x to escape:&quot;);
+    let mut input_string = String::new();
+
+    while input_string.trim() != &quot;x&quot; {
+        input_string.clear();
+        io::stdin().read_line(&amp;mut input_string).unwrap();
+        println!(&quot;You wrote {}&quot;, input_string);
+    }
+    println!(&quot;See you later!&quot;);
+}</code></pre></pre>
+<p>現在會印出：</p>
+<pre><code class="language-text">Please type something, or x to escape:
+something
+You wrote something
+
+Something
+You wrote Something
+
+x
+You wrote x
+
+See you later!
+</code></pre>
+<p>還有另一種使用者輸入叫 <code>std::env::Args</code>(env 的意思是環境 environment )。<code>Args</code> 是使用者啟動程式時打字輸入的內容。其實在程式執行時總是至少有一個 <code>Arg</code>。讓我們寫個程式，裡面只使用 <code>std::env::args()</code> 印出它們，來看看它們是什麼。</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!(&quot;{:?}&quot;, std::env::args());
+}</code></pre></pre>
+<p>如果我們寫 <code>cargo run</code>，就會像這樣印出來：</p>
+<pre><code class="language-text">Args { inner: [&quot;target\\debug\\rust_book.exe&quot;] }
+</code></pre>
+<p>讓我們給它更多輸入來看看它的作用。我們輸入 <code>cargo run but with some extra words</code> 來執行，會給我們：</p>
+<pre><code class="language-text">Args { inner: [&quot;target\\debug\\rust_book.exe&quot;, &quot;but&quot;, &quot;with&quot;, &quot;some&quot;, &quot;extra&quot;, &quot;words&quot;] }
+</code></pre>
+<p>真有趣。而當我們瀏覽 <a href="https://doc.rust-lang.org/std/env/struct.Args.html">Args 文件</a>時，我們看到它實作了 <code>IntoIterator</code>。這意味著我們可以做全部疊代器我們所知的一切事情來讀取和改變它。讓我們試試這個：</p>
+<pre><pre class="playground"><code class="language-rust">use std::env::args;
+
+fn main() {
+    let input = args();
+
+    for entry in input {
+        println!(&quot;You entered: {}&quot;, entry);
+    }
+}</code></pre></pre>
+<p>現在它說：</p>
+<pre><code class="language-text">You entered: target\debug\rust_book.exe
+You entered: but
+You entered: with
+You entered: some
+You entered: extra
+You entered: words
+</code></pre>
+<p>你可以看到第一個引數總是程式名，所以你經常會想跳過它，比如這樣：</p>
+<pre><pre class="playground"><code class="language-rust">use std::env::args;
+
+fn main() {
+    let input = args();
+
+    input.skip(1).for_each(|item| {
+        println!(&quot;You wrote {}, which in capital letters is {}&quot;, item, item.to_uppercase());
+    })
+}</code></pre></pre>
+<p>會印出：</p>
+<pre><code class="language-text">You wrote but, which in capital letters is BUT
+You wrote with, which in capital letters is WITH
+You wrote some, which in capital letters is SOME
+You wrote extra, which in capital letters is EXTRA
+You wrote words, which in capital letters is WORDS
+</code></pre>
+<p><code>Args</code> 的一個常見用途是用於使用者設定。你可以確保使用者寫出你需要的輸入，只有在正確的情況下才執行程式。這裡有個小程式能讓字母變大（大寫）或變小（小寫）：</p>
+<pre><pre class="playground"><code class="language-rust">use std::env::args;
+
+enum Letters {
+    Capitalize,
+    Lowercase,
+    Nothing,
+}
+
+fn main() {
+    let mut changes = Letters::Nothing;
+    let input = args().collect::&lt;Vec&lt;_&gt;&gt;();
+
+    if input.len() &gt; 2 {
+        match input[1].as_str() {
+            &quot;capital&quot; =&gt; changes = Letters::Capitalize,
+            &quot;lowercase&quot; =&gt; changes = Letters::Lowercase,
+            _ =&gt; {}
+        }
+    }
+
+    for word in input.iter().skip(2) {
+      match changes {
+        Letters::Capitalize =&gt; println!(&quot;{}&quot;, word.to_uppercase()),
+        Letters::Lowercase =&gt; println!(&quot;{}&quot;, word.to_lowercase()),
+        _ =&gt; println!(&quot;{}&quot;, word)
+      }
+    }
+    
+}</code></pre></pre>
+<p>這裡的一些範例是它給的輸出：</p>
+<p>輸入：<code>cargo run please make capitals</code>：</p>
+<pre><code class="language-text">make capitals
+</code></pre>
+<p>輸入：<code>cargo run capital</code>：</p>
+<pre><code class="language-text">// 這裡沒東西輸出...
+</code></pre>
+<p>輸入：<code>cargo run capital I think I understand now</code>：</p>
+<pre><code class="language-text">I
+THINK
+I
+UNDERSTAND
+NOW
+</code></pre>
+<p>輸入：<code>cargo run lowercase Does this work too?</code>：</p>
+<pre><code class="language-text">does
+this
+work
+too?
+</code></pre>
+<p>除了使用者給予的 <code>Args</code>，在 <code>std::env::args()</code> 中找得到的那些，還有系統變數 <code>Vars</code>。這些都是非使用者輸入的程式基本設定。你可以用 <code>std::env::vars()</code> 把它們全部輸出成格式 <code>(String, String)</code>，會有非常多筆資料。舉例來說：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    for item in std::env::vars() {
+        println!(&quot;{:?}&quot;, item);
+    }
+}</code></pre></pre>
+<p>只要這樣做就能秀出你目前使用者會話 (user session) 的所有資訊。它將會顯示像這樣的資訊：</p>
+<pre><code class="language-text">(&quot;CARGO&quot;, &quot;/playground/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo&quot;)
+(&quot;CARGO_HOME&quot;, &quot;/playground/.cargo&quot;)
+(&quot;CARGO_MANIFEST_DIR&quot;, &quot;/playground&quot;)
+(&quot;CARGO_PKG_AUTHORS&quot;, &quot;The Rust Playground&quot;)
+(&quot;CARGO_PKG_DESCRIPTION&quot;, &quot;&quot;)
+(&quot;CARGO_PKG_HOMEPAGE&quot;, &quot;&quot;)
+(&quot;CARGO_PKG_NAME&quot;, &quot;playground&quot;)
+(&quot;CARGO_PKG_REPOSITORY&quot;, &quot;&quot;)
+(&quot;CARGO_PKG_VERSION&quot;, &quot;0.0.1&quot;)
+(&quot;CARGO_PKG_VERSION_MAJOR&quot;, &quot;0&quot;)
+(&quot;CARGO_PKG_VERSION_MINOR&quot;, &quot;0&quot;)
+(&quot;CARGO_PKG_VERSION_PATCH&quot;, &quot;1&quot;)
+(&quot;CARGO_PKG_VERSION_PRE&quot;, &quot;&quot;)
+(&quot;DEBIAN_FRONTEND&quot;, &quot;noninteractive&quot;)
+(&quot;HOME&quot;, &quot;/playground&quot;)
+(&quot;HOSTNAME&quot;, &quot;f94c15b8134b&quot;)
+(&quot;LD_LIBRARY_PATH&quot;, &quot;/playground/target/debug/build/backtrace-sys-3ec4c973f371c302/out:/playground/target/debug/build/libsqlite3-sys-fbddfbb9b241dacb/out:/playground/target/debug/build/ring-cadba5e583648abb/out:/playground/target/debug/deps:/playground/target/debug:/playground/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib:/playground/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib&quot;)
+(&quot;PATH&quot;, &quot;/playground/.cargo/bin:/playground/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;)
+(&quot;PLAYGROUND_EDITION&quot;, &quot;2018&quot;)
+(&quot;PLAYGROUND_TIMEOUT&quot;, &quot;10&quot;)
+(&quot;PWD&quot;, &quot;/playground&quot;)
+(&quot;RUSTUP_HOME&quot;, &quot;/playground/.rustup&quot;)
+(&quot;RUSTUP_TOOLCHAIN&quot;, &quot;stable-x86_64-unknown-linux-gnu&quot;)
+(&quot;RUST_RECURSION_COUNT&quot;, &quot;1&quot;)
+(&quot;SHLVL&quot;, &quot;1&quot;)
+(&quot;SSL_CERT_DIR&quot;, &quot;/usr/lib/ssl/certs&quot;)
+(&quot;SSL_CERT_FILE&quot;, &quot;/usr/lib/ssl/certs/ca-certificates.crt&quot;)
+(&quot;USER&quot;, &quot;playground&quot;)
+(&quot;_&quot;, &quot;/usr/bin/timeout&quot;)
+</code></pre>
+<p>所以如果你需要這些資訊，<code>Vars</code> 就是你想要的。</p>
+<p>要獲得單獨的 <code>Var</code> 最簡單的方法是使用 <code>env!</code> 巨集。你只要給它變數名，它就會給你 <code>&amp;str</code> 的值。如果變數拼寫錯誤或不存在就沒作用了，所以如果你不確定那就用 <code>option_env!</code>。如果我們在 Playground 上寫這樣：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!(&quot;{}&quot;, env!(&quot;USER&quot;));
+    println!(&quot;{}&quot;, option_env!(&quot;ROOT&quot;).unwrap_or(&quot;Can't find ROOT&quot;));
+    println!(&quot;{}&quot;, option_env!(&quot;CARGO&quot;).unwrap_or(&quot;Can't find CARGO&quot;));
+}</code></pre></pre>
+<p>那我們會得到輸出：</p>
+<pre><code class="language-text">playground
+Can't find ROOT
+/playground/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo
+</code></pre>
+<p>所以 <code>option_env!</code> 永遠會是比較安全的巨集。如果你實際上是想讓程式在找不到環境變數 (environment variable) 時崩潰，那麼 <code>env!</code> 會更好。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_62.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_64.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_62.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_64.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Deref 和 DerefMut - Easy Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong>  更新</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong>  介紹</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong>  我是誰？</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong>  簡單英語學 Rust</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong>  Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong>  🚧 和 ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong>  註解</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong>  型別</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong>  型別推導</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong>  列印 hello, world!</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong>  顯示和除錯</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong>  可變性</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong>  堆疊、堆積和指標</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong>  更多關於列印</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong>  字串</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong>  const 和 static</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong>  更多關於參考</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong>  可變參考</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong>  傳遞參考給函式</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong>  複製型別</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong>  集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong>  向量</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong>  元組</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong>  控制流程</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong>  結構體</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong>  列舉</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong>  迴圈</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong>  實作結構體和列舉</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong>  解構</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong>  參考和點運算子</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong>  泛型</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong>  Option 和 Result</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong>  其他集合型別</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong>  問號(?)運算子</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong>  特徵</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong>  鏈結方法</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong>  疊代器</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong>  閉包</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong>  dbg! 巨集和 .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong>  &str 的種類</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong>  生命週期</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong>  內部可變性</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong>  Cow</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong>  類型別名</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong>  todo! 巨集</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong>  Rc</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong>  多執行緒</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong>  函式中的閉包</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong>  impl 特徵</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong>  Arc</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong>  通道</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong>  閱讀 Rust 文件</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong>  屬性</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong>  Box</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong>  Box 包裹的特徵</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong>  Default 和生成器模式</a></li><li class="chapter-item expanded "><a href="Chapter_56.html" class="active"><strong aria-hidden="true">57.</strong>  Deref 和 DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong>  Crates 和模組</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong>  測試</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong>  外部 crates</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong>  標準函式庫之旅</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong>  撰寫巨集</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong>  cargo</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong>  接受使用者輸入</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong>  使用檔案</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong>  cargo doc 命令</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong>  結束了嗎？</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/dieterplex/easy_rust_cht/edit/main/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="deref-和-derefmut"><a class="header" href="#deref-和-derefmut">Deref 和 DerefMut</a></h2>
+<p><code>Deref</code> 是讓你用 <code>*</code> 來對某些東西取值(dereference)的特徵。我們之前在使用元組結構體來做出新的型別時見過 <code>Deref</code> 這個字，現在是時候學會它了。</p>
+<p>我們知道，參考和值是不一樣的：</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+fn main() {
+    let value = 7; // 這是個 i32
+    let reference = &amp;7; // 這是個 &amp;i32
+    println!(&quot;{}&quot;, value == reference);
+}</code></pre></pre>
+<p>而 Rust 連 <code>false</code> 都不給，因為它甚至不會比較兩者。</p>
+<pre><code class="language-text">error[E0277]: can't compare `{integer}` with `&amp;{integer}`
+ --&gt; src\main.rs:4:26
+  |
+4 |     println!(&quot;{}&quot;, value == reference);
+  |                          ^^ no implementation for `{integer} == &amp;{integer}`
+</code></pre>
+<p>當然，這裡的解法是使用 <code>*</code>。所以這將會印出 <code>true</code>：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let value = 7;
+    let reference = &amp;7;
+    println!(&quot;{}&quot;, value == *reference);
+}</code></pre></pre>
+<p>現在讓我們想像一下只容納一個數字的簡單型別。它就像 <code>Box</code>，我們有些想法為它提供一些額外的功能。但如果我們只是給它一個數字，它就不能做那麼多了。</p>
+<p>我們不能像使用 <code>Box</code> 那樣使用 <code>*</code>：</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+struct HoldsANumber(u8);
+
+fn main() {
+    let my_number = HoldsANumber(20);
+    println!(&quot;{}&quot;, *my_number + 20);
+}</code></pre></pre>
+<p>錯誤訊息是：</p>
+<pre><code class="language-text">error[E0614]: type `HoldsANumber` cannot be dereferenced
+  --&gt; src\main.rs:24:22
+   |
+24 |     println!(&quot;{:?}&quot;, *my_number + 20);
+</code></pre>
+<p>我們當然可以做到這一點：<code>println!(&quot;{:?}&quot;, my_number.0 + 20);</code>。但是這樣的話，我們就是在 20 的基礎上再單獨加 <code>u8</code>。如果我們能把它們直接加在一起就更好了。<code>cannot be dereferenced</code> 這個訊息給了我們線索：我們需要實作 <code>Deref</code>。實作 <code>Deref</code> 的簡單東西有時被稱為&quot;智慧指標(smart pointer)&quot;。一個智慧指標可以指向它的元素，有它的資訊，並且可以使用它的方法。因為現在我們可以新增 <code>u8</code> 的 <code>my_number.0</code>，但我們不能用 <code>HoldsANumber</code> 來做其他的事情：到目前為止，它只有 <code>Debug</code>。</p>
+<p>有趣的事實是：<code>String</code> 其實是 <code>&amp;str</code> 的智慧指標，<code>Vec</code> 是陣列(或其他型別)的智慧指標。所以我們其實從一開始就在使用智慧指標。</p>
+<p>實現 <code>Deref</code> 並不難，標準函式庫中的範例也很簡單。<a href="https://doc.rust-lang.org/std/ops/trait.Deref.html">這裡是標準函式庫中的範例程式碼</a>：</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::Deref;
+
+struct DerefExample&lt;T&gt; {
+    value: T
+}
+
+impl&lt;T&gt; Deref for DerefExample&lt;T&gt; {
+    type Target = T;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.value
+    }
+}
+
+fn main() {
+    let x = DerefExample { value: 'a' };
+    assert_eq!('a', *x);
+}</code></pre></pre>
+<p>所以我們按照這個來，現在我們的 <code>Deref</code> 像這樣：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+impl Deref for HoldsANumber {
+    type Target = u8; // 記得, 這是&quot;關聯型別(associated type)&quot;: 型別會一起寫在這.
+                      // 你必須要使用正確的 type Target = (你想回傳的型別)
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target { // 當你使用 * 時 Rust 會呼叫 .deref(). 我們只定義 Target 為 u8 所以這很容易理解
+        &amp;self.0   // 我們選擇 &amp;self.0 因為這是元組結構體. 在具名結構體中它就會是像 &quot;&amp;self.number&quot; 之類的東西
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>所以現在我們可以用 <code>*</code> 來做：</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::Deref;
+#[derive(Debug)]
+struct HoldsANumber(u8);
+
+impl Deref for HoldsANumber {
+    type Target = u8;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.0
+    }
+}
+
+fn main() {
+    let my_number = HoldsANumber(20);
+    println!(&quot;{:?}&quot;, *my_number + 20);
+}</code></pre></pre>
+<p>所以會印出 <code>40</code>，我們也不需要寫 <code>my_number.0</code> 了。這意味著我們有 <code>u8</code> 型別的方法可以用，我們可以為 <code>HoldsANumber</code> 寫出我們自己的方法。我們將新增自己寫的簡單方法，並使用我們從 <code>u8</code> 中得到的另一個方法，稱為 <code>.checked_sub()</code>。<code>.checked_sub()</code> 方法是安全的減法，它能回傳 <code>Option</code>。如果它能做減法，那麼它就會在 <code>Some</code> 裡面給你結果，如果它不能做減法，那麼它就會給你 <code>None</code>。記住，<code>u8</code> 不能是負數，所以還是 <code>.checked_sub()</code> 比較安全，這樣就不會恐慌了。</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::Deref;
+
+struct HoldsANumber(u8);
+
+impl HoldsANumber {
+    fn prints_the_number_times_two(&amp;self) {
+        println!(&quot;{}&quot;, self.0 * 2);
+    }
+}
+
+impl Deref for HoldsANumber {
+    type Target = u8;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.0
+    }
+}
+
+fn main() {
+    let my_number = HoldsANumber(20);
+    println!(&quot;{:?}&quot;, my_number.checked_sub(100)); // 這是來自 u8 的方法
+    my_number.prints_the_number_times_two(); // 這是我們自己的方法
+}</code></pre></pre>
+<p>印出：</p>
+<pre><code class="language-text">None
+40
+</code></pre>
+<p>我們也可以實作 <code>DerefMut</code>，這樣我們就能透過 <code>*</code> 來改變數值。它看起來幾乎一樣。在實作 <code>DerefMut</code> 之前，你需要先實作 <code>Deref</code>。</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::{Deref, DerefMut};
+
+struct HoldsANumber(u8);
+
+impl HoldsANumber {
+    fn prints_the_number_times_two(&amp;self) {
+        println!(&quot;{}&quot;, self.0 * 2);
+    }
+}
+
+impl Deref for HoldsANumber {
+    type Target = u8;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.0
+    }
+}
+
+impl DerefMut for HoldsANumber { // 這裡你不需要 type Target = u8; 這要感謝 Deref 因為它已經知道了
+    fn deref_mut(&amp;mut self) -&gt; &amp;mut Self::Target { // 除了到處用 mut 以外，其它一切都一樣
+        &amp;mut self.0
+    }
+}
+
+fn main() {
+    let mut my_number = HoldsANumber(20);
+    *my_number = 30; // DerefMut lets us do this
+    println!(&quot;{:?}&quot;, my_number.checked_sub(100));
+    my_number.prints_the_number_times_two();
+}</code></pre></pre>
+<p>所以你可以看到，<code>Deref</code> 給你的型別提供了強大的力量。</p>
+<p>這也是為什麼標準函式庫說：<code>Deref should only be implemented for smart pointers to avoid confusion</code>。這是因為對於複雜的型別，你可以用 <code>Deref</code> 做一些奇怪的事情。讓我們想像一個非常混亂的範例來理解它們的含義。我們將從一個遊戲的 <code>Character</code> 結構體開始。新的 <code>Character</code> 需要一些資料，比如智力和力量。所以這裡是我們的第一個角色：</p>
+<pre><pre class="playground"><code class="language-rust">struct Character {
+    name: String,
+    strength: u8,
+    dexterity: u8,
+    health: u8,
+    intelligence: u8,
+    wisdom: u8,
+    charm: u8,
+    hit_points: i8,
+    alignment: Alignment,
+}
+
+impl Character {
+    fn new(
+        name: String,
+        strength: u8,
+        dexterity: u8,
+        health: u8,
+        intelligence: u8,
+        wisdom: u8,
+        charm: u8,
+        hit_points: i8,
+        alignment: Alignment,
+    ) -&gt; Self {
+        Self {
+            name,
+            strength,
+            dexterity,
+            health,
+            intelligence,
+            wisdom,
+            charm,
+            hit_points,
+            alignment,
+        }
+    }
+}
+
+enum Alignment {
+    Good,
+    Neutral,
+    Evil,
+}
+
+fn main() {
+    let billy = Character::new(&quot;Billy&quot;.to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good);
+}</code></pre></pre>
+<p>現在讓我們想像我們想存放人物的生命值(hit points)在一個大向量裡面。也許我們也會把怪物級資料也放進去，並存放在一起。由於 <code>hit_points</code> 是 <code>i8</code>，我們實作了 <code>Deref</code>，來讓我們可以對它進行各式各樣的數學計算。但是現在看看我們的 <code>main()</code> 函式有多麼奇怪：</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::Deref;
+
+// 直到例舉 Alignment 之後，以外的所有程式碼是一樣的
+struct Character {
+    name: String,
+    strength: u8,
+    dexterity: u8,
+    health: u8,
+    intelligence: u8,
+    wisdom: u8,
+    charm: u8,
+    hit_points: i8,
+    alignment: Alignment,
+}
+
+impl Character {
+    fn new(
+        name: String,
+        strength: u8,
+        dexterity: u8,
+        health: u8,
+        intelligence: u8,
+        wisdom: u8,
+        charm: u8,
+        hit_points: i8,
+        alignment: Alignment,
+    ) -&gt; Self {
+        Self {
+            name,
+            strength,
+            dexterity,
+            health,
+            intelligence,
+            wisdom,
+            charm,
+            hit_points,
+            alignment,
+        }
+    }
+}
+
+enum Alignment {
+    Good,
+    Neutral,
+    Evil,
+}
+
+impl Deref for Character { // 給 Character 實作 Deref. 現在我們可以任意做整數計算!
+    type Target = i8;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.hit_points
+    }
+}
+
+
+
+fn main() {
+    let billy = Character::new(&quot;Billy&quot;.to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good); // 建立兩個角色, billy 和 brandy
+    let brandy = Character::new(&quot;Brandy&quot;.to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good);
+
+    let mut hit_points_vec = vec![]; // 把我們的生命值資料放在這裡
+    hit_points_vec.push(*billy);     // 推入 *billy?
+    hit_points_vec.push(*brandy);    // 推入 *brandy?
+
+    println!(&quot;{:?}&quot;, hit_points_vec);
+}</code></pre></pre>
+<p>印出 <code>[5, 5]</code>。我們的程式碼現在讓人讀起來感覺非常奇怪。我們可以讀懂在 <code>main()</code> 上面的 <code>Deref</code>，然後弄清楚 <code>*billy</code> 的意思是 <code>i8</code>，但是如果有很多程式碼呢？可能我們的程式碼長 2000 行，並且突然之間我們要弄清楚為什麼要 <code>.push()</code> <code>*billy</code>。<code>Character</code> 當然不僅僅是 <code>i8</code> 的智慧指標。</p>
+<p>當然寫 <code>hit_points_vec.push(*billy)</code> 並不違法，但這讓程式碼看起來非常奇怪。也許簡單的 <code>.get_hp()</code> 方法會好得多，或者另一個存放角色的結構體。然後你可以疊代並推入每個角色的 <code>hit_points</code>。<code>Deref</code> 雖然提供了強大的力量，但最好確保程式碼的邏輯性。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_55.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="Chapter_57.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_55.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="Chapter_57.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
